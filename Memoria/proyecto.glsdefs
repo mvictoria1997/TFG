@@ -1,0 +1,120 @@
+\ifglsentryexists{svm}{}%
+{%
+\gls@defglossaryentry{svm}%
+{%
+name={\acronymfont {\glsentryshort {svm}}},%
+sort={SVM},%
+type={acronym},%
+first={SVM},%
+firstplural={SVMs},%
+text={SVM},%
+plural={SVMs},%
+description={support vector machine},%
+descriptionplural={support vector machine},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={support vector machine},%
+longplural={support vector machines},%
+short={SVM},%
+shortplural={SVMs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{gcd}{}%
+{%
+\gls@defglossaryentry{gcd}%
+{%
+name={\acronymfont {\glsentryshort {gcd}}},%
+sort={GCD},%
+type={acronym},%
+first={GCD},%
+firstplural={GCDs},%
+text={GCD},%
+plural={GCDs},%
+description={Greatest Common Divisor},%
+descriptionplural={Greatest Common Divisor},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Greatest Common Divisor},%
+longplural={Greatest Common Divisors},%
+short={GCD},%
+shortplural={GCDs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{lcm}{}%
+{%
+\gls@defglossaryentry{lcm}%
+{%
+name={\acronymfont {\glsentryshort {lcm}}},%
+sort={LCM},%
+type={acronym},%
+first={LCM},%
+firstplural={LCMs},%
+text={LCM},%
+plural={LCMs},%
+description={Least Common Multiple},%
+descriptionplural={Least Common Multiple},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Least Common Multiple},%
+longplural={Least Common Multiples},%
+short={LCM},%
+shortplural={LCMs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{gmf}{}%
+{%
+\gls@defglossaryentry{gmf}%
+{%
+name={\acronymfont {\glsentryshort {gmf}}},%
+sort={GMF},%
+type={acronym},%
+first={GMF},%
+firstplural={GMFs},%
+text={GMF},%
+plural={GMFs},%
+description={Gabriel Maciá Fernández},%
+descriptionplural={Gabriel Maciá Fernández},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Gabriel Maci\IeC {\'a} Fern\IeC {\'a}ndez},%
+longplural={Gabriel Maci\IeC {\'a} Fern\IeC {\'a}ndezs},%
+short={GMF},%
+shortplural={GMFs},%
+counter={page},%
+parent={},%
+%
+}%
+}%

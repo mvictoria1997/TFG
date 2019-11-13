@@ -1,0 +1,193 @@
+%% Plantilla adaptada de la plantilla general LATEX para TFG de la UGR
+%% Autor: Gabriel Maciá (gmacia@ugr.es)
+%% Fecha: 14/06/2017
+
+
+\documentclass[a4paper,11pt]{book}
+%\documentclass[a4paper,twoside,11pt,titlepage]{book}
+\usepackage{listings}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish, es-tabla]{babel}
+
+\decimalpoint
+\usepackage{dcolumn}
+\newcolumntype{.}{D{.}{\esperiod}{-1}}
+\makeatletter
+\addto\shorthandsspanish{\let\esperiod\es@period@code}
+\makeatother
+%\usepackage[chapter]{algorithm}
+\RequirePackage{verbatim}
+\usepackage{fancyhdr}
+\usepackage{pdfpages}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{afterpage}
+\usepackage{longtable}
+\usepackage{hyperref} %referencia
+\usepackage{bookmark}
+	\bookmarksetup{numbered}
+\usepackage{courier}
+\usepackage{url}
+\usepackage{colortbl,longtable}
+\usepackage[stable]{footmisc}
+\usepackage[acronym,nonumberlist]{glossaries}
+	\setacronymstyle{long-short}
+	\makeglossaries
+	\renewcommand{\glossaryname}{Glosario de siglas}
+
+%% Colocar aquí todas las palabras como queramos que se separen al terminar una línea. Ej. \hyphenation{co-mer}
+\hyphenation{}
+
+
+% Definición de comandos que me son tiles:
+%\renewcommand{\indexname}{Índice alfabético}
+
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LO]{\leftmark}
+\fancyhead[RE]{\rightmark}
+\fancyhead[RO,LE]{\textbf{\thepage}}
+\renewcommand{\chaptermark}[1]{\markboth{\textbf{#1}}{}}
+\renewcommand{\sectionmark}[1]{\markright{\textbf{\thesection. #1}}}
+\setlength{\headheight}{1.5\headheight}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+%Definimos los tipos teorema, ejemplo y definición podremos usar estos tipos
+%simplemente poniendo \begin{teorema} \end{teorema} ...
+\newtheorem{teorema}{Teorema}[chapter]
+\newtheorem{ejemplo}{Ejemplo}[chapter]
+\newtheorem{definicion}{Definición}[chapter]
+
+% Definiciones para listados de código
+
+\definecolor{gray97}{gray}{.97}
+\definecolor{gray75}{gray}{.75}
+\definecolor{gray45}{gray}{.45}
+\definecolor{gray30}{gray}{.94}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\renewcommand\lstlistingname{Listado de código}
+\renewcommand\lstlistlistingname{Listados de código}
+
+
+
+\lstdefinestyle{Python}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\scriptsize\ttfamily,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+} 
+
+
+
+
+% minimizar fragmentado de listados
+\lstnewenvironment{listing}[1][]
+   {\lstset{#1}\pagebreak[0]}{\pagebreak[0]}
+
+\lstset{style=Python}
+
+%\lstdefinestyle{CodigoC}
+%   {
+%	basicstyle=\scriptsize,
+%	frame=single,
+%	language=C,
+%	numbers=left
+%   }
+%\lstdefinestyle{CodigoC++}
+%   {
+%	basicstyle=\small,
+%	frame=single,
+%	backgroundcolor=\color{gray30},
+%	language=C++,
+%	numbers=left
+%   }
+%
+%\lstdefinestyle{Consola}
+%   {basicstyle=\scriptsize\bf\ttfamily,
+%    backgroundcolor=\color{gray30},
+%    frame=single,
+%    numbers=none
+%   }
+
+
+\newcommand{\bigrule}{\titlerule[0.5mm]}
+
+%Para conseguir que en las páginas en blanco no ponga cabecerass
+\makeatletter
+\def\clearpage{%
+  \ifvmode
+    \ifnum \@dbltopnum =\m@ne
+      \ifdim \pagetotal <\topskip
+        \hbox{}
+      \fi
+    \fi
+  \fi
+  \newpage
+  \thispagestyle{empty}
+  \write\m@ne{}
+  \vbox{}
+  \penalty -\@Mi
+}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% CONTENIDOS DEL DOCUMENTO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+%\pdfbookmark[-1]{Memoria proyecto}{}
+	\input{portada/portada}
+	\input{portada/prefacio}
+	\frontmatter
+	\pdfbookmark[0]{Índice}{}
+	\tableofcontents
+	\listoffigures
+	\listoftables
+	\lstlistoflistings
+	\mainmatter
+
+% Ficheros con los contenidos
+
+	\input{capitulos/guiaDeEstilo}
+	\input{capitulos/01_Introduccion}
+	\input{capitulos/02_Planificacion}
+	\input{capitulos/03_Analisis}
+	\input{capitulos/04_Diseno}
+	\input{capitulos/05_Implementacion}
+	\input{capitulos/06_Pruebas}
+	\input{capitulos/07_Conclusiones}
+
+% Añadimos la bibliografia
+	\bibliographystyle{IEEETran}
+	\bibliography{bibliografia/bibliografia}
+	\addcontentsline{toc}{chapter}{Bibliografía}
+	
+% Añadimos el glosario
+	\input{glosario/entradas_glosario}
+	\printglossaries
+	\addcontentsline{toc}{chapter}{Glosario de siglas}
+
+% Añadimos los apéndices que hagan falta
+	\pdfbookmark[-1]{Apéndices}{}
+	\appendix
+	\input{apendices/apendice_manual_usuario}
+	\thispagestyle{empty}
+
+\end{document}
