@@ -1,6 +1,5 @@
 \chapter{Introducción}
 
-El objetivo de este proyecto es la implementación de un algoritmo criptográfico resistente a ordenadores cuánticos, denominado LUOV, para la firma de documentos. Con ayuda de este algoritmo modificaremos la implentación de la \textit{blockchain} ARK.
 
 \section{Motivación y contexto del proyecto}
 \label{sec:intro:motivacion} %Esto se pone si queremos hacer referencia a esta sección
@@ -11,16 +10,13 @@ En esta parte es importante clarificar las siguientes preguntas:
 \item ¿Por qué es importante dicho problema? Hay que tratar de aportar datos y argumentos para indicar que el problema descrito es relevante en el contexto actual. 
 \end{enumerate}
 
-A lo largo del desarrollo de este trabajo tendremos presentes dos dos tecnologías, la computación cuántica y las cadenas de bloques. 
+Este trabajo surge de la necesidad de disminuir las vulnerabilidades de los algoritmos criptográficos a ataques cuánticos. Así pues, el objetivo de este trabajo es modificar la implementación de la \textit{Blockchain} ARK para hacerla resistente a ataques cuanticos, con ayuda del sistema criptográfico PICNIC.
 
-La computación cuántica constituye un nuevo paradigma de la informática basado en los principio de la teoría cuántica. La computación clásica funciona con bits cuyos valores pueden ser 0 o 1, mientras que la computación cuántica funciona con bit cuánticos o cúbits, donde son una combinación de 0 y 1, pudiendo tomar ambos valores a la vez, esto se denomina la superposición cuántica de los estados.
+El desarrollo del trabajo se basa en dos tecnologías la computación cuántica y las cadenas de bloques. En primer lugar vamos a tratar la computación cuántica, se basa en el uso de cubits y hace posible que existan nuevos algoritmos que puedan resolver problemas con una complejidad mayor.
 
-La superposición cuántica aporta así gran capacidad de procesamiento. Lo que hace posible resolver de manera eficiente problemas de mayor complejidad como la factorización de enteros, el algoritmo discreto y la simulación cuántica, que a día de hoy con los ordenadores clásicos son difíciles de romper. 
+El origen de la computación cuántica surge de la necesidad de descubrir nuevas tecnologías, debido a que la evolución de la tecnología en los últimos años se ha basado en la reducción del tamaño de los transistores, aumentando así la velocidad del proyecto. El problema es que este proceso tiene un tiene un límite.
 
-
-La evolución de la tecnología se ha basado principalmente en la reducción de los transistores para aumentar la velocidad, llegando a escalas de tan solo algunas decenas de nanómetros. Esto tiene un límite y es la eficiencia, puesto que al seguir disminuyendo el tamaño podrían dejar de funcionar correctamente. De ahí surge la necesidad de descubrir nuevas tecnologías, la computación cuántica.
-
-El estudio de las tecnologías cuánticas se inició en 1970, al principio se imaginaban ordenadores tradicionales que trabajaran con algunos principios de la mecánica cuántica.
+El estudio de las tecnologías cuánticas se inició en 1980, al principio se imaginaban ordenadores tradicionales que trabajaran con algunos principios de la mecánica cuántica.
 
 En 1998 se consiguió analiza la información que transportaban los cúbits y ejecutar el algoritmo de búsqueda de Grover.
 
