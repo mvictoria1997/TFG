@@ -5,82 +5,87 @@ El objetivo de este proyecto es la implementación de un algoritmo criptográfic
 \section{Motivación y contexto del proyecto}
 \label{sec:intro:motivacion} %Esto se pone si queremos hacer referencia a esta sección
 
-En esta parte es importante clarificar las siguientes preguntas: 
-\begin{enumerate}
-\item ¿Cuál es el problema que pretendemos resolver con este proyecto? Debemos introducir un poco el contexto en el que aparece y describir bien en qué consiste dicho problema. 
-\item ¿Por qué es importante dicho problema? Hay que tratar de aportar datos y argumentos para indicar que el problema descrito es relevante en el contexto actual. 
-\end{enumerate}
+%En esta parte es importante clarificar las siguientes preguntas: 
+%\begin{enumerate}
+%\item ¿Cuál es el problema que pretendemos resolver con este proyecto? Debemos introducir un poco el contexto en el que aparece y describir bien en qué consiste dicho problema. 
+%\item ¿Por qué es importante dicho problema? Hay que tratar de aportar datos y argumentos para indicar que el problema descrito es relevante en el contexto actual. 
+%\end{enumerate}
 
 A lo largo del desarrollo de este trabajo tendremos presentes dos dos tecnologías, la computación cuántica y las cadenas de bloques. 
 
 La computación cuántica constituye un nuevo paradigma de la informática basado en los principio de la teoría cuántica. La computación clásica funciona con bits cuyos valores pueden ser 0 o 1, mientras que la computación cuántica funciona con bit cuánticos o cúbits, donde son una combinación de 0 y 1, pudiendo tomar ambos valores a la vez, esto se denomina la superposición cuántica de los estados.
 
-La superposición cuántica aporta así gran capacidad de procesamiento. Lo que hace posible resolver de manera eficiente problemas de mayor complejidad como la factorización de enteros, el algoritmo discreto y la simulación cuántica, que a día de hoy con los ordenadores clásicos son difíciles de romper. 
+La superposición cuántica aporta gran capacidad de procesamiento, lo que hace posible resolver de manera eficiente problemas de mayor complejidad como la factorización de enteros, el algoritmo discreto y la simulación cuántica, que a día de hoy con los ordenadores clásicos son difíciles de romper. 
 
 
 La evolución de la tecnología se ha basado principalmente en la reducción de los transistores para aumentar la velocidad, llegando a escalas de tan solo algunas decenas de nanómetros. Esto tiene un límite y es la eficiencia, puesto que al seguir disminuyendo el tamaño podrían dejar de funcionar correctamente. De ahí surge la necesidad de descubrir nuevas tecnologías, la computación cuántica.
 
-El estudio de las tecnologías cuánticas se inició en 1970, al principio se imaginaban ordenadores tradicionales que trabajaran con algunos principios de la mecánica cuántica.
+El estudio de las tecnologías cuánticas se inició en 1980, donde surgieron teorías con la posibilidad de realizar cálculos cuánticos. En la década de los 90 se empezó a poner en práctica algunas teoría, apareciendo los primeros algoritmos cuánticos, primeras aplicaciones cuánticas y las primera máquinas diseñadas para realizar cálculos cuánticos.
 
-En 1998 se consiguió analiza la información que transportaban los cúbits y ejecutar el algoritmo de búsqueda de Grover.
+La otra tecnología que vamos a utilizar son las cadenas de bloques, \textit{blockchain}. Esta tecnología permite verificar, validar, rastrear todo tipo de información, como contratos inteligentes, transacciones financieras, certificados digitales y firmas, que será el centro de este proyecto.
 
-En 2019 IBM presenta el primer ordenador cuántico para uso comercial, que combina tanto la computación cuántica como tradicional para su utilización en invastigaciones y grandes cálculos.
+Los datos que almadenan cada bloque almacena son transacciones válidas, información referente a ese bloque y la relación con el bloque anterior mediante el \textit{hash}, por tanto el bloque tiene un lugar específico dentro de la cadena. De esta forma si hay una alteración en un determinado bloque se verá reflejado en su \textit{hash} y en el de los bloques posteriores, haciendo que la cadena que la información de la cadena no se pueda perder, modificar o eliminar. 
+
+Las cadenas de bloques se pueden aplicar en diversos ámbitos, como en la salud, que podrían tener el historial médico de un paciente en cualquier centro de salud, de una forma segura y evitando falsificaciones. También se puede aplicar en la firma de documentos o transacciones por parte de un notario, que a día de hoy es un problema ya que las firmas digitales son fáciles de copiar, pero con \textit{blockchain} no podrían ser falsificadas.
 
 
-
-Así mismo la otra tecnología que vamos a utilizar son las cadenas de bloques. Surgieron en la segunda década del siglo XXI, ha sido motor de cambio en el ámbito digital 
 
 
 
 
 
 \section{Objetivos del proyecto y logros conseguidos}
-
-Debemos poner claramente el objetivo del proyecto, sin muchos rodeos, para que esté claro desde el principio. A veces podemos tener un objetivo general (amplio) y algunos objetivos específicos (más concretos). 
-
-Adicionalmente, debemos aportar información a los evaluadores y lectores de la memoria de cuál es el trabajo que hemos realizado nosotros en este proyecto. Por ello, se debe poner una lista de los ``logros conseguidos''. Un ejemplo: 
+\label{sec:objetivos}
+El objetivo de este proyecto es modificar el algoritmo de firma y verificación de las transacciones de la \textit{blockchain} ARK, para hacerla resistente a atáques cuánticos.
 
 \begin{itemize}
-	\item Se ha diseñado un sistema que permite...
-	\item Se ha modificado un software existente para conseguir...
-	\item Se ha desarrollado una interfaz gráfica para el acceso...
+	\item Implementación del algoritmo UOV: Se ha implementado las funciones de generación de claves tanto públicas como privadas, la función de firma a partir de la clave privada y la función de verificación de la misma con la clave pública. Además ha sido necesario implementar la aritmética de cuerpo finito de $2^7$ elementos.
+	\item Estudio de la \textit{blockchain} ARK: Crear y probar la \textit{blockchain} ARK como usuario final, también estudiar cuales son y donde se encuentran las funciones que queremos modificar.
+	\item Crear un docker ARK: Crear un docker para almacenar la \texit{blockchain} ARK.
+	\item Modificar el algoritmo de firma y verificación: Cambiar el actual algoritmo que aplica la \textit{blockchain} ARK por el algoritmo UOV
+	\item Ver las transacciones realizadas en el \textit{explorer} de ark: Finalmente la prueba que se realizará es ver que las transacciones que realicemos con la API se muestran en el \texit{explorer} de ARK.
+
 \end{itemize}
-
-
-El objetivo principal es profundizar en estudio de las cadenas de bloques. Además se estudiará el algoritmo para usarlo en la impletación de la Blockchain y hacerla más segura.
 
 
 \section{Estructura de la memoria}
 Se describirán los capítulos que tiene la memoria, indicando qué contenidos habrá en cada uno de ellos, para permitir al lector situarse ante el documento. 
 
+\begin{enumerate}
+	\item Introducción: Breve explicación de la motivación de este proyecto y de los objtetivos planteados.
+	\item Planificación y costes: Definición de las entregas y seguimiento del proyecto. Además incluye el presupuesto del proyecto.
+	\item Análisis del problema: Descripción de las funcionalidades y requisitos, y análisis de los objetivos que se muestran en la sección \ref{sec:objetivos}.
+	\item Diseño:
+	\item Implementación
+	\item Evaluación y pruebas
+	\item Conclusiones: Aportaciones al proyecto
+	
+\end{enumerate}
 
 \section{Contenidos teóricos para la comprensión del proyecto}
-En esta sección se realizará el desarrollo de los contenidos teóricos que permitan al lector entender el desarrollo del proyecto. Es importante no enrollarse con cosas que no tienen nada que ver con el proyecto. También es importante no copiar texto de otras fuentes si no están citadas.
+
+A continuación se muestran algunos contenidos claves para la mejor comprensión del proyecto.
+
+\begin{itemize}
+	\item Algoritmo cuántico: Son los algoritmos que pueden ser resueltos por un computador cuántico en tiempo polinómico.
+
+	\item Contratos inteligentes: Base de "propiedades inteligentes" que permiten definir mediante códigos de la Blockchain, la forma en la que los dispositivos reaccionan ante eventos que tienen lugar en su entorno. Llevan incorporada una máquina virtual que habilita la codificación y ejecución de programas software para determinar las condiciones sobre el intercambio de activos entre agentes.
 
 
-Conceptos clave:
-
-Contratos inteligentes: Base de "propiedades inteligentes" que permiten definir mediante códigos de la Blockchain, la forma en la que los dispositivos reaccionan ante eventos que tienen lugar en su entorno. Llevan incorporada una máquina virtual que habilita la codificación y ejecución de programas software para determinar las condiciones sobre el intercambio de activos entre agentes.
+ 	\item Firma electrónica: Sirve para controlar la integridad de los datos y asegurar que la información procede de quien dice ser su remitente, garantiza que la información que se almacena o se envía no ha sido modificada. Controla la auditoría del documento. Se requieren criptosistemas aritméticos.
 
 
-Firma electrónica: Sirve para controlar la integridad de los datos y asegurar que la información procede de quien dice ser su remitente, garantiza que la información que se almacena o se envía no ha sido modificada. Controla la auditoría del documento. Se requieren criptosistemas aritméticos
+	\item Criptosistemas aritméticos: Cada usuario posee una clave pública y otra privada. El usuario cifrará y descifrará el mensaje con su llave privada y pública, además de la llave pública del usuario que descifrará o que haya cifrado el mensaje.
 
 
-Criptosistemas aritméticos: Cada usuario posee una clave pública y otra privada. El usuario cifrará y descifrará el mensaje con su llave privada y pública, además de la llave pública del usuario que descifrará o que haya cifrado el mensaje.
+	\item Resumen o Hash: Es el resultado de aplicar una función que transforma un mensaje que longitud variable en uno de longitud fija, denominada función hash. Es el resultado de calcular el resto módulo n con n la longitud fija. Al aplicar la función hash a un fichero, si se modifica algún dato del mismo cambiará su hash y por tanto se sabrá si ha sido manipulado desde que se envió. Así podemos conseguir la integridad del mensaje
 
 
-Resumen o Hash: Es el resultado de aplicar una función que transforma un mensaje que longitud variable en uno de longitud fija, denominada función hash. Es el resultado de calcular el resto módulo n con n la longitud fija. Al aplicar la función hash a un fichero, si se modifica algún dato del mismo cambiará su hash y por tanto se sabrá si ha sido manipulado desde que se envió. Así podemos conseguir la integridad del mensaje
+	\item \textit{Blockchain}: Sistemas de almacenamiento de información que se divide en bloque de datos enlazados mediante los hash. A cada bloque se le asocia un hash a partir del bloque anterior, creando una lista enlazada, la búsqueda de información no es muy óptima si hay un número elevado de bloques. Para la búsqueda eficiente en \textit{blockchain} se usan los árboles merkle.
+\textit{Blockchain} por si mismo no solucionan los problemas de los sistemas de la información y la comunicación. Pero permiten impulsar modificaciones orientadas a crear soluciones más robustas, implicando conocer donde hay que usar las blockchain y cual es la infraestructura.
 
 
-Blockchain: Sistemas de almacenamiento de información que se divide en bloque de datos enlazados mediante los hash. A cada bloque se le asocia un hash y contiene el hash del bloque anterior, creando una lista enlazada, la búsqueda de información no es muy óptima si hay un número elevado de bloques. Para ello existen los árboles merkle.
-Los blockchain por si mismo no solucionan los problemas de los sistemas de la información y la comunicación. Pero permiten impulsar modificaciones orientadas a crear soluciones más robustas, implicando conocer donde hay que usar las blockchain y cual es la infraestructura.
+	\item Árboles Merkle: Árboles binarios con funciones hash, cada nodo tiene con máximo dos hijos, no hay ciclos. El cálculo de los hash de los padres se hace combinando los hash de los hijos. La integridad se obtiene inclueyendo en los bloques el valor del nodo raíz en lugar de añadir el valor de todos los datos protegidos por los bloques, reducimos además la información de la cabecera.
+\end{itemize}
 
 
-Árboles Merkle: Árboles binarios con funciones hash, cada nodo tiene con máximo dos hijos, no hay ciclos. El cálculo de los hash de los padres se hace combinando los hash de los hijos. La integridad se obtiene inclueyendo en los bloques el valor del nodo raiz en lugar de añadir el valor de todos los datos protegidos por los bloques, reducimos además la información de la cabecera.
-
-
-
-
-Bibliografia:
-
-https://es.wikipedia.org/wiki/Computaci%C3%B3n_cu%C3%A1ntica
