@@ -95,8 +95,6 @@
 } 
 
 
-
-
 % minimizar fragmentado de listados
 \lstnewenvironment{listing}[1][]
    {\lstset{#1}\pagebreak[0]}{\pagebreak[0]}
@@ -128,6 +126,9 @@
 
 
 \newcommand{\bigrule}{\titlerule[0.5mm]}
+
+\DeclareMathOperator{\GF}{GF}
+
 
 %Para conseguir que en las páginas en blanco no ponga cabecerass
 \makeatletter
@@ -165,7 +166,7 @@
 
 % Ficheros con los contenidos
 
-	\input{capitulos/guiaDeEstilo}
+	%\input{capitulos/guiaDeEstilo}
 	\input{capitulos/01_Introduccion}
 	\input{capitulos/02_Planificacion}
 	\input{capitulos/03_Analisis}
