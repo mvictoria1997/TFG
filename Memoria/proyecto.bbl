@@ -21,6 +21,15 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{firmaDigital}
+``Firma digital,''
+  \url{https://www.cert.fnmt.es/content/pages_std/html/tutoriales/tuto7.htm}.
+
+\bibitem{blockchain}
+C.~Pastorino, ``Blockchain: qué es, cómo funciona y cómo se está usando en
+  el mercado,'' 2018,
+  \url{https://www.welivesecurity.com/la-es/2018/09/04/blockchain-que-es-como-funciona-y-como-se-esta-usando-en-el-mercado/}.
+
 \bibitem{computacioncuantica-criptografia}
 A.~M. y~Jose Ignacio~Escribano, ``La computación cuántica y el "futuro de la
   criptografía": la criptografía post-cuántica,'' 2020,
@@ -33,14 +42,5 @@ A.~Banafa, ``Computación cuántica y blockchain mitos y realidades,'' 2019,
 \bibitem{computacioncuanticawiki}
 ``Computación cuántica wikipedia,''
   \url{https://es.wikipedia.org/wiki/Computaci\%C3\%B3n\_cu\%C3\%A1ntica}.
-
-\bibitem{firmaDigital}
-``Firma digital,''
-  \url{https://www.cert.fnmt.es/content/pages_std/html/tutoriales/tuto7.htm}.
-
-\bibitem{blockchain}
-C.~Pastorino, ``Blockchain: qué es, cómo funciona y cómo se está usando en
-  el mercado,'' 2018,
-  \url{https://www.welivesecurity.com/la-es/2018/09/04/blockchain-que-es-como-funciona-y-como-se-esta-usando-en-el-mercado/}.
 
 \end{thebibliography}
