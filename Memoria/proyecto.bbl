@@ -21,6 +21,14 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{fases-digitalizacion}
+J.~V. of~Jeremiah~Owyang, ``Roadmap: Five phases of digital eras,'' 2019,
+  \url{https://web-strategist.com/blog/2019/01/04/roadmap-five-phases-of-digital-eras/}.
+
+\bibitem{servicios-seguridad}
+Wikipedia, ``Seguridad de la información,''
+  \url{https://es.wikipedia.org/wiki/Seguridad_de_la_informaci%C3%B3n}.
+
 \bibitem{firmaDigital}
 ``Firma digital,''
   \url{https://www.cert.fnmt.es/content/pages_std/html/tutoriales/tuto7.htm}.
@@ -40,7 +48,7 @@ A.~Banafa, ``Computación cuántica y blockchain mitos y realidades,'' 2019,
   \url{https://www.bbvaopenmind.com/tecnologia/mundo-digital/computacion-cuantica-y-blockchain-mitos-y-realidades/}.
 
 \bibitem{computacioncuanticawiki}
-``Computación cuántica wikipedia,''
+Wikipedia, ``Computación cuántica,''
   \url{https://es.wikipedia.org/wiki/Computaci\%C3\%B3n\_cu\%C3\%A1ntica}.
 
 \end{thebibliography}
