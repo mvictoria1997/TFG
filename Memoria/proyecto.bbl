@@ -29,6 +29,14 @@ J.~V. of~Jeremiah~Owyang, ``Roadmap: Five phases of digital eras,'' 2019,
 Wikipedia, ``Seguridad de la información,''
   \url{https://es.wikipedia.org/wiki/Seguridad_de_la_informaci%C3%B3n}.
 
+\bibitem{criptografia}
+------, ``Criptografía,''
+  \url{https://es.wikipedia.org/wiki/Criptograf%C3%ADa#Protocolos}.
+
+\bibitem{criptografia-asimetrica}
+------, ``Criptografía asimétrica,''
+  \url{https://es.wikipedia.org/wiki/Criptograf%C3%ADa_asim%C3%A9trica}.
+
 \bibitem{firmaDigital}
 ``Firma digital,''
   \url{https://www.cert.fnmt.es/content/pages_std/html/tutoriales/tuto7.htm}.

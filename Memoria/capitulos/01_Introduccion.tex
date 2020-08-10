@@ -31,12 +31,17 @@ La \textbf{integridad} busca mantener la exactitud de los datos, es decir, que n
 
 La \textbf{disponibilidad} es la cualidad de la información de encontrarse a disposición de quienes deben acceder a ella, ya sean personas, procesos o aplicaciones, en el momentos que así lo quieran. Los mecanismos para asegurar la disponibilidad se implementan con la infraestructura tecnológica.
 
-Además de estos tres pilares hay otro principio, la autentificación, que es la propiedad que permite identificar al generador de la información. Trata de comprobar que si un mensaje está firmado por alguien, entonces es él, el que realmente lo envía. Esto se consigue con el uso de cuentas de usuario y contraseñas de acceso.
+Además de estos tres pilares hay otro principio, la \textbf{autentificación}, que es la propiedad que permite identificar al generador de la información. Trata de comprobar si un mensaje enviado por un usuario, ha sido verdaderamente firmado por él mismo. Esto se consigue con el uso de cuentas de usuario y contraseñas de acceso.
 
-Para garantizar estos servicios de seguriza se hace uso de protocolos de seguridad de la información entre los que se encuentra la criptografía, la lógica y la autenticación.
+Para garantizar estos servicios de seguridad se hace uso de protocolos de seguridad de la información entre los que se encuentra la criptografía, la lógica y la autenticación.\\
 
-La criptografía se ocupa de transposicionar u ocultar el mensaje enviado por el emiso hasta que llega a su destino y puede ser descifrado por el receptor. Además dota de seguridad a las comunicaciones, a la información y a las entidades que se comunican. 
+La criptografía se ocupa de cifrar ciertos mensaje con el fin de hacerlos ilegibles a receptores no autorizados, una vez que llega a su destino y sea descifrado, el receptor obtendrá el mensaje original \cite{criptografia}. Además dota de seguridad a las comunicaciones, a la información y a las entidades que se comunican.
 
+Podemos diferenciar dos tipos de criptografía, la criptografía simétrica y la asimétrica. La criptografía simétrica utiliza la misma clave para cifrar y descrifrar un mensaje, esta clave la ha de conocer tanto el emisor como el receptor. La criptografía asimétrica utiliza dos claves la pública y la privada.
+
+En la criptografía asimétrica podemos diferenciar dos ramas \cite{criptografia-asimetrica}. Por un lado, el cifrado de clave pública, donde el emisor cifra el mensaje con la clave pública del destinatario y el receptor lo descifra con su propia clave privada. Y por otro lado, las firmas digitales, donde el emisor firma el mensaje con su clave privada y el receptor puede verificar el mensaje con su propia clave pública, además cualquier manipulación del mensaje se refleja en su resumen o \textit{hash}.\\
+
+Este tipo de criptografía basa su seguridad en la hipótesis de que no se pueden encontrar las claves por fuerza bruta con la tecnología existente en la actualidad.
 
 Punto 4, pero esta confidencialidad se tiene duante un determinado período de tiempo determinado, que es el necesario para calcular las claves
 
