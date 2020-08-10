@@ -29,9 +29,9 @@ La \textbf{confidencialidad} es la propiedad que impide que la información pued
 
 La \textbf{integridad} busca mantener la exactitud de los datos, es decir, que no hayan sido modificados durante su envío. La integridad se obtiene adjuntando al mensaje otro conjunto de datos de comprobación de la integridad, un ejemplo es la firma digital.
 
-La \textbf{disponibilidad} es la cualidad de la información de encontrarse a disposición de quienes deben acceder a ella, ya sean personas, procesos o aplicaciones, en el momentos que así lo quieran. Los mecanismos para asegurar la disponibilidad se implementan con la infraestructura tecnológica.
+La \textbf{disponibilidad} es la cualidad de la información de encontrarse a disposición de quienes deben acceder a ella, ya sean personas, procesos o aplicaciones, en el momentos que así lo quieran. Los mecanismos para asegurar la disponibilidad se implementan con la infraestructura tecnológica.\\
 
-Además de estos tres pilares hay otro principio, la \textbf{autentificación}, que es la propiedad que permite identificar al generador de la información. Trata de comprobar si un mensaje enviado por un usuario, ha sido verdaderamente firmado por él mismo. Esto se consigue con el uso de cuentas de usuario y contraseñas de acceso.
+Además de estos tres pilares hay otro principio, la \textbf{autentificación}, que es la propiedad que permite identificar al generador de la información. Trata de comprobar si un mensaje enviado por un usuario, ha sido verdaderamente firmado por él mismo. Esto se consigue con el uso de cuentas de usuario y contraseñas de acceso.\\
 
 Para garantizar estos servicios de seguridad se hace uso de protocolos de seguridad de la información entre los que se encuentra la criptografía, la lógica y la autenticación.\\
 
@@ -41,10 +41,28 @@ Podemos diferenciar dos tipos de criptografía, la criptografía simétrica y la
 
 En la criptografía asimétrica podemos diferenciar dos ramas \cite{criptografia-asimetrica}. Por un lado, el cifrado de clave pública, donde el emisor cifra el mensaje con la clave pública del destinatario y el receptor lo descifra con su propia clave privada. Y por otro lado, las firmas digitales, donde el emisor firma el mensaje con su clave privada y el receptor puede verificar el mensaje con su propia clave pública, además cualquier manipulación del mensaje se refleja en su resumen o \textit{hash}.\\
 
-Este tipo de criptografía basa su seguridad en la hipótesis de que no se pueden encontrar las claves por fuerza bruta con la tecnología existente en la actualidad.
+Este tipo de criptografía basa su seguridad en la hipótesis de que no se pueden encontrar las claves por fuerza bruta con la tecnología existente en la actualidad. Los ataque de fuerza bruta tratan de recuperar las claves probando todas las posibles combinaciones hasta encontrar la que permite el acceso, a partir del algoritmo de cifrado y del texto cifrado con su original \cite{fuerza-bruta}. Para que la búsqueda tenga éxito se deberán de realizar $10^n-1$ operaciones donde $n$ es la logitud de la clave. 
 
-Punto 4, pero esta confidencialidad se tiene duante un determinado período de tiempo determinado, que es el necesario para calcular las claves
+Otro factor importante es si en la clave aparencen números, caractéres o la combinación de ambos, aumentando así el coste de encontrar las clavess, llegando a alcanzar tiempos de cálculo logarítmicos, es decir, que podrían tardar siglos en encontrar una contraseña compleja pero también depende de la capacidad de operación del ordenador.\\
 
+En este contexto, la aparición de la futura computación cuántica permitirá el cálculo de operaciones a una velocidad mucho mayor. En la gráfica \ref{fig:comp-clasica-cuantica} podemos observar la capacidad de cómputo del peor ordenador cuántico, con la línea continua, que sigue la gráfica de una función exponencial, frente a la capacidad del mejor ordenador clásico, la línea discontinua, que sigue una función lineal.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figuras/comp_clasica_cuantica.png}
+	\caption{Comparativa de la capacidad de cómputo de un ordenador clásico con un ordenador cuántico\cite{clasica-vs-cuantica}}
+	\label{fig:comp-clasica-cuantica}
+\end{figure}
+
+La comparativa también nos muestra que para operaciones pequeñas como, por ejemplo, editar un documento de texto un ordenador cuántico sería probablemente ineficienciente. Por tanto lo mejor sería un ordenador híbrido, que mezclase computación clásica, para cálculos pequeños, y computación cuántica, para operaciones de mayor tamaño.\\
+
+Cuando esté desarrollado el ordenador cuántico no serán válidos los actuales algoritmos criptográficos de clave pública, como RSA, Diffie-Hellman y ECDSA, ya que se basan en los problemas del logaritmo discreto y factorización de enteros, resolubles fácilmente por un ordenador cuántico.\\
+
+En la actualidad, se están desarrollando muchos algoritmos para que seanresistentes a ataque de tipo cuántico.\\
+
+Por otro lado, también en la actualidad está siendo muy relevante la adopción de las blockchain como tecnología para ofrecer diversos servicios.\\
+
+En este proyecto, hemos implementado un algoritmo resistente a ataques cuánticos, UOV \cite{algoritmo-UOV} y se ha adaptado a la \textit{blockchain} ARK para que se utilice dicho algoritmo de firma.\\
 
 \section{Objetivos del proyecto y logros conseguidos}
 \label{sec:intro:objetivos}
@@ -110,10 +128,19 @@ En los siguientes apartados se explica los contenidos claves de este proyecto.
 	A lo largo del desarrollo de este trabajo tendremos presentes dos tecnologías, la computación cuántica y las cadenas de bloques. 
 
 La computación cuántica constituye un nuevo paradigma de la informática basado en los principios de la teoría cuántica. La computación clásica funciona con bits cuyos valores pueden ser 0 o 1, mientras que la computación cuántica funciona con bit cuánticos o cúbits, donde son una combinación de 0 y 1, pudiendo tomar ambos valores a la vez, esto se denomina la superposición cuántica de los estados \cite{computacioncuantica-criptografia}.
+La figura \ref{fig:bit-cubit} muestra
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figuras/bit_cubit.png}
+	\caption{Comparativa de la capacidad de cómputo de un ordenador clásico con un ordenador cuántico\cite{clasica-vs-cuantica}}
+	\label{fig:bit-cubit}
+\end{figure}
 
 La superposición cuántica aporta gran capacidad de procesamiento, lo que hace posible resolver de manera eficiente problemas de mayor complejidad como la factorización de enteros, el algoritmo discreto y la simulación cuántica, que a día de hoy con los ordenadores clásicos son difíciles de romper. 
 
 Otro aspecto importante de la física cuántica relacionado con la superposición es el entrelazamiento de las partículas\cite{cumputacioncuanticaclasica}. Esto es, si dos partículas en algún instante han interactuado retienen un tipo de conexión y pueden entrelazarse formando pares. Esto permite que aunque los cúbits estén separados interactúen entre sí. Con estos dos aspectos la capacidad de procesamiento aumenta considerablemente, cuántos más cúbits la capacidad de procesamiento aumenta considerablemente.
+
 
 La evolución de la tecnología se ha basado principalmente en la reducción de los transistores para aumentar la velocidad, llegando a escalas de tan solo algunas decenas de nanómetros. Esto tiene un límite y es la eficiencia, puesto que al seguir disminuyendo el tamaño podrían dejar de funcionar correctamente. De ahí surge la necesidad de descubrir nuevas tecnologías, la computación cuántica \cite{computacioncuanticawiki}.
 

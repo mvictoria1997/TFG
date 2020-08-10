@@ -25,25 +25,13 @@
 @misc{criptografia,
 	title={Criptografía},
 	author={Wikipedia},
-	note="\url{https://es.wikipedia.org/wiki/Criptograf%C3%ADa}"
+	note="\url{https://es.wikipedia.org/wiki/Criptograf%C3%ADa#Protocolos}"
 }
 
 @misc{criptografia-asimetrica,
 	title={Criptografía Asimétrica},
 	author={Wikipedia},
 	note="\url{https://es.wikipedia.org/wiki/Criptograf%C3%ADa_asim%C3%A9trica}"
-}
-
-@misc{fuerza-bruta,
-	title={Atáque de fuerza bruta},
-	author={Wikipedia},
-	note="\url{https://es.wikipedia.org/wiki/Ataque_de_fuerza_bruta}"
-}
-
-@misc{clasica-vs-cuantica,
-	title={Qilimanjaro: Next computing generation, Quantum computation at your fingertips},
-	year={2018},
-	note="\url{https://neironix.io/documents/whitepaper/4514/whitepaper.pdf}"
 }
 
 @misc{computacioncuantica-criptografia,

@@ -8,54 +8,56 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: bibliografia/bibliografia.bib
-You're missing a field name---line 80 of file bibliografia/bibliografia.bib
+You're missing a field name---line 92 of file bibliografia/bibliografia.bib
  : @misc{imagen-triada, 
  :                      %Ver imagen triada cia, puede servir para las diapos
 I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "comp-clasica-cuantica"
+Warning--I didn't find a database entry for "algoritmo-UOV"
 -- IEEEtran.bst version 1.12 (2007/01/11) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-You've used 9 entries,
+You've used 11 entries,
             4024 wiz_defined-function locations,
-            846 strings with 8722 characters,
-and the built_in function-call counts, 3202 in all, are:
-= -- 232
-> -- 33
+            855 strings with 9014 characters,
+and the built_in function-call counts, 3854 in all, are:
+= -- 279
+> -- 38
 < -- 0
-+ -- 17
-- -- 8
-* -- 106
-:= -- 558
-add.period$ -- 18
-call.type$ -- 9
-change.case$ -- 18
++ -- 20
+- -- 9
+* -- 124
+:= -- 668
+add.period$ -- 22
+call.type$ -- 11
+change.case$ -- 22
 chr.to.int$ -- 0
-cite$ -- 9
-duplicate$ -- 290
-empty$ -- 327
-format.name$ -- 8
-if$ -- 678
+cite$ -- 11
+duplicate$ -- 353
+empty$ -- 398
+format.name$ -- 9
+if$ -- 821
 int.to.chr$ -- 0
-int.to.str$ -- 9
-missing$ -- 71
-newline$ -- 50
-num.names$ -- 8
-pop$ -- 208
+int.to.str$ -- 11
+missing$ -- 86
+newline$ -- 56
+num.names$ -- 9
+pop$ -- 254
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 246
+skip$ -- 297
 stack$ -- 0
-substring$ -- 27
-swap$ -- 149
+substring$ -- 33
+swap$ -- 180
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 9
+type$ -- 11
 warning$ -- 0
-while$ -- 8
-width$ -- 10
-write$ -- 88
+while$ -- 9
+width$ -- 13
+write$ -- 102
 (There was 1 error message)
