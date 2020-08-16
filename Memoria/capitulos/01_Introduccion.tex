@@ -56,13 +56,37 @@ En este contexto, la aparición de la futura computación cuántica permitirá e
 
 La comparativa también nos muestra que para operaciones pequeñas como, por ejemplo, editar un documento de texto un ordenador cuántico sería probablemente ineficienciente. Por tanto lo mejor sería un ordenador híbrido, que mezclase computación clásica, para cálculos pequeños, y computación cuántica, para operaciones de mayor tamaño.\\
 
-Cuando esté desarrollado el ordenador cuántico no serán válidos los actuales algoritmos criptográficos de clave pública, como RSA, Diffie-Hellman y ECDSA, ya que se basan en los problemas del logaritmo discreto y factorización de enteros, resolubles fácilmente por un ordenador cuántico.\\
+Cuando esté desarrollado el ordenador cuántico no serán válidos los actuales algoritmos criptográficos de clave pública, como RSA, Diffie-Hellman y ECDSA, ya que se basan en los problemas del logaritmo discreto y factorización de enteros, resolubles fácilmente por un ordenador cuántico. Veámos una tabla comparativa\ref{table:security-level}, nos indice \\
 
-En la actualidad, se están desarrollando muchos algoritmos para que seanresistentes a ataque de tipo cuántico.\\
+\begin{table}[h]
+	
+	\label{table:security-level}
+	\centering
+	\resizebox{\linewidth}{!}{
+	\begin{tabular}{c c c c c }
+		\hline \\[-1.5ex]
+		\thead{Tipo} & \thead{Algoritmo-Longitud clave} & \thead{Nivel seguridad\\ (ordenador clásico)} & \thead{Nivel seguridad\\ (ordenador cuántico)} & \thead{Ataque cuántico}\\ [1ex] 
+		\hline\hline \\[-1.5ex]
+		\multirow{4}{5em}{Asimétrico} & RSA-2048 & 112 & 0 & Algoritmo de Shor \\ [0.5ex]
+		& RSA-3072 & 128 & 0 & Algoritmo de Shor \\ [0.5ex]
+		& ECC-521 & 128 & 0 & Algoritmo de Shor \\ [0.5ex]
+		& ECC-521 & 256 & 0 & Algoritmo de Shor \\ [0.5ex]
+		\hline
+		\multirow{2}{5em}{Simétrico} & AES-128 & 128 & 64 & Algoritmo de Grover \\ [0.5ex]
+		& AES-256 & 256 & 128 & Algoritmo de Grover \\ [1ex]
+		\hline
+	\end{tabular}}
+	\caption{Niveles de seguridad de ordenadores clásicos y cuánticos \cite{security-bit}}
+\end{table}
+
+
+En la actualidad, se están desarrollando muchos algoritmos para que sean resistentes a ataque de tipo cuántico.\\
 
 Por otro lado, también en la actualidad está siendo muy relevante la adopción de las blockchain como tecnología para ofrecer diversos servicios.\\
 
 En este proyecto, hemos implementado un algoritmo resistente a ataques cuánticos, UOV \cite{algoritmo-UOV} y se ha adaptado a la \textit{blockchain} ARK para que se utilice dicho algoritmo de firma.\\
+
+El agoritmo de firma implementado en la \textit{blockchain} es Schnorr basado en el problema del logaritmo discreto, por eso lo hemos modificado.
 
 \section{Objetivos del proyecto y logros conseguidos}
 \label{sec:intro:objetivos}

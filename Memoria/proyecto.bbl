@@ -21,6 +21,16 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{clasica-vs-cuantica}
+``Qilimanjaro: Next computing generation, quantum computation at your
+  fingertips,'' 2018,
+  \url{https://neironix.io/documents/whitepaper/4514/whitepaper.pdf}.
+
+\bibitem{security-bit}
+L.~Wilson, ``The rise of quantum computers – the current state of
+  cryptographic affairs,'' 2016,
+  \url{https://www.activecyber.net/rise-quantum-computers-current-state-cryptographic-affairs/}.
+
 \bibitem{fases-digitalizacion}
 J.~V. of~Jeremiah~Owyang, ``Roadmap: Five phases of digital eras,'' 2019,
   \url{https://web-strategist.com/blog/2019/01/04/roadmap-five-phases-of-digital-eras/}.
@@ -40,11 +50,6 @@ Wikipedia, ``Criptografía asimétrica,''
 \bibitem{fuerza-bruta}
 Wikipedia, ``Atáque de fuerza bruta,''
   \url{https://es.wikipedia.org/wiki/Ataque_de_fuerza_bruta}.
-
-\bibitem{clasica-vs-cuantica}
-``Qilimanjaro: Next computing generation, quantum computation at your
-  fingertips,'' 2018,
-  \url{https://neironix.io/documents/whitepaper/4514/whitepaper.pdf}.
 
 \bibitem{firmaDigital}
 ``Firma digital,''
