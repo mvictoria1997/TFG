@@ -56,7 +56,9 @@ En este contexto, la aparición de la futura computación cuántica permitirá e
 
 La comparativa también nos muestra que para operaciones pequeñas como, por ejemplo, editar un documento de texto un ordenador cuántico sería probablemente ineficienciente. Por tanto lo mejor sería un ordenador híbrido, que mezclase computación clásica, para cálculos pequeños, y computación cuántica, para operaciones de mayor tamaño.\\
 
-Cuando esté desarrollado el ordenador cuántico no serán válidos los actuales algoritmos criptográficos de clave pública, como RSA, Diffie-Hellman y ECDSA, ya que se basan en los problemas del logaritmo discreto y factorización de enteros, resolubles fácilmente por un ordenador cuántico. Veámos una tabla comparativa\ref{table:security-level}, nos indice \\
+Cuando esté desarrollado el ordenador cuántico no serán válidos los actuales algoritmos criptográficos de clave pública, como \acrshort{rsa}, Diffie-Hellman y \mbox{\acrshort{ecdsa}}, ya que se basan en los problemas del logaritmo discreto y factorización de enteros, resolubles fácilmente por un ordenador cuántico. Las primeras ideas de la criptografía cuántica se tiene en los años 70, destacando los algoritmos de Shor y Grover.
+
+Veamos la tabla comparativa \ref{table:security-level}, esta nos indica el tipo de algoritmo criptográfico, el algoritmo con la longitud de la clave y a continuación el nivel de seguridad tanto en un ordenador clásico como en uno cuántico. El nivel de seguridad de un algoritmo nos indica el número de operaciones necesarias para romper dicho algoritmo, por ejemplo, si tiene un nivel de seguridad $n$ entonces se requieren $2^n$ operaciones para romper el algoritmo \cite{security-level}. Observamos que hay una diferencia considerable en los niveles de seguridad de los algoritmo asimétricos, puesto que con un ordenador clásico al menos se necesitan $2^{112}$ operaciones mientras que con computación cuántica solo una. \\
 
 \begin{table}[h]
 	
@@ -71,7 +73,7 @@ Cuando esté desarrollado el ordenador cuántico no serán válidos los actuales
 		& RSA-3072 & 128 & 0 & Algoritmo de Shor \\ [0.5ex]
 		& ECC-521 & 128 & 0 & Algoritmo de Shor \\ [0.5ex]
 		& ECC-521 & 256 & 0 & Algoritmo de Shor \\ [0.5ex]
-		\hline
+		\hline \\[-1.5ex]
 		\multirow{2}{5em}{Simétrico} & AES-128 & 128 & 64 & Algoritmo de Grover \\ [0.5ex]
 		& AES-256 & 256 & 128 & Algoritmo de Grover \\ [1ex]
 		\hline
@@ -80,7 +82,7 @@ Cuando esté desarrollado el ordenador cuántico no serán válidos los actuales
 \end{table}
 
 
-En la actualidad, se están desarrollando muchos algoritmos para que sean resistentes a ataque de tipo cuántico.\\
+En la actualidad, se están desarrollando muchos algoritmos para que sean resistentes a ataques de tipo cuántico.\\
 
 Por otro lado, también en la actualidad está siendo muy relevante la adopción de las blockchain como tecnología para ofrecer diversos servicios.\\
 
@@ -119,7 +121,10 @@ A continuación se muestran los capítulos que presenta la memoria junto con una
 En los siguientes apartados se explica los contenidos claves de este proyecto.
 
 \subsection{Computación cuántica}
+Poner un poco de historia ver 
 
+\url{https://es.wikipedia.org/wiki/Computaci%C3%B3n_cu%C3%A1ntica#Cronolog%C3%ADa}
+\url{http://openaccess.uoc.edu/webapps/o2/bitstream/10609/89026/6/alvaroreyesTFM1218memoria.pdf}
 \subsection{Algoritmo UOV}
 
 \subsection{Blockchain}
