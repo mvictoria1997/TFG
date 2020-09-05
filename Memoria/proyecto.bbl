@@ -27,12 +27,12 @@
   \url{https://neironix.io/documents/whitepaper/4514/whitepaper.pdf}.
 
 \bibitem{security-bit}
-L.~Wilson, ``The rise of quantum computers – the current state of
-  cryptographic affairs,'' 2016,
+L.~Wilson, ``{The Rise of Quantum Computers – The Current State of
+  Cryptographic Affairs},'' 2016,
   \url{https://www.activecyber.net/rise-quantum-computers-current-state-cryptographic-affairs/}.
 
 \bibitem{fases-digitalizacion}
-J.~V. of~Jeremiah~Owyang, ``Roadmap: Five phases of digital eras,'' 2019,
+J.~V. of~Jeremiah~Owyang, ``{Roadmap: Five Phases of Digital Eras},'' 2019,
   \url{https://web-strategist.com/blog/2019/01/04/roadmap-five-phases-of-digital-eras/}.
 
 \bibitem{servicios-seguridad}
@@ -44,7 +44,7 @@ Wikipedia, ``Criptografía,''
   \url{https://es.wikipedia.org/wiki/Criptograf%C3%ADa}.
 
 \bibitem{criptografia-asimetrica}
-Wikipedia, ``Criptografía asimétrica,''
+Wikipedia, ``{Criptografía Asimétrica},''
   \url{https://es.wikipedia.org/wiki/Criptograf%C3%ADa_asim%C3%A9trica}.
 
 \bibitem{fuerza-bruta}
@@ -52,8 +52,24 @@ Wikipedia, ``Atáque de fuerza bruta,''
   \url{https://es.wikipedia.org/wiki/Ataque_de_fuerza_bruta}.
 
 \bibitem{security-level}
-Wikipedia, ``Security level,''
+Wikipedia, ``{Security Level},''
   \url{https://en.wikipedia.org/wiki/Security_level}.
+
+\bibitem{criptografia-postcuantica}
+Wikipedia, ``Criptografía postcuántica,''
+  \url{https://es.wikipedia.org/wiki/Criptograf%C3%ADa_postcu%C3%A1ntica}.
+
+\bibitem{Fogo-Chao}
+Wikipedia, ``{Restaurante Fogo de Ch\~{a}o},''
+  \url{https://en.wikipedia.org/wiki/Fogo_de_Ch%C3%A3o}.
+
+\bibitem{algoritmo-UOV}
+A.~Szepieniec, B.~Preneel, F.~Vercaunteren, and W.~Beullens, ``{LUOV: Signature
+  Scheme proposal for NIST PQC Project (Round 2 version)},'' 2018,
+  \url{https://github.com/WardBeullens/LUOV/blob/master/Supporting_Documentation/luov.pdf}.
+
+\bibitem{ark}
+``Ark,'' \url{https://ark.io/}.
 
 \bibitem{firmaDigital}
 ``Firma digital,''
@@ -64,16 +80,16 @@ C.~Pastorino, ``Blockchain: qué es, cómo funciona y cómo se está usando en
   el mercado,'' 2018,
   \url{https://www.welivesecurity.com/la-es/2018/09/04/blockchain-que-es-como-funciona-y-como-se-esta-usando-en-el-mercado/}.
 
-\bibitem{computacioncuantica-criptografia}
-A.~M. y~Jose Ignacio~Escribano, ``La computación cuántica y el "futuro de la
+\bibitem{computacion-cuantica-criptografia}
+A.~Muñoz and J.~I. Escribano, ``La computación cuántica y el "futuro de la
   criptografía": la criptografía post-cuántica,'' 2020,
   \url{https://www.bbvanexttechnologies.com/la-computacion-cuantica-y-el-futuro-de-la-criptografia-la-criptografia-post-cuantica/}.
 
-\bibitem{cumputacioncuanticaclasica}
-A.~Banafa, ``Computación cuántica y blockchain mitos y realidades,'' 2019,
+\bibitem{cumputacion-cuantica-clasica}
+A.~Banafa, ``Computación cuántica y blockchain, mitos y realidades,'' 2019,
   \url{https://www.bbvaopenmind.com/tecnologia/mundo-digital/computacion-cuantica-y-blockchain-mitos-y-realidades/}.
 
-\bibitem{computacioncuanticawiki}
+\bibitem{computacion-cuantica-wiki}
 Wikipedia, ``Computación cuántica,''
   \url{https://es.wikipedia.org/wiki/Computaci\%C3\%B3n\_cu\%C3\%A1ntica}.
 
