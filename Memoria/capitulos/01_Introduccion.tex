@@ -90,7 +90,6 @@ Esta tecnología se ha integrado en diferentes áreas, donde resalta el uso en l
 
 En este proyecto, se ha implementado un algoritmo resistente a ataques cuánticos, UOV \cite{algoritmo-UOV} y se ha adaptado a la \textit{blockchain} ARK \cite{ark} para que se utilice dicho algoritmo de firma.\\
 
-El agoritmo de firma implementado en la \textit{blockchain} es Schnorr basado en el problema del logaritmo discreto, por eso lo hemos modificado.
 
 \section{Objetivos del proyecto y logros conseguidos}
 \label{sec:intro:objetivos}
@@ -127,10 +126,41 @@ Poner un poco de historia ver
 
 \url{https://es.wikipedia.org/wiki/Computaci%C3%B3n_cu%C3%A1ntica#Cronolog%C3%ADa}
 \url{http://openaccess.uoc.edu/webapps/o2/bitstream/10609/89026/6/alvaroreyesTFM1218memoria.pdf}
-\subsection{Algoritmo UOV}
+
+La computación cuántica constituye un nuevo paradigma de la informática basado en los principios de la teoría cuántica. La computación clásica funciona con bits cuyos valores pueden ser 0 o 1, mientras que la computación cuántica funciona con bit cuánticos o cúbits, donde son una combinación de 0 y 1, pudiendo tomar ambos valores a la vez, esto se denomina la superposición cuántica de los estados \cite{computacion-cuantica-criptografia}.
+La figura \ref{fig:bit-cubit} muestra
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figuras/bit_cubit.png}
+	\caption{Comparativa de la capacidad de cómputo de un ordenador clásico con un ordenador cuántico\cite{clasica-vs-cuantica}}
+	\label{fig:bit-cubit}
+\end{figure}
+
+La superposición cuántica aporta gran capacidad de procesamiento, lo que hace posible resolver de manera eficiente problemas de mayor complejidad como la factorización de enteros, el algoritmo discreto y la simulación cuántica, que a día de hoy con los ordenadores clásicos son difíciles de romper. 
+
+Otro aspecto importante de la física cuántica relacionado con la superposición es el entrelazamiento de las partículas\cite{cumputacion-cuantica-clasica}. Esto es, si dos partículas en algún instante han interactuado retienen un tipo de conexión y pueden entrelazarse formando pares. Esto permite que aunque los cúbits estén separados interactúen entre sí. Con estos dos aspectos la capacidad de procesamiento aumenta considerablemente, cuántos más cúbits la capacidad de procesamiento aumenta considerablemente.
+
+
+La evolución de la tecnología se ha basado principalmente en la reducción de los transistores para aumentar la velocidad, llegando a escalas de tan solo algunas decenas de nanómetros. Esto tiene un límite y es la eficiencia, puesto que al seguir disminuyendo el tamaño podrían dejar de funcionar correctamente. De ahí surge la necesidad de descubrir nuevas tecnologías, la computación cuántica \cite{computacion-cuantica-wiki}.
+
+El estudio de las tecnologías cuánticas se inició en 1980, donde surgieron teorías con la posibilidad de realizar cálculos cuánticos. En la década de los 90 se empezó a poner en práctica algunas teoría, apareciendo los primeros algoritmos cuánticos, primeras aplicaciones cuánticas y las primera máquinas diseñadas para realizar cálculos cuánticos.\\
+
+
 
 \subsection{Blockchain}
 
+Por otro lado tenemos las cadenas de bloques o \textit{blockchain}. Esta tecnología permite verificar, validar, rastrear todo tipo de información, ya sean contratos inteligentes, transacciones financieras, certificados digitales o firmas, que será el centro de este proyecto.
+
+Los datos que almacenan cada bloque son transacciones válidas, información referente a ese bloque y la relación con el bloque anterior mediante el \textit{hash}, por tanto el bloque tiene un lugar específico dentro de la cadena. De esta forma si hay una alteración en un determinado bloque se verá reflejado en su \textit{hash} y en el de los bloques posteriores, haciendo que la cadena que la información de la cadena no se pueda perder, modificar o eliminar. 
+
+Las aplicaciones de las cadenas de bloques son diversas entre ellas se encuentra la salud o la firma de documentos en las notarías. En el primer caso, cada centro  de salud podría tener el historial médico de cualquier paciente, de una forma segura y evitando falsificaciones, estos historiales se encontrarían en nodos distribuidos de forma descentralizada de forma que tuvieran un acceso rápido y seguro. En el segundo caso será en el que nos centraremos a lo largo de este proyecto. Hoy día la firma de documentos o transacciones por parte de un usuario es un problema puesto que se pueden copiar con facilidad, pero con \textit{blockchain} no podrían ser falsificadas debido a la propiedad de validación y rastreo de los datos.\\
+
+Las \textit{blockchain} por si mismas serían vulnerables a ataques cuánticos, pues su única línea de defensa sería el algoritmo de firma de los bloques. Las cadenas de bloques actualmente son seguras, puesto que un ordenador clásico no tiene la capacidad de cómputo necesaria para descifrar cada bloque, obtener la información y volver a firmar todos los bloques sin dejar huella. Por eso para hacer una \textit{blockchain} resistente es necesario tener un criptosistema que no se pueda romper con computación cuántica, como por ejemplo el algoritmo UOV, ver sección \ref{sec:implementacion}. 
+
+
+
+\subsection{Algoritmo UOV}
 
 
 \begin{itemize}
@@ -156,36 +186,10 @@ Poner un poco de historia ver
 	%\item Árboles Merkle: Árboles binarios con funciones hash, cada nodo tiene con máximo dos hijos, no hay ciclos. El cálculo de los hash de los padres se hace combinando los hash de los hijos. La integridad se obtiene inclueyendo en los bloques el valor del nodo raíz en lugar de añadir el valor de todos los datos protegidos por los bloques, reducimos además la información de la cabecera.
 	
 	
-	A lo largo del desarrollo de este trabajo tendremos presentes dos tecnologías, la computación cuántica y las cadenas de bloques. 
-
-La computación cuántica constituye un nuevo paradigma de la informática basado en los principios de la teoría cuántica. La computación clásica funciona con bits cuyos valores pueden ser 0 o 1, mientras que la computación cuántica funciona con bit cuánticos o cúbits, donde son una combinación de 0 y 1, pudiendo tomar ambos valores a la vez, esto se denomina la superposición cuántica de los estados \cite{computacion-cuantica-criptografia}.
-La figura \ref{fig:bit-cubit} muestra
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.8\textwidth]{figuras/bit_cubit.png}
-	\caption{Comparativa de la capacidad de cómputo de un ordenador clásico con un ordenador cuántico\cite{clasica-vs-cuantica}}
-	\label{fig:bit-cubit}
-\end{figure}
-
-La superposición cuántica aporta gran capacidad de procesamiento, lo que hace posible resolver de manera eficiente problemas de mayor complejidad como la factorización de enteros, el algoritmo discreto y la simulación cuántica, que a día de hoy con los ordenadores clásicos son difíciles de romper. 
-
-Otro aspecto importante de la física cuántica relacionado con la superposición es el entrelazamiento de las partículas\cite{cumputacion-cuantica-clasica}. Esto es, si dos partículas en algún instante han interactuado retienen un tipo de conexión y pueden entrelazarse formando pares. Esto permite que aunque los cúbits estén separados interactúen entre sí. Con estos dos aspectos la capacidad de procesamiento aumenta considerablemente, cuántos más cúbits la capacidad de procesamiento aumenta considerablemente.
-
-
-La evolución de la tecnología se ha basado principalmente en la reducción de los transistores para aumentar la velocidad, llegando a escalas de tan solo algunas decenas de nanómetros. Esto tiene un límite y es la eficiencia, puesto que al seguir disminuyendo el tamaño podrían dejar de funcionar correctamente. De ahí surge la necesidad de descubrir nuevas tecnologías, la computación cuántica \cite{computacion-cuantica-wiki}.
-
-El estudio de las tecnologías cuánticas se inició en 1980, donde surgieron teorías con la posibilidad de realizar cálculos cuánticos. En la década de los 90 se empezó a poner en práctica algunas teoría, apareciendo los primeros algoritmos cuánticos, primeras aplicaciones cuánticas y las primera máquinas diseñadas para realizar cálculos cuánticos.\\
+	
 
 
 
-Por otro lado tenemos las cadenas de bloques o \textit{blockchain}. Esta tecnología permite verificar, validar, rastrear todo tipo de información, ya sean contratos inteligentes, transacciones financieras, certificados digitales o firmas, que será el centro de este proyecto.
-
-Los datos que almacenan cada bloque son transacciones válidas, información referente a ese bloque y la relación con el bloque anterior mediante el \textit{hash}, por tanto el bloque tiene un lugar específico dentro de la cadena. De esta forma si hay una alteración en un determinado bloque se verá reflejado en su \textit{hash} y en el de los bloques posteriores, haciendo que la cadena que la información de la cadena no se pueda perder, modificar o eliminar. 
-
-Las aplicaciones de las cadenas de bloques son diversas entre ellas se encuentra la salud o la firma de documentos en las notarías. En el primer caso, cada centro  de salud podría tener el historial médico de cualquier paciente, de una forma segura y evitando falsificaciones, estos historiales se encontrarían en nodos distribuidos de forma descentralizada de forma que tuvieran un acceso rápido y seguro. En el segundo caso será en el que nos centraremos a lo largo de este proyecto. Hoy día la firma de documentos o transacciones por parte de un usuario es un problema puesto que se pueden copiar con facilidad, pero con \textit{blockchain} no podrían ser falsificadas debido a la propiedad de validación y rastreo de los datos.\\
-
-Las \textit{blockchain} por si mismas serían vulnerables a ataques cuánticos, pues su única línea de defensa sería el algoritmo de firma de los bloques. Las cadenas de bloques actualmente son seguras, puesto que un ordenador clásico no tiene la capacidad de cómputo necesaria para descifrar cada bloque, obtener la información y volver a firmar todos los bloques sin dejar huella. Por eso para hacer una \textit{blockchain} resistente es necesario tener un criptosistema que no se pueda romper con computación cuántica, como por ejemplo el algoritmo UOV, ver sección \ref{sec:implementacion}. 
 
 \end{itemize}
 
