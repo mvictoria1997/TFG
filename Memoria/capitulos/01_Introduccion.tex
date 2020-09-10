@@ -122,10 +122,10 @@ A continuación se muestran los capítulos que presenta la memoria junto con una
 En los siguientes apartados se explica los contenidos claves de este proyecto.
 
 \subsection{Computación cuántica}
-Poner un poco de historia ver 
+%Poner un poco de historia ver 
 
-\url{https://es.wikipedia.org/wiki/Computaci%C3%B3n_cu%C3%A1ntica#Cronolog%C3%ADa}
-\url{http://openaccess.uoc.edu/webapps/o2/bitstream/10609/89026/6/alvaroreyesTFM1218memoria.pdf}
+%\url{https://es.wikipedia.org/wiki/Computaci%C3%B3n_cu%C3%A1ntica#Cronolog%C3%ADa}
+%\url{http://openaccess.uoc.edu/webapps/o2/bitstream/10609/89026/6/alvaroreyesTFM1218memoria.pdf}
 
 La computación cuántica constituye un nuevo paradigma de la informática basado en los principios de la teoría cuántica. La computación clásica funciona con bits cuyos valores pueden ser 0 o 1, mientras que la computación cuántica funciona con bit cuánticos o cúbits, donde son una combinación de 0 y 1, pudiendo tomar ambos valores a la vez, esto se denomina la superposición cuántica de los estados \cite{computacion-cuantica-criptografia}.
 La figura \ref{fig:bit-cubit} muestra
@@ -168,17 +168,14 @@ En 2004, el informático y criptógrafo Harold Thomas Finney introdujo el sistem
 
 A finales de 2008, un grupo de desarrolladores bajo el nombre de Satoshi Nakamoto publican un documento técnico en que se establece un modelo para \textit{blockchain}. Está basado en el algoritmo RPoW pero en lugar de usar dicho hardware, se utiliza un protocolo descentralizado peer-to-peer para verificar y restrear las transacciones. En otras palablas los ``mineros'' extraen bitcoins para obtener una recompensa mediantes pruebas de trabajo y posteriormente los nodos los verifican. Bitcoin nació el 3 de enero de 2009 cuando Satoshi Nakamoto extrajo el primer bloque de bitcoin con una recompensa de 50 bitcoins. Y el 12 de enero de 2009 tuvo lugar la primera transacción entre Satoshi Nakamoto y Hal Finney que obtuvo 10 bitcoins.
 
-A partir de 2014, se comienzan a explorar el potencial de las cadenas de bloque y a buscar otras aplicaciones más allá de su uso en las transacciones financieras.
-Ethereum introduce programas informáticos en los bloques que representan instrumentos financieros como los bonos, conocidos como contratos inteligentes.
+A partir de 2014, se comienzan a explorar el potencial de las cadenas de bloque y a buscar otras aplicaciones fuera de su uso en las transacciones financieras.
+Ethereum introduce programas informáticos que se ejecutan en la \textit{blockchain}, se pueden utilizar para realizar una transacción cumpliendo ciertas condiciones como los contratos inteligentes.
 
-Un contrato inteligenete es un programa informático que facilita y asegura los acuerdos registrados entre dos o más partes\cite{contrato-inteligente}.
+Un contrato inteligenete se tratan de contratos que tienen la capacidad de cumplirse de forma automática. Un contrato inteligente está constituido por un protocolo de códigos que permiten a un dispositivo ejecutar de forma automatizada las sentencias previamente programadas, prescindiendo de la intervención humana \cite{contrato-inteligente}.
 
- Contratos inteligentes: Base de "propiedades inteligentes" que permiten definir mediante códigos de la Blockchain, la forma en la que los dispositivos reaccionan ante eventos que tienen lugar en su entorno. Llevan incorporada una máquina virtual que habilita la codificación y ejecución de programas software para determinar las condiciones sobre el intercambio de activos entre agentes.
+Además de los contratos inteligentes, Ethereum tiene su propia criptomoneda llamada Ether, se puede transferir entre cuentas y se utiliza para pagar las tarifas por la ejecución de los contratos inteligentes.
 
-\\
-
-
-
+Actualmente las \textit{blockchain} tiene otros usos más allá de las criptomonedas.\\
 
 
 Las cadenas de bloques o \textit{blockchain} permiten verificar, validar, rastrear todo tipo de información, ya sean contratos inteligentes, transacciones financieras, certificados digitales o firmas \cite{blockchain}, siendo estas últimas el centro de este trabajo. También permiten impulsar modificaciones orientadas a crear soluciones más robustas, por ejemplo en centros de salud o notarías que se explicarán más adelante.\\
@@ -197,21 +194,21 @@ La función \textit{hash} es el resultado de aplicar una función que transforma
 
 De la misma forma si hay un cambio en una de las transacciones de un bloque se reflejará en el \textit{hash} del bloque, afectado a todos los bloques anteriores. Así si el atacante quiere preservar la integridad deberá de modificar todos los bloques siendo una tarea imposible. De esta forma se obtiene la inmutabilidad de los datos.\\
 
-Las aplicaciones de las cadenas de bloques son diversas entre ellas se encuentra la salud o la firma de documentos en las notarías. En el primer caso, cada centro  de salud podría tener el historial médico de cualquier paciente, de una forma segura y evitando falsificaciones, estos historiales se encontrarían en nodos distribuidos de forma descentralizada así se obtendría un acceso rápido y seguro. El segundo caso será en el que nos centraremos a lo largo de este proyecto. Hoy día la firma de documentos o transacciones por parte de un usuario es un problema puesto que se pueden copiar con facilidad, pero con \textit{blockchain} no podrían ser falsificadas debido a la propiedad de validación y rastreo de los datos.\\
+Hoy en día, la tecnología \textit{blockchain} está ganando mucha atención, no limitandose solo al uso en las criptomonedas. Así las cadenas de bloques tienen diversas aplicaciones entre ellas se encuentra la salud o la firma de documentos en las notarías. En el primer caso, cada centro  de salud podría tener el historial médico de cualquier paciente, de una forma segura y evitando falsificaciones, estos historiales se encontrarían en nodos distribuidos de forma descentralizada así se obtendría un acceso rápido y seguro. El segundo caso será en el que nos centraremos a lo largo de este proyecto. Hoy día la firma de documentos o transacciones por parte de un usuario es un problema puesto que se pueden copiar con facilidad, pero con \textit{blockchain} no podrían ser falsificadas debido a la propiedad de validación y rastreo de los datos.\\
 
 
 \subsection{Algoritmo UOV}\label{sec:intro:UOV}
 
 
-\begin{itemize}
-	\item Algoritmo cuántico: Son los algoritmos que pueden ser resueltos por un computador cuántico en tiempo polinómico.
+%\begin{itemize}
+%	\item Algoritmo cuántico: Son los algoritmos que pueden ser resueltos por un computador cuántico en tiempo polinómico.
 
 	
 
- 	\item Firma electrónica: Sirve para controlar la integridad de los datos y asegurar que la información procede de quien dice ser su remitente, garantiza que la información que se almacena o se envía no ha sido modificada. Controla la auditoría del documento \cite{firmaDigital}. 
+ %	\item Firma electrónica: Sirve para controlar la integridad de los datos y asegurar que la información procede de quien dice ser su remitente, garantiza que la información que se almacena o se envía no ha sido modificada. Controla la auditoría del documento \cite{firmaDigital}. 
 
 
-	\item Criptosistemas asimétricos: Cada usuario posee una clave pública y otra privada. El usuario cifrará con la clave privada del usuario y descifrará con la clave pública del usuario que haya mandado el mensaje, que previamente se la habrá mandado a dicho usuario. En algunos criptosistemas se utilizan claves compartidas que se calculan a partir de la clave privada de un usuario A y la clave pública de un usuario B. El algoritmo UOV es de este tipo, es decir, que necesitaremos claves privadas y públicas para firmar y verificar las firmas.
+%	\item Criptosistemas asimétricos: Cada usuario posee una clave pública y otra privada. El usuario cifrará con la clave privada del usuario y descifrará con la clave pública del usuario que haya mandado el mensaje, que previamente se la habrá mandado a dicho usuario. En algunos criptosistemas se utilizan claves compartidas que se calculan a partir de la clave privada de un usuario A y la clave pública de un usuario B. El algoritmo UOV es de este tipo, es decir, que necesitaremos claves privadas y públicas para firmar y verificar las firmas.
 
 
 	
@@ -219,6 +216,6 @@ Las aplicaciones de las cadenas de bloques son diversas entre ellas se encuentra
 
 
 
-\end{itemize}
+%\end{itemize}
 
 
