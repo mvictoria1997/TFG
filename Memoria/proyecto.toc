@@ -6,8 +6,8 @@
 \contentsline {section}{\numberline {1.4}Contenidos te\IeC {\'o}ricos para la comprensi\IeC {\'o}n del proyecto}{6}{section.1.4}
 \contentsline {subsection}{\numberline {1.4.1}Computaci\IeC {\'o}n cu\IeC {\'a}ntica}{6}{subsection.1.4.1}
 \contentsline {subsection}{\numberline {1.4.2}Blockchain}{8}{subsection.1.4.2}
-\contentsline {subsection}{\numberline {1.4.3}Algoritmo UOV}{11}{subsection.1.4.3}
-\contentsline {subsubsection}{Cuerpos finitos}{11}{section*.9}
+\contentsline {subsection}{\numberline {1.4.3}Algoritmo UOV}{12}{subsection.1.4.3}
+\contentsline {subsubsection}{Cuerpos finitos}{12}{section*.9}
 \contentsline {subsubsection}{Par\IeC {\'a}metros y f\IeC {\'o}rmula}{12}{section*.10}
 \contentsline {subsubsection}{Generaci\IeC {\'o}n de la clave privada}{13}{section*.11}
 \contentsline {subsubsection}{Generaci\IeC {\'o}n de la clave p\IeC {\'u}blica}{13}{section*.12}
