@@ -108,20 +108,20 @@ El objetivo de este proyecto es modificar el algoritmo de firma y verificación 
 A continuación se muestran los capítulos que presenta la memoria junto con una breve descripción de lo que contiene cada uno.
 
 \begin{enumerate}
-	\item Introducción: Presenta la motivación del proyecto y el contexto en el que surge, además incluye una breve reseña introduciendo la computación cuántica y la \textit{blockchain}. En este capitulo también se encuentran los objetivos que se persiguen con este trabajo.
-	\item Planificación y costes: Definición de las entregas y seguimiento del proyecto, así como el presupuesto del proyecto.
+	\item Introducción: Presenta la motivación del proyecto y el contexto en el que surge, además incluye una breve reseña introduciendo las dos tecnologías que se han utilizado computación cuántica y la \textit{blockchain}, aparte de la explicación matemática del algoritmo utilizado. En este capitulo también se encuentran los objetivos que se persiguen con este trabajo.
+	\item Planificación y costes: Contiene el diagrama de Gantt con la defición de las entregas y seguimiento del proyecto, así como el presupuesto del proyecto.
 	\item Análisis del problema: Descripción de las funcionalidades y requisitos, y análisis de los objetivos que se muestran en la sección \ref{sec:intro:objetivos}.
 	\item Diseño: Se encuentra el diseño de la implementación del algoritmo UOV y el diseño del ecosistema ARK, donde se integrará el algoritmo de firma.
-	\item Implementación: Contiene la explicación de la implementación del algoritmo UOV y la aritemética implementada para el cuerpo finito de $2^7$ elementos.
+	\item Implementación: Contiene la explicación de la implementación del algoritmo UOV y la aritemética del cuerpo finito de $2^7$ elementos.
 	\item Evaluación y pruebas: Ejemplo de la firma de una transacción en el sistema ARK.
 	\item Conclusiones
 \end{enumerate}
 
 \section{Contenidos teóricos para la comprensión del proyecto}
 
-En los siguientes apartados se explica los contenidos claves de este proyecto.
+En los siguientes apartados se explica los contenidos claves de este proyecto, que son la computación cuántica\ \ref{sec:intro:cc}, la tecnología \textit{blockchain}\ \ref{sec:intro:blockchain} y el algoritmo UOV\ \ref{sec:intro:UOV}.
 
-\subsection{Computación cuántica}
+\subsection{Computación cuántica}\label{sec:intro:cc}
 %Poner un poco de historia ver 
 
 %\url{https://es.wikipedia.org/wiki/Computaci%C3%B3n_cu%C3%A1ntica#Cronolog%C3%ADa}
@@ -198,6 +198,181 @@ Hoy en día, la tecnología \textit{blockchain} está ganando mucha atención, n
 
 
 \subsection{Algoritmo UOV}\label{sec:intro:UOV}
+
+
+\subsubsection{Cuerpos finitos} % revisar con javier
+Se trabajará con el cuerpo finito de 128 elementos, $\GF(2^7)$, que es un cuerpo extendido de $\GF(2)$ que corresponde con el cociente 
+\begin{equation}
+\GF(128) = \frac{\GF(2)[x]}{\langle x^7 + x + 1 \rangle}
+\end{equation}
+
+Además el orden del cuerpo de las unidades es $127$, que es primo entonces todo elemento del cuerpo distinto de $1$ es un elemento primitivo, es decir, un generador.
+
+La tabla \ref{tab:rel} muestra una representación de los elementos no nulos del cuerpo. En la implementación se ha utilizado la representación como cadena de bits, puesto que a la hora de trabajar es más fácil con una cadeba de bits que con los polinomios.
+
+\begin{table}[h]
+\caption{Representación de los elementos no nulos del cuerpo finito de $2^7$ elementos}
+\label{tab:rel}
+\begin{center}
+\begin{tabular}{p{0.2\linewidth}p {0.2\linewidth}p{0.2\linewidth}}
+	 \textbf{Polinomio} & \textbf{Bits} & \textbf{$\log_a$}\\
+\toprule
+	$1$ & [0, 0, 0, 0, 0, 0, 1] & 0\\
+	$a$ & [0, 0, 0, 0, 0, 1, 0] & 1\\
+	$a^2$ & [0, 0, 0, 0, 1, 0, 0] & 2\\
+	\\
+	$\vdots$ & $\vdots$ & $\vdots$\\
+	\\
+	$a^6 + a^5 + a^4 + 1$ & [1, 1, 1, 0, 0, 0, 1] & 124\\
+	$a^6 + a^5 + 1$ & [1, 1, 0, 0, 0, 0, 1] & 125\\
+	$a^6 + 1$ & [1, 0, 0, 0, 0, 0, 1] & 126\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+
+\end{table}
+
+La implementación del cuerpo finito de $2^7$ elementos no se ha realizado de forma genérica sino para que sea específica para el algoritmo UOV, de esta forma es mucho más sencillo implementar la aritmética del cuerpo. Para la suma en $\mathds{Z}_2$ sólo tenemos que fijarnos que es lo mismo que el operador lógico \textit{XOR}, mientras que para el producto, al encontrarmos en un cuerpo como un orden pequeño, se usarán unas tablas que contienen las correspondencias entre los elementos no nulos del cuerpo y sus logaritmos en base $a$, por lo que el producto se convierte en una suma módulo $127$.
+
+
+
+
+\subsubsection{Parámetros y fórmula}
+Para empezar indicamos los parámetros que serán de utilidad para entender el algoritmo.
+\begin{itemize}
+	\item r: Grado del cuerpo extendido, $\mathds{F}_2 \subset \mathds{F}_{2^r}$. % quitar el F_2
+	\item $x$: Vector de $n$ componentes, denominando a las primeras $v$ componentes  $x_1, \dotsb, x_v$ vinagre y al resto aceites.
+	
+	\item m: Tamaño de la clave pública, además del número de variables de aceite.
+	\item $v$: Número de variables vinagre.
+	%\item $\mathcal{H}$: Función salida extensible se usa para crear el hash del mensaje y proviene de la clave pública.
+	%\item $\mathcal{G}$: Función salida extensible se usa para la generación de la clave pública a partir de una semilla privada.
+\end{itemize}
+
+$\mathcal{P}: \mathds{F}_{2^r}^n \rightarrow \mathds{F}_{2^r}^m$, esta función se puede descomponer como $\mathcal{P} = \mathcal{F} \circ \mathcal{T}$, donde $\mathcal{T}: \mathds{F}_{2^r}^n \rightarrow \mathds{F}_{2^r}^n$ es invertible, y $\mathcal{F}: \mathds{F}_{2^r}^n \rightarrow \mathds{F}_{2^r}^m$ siendo sus $m$ componentes de la forma:
+
+\begin{equation}\label{eq:fun}
+f_k(x) = \sum_{i=1}^v \sum_{j=i}^n \alpha_{i,j,k} x_i x_j + \sum_{i=1}^n \beta_{i,k} x_i
+\end{equation}
+
+donde $\alpha_{i,j,k}$ y $\beta_{i,k}$ se toman aleatoriamente en $\mathds{F}_2$ siendo $\alpha$ una matriz triangular superior. De esta manera será más eficiente y no afectará a la seguridad del algoritmo.
+
+
+
+\subsubsection{Generación de la clave privada}
+La clave privada está formada por $\alpha_{i,j,k}$ y $\beta_{i,k}$ que son valores del cuerpo $\mathds{F}_2$, elegidos de forma aleatoria.
+
+
+\subsubsection{Generación de la clave pública}
+Generaremos una clave pública partiendo de la clave privada $\alpha_{i,j,k}$ y $\beta_{i,k}$.
+
+Para entenderlo mejor ponemos las $m$ ecuaciones (\ref{eq:fun}) en forma matricial,
+
+\begin{equation}\label{eq:matriz} 
+f_k(x) = x^v\ [\alpha_{i,j,k}]\ (x^v, x^m)' + [\beta_{i,k}]\ (x^v, x^m)'
+\end{equation}
+
+siendo $[\alpha_{i,j,k}]$ y $[\beta_{i,k}]$ son las representaciones matriciales de $\alpha_{i,j,k}$ y $\beta_{i,k}$, $x^v$ los vinagres y $x^m$ los aceites, así $x$ se puede expresar como $(x^v, x^m)'$.
+
+Conociendo los valores de la clave privada $\alpha$ y $\beta$, tomando de forma aleatoria los del vinagre $x^v$, los cuales pasaremos a denominarlos como $a^v$, y cogiendo los $m$ primeros bits del hash del mensaje $h_k$ podemos generar la clave pública.
+
+Hacemos el cambio de notación $A_k = a^v\ [\alpha_{i,j,k}] = (A^v_k, A^m_k)$,  lo sustituimos en la ecuación (\ref{eq:matriz}) y despejamos los aceites.
+
+\begin{align}
+h_k &= A_k^v\ (a^v)' +  A_k^m\ (x^m)' + \beta_k^v\ (a^v)' + \beta_k^m\ (x^m)' + \gamma_k\\
+(A_k^m + \beta_k^m) (x^m)' &= h_k - (A_k^v + \beta_k^v) (a^v)' -\gamma_k\\
+\label{eq:despeje}
+(x^m)' &= (A_k^m + \beta_k^m)^{-1} (h_k - (A_k^v + \beta_k^v) (a^v)' -\gamma_k)
+\end{align}
+
+Si $(A_k^m + \beta_k^m)$ fuese una matriz singular, entonces se tomarían otros valores de vinagres.
+
+
+Para generar la clave pública necesitamos incluir una nueva matriz $T$, donde $T \cdot s' = x'$. Incluimos esta matriz $T$ para aumentar la seguridad del algoritmo y así sea más complejo calcular la función inversa $\mathcal{P}$
+
+\begin{equation}
+	T =
+	\left[
+	\begin{array}{c|c}
+	I_v & T_{vxm} \\
+	\hline
+	0 & I_m
+	\end{array}
+	\right]
+	\label{mat:T}
+\end{equation}
+
+Despejando x, obtenemos:
+
+\begin{equation}
+	x =  s \cdot T' = s  \left[
+	\begin{array}{c|c}
+	I_v & 0 \\
+	\hline
+	T'_{v x m} & I_m
+	\end{array}
+	\right]
+	= [s^v, s^m] \left[
+	\begin{array}{c|c}
+	I_v & 0 \\
+	\hline
+	T'_{v x m} & I_m
+	\end{array}
+	\right]
+	= (s^v + s^m T'_{vxm}, s^m )
+\end{equation}
+
+Sustituimos en (\ref{eq:matriz}):
+
+\begin{equation}
+	f_k(x) = s  \left[
+	\begin{array}{c}
+	I_v \\
+	\hline
+	T'_{v x m}
+	\end{array}
+	\right] [\alpha_{i,j,k}]_{\begin{subarray}{l}{1<i<v }\\ {i<j<n}\end{subarray}}\ T \ s' + [\beta_{j,k}]_{1<j<n}\ T\ s'
+\end{equation}
+donde $k \in \{1,...,m\}$
+
+Así obtenemos las claves públicas definidas para cada $k$
+
+\begin{itemize}
+	\item ${\alpha_{pub}}_k = \left[
+	\begin{array}{c}
+	I_v \\
+	\hline
+	T'_{v x m}
+	\end{array}
+	\right] [\alpha_{i,j,k}]_{\begin{subarray}{l}{1<i<v }\\ {i<j<n}\end{subarray}} \ T$
+	
+	\item ${\beta_{pub}}_k = [\beta_{j,k}]_{1<j<n}\ T$
+
+\end{itemize}
+
+
+\subsubsection{Algoritmo de firma}
+Por la definición de $x$ obtenemos la firma $s$ como
+
+\begin{equation}
+	s = x \cdot T'^{-1}
+\end{equation}
+
+donde $x = (x^v, x^m)$ con $x^v$ son los vinagres aleatorios y $x^m$ los aceites que hemos calculado en la ecuación (\ref{eq:despeje}).
+
+
+
+
+\subsubsection{Algoritmo de verificación}
+
+Para comprobar que el mensaje es correcto y que no ha sufrido ninguna transformación durante el envío del mismo, se tiene que cumplir la igualdad (\ref{eq:veri}).
+
+
+\begin{equation}\label{eq:veri}
+	h_k = \ {\alpha_{pub}}_k \ s' + {\beta_{pub}}_{k} \ s'
+\end{equation}
+
 
 
 %\begin{itemize}
