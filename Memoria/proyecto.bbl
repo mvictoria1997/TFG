@@ -26,6 +26,10 @@
   fingertips,'' 2018,
   \url{https://neironix.io/documents/whitepaper/4514/whitepaper.pdf}.
 
+\bibitem{img-arbol-merkle}
+A.~Palau, ``{Tokenización \& Árbol de Merkle},'' 2018,
+  \url{https://medium.com/@albpalau/tokenizaci%C3%B3n-%C3%A1rbol-de-merkle-1276820a1d60}.
+
 \bibitem{security-bit}
 L.~Wilson, ``{The Rise of Quantum Computers – The Current State of
   Cryptographic Affairs},'' 2016,
@@ -76,6 +80,10 @@ A.~Muñoz and J.~I. Escribano, ``La computación cuántica y el "futuro de la
   criptografía": la criptografía post-cuántica,'' 2020,
   \url{https://www.bbvanexttechnologies.com/la-computacion-cuantica-y-el-futuro-de-la-criptografia-la-criptografia-post-cuantica/}.
 
+\bibitem{esfera-bloch}
+Wikipedia, ``{Esfera de Bloch},''
+  \url{https://es.wikipedia.org/wiki/Esfera_de_Bloch}.
+
 \bibitem{cumputacion-cuantica-clasica}
 A.~Banafa, ``Computación cuántica y blockchain, mitos y realidades,'' 2019,
   \url{https://www.bbvaopenmind.com/tecnologia/mundo-digital/computacion-cuantica-y-blockchain-mitos-y-realidades/}.
@@ -83,6 +91,11 @@ A.~Banafa, ``Computación cuántica y blockchain, mitos y realidades,'' 2019,
 \bibitem{computacion-cuantica-wiki}
 Wikipedia, ``Computación cuántica,''
   \url{https://es.wikipedia.org/wiki/Computaci\%C3\%B3n\_cu\%C3\%A1ntica}.
+
+\bibitem{quimica-cuantica}
+{Redacción Vivir}, ``{La “nueva frontera” alcanzada por el computador
+  cuántico de Google esta semana},'' 08 septiembre 2020,
+  \url{https://www.elespectador.com/noticias/ciencia/la-nueva-frontera-de-la-computacion-cuantica/}.
 
 \bibitem{arbol-merkle}
 Wikipedia, ``{Árboles Merkle},''
