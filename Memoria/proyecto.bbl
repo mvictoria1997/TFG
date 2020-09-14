@@ -26,6 +26,10 @@
   fingertips,'' 2018,
   \url{https://neironix.io/documents/whitepaper/4514/whitepaper.pdf}.
 
+\bibitem{esfera-bloch}
+Wikipedia, ``{Esfera de Bloch},''
+  \url{https://es.wikipedia.org/wiki/Esfera_de_Bloch}.
+
 \bibitem{img-arbol-merkle}
 A.~Palau, ``{Tokenización \& Árbol de Merkle},'' 2018,
   \url{https://medium.com/@albpalau/tokenizaci%C3%B3n-%C3%A1rbol-de-merkle-1276820a1d60}.
@@ -75,22 +79,23 @@ A.~Szepieniec, B.~Preneel, F.~Vercaunteren, and W.~Beullens, ``{LUOV: Signature
 \bibitem{ark}
 ``Ark,'' \url{https://ark.io/}.
 
+\bibitem{computacion-cuantica-wiki}
+Wikipedia, ``Computación cuántica,''
+  \url{https://es.wikipedia.org/wiki/Computaci\%C3\%B3n\_cu\%C3\%A1ntica}.
+
+\bibitem{computacion-cuantica-crono}
+Álvaro Rodrigo~Reyes, ``{Estado de la criptografía post-cuántica y
+  simulaciones de algoritmos post-cuánticos},''
+  \url{http://openaccess.uoc.edu/webapps/o2/bitstream/10609/89026/6/alvaroreyesTFM1218memoria.pdf}.
+
 \bibitem{computacion-cuantica-criptografia}
 A.~Muñoz and J.~I. Escribano, ``La computación cuántica y el "futuro de la
   criptografía": la criptografía post-cuántica,'' 2020,
   \url{https://www.bbvanexttechnologies.com/la-computacion-cuantica-y-el-futuro-de-la-criptografia-la-criptografia-post-cuantica/}.
 
-\bibitem{esfera-bloch}
-Wikipedia, ``{Esfera de Bloch},''
-  \url{https://es.wikipedia.org/wiki/Esfera_de_Bloch}.
-
 \bibitem{cumputacion-cuantica-clasica}
 A.~Banafa, ``Computación cuántica y blockchain, mitos y realidades,'' 2019,
   \url{https://www.bbvaopenmind.com/tecnologia/mundo-digital/computacion-cuantica-y-blockchain-mitos-y-realidades/}.
-
-\bibitem{computacion-cuantica-wiki}
-Wikipedia, ``Computación cuántica,''
-  \url{https://es.wikipedia.org/wiki/Computaci\%C3\%B3n\_cu\%C3\%A1ntica}.
 
 \bibitem{quimica-cuantica}
 {Redacción Vivir}, ``{La “nueva frontera” alcanzada por el computador

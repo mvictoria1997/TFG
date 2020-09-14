@@ -122,12 +122,32 @@ A continuación se muestran los capítulos que presenta la memoria junto con una
 En los siguientes apartados se explica los contenidos claves de este proyecto, que son la computación cuántica\ \ref{sec:intro:cc}, la tecnología \textit{blockchain}\ \ref{sec:intro:blockchain} y el algoritmo UOV\ \ref{sec:intro:UOV}.
 
 \subsection{Computación cuántica}\label{sec:intro:cc}
-%Poner un poco de historia ver 
 
-%\url{https://es.wikipedia.org/wiki/Computaci%C3%B3n_cu%C3%A1ntica#Cronolog%C3%ADa}
-%\url{http://openaccess.uoc.edu/webapps/o2/bitstream/10609/89026/6/alvaroreyesTFM1218memoria.pdf}
+La computación cuántica constituye un nuevo paradigma de la informática basado en los principios de la teoría cuántica. La computación cuántica tuvo sus inicios en los años 50 cuando algunos físicos, como Richard Feynman, fueron pioneros en mencionar posibilidad de utilizar efectos cuánticos para realizar cálculos computacionales \cite{computacion-cuantica-wiki}. En la charla de Richard Feynman titulada ``Simulación de la física con computadoras'', a principio de la década de los 80, expuso algunos cálculos complejos que se podrían realizar más rápido con un ordenador cuántico. 
 
-La computación cuántica constituye un nuevo paradigma de la informática basado en los principios de la teoría cuántica. Los ordenadores cuánticos 
+A finales de los años 60, Stephen Wiesner escribe un artículo titulado ``Conjuate Coding'', donde expone un primer acercamiento a la criptografía cuántica, el artículo fue publicado en los años 80 \cite{computacion-cuantica-crono}.
+
+En 1981 Paul Benioff expone las ideas esenciales de la computación cuántica acompañada de su teoría, en la que propuso que un ordenador clásico trabajara con algunos pricipios de la mecánica cuántica, y aprovechar así las leyes cuánticas.
+
+En la década de 1990 ya empezaron a plasmar la teoría en la práctica, apareciendo los primeros algoritmo cuántidos y primeras máquinas. Artur Ekert, 1991,  desarrolla una aproximación diferente a la distribución de claves cuántica (QKD) basado en el entrelazamiento cuántico.
+
+En 1993 por un lado, Dan Simon comparó el modelo de probabilidad clásica con el cuántico, esto se utilizó para el desarrollo de futuros algoritmos cuánticos. Y por otro Charles Benett descubrió el teletransporte cuántico, abriendo una vía de investigación para las comunicaciones cuánticas. Además Ekert organizó la primera conferencia internacional de criptografía cuántica en Inglaterra, primer evento de gran alcance dedicado a este área.
+
+Peter W. Shor definió un algoritmo cuántico, el algoritmo de Shor, que permite calcular los factores primos de números muy grandes en tiempo polinimial, resolviendo el problema de la factorización de enteros como el problema del logaritmo discreto. Como consecuencia, el algoritmo de Shor permite romper muchos sitemas criptográficos actuales. Un año más tarde, propuso un sistema de corrección de errores en el cálculo cuántico.
+
+Lov Grover, en 1996, expone un algoritmo de búsqueda en una secuencia de datos no ordenada con N elementos, denominado algoritmo de Grover, que tiene una complejidad en tiempo de $O(\sqrt{n})$.
+
+En 1997, tiene lugar el primer experiemento de comunicación con criptografía cuántica a una distancia de 23km. Además del primer teletransporte cuántico de un fotón.
+
+En 1999, los laboratorios IBM-Almaden crearon la primera máquina con 3 cúbits y ejecutó el algoritmo de Grover. Y en 2001, IBM junto con la Universidad de Stanford ejecutaron el algoritmo de Shor en un computador cuántico con 7 cúbits, se calcularon los factores primos de 15.
+
+En 2004, sale a la luz el primer criptosistema cuántico comercial(QKD), creado por la ID Quantique.
+
+En 2007, D-Wave fabricó una máquina que utilizaba mecánica cuántica con 16 cúbits sin llegar a ser un computador cuántico, especializado en la optimización de problemas a través de algoritmo de temple cuántico. En septiembre de ese mismo año, consiguieron unir componentes cuánticos a través de superconductores, apareciendo el primer bus cuántico capaz de reter información cuántica durante un corte espacio de tiempo antes de volver a ser transferida. Un año después se consiguió almacenar un cúbit en el interior del núcleo de un átomo de fósforo y hacer que la información permaneciera intacta durante 1.75 segundos.
+
+En 2011, se vendió la primera computadora cuántica comercial por la empresa D-Wave Systems por 10 millones de dólares.
+
+En 2018, la Universidad de Innsbruck consiguen un entrelazamiento estable de 20 cúbits, marcando el récord actual. El 18 de septiembre de 2019, IBM anunción que pronto lanzará un ordenador cuántico de 53 cúbits, el más grande y potente hasta la fecha.\\
 
 La computación clásica funciona con bits cuyos valores pueden ser 0 o 1, mientras que la computación cuántica funciona con bit cuánticos o cúbits, una combinación de 0 y 1, pudiendo tomar ambos valores a la vez, esto se denomina la superposición cuántica de los estados \cite{computacion-cuantica-criptografia}, se entrará en detalle más adelante.
 
@@ -136,11 +156,13 @@ La figura \ref{fig:bit-cubit} muestra los estados de un bit y los posibles estad
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figuras/bit_cubit.png}
-	\caption{Comparativa de la capacidad de cómputo de un ordenador clásico con un ordenador cuántico\cite{clasica-vs-cuantica}}
+	\caption{Estados de un bit y de cúbit \cite{clasica-vs-cuantica}}
 	\label{fig:bit-cubit}
 \end{figure}
 
-El espacio de estados del cúbit se puede representar mediante un espacio vectorial complejo bidimensional, al no ser práctico, se aprovecha el homeomorfismo entre la superficie de una esfera y el plano complejo cerrado con un punto en el infinito, dando lugar a lo que se conoce como la esfera de Bloch.  Una esfera de Bloch es una representación geométrica del espacio de estados puros de un sistema cuántico de dos niveles. Además se representa en el espacio $\mathds{R}^3$ por la esfera de radio unidad como se observa en la imagen \ref{fig:esfera-bloch}, donde cada punto de la esfera es un posible estado del cúbit. 
+El espacio de estados del cúbit se puede representar mediante un espacio vectorial complejo bidimensional, al no ser práctico, se aprovecha el homeomorfismo entre la superficie de una esfera y el plano complejo cerrado con un punto en el infinito, dando lugar a lo que se conoce como la esfera de Bloch.  
+
+Una esfera de Bloch es una representación geométrica del espacio de estados puros de un sistema cuántico de dos niveles. Además se representa en el espacio $\mathds{R}^3$ por la esfera de radio unidad como se observa en la imagen \ref{fig:esfera-bloch}, donde cada punto de la esfera es un posible estado del cúbit. 
 
 
 \begin{figure}[h]
@@ -159,7 +181,7 @@ Un cúbit se puede representar como una combinación lineal de los estados $|0\r
 Como $\alpha$ y $\beta$ son números complejos, la ecuación \ref{eq:cubit} se puede escribir en forma exponencial, ecuación \ref{eq:cubit-expo}.
 
 \begin{equation}\label{eq:cubit-expo}
-|\psi\rangle = r_{\alpha} e^{i\phi_{\alpha}}|0\rangle + r_{\beta} e^{i\phi_{\beta}}|1\rangle
+|\psi\rangle = r_{\alpha} e^{i\phi_{\alpha}}|0\rangle + r_{\beta} e^{i\phi_{\beta}}|1\rangle\\
 \end{equation}
 
 La superposición cuántica aporta gran capacidad de procesamiento, lo que hace posible resolver de manera eficiente problemas de mayor complejidad como la factorización de enteros, el algoritmo discreto y la simulación cuántica, que a día de hoy con los ordenadores clásicos son difíciles de romper. 
