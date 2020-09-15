@@ -8,7 +8,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: bibliografia/bibliografia.bib
-You're missing a field name---line 155 of file bibliografia/bibliografia.bib
+You're missing a field name---line 161 of file bibliografia/bibliografia.bib
  : @misc{imagen-triada, 
  :                      %Ver imagen triada cia, puede servir para las diapos
 I'm skipping whatever remains of this entry
@@ -17,45 +17,45 @@ I'm skipping whatever remains of this entry
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-You've used 26 entries,
+You've used 27 entries,
             4024 wiz_defined-function locations,
-            907 strings with 11118 characters,
-and the built_in function-call counts, 9029 in all, are:
-= -- 650
-> -- 107
+            910 strings with 11217 characters,
+and the built_in function-call counts, 9367 in all, are:
+= -- 674
+> -- 111
 < -- 0
-+ -- 55
-- -- 25
-* -- 275
-:= -- 1520
-add.period$ -- 52
-call.type$ -- 26
-change.case$ -- 52
++ -- 57
+- -- 26
+* -- 284
+:= -- 1577
+add.period$ -- 54
+call.type$ -- 27
+change.case$ -- 54
 chr.to.int$ -- 0
-cite$ -- 26
-duplicate$ -- 842
-empty$ -- 945
-format.name$ -- 27
-if$ -- 1953
+cite$ -- 27
+duplicate$ -- 874
+empty$ -- 981
+format.name$ -- 28
+if$ -- 2027
 int.to.chr$ -- 0
-int.to.str$ -- 26
-missing$ -- 207
-newline$ -- 101
-num.names$ -- 21
-pop$ -- 619
+int.to.str$ -- 27
+missing$ -- 215
+newline$ -- 104
+num.names$ -- 22
+pop$ -- 643
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 699
+skip$ -- 725
 stack$ -- 0
-substring$ -- 78
-swap$ -- 432
+substring$ -- 81
+swap$ -- 448
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 26
+type$ -- 27
 warning$ -- 0
-while$ -- 21
-width$ -- 28
-write$ -- 208
+while$ -- 22
+width$ -- 29
+write$ -- 215
 (There was 1 error message)
