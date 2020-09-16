@@ -270,8 +270,13 @@ Hoy en día, la tecnología \textit{blockchain} está ganando mucha atención, n
 
 \subsection{Algoritmo UOV}\label{sec:intro:UOV}
 
+El algoritmo aceite y vinagre desequilibrado es una versión simplificada del algoritmo aceite y vinagre, ambos algoritmos de firma digital. Para crear las firmas y validarlas es necesario resolver un sistema con $m$ ecuaciones y $n$ variables, que es un problema NP-duro, lo que significa que no se puede resolver de manera eficiente incluso con una computadora cuántica. Si $m$ y $n$ son casi iguales o iguales será más difícil resolver el sistema, obteniendo de esta forma un algoritmo de firma resistente a ataques cuánticos.\\
 
-\subsubsection{Cuerpos finitos} % revisar con javier
+La principal ventaja del algoritmo UOV es que es un algoritmo post-cuántico, a diferencia de otros esquemas de firmas como RSA o ElGamal que no permanecerían seguros ante un ordenador cuántico. Esto se debe a que en la actualidad no existe un algoritmo eficiente para la resolución de sistemas multivariados de ecuaciones  en ordenador cuántico. Otra ventaja es la simplicidad de las operaciones utilizadas, ya que las firmas se crean y validan con operaciones de suma y multiplicaciones de valores pequeños, lo que requiere bajos recursos \textit{hardware}. 
+
+Aunque el algoritmo usa sistemas pequeños y la longitud de las firmas son pequeñas, se necesitan claves públicas bastante más grandes en comparación con otros algoritmos de firma como ECDSA, pudiendo ocupar dicha clave pública varios kilobytes de almacenamieno. Por otro lado ya se conocen algunos métodos de ataque, probablemente aparecerán más si se empiza a comercializar.
+
+\subsubsection{Cuerpos finitos}
 Se trabajará con el cuerpo finito de 128 elementos, $\GF(2^7)$, que es un cuerpo extendido de $\GF(2)$ que corresponde con el cociente 
 \begin{equation}
 \GF(128) = \frac{\GF(2)[x]}{\langle x^7 + x + 1 \rangle}
@@ -282,7 +287,7 @@ Además el orden del cuerpo de las unidades es $127$, que es primo entonces todo
 La tabla \ref{tab:rel} muestra una representación de los elementos no nulos del cuerpo. En la implementación se ha utilizado la representación como cadena de bits, puesto que a la hora de trabajar es más fácil con una cadeba de bits que con los polinomios.
 
 \begin{table}[h]
-\caption{Representación de los elementos no nulos del cuerpo finito de $2^7$ elementos}
+
 \label{tab:rel}
 \begin{center}
 \begin{tabular}{p{0.2\linewidth}p {0.2\linewidth}p{0.2\linewidth}}
@@ -300,7 +305,7 @@ La tabla \ref{tab:rel} muestra una representación de los elementos no nulos del
 \bottomrule
 \end{tabular}
 \end{center}
-
+\caption{Representación de los elementos no nulos del cuerpo finito de $2^7$ elementos}
 
 \end{table}
 
@@ -376,7 +381,7 @@ Para generar la clave pública necesitamos incluir una nueva matriz $T$, donde $
 
 Despejando x, obtenemos:
 
-\begin{equation}
+\begin{equation}\label{eq:def-x}
 	x =  s \cdot T' = s  \left[
 	\begin{array}{c|c}
 	I_v & 0 \\
@@ -424,7 +429,8 @@ Así obtenemos las claves públicas definidas para cada $k$
 
 
 \subsubsection{Algoritmo de firma}
-Por la definición de $x$ obtenemos la firma $s$ como
+
+Gracias a la definición dada de $x$, en la ecuación \ref{eq:def-x}, podemos hacer un simple despeje y calcular $s$. Esto se debe a que el sistema de ecuaciones se vuelve lineal cuando las variables de vinagre son fijas y además ninguna variable de aceite se multiplica por otra de aceite en la ecuación. Por tanto se puede calcular usando, por ejemplo, el algoritmo de reducción gaussiano.
 
 \begin{equation}
 	s = x \cdot T'^{-1}
@@ -437,31 +443,11 @@ donde $x = (x^v, x^m)$ con $x^v$ son los vinagres aleatorios y $x^m$ los aceites
 
 \subsubsection{Algoritmo de verificación}
 
-Para comprobar que el mensaje es correcto y que no ha sufrido ninguna transformación durante el envío del mismo, se tiene que cumplir la igualdad (\ref{eq:veri}).
+Para comprobar que el mensaje es correcto y que no ha sufrido ninguna transformación durante el envío del mismo, se utiliza una versión del sistema utilizado para la firma. Se hace modificación para que el atacante no pueda obtener la clave privada ni las variables de aceite y vinagre. Para cada $k \in  \{1,\dots, m\}$ se tiene que cumplir la igualdad (\ref{eq:veri}).
 
 
 \begin{equation}\label{eq:veri}
 	h_k = \ {\alpha_{pub}}_k \ s' + {\beta_{pub}}_{k} \ s'
 \end{equation}
-
-
-
-%\begin{itemize}
-%	\item Algoritmo cuántico: Son los algoritmos que pueden ser resueltos por un computador cuántico en tiempo polinómico.
-
-	
-
- %	\item Firma electrónica: Sirve para controlar la integridad de los datos y asegurar que la información procede de quien dice ser su remitente, garantiza que la información que se almacena o se envía no ha sido modificada. Controla la auditoría del documento \cite{firmaDigital}. 
-
-
-%	\item Criptosistemas asimétricos: Cada usuario posee una clave pública y otra privada. El usuario cifrará con la clave privada del usuario y descifrará con la clave pública del usuario que haya mandado el mensaje, que previamente se la habrá mandado a dicho usuario. En algunos criptosistemas se utilizan claves compartidas que se calculan a partir de la clave privada de un usuario A y la clave pública de un usuario B. El algoritmo UOV es de este tipo, es decir, que necesitaremos claves privadas y públicas para firmar y verificar las firmas.
-
-
-	
-
-
-
-
-%\end{itemize}
 
 
