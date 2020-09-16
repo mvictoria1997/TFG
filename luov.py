@@ -649,7 +649,7 @@ def matrix_sum (m1, m2):
    n2(list): Second matrix
 
    Returns:
-   prod(list): Sum of n1 and n2
+   m_suma(list): Sum of n1 and n2
    """
    m_suma = []
 
