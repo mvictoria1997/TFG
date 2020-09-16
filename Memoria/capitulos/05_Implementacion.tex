@@ -3,4 +3,382 @@
 %Aquí se deben proporcionar los detalles de cómo se ha llevado a la práctica el diseño propuesto en el capítulo anterior. Deben identificarse claramente herramientas, tecnologías, equipamientos, etc. utilizados o necesarios para el buen funcionamiento de la solución. Se pueden describir los fragmentos de código más importantes, con el fin de clarificar la funcionalidad que proporcionan. En general este capítulo debe facilitar la reutilización de nuestra solución, por lo que debe estar bien documentada. Puede incluir un manual de uso.
 
 
+\section{Funciones del cuerpo de 128 elementos}
+Las funciones de esta sección son la suma, el producto y conversiones de elementos de otros cuerpo a elementos del cuerpo de 128 elementos.\\
+
+Los elementos del cuerpo se representarán con vectores de siete componentes para poder facilitar la implementación de la suma y del producto. Esto se refleja en las dos tablas denominadas \texttt{exp} y \texttt{log}, que tienen la estructura que se muestra en los códigos \ref{cod:exp} y \ref{cod:log}, respectivamente.\\
+
+\begin{lstlisting}[language=Python,caption=Tabla para calcular la potencia en el cuerpo, label=cod:exp]
+exp = {
+   0 : [0, 0, 0, 0, 0, 0, 1],
+   1 : [0, 0, 0, 0, 0, 1, 0],
+   125 : [1, 1, 0, 0, 0, 0, 1],
+   126 : [1, 0, 0, 0, 0, 0, 1]
+}
+
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python,caption=Tabla para calcular el logaritmo en el cuerpo, label=cod:log]
+log = {
+   tuple( [0, 0, 0, 0, 0, 0, 1] ) : ' 0 ',
+   tuple( [0, 0, 0, 0, 0, 1, 0] ) : ' 1 ',
+   tuple( [1, 1, 0, 0, 0, 0, 1] ) : ' 125 ',
+   tuple( [1, 0, 0, 0, 0, 0, 1] ) : ' 126 ',
+}
+\end{lstlisting}
+
+La suma de dos elementos del cuerpo se ha hecho implementando la puesto xor en la estructura del mismo, código \ref{cod:suma-cuerpo}.\\
+
+\begin{lstlisting}[language=Python,caption=Suma de dos elementos del cuerpo, label=cod:suma-cuerpo]
+def suma(n1=[], n2=[]):
+
+   suma = []
+   for i in range(len(n1)):
+      if n1[i] == n2[i]:
+         suma += [0]
+      else:
+         suma += [1]
+   return suma
+\end{lstlisting}
+
+El producto de dos elementos del cuerpo, para trabajar con enteros módulo 127 se hace uso de las tablas \ref{cod:exp} y \ref{cod:log}.\\
+
+\begin{lstlisting}[language=Python,caption=Producto de dos elementos del cuerpo, label=cod:producto-cuerpo]
+def product(n1=[], n2=[]):
+
+   product = []
+   if (n1 == [0,0,0,0,0,0,0]) or (n2 == [0,0,0,0,0,0,0]):
+      product = [0,0,0,0,0,0,0]
+   else:
+      suma = (int(log.get(tuple(n1))) + int(log.get(tuple(n2))))%127
+      product = exp.get(suma)
+   return product
+\end{lstlisting}
+
+
+Las siguientes funciones del cuerpo se utilizarán para resolver el sistema ...
+
+La función \texttt{mayor} compara si un elemento del cuerpo es mayor que otro, código \ref{cod:mayor-que-cuerpo}.\\
+
+\begin{lstlisting}[language=Python,caption=Compara dos elementos del cuerpo, label=cod:mayor-que-cuerpo]
+def mayor (n1=[],n2=[]):
+
+   if n1 == [0,0,0,0,0,0,0]:
+      return False
+   else:
+      log1, log2 = log.get(tuple(n1)), log.get(tuple(n2))
+      return int(log1) > int(log2)
+\end{lstlisting}
+
+
+El inverso de un elemento del cuerpo se calcula haciendo la multiplicación por los restantes elementos y comprobando que de como resultado el elemento unidad, código \ref{cod:inverso-cuerpo}.\\
+
+\begin{lstlisting}[language=Python,caption=Inverso de un elemento del cuerpo, label=cod:inverso-cuerpo]
+def inverse(n=[]):
+
+   i = 0
+   while product(n, F128(i)) != [0,0,0,0,0,0,1]:
+      i += 1
+   return F128(i)
+\end{lstlisting}
+
+Calcula el vector correspondiente de un entero en el cuerpo, código \ref{cod:entero-cuerpo}.\\
+
+\begin{lstlisting}[language=Python,caption=Convierte un entero en un elemento del cuerpo, label=cod:entero-cuerpo]
+def F128(n1):
+
+   if n1 == 127:
+      return [0,0,0,0,0,0,0]
+   else:
+      return exp.get(n1)
+\end{lstlisting}
+
+
+Convierte una matriz $n1$ del cuerpo $\mathds{F}_2$ en un vector $n$ del cuerpo de 128 elementos. Como los elementos de la matriz son solo 0 y 1, si en la matriz hay un 0 añade al vector $n$ el vector $[0,0,0,0,0,0,0]$ y en otro caso $[0,0,0,0,0,0,1]$, código \ref{cod:matrizF2-cuerpo}.\\
+
+\begin{lstlisting}[language=Python,caption=Matriz de $\mathds{F}_2$ a un elemento del cuerpo 128 elementos, label=cod:matrizF2-cuerpo]
+def matrix_F2to128(n1=[]):
+
+   n =[]
+   for i in range(len(n1)):
+      row =[]
+      for j in range(len(n1[0])):
+         if n1[i][j] == 0:
+            row += [[0,0,0,0,0,0,0]]
+         else:
+            row += [[0,0,0,0,0,0,1]]
+      n += [row]
+   return n
+\end{lstlisting}
+
+
+Convierte un vector de matrices $n1$ del cuerpo $\mathds{F}_2$ en una matriz $matrix$ del cuerpo de 128 elementos. Como en la función anterior los elementos de la matriz son solo 0 y 1, se aplica el mismo cambio, código \ref{cod:matriz3dF2-cuerpo}.\\
+
+\begin{lstlisting}[language=Python,caption=Vector de matrices de $\mathds{F}_2$ a una matriz del cuerpo de 128 elementos, label=cod:matriz3dF2-cuerpo]
+def matrix3d_F2to128(n1=[]):
+
+   matrix =[]
+   for i in range(len(n1)):
+      n = []
+      for j in range(len(n1[0])):
+         row = []
+         for k in range(len(n1[0][0])):
+            if n1[i][j][k] == 0:
+               row += [[0,0,0,0,0,0,0]]
+            else:
+               row += [[0,0,0,0,0,0,1]]
+         n += [row]
+      matrix += [n]
+   return matrix
+\end{lstlisting}
+
+\section{Funciones con matrices}
+
+En esta sección de explicarán funciones como la suma de matrices, cálculo de la matriz transpuesta, matriz identidad y el producto de matrices tanto en $\mathds{F}_2$ como en el cuerpo de 128 elementos. Además incluye la función que resuelve el sistema de ecuaciones con el método de Gauss-Jordan.\\
+
+
+La suma de dos matrices del cuerpo de 128 elementos, código \ref{cod:suma-matrix}.
+
+\begin{lstlisting}[language=Python,caption=Suma de dos matrices con elementos en el cuerpo, label=cod:suma-matrix]
+def matrix_sum (m1, m2):
+
+   m_suma = []
+
+   if (len(m1) == len(m2)) and (len(m1[0]) == len(m2[0])):
+      for row in range(len(m1)):
+         aux = []
+         for col in range(len(m1[0])):
+            aux += [suma (m1[row][col], m2[row][col])]
+         m_suma += [aux]
+   return m_suma
+\end{lstlisting}
+
+
+El producto de dos matrices con elementos en el cuerpo de 128 elementos, código \ref{cod:prod-matrix}.\\
+
+\begin{lstlisting}[language=Python,caption=Producto de matrices con elementos del cuerpo, label=cod:prod-matrix]
+def matrix_product (n1=[], n2=[]):
+
+   prod=[]
+   if len(n1[0]) == len(n2):
+      for row1 in range(len(n1)):
+         aux = []
+         for col in range(len(n2[0])):
+            p_suma = [0,0,0,0,0,0,0]
+            for row2 in range(len(n2)):
+               p_suma = suma (product(n1[row1][row2], n2[row2][col]), p_suma)
+            aux += [p_suma]
+         prod += [aux]
+   return prod
+\end{lstlisting}
+
+
+El producto de dos matrices con elementos en el cuerpo $\mathds{F}_2$, código \ref{cod:prodF2-matrix}.\\
+
+\begin{lstlisting}[language=Python,caption=Producto de matrices con elementos en $\mathds{F}_2$, label=cod:prodF2-matrix]
+def matrix_product_F2 (n1=[], n2=[]):
+
+   prod=[]
+
+   if len(n1[0]) == len(n2):
+      for row1 in range(len(n1)):
+         aux = []
+         for col in range(len(n2[0])):
+            p_suma = 0
+            for row2 in range(len(n2)):
+               p_suma = (n1[row1][row2] * n2[row2][col]) ^ p_suma
+            aux += [p_suma]
+         prod += [aux]
+   return prod
+\end{lstlisting}
+
+Calcula la matriz transpuesta de la matriz dada como parámetro, código \ref{cod:trans-matrix}.\\
+
+\begin{lstlisting}[language=Python,caption=Suma de dos elementos del cuerpo, label=cod:trans-matrix]
+def matrix_transpose(m):
+
+   trans = []
+   for col in range(len(m[0])):
+      aux = []
+      for row in range(len(m)):
+         aux += [m[row][col]]
+      trans += [aux]
+   return trans
+
+\end{lstlisting}
+
+
+Calcula la matriz identidad con una determinada dimensión, $dim$, que se pasa como parámetro, código \ref{cod:identi-matrix}.\\
+
+\begin{lstlisting}[language=Python,caption=Matriz identidad del cuerpo, label=cod:identi-matrix]
+def matrix_identity(dim):
+
+   matrix = []
+
+   for i in range(dim):
+      aux = []
+      for j in range(dim):
+         if i == j:
+            aux += [[0,0,0,0,0,0,1]]
+         else:
+            aux += [[0,0,0,0,0,0,0]]
+      matrix += [aux]
+   return matrix
+\end{lstlisting}
+
+
+Resolución de un sistema de ecuaciones con el método de Gauss-Jordan, código \ref{cod:Gauss-matrix}.\\
+
+\begin{lstlisting}[language=Python,caption=Método de Gauss-Jordan, label=cod:Gauss-matrix]
+def matrix_rref(A, b):
+
+   r = 0
+   pivots_pos = []
+   n = len(A)
+
+   #Añadir b como una columna
+   M = A
+   for row in range(len(M)):
+      M[row] += b[row]
+
+
+   for k in range(n):
+      #Intercambio de filas para que quede arriba la de menor valor
+      for i in range(k, n):
+         if mayor(M[i][k], M[k][k]):
+            aux = M[k]
+            M[k] = M[i]
+            M[i] = aux
+
+
+      #Hacer ceros
+      for j in range(k+1, n):
+         q = product(M[j][k], inverse(M[k][k]))
+         for m in range(k, n+1):
+            M[j][m] = suma(M[j][m], product(q, M[k][m]))
+
+
+   #Calcular la solución x de abajo arriba
+   x = [[[0,0,0,0,0,0,0]] for i in range(n)]
+
+   x[n-1] = [product(M[n-1][n], inverse(M[n-1][n-1]))]
+   for i in range(n-1, -1, -1):
+      z = [0,0,0,0,0,0,0]
+      for j in range(i+1, n):
+         z = suma(z, product(M[i][j], x[j][0]))
+      x[i] = [product(suma(M[i][n], z), inverse(M[i][i]))]
+
+   return x
+\end{lstlisting}
+
+\section{Funciones algoritmo UOV}
+
+, código \ref{cod:priv-UOV}.\\
+
+\begin{lstlisting}[language=Python,caption=Generación clave privada, label=cod:priv-UOV]
+def clavePrivada (m, v):
+
+   alpha, beta = [], []
+   n = m+v
+
+   for k in range(m):
+      #alpha matriz triangular superior
+      aux = []
+      for i in range (v):
+         row = []
+         for j in range (n):
+            if i > j:
+               row += [0]
+            else:
+               if randint(0,1) == 0:
+                  row += [0]
+               else:
+                  row += [1]
+         aux += [row]
+      alpha += [aux]
+
+      #beta
+      row = []
+      for i in range(n):
+         if randint(0,1) == 0:
+            row += [0]
+         else:
+            row += [1]
+      beta += [row]
+   return alpha, beta
+\end{lstlisting}
+
+, código \ref{cod:pub-UOV}.\\
+
+\begin{lstlisting}[language=Python,caption=Generación clave pública, label=cod:pub-UOV]
+def clavePublica(m, v, alpha, beta, T):
+
+   alpha_pub = []
+   beta_pub = []
+   T_trans = matrix_transpose(T[0:v])
+
+   for k in range(len(alpha)):
+      aux = matrix_product_F2(T_trans , alpha [k])
+      alpha_pub += [matrix_product_F2(aux, T)]
+
+
+      beta_pub += [matrix_product_F2([beta[k]], T)]
+
+   return alpha_pub, beta_pub
+\end{lstlisting}
+
+, código \ref{cod:firma-UOV}.\\
+
+\begin{lstlisting}[language=Python,caption=Firma del mensaje, label=cod:firma-UOV]
+def signature(hashed, alpha_F2, beta_F2, m, r, v, T):
+
+   alpha = matrix3d_F2to128(alpha_F2)
+   beta = matrix_F2to128(beta_F2)
+
+   vinagre = []
+   for k in range(v):
+      aux = randint(0, 127)
+      vinagre += [F128(aux)]
+   coef = []
+   term = []
+
+   n= m + v
+   for k in range(m):
+      A = matrix_product([vinagre], alpha[k])
+      coef += matrix_sum([A[0][v:n]], [beta[k][v:n]])
+      v_suma = suma (matrix_product([A[0][0:v]], matrix_transpose([vinagre]))[0][0], matrix_product([beta[k][0:v]], matrix_transpose([vinagre]))[0][0])
+      term += [suma(hashed[k], v_suma)]
+
+
+   oil = matrix_rref(coef, matrix_transpose([term]))
+
+   aux = []
+   aux += vinagre + matrix_transpose(oil)[0]
+   firma = matrix_product([aux], matrix_transpose(matrix_F2to128(T))) #T = T.inverse()
+   return firma[0]
+\end{lstlisting}
+
+, código \ref{cod:verif-UOV}.\\
+
+\begin{lstlisting}[language=Python,caption=Verificación de la firma, label=cod:verif-UOV]
+def verificacion(hashed, firma, alpha_pub_F2, beta_pub_F2, m):
+
+   verif = True
+   alpha_pub = matrix3d_F2to128(alpha_pub_F2)
+   beta_pub = matrix3d_F2to128(beta_pub_F2)
+   #print(beta_pub)
+   for k in range(m):
+      aux_alpha = matrix_product(matrix_product ([firma], alpha_pub[k]), matrix_transpose([firma]))
+      aux_beta = matrix_product (beta_pub[k], matrix_transpose([firma]))
+      verif = verif and (hashed[k] == matrix_sum(aux_alpha,  aux_beta)[0][0])
+
+   return verif
+\end{lstlisting}
+
+
+\begin{lstlisting}[language=Python,caption=Generación clave privada, label=cod:priv-UOV]
+
+\end{lstlisting}
+
+
 
