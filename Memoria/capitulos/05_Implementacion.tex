@@ -2,11 +2,14 @@
 \label{sec:implementacion}
 %Aquí se deben proporcionar los detalles de cómo se ha llevado a la práctica el diseño propuesto en el capítulo anterior. Deben identificarse claramente herramientas, tecnologías, equipamientos, etc. utilizados o necesarios para el buen funcionamiento de la solución. Se pueden describir los fragmentos de código más importantes, con el fin de clarificar la funcionalidad que proporcionan. En general este capítulo debe facilitar la reutilización de nuestra solución, por lo que debe estar bien documentada. Puede incluir un manual de uso.
 
+Aquí se proporcionan los detalles de las funciones implementadas para la ejecución algoritmo UOV, además de la implementación de la aritmética en el cuerpo de 128 elementos.\\
 
 \section{Funciones del cuerpo de 128 elementos}
-Las funciones de esta sección son la suma, el producto y conversiones de elementos de otros cuerpo a elementos del cuerpo de 128 elementos.\\
+Las funciones referentes a esta sección son la suma, el producto y conversiones de elementos del cuerpo de $2^7$ elementos a elementos del cuerpo de 128 elementos.\\
 
-Los elementos del cuerpo se representarán con vectores de siete componentes para poder facilitar la implementación de la suma y del producto. Esto se refleja en las dos tablas denominadas \texttt{exp} y \texttt{log}, que tienen la estructura que se muestra en los códigos \ref{cod:exp} y \ref{cod:log}, respectivamente.\\
+Los elementos del cuerpo se representarán con vectores de siete componentes para poder facilitar la implementación de la suma y del producto. Esto se refleja en las dos tablas denominadas \texttt{exp} y \texttt{log}, que tienen la estructura que se muestra en los códigos \ref{cod:exp} y \ref{cod:log}, respectivamente. Para la implementación se han usado las variables diccionario de \texttt{python}, puesto que tienen fácil acceso a todas las componentes.
+
+\vspace{0.25cm}
 
 \begin{lstlisting}[language=Python,caption=Tabla para calcular la potencia en el cuerpo, label=cod:exp]
 exp = {
@@ -27,8 +30,9 @@ log = {
 }
 \end{lstlisting}
 
-La suma de dos elementos del cuerpo se ha hecho implementando la puesto xor en la estructura del mismo, código \ref{cod:suma-cuerpo}.\\
+La suma de dos elementos del cuerpo se ha implementando la puerta $xor$, esto es si las $iésimas$-componentes son iguales entonces la suma vale $0$, en caso contrario vale $1$, código \ref{cod:suma-cuerpo}.
 
+\vspace{0.25cm}
 \begin{lstlisting}[language=Python,caption=Suma de dos elementos del cuerpo, label=cod:suma-cuerpo]
 def suma(n1=[], n2=[]):
 
@@ -41,8 +45,9 @@ def suma(n1=[], n2=[]):
    return suma
 \end{lstlisting}
 
-El producto de dos elementos del cuerpo, para trabajar con enteros módulo 127 se hace uso de las tablas \ref{cod:exp} y \ref{cod:log}.\\
+Para el producto de dos elementos del cuerpo se ha diferenciado el caso en el que uno de los vectores sea $0$ en dicho caso el producto vale 0. Si ninguno de los vectores es $0$ entonces se hace uso de las tablas \ref{cod:exp} y \ref{cod:log}, para trabajar con enteros módulo 127, código \ref{cod:producto-cuerpo}.
 
+\vspace{0.25cm}
 \begin{lstlisting}[language=Python,caption=Producto de dos elementos del cuerpo, label=cod:producto-cuerpo]
 def product(n1=[], n2=[]):
 
@@ -56,33 +61,11 @@ def product(n1=[], n2=[]):
 \end{lstlisting}
 
 
-Las siguientes funciones del cuerpo se utilizarán para resolver el sistema ...
-
-La función \texttt{mayor} compara si un elemento del cuerpo es mayor que otro, código \ref{cod:mayor-que-cuerpo}.\\
-
-\begin{lstlisting}[language=Python,caption=Compara dos elementos del cuerpo, label=cod:mayor-que-cuerpo]
-def mayor (n1=[],n2=[]):
-
-   if n1 == [0,0,0,0,0,0,0]:
-      return False
-   else:
-      log1, log2 = log.get(tuple(n1)), log.get(tuple(n2))
-      return int(log1) > int(log2)
-\end{lstlisting}
+Las siguientes funciones son necesarias para la resolución del sistema de ecuaciones.
 
 
-El inverso de un elemento del cuerpo se calcula haciendo la multiplicación por los restantes elementos y comprobando que de como resultado el elemento unidad, código \ref{cod:inverso-cuerpo}.\\
-
-\begin{lstlisting}[language=Python,caption=Inverso de un elemento del cuerpo, label=cod:inverso-cuerpo]
-def inverse(n=[]):
-
-   i = 0
-   while product(n, F128(i)) != [0,0,0,0,0,0,1]:
-      i += 1
-   return F128(i)
-\end{lstlisting}
-
-Calcula el vector correspondiente de un entero en el cuerpo, código \ref{cod:entero-cuerpo}.\\
+Calcula el vector correspondiente vector en el cuerpo de un entero, código \ref{cod:entero-cuerpo}.
+\vspace{0.25cm}
 
 \begin{lstlisting}[language=Python,caption=Convierte un entero en un elemento del cuerpo, label=cod:entero-cuerpo]
 def F128(n1):
@@ -94,8 +77,38 @@ def F128(n1):
 \end{lstlisting}
 
 
-Convierte una matriz $n1$ del cuerpo $\mathds{F}_2$ en un vector $n$ del cuerpo de 128 elementos. Como los elementos de la matriz son solo 0 y 1, si en la matriz hay un 0 añade al vector $n$ el vector $[0,0,0,0,0,0,0]$ y en otro caso $[0,0,0,0,0,0,1]$, código \ref{cod:matrizF2-cuerpo}.\\
+Al estar en un cuerpo todo elementos tiene inverso y tiene sentido hacer la función \texttt{inverso} de un elemento del cuerpo, la implementación que se ha hecho ha sido hacer la multiplicación por los restantes elementos y comprobando que de como resultado el elemento unidad, en este caso $[0,0,0,0,0,0,1]$, código \ref{cod:inverso-cuerpo}.
+\newpage
 
+%\vspace{0.25cm}
+\begin{lstlisting}[language=Python,caption=Inverso de un elemento del cuerpo, label=cod:inverso-cuerpo]
+def inverse(n=[]):
+
+   i = 0
+   while product(n, F128(i)) != [0,0,0,0,0,0,1]:
+      i += 1
+   return F128(i)
+\end{lstlisting}
+
+La función \texttt{mayor} compara si el elemento $n1$ es mayor que el elemento $n2$, para ello se convierten los vectores a enteros con la tabla \texttt{log} y se compara que entero es mayor, código \ref{cod:mayor-que-cuerpo}.
+
+\vspace{0.25cm}
+
+\begin{lstlisting}[language=Python,caption=Compara dos elementos del cuerpo, label=cod:mayor-que-cuerpo]
+def mayor (n1=[],n2=[]):
+
+   if n1 == [0,0,0,0,0,0,0]:
+      return False
+   else:
+      log1, log2 = log.get(tuple(n1)), log.get(tuple(n2))
+      return int(log1) > int(log2)
+\end{lstlisting}
+ 
+
+
+Convierte una matriz $n1$ del cuerpo $\mathds{F}_2$ en un vector $n$ del cuerpo de 128 elementos. Como los elementos de la matriz son solo 0 y 1 la conversión se reduce a, si en la matriz hay un 0 añade al vector $n$ el vector $[0,0,0,0,0,0,0]$ y en otro caso $[0,0,0,0,0,0,1]$, código \ref{cod:matrizF2-cuerpo}.
+
+\vspace{0.25cm}
 \begin{lstlisting}[language=Python,caption=Matriz de $\mathds{F}_2$ a un elemento del cuerpo 128 elementos, label=cod:matrizF2-cuerpo]
 def matrix_F2to128(n1=[]):
 
@@ -112,7 +125,9 @@ def matrix_F2to128(n1=[]):
 \end{lstlisting}
 
 
-Convierte un vector de matrices $n1$ del cuerpo $\mathds{F}_2$ en una matriz $matrix$ del cuerpo de 128 elementos. Como en la función anterior los elementos de la matriz son solo 0 y 1, se aplica el mismo cambio, código \ref{cod:matriz3dF2-cuerpo}.\\
+Convierte un vector de matrices $n1$ del cuerpo $\mathds{F}_2$ en una matriz $matrix$ del cuerpo de 128 elementos. Como en la función anterior los elementos de la matriz son solo 0 y 1, se aplica el mismo cambio, código \ref{cod:matriz3dF2-cuerpo}.
+
+\vspace{0.25cm}
 
 \begin{lstlisting}[language=Python,caption=Vector de matrices de $\mathds{F}_2$ a una matriz del cuerpo de 128 elementos, label=cod:matriz3dF2-cuerpo]
 def matrix3d_F2to128(n1=[]):
@@ -125,6 +140,7 @@ def matrix3d_F2to128(n1=[]):
          for k in range(len(n1[0][0])):
             if n1[i][j][k] == 0:
                row += [[0,0,0,0,0,0,0]]
+               
             else:
                row += [[0,0,0,0,0,0,1]]
          n += [row]
@@ -137,7 +153,9 @@ def matrix3d_F2to128(n1=[]):
 En esta sección de explicarán funciones como la suma de matrices, cálculo de la matriz transpuesta, matriz identidad y el producto de matrices tanto en $\mathds{F}_2$ como en el cuerpo de 128 elementos. Además incluye la función que resuelve el sistema de ecuaciones con el método de Gauss-Jordan.\\
 
 
-La suma de dos matrices del cuerpo de 128 elementos, código \ref{cod:suma-matrix}.
+Suma de dos matrices $m1$ y $m2$ del cuerpo de 128 elementos, código \ref{cod:suma-matrix}.
+
+\vspace{0.25cm}
 
 \begin{lstlisting}[language=Python,caption=Suma de dos matrices con elementos en el cuerpo, label=cod:suma-matrix]
 def matrix_sum (m1, m2):
@@ -154,7 +172,9 @@ def matrix_sum (m1, m2):
 \end{lstlisting}
 
 
-El producto de dos matrices con elementos en el cuerpo de 128 elementos, código \ref{cod:prod-matrix}.\\
+Producto de dos matrices con elementos en el cuerpo de 128 elementos, código \ref{cod:prod-matrix}.
+
+\vspace{0.25cm}
 
 \begin{lstlisting}[language=Python,caption=Producto de matrices con elementos del cuerpo, label=cod:prod-matrix]
 def matrix_product (n1=[], n2=[]):
@@ -172,8 +192,9 @@ def matrix_product (n1=[], n2=[]):
    return prod
 \end{lstlisting}
 
+Producto de dos matrices con elementos en el cuerpo $\mathds{F}_2$, como los elementos de la matriz son $0$ y $1$ la suma acomulada se hace con la operación lógica \texttt{xor},  código \ref{cod:prodF2-matrix}.
 
-El producto de dos matrices con elementos en el cuerpo $\mathds{F}_2$, código \ref{cod:prodF2-matrix}.\\
+\vspace{0.25cm}
 
 \begin{lstlisting}[language=Python,caption=Producto de matrices con elementos en $\mathds{F}_2$, label=cod:prodF2-matrix]
 def matrix_product_F2 (n1=[], n2=[]):
@@ -192,7 +213,9 @@ def matrix_product_F2 (n1=[], n2=[]):
    return prod
 \end{lstlisting}
 
-Calcula la matriz transpuesta de la matriz dada como parámetro, código \ref{cod:trans-matrix}.\\
+Calcula la matriz transpuesta de la matriz dada como parámetro, código \ref{cod:trans-matrix}.
+
+\vspace{0.25cm}
 
 \begin{lstlisting}[language=Python,caption=Suma de dos elementos del cuerpo, label=cod:trans-matrix]
 def matrix_transpose(m):
@@ -208,7 +231,9 @@ def matrix_transpose(m):
 \end{lstlisting}
 
 
-Calcula la matriz identidad con una determinada dimensión, $dim$, que se pasa como parámetro, código \ref{cod:identi-matrix}.\\
+Calcula la matriz identidad con una determinada dimensión, $dim$, que se pasa como parámetro, código \ref{cod:identi-matrix}.
+
+\vspace{0.25cm}
 
 \begin{lstlisting}[language=Python,caption=Matriz identidad del cuerpo, label=cod:identi-matrix]
 def matrix_identity(dim):
@@ -227,7 +252,9 @@ def matrix_identity(dim):
 \end{lstlisting}
 
 
-Resolución de un sistema de ecuaciones con el método de Gauss-Jordan, código \ref{cod:Gauss-matrix}.\\
+La función \texttt{matrix\_rref} resuelve de un sistema de ecuaciones con el método de Gauss-Jordan, código \ref{cod:Gauss-matrix}.
+
+\vspace{0.25cm}
 
 \begin{lstlisting}[language=Python,caption=Método de Gauss-Jordan, label=cod:Gauss-matrix]
 def matrix_rref(A, b):
@@ -273,7 +300,7 @@ def matrix_rref(A, b):
 
 \section{Funciones algoritmo UOV}
 
-, código \ref{cod:priv-UOV}.\\
+La función \texttt{clavePrivada} genera la clave privada de un usuario, para ello genera una matriz triangular superior, $\alpha$, en $\mathds{F}_2$ con valores aleatorios, y un vector, $\beta$, en $\mathds{F}_2$. Los parámetros $m$ y $v$ son el número de variables de aceite y vinagre, respectivamente, código \ref{cod:priv-UOV}.\\
 
 \begin{lstlisting}[language=Python,caption=Generación clave privada, label=cod:priv-UOV]
 def clavePrivada (m, v):
@@ -308,7 +335,7 @@ def clavePrivada (m, v):
    return alpha, beta
 \end{lstlisting}
 
-, código \ref{cod:pub-UOV}.\\
+La función \texttt{clavePublica} genera la clave pública a partir de la clave privada, calculada con la función anterior, los valores $m$ y $v$ el número de variables de aceite y vinagre, además de una matriz de transación, código \ref{cod:pub-UOV}.\\
 
 \begin{lstlisting}[language=Python,caption=Generación clave pública, label=cod:pub-UOV]
 def clavePublica(m, v, alpha, beta, T):
@@ -327,7 +354,7 @@ def clavePublica(m, v, alpha, beta, T):
    return alpha_pub, beta_pub
 \end{lstlisting}
 
-, código \ref{cod:firma-UOV}.\\
+La función \texttt{signature} calcula la firma del hash de un mensaje, $hashed$, con las claves privadas del usuario, $alpha\_F2$ y $beta\_F2$, el número de aceites y vinagres, $m$ y $v$, el tamaño del cuerpo, $r$ y con la matriz de transición, $T$. Se toman los vinagres aleatorios, se resuelve el sistema para calcular los aceites, y con la ecuación \ref{eq:firma} obtenemos la firma del mensaje, código \ref{cod:firma-UOV}.\\
 
 \begin{lstlisting}[language=Python,caption=Firma del mensaje, label=cod:firma-UOV]
 def signature(hashed, alpha_F2, beta_F2, m, r, v, T):
@@ -358,15 +385,14 @@ def signature(hashed, alpha_F2, beta_F2, m, r, v, T):
    return firma[0]
 \end{lstlisting}
 
-, código \ref{cod:verif-UOV}.\\
+Por último la función \texttt{verify} comprueba si la firma, $firma$, de un mensaje, $m$, es correcta, para ello utiliza las claves públicas del usuario y el número de variables de aceite, se va comprobando una a una si se cumple la igualdad \ref{eq:veri}, código \ref{cod:verif-UOV}.\\
 
 \begin{lstlisting}[language=Python,caption=Verificación de la firma, label=cod:verif-UOV]
-def verificacion(hashed, firma, alpha_pub_F2, beta_pub_F2, m):
+def verify(hashed, firma, alpha_pub_F2, beta_pub_F2, m):
 
    verif = True
    alpha_pub = matrix3d_F2to128(alpha_pub_F2)
    beta_pub = matrix3d_F2to128(beta_pub_F2)
-   #print(beta_pub)
    for k in range(m):
       aux_alpha = matrix_product(matrix_product ([firma], alpha_pub[k]), matrix_transpose([firma]))
       aux_beta = matrix_product (beta_pub[k], matrix_transpose([firma]))
@@ -376,9 +402,9 @@ def verificacion(hashed, firma, alpha_pub_F2, beta_pub_F2, m):
 \end{lstlisting}
 
 
-\begin{lstlisting}[language=Python,caption=Generación clave privada, label=cod:priv-UOV]
+%\begin{lstlisting}[language=Python,caption=Generación clave privada, label=cod:priv-UOV]
 
-\end{lstlisting}
+%\end{lstlisting}
 
 
 
