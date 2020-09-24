@@ -32,6 +32,23 @@ log = {
 
 La suma de dos elementos del cuerpo se ha implementando la puerta $xor$, esto es si las $iésimas$-componentes son iguales entonces la suma vale $0$, en caso contrario vale $1$, código \ref{cod:suma-cuerpo}.
 
+\begin{table}[h]
+	\label{tab:rel}
+	\begin{center}
+	\centering
+	\resizebox{\linewidth}{!}{
+	\begin{tabular}{p{0.14\linewidth} p {0.1\linewidth}p{0.1\linewidth}p{0.65\linewidth}}
+		\textbf{Tipo} & \textbf{Nombre} & \textbf{Variable} & \textbf{Descripción} \\
+		\toprule
+		int vector & n1 & Input & Elemento para sumar del cuerpo de 128 elementos \\[0.5ex]
+		int vector & n2 & Input & Elemento para sumar del cuerpo de 128 elementos\\[0.5ex]
+		int vector & suma & Output & Elemento  del cuerpo que almacena la suma de n1 y n2\\[0.5ex]
+		\bottomrule
+	\end{tabular}}
+	\end{center}
+	\caption{Parámetros de la función \texttt{suma}}
+\end{table}
+
 \vspace{0.25cm}
 \begin{lstlisting}[language=Python,caption=Suma de dos elementos del cuerpo, label=cod:suma-cuerpo]
 def suma(n1=[], n2=[]):
@@ -46,6 +63,24 @@ def suma(n1=[], n2=[]):
 \end{lstlisting}
 
 Para el producto de dos elementos del cuerpo se ha diferenciado el caso en el que uno de los vectores sea $0$ en dicho caso el producto vale 0. Si ninguno de los vectores es $0$ entonces se hace uso de las tablas \ref{cod:exp} y \ref{cod:log}, para trabajar con enteros módulo 127, código \ref{cod:producto-cuerpo}.
+
+\begin{table}[h]
+	\label{tab:rel}
+	\begin{center}
+	\centering
+	\resizebox{\linewidth}{!}{
+	\begin{tabular}{p{0.14\linewidth} p {0.1\linewidth}p{0.1\linewidth}p{0.65\linewidth}}
+		\textbf{Tipo} & \textbf{Nombre} & \textbf{Variable} & \textbf{Descripción} \\
+		\toprule
+		int vector & n1 & Input & Elemento para multiplicar del cuerpo de 128 elementos \\[0.5ex]
+		int vector & n2 & Input & Elemento para multiplicar del cuerpo de 128 elementos\\[0.5ex]
+		int & suma & Inner & Almacena la suma de los logaritmos de n1 y n2 módulo 127\\[1.5ex]
+		int vector & product & Output & Elemento del cuerpo que almacena el producto de n1 y n2\\[0.5ex]
+		\bottomrule
+	\end{tabular}}
+	\end{center}
+	\caption{Parámetros de la función \texttt{product}}
+\end{table}
 
 \vspace{0.25cm}
 \begin{lstlisting}[language=Python,caption=Producto de dos elementos del cuerpo, label=cod:producto-cuerpo]
@@ -65,6 +100,23 @@ Las siguientes funciones son necesarias para la resolución del sistema de ecuac
 
 
 Calcula el vector correspondiente vector en el cuerpo de un entero, código \ref{cod:entero-cuerpo}.
+
+
+\begin{table}[h]
+	\label{tab:rel}
+	\begin{center}
+	\centering
+	\resizebox{\linewidth}{!}{
+	\begin{tabular}{p{0.14\linewidth} p {0.1\linewidth}p{0.1\linewidth}p{0.65\linewidth}}
+		\textbf{Tipo} & \textbf{Nombre} & \textbf{Variable} & \textbf{Descripción} \\
+		\toprule
+		int & n1 & Input & Entero del que se desea calcular su vector en el cuerpo\\[1.5ex]
+		int vector &  & Output & Elemento del cuerpo de 128 elementos\\[0.5ex]
+		\bottomrule
+	\end{tabular}}
+	\end{center}
+	\caption{Parámetros de la función \texttt{F128}}
+\end{table}
 \vspace{0.25cm}
 
 \begin{lstlisting}[language=Python,caption=Convierte un entero en un elemento del cuerpo, label=cod:entero-cuerpo]
@@ -78,9 +130,24 @@ def F128(n1):
 
 
 Al estar en un cuerpo todo elementos tiene inverso y tiene sentido hacer la función \texttt{inverso} de un elemento del cuerpo, la implementación que se ha hecho ha sido hacer la multiplicación por los restantes elementos y comprobando que de como resultado el elemento unidad, en este caso $[0,0,0,0,0,0,1]$, código \ref{cod:inverso-cuerpo}.
-\newpage
 
-%\vspace{0.25cm}
+\begin{table}[h]
+	\label{tab:rel}
+	\begin{center}
+	\centering
+	\resizebox{\linewidth}{!}{
+	\begin{tabular}{p{0.14\linewidth} p {0.1\linewidth}p{0.1\linewidth}p{0.65\linewidth}}
+		\textbf{Tipo} & \textbf{Nombre} & \textbf{Variable} & \textbf{Descripción} \\
+		\toprule
+		int vector & n & Input & Elemento para calcular su inverso en el cuerpo de 128 elementos\\[1.5ex]
+		int vector &  & Output & Inverso de n\\[0.5ex]
+		\bottomrule
+	\end{tabular}}
+	\end{center}
+	\caption{Parámetros de la función \texttt{inverse}}
+\end{table}
+
+\vspace{0.25cm}
 \begin{lstlisting}[language=Python,caption=Inverso de un elemento del cuerpo, label=cod:inverso-cuerpo]
 def inverse(n=[]):
 
@@ -91,6 +158,26 @@ def inverse(n=[]):
 \end{lstlisting}
 
 La función \texttt{mayor} compara si el elemento $n1$ es mayor que el elemento $n2$, para ello se convierten los vectores a enteros con la tabla \texttt{log} y se compara que entero es mayor, código \ref{cod:mayor-que-cuerpo}.
+
+\begin{table}[h]
+	\label{tab:rel}
+	\begin{center}
+	\centering
+	\resizebox{\linewidth}{!}{
+	\begin{tabular}{p{0.14\linewidth} p {0.1\linewidth}p{0.1\linewidth}p{0.65\linewidth}}
+		\textbf{Tipo} & \textbf{Nombre} & \textbf{Variable} & \textbf{Descripción} \\
+		\toprule
+		int vector & n1 & Input & Elemento a comparar con n2 en el cuerpo de 128 elementos\\[0.5ex]
+		int vector & n2 & Input & Elemento a comparar con n1 en el cuerpo de 128 elementos\\[1.5ex]
+		int & log1 & Inner & Almacena el logaritmo de n1\\[0.5ex]
+		int & log2 & Inner & Almacena el logaritmo de n2\\[1.5ex]
+		boolean &  & Output & \texttt{True} si n1 es mayor\\
+		& & & \texttt{False} en otro caso\\[0.5ex]
+		\bottomrule
+	\end{tabular}}
+	\end{center}
+	\caption{Parámetros de la función \texttt{mayor}}
+\end{table}
 
 \vspace{0.25cm}
 
@@ -107,6 +194,23 @@ def mayor (n1=[],n2=[]):
 
 
 Convierte una matriz $n1$ del cuerpo $\mathds{F}_2$ en un vector $n$ del cuerpo de 128 elementos. Como los elementos de la matriz son solo 0 y 1 la conversión se reduce a, si en la matriz hay un 0 añade al vector $n$ el vector $[0,0,0,0,0,0,0]$ y en otro caso $[0,0,0,0,0,0,1]$, código \ref{cod:matrizF2-cuerpo}.
+
+\begin{table}[h]
+	\label{tab:rel}
+	\begin{center}
+	\centering
+	\resizebox{\linewidth}{!}{
+	\begin{tabular}{p{0.14\linewidth} p {0.1\linewidth}p{0.1\linewidth}p{0.65\linewidth}}
+		\textbf{Tipo} & \textbf{Nombre} & \textbf{Variable} & \textbf{Descripción} \\
+		\toprule
+		int vector & n1 & Input & Matriz con elementos en $\mathds{F}_2$\\[1.5ex]
+		int & row & Inner & Almacena las filas generadas de la matriz n\\[1.5ex]
+		int vector & n & Output & Matriz en el cuerpo de 128 elementos\\[0.5ex]
+		\bottomrule
+	\end{tabular}}
+	\end{center}
+	\caption{Parámetros de la función \texttt{matrix\_F2to128}}
+\end{table}
 
 \vspace{0.25cm}
 \begin{lstlisting}[language=Python,caption=Matriz de $\mathds{F}_2$ a un elemento del cuerpo 128 elementos, label=cod:matrizF2-cuerpo]
@@ -126,6 +230,24 @@ def matrix_F2to128(n1=[]):
 
 
 Convierte un vector de matrices $n1$ del cuerpo $\mathds{F}_2$ en una matriz $matrix$ del cuerpo de 128 elementos. Como en la función anterior los elementos de la matriz son solo 0 y 1, se aplica el mismo cambio, código \ref{cod:matriz3dF2-cuerpo}.
+
+\begin{table}[h]
+	\label{tab:rel}
+	\begin{center}
+	\centering
+	\resizebox{\linewidth}{!}{
+	\begin{tabular}{p{0.14\linewidth} p {0.1\linewidth}p{0.1\linewidth}p{0.65\linewidth}}
+		\textbf{Tipo} & \textbf{Nombre} & \textbf{Variable} & \textbf{Descripción} \\
+		\toprule
+		int vector & n1 & Input & Vector de matriz con elementos en $\mathds{F}_2$\\[1.5ex]
+		int & n & Inner & Almacena las matrices del vector matrix\\[0.5ex]
+		int & row & Inner & Almacena las filas generadas de la matriz n\\[1.5ex]
+		int vector & matrix & Output & Vector de matrices con elementos en el cuerpo de 128 elementos\\[0.5ex]
+		\bottomrule
+	\end{tabular}}
+	\end{center}
+	\caption{Parámetros de la función \texttt{matrix3d\_F2to128}}
+\end{table}
 
 \vspace{0.25cm}
 
@@ -155,6 +277,24 @@ En esta sección de explicarán funciones como la suma de matrices, cálculo de 
 
 Suma de dos matrices $m1$ y $m2$ del cuerpo de 128 elementos, código \ref{cod:suma-matrix}.
 
+\begin{table}[h]
+	\label{tab:rel}
+	\begin{center}
+	\centering
+	\resizebox{\linewidth}{!}{
+	\begin{tabular}{p{0.14\linewidth} p {0.1\linewidth}p{0.1\linewidth}p{0.65\linewidth}}
+		\textbf{Tipo} & \textbf{Nombre} & \textbf{Variable} & \textbf{Descripción} \\
+		\toprule
+		int vector & m1 & Input & Matriz a sumar en el cuerpo de 128 elementos\\[0.5ex]
+		int vector & m2 & Input & Matriz a sumar en el cuerpo de 128 elementos\\[1.5ex]
+		int & row & Inner & Almacena las filas de n\\[1.5ex]
+		int vector & m\_suma & Output & Suma de las matrices m1 y m2 en el cuerpo de 128 elementos\\[0.5ex]
+		\bottomrule
+	\end{tabular}}
+	\end{center}
+	\caption{Parámetros de la función \texttt{matrix\_sum}}
+\end{table}
+
 \vspace{0.25cm}
 
 \begin{lstlisting}[language=Python,caption=Suma de dos matrices con elementos en el cuerpo, label=cod:suma-matrix]
@@ -163,16 +303,35 @@ def matrix_sum (m1, m2):
    m_suma = []
 
    if (len(m1) == len(m2)) and (len(m1[0]) == len(m2[0])):
-      for row in range(len(m1)):
-         aux = []
-         for col in range(len(m1[0])):
-            aux += [suma (m1[row][col], m2[row][col])]
-         m_suma += [aux]
+      for i in range(len(m1)):
+         row = []
+         for j in range(len(m1[0])):
+            row += [suma (m1[i][j], m2[i][j])]
+         m_suma += [row]
    return m_suma
 \end{lstlisting}
 
 
 Producto de dos matrices con elementos en el cuerpo de 128 elementos, código \ref{cod:prod-matrix}.
+
+\begin{table}[h]
+	\label{tab:rel}
+	\begin{center}
+	\centering
+	\resizebox{\linewidth}{!}{
+	\begin{tabular}{p{0.14\linewidth} p {0.1\linewidth}p{0.1\linewidth}p{0.65\linewidth}}
+		\textbf{Tipo} & \textbf{Nombre} & \textbf{Variable} & \textbf{Descripción} \\
+		\toprule
+		int vector & n1 & Input & Matriz a multiplicar en el cuerpo de 128 elementos\\[0.5ex]
+		int vector & n2 & Input & Matriz a multiplicar en el cuerpo de 128 elementos\\[1.5ex]
+		int & p\_suma & Inner & Almacena la suma de los productos de cada elemento de la fila de n1 y de la columna de n2\\[0.5ex]
+		int & row & Inner & Almacena las filas de prod\\[0.5ex]
+		int vector & prod & Output & Producto de las matrices m1 y m2 en el cuerpo de 128 elementos\\[0.5ex]
+		\bottomrule
+	\end{tabular}}
+	\end{center}
+	\caption{Parámetros de la función \texttt{matrix\_product}}
+\end{table}
 
 \vspace{0.25cm}
 
@@ -181,18 +340,37 @@ def matrix_product (n1=[], n2=[]):
 
    prod=[]
    if len(n1[0]) == len(n2):
-      for row1 in range(len(n1)):
-         aux = []
-         for col in range(len(n2[0])):
+      for i1 in range(len(n1)):
+         row = []
+         for j in range(len(n2[0])):
             p_suma = [0,0,0,0,0,0,0]
-            for row2 in range(len(n2)):
-               p_suma = suma (product(n1[row1][row2], n2[row2][col]), p_suma)
-            aux += [p_suma]
-         prod += [aux]
+            for i2 in range(len(n2)):
+               p_suma = suma (product(n1[i1][i2], n2[i2][j]), p_suma)
+            row += [p_suma]
+         prod += [row]
    return prod
 \end{lstlisting}
 
 Producto de dos matrices con elementos en el cuerpo $\mathds{F}_2$, como los elementos de la matriz son $0$ y $1$ la suma acomulada se hace con la operación lógica \texttt{xor},  código \ref{cod:prodF2-matrix}.
+
+\begin{table}[h]
+	\label{tab:rel}
+	\begin{center}
+	\centering
+	\resizebox{\linewidth}{!}{
+	\begin{tabular}{p{0.14\linewidth} p {0.1\linewidth}p{0.1\linewidth}p{0.65\linewidth}}
+		\textbf{Tipo} & \textbf{Nombre} & \textbf{Variable} & \textbf{Descripción} \\
+		\toprule
+		int vector & n1 & Input & Matriz a multiplicar en $\mathds{F}_2$\\[0.5ex]
+		int vector & n2 & Input & Matriz a multiplicar en $\mathds{F}_2$\\[1.5ex]
+		int & p\_suma & Inner & Almacena la suma de los productos de cada elemento de la fila de n1 y de la columna de n2\\[0.5ex]
+		int & row & Inner & Almacena las filas de prod\\[1.5ex]
+		int vector & prod & Output & Producto de las matrices m1 y m2 en $\mathds{F}_2$\\[0.5ex]
+		\bottomrule
+	\end{tabular}}
+	\end{center}
+	\caption{Parámetros de la función \texttt{matrix\_product\_F2}}
+\end{table}
 
 \vspace{0.25cm}
 
@@ -200,38 +378,70 @@ Producto de dos matrices con elementos en el cuerpo $\mathds{F}_2$, como los ele
 def matrix_product_F2 (n1=[], n2=[]):
 
    prod=[]
-
    if len(n1[0]) == len(n2):
-      for row1 in range(len(n1)):
-         aux = []
-         for col in range(len(n2[0])):
+      for i1 in range(len(n1)):
+         row = []
+         for j in range(len(n2[0])):
             p_suma = 0
-            for row2 in range(len(n2)):
-               p_suma = (n1[row1][row2] * n2[row2][col]) ^ p_suma
-            aux += [p_suma]
-         prod += [aux]
+            for i2 in range(len(n2)):
+               p_suma = (n1[i1][i2] * n2[i2][j]) ^ p_suma
+            row += [p_suma]
+         prod += [row]
    return prod
 \end{lstlisting}
 
 Calcula la matriz transpuesta de la matriz dada como parámetro, código \ref{cod:trans-matrix}.
 
+\begin{table}[h]
+	\label{tab:rel}
+	\begin{center}
+	\centering
+	\resizebox{\linewidth}{!}{
+	\begin{tabular}{p{0.14\linewidth} p {0.1\linewidth}p{0.1\linewidth}p{0.65\linewidth}}
+		\textbf{Tipo} & \textbf{Nombre} & \textbf{Variable} & \textbf{Descripción} \\
+		\toprule
+		int vector & m & Input & Matriz para calcular su transpuesta\\[1.5ex]
+		int & row & Inner & Almacena las filas de trans\\[1.5ex]
+		int vector & trans & Output & Matriz transpuesta\\[0.5ex]
+		\bottomrule
+	\end{tabular}}
+	\end{center}
+	\caption{Parámetros de la función \texttt{matrix\_transpose}}
+\end{table}
+
 \vspace{0.25cm}
 
-\begin{lstlisting}[language=Python,caption=Suma de dos elementos del cuerpo, label=cod:trans-matrix]
+\begin{lstlisting}[language=Python,caption=Matriz transpuesta, label=cod:trans-matrix]
 def matrix_transpose(m):
 
    trans = []
-   for col in range(len(m[0])):
-      aux = []
-      for row in range(len(m)):
-         aux += [m[row][col]]
-      trans += [aux]
+   for j in range(len(m[0])):
+      row = []
+      for i in range(len(m)):
+         row += [m[i][j]]
+      trans += [row]
    return trans
-
 \end{lstlisting}
 
 
 Calcula la matriz identidad con una determinada dimensión, $dim$, que se pasa como parámetro, código \ref{cod:identi-matrix}.
+
+\begin{table}[h]
+	\label{tab:rel}
+	\begin{center}
+	\centering
+	\resizebox{\linewidth}{!}{
+	\begin{tabular}{p{0.14\linewidth} p {0.1\linewidth}p{0.1\linewidth}p{0.65\linewidth}}
+		\textbf{Tipo} & \textbf{Nombre} & \textbf{Variable} & \textbf{Descripción} \\
+		\toprule
+		int & dim & Input & Dimensión de la que calcular la matriz identidad en el cuerpo de 128 elementos\\[1.5ex]
+		int & row & Inner & Almacena las filas de matrix\\[1.5ex]
+		int vector & matrix & Output & Matriz identidad\\[0.5ex]
+		\bottomrule
+	\end{tabular}}
+	\end{center}
+	\caption{Parámetros de la función \texttt{matrix\_identity}}
+\end{table}
 
 \vspace{0.25cm}
 
@@ -241,18 +451,40 @@ def matrix_identity(dim):
    matrix = []
 
    for i in range(dim):
-      aux = []
+      row = []
       for j in range(dim):
          if i == j:
-            aux += [[0,0,0,0,0,0,1]]
+            row += [[0,0,0,0,0,0,1]]
          else:
-            aux += [[0,0,0,0,0,0,0]]
-      matrix += [aux]
+            row += [[0,0,0,0,0,0,0]]
+      matrix += [row]
    return matrix
 \end{lstlisting}
 
 
-La función \texttt{matrix\_rref} resuelve de un sistema de ecuaciones con el método de Gauss-Jordan, código \ref{cod:Gauss-matrix}.
+La función \texttt{matrix\_rref} resuelve de un sistema de ecuaciones con el método de Gauss-Jordan, código \ref{cod:Gauss-matrix}. El sistema de ecuaciones es de la forma de la ecuación \ref{eq:Gauss}.
+
+\begin{equation}\label{eq:Gauss}
+A\cdot x=b
+\end{equation}
+
+\begin{table}[h]
+	\label{tab:rel}
+	\begin{center}
+	\centering
+	\resizebox{\linewidth}{!}{
+	\begin{tabular}{p{0.14\linewidth} p {0.1\linewidth}p{0.1\linewidth}p{0.65\linewidth}}
+		\textbf{Tipo} & \textbf{Nombre} & \textbf{Variable} & \textbf{Descripción} \\
+		\toprule
+		int vector & A & Input & Matriz de la ecuación\\[0.5ex]
+		int vector & b & Input & Vector de la ecuación\\[1.5ex]
+		int vector & M & Inner & Matriz aumentada, combinación de A y b\\[1.5ex]
+		int vector & x & Output & Solución del sistema\\[0.5ex]
+		\bottomrule
+	\end{tabular}}
+	\end{center}
+	\caption{Parámetros de la función \texttt{matrix\_rref}}
+\end{table}
 
 \vspace{0.25cm}
 
@@ -260,30 +492,27 @@ La función \texttt{matrix\_rref} resuelve de un sistema de ecuaciones con el m�
 def matrix_rref(A, b):
 
    r = 0
-   pivots_pos = []
+   row = []
    n = len(A)
 
-   #Añadir b como una columna
+   #Matriz aumentada, añadir b como una columna
    M = A
-   for row in range(len(M)):
-      M[row] += b[row]
-
+   for i in range(len(M)):
+      M[i] += b[i]
 
    for k in range(n):
       #Intercambio de filas para que quede arriba la de menor valor
       for i in range(k, n):
          if mayor(M[i][k], M[k][k]):
-            aux = M[k]
+            row = M[k]
             M[k] = M[i]
-            M[i] = aux
-
+            M[i] = row
 
       #Hacer ceros
       for j in range(k+1, n):
          q = product(M[j][k], inverse(M[k][k]))
          for m in range(k, n+1):
             M[j][m] = suma(M[j][m], product(q, M[k][m]))
-
 
    #Calcular la solución x de abajo arriba
    x = [[[0,0,0,0,0,0,0]] for i in range(n)]
@@ -300,7 +529,29 @@ def matrix_rref(A, b):
 
 \section{Funciones algoritmo UOV}
 
-La función \texttt{clavePrivada} genera la clave privada de un usuario, para ello genera una matriz triangular superior, $\alpha$, en $\mathds{F}_2$ con valores aleatorios, y un vector, $\beta$, en $\mathds{F}_2$. Los parámetros $m$ y $v$ son el número de variables de aceite y vinagre, respectivamente, código \ref{cod:priv-UOV}.\\
+La función \texttt{clavePrivada} genera la clave privada de un usuario, para ello genera una matriz triangular superior, $\alpha$, en $\mathds{F}_2$ con valores aleatorios, y un vector, $\beta$, en $\mathds{F}_2$. Los parámetros $m$ y $v$ son el número de variables de aceite y vinagre, respectivamente, código \ref{cod:priv-UOV}.
+
+\vspace{-0.23cm}
+\begin{table}[h]
+	\label{tab:rel}
+	\begin{center}
+	\centering
+	\resizebox{\linewidth}{!}{
+	\begin{tabular}{p{0.14\linewidth} p {0.1\linewidth}p{0.1\linewidth}p{0.65\linewidth}}
+		\textbf{Tipo} & \textbf{Nombre} & \textbf{Variable} & \textbf{Descripción} \\
+		\toprule
+		int vector & m & Input & Número de aceites\\[0.5ex]
+		int vector & v & Input & Número de vinagres\\[1.5ex]
+		int vector & alpha & Output & Vector de matrices triangulares superiores aleatorias en $\mathds{F}_2$, parte de la clave privada \\[0.5ex]
+		int vector & beta & Output & Matriz aleatoria en $\mathds{F}_2$, parte de la clave privada\\[0.5ex]
+		\bottomrule
+	\end{tabular}}
+	\end{center}
+	\caption{Parámetros de la función \texttt{clavePrivada}}
+\end{table}
+
+
+
 
 \begin{lstlisting}[language=Python,caption=Generación clave privada, label=cod:priv-UOV]
 def clavePrivada (m, v):
@@ -317,10 +568,7 @@ def clavePrivada (m, v):
             if i > j:
                row += [0]
             else:
-               if randint(0,1) == 0:
-                  row += [0]
-               else:
-                  row += [1]
+               row += [randint(0,1)]
          aux += [row]
       alpha += [aux]
 
@@ -328,14 +576,36 @@ def clavePrivada (m, v):
       row = []
       for i in range(n):
          if randint(0,1) == 0:
-            row += [0]
-         else:
-            row += [1]
+            row += [randint(0,1)]
+
       beta += [row]
    return alpha, beta
 \end{lstlisting}
 
-La función \texttt{clavePublica} genera la clave pública a partir de la clave privada, calculada con la función anterior, los valores $m$ y $v$ el número de variables de aceite y vinagre, además de una matriz de transación, código \ref{cod:pub-UOV}.\\
+La función \texttt{clavePublica} genera la clave pública a partir de la clave privada, calculada con la función anterior, los valores $m$ y $v$ el número de variables de aceite y vinagre, además de una matriz de distorsión, código \ref{cod:pub-UOV}.
+
+\begin{table}[h]
+	\label{tab:rel}
+	\begin{center}
+	\centering
+	\resizebox{\linewidth}{!}{
+	\begin{tabular}{p{0.14\linewidth} p {0.1\linewidth}p{0.1\linewidth}p{0.65\linewidth}}
+		\textbf{Tipo} & \textbf{Nombre} & \textbf{Variable} & \textbf{Descripción} \\
+		\toprule
+		int vector & m & Input & Número aceites\\[0.5ex]
+		int vector & v & Input & Número vinagres\\[0.5ex]
+		int vector & alpha & Input & Vector de matrices triangulares superiores en $\mathds{F}_2$, parte de la clave privada \\[0.5ex]
+		int vector & beta & Input & Matriz en $\mathds{F}_2$, parte de la clave privada\\[0.5ex]
+		int vector & T & Input & Matriz de distorsión de la forma \ref{mat:T}\\[1.5ex]
+		int vector & alpha\_pub & Output & Vector de matrices en $\mathds{F}_2$, parte de la clave pública\\[0.5ex]
+		int vector & beta\_pub & Output & Matriz en $\mathds{F}_2$, parte de la clave pública\\[0.5ex]
+		\bottomrule
+	\end{tabular}}
+	\end{center}
+	\caption{Parámetros de la función \texttt{clavePublica}}
+\end{table}
+
+\vspace{0.25cm}
 
 \begin{lstlisting}[language=Python,caption=Generación clave pública, label=cod:pub-UOV]
 def clavePublica(m, v, alpha, beta, T):
@@ -354,7 +624,37 @@ def clavePublica(m, v, alpha, beta, T):
    return alpha_pub, beta_pub
 \end{lstlisting}
 
-La función \texttt{signature} calcula la firma del hash de un mensaje, $hashed$, con las claves privadas del usuario, $alpha\_F2$ y $beta\_F2$, el número de aceites y vinagres, $m$ y $v$, el tamaño del cuerpo, $r$ y con la matriz de transición, $T$. Se toman los vinagres aleatorios, se resuelve el sistema para calcular los aceites, y con la ecuación \ref{eq:firma} obtenemos la firma del mensaje, código \ref{cod:firma-UOV}.\\
+La función \texttt{signature} calcula la firma del hash de un mensaje, $hashed$, con las claves privadas del usuario, $alpha\_F2$ y $beta\_F2$, el número de aceites y vinagres, $m$ y $v$, el tamaño del cuerpo, $r$ y con la matriz de transición, $T$. Se toman los vinagres aleatorios, se resuelve el sistema para calcular los aceites, y con la ecuación \ref{eq:firma} obtenemos la firma del mensaje, código \ref{cod:firma-UOV}.
+
+\begin{table}[h]
+	\label{tab:rel}
+	\begin{center}
+	\centering
+	\resizebox{\linewidth}{!}{
+	\begin{tabular}{p{0.14\linewidth} p {0.1\linewidth}p{0.1\linewidth}p{0.65\linewidth}}
+		\textbf{Tipo} & \textbf{Nombre} & \textbf{Variable} & \textbf{Descripción} \\
+		\toprule
+		int vector & hashed & Input & Vector \textit{hash}\\[0.5ex]
+		int vector & alpha\_F2 & Input & Vector de matrices triangulares superiores en $\mathds{F}_2$, parte de la clave privada\\[0.5ex]
+		int vector & beta\_F2 & Input & Matriz en $\mathds{F}_2$, parte de la clave privada \\[0.5ex]
+		int  & m & Input & Número aceites\\[0.5ex]
+		int  & r & Input & Dimensión de \\[0.5ex] %TODO 
+		int  & v & Input & Número vinagres\\[0.5ex]
+		int vector & T & Input & Matriz de distorsión de la forma \ref{mat:T}\\[1.5ex]
+		int vector & alpha & Inner & Almecena los correspondientes valores de alpha\_F2 en el cuerpo de 128 elementos\\[0.5ex]
+		int vector & beta & Inner &  Almecena los correspondientes valores de beta\_F2 en el cuerpo de 128 elementos\\[0.5ex]
+		int vector & vinagre & Inner & Vector aleatorio de tamaño v, contiene los vinagres\\[0.5ex]
+		int vector & coef & Inner & Almacena los coeficientes del sistema\\[0.5ex]
+		int vector & term & Inner & Almacena los términos del sistema\\[0.5ex]
+		int vector & oil & Inner & Almacena la solución del sistema, son los aceites del algoritmo\\[1.5ex]
+		int vector & firma & Output & Contiene la firma de \textit{hashed}\\[0.5ex]
+		\bottomrule
+	\end{tabular}}
+	\end{center}
+	\caption{Parámetros de la función \texttt{signature}}
+\end{table}
+
+\vspace{0.25cm}
 
 \begin{lstlisting}[language=Python,caption=Firma del mensaje, label=cod:firma-UOV]
 def signature(hashed, alpha_F2, beta_F2, m, r, v, T):
@@ -385,7 +685,32 @@ def signature(hashed, alpha_F2, beta_F2, m, r, v, T):
    return firma[0]
 \end{lstlisting}
 
-Por último la función \texttt{verify} comprueba si la firma, $firma$, de un mensaje, $m$, es correcta, para ello utiliza las claves públicas del usuario y el número de variables de aceite, se va comprobando una a una si se cumple la igualdad \ref{eq:veri}, código \ref{cod:verif-UOV}.\\
+Por último la función \texttt{verify} comprueba si la firma, $firma$, de un mensaje, $m$, es correcta, para ello utiliza las claves públicas del usuario y el número de variables de aceite, se va comprobando una a una si se cumple la igualdad \ref{eq:veri}, código \ref{cod:verif-UOV}.
+
+\begin{table}[h]
+	\label{tab:rel}
+	\begin{center}
+	\centering
+	\resizebox{\linewidth}{!}{
+	\begin{tabular}{p{0.14\linewidth} p {0.1\linewidth}p{0.1\linewidth}p{0.65\linewidth}}
+		\textbf{Tipo} & \textbf{Nombre} & \textbf{Variable} & \textbf{Descripción} \\
+		\toprule
+		int vector & hashed & Input & Vector \textit{hash}\\[0.5ex]
+		int vector & firma & Input & Vector con la firma del \textit{hash}\\[0.5ex]
+		int vector & alpha\_F2 & Input & Vector de matrices triangulares superiores en $\mathds{F}_2$, parte de la clave privada\\[0.5ex]
+		int vector & beta\_F2 & Input & Matriz en $\mathds{F}_2$, parte de la clave privada \\[0.5ex]
+		int & m & Input & Número aceites\\[1.5ex]
+		int vector & alpha & Inner & Almecena los correspondientes valores de alpha\_F2 en el cuerpo de 128 elementos\\[0.5ex]
+		int vector & beta & Inner &  Almecena los correspondientes valores de beta\_F2 en el cuerpo de 128 elementos\\[1.5ex]
+		boolean & verif & Output & \texttt{True} si la firma es válida\\
+		& & & \texttt{False} en otro caso\\[0.5ex]
+		\bottomrule
+	\end{tabular}}
+	\end{center}
+	\caption{Parámetros de la función \texttt{verify}}
+\end{table}
+
+\vspace{0.25cm}
 
 \begin{lstlisting}[language=Python,caption=Verificación de la firma, label=cod:verif-UOV]
 def verify(hashed, firma, alpha_pub_F2, beta_pub_F2, m):
