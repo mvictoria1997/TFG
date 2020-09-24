@@ -1,6 +1,17 @@
 \chapter{Diseño}
 
-Es uno de los capítulos más importantes. Debe explicar claramente la solución propuesta justificando la aproximación adoptada. Este capítulo, según el caso, es aconsejable que defina claramente la arquitectura del sistema propuesto, identificando los roles o partes o actores del sistema. Pueden emplearse metodologías basadas en diagramas de clases, paquetes, diagramas secuenciales, diagramas de relación, etc.
+%Es uno de los capítulos más importantes. Debe explicar claramente la solución propuesta justificando la aproximación adoptada. Este capítulo, según el caso, es aconsejable que defina claramente la arquitectura del sistema propuesto, identificando los roles o partes o actores del sistema. Pueden emplearse metodologías basadas en diagramas de clases, paquetes, diagramas secuenciales, diagramas de relación, etc.
 
-Si se ha diseñado una interfaz gráfica debe también describirse su estructura, dónde se mostrará la información, etc.
+%Si se ha diseñado una interfaz gráfica debe también describirse su estructura, dónde se mostrará la información, etc.
 
+\section{Algoritmo criptográfico}
+
+La estructura del algoritmo viene dada por un fichero escrito en python donde se encuentran las funciones que se explicarán en detalle en el capítulo \ref{sec:implementacion}.
+
+El fichero \texttt{luov.py} incorpora main con un ejemplo de uso del algoritmo independientemente de la \textit{blockchain}.
+
+\section{Ecosistema ARK}
+
+El ecosistema ark se ha instalado en un docker \texttt{ubuntu:xenial}. Nos encontramos con las carpetas deployer, core-bridgechain y core-explorer.
+
+La carpeta deployer contiene la instalación de la \textit{blockchain} y del \textit{explorer}. Para instalar la blockchain y el explorer se hara mediante la ejecucion del archivo bridgechain.sh con los convenientes parámetros.

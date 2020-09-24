@@ -21,6 +21,8 @@
 \contentsline {section}{\numberline {3.1}Especificaci\IeC {\'o}n de requisitos}{21}{section.3.1}
 \contentsline {section}{\numberline {3.2}An\IeC {\'a}lisis}{21}{section.3.2}
 \contentsline {chapter}{\numberline {4}Dise\IeC {\~n}o}{23}{chapter.4}
+\contentsline {section}{\numberline {4.1}Algoritmo criptogr\IeC {\'a}fico}{23}{section.4.1}
+\contentsline {section}{\numberline {4.2}Ecosistema ARK}{23}{section.4.2}
 \contentsline {chapter}{\numberline {5}Implementaci\IeC {\'o}n}{25}{chapter.5}
 \contentsline {section}{\numberline {5.1}Funciones del cuerpo de 128 elementos}{25}{section.5.1}
 \contentsline {section}{\numberline {5.2}Funciones con matrices}{28}{section.5.2}
