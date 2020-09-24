@@ -697,22 +697,22 @@ def matrix_rref(A, b):
    """
 
    r = 0
-   pivots_pos = []
+   row = []
    n = len(A)
 
    #Añadir b como una columna
    M = A
-   for row in range(len(M)):
-      M[row] += b[row]
+   for i in range(len(M)):
+      M[i] += b[i]
 
 
    for k in range(n):
       #Intercambio de filas para que quede arriba la de menor valor
       for i in range(k, n):
          if mayor(M[i][k], M[k][k]):
-            aux = M[k]
+            row = M[k]
             M[k] = M[i]
-            M[i] = aux
+            M[i] = row
 
 
       #Hacer ceros
