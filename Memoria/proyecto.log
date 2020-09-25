@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.3.26)  24 SEP 2020 21:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.3.26)  25 SEP 2020 20:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1314,6 +1314,15 @@ Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
 LaTeX Info: Redefining \. on input line 32.
 LaTeX Info: Redefining \% on input line 32.
 
+LaTeX Warning: Label `fig:comp-clasica-cuantica' multiply defined.
+
+
+LaTeX Warning: Label `fig:comp-clasica-cuantica' multiply defined.
+
+
+LaTeX Warning: Label `fig:comp-clasica-cuantica' multiply defined.
+
+
 LaTeX Warning: Label `tab:rel' multiply defined.
 
 
@@ -2385,7 +2394,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 46--47
 
  []
 
-<figuras/comp_clasica_cuantica.png, id=354, 631.35875pt x 330.23375pt>
+<figuras/comp_clasica_cuantica.png, id=366, 631.35875pt x 330.23375pt>
 File: figuras/comp_clasica_cuantica.png Graphic file (type png)
 <use figuras/comp_clasica_cuantica.png>
 Package pdftex.def Info: figuras/comp_clasica_cuantica.png  used on input line 
@@ -2671,7 +2680,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 158--159
 
  []
 
-<figuras/bit_cubit.png, id=415, 526.96875pt x 325.215pt>
+<figuras/bit_cubit.png, id=427, 526.96875pt x 325.215pt>
 File: figuras/bit_cubit.png Graphic file (type png)
 <use figuras/bit_cubit.png>
 Package pdftex.def Info: figuras/bit_cubit.png  used on input line 170.
@@ -2714,7 +2723,7 @@ re.1.2}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.178 
        <./figuras/bit_cubit.png>]
-<figuras/esfera_bloch.png, id=425, 803.0pt x 854.19125pt>
+<figuras/esfera_bloch.png, id=437, 803.0pt x 854.19125pt>
 File: figuras/esfera_bloch.png Graphic file (type png)
 <use figuras/esfera_bloch.png>
 Package pdftex.def Info: figuras/esfera_bloch.png  used on input line 182.
@@ -2789,7 +2798,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 225--226
 
  []
 
-<figuras/arbol_merkle.png, id=442, 652.4375pt x 322.20375pt>
+<figuras/arbol_merkle.png, id=455, 652.4375pt x 322.20375pt>
 File: figuras/arbol_merkle.png Graphic file (type png)
 <use figuras/arbol_merkle.png>
 Package pdftex.def Info: figuras/arbol_merkle.png  used on input line 229.
@@ -3143,6 +3152,42 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 1.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 1.
+<figuras/Gantt_1.jpg, id=532, 819.8371pt x 244.00839pt>
+File: figuras/Gantt_1.jpg Graphic file (type jpg)
+<use figuras/Gantt_1.jpg>
+Package pdftex.def Info: figuras/Gantt_1.jpg  used on input line 16.
+(pdftex.def)             Requested size: 455.25266pt x 184.94565pt.
+
+Overfull \hbox (95.25266pt too wide) in paragraph at lines 16--17
+ [][] 
+ []
+
+<figuras/Gantt_2.jpg, id=535, 1228.59pt x 281.05pt>
+File: figuras/Gantt_2.jpg Graphic file (type jpg)
+<use figuras/Gantt_2.jpg>
+Package pdftex.def Info: figuras/Gantt_2.jpg  used on input line 23.
+(pdftex.def)             Requested size: 426.7885pt x 184.94035pt.
+
+Overfull \hbox (66.7885pt too wide) in paragraph at lines 23--24
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<figuras/Gantt_ini.jpg, id=538, 1176.395pt x 228.855pt>
+File: figuras/Gantt_ini.jpg Graphic file (type jpg)
+<use figuras/Gantt_ini.jpg>
+Package pdftex.def Info: figuras/Gantt_ini.jpg  used on input line 30.
+(pdftex.def)             Requested size: 426.78679pt x 142.26926pt.
+
+Overfull \hbox (66.78679pt too wide) in paragraph at lines 30--31
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 ) (./capitulos/03_Analisis.tex
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 1.
@@ -3168,34 +3213,51 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 1.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 1.
- [19]
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 1.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 1.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 1.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 1.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 1.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 1.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 1.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 1.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 1.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 1.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 1.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 1.
- [20
+ [19pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+1}) has been already used, duplicate ignored
 
-]
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1 \chapter
+            {Análisis del problema} <./figuras/Gantt_1.jpg>]
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 1.
+ [20pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1 \chapter
+            {Análisis del problema}pdfTeX warning (ext4): destination with the
+ same identifier (name{figure.2.3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1 \chapter
+            {Análisis del problema} <./figuras/Gantt_2.jpg> <./figuras/Gantt_i
+ni.jpg>]
 Cap\'{\i }tulo 3.
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 1.
@@ -3258,7 +3320,9 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 1.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 1.
- [21]
+ [21
+
+]
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 1.
 Package babel Info: Redefining spanish shorthand >>
@@ -4720,10 +4784,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 230.
  ) 
 Here is how much of TeX's memory you used:
- 19142 strings out of 494284
- 297790 string characters out of 6162693
- 587936 words of memory out of 5000000
- 21520 multiletter control sequences out of 15000+600000
+ 19161 strings out of 494284
+ 298152 string characters out of 6162693
+ 588271 words of memory out of 5000000
+ 21532 multiletter control sequences out of 15000+600000
  109952 words of font info for 106 fonts, out of 8000000 for 9000
  376 hyphenation exceptions out of 8191
  45i,19n,74p,2002b,2489s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -4737,10 +4801,10 @@ onts/type1/public/fourier/fourier-mlit.pfb></usr/share/texlive/texmf-dist/fonts
 a/putbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putr8a.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on proyecto.pdf (73 pages, 632327 bytes).
+Output written on proyecto.pdf (73 pages, 863066 bytes).
 PDF statistics:
- 1198 PDF objects out of 1200 (max. 8388607)
- 1086 compressed objects within 11 object streams
- 444 named destinations out of 1000 (max. 500000)
- 252 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1221 PDF objects out of 1440 (max. 8388607)
+ 1102 compressed objects within 12 object streams
+ 447 named destinations out of 1000 (max. 500000)
+ 267 words of extra memory for PDF output out of 10000 (max. 10000000)
 
