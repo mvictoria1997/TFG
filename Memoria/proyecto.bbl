@@ -79,18 +79,23 @@ A.~Szepieniec, B.~Preneel, F.~Vercaunteren, and W.~Beullens, ``{LUOV: Signature
 \bibitem{ark}
 ``Ark,'' \url{https://ark.io/}.
 
-\bibitem{mecanica-cuantica}
-Wikipedia, ``Mecánica cuántica,''
-  \url{https://es.wikipedia.org/wiki/Mec%C3%A1nica_cu%C3%A1ntica}.
-
 \bibitem{computacion-cuantica-wiki}
 Wikipedia, ``Computación cuántica,''
   \url{https://es.wikipedia.org/wiki/Computaci\%C3\%B3n\_cu\%C3\%A1ntica}.
+
+\bibitem{mecanica-cuantica}
+Wikipedia, ``Mecánica cuántica,''
+  \url{https://es.wikipedia.org/wiki/Mec%C3%A1nica_cu%C3%A1ntica}.
 
 \bibitem{computacion-cuantica-crono}
 Álvaro Rodrigo~Reyes, ``{Estado de la criptografía post-cuántica y
   simulaciones de algoritmos post-cuánticos},''
   \url{http://openaccess.uoc.edu/webapps/o2/bitstream/10609/89026/6/alvaroreyesTFM1218memoria.pdf}.
+
+\bibitem{quimica-cuantica}
+{Redacción Vivir}, ``{La “nueva frontera” alcanzada por el computador
+  cuántico de Google esta semana},'' 08 septiembre 2020,
+  \url{https://www.elespectador.com/noticias/ciencia/la-nueva-frontera-de-la-computacion-cuantica/}.
 
 \bibitem{computacion-cuantica-criptografia}
 A.~Muñoz and J.~I. Escribano, ``La computación cuántica y el "futuro de la
@@ -100,11 +105,6 @@ A.~Muñoz and J.~I. Escribano, ``La computación cuántica y el "futuro de la
 \bibitem{cumputacion-cuantica-clasica}
 A.~Banafa, ``Computación cuántica y blockchain, mitos y realidades,'' 2019,
   \url{https://www.bbvaopenmind.com/tecnologia/mundo-digital/computacion-cuantica-y-blockchain-mitos-y-realidades/}.
-
-\bibitem{quimica-cuantica}
-{Redacción Vivir}, ``{La “nueva frontera” alcanzada por el computador
-  cuántico de Google esta semana},'' 08 septiembre 2020,
-  \url{https://www.elespectador.com/noticias/ciencia/la-nueva-frontera-de-la-computacion-cuantica/}.
 
 \bibitem{arbol-merkle}
 Wikipedia, ``{Árboles Merkle},''
@@ -135,5 +135,9 @@ C.~Pastorino, ``Blockchain: qué es, cómo funciona y cómo se está usando en
 A.~Rosic, ``{What is blockchain Technology? A Step-by-Step Guide For
   Beginners},''
   \url{https://blockgeeks.com/guides/what-is-blockchain-technology/#The_Three_Pillars_of_Blockchain_Technology}.
+
+\bibitem{instalacion-docker}
+``Install docker engine on ubuntu,''
+  \url{https://docs.docker.com/engine/install/ubuntu/}.
 
 \end{thebibliography}
