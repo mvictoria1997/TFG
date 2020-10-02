@@ -176,26 +176,47 @@ Clonamos el directorio deployer de \texttt{@ArkEcosystem}.\\
 git clone https://github.com/ArkEcosystem/deployer.git
 \end{lstlisting}
 
-Iniciar la base de datos e instalar la blockchain
+Iniciar la base de datos e instalar tanto la blockchain como el explorer. Una vez que instalemos el \texttt{core} obtendremos en la salida la dirección y la passphrase del wallet Genesis la tenemos que guardar en un archivo para más tarde poder hacer las transacciones, aún así podemos encontrar la passphrase en el archivo ..... . Esto puede tardar unos minutos
 \begin{lstlisting}[language=Bash,caption=Instalación Blockchain. Parte X, label=cod:suma-cuerpo, style=Consola]
 $ sudo service postgresql start
+$ sudo apt-get update -y 
+$ sudo apt-get install -y libjemalloc-dev
 $ ./deployer/bridgechain.sh install-core --config deployer/config.sample.conf --autoinstall-deps --non-interactive
 \end{lstlisting}
 
-Adjuntar imagen con las claves
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=15cm,height=9cm]{figuras/Instalacion_bridgechain.png}
+	\caption{Salida tras la instalación del core}
+	\label{fig:gantt-real-1}
+\end{figure}
 
-Instalación del explorer.\\
-
-\begin{lstlisting}[language=Bash,caption=Instalación Blockchain. Parte XI, label=cod:suma-cuerpo, style=Consola]
+\begin{lstlisting}[language=Bash,caption=Instalación Blockchain. Parte X, label=cod:suma-cuerpo, style=Consola]
 $ ./deployer/bridgechain.sh install-explorer --config deployer/config.sample.conf --skip-deps --non-interactive
 \end{lstlisting}
+
+
 
 Iniciamos la blockchain y el explorer.\\
 
 \begin{lstlisting}[language=Bash,caption=Instalación Blockchain. Parte XII, label=cod:suma-cuerpo, style=Consola]
 $ ./deployer/bridgechain.sh start-core --network testnet
+
+==> Starting...
+Starting victoriabridgechain-relay... done
+Starting victoriabridgechain-forger... done
+==> Start OK!
+
+
 $ ./deployer/bridgechain.sh start-explorer --network testnet
 \end{lstlisting}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=15cm,height=9cm]{figuras/Instalacion_bridgechain.png}
+	\caption{Salida tras la instalación del core}
+	\label{fig:gantt-real-1}
+\end{figure}
 
 \section{Instalación Wallet ARK}
 
