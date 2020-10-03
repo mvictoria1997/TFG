@@ -36,11 +36,5 @@
 \contentsline {lstlisting}{\numberline {A.17}Comandos pm2}{56}{lstlisting.Alph1.17}
 \contentsline {lstlisting}{\numberline {A.18}Instalaci\IeC {\'o}n Blockchain. Parte IX}{56}{lstlisting.Alph1.18}
 \contentsline {lstlisting}{\numberline {A.19}Instalaci\IeC {\'o}n Blockchain. Parte X}{56}{lstlisting.Alph1.19}
-\contentsline {lstlisting}{\numberline {A.20}Instalaci\IeC {\'o}n Blockchain. Parte XI}{57}{lstlisting.Alph1.20}
+\contentsline {lstlisting}{\numberline {A.20}Instalaci\IeC {\'o}n Blockchain. Parte X}{57}{lstlisting.Alph1.20}
 \contentsline {lstlisting}{\numberline {A.21}Instalaci\IeC {\'o}n Blockchain. Parte XII}{57}{lstlisting.Alph1.21}
-\contentsline {lstlisting}{\numberline {A.22}Instalaci\IeC {\'o}n Blockchain. Parte III}{57}{lstlisting.Alph1.22}
-\contentsline {lstlisting}{\numberline {A.23}Instalaci\IeC {\'o}n Blockchain. Parte III}{57}{lstlisting.Alph1.23}
-\contentsline {lstlisting}{\numberline {A.24}Instalaci\IeC {\'o}n Blockchain. Parte III}{57}{lstlisting.Alph1.24}
-\contentsline {lstlisting}{\numberline {A.25}Instalaci\IeC {\'o}n Blockchain. Parte III}{57}{lstlisting.Alph1.25}
-\contentsline {lstlisting}{\numberline {A.26}Instalaci\IeC {\'o}n Blockchain. Parte III}{57}{lstlisting.Alph1.26}
-\contentsline {lstlisting}{\numberline {A.27}Instalaci\IeC {\'o}n Blockchain. Parte III}{57}{lstlisting.Alph1.27}

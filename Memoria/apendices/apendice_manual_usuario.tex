@@ -188,7 +188,7 @@ $ ./deployer/bridgechain.sh install-core --config deployer/config.sample.conf --
 	\centering
 	\includegraphics[width=15cm,height=9cm]{figuras/Instalacion_bridgechain.png}
 	\caption{Salida tras la instalación del core}
-	\label{fig:gantt-real-1}
+	\label{fig:install-bridge}
 \end{figure}
 
 \begin{lstlisting}[language=Bash,caption=Instalación Blockchain. Parte X, label=cod:suma-cuerpo, style=Consola]
@@ -213,41 +213,144 @@ $ ./deployer/bridgechain.sh start-explorer --network testnet
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=15cm,height=9cm]{figuras/Instalacion_bridgechain.png}
-	\caption{Salida tras la instalación del core}
-	\label{fig:gantt-real-1}
+	\includegraphics[width=14.5cm,height=2cm]{figuras/Instalacion_explorer.png}
+	\caption{Salida tras la instalación del explorer}
+	\label{fig:install-explorer}
 \end{figure}
 
 \section{Instalación Wallet ARK}
 
+Abrimos la aplicación Wallet ARK y nos encontramos con la imagen \ref{fig:wallet-1}. A continuación, vamos siguiendo los pasos que nos salen en la parte de la derecha de la pantalla.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=14.5cm,height=8cm]{figuras/wallet_1.png}
+	\caption{Inicio de Wallet}
+	\label{fig:wallet-1}
+\end{figure}
+
+
+En primer lugar debemos de crear un perfil, ponemos el nombre e indicamos la moneda con la que queremos trabajar, en nuestro caso dejamos los valores por defecto, además podemos cambiar el avatar del usuario. Imagen \ref{fig:wallet-2}.
+
+\begin{figure}[h]
+	\centering
+	\tcbox[colback=white, colframe=codegray]{\includegraphics[width=7cm,height=8cm]{figuras/wallet_2.png}}
+	\caption{Detalles del perfil}
+	\label{fig:wallet-2}
+\end{figure}
+
+Ahora aparece un menú con las posibles redes, \textit{mainnet}, \textit{devnet} y para usar la red \textit{testnet} debemos de crearla, pulsando nueva red. Hay que introducir el nomre, una breve descripción y la dirección del servidor con el puerto de la API, \texttt{http:/GENESIS\_NODE\_IP:API\_PORT}. Imagen \ref{fig:wallet-3}.
+
+\begin{figure}[h]
+	\centering
+	\tcbox[colback=white, colframe=codegray]{\includegraphics[width=7cm,height=6cm]{figuras/wallet_3.png}}
+	\caption{Configuración de la nueva red}
+	\label{fig:wallet-3}
+\end{figure}
+
+Una vez que hemos creado la red nos aparecen los detalles de la misma donde debemos de cambiar la dirección del explorer, poniendo \texttt{http://GENESIS\_NODE\_IP:EXPLORER\_PORT}. También podemos cambiar el nombre de los Token y el símbolo. Finalmente guardamos la red. Imagen \ref{fig:wallet-4-5}.
+
+\begin{figure}[h]
+	\centering
+	\begin{minipage}{0.4\textwidth}
+		\includegraphics[width=6.5cm,height=8.5cm]{figuras/wallet_4.png}
+	\end{minipage}\hfill
+	\begin{minipage}{0.4\textwidth}
+		\includegraphics[width=6cm,height=8.5cm]{figuras/wallet_5.png}	
+	\end{minipage}
+	\caption{Detalles de la nueva red}
+	\label{fig:wallet-4-5}
+\end{figure}
+
+Seleccionamos la red que acabamos de crear, imagen \ref{fig:wallet-6}.
+
+\begin{figure}[h]
+	\centering
+	\tcbox[colback=white, colframe=codegray]{\includegraphics[width=6cm,height=7cm]{figuras/wallet_6.png}}
+	\caption{Selección de la red}
+	\label{fig:wallet-6}
+\end{figure}
+
+Para acabar de crear el usuario podemos cambiar los coleres de la interfaz de usuario, imagen \ref{fig:wallet-7}.
+\begin{figure}[h]
+	\centering
+	\tcbox[colback=white, colframe=codegray]{\includegraphics[width=6cm,height=6cm]{figuras/wallet_7.png}}
+	\caption{Cambiar diseño de la interfaz}
+	\label{fig:wallet-7}
+\end{figure}
+
+
+La primera vez que se entra en el usuario hay que importar el monedero que se ha creado durante la instalación de la \textit{blockchain}, pulsando en la esquina superior derecha en \texttt{Import Wallet}. Imagen \ref{fig:wallet-8}
+\begin{figure}[h]
+	\centering
+	\tcbox[colback=white, colframe=codegray]{\includegraphics[width=6cm,height=6cm]{figuras/wallet_8.png}}
+	\caption{Importar monedero}
+	\label{fig:wallet-8}
+\end{figure}
+
+No es necesario pero si se desea se puede poner contraseña al monedero, haciéndolo más seguro. Imagen \ref{fig:wallet-9}.
+
+\begin{figure}[h]
+	\centering
+	\tcbox[colback=white, colframe=codegray]{\includegraphics[width=6cm,height=4cm]{figuras/wallet_9.png}}
+	\caption{Encriptar el monedero}
+	\label{fig:wallet-9}
+\end{figure}
+
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=7cm,height=8cm]{figuras/wallet_10.png}
+	\caption{Selección de la red}
+	\label{fig:wallet-10}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=7cm,height=8cm]{figuras/wallet_11.png}
+	\caption{Selección de la red}
+	\label{fig:wallet-11}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=7cm,height=8cm]{figuras/wallet_12.png}
+	\caption{Selección de la red}
+	\label{fig:wallet-12}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=7cm,height=8cm]{figuras/wallet_13.png}
+	\caption{Selección de la red}
+	\label{fig:wallet-13}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=7cm,height=8cm]{figuras/wallet_14.png}
+	\caption{Selección de la red}
+	\label{fig:wallet-14}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=7cm,height=8cm]{figuras/wallet_15.png}
+	\caption{Selección de la red}
+	\label{fig:wallet-15}
+\end{figure}
 
 
 
 
-\begin{lstlisting}[language=Bash,caption=Instalación Blockchain. Parte III, label=cod:suma-cuerpo, style=Consola]
 
-\end{lstlisting}
+%\begin{lstlisting}[language=Bash,caption=Instalación Blockchain. Parte III, label=cod:suma-cuerpo, style=Consola]
+
+%\end{lstlisting}
 
 
-\begin{lstlisting}[language=Bash,caption=Instalación Blockchain. Parte III, label=cod:suma-cuerpo, style=Consola]
 
-\end{lstlisting}
-
-\begin{lstlisting}[language=Bash,caption=Instalación Blockchain. Parte III, label=cod:suma-cuerpo, style=Consola]
-
-\end{lstlisting}
-
-\begin{lstlisting}[language=Bash,caption=Instalación Blockchain. Parte III, label=cod:suma-cuerpo, style=Consola]
-
-\end{lstlisting}
-
-\begin{lstlisting}[language=Bash,caption=Instalación Blockchain. Parte III, label=cod:suma-cuerpo, style=Consola]
-
-\end{lstlisting}
-
-\begin{lstlisting}[language=Bash,caption=Instalación Blockchain. Parte III, label=cod:suma-cuerpo, style=Consola]
-
-\end{lstlisting}
 
 
 
