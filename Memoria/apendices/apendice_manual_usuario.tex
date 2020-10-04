@@ -87,15 +87,15 @@ $ sudo docker rm <ID-CONTAINER>
 
 \section{Instalación Blockchain ARK}
 
-En Docker, iniciamos una imagen de ubuntu xenial. Además abrimos los puertos que van a ser necesarios posteriormente 4103, para la API pública, 4102, conexión P2P API paray 4200, para el explorer.\\
+En Docker, iniciamos una imagen de ubuntu xenial. Además abrimos los puertos que van a ser necesarios posteriormente 4103, para la API pública, 4102, conexión P2P API paray 4200, para el \textit{explorer}.\\
 
-\begin{lstlisting}[language=Bash,caption=Instalación Blockchain. Parte I, label=cod:suma-cuerpo, style=Consola]
+\begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte I, label=cod:suma-cuerpo, style=Consola]
 $ sudo docker run -ti -p 4103:4103 -p 4200:4200 ubuntu:xenial
 \end{lstlisting}
 
 Una vez estamos dentro de la máquina Docker instalamos sudo, para poder trabajar en modo administrador desde el usuario que vamos a crear.\\
 
-\begin{lstlisting}[language=Bash,caption=Instalación Blockchain. Parte II, label=cod:suma-cuerpo, style=Consola]
+\begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte II, label=cod:suma-cuerpo, style=Consola]
 $ apt-get install sudo
 $ adduser deployer
 
@@ -119,34 +119,34 @@ Introduzca el nuevo valor, o presione INTRO para el predeterminado
 
 Cambiar el modo del usuario deployer incluyéndolo en el grupo sudo para que sea un superusuario y finalmente, entrar al usuario deployer.\\
 
-\begin{lstlisting}[language=Bash,caption=Instalación Blockchain. Parte III, label=cod:suma-cuerpo, style=Consola]
+\begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte III, label=cod:suma-cuerpo, style=Consola]
 $ usermod -aG sudo deployer
 $ su - deployer
 \end{lstlisting}
 
 Actualizamos los paquete e instalamos algunos nuevos como \texttt{git}, \texttt{curl} y \texttt{yarn}.\\
 
-\begin{lstlisting}[language=Bash,caption=Instalación Blockchain. Parte IV, label=cod:suma-cuerpo, style=Consola]
+\begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte IV, label=cod:suma-cuerpo, style=Consola]
 $ sudo apt-get update
 $ sudo apt-get install git curl yarn jq apt-transport-https
 \end{lstlisting}
 
 Instalar las dependencias nvm.\\
 
-\begin{lstlisting}[language=Bash,caption=Instalación Blockchain. Parte V, label=cod:suma-cuerpo, style=Consola]
+\begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte V, label=cod:suma-cuerpo, style=Consola]
 $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
 \end{lstlisting}
 
 Para comprobar que se ha instalado correctamente nos salimos del usuario deployer y volvemos a entrar.\\
 
-\begin{lstlisting}[language=Bash,caption=Instalación Blockchain. Parte VI, label=cod:suma-cuerpo, style=Consola]
+\begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte VI, label=cod:suma-cuerpo, style=Consola]
 $ command -v nvm
 
 nvm
 \end{lstlisting}
 
 Para eliminar nvm
-\begin{lstlisting}[language=Bash,caption=Instalación Blockchain. Parte VII, label=cod:suma-cuerpo, style=Consola]
+\begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte VII, label=cod:suma-cuerpo, style=Consola]
 $ nvm use system
 $ npm uninstall -g a_module
 $ sudo npm  install -g npm
@@ -154,15 +154,15 @@ $ sudo npm  install -g npm
 
 Instalar pm2.\\
 
-\begin{lstlisting}[language=Bash,caption=Instalación Blockchain. Parte VIII, label=cod:suma-cuerpo, style=Consola]
+\begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte VIII, label=cod:suma-cuerpo, style=Consola]
 $ sudo apt-get install npm
 $ sudo npm i -g pm2
 $ ln -s /usr/bin/nodejs /usr/bin/node
 \end{lstlisting}
 
-Comando interesantes para trabajar con pm2. Nos servirar para observar si la blockchain y el explorer están levantados.
+Comando interesantes para trabajar con pm2. Nos servirar para observar si la \textit{blockchain} y el \textit{explorer} están levantados.
 
-\begin{lstlisting}[language=Bash,caption=Comandos pm2, label=cod:suma-cuerpo, style=Consola]
+\begin{lstlisting}[language=Bash,caption=Comandos útiles de pm2, label=cod:suma-cuerpo, style=Consola]
 #Lista los demonios de pm2
 $ pm2 list
 
@@ -170,16 +170,16 @@ $ pm2 list
 $ pm2 status
 \end{lstlisting}
 
-Clonamos el directorio deployer de \texttt{@ArkEcosystem}.\\
+Hay que clonar el directorio deployer de \texttt{@ArkEcosystem}.\\
 
-\begin{lstlisting}[language=Bash,caption=Instalación Blockchain. Parte IX, label=cod:suma-cuerpo, style=Consola]
+\begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte IX, label=cod:suma-cuerpo, style=Consola]
 $ git clone https://github.com/ArkEcosystem/deployer.git
 $ chmod 764 deployer/setup.sh
 $ ./setup.sh
 \end{lstlisting}
 
-Iniciar la base de datos e instalar tanto la blockchain como el explorer. Una vez que instalemos el \texttt{core} obtendremos en la salida la dirección y la passphrase del wallet Genesis la tenemos que guardar en un archivo para más tarde poder hacer las transacciones, aún así podemos encontrar la passphrase en el archivo ..... . Esto puede tardar unos minutos
-\begin{lstlisting}[language=Bash,caption=Instalación Blockchain. Parte X, label=cod:suma-cuerpo, style=Consola]
+Iniciar la base de datos e instalar tanto la \textit{blockchain} como el \textit{explorer}. Una vez que instalemos el \texttt{core} obtendremos en la salida la dirección y la \textit{passphrase} del wallet Genesis la tenemos que guardar en un archivo para más tarde poder hacer las transacciones, aún así podemos encontrar la \textit{passphrase} junto con la dirección en el archivo \path{/home/<USUARIO>/.bridgechain/testenet/<NOMBRE-BRIDGECHAIN>/genesisWallet.json}. Esto puede tardar unos minutos.
+\begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte X, label=cod:suma-cuerpo, style=Consola]
 $ sudo service postgresql start
 $ sudo apt-get update -y 
 $ sudo apt-get install -y libjemalloc-dev
@@ -193,15 +193,15 @@ $ ./deployer/bridgechain.sh install-core --config deployer/config.sample.conf --
 	\label{fig:install-bridge}
 \end{figure}
 
-\begin{lstlisting}[language=Bash,caption=Instalación Blockchain. Parte X, label=cod:suma-cuerpo, style=Consola]
+\begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte X, label=cod:suma-cuerpo, style=Consola]
 $ ./deployer/bridgechain.sh install-explorer --config deployer/config.sample.conf --skip-deps --non-interactive
 \end{lstlisting}
 
 
 
-Iniciamos la blockchain y el explorer.\\
+Iniciamos la \textit{blockchain} y el \textit{explorer}.\\
 
-\begin{lstlisting}[language=Bash,caption=Instalación Blockchain. Parte XII, label=cod:suma-cuerpo, style=Consola]
+\begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte XII, label=cod:suma-cuerpo, style=Consola]
 $ ./deployer/bridgechain.sh start-core --network testnet
 
 ==> Starting...
@@ -213,141 +213,209 @@ Starting victoriabridgechain-forger... done
 $ ./deployer/bridgechain.sh start-explorer --network testnet
 \end{lstlisting}
 
+La imagen \ref{fig:install-explorer} muestra la salida después de haber iniciado el \textit{explorer}. Ese mismo cuadro es el que se visualiza tras ejecutar \texttt{pm2 status} pues muestra tanto si la \textit{blockchain} como el \textit{explorer} están iniciados.
+
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=14.5cm,height=2cm]{figuras/Instalacion_explorer.png}
-	\caption{Salida tras la instalación del explorer}
+	\caption{Salida tras iniciar del \textit{explorer}}
 	\label{fig:install-explorer}
 \end{figure}
 
-\section{Instalación Wallet ARK}
-
-Abrimos la aplicación Wallet ARK y nos encontramos con la imagen \ref{fig:wallet-1}. A continuación, vamos siguiendo los pasos que nos salen en la parte de la derecha de la pantalla.
+Para visualizar las transacciones en el \textit{explorer}, debemos de abrir un navegador y acceder a la url \texttt{http://NODE\_GENESIS\_IP:EXPLORER\_PORT}, donde el \texttt{EXPLORER\_PORT} es $4200$. La imagen \ref{fig:nav-explorer} muestra las primeras transacciones realizadas, entre ellas se encuentra la transacción inicial al monedero génesis, además del registro de los delegados.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=14.5cm,height=8cm]{figuras/wallet_1.png}
+	\includegraphics[width=14.5cm,height=10.5cm]{figuras/Navegacion_explorer.png}
+	\caption{Primeras transacciones en el \textit{explorer}}
+	\label{fig:nav-explorer}
+\end{figure}
+
+\clearpage
+
+\section{Instalación de la aplicación ARK Desktop Wallet}
+
+Antes de descargar la aplicación ARK Desktop Wallet, en el ordenador local, son necesarias algunas instalaciones previas, como algunos archivos de desarrollo de \texttt{libudev}, \texttt{node 12} y \texttt{yarn}, código \ref{cod:install-wallet}.
+
+\begin{lstlisting}[language=Bash,caption=Instalaciones previas a la aplicación ARK Wallet, label=cod:install-wallet, style=Consola]
+$ sudo apt-get install libudev-dev libusb-1.0-0-dev
+
+$ npm install -g n
+$ sudo n 12
+
+# Para comprobar que se ha instalado node 12
+$ n --version
+
+$ npm install -g yarn
+\end{lstlisting}
+
+La descarga de la aplicación se realiza desde el repositorio de github de \texttt{@ArkEcosystem/desktop-wallet} \cite{descargas-wallet}, para el proyecto se ha descargado la última versión del archivo \texttt{.deb}.
+
+\begin{lstlisting}[language=Bash,caption=Instalación de la aplicación ARK Wallet, label=cod:install-wallet, style=Consola]
+$ sudo dpkg -i ark-desktop-wallet-linux-amd64-<VERSION>.deb
+
+#Para desintalarlo
+$ sudo apt-get remove ark-desktop-wallet
+\end{lstlisting}
+
+
+Una vez que se ha instalado la aplicación, la abrimos y nos encontramos con la imagen \ref{fig:wallet-1}. A continuación, vamos siguiendo los pasos que nos salen en la parte de la derecha de la pantalla.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=13.5cm,height=7.5cm]{figuras/wallet_1.png}
 	\caption{Inicio de Wallet}
 	\label{fig:wallet-1}
 \end{figure}
 
+\newpage
+Así se llega al primer paso, crear un perfil, en el que hay que indicar el nombre y la moneda con la que se quiere trabajar, en este caso se dejan los valores por defecto, además existe la opción de cambiar el avatar del usuario, imagen \ref{fig:wallet-2}.
 
-En primer lugar debemos de crear un perfil, ponemos el nombre e indicamos la moneda con la que queremos trabajar, en nuestro caso dejamos los valores por defecto, además podemos cambiar el avatar del usuario. Imagen \ref{fig:wallet-2}.
-
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
-	\tcbox[colback=white, colframe=codegray]{\includegraphics[width=7cm,height=8cm]{figuras/wallet_2.png}}
+	\tcbox[colback=white, colframe=codegray]{\includegraphics[width=6cm,height=7cm]{figuras/wallet_2.png}}
 	\caption{Detalles del perfil}
 	\label{fig:wallet-2}
 \end{figure}
 
-Ahora aparece un menú con las posibles redes, \textit{mainnet}, \textit{devnet} y para usar la red \textit{testnet} debemos de crearla, pulsando nueva red. Hay que introducir el nomre, una breve descripción y la dirección del servidor con el puerto de la API, \texttt{http:/GENESIS\_NODE\_IP:API\_PORT}. Imagen \ref{fig:wallet-3}.
+En el siguiente paso aparece un menú con las posibles redes, \textit{mainnet} y \textit{devnet}. Sin embargo, si se desea usar la red \textit{testnet} es necesario crearla pulsando nueva red. Los campos a rellenar son el nombre, una breve descripción y la dirección del servidor con el puerto de la API, \texttt{http:/GENESIS\_NODE\_IP:API\_PORT}, imagen \ref{fig:wallet-3}.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
-	\tcbox[colback=white, colframe=codegray]{\includegraphics[width=7cm,height=6cm]{figuras/wallet_3.png}}
+	\tcbox[colback=white, colframe=codegray]{\includegraphics[width=6cm,height=5cm]{figuras/wallet_3.png}}
 	\caption{Configuración de la nueva red}
 	\label{fig:wallet-3}
 \end{figure}
 
-Una vez que hemos creado la red nos aparecen los detalles de la misma donde debemos de cambiar la dirección del explorer, poniendo \texttt{http://GENESIS\_NODE\_IP:EXPLORER\_PORT}. También podemos cambiar el nombre de los Token y el símbolo. Finalmente guardamos la red. Imagen \ref{fig:wallet-4-5}.
+\newpage
+Cuando se ha creado la red aparece una pantalla con los detalles de la misma donde debemos de cambiar la dirección por defecto del explorer y poner \texttt{http://GENESIS\_NODE\_IP:EXPLORER\_PORT}. También se pueden cambiar el nombre de los Tokens y el símbolo. Una vez realizados los cambios, guardamos la red, imagen \ref{fig:wallet-4-5}.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\begin{minipage}{0.4\textwidth}
 		\includegraphics[width=6.5cm,height=8.5cm]{figuras/wallet_4.png}
-	\end{minipage}\hfill
-	\begin{minipage}{0.4\textwidth}
-		\includegraphics[width=6cm,height=8.5cm]{figuras/wallet_5.png}	
+	\end{minipage}\vfill
+	\begin{minipage}{0.38\textwidth}
+		\includegraphics[width=6.3cm,height=8.5cm]{figuras/wallet_5.png}	
 	\end{minipage}
 	\caption{Detalles de la nueva red}
 	\label{fig:wallet-4-5}
 \end{figure}
 
-Seleccionamos la red que acabamos de crear, imagen \ref{fig:wallet-6}.
+\newpage
+Se selecciona la red recien creada, \texttt{victoriaBridgechain} y se avanza al siguiente paso, imagen \ref{fig:wallet-6}.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\tcbox[colback=white, colframe=codegray]{\includegraphics[width=6cm,height=7cm]{figuras/wallet_6.png}}
 	\caption{Selección de la red}
 	\label{fig:wallet-6}
 \end{figure}
 
-Para acabar de crear el usuario podemos cambiar los coleres de la interfaz de usuario, imagen \ref{fig:wallet-7}.
-\begin{figure}[h]
+Para acabar con la creación del usuario, se tiene la opción de personalizar los colores de la interfaz de usuario o cambiar al tema de noche, imagen \ref{fig:wallet-7}.
+
+\begin{figure}[H]
 	\centering
 	\tcbox[colback=white, colframe=codegray]{\includegraphics[width=6cm,height=6cm]{figuras/wallet_7.png}}
-	\caption{Cambiar diseño de la interfaz}
+	\caption{Personalización del diseño de la interfaz}
 	\label{fig:wallet-7}
 \end{figure}
 
+\newpage
+La primera vez que se entra al usuario es necesario importar el monedero que se ha creado durante la instalación de la \textit{blockchain}, pulsando en la esquina superior derecha en \texttt{Import Wallet}. No es necesario rellenar los dos campos, se puede importar el monedero introduciendo solamente la \textit{passphrase}, imagen \ref{fig:wallet-8}.
 
-La primera vez que se entra en el usuario hay que importar el monedero que se ha creado durante la instalación de la \textit{blockchain}, pulsando en la esquina superior derecha en \texttt{Import Wallet}. Imagen \ref{fig:wallet-8}
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\tcbox[colback=white, colframe=codegray]{\includegraphics[width=6cm,height=6cm]{figuras/wallet_8.png}}
 	\caption{Importar monedero}
 	\label{fig:wallet-8}
 \end{figure}
 
-No es necesario pero si se desea se puede poner contraseña al monedero, haciéndolo más seguro. Imagen \ref{fig:wallet-9}.
+Si se desea se puede poner contraseña al monedero, haciéndolo más seguro, en el ejemplo no se van a poner contraseña a ninguno de los monederos, imagen \ref{fig:wallet-9}.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\tcbox[colback=white, colframe=codegray]{\includegraphics[width=6cm,height=4cm]{figuras/wallet_9.png}}
-	\caption{Encriptar el monedero}
+	\caption{Encriptación el monedero}
 	\label{fig:wallet-9}
 \end{figure}
 
+\newpage
+Finalmente, hay que ponerle nombre al monedero, para diferenciarlo de otros monederos y saber cual es el que contiene la cantidad inicial, el nombre que se le va a poner es \texttt{MainWallet}, imagen \ref{fig:wallet-10}.
 
-
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
-	\includegraphics[width=7cm,height=8cm]{figuras/wallet_10.png}
-	\caption{Selección de la red}
+	\tcbox[colback=white, colframe=codegray]{\includegraphics[width=6cm,height=5cm]{figuras/wallet_10.png}}
+	\caption{Confirmación para crear el monedero}
 	\label{fig:wallet-10}
 \end{figure}
 
-\begin{figure}[h]
+Para que salga la cantidad de dinero inicial es necesario conectar la aplicación con la \textit{blockchain}. Pulsando en el panel lateral izquierdo en \texttt{Network}, se accede a la configuración de la red y pulsando en \texttt{Connect custom peer} obtenemos la imagen \ref{fig:wallet-11-12}. Rellenamos los campos con \texttt{http://GENESIS\_NODE\_IP} y con el \texttt{API\_PORT}. Cuando se conecte hay que refrescar la página para que se actualice el monedero con el dinero.
+
+\begin{figure}[H]
 	\centering
-	\includegraphics[width=7cm,height=8cm]{figuras/wallet_11.png}
-	\caption{Selección de la red}
-	\label{fig:wallet-11}
+	\begin{minipage}{0.4\textwidth}
+		\includegraphics[width=7cm,height=6.5cm]{figuras/wallet_11.png}
+	\end{minipage}\hfill
+	\begin{minipage}{0.4\textwidth}
+		\tcbox[colback=white, colframe=codegray]{\includegraphics[width=6cm,height=6cm]{figuras/wallet_12.png}}
+	\end{minipage}
+	\caption{Configuración de la conexión peer}
+	\label{fig:wallet-11-12}
 \end{figure}
 
-\begin{figure}[h]
+\newpage
+Para realizar transacciones y poder probar el algoritmo, es necesario crear otro monedero y realizar transacciones entre ambos. De esta forma, hay que acceder a la sección \texttt{My wallets} y pulsar \texttt{Create Wallet}. El primer paso es introducir el nombre del monedero, imagen \ref{fig:wallet-13}.
+ 
+\begin{figure}[H]
 	\centering
-	\includegraphics[width=7cm,height=8cm]{figuras/wallet_12.png}
-	\caption{Selección de la red}
-	\label{fig:wallet-12}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=7cm,height=8cm]{figuras/wallet_13.png}
-	\caption{Selección de la red}
+	\tcbox[colback=white, colframe=codegray]{\includegraphics[width=7cm,height=6.5cm]{figuras/wallet_13.png}}
+	\caption{Selección de la dirección del nuevo monedero}
 	\label{fig:wallet-13}
 \end{figure}
 
-\begin{figure}[h]
+La imagen \ref{fig:wallet-14} muestra la \textit{passphrase} del monedero. Esta \textit{passphrase} hay que guardarla, tal y como se hizó con la \textit{passphrase} de monedero importado, pues será necesaria para realizar transacciones posteriormente.
+
+\begin{figure}[H]
 	\centering
-	\includegraphics[width=7cm,height=8cm]{figuras/wallet_14.png}
-	\caption{Selección de la red}
+	\tcbox[colback=white, colframe=codegray]{\includegraphics[width=6.5cm,height=5cm]{figuras/wallet_14.png}}
+	\caption{\textit{Passphrase} o clave privada del monedero}
 	\label{fig:wallet-14}
 \end{figure}
 
-\begin{figure}[h]
+\newpage
+La verificación de la \textit{passphrase} se hace introduciendo tres palabras, la número tres, seis y nueve, si se desea se puede realizar la verifiación introduciendo todas las palabras, imagen \ref{fig:wallet-15}.
+
+\begin{figure}[H]
 	\centering
-	\includegraphics[width=7cm,height=8cm]{figuras/wallet_15.png}
-	\caption{Selección de la red}
+	\tcbox[colback=white, colframe=codegray]{\includegraphics[width=7cm,height=5cm]{figuras/wallet_15.png}}
+	\caption{Verificación de la \textit{passphrase}}
 	\label{fig:wallet-15}
+\end{figure}
+
+Si se desea se puede poner contraseña al monedero, en el ejemplo no es necesario, imagen \ref{fig:wallet-16}.
+
+\begin{figure}[H]
+	\centering
+	\tcbox[colback=white, colframe=codegray]{\includegraphics[width=7cm,height=5cm]{figuras/wallet_16.png}}
+	\caption{Encriptación del monedero}
+	\label{fig:wallet-16}
+\end{figure}
+
+\newpage
+Antes de confirmar la creación del monedero, hay que introducir el nombre del mismo, \texttt{Second Wallet}, para hacer referencia a que no tendrá ningún token hasta que no reciba una transferencia, imagen \ref{fig:wallet-17}.
+
+\begin{figure}[H]
+	\centering
+	\tcbox[colback=white, colframe=codegray]{\includegraphics[width=7cm,height=5cm]{figuras/wallet_17.png}}
+	\caption{Confirmación para crear el segundo monedero}
+	\label{fig:wallet-17}
 \end{figure}
 
 
 
 
-
-%\begin{lstlisting}[language=Bash,caption=Instalación Blockchain. Parte III, label=cod:suma-cuerpo, style=Consola]
+%\begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte III, label=cod:suma-cuerpo, style=Consola]
 
 %\end{lstlisting}
 

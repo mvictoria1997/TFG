@@ -37,4 +37,4 @@
 \contentsline {chapter}{\numberline {A}Manual de usuario}{53}{appendix.Alph1}
 \contentsline {section}{\numberline {A.1}Instalaci\IeC {\'o}n de Docker}{53}{section.Alph1.1}
 \contentsline {section}{\numberline {A.2}Instalaci\IeC {\'o}n Blockchain ARK}{55}{section.Alph1.2}
-\contentsline {section}{\numberline {A.3}Instalaci\IeC {\'o}n Wallet ARK}{57}{section.Alph1.3}
+\contentsline {section}{\numberline {A.3}Instalaci\IeC {\'o}n de la aplicaci\IeC {\'o}n ARK Desktop Wallet}{59}{section.Alph1.3}

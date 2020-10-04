@@ -25,16 +25,18 @@
 \contentsline {lstlisting}{\numberline {A.6}Instalaci\IeC {\'o}n Docker. Parte VI}{54}{lstlisting.Alph1.6}
 \contentsline {lstlisting}{\numberline {A.7}Instalaci\IeC {\'o}n Docker. Parte VII}{54}{lstlisting.Alph1.7}
 \contentsline {lstlisting}{\numberline {A.8}Comandos \IeC {\'u}tiles de Docker}{54}{lstlisting.Alph1.8}
-\contentsline {lstlisting}{\numberline {A.9}Instalaci\IeC {\'o}n Blockchain. Parte I}{55}{lstlisting.Alph1.9}
-\contentsline {lstlisting}{\numberline {A.10}Instalaci\IeC {\'o}n Blockchain. Parte II}{55}{lstlisting.Alph1.10}
-\contentsline {lstlisting}{\numberline {A.11}Instalaci\IeC {\'o}n Blockchain. Parte III}{55}{lstlisting.Alph1.11}
-\contentsline {lstlisting}{\numberline {A.12}Instalaci\IeC {\'o}n Blockchain. Parte IV}{55}{lstlisting.Alph1.12}
-\contentsline {lstlisting}{\numberline {A.13}Instalaci\IeC {\'o}n Blockchain. Parte V}{56}{lstlisting.Alph1.13}
-\contentsline {lstlisting}{\numberline {A.14}Instalaci\IeC {\'o}n Blockchain. Parte VI}{56}{lstlisting.Alph1.14}
-\contentsline {lstlisting}{\numberline {A.15}Instalaci\IeC {\'o}n Blockchain. Parte VII}{56}{lstlisting.Alph1.15}
-\contentsline {lstlisting}{\numberline {A.16}Instalaci\IeC {\'o}n Blockchain. Parte VIII}{56}{lstlisting.Alph1.16}
-\contentsline {lstlisting}{\numberline {A.17}Comandos pm2}{56}{lstlisting.Alph1.17}
-\contentsline {lstlisting}{\numberline {A.18}Instalaci\IeC {\'o}n Blockchain. Parte IX}{56}{lstlisting.Alph1.18}
-\contentsline {lstlisting}{\numberline {A.19}Instalaci\IeC {\'o}n Blockchain. Parte X}{56}{lstlisting.Alph1.19}
-\contentsline {lstlisting}{\numberline {A.20}Instalaci\IeC {\'o}n Blockchain. Parte X}{57}{lstlisting.Alph1.20}
-\contentsline {lstlisting}{\numberline {A.21}Instalaci\IeC {\'o}n Blockchain. Parte XII}{57}{lstlisting.Alph1.21}
+\contentsline {lstlisting}{\numberline {A.9}Instalaci\IeC {\'o}n \textit {blockchain}. Parte I}{55}{lstlisting.Alph1.9}
+\contentsline {lstlisting}{\numberline {A.10}Instalaci\IeC {\'o}n \textit {blockchain}. Parte II}{55}{lstlisting.Alph1.10}
+\contentsline {lstlisting}{\numberline {A.11}Instalaci\IeC {\'o}n \textit {blockchain}. Parte III}{55}{lstlisting.Alph1.11}
+\contentsline {lstlisting}{\numberline {A.12}Instalaci\IeC {\'o}n \textit {blockchain}. Parte IV}{55}{lstlisting.Alph1.12}
+\contentsline {lstlisting}{\numberline {A.13}Instalaci\IeC {\'o}n \textit {blockchain}. Parte V}{56}{lstlisting.Alph1.13}
+\contentsline {lstlisting}{\numberline {A.14}Instalaci\IeC {\'o}n \textit {blockchain}. Parte VI}{56}{lstlisting.Alph1.14}
+\contentsline {lstlisting}{\numberline {A.15}Instalaci\IeC {\'o}n \textit {blockchain}. Parte VII}{56}{lstlisting.Alph1.15}
+\contentsline {lstlisting}{\numberline {A.16}Instalaci\IeC {\'o}n \textit {blockchain}. Parte VIII}{56}{lstlisting.Alph1.16}
+\contentsline {lstlisting}{\numberline {A.17}Comandos \IeC {\'u}tiles de pm2}{56}{lstlisting.Alph1.17}
+\contentsline {lstlisting}{\numberline {A.18}Instalaci\IeC {\'o}n \textit {blockchain}. Parte IX}{56}{lstlisting.Alph1.18}
+\contentsline {lstlisting}{\numberline {A.19}Instalaci\IeC {\'o}n \textit {blockchain}. Parte X}{57}{lstlisting.Alph1.19}
+\contentsline {lstlisting}{\numberline {A.20}Instalaci\IeC {\'o}n \textit {blockchain}. Parte X}{57}{lstlisting.Alph1.20}
+\contentsline {lstlisting}{\numberline {A.21}Instalaci\IeC {\'o}n \textit {blockchain}. Parte XII}{57}{lstlisting.Alph1.21}
+\contentsline {lstlisting}{\numberline {A.22}Instalaciones previas a la aplicaci\IeC {\'o}n ARK Wallet}{59}{lstlisting.Alph1.22}
+\contentsline {lstlisting}{\numberline {A.23}Instalaci\IeC {\'o}n de la aplicaci\IeC {\'o}n ARK Wallet}{59}{lstlisting.Alph1.23}
