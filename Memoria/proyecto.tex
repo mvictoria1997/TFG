@@ -186,6 +186,15 @@
 \renewcommand\theadgape{\Gape[4pt]}
 \renewcommand\cellgape{\Gape[4pt]}
 
+%ENLACES
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	%filecolor=red,
+	urlcolor=cyan,
+	citecolor=blue,
+	pdfborder={0 0 0}
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% CONTENIDOS DEL DOCUMENTO
@@ -199,10 +208,11 @@
 	\input{portada/prefacio}
 	\frontmatter
 	\pdfbookmark[0]{Índice}{}
+	{\hypersetup{linkcolor=black}
 	\tableofcontents
 	\listoffigures
 	\listoftables
-	\lstlistoflistings
+	\lstlistoflistings}
 	\mainmatter
 
 % Ficheros con los contenidos
