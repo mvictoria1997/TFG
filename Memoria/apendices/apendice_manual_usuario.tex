@@ -87,7 +87,7 @@ $ sudo docker rm <ID-CONTAINER>
 
 \section{Instalación Blockchain ARK}
 
-En Docker, iniciamos una imagen de ubuntu xenial. Además abrimos los puertos que van a ser necesarios posteriormente 4103, para la API, y 4200, para el explorer.\\
+En Docker, iniciamos una imagen de ubuntu xenial. Además abrimos los puertos que van a ser necesarios posteriormente 4103, para la API pública, 4102, conexión P2P API paray 4200, para el explorer.\\
 
 \begin{lstlisting}[language=Bash,caption=Instalación Blockchain. Parte I, label=cod:suma-cuerpo, style=Consola]
 $ sudo docker run -ti -p 4103:4103 -p 4200:4200 ubuntu:xenial
@@ -173,7 +173,9 @@ $ pm2 status
 Clonamos el directorio deployer de \texttt{@ArkEcosystem}.\\
 
 \begin{lstlisting}[language=Bash,caption=Instalación Blockchain. Parte IX, label=cod:suma-cuerpo, style=Consola]
-git clone https://github.com/ArkEcosystem/deployer.git
+$ git clone https://github.com/ArkEcosystem/deployer.git
+$ chmod 764 deployer/setup.sh
+$ ./setup.sh
 \end{lstlisting}
 
 Iniciar la base de datos e instalar tanto la blockchain como el explorer. Una vez que instalemos el \texttt{core} obtendremos en la salida la dirección y la passphrase del wallet Genesis la tenemos que guardar en un archivo para más tarde poder hacer las transacciones, aún así podemos encontrar la passphrase en el archivo ..... . Esto puede tardar unos minutos
