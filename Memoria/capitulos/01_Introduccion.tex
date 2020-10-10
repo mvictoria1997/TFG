@@ -62,7 +62,7 @@ Veamos la tabla comparativa \ref{table:security-level}, esta nos indica el tipo 
 
 \begin{table}[h]
 	
-	\label{table:security-level}
+	
 	\centering
 	\resizebox{\linewidth}{!}{
 	\begin{tabular}{c c c c c }
@@ -79,6 +79,7 @@ Veamos la tabla comparativa \ref{table:security-level}, esta nos indica el tipo 
 		\hline
 	\end{tabular}}
 	\caption{Niveles de seguridad de ordenadores clásicos y cuánticos \cite{security-bit}}
+	\label{table:security-level}
 \end{table}
 
 
@@ -209,9 +210,6 @@ Por último, el \textbf{teletransporte cuántico} utiliza el entrelazamiento par
 
 
 
-
-
-
 \subsection{Blockchain}\label{sec:intro:blockchain}
 
 
@@ -270,11 +268,11 @@ Hoy en día, la tecnología \textit{blockchain} está ganando mucha atención, n
 
 \subsection{Algoritmo UOV}\label{sec:intro:UOV}
 
-El algoritmo aceite y vinagre desequilibrado es una versión simplificada del algoritmo aceite y vinagre, ambos algoritmos de firma digital. Para crear las firmas y validarlas es necesario resolver un sistema con $m$ ecuaciones y $n$ variables, que es un problema NP-duro, lo que significa que no se puede resolver de manera eficiente incluso con una computadora cuántica. Si $m$ y $n$ son casi iguales o iguales será más difícil resolver el sistema, obteniendo de esta forma un algoritmo de firma resistente a ataques cuánticos.\\
+El algoritmo aceite y vinagre desequilibrado es una versión simplificada del algoritmo aceite y vinagre, ambos algoritmos de firma digital. Para crear las firmas y validarlas es necesario resolver un sistema con $m$ ecuaciones y $n$ variables, que es un problema NP-duro, lo que significa que si fuésemos capaces de resolverlo con un ordenador cuántico, todos los problemas considerados en la actualidad serían vulnerables. Si $m$ y $n$ son casi iguales o iguales será más difícil resolver el sistema, obteniendo de esta forma un algoritmo de firma resistente a ataques cuánticos.\\
 
-La principal ventaja del algoritmo UOV es que es un algoritmo post-cuántico, a diferencia de otros esquemas de firmas como RSA o ElGamal que no permanecerían seguros ante un ordenador cuántico. Esto se debe a que en la actualidad no existe un algoritmo eficiente para la resolución de sistemas multivariados de ecuaciones  en ordenador cuántico. Otra ventaja es la simplicidad de las operaciones utilizadas, ya que las firmas se crean y validan con operaciones de suma y multiplicaciones de valores pequeños, lo que requiere bajos recursos \textit{hardware}. 
+La principal ventaja del algoritmo \acrshort{uov} es que es un algoritmo post-cuántico, a diferencia de otros esquemas de firmas como \acrshort{rsa}, \acrshort{dsa}, basado en el logaritmo discreto, y su variante para curvas elípticas \mbox{\acrshort{ecdsa}} que no permanecerían seguros ante un ordenador cuántico. Esto se debe a que en la actualidad no existe un algoritmo eficiente para la resolución de sistemas multivariados de ecuaciones  en ordenador cuántico. Otra ventaja es la simplicidad de las operaciones utilizadas, ya que las firmas se crean y validan con operaciones de suma y multiplicaciones de valores pequeños, lo que requiere bajos recursos \textit{hardware}. 
 
-Aunque el algoritmo usa sistemas pequeños y la longitud de las firmas son pequeñas, se necesitan claves públicas bastante más grandes en comparación con otros algoritmos de firma como ECDSA, pudiendo ocupar dicha clave pública varios kilobytes de almacenamieno. Por otro lado ya se conocen algunos métodos de ataque, probablemente aparecerán más si se empiza a comercializar.\\
+Aunque el algoritmo usa sistemas pequeños y la longitud de las firmas son pequeñas, se necesitan claves públicas bastante más grandes en comparación con otros algoritmos de firma como \mbox{\acrshort{ecdsa}}, pudiendo ocupar dicha clave pública varios kilobytes de almacenamieno. Por otro lado ya se conocen algunos métodos de ataque, probablemente aparecerán más si se empiza a comercializar.\\
 
 \subsubsection{Cuerpos finitos}
 Se trabajará con el cuerpo finito de 128 elementos, $\GF(2^7)$, que es un cuerpo extendido de $\GF(2)$ que corresponde con el cociente 
@@ -287,29 +285,27 @@ Además el orden del cuerpo de las unidades es $127$, que es primo entonces todo
 La tabla \ref{tab:rel} muestra una representación de los elementos no nulos del cuerpo. En la implementación se ha utilizado la representación como cadena de bits, puesto que a la hora de trabajar es más fácil con una cadeba de bits que con los polinomios.
 
 \begin{table}[h]
-
-\label{tab:rel}
-\begin{center}
-\begin{tabular}{p{0.2\linewidth}p {0.2\linewidth}p{0.2\linewidth}}
-	 \textbf{Polinomio} & \textbf{Bits} & \textbf{$\log_a$}\\
-\toprule
-	$1$ & [0, 0, 0, 0, 0, 0, 1] & 0\\
-	$a$ & [0, 0, 0, 0, 0, 1, 0] & 1\\
-	$a^2$ & [0, 0, 0, 0, 1, 0, 0] & 2\\
-	\\
-	$\vdots$ & $\vdots$ & $\vdots$\\
-	\\
-	$a^6 + a^5 + a^4 + 1$ & [1, 1, 1, 0, 0, 0, 1] & 124\\
-	$a^6 + a^5 + 1$ & [1, 1, 0, 0, 0, 0, 1] & 125\\
-	$a^6 + 1$ & [1, 0, 0, 0, 0, 0, 1] & 126\\
-\bottomrule
-\end{tabular}
-\end{center}
-\caption{Representación de los elementos no nulos del cuerpo finito de $2^7$ elementos}
-
+	\begin{center}
+		\begin{tabular}{p{0.2\linewidth}p {0.2\linewidth}p{0.2\linewidth}}
+			\textbf{Polinomio} & \textbf{Bits} & \textbf{$\log_a$}\\
+			\toprule
+				$1$ & [0, 0, 0, 0, 0, 0, 1] & 0\\
+				$a$ & [0, 0, 0, 0, 0, 1, 0] & 1\\
+				$a^2$ & [0, 0, 0, 0, 1, 0, 0] & 2\\
+				\\
+				$\vdots$ & $\vdots$ & $\vdots$\\
+				\\
+				$a^6 + a^5 + a^4 + 1$ & [1, 1, 1, 0, 0, 0, 1] & 124\\
+				$a^6 + a^5 + 1$ & [1, 1, 0, 0, 0, 0, 1] & 125\\
+				$a^6 + 1$ & [1, 0, 0, 0, 0, 0, 1] & 126\\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+	\caption{Representación de los elementos no nulos de $\GF(128)$}
+	\label{tab:rel}
 \end{table}
 
-La implementación del cuerpo finito de $2^7$ elementos no se ha realizado de forma genérica sino para que sea específica para el algoritmo UOV, de esta forma es mucho más sencillo implementar la aritmética del cuerpo. Para la suma en $\mathds{Z}_2$ sólo tenemos que fijarnos que es lo mismo que el operador lógico \textit{XOR}, mientras que para el producto, al encontrarmos en un cuerpo como un orden pequeño, se usarán unas tablas que contienen las correspondencias entre los elementos no nulos del cuerpo y sus logaritmos en base $a$, por lo que el producto se convierte en una suma módulo $127$.\\
+La implementación del cuerpo finito de $2^7$ elementos no se ha realizado de forma genérica sino para que sea específica para el algoritmo UOV, de esta forma es mucho más sencillo implementar la aritmética del cuerpo. Para la suma en $\GF(2)$ sólo tenemos que fijarnos que es lo mismo que el operador lógico \textit{XOR}, mientras que para el producto, al encontrarmos en un cuerpo como un orden pequeño, se usarán unas tablas que contienen las correspondencias entre los elementos no nulos del cuerpo y sus logaritmos en base $a$, por lo que el producto se convierte en una suma módulo $127$.\\
 
 
 

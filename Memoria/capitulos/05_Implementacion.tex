@@ -33,7 +33,6 @@ log = {
 La suma de dos elementos del cuerpo se ha implementando la puerta $xor$, esto es si las $iésimas$-componentes son iguales entonces la suma vale $0$, en caso contrario vale $1$, código \ref{cod:suma-cuerpo}.
 
 \begin{table}[h]
-	\label{tab:rel}
 	\begin{center}
 	\centering
 	\resizebox{\linewidth}{!}{
@@ -65,7 +64,6 @@ def suma(n1=[], n2=[]):
 Para el producto de dos elementos del cuerpo se ha diferenciado el caso en el que uno de los vectores sea $0$ en dicho caso el producto vale 0. Si ninguno de los vectores es $0$ entonces se hace uso de las tablas \ref{cod:exp} y \ref{cod:log}, para trabajar con enteros módulo 127, código \ref{cod:producto-cuerpo}.
 
 \begin{table}[h]
-	\label{tab:rel}
 	\begin{center}
 	\centering
 	\resizebox{\linewidth}{!}{
@@ -103,7 +101,6 @@ Calcula el vector correspondiente vector en el cuerpo de un entero, código \ref
 
 
 \begin{table}[h]
-	\label{tab:rel}
 	\begin{center}
 	\centering
 	\resizebox{\linewidth}{!}{
@@ -132,7 +129,6 @@ def F128(n1):
 Al estar en un cuerpo todo elementos tiene inverso y tiene sentido hacer la función \texttt{inverso} de un elemento del cuerpo, la implementación que se ha hecho ha sido hacer la multiplicación por los restantes elementos y comprobando que de como resultado el elemento unidad, en este caso $[0,0,0,0,0,0,1]$, código \ref{cod:inverso-cuerpo}.
 
 \begin{table}[h]
-	\label{tab:rel}
 	\begin{center}
 	\centering
 	\resizebox{\linewidth}{!}{
@@ -160,7 +156,6 @@ def inverse(n=[]):
 La función \texttt{mayor} compara si el elemento $n1$ es mayor que el elemento $n2$, para ello se convierten los vectores a enteros con la tabla \texttt{log} y se compara que entero es mayor, código \ref{cod:mayor-que-cuerpo}.
 
 \begin{table}[h]
-	\label{tab:rel}
 	\begin{center}
 	\centering
 	\resizebox{\linewidth}{!}{
@@ -196,7 +191,6 @@ def mayor (n1=[],n2=[]):
 Convierte una matriz $n1$ del cuerpo $\mathds{F}_2$ en un vector $n$ del cuerpo de 128 elementos. Como los elementos de la matriz son solo 0 y 1 la conversión se reduce a, si en la matriz hay un 0 añade al vector $n$ el vector $[0,0,0,0,0,0,0]$ y en otro caso $[0,0,0,0,0,0,1]$, código \ref{cod:matrizF2-cuerpo}.
 
 \begin{table}[h]
-	\label{tab:rel}
 	\begin{center}
 	\centering
 	\resizebox{\linewidth}{!}{
@@ -232,7 +226,6 @@ def matrix_F2to128(n1=[]):
 Convierte un vector de matrices $n1$ del cuerpo $\mathds{F}_2$ en una matriz $matrix$ del cuerpo de 128 elementos. Como en la función anterior los elementos de la matriz son solo 0 y 1, se aplica el mismo cambio, código \ref{cod:matriz3dF2-cuerpo}.
 
 \begin{table}[h]
-	\label{tab:rel}
 	\begin{center}
 	\centering
 	\resizebox{\linewidth}{!}{
@@ -278,7 +271,6 @@ En esta sección de explicarán funciones como la suma de matrices, cálculo de 
 Suma de dos matrices $m1$ y $m2$ del cuerpo de 128 elementos, código \ref{cod:suma-matrix}.
 
 \begin{table}[h]
-	\label{tab:rel}
 	\begin{center}
 	\centering
 	\resizebox{\linewidth}{!}{
@@ -315,7 +307,6 @@ def matrix_sum (m1, m2):
 Producto de dos matrices con elementos en el cuerpo de 128 elementos, código \ref{cod:prod-matrix}.
 
 \begin{table}[h]
-	\label{tab:rel}
 	\begin{center}
 	\centering
 	\resizebox{\linewidth}{!}{
@@ -354,7 +345,6 @@ def matrix_product (n1=[], n2=[]):
 Producto de dos matrices con elementos en el cuerpo $\mathds{F}_2$, como los elementos de la matriz son $0$ y $1$ la suma acomulada se hace con la operación lógica \texttt{xor},  código \ref{cod:prodF2-matrix}.
 
 \begin{table}[h]
-	\label{tab:rel}
 	\begin{center}
 	\centering
 	\resizebox{\linewidth}{!}{
@@ -393,7 +383,6 @@ def matrix_product_F2 (n1=[], n2=[]):
 Calcula la matriz transpuesta de la matriz dada como parámetro, código \ref{cod:trans-matrix}.
 
 \begin{table}[h]
-	\label{tab:rel}
 	\begin{center}
 	\centering
 	\resizebox{\linewidth}{!}{
@@ -427,7 +416,6 @@ def matrix_transpose(m):
 Calcula la matriz identidad con una determinada dimensión, $dim$, que se pasa como parámetro, código \ref{cod:identi-matrix}.
 
 \begin{table}[h]
-	\label{tab:rel}
 	\begin{center}
 	\centering
 	\resizebox{\linewidth}{!}{
@@ -469,7 +457,6 @@ A\cdot x=b
 \end{equation}
 
 \begin{table}[h]
-	\label{tab:rel}
 	\begin{center}
 	\centering
 	\resizebox{\linewidth}{!}{
@@ -533,7 +520,6 @@ La función \texttt{clavePrivada} genera la clave privada de un usuario, para el
 
 \vspace{-0.23cm}
 \begin{table}[h]
-	\label{tab:rel}
 	\begin{center}
 	\centering
 	\resizebox{\linewidth}{!}{
@@ -585,7 +571,6 @@ def clavePrivada (m, v):
 La función \texttt{clavePublica} genera la clave pública a partir de la clave privada, calculada con la función anterior, los valores $m$ y $v$ el número de variables de aceite y vinagre, además de una matriz de distorsión, código \ref{cod:pub-UOV}.
 
 \begin{table}[h]
-	\label{tab:rel}
 	\begin{center}
 	\centering
 	\resizebox{\linewidth}{!}{
@@ -627,7 +612,6 @@ def clavePublica(m, v, alpha, beta, T):
 La función \texttt{signature} calcula la firma del hash de un mensaje, $hashed$, con las claves privadas del usuario, $alpha\_F2$ y $beta\_F2$, el número de aceites y vinagres, $m$ y $v$, el tamaño del cuerpo, $r$ y con la matriz de transición, $T$. Se toman los vinagres aleatorios, se resuelve el sistema para calcular los aceites, y con la ecuación \ref{eq:firma} obtenemos la firma del mensaje, código \ref{cod:firma-UOV}.
 
 \begin{table}[h]
-	\label{tab:rel}
 	\begin{center}
 	\centering
 	\resizebox{\linewidth}{!}{
@@ -688,7 +672,6 @@ def signature(hashed, alpha_F2, beta_F2, m, r, v, T):
 Por último la función \texttt{verify} comprueba si la firma, $firma$, de un mensaje, $m$, es correcta, para ello utiliza las claves públicas del usuario y el número de variables de aceite, se va comprobando una a una si se cumple la igualdad \ref{eq:veri}, código \ref{cod:verif-UOV}.
 
 \begin{table}[h]
-	\label{tab:rel}
 	\begin{center}
 	\centering
 	\resizebox{\linewidth}{!}{
