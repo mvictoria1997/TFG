@@ -275,7 +275,8 @@ La principal ventaja del algoritmo \acrshort{uov} es que es un algoritmo post-cu
 Aunque el algoritmo usa sistemas pequeños y la longitud de las firmas son pequeñas, se necesitan claves públicas bastante más grandes en comparación con otros algoritmos de firma como \mbox{\acrshort{ecdsa}}, pudiendo ocupar dicha clave pública varios kilobytes de almacenamieno. Por otro lado ya se conocen algunos métodos de ataque, probablemente aparecerán más si se empiza a comercializar.\\
 
 \subsubsection{Cuerpos finitos}
-Se trabajará con el cuerpo finito de 128 elementos, $\GF(2^7)$, que es un cuerpo extendido de $\GF(2)$ que corresponde con el cociente 
+Se trabajará con el cuerpo finito de 128 elementos, $\GF(2^7)$, extensión de grado $7$ del cuerpo $\GF(2)$ de los enteros módulo $2$
+ 
 \begin{equation}
 \GF(128) = \frac{\GF(2)[x]}{\langle x^7 + x + 1 \rangle}
 \end{equation}
@@ -313,11 +314,13 @@ La implementación del cuerpo finito de $2^7$ elementos no se ha realizado de fo
 \subsubsection{Parámetros y fórmula}
 Para empezar indicamos los parámetros que serán de utilidad para entender el algoritmo.
 \begin{itemize}
-	\item r: Grado del cuerpo extendido, $\mathds{F}_2 \subset \mathds{F}_{2^r}$. % quitar el F_2
+	\item r: Grado del cuerpo extendido, $\mathds{F}_2 \subset \mathds{F}_{2^r}$. En la implementación se va tomar $r$ igual a $7$, pero se puede realizar con cualquier valor de $r$ sin un esfuerzo adicional.
+	\item $m$: Tamaño de la clave pública, además del número de variables de aceite.
+	\item $v$: Número de variables vinagre.
+	\item $n$: Número total de variables, las de aceite más las de vinagre.
 	\item $x$: Vector de $n$ componentes, denominando a las primeras $v$ componentes  $x_1, \dotsb, x_v$ vinagre y al resto aceites.
 	
-	\item m: Tamaño de la clave pública, además del número de variables de aceite.
-	\item $v$: Número de variables vinagre.
+	
 	%\item $\mathcal{H}$: Función salida extensible se usa para crear el hash del mensaje y proviene de la clave pública.
 	%\item $\mathcal{G}$: Función salida extensible se usa para la generación de la clave pública a partir de una semilla privada.
 \end{itemize}
@@ -333,19 +336,18 @@ donde $\alpha_{i,j,k}$ y $\beta_{i,k}$ se toman aleatoriamente en $\mathds{F}_2$
 
 
 \subsubsection{Generación de la clave privada}
-La clave privada está formada por $\alpha_{i,j,k}$ y $\beta_{i,k}$ que son valores del cuerpo $\mathds{F}_2$, elegidos de forma aleatoria.
+La clave privada está formada por $\alpha_{i,j,k}$ y $\beta_{i,k}$ que son valores de $\GF(2)$, elegidos de forma aleatoria.
 
 
 \subsubsection{Generación de la clave pública}
 Generaremos una clave pública partiendo de la clave privada $\alpha_{i,j,k}$ y $\beta_{i,k}$.
 
-Para entenderlo mejor ponemos las $m$ ecuaciones (\ref{eq:fun}) en forma matricial,
+Para entenderlo mejor ponemos las $m$ ecuaciones (\ref{eq:fun}) en forma matricial, ecuación \ref{eq:matriz}. La notación a seguir para las matrices transpuestas es $(X)'$, con $X$ una matrix.
 
 \begin{equation}\label{eq:matriz} 
 f_k(x) = x^v\ [\alpha_{i,j,k}]\ (x^v, x^m)' + [\beta_{i,k}]\ (x^v, x^m)'
 \end{equation}
-
-siendo $[\alpha_{i,j,k}]$ y $[\beta_{i,k}]$ son las representaciones matriciales de $\alpha_{i,j,k}$ y $\beta_{i,k}$, $x^v$ los vinagres y $x^m$ los aceites, así $x$ se puede expresar como $(x^v, x^m)'$.
+siendo $[\alpha_{i,j,k}]$ y $[\beta_{i,k}]$ las representaciones matriciales de $\alpha_{i,j,k}$ y $\beta_{i,k}$, $x^v$ los vinagres y $x^m$ los aceites, así $x$ se puede expresar como $(x^v, x^m)'$.\\
 
 Conociendo los valores de la clave privada $\alpha$ y $\beta$, tomando de forma aleatoria los del vinagre $x^v$, los cuales pasaremos a denominarlos como $a^v$, y cogiendo los $m$ primeros bits del hash del mensaje $h_k$ podemos generar la clave pública.
 
@@ -404,7 +406,7 @@ Sustituimos en (\ref{eq:matriz}):
 	\hline
 	T'_{v x m}
 	\end{array}
-	\right] [\alpha_{i,j,k}]_{\begin{subarray}{l}{1<i<v }\\ {i<j<n}\end{subarray}}\ T \ s' + [\beta_{j,k}]_{1<j<n}\ T\ s'
+	\right] [\alpha_{i,j,k}]_{\begin{subarray}{l}{1\leqslant i \leqslant v }\\ {i \leqslant j \leqslant n}\end{subarray}}\ T \ s' + [\beta_{j,k}]_{1\leqslant j\leqslant n}\ T\ s'
 \end{equation}
 donde $k \in \{1,...,m\}$
 
@@ -417,9 +419,9 @@ Así obtenemos las claves públicas definidas para cada $k$
 	\hline
 	T'_{v x m}
 	\end{array}
-	\right] [\alpha_{i,j,k}]_{\begin{subarray}{l}{1<i<v }\\ {i<j<n}\end{subarray}} \ T$
+	\right] [\alpha_{i,j,k}]_{\begin{subarray}{l}{1 \leqslant i\leqslant v }\\ {i\leqslant j \leqslant n}\end{subarray}} \ T$
 	
-	\item ${\beta_{pub}}_k = [\beta_{j,k}]_{1<j<n}\ T$
+	\item ${\beta_{pub}}_k = [\beta_{j,k}]_{1\leqslant j\leqslant n}\ T$
 
 \end{itemize}
 
@@ -445,5 +447,74 @@ Para comprobar que el mensaje es correcto y que no ha sufrido ninguna transforma
 \begin{equation}\label{eq:veri}
 	h_k = \ {\alpha_{pub}}_k \ s' + {\beta_{pub}}_{k} \ s'
 \end{equation}
+
+\subsubsection{Ejemplo}
+
+A continuación se muestra un ejemplo para mejor comprensión del algoritmo utilizando valores de $m$ y $v$ pequeños, dejando fijo el valor de $r$ igual a $7$.
+
+Generamos la clave privada con valores aleatorios
+
+\begin{equation}
+{\alpha_{priv}} = \left[
+	\begin{array}{c}
+	\left[\begin{array}{c}
+		0 1 0 0 0 1\\
+		0 0 0 1 1 1\\
+		0 0 1 0 0 1
+	\end{array}\right]
+		
+	\left[\begin{array}{c}
+		1 0 1 1 1 0\\
+		0 0 0 1 1 1\\
+		0 0 1 1 1 0
+	\end{array}\right]
+	
+	\left[\begin{array}{c}
+		0 0 1 1 1 1\\
+		0 0 1 0 0 0\\
+		0 0 1 0 1 0\\
+	\end{array}\right]
+	\end{array}
+	\right]
+\end{equation}
+
+
+\begin{equation}
+{\beta_{priv}} = \left[
+	\begin{array}{c}
+	\left[\begin{array}{c}
+		1 1 1 1 1 0
+	\end{array}\right]
+	
+	\left[\begin{array}{c}
+		0 0 1 1 0 0
+	\end{array}\right]
+	
+	\left[\begin{array}{c}
+		1 1 1 1 0 1
+	\end{array}\right]
+	\end{array}
+	\right]
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

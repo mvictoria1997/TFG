@@ -304,6 +304,7 @@ def clavePrivada (m, v):
                else:
                   row += [1]
          aux += [row]
+         print ([row])
       alpha += [aux]
 
 
@@ -761,26 +762,25 @@ def matrix_identity(dim):
 #------------------------------------------------------------------
 
 
-###Fin operaciones matrices
-def hello():
-	print ("LUOV.py")
-	L=1
-	return L
-
 def main():
 
    #Number of vinegar and oil
    #r, m, v = 7, 83, 283
    #r, m, v =7, 57, 197
-   r, m, v= 7, 44, 151
+   #r, m, v= 7, 44, 151 este es el bueno
    #r, m, v = 7, 35, 121
    #r, m, v = 7, 19, 65
    #r, m, v = 7, 10, 30 #con este tamaño funciona
+   r, m, v = 7, 3, 3
    n = m + v
 
    #Private key
    alpha, beta = clavePrivada(m, v)
 
+   print ("alpha priv")
+   print (alpha)
+   print ("beta priv")
+   print (beta)
    #Matriz de distorsión
    T = []
    for i in range(n):
@@ -811,20 +811,28 @@ def main():
                   row += [0]
       T += [row]
 
-
+   print ("T")
+   print (T)
 
    #Publics keys
    alpha_pub, beta_pub = clavePublica(m, v, alpha, beta, T)
-
+   print ("alpha pub")
+   print (alpha_pub)
+   print ("beta pub")
+   print (beta_pub)
 
    #Signature
    mensaje = "Este mensaje es un mensaje de prueba. Quiero se sea un poco largo para que se aprecie el efecto de la función hash"
    hashed = hashlib.sha256(mensaje.encode('utf-8')).hexdigest()[0:m]
 
    hashed_message = []
+   print ("hash")
+   print (hashed)
 
    for i in range(len(hashed)):
       hashed_message += [bin(int(hashed[i], 16))[2:]] #Pasa a binario el hash
+   print ("hash")
+   print (hashed_message)
 
    for i in range (len(hashed_message)):
       aux = [int(d) for d in (hashed_message[i])]
@@ -833,7 +841,8 @@ def main():
       hashed_message [i] = aux
 
    firma = signature (hashed_message, alpha, beta, m, r, v, T)
-
+   print ("Firma")
+   print (firma)
 
    #Verification
    verif = verificacion (hashed_message, firma, alpha_pub, beta_pub, m)

@@ -28,6 +28,36 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{dsa}{}%
+{%
+\gls@defglossaryentry{dsa}%
+{%
+name={\acronymfont {\glsentryshort {dsa}}},%
+sort={DSA},%
+type={acronym},%
+first={DSA},%
+firstplural={DSAs},%
+text={DSA},%
+plural={DSAs},%
+description={Digital Signature Algorithm},%
+descriptionplural={Digital Signature Algorithm},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Digital Signature Algorithm},%
+longplural={Digital Signature Algorithms},%
+short={DSA},%
+shortplural={DSAs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{ecdsa}{}%
 {%
 \gls@defglossaryentry{ecdsa}%
@@ -53,6 +83,36 @@ long={Elliptic Curve Digital Signature Algorithm},%
 longplural={Elliptic Curve Digital Signature Algorithms},%
 short={ECDSA},%
 shortplural={ECDSAs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{uov}{}%
+{%
+\gls@defglossaryentry{uov}%
+{%
+name={\acronymfont {\glsentryshort {uov}}},%
+sort={UOV},%
+type={acronym},%
+first={UOV},%
+firstplural={UOVs},%
+text={UOV},%
+plural={UOVs},%
+description={Unbalanced Oil and Vinegar},%
+descriptionplural={Unbalanced Oil and Vinegar},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Unbalanced Oil and Vinegar},%
+longplural={Unbalanced Oil and Vinegars},%
+short={UOV},%
+shortplural={UOVs},%
 counter={page},%
 parent={},%
 %
