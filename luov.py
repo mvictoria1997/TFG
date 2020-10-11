@@ -826,7 +826,7 @@ def main():
    hashed = hashlib.sha256(mensaje.encode('utf-8')).hexdigest()[0:m]
 
    hashed_message = []
-   print ("hash")
+   print ("hashh")
    print (hashed)
 
    for i in range(len(hashed)):
