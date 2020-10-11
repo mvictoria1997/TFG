@@ -450,70 +450,317 @@ Para comprobar que el mensaje es correcto y que no ha sufrido ninguna transforma
 
 \subsubsection{Ejemplo}
 
-A continuación se muestra un ejemplo para mejor comprensión del algoritmo utilizando valores de $m$ y $v$ pequeños, dejando fijo el valor de $r$ igual a $7$.
+A continuación se muestra un ejemplo para mejor comprensión del algoritmo utilizando valores de $m$ y $v$ pequeños, ambos con valor $3$, y dejando fijo el valor de $r$ igual a $7$.
 
-Generamos la clave privada con valores aleatorios
+Generamos la clave privada con valores aleatorios. Notamos que las matrices del vector $\alpha_{priv}$, ecuación \ref{eq:ej-alpha-priv} son matrices de dimensión $3\ \mathrm{x}\ 6$, esto es dimensión $m\ \mathrm{x}\ n$, además de matrices triangulares superiores. Además el número de matrices es $3$ el valor de $v$.
 
-\begin{equation}
+\begin{equation}\label{eq:ej-alpha-priv}
 {\alpha_{priv}} = \left[
 	\begin{array}{c}
 	\left[\begin{array}{c}
-		0 1 0 0 0 1\\
-		0 0 0 1 1 1\\
-		0 0 1 0 0 1
+		1\ 0\ 1\ 1\ 1\ 0\\
+		0\ 0\ 0\ 0\ 1\ 1\\
+		0\ 0\ 0\ 1\ 1\ 1
 	\end{array}\right]
 		
 	\left[\begin{array}{c}
-		1 0 1 1 1 0\\
-		0 0 0 1 1 1\\
-		0 0 1 1 1 0
+		1\ 1\ 0\ 1\ 1\ 0\\
+		0\ 0\ 1\ 1\ 1\ 0\\
+		0\ 0\ 1\ 1\ 1\ 1
 	\end{array}\right]
 	
 	\left[\begin{array}{c}
-		0 0 1 1 1 1\\
-		0 0 1 0 0 0\\
-		0 0 1 0 1 0\\
+		0\ 0\ 0\ 1\ 0\ 0\\
+		0\ 0\ 1\ 1\ 0\ 1\\
+		0\ 0\ 0\ 0\ 1\ 1\\
 	\end{array}\right]
 	\end{array}
 	\right]
 \end{equation}
 
+La segunda parte de la clave privada es $\beta_{priv}$, que consta de un vector de $3$ vectores, donde cada uno tiene $n$ componentes, esto es $6$ componentes, ecuación \ref{eq:ej-beta-priv}.
 
-\begin{equation}
+\begin{equation}\label{eq:ej-beta-priv}
 {\beta_{priv}} = \left[
 	\begin{array}{c}
 	\left[\begin{array}{c}
-		1 1 1 1 1 0
+		1\ 0\ 0\ 1\ 0\ 0
 	\end{array}\right]
 	
 	\left[\begin{array}{c}
-		0 0 1 1 0 0
+		0\ 0\ 1\ 0\ 1\ 0
 	\end{array}\right]
 	
 	\left[\begin{array}{c}
-		1 1 1 1 0 1
+		1\ 1\ 0\ 1\ 0\ 1
 	\end{array}\right]
 	\end{array}
 	\right]
 \end{equation}
 
 
+Generación de T, ecuación \ref{eq:ej-T}
+
+\begin{equation}\label{eq:ej-T}
+{T} = \left[
+	\begin{array}{c|c}
+		1\ \ 0\ \ 0\ & 0\ \ 0\ \ 0\\
+		0\ \ 1\ \ 0\ & 0\ \ 0\ \ 1\\
+		0\ \ 0\ \ 1\ & 1\ \ 0\ \ 1\\
+		\hline
+		0\ \ 0\ \ 0\ & 1\ \ 0\ \ 0\\
+		0\ \ 0\ \ 0\ & 0\ \ 1\ \ 0\\
+		0\ \ 0\ \ 0\ & 0\ \ 0\ \ 1
+	\end{array}
+	\right] =
+	\left[
+	\begin{array}{c|c}
+	\\
+	\ \ \ \ \ I_3\ \ \ \ & \ \ \ \ T_{3x3} \ \ \  \\
+	\\
+	\hline
+	\\
+	0 & I_3\\
+	\\
+	\end{array}
+	\right]
+\end{equation}
+
+
+Clave pública
+
+\begin{equation}\label{eq:ej-alpha-pub-1}
+	\begin{aligned}
+	{\alpha_{pub_1}}  & =  
+	\left[\begin{array}{c}
+		1\ 0\ 0\\
+		0\ 1\ 0\\
+		0\ 0\ 1\\
+		\hline
+		0\ 0\ 1\\
+		0\ 0\ 0\\
+		0\ 1\ 1
+	\end{array}\right]
+	\cdot
+	\left[\begin{array}{c}
+		1\ 0\ 1\ 1\ 1\ 0\\
+		0\ 0\ 0\ 0\ 1\ 1\\
+		0\ 0\ 0\ 1\ 1\ 1
+	\end{array}\right]
+	\cdot
+	\left[\begin{array}{c|c}
+		1\ \ 0\ \ 0\ & 0\ \ 0\ \ 0\\
+		0\ \ 1\ \ 0\ & 0\ \ 0\ \ 1\\
+		0\ \ 0\ \ 1\ & 1\ \ 0\ \ 1\\
+		\hline
+		0\ \ 0\ \ 0\ & 1\ \ 0\ \ 0\\
+		0\ \ 0\ \ 0\ & 0\ \ 1\ \ 0\\
+		0\ \ 0\ \ 0\ & 0\ \ 0\ \ 1
+	\end{array}\right] \\
+	& = \left[\begin{array}{c|c}
+		1\ \ 0\ \ 1\ & 1\ \ 1\ \ 0\\
+		0\ \ 0\ \ 0\ & 0\ \ 1\ \ 1\\
+		0\ \ 0\ \ 0\ & 1\ \ 1\ \ 1\\
+		\hline
+		0\ \ 0\ \ 0\ & 1\ \ 1\ \ 1\\
+		0\ \ 0\ \ 0\ & 0\ \ 0\ \ 0\\
+		0\ \ 0\ \ 0\ & 1\ \ 0\ \ 0\\
+	\end{array}\right]
+	\cdot
+	\left[\begin{array}{c|c}
+		1\ \ 0\ \ 0\ & 0\ \ 0\ \ 0\\
+		0\ \ 1\ \ 0\ & 0\ \ 0\ \ 1\\
+		0\ \ 0\ \ 1\ & 1\ \ 0\ \ 1\\
+		\hline
+		0\ \ 0\ \ 0\ & 1\ \ 0\ \ 0\\
+		0\ \ 0\ \ 0\ & 0\ \ 1\ \ 0\\
+		0\ \ 0\ \ 0\ & 0\ \ 0\ \ 1
+	\end{array}\right]\\
+	& = \left[\begin{array}{c}
+		1\ \ 0\ \ 1\ \ 0\ \ 1\ \ 1\\
+		0\ \ 0\ \ 0\ \ 0\ \ 1\ \ 1\\
+		0\ \ 0\ \ 0\ \ 1\ \ 1\ \ 1\\
+		0\ \ 0\ \ 0\ \ 1\ \ 1\ \ 1\\
+		0\ \ 0\ \ 0\ \ 0\ \ 0\ \ 0\\
+		0\ \ 0\ \ 0\ \ 1\ \ 0\ \ 0
+	\end{array}\right]
+	\end{aligned}
+\end{equation}
+
+De la misma forma obtenemos $\alpha_{pub_2}$ y $\alpha_{pub_3}$, así la ecuación \ref{eq:ej-alpha-pub} muestra el resultado de $\alpha_{pub}$.
+
+
+\begin{equation}\label{eq:ej-alpha-pub}
+{\alpha_{pub}} = \left[
+	\begin{array}{c}
+	\left[\begin{array}{c}
+		1\ \ 0\ \ 1\ \ 0\ \ 1\ \ 1\\
+		0\ \ 0\ \ 0\ \ 0\ \ 1\ \ 1\\
+		0\ \ 0\ \ 0\ \ 1\ \ 1\ \ 1\\
+		0\ \ 0\ \ 0\ \ 1\ \ 1\ \ 1\\
+		0\ \ 0\ \ 0\ \ 0\ \ 0\ \ 0\\
+		0\ \ 0\ \ 0\ \ 1\ \ 0\ \ 0
+	\end{array}\right]
+		
+	\left[\begin{array}{c}
+		1\ \ 1\ \ 0\ \ 1\ \ 1\ \ 1\\
+		0\ \ 0\ \ 1\ \ 0\ \ 1\ \ 1\\
+		0\ \ 0\ \ 1\ \ 0\ \ 1\ \ 0\\
+		0\ \ 0\ \ 1\ \ 0\ \ 1\ \ 0\\
+		0\ \ 0\ \ 0\ \ 0\ \ 0\ \ 0\\
+		0\ \ 0\ \ 0\ \ 0\ \ 0\ \ 1
+	\end{array}\right]
+	
+	\left[\begin{array}{c}
+		0\ \ 0\ \ 0\ \ 1\ \ 0\ \ 0\\
+		0\ \ 0\ \ 1\ \ 0\ \ 0\ \ 0\\
+		0\ \ 0\ \ 0\ \ 0\ \ 1\ \ 1\\
+		0\ \ 0\ \ 0\ \ 0\ \ 1\ \ 1\\
+		0\ \ 0\ \ 0\ \ 0\ \ 0\ \ 0\\
+		0\ \ 0\ \ 1\ \ 0\ \ 1\ \ 1
+	\end{array}\right]
+	\end{array}
+	\right]
+\end{equation}
+
+Ahora se calcula $\beta_{pub}$ para ello se va a realizar el cálculo de la primera componente del vector $\beta_{pub_1}$ a modo de ejemplo, ecuación \ref{eq:ej-beta-pub-1}.
+
+\begin{equation}\label{eq:ej-beta-pub-1}
+	{\beta_{pub_1}} = 
+	\left[\begin{array}{c}
+		1\ 0\ 0\ 1\ 0\ 0
+	\end{array}\right] \cdot
+	\left[\begin{array}{c|c}
+		1\ \ 0\ \ 0\ & 0\ \ 0\ \ 0\\
+		0\ \ 1\ \ 0\ & 0\ \ 0\ \ 1\\
+		0\ \ 0\ \ 1\ & 1\ \ 0\ \ 1\\
+		\hline
+		0\ \ 0\ \ 0\ & 1\ \ 0\ \ 0\\
+		0\ \ 0\ \ 0\ & 0\ \ 1\ \ 0\\
+		0\ \ 0\ \ 0\ & 0\ \ 0\ \ 1
+	\end{array}\right] =
+	\left[\begin{array}{c}
+	1\ \ 0\ \ 0\ \ 1\ \ 0\ \ 0
+	\end{array}\right]
+\end{equation}
+
+De manera análoga se calculan el resto de componentes, $\beta_{pub_2}$ y $\beta_{pub_3}$, para obtener el vector completo $\beta_{pub}$, ecuación \ref{eq:ej-beta-pub}.
+
+\begin{equation}\label{eq:ej-beta-pub}
+{\beta_{pub}} = \left[
+	\begin{array}{c}
+	\left[\begin{array}{c}
+		1\ 0\ 0\ 1\ 0\ 0
+	\end{array}\right]
+	
+	\left[\begin{array}{c}
+		0\ 0\ 1\ 1\ 1\ 1
+	\end{array}\right]
+	
+	\left[\begin{array}{c}
+		1\ 1\ 0\ 1\ 0\ 0
+	\end{array}\right]
+	\end{array}
+	\right]
+\end{equation}
+
+El mensaje al que se le va a realizar la firma es \texttt{"{}Este mensaje es un mensaje de prueba. Quiero se sea un poco largo para que se aprecie el efecto de la función hash"{}}, el hash del mensaje es \texttt{"{}c2f"{}} calculado con la función \texttt{sha256}.
+
+Los vinagres que se van a utilizar los que muestra la ecuación \ref{eq:ej-vinegar}, ya se ha hecho el cambio de notación de $x^v$ a $a^v$ puesto que los vinagres son fijos. 
+
+\begin{equation}\label{eq:ej-vinegar}
+{a^v} = \left[
+	\begin{array}{c}
+	\left[\begin{array}{c}
+		0,\ 1,\ 1,\ 0,\ 1,\ 0,\ 0
+	\end{array}\right]
+	
+	\left[\begin{array}{c}
+		1,\ 1,\ 1,\ 1,\ 1,\ 0,\ 0
+	\end{array}\right]
+	
+	\left[\begin{array}{c}
+		1,\ 1,\ 1,\ 1,\ 0,\ 0,\ 1
+	\end{array}\right]
+	\end{array}
+	\right]
+\end{equation}
+
+Para calcular cada una de las matrices del vector A se multiplican los vianagres por cada una de las matrices del vector $\alpha_{priv}$, para lo cual es necesario extender los componentes de las matrices de $\alpha_{priv}$, que se encuentran en $\GF(2)$ al cuerpo $\GF(128)$. En el ejemplo no se ha puesto la matriz extendida para entender mejor la multiplicación y no perderse con los vectores, ya que las multiplicaciones que se van a realizar son por $0$ o $1$.
+
+\begin{equation}\label{eq:ej-A-1}
+	\begin{aligned}
+	{A_1} & = \left[\begin{array}{c}
+		\left[\begin{array}{c}
+			0,\ 1,\ 1,\ 0,\ 1,\ 0,\ 0
+		\end{array}\right]
+	
+		\left[\begin{array}{c}
+			1,\ 1,\ 1,\ 1,\ 1,\ 0,\ 0
+		\end{array}\right]
+	
+		\left[\begin{array}{c}
+			1,\ 1,\ 1,\ 1,\ 0,\ 0,\ 1
+		\end{array}\right]
+		\end{array}\right]
+		\cdot
+		\left[\begin{array}{c}
+			1\ 0\ 1\ 1\ 1\ 0\\
+			0\ 0\ 0\ 0\ 1\ 1\\
+			0\ 0\ 0\ 1\ 1\ 1
+		\end{array}\right]\\
+		& = \begin{split}
+		\left[\begin{array}{c}
+			\left[\begin{array}{c}
+				0, 1, 1, 0, 1, 0, 0
+			\end{array}\right]
+		
+			\left[\begin{array}{c}
+				0, 0, 0, 0, 0, 0, 0
+			\end{array}\right]
+		
+			\left[\begin{array}{c}
+				0, 1, 1, 0, 1, 0, 0
+			\end{array}\right]
+		
+			\left[\begin{array}{c}
+				1, 0, 0, 1, 1, 0, 1
+			\end{array}\right]\end{array}\\
+			& \begin{array}{c}
+			\left[\begin{array}{c}
+				0,\ 1,\ 1,\ 0,\ 0,\ 0,\ 1
+			\end{array}\right]
+		
+			\left[\begin{array}{c}
+				0, 0, 0, 0, 1, 0, 1
+			\end{array}\right]
+		\end{array}\right]
+		\end{split}\\
+	\end{aligned}
+\end{equation}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+\begin{equation}\label{eq:ej-coef}
+{coef} =
+	\left[\begin{array}{c}
+		\left[\begin{array}{c}
+			\left[\begin{array}{c}1,\ 0,\ 0,\ 1,\ 1,\ 0,\ 0\end{array}\right]\\
+			\left[\begin{array}{c}0,\ 1,\ 1,\ 0,\ 0,\ 0,\ 1\end{array}\right]\\
+			\left[\begin{array}{c}0,\ 0,\ 0,\ 0,\ 1,\ 0,\ 1\end{array}\right]
+		\end{array}\right]
+		\left[\begin{array}{c}
+			\left[\begin{array}{c}0,\ 1,\ 1,\ 0,\ 0,\ 0,\ 1\end{array}\right]\\
+			\left[\begin{array}{c}0,\ 1,\ 1,\ 0,\ 0,\ 0,\ 0\end{array}\right]\\
+			\left[\begin{array}{c}1,\ 1,\ 1,\ 1,\ 0,\ 0,\ 1\end{array}\right]
+		\end{array}\right]
+		\left[\begin{array}{c}
+			\left[\begin{array}{c}1,\ 0,\ 0,\ 1,\ 0,\ 0,\ 1\end{array}\right]\\
+			\left[\begin{array}{c}1,\ 1,\ 1,\ 1,\ 0,\ 0,\ 1\end{array}\right]\\
+			\left[\begin{array}{c}0,\ 0,\ 0,\ 0,\ 1,\ 0,\ 0\end{array}\right]
+		\end{array}\right]
+	\end{array}\right]
+\end{equation}
 
 
 
