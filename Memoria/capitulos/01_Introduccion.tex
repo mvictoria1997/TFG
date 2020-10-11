@@ -354,10 +354,11 @@ Conociendo los valores de la clave privada $\alpha$ y $\beta$, tomando de forma 
 Hacemos el cambio de notación $A_k = a^v\ [\alpha_{i,j,k}] = (A^v_k, A^m_k)$,  lo sustituimos en la ecuación (\ref{eq:matriz}) y despejamos los aceites.
 
 \begin{align}
-h_k &= A_k^v\ (a^v)' +  A_k^m\ (x^m)' + \beta_k^v\ (a^v)' + \beta_k^m\ (x^m)' + \gamma_k\\
-(A_k^m + \beta_k^m) (x^m)' &= h_k - (A_k^v + \beta_k^v) (a^v)' -\gamma_k\\
+h_k &= A_k^v\ (a^v)' +  A_k^m\ (x^m)' + \beta_k^v\ (a^v)' + \beta_k^m\ (x^m)'\\
+\label{eq:ter-coef}
+(A_k^m + \beta_k^m) (x^m)' &= h_k - (A_k^v + \beta_k^v) (a^v)'\\
 \label{eq:despeje}
-(x^m)' &= (A_k^m + \beta_k^m)^{-1} (h_k - (A_k^v + \beta_k^v) (a^v)' -\gamma_k)
+(x^m)' &= (A_k^m + \beta_k^m)^{-1} (h_k - (A_k^v + \beta_k^v) (a^v)')
 \end{align}
 
 Si $(A_k^m + \beta_k^m)$ fuese una matriz singular, entonces se tomarían otros valores de vinagres.
@@ -531,7 +532,7 @@ Clave pública
 
 \begin{equation}\label{eq:ej-alpha-pub-1}
 	\begin{aligned}
-	{\alpha_{pub_1}}  & =  
+	{{\alpha_{pub}}_1}  & =  
 	\left[\begin{array}{c}
 		1\ 0\ 0\\
 		0\ 1\ 0\\
@@ -587,7 +588,7 @@ Clave pública
 	\end{aligned}
 \end{equation}
 
-De la misma forma obtenemos $\alpha_{pub_2}$ y $\alpha_{pub_3}$, así la ecuación \ref{eq:ej-alpha-pub} muestra el resultado de $\alpha_{pub}$.
+De la misma forma obtenemos ${\alpha_{pub}}_2$ y ${\alpha_{pub}}_3$, así la ecuación \ref{eq:ej-alpha-pub} muestra el resultado de $\alpha_{pub}$.
 
 
 \begin{equation}\label{eq:ej-alpha-pub}
@@ -623,10 +624,10 @@ De la misma forma obtenemos $\alpha_{pub_2}$ y $\alpha_{pub_3}$, así la ecuaci�
 	\right]
 \end{equation}
 
-Ahora se calcula $\beta_{pub}$ para ello se va a realizar el cálculo de la primera componente del vector $\beta_{pub_1}$ a modo de ejemplo, ecuación \ref{eq:ej-beta-pub-1}.
+Ahora se calcula $\beta_{pub}$ para ello se va a realizar el cálculo de la primera componente del vector ${\beta_{pub}}_1$ a modo de ejemplo, ecuación \ref{eq:ej-beta-pub-1}.
 
 \begin{equation}\label{eq:ej-beta-pub-1}
-	{\beta_{pub_1}} = 
+	{{\beta_{pub}}_1} = 
 	\left[\begin{array}{c}
 		1\ 0\ 0\ 1\ 0\ 0
 	\end{array}\right] \cdot
@@ -644,7 +645,7 @@ Ahora se calcula $\beta_{pub}$ para ello se va a realizar el cálculo de la prim
 	\end{array}\right]
 \end{equation}
 
-De manera análoga se calculan el resto de componentes, $\beta_{pub_2}$ y $\beta_{pub_3}$, para obtener el vector completo $\beta_{pub}$, ecuación \ref{eq:ej-beta-pub}.
+De manera análoga se calculan el resto de componentes, ${\beta_{pub}}_2$ y ${\beta_{pub}}_3$, para obtener el vector completo $\beta_{pub}$, ecuación \ref{eq:ej-beta-pub}.
 
 \begin{equation}\label{eq:ej-beta-pub}
 {\beta_{pub}} = \left[
@@ -692,15 +693,14 @@ Para calcular cada una de las matrices del vector A se multiplican los vianagres
 	\begin{aligned}
 	{A_1} & = \left[\begin{array}{c}
 		\left[\begin{array}{c}
-			0,\ 1,\ 1,\ 0,\ 1,\ 0,\ 0
+			0, 1, 1, 0, 1, 0, 0
 		\end{array}\right]
 	
 		\left[\begin{array}{c}
-			1,\ 1,\ 1,\ 1,\ 1,\ 0,\ 0
+			1, 1, 1, 1, 1, 0, 0
 		\end{array}\right]
-	
 		\left[\begin{array}{c}
-			1,\ 1,\ 1,\ 1,\ 0,\ 0,\ 1
+			1, 1, 1, 1, 0, 0, 1
 		\end{array}\right]
 		\end{array}\right]
 		\cdot
@@ -709,40 +709,121 @@ Para calcular cada una de las matrices del vector A se multiplican los vianagres
 			0\ 0\ 0\ 0\ 1\ 1\\
 			0\ 0\ 0\ 1\ 1\ 1
 		\end{array}\right]\\
-		& = \begin{split}
-		\left[\begin{array}{c}
-			\left[\begin{array}{c}
-				0, 1, 1, 0, 1, 0, 0
-			\end{array}\right]
+		& = \left[\begin{array}{c}
+				\left[\begin{array}{c}
+					0, 1, 1, 0, 1, 0, 0
+				\end{array}\right]
 		
-			\left[\begin{array}{c}
-				0, 0, 0, 0, 0, 0, 0
-			\end{array}\right]
+				\left[\begin{array}{c}
+					0, 0, 0, 0, 0, 0, 0
+				\end{array}\right]
 		
-			\left[\begin{array}{c}
-				0, 1, 1, 0, 1, 0, 0
+				\left[\begin{array}{c}
+					0, 1, 1, 0, 1, 0, 0
+				\end{array}\right]
+			\end{array}\right. \\
+			&
+			\left. \begin{array}{c}
+				\left[\begin{array}{c}
+					1, 0, 0, 1, 1, 0, 1
+				\end{array}\right]
+				\left[\begin{array}{c}
+					0, 1, 1, 0, 0, 0, 1
+				\end{array}\right]
+				\left[\begin{array}{c}
+					0, 0, 0, 0, 1, 0, 1
+				\end{array}\right]
 			\end{array}\right]
-		
-			\left[\begin{array}{c}
-				1, 0, 0, 1, 1, 0, 1
-			\end{array}\right]\end{array}\\
-			& \begin{array}{c}
-			\left[\begin{array}{c}
-				0,\ 1,\ 1,\ 0,\ 0,\ 0,\ 1
-			\end{array}\right]
-		
-			\left[\begin{array}{c}
-				0, 0, 0, 0, 1, 0, 1
-			\end{array}\right]
-		\end{array}\right]
-		\end{split}\\
 	\end{aligned}
 \end{equation}
 
+Matriz $A$, ecuación \ref{eq:ej-A}.
 
+\begin{equation}\label{eq:ej-A}
+	\begin{aligned}
+	{A} = & \left[\begin{array}{c}\left[\begin{array}{c}
+				\left[\begin{array}{c}
+					0, 1, 1, 0, 1, 0, 0
+				\end{array}\right]
+		
+				\left[\begin{array}{c}
+					0, 0, 0, 0, 0, 0, 0
+				\end{array}\right]
+		
+				\left[\begin{array}{c}
+					0, 1, 1, 0, 1, 0, 0
+				\end{array}\right]
+			\end{array}\right.\end{array}\right. \\
+			&
+			\left. \begin{array}{c}\left. \begin{array}{c}
+				\left[\begin{array}{c}
+					1, 0, 0, 1, 1, 0, 1
+				\end{array}\right]
+				\left[\begin{array}{c}
+					0, 1, 1, 0, 0, 0, 1
+				\end{array}\right]
+				\left[\begin{array}{c}
+					0, 0, 0, 0, 1, 0, 1
+				\end{array}\right]
+			\end{array}\right]\end{array}\right.\\
+			&
+			\left.\begin{array}{c}\left[\begin{array}{c}
+				\left[\begin{array}{c}
+					0, 1, 1, 0, 1, 0, 0
+				\end{array}\right]
+		
+				\left[\begin{array}{c}
+					0, 1, 1, 0, 1, 0, 0
+				\end{array}\right]
+		
+				\left[\begin{array}{c}
+					0, 0, 0, 0, 1, 0, 1
+				\end{array}\right]
+			\end{array}\right.\end{array}\right. \\
+			&
+			\left.\begin{array}{c}\left. \begin{array}{c}
+				\left[\begin{array}{c}
+					0, 1, 1, 0, 0, 0, 1
+				\end{array}\right]
+				\left[\begin{array}{c}
+					0, 1, 1, 0, 0, 0, 1
+				\end{array}\right]
+				\left[\begin{array}{c}
+					1, 1, 1, 1, 0, 0, 1
+				\end{array}\right]
+			\end{array}\right]\end{array}\right.\\
+			& \left.\begin{array}{c}\left[\begin{array}{c}
+				\left[\begin{array}{c}
+					0, 0, 0, 0, 0, 0, 0
+				\end{array}\right]
+		
+				\left[\begin{array}{c}
+					0, 0, 0, 0, 0, 0, 0
+				\end{array}\right]
+		
+				\left[\begin{array}{c}
+					1, 1, 1, 1, 1, 0, 0
+				\end{array}\right]
+			\end{array}\right. \end{array}\right.\\
+			&
+			\left.\begin{array}{c}\left. \begin{array}{c}
+				\left[\begin{array}{c}
+					1, 0, 0, 1, 0, 0, 0
+				\end{array}\right]
+				\left[\begin{array}{c}
+					1, 1, 1, 1, 0, 0, 1
+				\end{array}\right]
+				\left[\begin{array}{c}
+					0, 0, 0, 0, 1, 0, 1
+				\end{array}\right]
+			\end{array}\right]\end{array}\right]\\
+	\end{aligned}	
+\end{equation}
+
+Los coeficientes son el resultado de la suma de las últimas $m$ componenetes, en este caso las $3$ últimas, de cada $A_k$ con ${\beta_{priv}}_k$, pero tenemos el mismo problema de antes, puesto que los coeficientes de $A_k$ pertenecen a $\GF(128)$ y los coeficientes de ${\beta_{priv}}_k$ se encuentra en $\GF(2)$, por tanto lo que vamos a sumar es $0$ o $1$, ecuación \ref{eq:ej-coef}.
 
 \begin{equation}\label{eq:ej-coef}
-{coef} =
+	{coef} =
 	\left[\begin{array}{c}
 		\left[\begin{array}{c}
 			\left[\begin{array}{c}1,\ 0,\ 0,\ 1,\ 1,\ 0,\ 0\end{array}\right]\\
@@ -762,6 +843,42 @@ Para calcular cada una de las matrices del vector A se multiplican los vianagres
 	\end{array}\right]
 \end{equation}
 
+Los términos corresponden a la parte de la derecha de la ecuación \ref{eq:ter-coef}, en el ejemplo los términos calculados se muestran en la ecuación \ref{eq:ej-ter}.
 
+\begin{equation}\label{eq:ej-ter}
+	{term} = 
+		\left[\begin{array}{c}
+			\left[\begin{array}{c}1, 0, 1, 0, 1, 0, 0\end{array}\right]			
+			\left[\begin{array}{c}1, 1, 0, 1, 0, 0, 0\end{array}\right]
+			\left[\begin{array}{c}1, 1, 0, 0, 0, 0, 0\end{array}\right]
+		\end{array}\right]
+\end{equation}
 
+Tras la resolución del sistema se han obtenido los aceites, ecuación \ref{eq:ej-oil}.
 
+\begin{equation}\label{eq:ej-oil}
+	{oil} = 
+		\left[\begin{array}{c}
+			\left[\begin{array}{c}0, 0, 0, 0, 1, 1, 0\end{array}\right]			
+			\left[\begin{array}{c}0, 0, 1, 1, 0, 1, 1\end{array}\right]
+			\left[\begin{array}{c}0, 1, 0, 0, 1, 1, 0\end{array}\right]
+		\end{array}\right]
+\end{equation}
+
+Firma, ecuación \ref{eq:ej-firma}.
+
+\begin{equation}\label{eq:ej-firma}
+	\begin{aligned}
+	{oil} = &
+		\left[\begin{array}{c}
+			\left[\begin{array}{c}0, 1, 1, 0, 1, 0, 0\end{array}\right]			
+			\left[\begin{array}{c}1, 0, 1, 1, 0, 1, 0\end{array}\right]
+			\left[\begin{array}{c}1, 0, 1, 1, 0, 0, 1\end{array}\right]\end{array}\right.\\
+			& \left.\begin{array}{c}\left[\begin{array}{c}0, 0, 0, 0, 1, 1, 0\end{array}\right]			
+			\left[\begin{array}{c}0, 0, 1, 1, 0, 1, 1\end{array}\right]
+			\left[\begin{array}{c}0, 1, 0, 0, 1, 1, 0\end{array}\right]
+		\end{array}\right]
+	\end{aligned}
+\end{equation}
+
+Confirmación 

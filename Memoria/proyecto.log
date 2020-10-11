@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.3.26)  11 OCT 2020 13:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.3.26)  11 OCT 2020 22:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3367,322 +3367,128 @@ Underfull \hbox (badness 10000) in paragraph at lines 349--351
 
  []
 
-LaTeX Info: Redefining \. on input line 432.
-LaTeX Info: Redefining \% on input line 432.
+LaTeX Info: Redefining \. on input line 433.
+LaTeX Info: Redefining \% on input line 433.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 432.
+(babel)             in language  on input line 433.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 432.
+(babel)             in language  on input line 433.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 432.
+(babel)             in language  on input line 433.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 432.
+(babel)             in language  on input line 433.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 432.
+(babel)             in language  on input line 433.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 432.
+(babel)             in language  on input line 433.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 432.
+(babel)             in language  on input line 433.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 432.
+(babel)             in language  on input line 433.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 432.
+(babel)             in language  on input line 433.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 432.
+(babel)             in language  on input line 433.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 432.
+(babel)             in language  on input line 433.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 432.
+(babel)             in language  on input line 433.
 [16]
-LaTeX Info: Redefining \. on input line 527.
-LaTeX Info: Redefining \% on input line 527.
+LaTeX Info: Redefining \. on input line 528.
+LaTeX Info: Redefining \% on input line 528.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 527.
+(babel)             in language  on input line 528.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 527.
+(babel)             in language  on input line 528.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 527.
+(babel)             in language  on input line 528.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 527.
+(babel)             in language  on input line 528.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 527.
+(babel)             in language  on input line 528.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 527.
+(babel)             in language  on input line 528.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 527.
+(babel)             in language  on input line 528.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 527.
+(babel)             in language  on input line 528.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 527.
+(babel)             in language  on input line 528.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 527.
+(babel)             in language  on input line 528.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 527.
+(babel)             in language  on input line 528.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 527.
+(babel)             in language  on input line 528.
  [17]
-LaTeX Info: Redefining \. on input line 645.
-LaTeX Info: Redefining \% on input line 645.
+LaTeX Info: Redefining \. on input line 646.
+LaTeX Info: Redefining \% on input line 646.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 645.
+(babel)             in language  on input line 646.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 645.
+(babel)             in language  on input line 646.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 645.
+(babel)             in language  on input line 646.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 645.
+(babel)             in language  on input line 646.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 645.
+(babel)             in language  on input line 646.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 645.
+(babel)             in language  on input line 646.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 645.
+(babel)             in language  on input line 646.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 645.
+(babel)             in language  on input line 646.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 645.
+(babel)             in language  on input line 646.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 645.
+(babel)             in language  on input line 646.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 645.
+(babel)             in language  on input line 646.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 645.
+(babel)             in language  on input line 646.
  [18]
-Underfull \hbox (badness 10000) in paragraph at lines 667--668
+Underfull \hbox (badness 10000) in paragraph at lines 668--669
 \T1/pcr/m/n/10.95 un mensaje de prueba. Quiero se sea un poco largo para
  []
 
 
-Underfull \hbox (badness 8000) in paragraph at lines 667--668
+Underfull \hbox (badness 8000) in paragraph at lines 668--669
 \T1/pcr/m/n/10.95 que se aprecie el efecto de la funciÛn hash"\T1/futs/m/n/10.9
 5 , el hash del
  []
 
-Runaway argument?
-\right ] 
-! Paragraph ended before \split was complete.
-<to be read again> 
-                   \par 
-l.717 
-      
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.717 
-      
-? 
-! Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.717 
-      
-? 
-! Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.717 
-      
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.717 
-      
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.718 			\left
-              [\begin{array}{c}
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.721 
-      
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.722 			\left
-              [\begin{array}{c}
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.725 
-      
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.726 			\left
-              [\begin{array}{c}
-? 
-! Extra }, or forgotten $.
-<template> }
-            $\hfil \endtemplate 
-l.728 			\end{array}\right]\end{array}
-                                      \\
-? 
 
-! LaTeX Error: \begin{aligned} on input line 692 ended by \end{array}.
+Underfull \vbox (badness 2635) has occurred while \output is active []
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.728 			\end{array}\right]\end{array}
-                                      \\
-? 
-! Misplaced alignment tab character &.
-<recently read> &
-                 
-l.729 			&
-           \begin{array}{c}
-? 
-! Extra \right.
-l.737 		\end{array}\right]
-                          
-? 
-! Misplaced \crcr.
-\endsplit ->\crcr 
-                  \egroup \egroup \iftagsleft@ \@xp \lendsplit@ \else \@xp \...
-l.738 		\end{split}
-                   \\
-? 
-! Extra }, or forgotten $.
-\endsplit ->\crcr \egroup 
-                          \egroup \iftagsleft@ \@xp \lendsplit@ \else \@xp \...
-l.738 		\end{split}
-                   \\
-? 
-! Extra }, or forgotten $.
-\endsplit ->\crcr \egroup \egroup 
-                                  \iftagsleft@ \@xp \lendsplit@ \else \@xp \...
-l.738 		\end{split}
-                   \\
-? 
-
-! LaTeX Error: \begin{equation} on input line 691 ended by \end{split}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.738 		\end{split}
-                   \\
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.738 		\end{split}
-                   \\
-? 
-! Display math should end with $$.
-<to be read again> 
-                   \endgroup 
-l.738 		\end{split}
-                   \\
-? 
-
-Overfull \hbox (212.62343pt too wide) detected at line 738
-[][][] []
- []
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.738 		\end{split}
-                   \\
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.738 		\end{split}
-                   \\
-? 
-! Misplaced \crcr.
-\endaligned ->\crcr 
-                    \egroup \restorecolumn@ \egroup 
-l.739 	\end{aligned}
-                    
-? 
-! Too many }'s.
-\endaligned ->\crcr \egroup 
-                            \restorecolumn@ \egroup 
-l.739 	\end{aligned}
-                    
-? 
-! Too many }'s.
-\endaligned ...cr \egroup \restorecolumn@ \egroup 
-                                                  
-l.739 	\end{aligned}
-                    
-? 
-
-! LaTeX Error: \begin{document} ended by \end{aligned}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.739 	\end{aligned}
-                    
-? 
-! Extra \endgroup.
-<recently read> \endgroup 
-                          
-l.739 	\end{aligned}
-                    
-? 
-
-! LaTeX Error: Bad math environment delimiter.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.740 \end{equation}
-                    
-? 
-! You can't use `\eqno' in horizontal mode.
-\endmathdisplay@a ...\df@tag \@empty \else \veqno 
-                                                  \alt@tag \df@tag \fi \ifx ...
-l.740 \end{equation}
-                    
-? 
-
-! LaTeX Error: \begin{document} ended by \end{equation}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.740 \end{equation}
-                    
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.740 \end{equation}
-                    
-? 
-! Display math should end with $$.
-<to be read again> 
-                   \endgroup 
-l.740 \end{equation}
-                    
-? 
-! Extra \endgroup.
-<recently read> \endgroup 
-                          
-l.740 \end{equation}
-                    
-? 
-
-Overfull \hbox (45.64342pt too wide) detected at line 763
+LaTeX Info: Redefining \. on input line 821.
+LaTeX Info: Redefining \% on input line 821.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 821.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 821.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 821.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 821.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 821.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 821.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 821.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 821.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 821.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 821.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 821.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 821.
+ [19]
+Overfull \hbox (45.64342pt too wide) detected at line 844
 [] \FMS/futm/m/n/10.95 Å []
  []
 
@@ -3713,34 +3519,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 1.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 1.
- [19]
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 1.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 1.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 1.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 1.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 1.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 1.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 1.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 1.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 1.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 1.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 1.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 1.
- [20
-
-]
+ [20]
 Cap\'{\i }tulo 2.
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 1.
@@ -3766,7 +3545,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 7.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 7.
-<figuras/Gantt_ini.png, id=664, 1494.58376pt x 298.11375pt>
+<figuras/Gantt_ini.png, id=674, 1494.58376pt x 298.11375pt>
 File: figuras/Gantt_ini.png Graphic file (type png)
 <use figuras/Gantt_ini.png>
 Package pdftex.def Info: figuras/Gantt_ini.png  used on input line 14.
@@ -3800,14 +3579,16 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 20.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 20.
-[21pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1
-}) has been already used, duplicate ignored
+[21
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1}) 
+has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.20 
       <./figuras/Gantt_ini.png>]
-<figuras/Gantt_1.png, id=673, 872.25874pt x 317.185pt>
+<figuras/Gantt_1.png, id=683, 872.25874pt x 317.185pt>
 File: figuras/Gantt_1.png Graphic file (type png)
 <use figuras/Gantt_1.png>
 Package pdftex.def Info: figuras/Gantt_1.png  used on input line 26.
@@ -3817,7 +3598,7 @@ Overfull \hbox (9.88652pt too wide) in paragraph at lines 26--27
  [][] 
  []
 
-<figuras/Gantt_2.png, id=674, 928.46875pt x 317.185pt>
+<figuras/Gantt_2.png, id=684, 928.46875pt x 317.185pt>
 File: figuras/Gantt_2.png Graphic file (type png)
 <use figuras/Gantt_2.png>
 Package pdftex.def Info: figuras/Gantt_2.png  used on input line 33.
@@ -3827,7 +3608,7 @@ Overfull \hbox (9.89336pt too wide) in paragraph at lines 33--34
  [][] 
  []
 
-<figuras/Gantt_3.png, id=675, 826.08624pt x 317.185pt>
+<figuras/Gantt_3.png, id=685, 826.08624pt x 317.185pt>
 File: figuras/Gantt_3.png Graphic file (type png)
 <use figuras/Gantt_3.png>
 Package pdftex.def Info: figuras/Gantt_3.png  used on input line 40.
@@ -3903,18 +3684,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 50--51
 
  []
 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.58 		E
-        lectricidad & 100\euro\\[0.5ex]
-? 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.62 		T
-        OTAL (\euro) & 175 \euro\\
-? 
 
 Underfull \hbox (badness 10000) in paragraph at lines 70--71
 
@@ -3930,48 +3699,6 @@ Underfull \hbox (badness 2698) in paragraph at lines 102--102
 []|\T1/futs/b/n/10.95 Coste to-tal
  []
 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.102 	\end{tabular}}
-                     
-? 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.102 	\end{tabular}}
-                     
-? 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.102 	\end{tabular}}
-                     
-? 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.102 	\end{tabular}}
-                     
-? 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.102 	\end{tabular}}
-                     
-? 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.102 	\end{tabular}}
-                     
-? 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.102 	\end{tabular}}
-                     
-? 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -4055,20 +3782,7 @@ Package babel Info: Redefining spanish shorthand "?
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.115 \newpage
-              ]
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.123 		I
-         ndirectos & 175\euro\\[0.5ex]
-? 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.128 		T
-         OTAL (\euro) & 4.652,41\euro\\
-? 
-) (./capitulos/03_Analisis.tex
+              ]) (./capitulos/03_Analisis.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 Package babel Info: Redefining spanish shorthand <<
@@ -4390,18 +4104,6 @@ Overfull \hbox (2.87024pt too wide) in paragraph at lines 46--46
 []|\T1/futs/b/n/10.95 Variable| 
  []
 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.46 	\end{tabular}}
-                    
-? 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.46 	\end{tabular}}
-                    
-? 
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 )
@@ -4414,12 +4116,6 @@ Overfull \hbox (2.87024pt too wide) in paragraph at lines 78--78
 []|\T1/futs/b/n/10.95 Variable| 
  []
 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.78 	\end{tabular}}
-                    
-? 
 
 Underfull \hbox (badness 5893) in paragraph at lines 78--78
 []|\T1/futs/m/n/10.95 Elemento pa-ra mul-ti-pli-car del cuer-po de 128
@@ -4430,12 +4126,6 @@ Underfull \hbox (badness 5893) in paragraph at lines 78--78
 []|\T1/futs/m/n/10.95 Elemento pa-ra mul-ti-pli-car del cuer-po de 128
  []
 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.78 	\end{tabular}}
-                    
-? 
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 )
@@ -4495,18 +4185,6 @@ Overfull \hbox (2.87024pt too wide) in paragraph at lines 113--113
 []|\T1/futs/b/n/10.95 Variable| 
  []
 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.113 	\end{tabular}}
-                     
-? 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.113 	\end{tabular}}
-                     
-? 
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 )
@@ -4519,18 +4197,6 @@ Overfull \hbox (2.87024pt too wide) in paragraph at lines 141--141
 []|\T1/futs/b/n/10.95 Variable| 
  []
 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.141 	\end{tabular}}
-                     
-? 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.141 	\end{tabular}}
-                     
-? 
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 )
@@ -4582,18 +4248,6 @@ Overfull \hbox (2.87024pt too wide) in paragraph at lines 172--172
 []|\T1/futs/b/n/10.95 Variable| 
  []
 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.172 	\end{tabular}}
-                     
-? 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.172 	\end{tabular}}
-                     
-? 
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 )
@@ -4606,18 +4260,6 @@ Overfull \hbox (2.87024pt too wide) in paragraph at lines 204--204
 []|\T1/futs/b/n/10.95 Variable| 
  []
 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.204 	\end{tabular}}
-                     
-? 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.204 	\end{tabular}}
-                     
-? 
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 )
@@ -4670,18 +4312,6 @@ Overfull \hbox (2.87024pt too wide) in paragraph at lines 240--240
 []|\T1/futs/b/n/10.95 Variable| 
  []
 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.240 	\end{tabular}}
-                     
-? 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.240 	\end{tabular}}
-                     
-? 
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 )
@@ -4712,23 +4342,11 @@ Overfull \hbox (2.87024pt too wide) in paragraph at lines 285--285
 []|\T1/futs/b/n/10.95 Variable| 
  []
 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.285 	\end{tabular}}
-                     
-? 
 
 Overfull \hbox (3.39584pt too wide) in paragraph at lines 285--285
 []|\T1/futs/m/n/10.95 m_suma| 
  []
 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.285 	\end{tabular}}
-                     
-? 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -4777,18 +4395,6 @@ Overfull \hbox (2.87024pt too wide) in paragraph at lines 322--322
 []|\T1/futs/b/n/10.95 Variable| 
  []
 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.322 	\end{tabular}}
-                     
-? 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.322 	\end{tabular}}
-                     
-? 
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 )
@@ -4840,18 +4446,6 @@ Overfull \hbox (2.87024pt too wide) in paragraph at lines 360--360
 []|\T1/futs/b/n/10.95 Variable| 
  []
 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.360 	\end{tabular}}
-                     
-? 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.360 	\end{tabular}}
-                     
-? 
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 )
@@ -4864,18 +4458,6 @@ Overfull \hbox (2.87024pt too wide) in paragraph at lines 396--396
 []|\T1/futs/b/n/10.95 Variable| 
  []
 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.396 	\end{tabular}}
-                     
-? 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.396 	\end{tabular}}
-                     
-? 
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 )
@@ -4927,18 +4509,6 @@ Overfull \hbox (2.87024pt too wide) in paragraph at lines 429--429
 []|\T1/futs/b/n/10.95 Variable| 
  []
 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.429 	\end{tabular}}
-                     
-? 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.429 	\end{tabular}}
-                     
-? 
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 )
@@ -4951,18 +4521,6 @@ Overfull \hbox (2.87024pt too wide) in paragraph at lines 471--471
 []|\T1/futs/b/n/10.95 Variable| 
  []
 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.471 	\end{tabular}}
-                     
-? 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.471 	\end{tabular}}
-                     
-? 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -5024,18 +4582,6 @@ Overfull \hbox (2.87024pt too wide) in paragraph at lines 534--534
 []|\T1/futs/b/n/10.95 Variable| 
  []
 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.534 	\end{tabular}}
-                     
-? 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.534 	\end{tabular}}
-                     
-? 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -5084,12 +4630,6 @@ Overfull \hbox (2.87024pt too wide) in paragraph at lines 588--588
 []|\T1/futs/b/n/10.95 Variable| 
  []
 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.588 	\end{tabular}}
-                     
-? 
 
 Overfull \hbox (12.86758pt too wide) in paragraph at lines 588--588
 []|\T1/futs/m/n/10.95 alpha_pub| 
@@ -5100,12 +4640,6 @@ Overfull \hbox (7.21738pt too wide) in paragraph at lines 588--588
 []|\T1/futs/m/n/10.95 beta_pub| 
  []
 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.588 	\end{tabular}}
-                     
-? 
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 )
@@ -5157,23 +4691,11 @@ Overfull \hbox (2.87024pt too wide) in paragraph at lines 636--636
 []|\T1/futs/b/n/10.95 Variable| 
  []
 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.636 	\end{tabular}}
-                     
-? 
 
 Overfull \hbox (5.80484pt too wide) in paragraph at lines 636--636
 []|\T1/futs/m/n/10.95 alpha_F2| 
  []
 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.636 	\end{tabular}}
-                     
-? 
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 )
@@ -5219,23 +4741,11 @@ Overfull \hbox (2.87024pt too wide) in paragraph at lines 691--691
 []|\T1/futs/b/n/10.95 Variable| 
  []
 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.691 	\end{tabular}}
-                     
-? 
 
 Overfull \hbox (5.80484pt too wide) in paragraph at lines 691--691
 []|\T1/futs/m/n/10.95 alpha_F2| 
  []
 
-! Undefined control sequence.
-\@BTswitch ->{\CT@arc@ 
-                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
-l.691 	\end{tabular}}
-                     
-? 
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 )
@@ -6098,7 +5608,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 187.
  [58]
-<figuras/Instalacion_bridgechain.png, id=1260, 996.72375pt x 544.0325pt>
+<figuras/Instalacion_bridgechain.png, id=1270, 996.72375pt x 544.0325pt>
 File: figuras/Instalacion_bridgechain.png Graphic file (type png)
 <use figuras/Instalacion_bridgechain.png>
 Package pdftex.def Info: figuras/Instalacion_bridgechain.png  used on input lin
@@ -6152,7 +5662,7 @@ ph1.1}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.217 
        <./figuras/Instalacion_bridgechain.png>]
-<figuras/Instalacion_explorer.png, id=1282, 1261.71375pt x 134.5025pt>
+<figuras/Instalacion_explorer.png, id=1292, 1261.71375pt x 134.5025pt>
 File: figuras/Instalacion_explorer.png Graphic file (type png)
 <use figuras/Instalacion_explorer.png>
 Package pdftex.def Info: figuras/Instalacion_explorer.png  used on input line 2
@@ -6163,7 +5673,7 @@ Overfull \hbox (52.5549pt too wide) in paragraph at lines 220--221
  [][] 
  []
 
-<figuras/Navegacion_explorer.png, id=1284, 1234.6125pt x 852.18375pt>
+<figuras/Navegacion_explorer.png, id=1294, 1234.6125pt x 852.18375pt>
 File: figuras/Navegacion_explorer.png Graphic file (type png)
 <use figuras/Navegacion_explorer.png>
 Package pdftex.def Info: figuras/Navegacion_explorer.png  used on input line 22
@@ -6231,7 +5741,7 @@ File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 )
-<figuras/wallet_1.png, id=1294, 1309.89375pt x 663.47874pt>
+<figuras/wallet_1.png, id=1304, 1309.89375pt x 663.47874pt>
 File: figuras/wallet_1.png Graphic file (type png)
 <use figuras/wallet_1.png>
 Package pdftex.def Info: figuras/wallet_1.png  used on input line 266.
@@ -6274,7 +5784,7 @@ h1.4}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.271 \newpage
                <./figuras/wallet_1.png>]
-<figuras/wallet_2.png, id=1315, 447.6725pt x 490.83376pt>
+<figuras/wallet_2.png, id=1325, 447.6725pt x 490.83376pt>
 File: figuras/wallet_2.png Graphic file (type png)
 <use figuras/wallet_2.png>
 Package pdftex.def Info: figuras/wallet_2.png  used on input line 276.
@@ -6304,7 +5814,7 @@ Underfull \hbox (badness 3439) in paragraph at lines 281--282
 puer-to de la API,
  []
 
-<figuras/wallet_3.png, id=1317, 446.66875pt x 332.24126pt>
+<figuras/wallet_3.png, id=1327, 446.66875pt x 332.24126pt>
 File: figuras/wallet_3.png Graphic file (type png)
 <use figuras/wallet_3.png>
 Package pdftex.def Info: figuras/wallet_3.png  used on input line 285.
@@ -6348,7 +5858,7 @@ l.290 \newpage
                                                   \fi \fi 
 l.290 \newpage
                <./figuras/wallet_2.png> <./figuras/wallet_3.png>]
-<figuras/wallet_4.png, id=1325, 457.71pt x 524.96124pt>
+<figuras/wallet_4.png, id=1335, 457.71pt x 524.96124pt>
 File: figuras/wallet_4.png Graphic file (type png)
 <use figuras/wallet_4.png>
 Package pdftex.def Info: figuras/wallet_4.png  used on input line 296.
@@ -6358,7 +5868,7 @@ Overfull \hbox (40.94072pt too wide) in paragraph at lines 296--297
 [][] 
  []
 
-<figuras/wallet_5.png, id=1326, 437.635pt x 430.60875pt>
+<figuras/wallet_5.png, id=1336, 437.635pt x 430.60875pt>
 File: figuras/wallet_5.png Graphic file (type png)
 <use figuras/wallet_5.png>
 Package pdftex.def Info: figuras/wallet_5.png  used on input line 299.
@@ -6401,12 +5911,12 @@ h1.7}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.305 \newpage
                <./figuras/wallet_4.png> <./figuras/wallet_5.png>]
-<figuras/wallet_6.png, id=1334, 403.5075pt x 458.71375pt>
+<figuras/wallet_6.png, id=1344, 403.5075pt x 458.71375pt>
 File: figuras/wallet_6.png Graphic file (type png)
 <use figuras/wallet_6.png>
 Package pdftex.def Info: figuras/wallet_6.png  used on input line 310.
 (pdftex.def)             Requested size: 170.71571pt x 199.1679pt.
-<figuras/wallet_7.png, id=1336, 422.57875pt x 358.33875pt>
+<figuras/wallet_7.png, id=1346, 422.57875pt x 358.33875pt>
 File: figuras/wallet_7.png Graphic file (type png)
 <use figuras/wallet_7.png>
 Package pdftex.def Info: figuras/wallet_7.png  used on input line 319.
@@ -6450,12 +5960,12 @@ l.324 \newpage
                                                   \fi \fi 
 l.324 \newpage
                <./figuras/wallet_6.png> <./figuras/wallet_7.png>]
-<figuras/wallet_8.png, id=1344, 426.59375pt x 364.36125pt>
+<figuras/wallet_8.png, id=1354, 426.59375pt x 364.36125pt>
 File: figuras/wallet_8.png Graphic file (type png)
 <use figuras/wallet_8.png>
 Package pdftex.def Info: figuras/wallet_8.png  used on input line 329.
 (pdftex.def)             Requested size: 170.71909pt x 170.71606pt.
-<figuras/wallet_9.png, id=1346, 415.5525pt x 234.8775pt>
+<figuras/wallet_9.png, id=1356, 415.5525pt x 234.8775pt>
 File: figuras/wallet_9.png Graphic file (type png)
 <use figuras/wallet_9.png>
 Package pdftex.def Info: figuras/wallet_9.png  used on input line 338.
@@ -6499,7 +6009,7 @@ l.343 \newpage
                                                   \fi \fi 
 l.343 \newpage
                <./figuras/wallet_8.png> <./figuras/wallet_9.png>]
-<figuras/wallet_10.png, id=1354, 430.60875pt x 281.05pt>
+<figuras/wallet_10.png, id=1364, 430.60875pt x 281.05pt>
 File: figuras/wallet_10.png Graphic file (type png)
 <use figuras/wallet_10.png>
 Package pdftex.def Info: figuras/wallet_10.png  used on input line 348.
@@ -6522,7 +6032,7 @@ Underfull \hbox (badness 3148) in paragraph at lines 353--354
 13[][]. Re-lle-na-mos los cam-pos con
  []
 
-<figuras/wallet_11.png, id=1356, 371.3875pt x 262.9825pt>
+<figuras/wallet_11.png, id=1366, 371.3875pt x 262.9825pt>
 File: figuras/wallet_11.png Graphic file (type png)
 <use figuras/wallet_11.png>
 Package pdftex.def Info: figuras/wallet_11.png  used on input line 358.
@@ -6532,7 +6042,7 @@ Overfull \hbox (55.17706pt too wide) in paragraph at lines 358--359
 [][] 
  []
 
-<figuras/wallet_12.png, id=1357, 304.13625pt x 254.9525pt>
+<figuras/wallet_12.png, id=1367, 304.13625pt x 254.9525pt>
 File: figuras/wallet_12.png Graphic file (type png)
 <use figuras/wallet_12.png>
 Package pdftex.def Info: figuras/wallet_12.png  used on input line 361.
@@ -6582,12 +6092,12 @@ l.367 \newpage
 l.367 \newpage
                <./figuras/wallet_10.png> <./figuras/wallet_11.png> <./figuras/w
 allet_12.png>]
-<figuras/wallet_13.png, id=1366, 435.6275pt x 347.2975pt>
+<figuras/wallet_13.png, id=1376, 435.6275pt x 347.2975pt>
 File: figuras/wallet_13.png Graphic file (type png)
 <use figuras/wallet_13.png>
 Package pdftex.def Info: figuras/wallet_13.png  used on input line 372.
 (pdftex.def)             Requested size: 199.168pt x 184.94647pt.
-<figuras/wallet_14.png, id=1368, 417.56pt x 292.09125pt>
+<figuras/wallet_14.png, id=1378, 417.56pt x 292.09125pt>
 File: figuras/wallet_14.png Graphic file (type png)
 <use figuras/wallet_14.png>
 Package pdftex.def Info: figuras/wallet_14.png  used on input line 381.
@@ -6631,12 +6141,12 @@ l.386 \newpage
                                                   \fi \fi 
 l.386 \newpage
                <./figuras/wallet_13.png> <./figuras/wallet_14.png>]
-<figuras/wallet_15.png, id=1377, 417.56pt x 256.96pt>
+<figuras/wallet_15.png, id=1387, 417.56pt x 256.96pt>
 File: figuras/wallet_15.png Graphic file (type png)
 <use figuras/wallet_15.png>
 Package pdftex.def Info: figuras/wallet_15.png  used on input line 391.
 (pdftex.def)             Requested size: 199.17134pt x 142.26552pt.
-<figuras/wallet_16.png, id=1379, 420.57124pt x 224.84pt>
+<figuras/wallet_16.png, id=1389, 420.57124pt x 224.84pt>
 File: figuras/wallet_16.png Graphic file (type png)
 <use figuras/wallet_16.png>
 Package pdftex.def Info: figuras/wallet_16.png  used on input line 400.
@@ -6680,7 +6190,7 @@ l.405 \newpage
                                                   \fi \fi 
 l.405 \newpage
                <./figuras/wallet_15.png> <./figuras/wallet_16.png>]
-<figuras/wallet_17.png, id=1387, 430.60875pt x 268.00125pt>
+<figuras/wallet_17.png, id=1397, 430.60875pt x 268.00125pt>
 File: figuras/wallet_17.png Graphic file (type png)
 <use figuras/wallet_17.png>
 Package pdftex.def Info: figuras/wallet_17.png  used on input line 411.
@@ -6732,13 +6242,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 245.
  ) 
 Here is how much of TeX's memory you used:
- 28599 strings out of 494284
- 503245 string characters out of 6162693
- 759977 words of memory out of 5000000
- 30524 multiletter control sequences out of 15000+600000
+ 28608 strings out of 494284
+ 503362 string characters out of 6162693
+ 760351 words of memory out of 5000000
+ 30529 multiletter control sequences out of 15000+600000
  121964 words of font info for 115 fonts, out of 8000000 for 9000
  376 hyphenation exceptions out of 8191
- 54i,21n,93p,2002b,2489s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 54i,27n,93p,2002b,2489s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/public/eurosym/feybr10.pfb></usr/share/texlive/texmf-dist/
@@ -6752,10 +6262,10 @@ r/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/courier/ucrr8a.pfb>
-Output written on proyecto.pdf (93 pages, 1191424 bytes).
+Output written on proyecto.pdf (93 pages, 1193117 bytes).
 PDF statistics:
- 1668 PDF objects out of 1728 (max. 8388607)
- 1481 compressed objects within 15 object streams
- 636 named destinations out of 1000 (max. 500000)
+ 1679 PDF objects out of 1728 (max. 8388607)
+ 1492 compressed objects within 15 object streams
+ 640 named destinations out of 1000 (max. 500000)
  424 words of extra memory for PDF output out of 10000 (max. 10000000)
 
