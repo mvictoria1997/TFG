@@ -451,9 +451,9 @@ Para comprobar que el mensaje es correcto y que no ha sufrido ninguna transforma
 
 \subsubsection{Ejemplo}
 
-A continuación se muestra un ejemplo para mejor comprensión del algoritmo utilizando valores de $m$ y $v$ pequeños, ambos con valor $3$, y dejando fijo el valor de $r$ igual a $7$.
+A continuación se muestra un ejemplo para mejor comprensión del algoritmo \acrshort{uov} utilizando valores de $m$ y $v$ pequeños, ambos con valor $3$, y dejando fijo el valor de $r$ igual a $7$.
 
-Generamos la clave privada con valores aleatorios. Notamos que las matrices del vector $\alpha_{priv}$, ecuación \ref{eq:ej-alpha-priv} son matrices de dimensión $3\ \mathrm{x}\ 6$, esto es dimensión $m\ \mathrm{x}\ n$, además de matrices triangulares superiores. Además el número de matrices es $3$ el valor de $v$.
+Generamos la clave privada con valores aleatorios. Notamos que las matrices del vector $\alpha_{priv}$, ecuación \ref{eq:ej-alpha-priv}, son matrices triangulares superiores de dimensión $3\ \mathrm{x}\ 6$, esto es dimensión $m\ \mathrm{x}\ n$. Además el número de matrices es $3$ el valor de $v$.
 
 \begin{equation}\label{eq:ej-alpha-priv}
 {\alpha_{priv}} = \left[
@@ -479,7 +479,7 @@ Generamos la clave privada con valores aleatorios. Notamos que las matrices del 
 	\right]
 \end{equation}
 
-La segunda parte de la clave privada es $\beta_{priv}$, que consta de un vector de $3$ vectores, donde cada uno tiene $n$ componentes, esto es $6$ componentes, ecuación \ref{eq:ej-beta-priv}.
+La segunda parte de la clave privada es $\beta_{priv}$, consta de un vector de $3$ vectores, donde cada uno tiene $n$ componentes, esto es $6$ componentes, ecuación \ref{eq:ej-beta-priv}.
 
 \begin{equation}\label{eq:ej-beta-priv}
 {\beta_{priv}} = \left[
@@ -500,11 +500,20 @@ La segunda parte de la clave privada es $\beta_{priv}$, que consta de un vector 
 \end{equation}
 
 
-Generación de T, ecuación \ref{eq:ej-T}
+La forma de la matriz T viene dada por la ecuación \ref{mat:T}, la del ejemplo se muestra en la ecuación \ref{eq:ej-T}
 
 \begin{equation}\label{eq:ej-T}
-{T} = \left[
-	\begin{array}{c|c}
+{T} =
+	\left[\begin{array}{c|c}
+	\\
+	\ \ \ \ \ I_3\ \ \ \ & \ \ \ \ T_{3\mathrm{x}3} \ \ \  \\
+	\\
+	\hline
+	\\
+	0 & I_3\\
+	\\
+	\end{array}\right] =
+	\left[\begin{array}{c|c}
 		1\ \ 0\ \ 0\ & 0\ \ 0\ \ 0\\
 		0\ \ 1\ \ 0\ & 0\ \ 0\ \ 1\\
 		0\ \ 0\ \ 1\ & 1\ \ 0\ \ 1\\
@@ -512,23 +521,11 @@ Generación de T, ecuación \ref{eq:ej-T}
 		0\ \ 0\ \ 0\ & 1\ \ 0\ \ 0\\
 		0\ \ 0\ \ 0\ & 0\ \ 1\ \ 0\\
 		0\ \ 0\ \ 0\ & 0\ \ 0\ \ 1
-	\end{array}
-	\right] =
-	\left[
-	\begin{array}{c|c}
-	\\
-	\ \ \ \ \ I_3\ \ \ \ & \ \ \ \ T_{3x3} \ \ \  \\
-	\\
-	\hline
-	\\
-	0 & I_3\\
-	\\
-	\end{array}
-	\right]
+	\end{array}\right]	
 \end{equation}
 
 
-Clave pública
+Clave pública consta de dos partes $\alpha_{pub}$ y $\beta_{pub}$. Cada  componente de $\alpha_{pub}$ se calculan multiplicando tres matrices, una matriz, que tiene dos partes la $I_3$ y $T'_{3\mathrm{x}3}$, por la $k-ésima$ componente de $\alpha_{priv}$ y por $T$.
 
 \begin{equation}\label{eq:ej-alpha-pub-1}
 	\begin{aligned}
@@ -588,7 +585,7 @@ Clave pública
 	\end{aligned}
 \end{equation}
 
-De la misma forma obtenemos ${\alpha_{pub}}_2$ y ${\alpha_{pub}}_3$, así la ecuación \ref{eq:ej-alpha-pub} muestra el resultado de $\alpha_{pub}$.
+De la misma forma se obtiene ${\alpha_{pub}}_2$ y ${\alpha_{pub}}_3$, así la ecuación \ref{eq:ej-alpha-pub} muestra el resultado de $\alpha_{pub}$.
 
 
 \begin{equation}\label{eq:ej-alpha-pub}
@@ -624,7 +621,8 @@ De la misma forma obtenemos ${\alpha_{pub}}_2$ y ${\alpha_{pub}}_3$, así la ecu
 	\right]
 \end{equation}
 
-Ahora se calcula $\beta_{pub}$ para ello se va a realizar el cálculo de la primera componente del vector ${\beta_{pub}}_1$ a modo de ejemplo, ecuación \ref{eq:ej-beta-pub-1}.
+\newpage
+Ahora se calcula $\beta_{pub}$ para ello se va a realizar el cálculo de la primera componente del vector ${\beta_{pub}}_1$ a modo de ejemplo, multiplicando la primera componente de $\beta_{priv}$ por $T$, ecuación \ref{eq:ej-beta-pub-1}.
 
 \begin{equation}\label{eq:ej-beta-pub-1}
 	{{\beta_{pub}}_1} = 
@@ -665,9 +663,24 @@ De manera análoga se calculan el resto de componentes, ${\beta_{pub}}_2$ y ${\b
 	\right]
 \end{equation}
 
-El mensaje al que se le va a realizar la firma es \texttt{"{}Este mensaje es un mensaje de prueba. Quiero se sea un poco largo para que se aprecie el efecto de la función hash"{}}, el hash del mensaje es \texttt{"{}c2f"{}} calculado con la función \texttt{sha256}.
+Llegados a este punto comienza el proceso de firma del mensaje, en este caso el mensaje al que se le va a realizar la firma es \texttt{"{}Este mensaje es un mensaje de prueba. Quiero se sea un poco largo para que se aprecie el efecto de la función hash"{}}, el hash de dicho mensaje calculado con la función \texttt{sha256} es \texttt{"{}c2f"{}}, la ecuación \ref{eq:ej-hash} contiene el \textit{hash} en $\GF(128)$.
 
-Los vinagres que se van a utilizar los que muestra la ecuación \ref{eq:ej-vinegar}, ya se ha hecho el cambio de notación de $x^v$ a $a^v$ puesto que los vinagres son fijos. 
+\begin{equation}\label{eq:ej-hash}
+	{hash} = 
+	\left[\begin{array}{c}
+		\left[\begin{array}{c}
+			0,\ 0,\ 0,\ 1,\ 1,\ 0,\ 0
+		\end{array}\right]
+		\left[\begin{array}{c}
+			0,\ 0,\ 0,\ 0,\ 0,\ 1,\ 0
+		\end{array}\right]
+		\left[\begin{array}{c}
+			0,\ 0,\ 0,\ 1,\ 1,\ 1,\ 1
+		\end{array}\right]
+	\end{array}\right]
+\end{equation}
+
+Los vinagres se han tomado de forma aleatoria, ecuación \ref{eq:ej-vinegar}. 
 
 \begin{equation}\label{eq:ej-vinegar}
 {a^v} = \left[
@@ -687,7 +700,7 @@ Los vinagres que se van a utilizar los que muestra la ecuación \ref{eq:ej-vineg
 	\right]
 \end{equation}
 
-Para calcular cada una de las matrices del vector A se multiplican los vianagres por cada una de las matrices del vector $\alpha_{priv}$, para lo cual es necesario extender los componentes de las matrices de $\alpha_{priv}$, que se encuentran en $\GF(2)$ al cuerpo $\GF(128)$. En el ejemplo no se ha puesto la matriz extendida para entender mejor la multiplicación y no perderse con los vectores, ya que las multiplicaciones que se van a realizar son por $0$ o $1$.
+La $k-ésima$ matriz del vector $A$ es el resultado de multiplicar el vinagre por la matriz ${\alpha_{priv}}_k$ donde $k$ se mueve entre $1$ y $3$, para lo cual, es necesario extender los componentes de las matrices de $\alpha_{priv}$, que se encuentran en $\GF(2)$, al cuerpo $\GF(128)$. En el ejemplo no se ha puesto la matriz extendida para entender mejor la multiplicación y no perderse con los vectores, finalmente la multiplicación será el vector nulo si se multiplica por $0$ o el mismo vector cuando se multiplique por $1$.
 
 \begin{equation}\label{eq:ej-A-1}
 	\begin{aligned}
@@ -737,7 +750,7 @@ Para calcular cada una de las matrices del vector A se multiplican los vianagres
 	\end{aligned}
 \end{equation}
 
-Matriz $A$, ecuación \ref{eq:ej-A}.
+Calculando el resto de las componentes se obtiene la matriz $A$, ecuación \ref{eq:ej-A}.
 
 \begin{equation}\label{eq:ej-A}
 	\begin{aligned}
@@ -820,7 +833,7 @@ Matriz $A$, ecuación \ref{eq:ej-A}.
 	\end{aligned}	
 \end{equation}
 
-Los coeficientes son el resultado de la suma de las últimas $m$ componenetes, en este caso las $3$ últimas, de cada $A_k$ con ${\beta_{priv}}_k$, pero tenemos el mismo problema de antes, puesto que los coeficientes de $A_k$ pertenecen a $\GF(128)$ y los coeficientes de ${\beta_{priv}}_k$ se encuentra en $\GF(2)$, por tanto lo que vamos a sumar es $0$ o $1$, ecuación \ref{eq:ej-coef}.
+Los coeficientes se obtienen de la suma de las últimas $m$ componenetes, en este caso las $3$ últimas, de cada $A_k$ con ${\beta_{priv}}_k$. Pero tenemos el mismo problema de antes, puesto que los coeficientes de $A_k$ pertenecen a $\GF(128)$ y los coeficientes de ${\beta_{priv}}_k$ se encuentra en $\GF(2)$, por tanto lo que vamos a sumar es $0$ o $1$, o lo que es lo mismo realizar la operación lógica $XOR$ con los elementos $[0,0,0,0,0,0,0]$ o $[0,0,0,0,0,0,1]$, ecuación \ref{eq:ej-coef}.
 
 \begin{equation}\label{eq:ej-coef}
 	{coef} =
@@ -843,7 +856,60 @@ Los coeficientes son el resultado de la suma de las últimas $m$ componenetes, e
 	\end{array}\right]
 \end{equation}
 
-Los términos corresponden a la parte de la derecha de la ecuación \ref{eq:ter-coef}, en el ejemplo los términos calculados se muestran en la ecuación \ref{eq:ej-ter}.
+Los términos corresponden a la parte de la derecha de la ecuación \ref{eq:ter-coef}, a continuación se va a realizar el cálculo para $k$ igual $1$. La ecuación \ref{eq:ej-beta-1-v} corresponde al primer vector de $\beta$, $\left[\begin{array}{c}1\ 0\ 0\ 1\ 0\ 0\end{array}\right]$, donde se han transformado los elementos de $\GF(2)$ a $\GF(128)$ y se han tomado las $3$ primeras componentes.
+
+\begin{equation}\label{eq:ej-beta-1-v}
+	{\beta^v_1} = 
+		\left[\begin{array}{c}
+			\left[\begin{array}{c}0, 0, 0, 0, 0, 0, 1\end{array}\right]			
+			\left[\begin{array}{c}0, 0, 0, 0, 0, 0, 0\end{array}\right]
+			\left[\begin{array}{c}0, 0, 0, 0, 0, 0, 0\end{array}\right]
+		\end{array}\right]
+\end{equation}
+
+De la misma forma se han tomado las $3$ primeras componenetes del primer vector de $A$, ecuación \ref{eq:ej-A-1-v}.
+
+\begin{equation}\label{eq:ej-A-1-v}
+	{A^v_1} = 
+		\left[\begin{array}{c}
+			\left[\begin{array}{c}0, 1, 1, 0, 1, 0, 0\end{array}\right]			
+			\left[\begin{array}{c}0, 0, 0, 0, 0, 0, 0\end{array}\right]
+			\left[\begin{array}{c}0, 1, 1, 0, 1, 0, 0\end{array}\right]
+		\end{array}\right]
+\end{equation}
+
+El vector $sum$ contiene la suma de $A^v_1$ y $\beta^v_1$, ecuación \ref{eq:ej-sum}.
+
+\begin{equation}\label{eq:ej-sum}
+	{sum} = 
+		\left[\begin{array}{c}
+			\left[\begin{array}{c}0, 1, 1, 0, 1, 0, 1\end{array}\right]			
+			\left[\begin{array}{c}0, 0, 0, 0, 0, 0, 0\end{array}\right]
+			\left[\begin{array}{c}0, 1, 1, 0, 1, 0, 0\end{array}\right]
+		\end{array}\right]
+\end{equation}
+
+Finalmente, para calcular $term$ hay que multiplicar $sum$ por $a^v$ y restarselo a la primera componente de $hash$. Al realizar las operaciones módulo $2$, la resta y la suma son lo mismo, por tanto se realizará la operación lógica \textit{XOR} con el $hash$, ecuación\ref{eq:ej-ter-1}.
+
+\begin{equation}\label{eq:ej-ter-1}
+	\begin{split}
+	{term_1} &= 
+		\left[\left[0, 1, 1, 0, 1, 0, 1\right]			
+		\left[0, 0, 0, 0, 0, 0, 0\right]
+		\left[0, 1, 1, 0, 1, 0, 0\right]\right] \cdot 
+		\left[\begin{array}{c}
+			\left[0, 1, 1, 0, 1, 0, 0\right]\\
+			\left[1, 1, 1, 1, 1, 0, 0\right]\\
+			\left[1, 1, 1, 1, 0, 0, 1\right]\\
+		\end{array}\right]
+		+ \left[\begin{array}{c}1, 0, 1, 1, 0, 0, 0\end{array}\right]\\
+		&= \left[\begin{array}{c}0, 0, 0, 1, 1, 0, 0\end{array}\right] + 
+		\left[\begin{array}{c}1, 0, 1, 1, 0, 0, 0\end{array}\right]\\
+		& = \left[\begin{array}{c}1, 0, 1, 0, 1, 0, 0\end{array}\right]
+	\end{split}
+\end{equation}
+
+De la misma forma se calculan el resto de los términos llegando al vector $term$, ecuación \ref{eq:ej-ter}.
 
 \begin{equation}\label{eq:ej-ter}
 	{term} = 
@@ -854,7 +920,7 @@ Los términos corresponden a la parte de la derecha de la ecuación \ref{eq:ter-
 		\end{array}\right]
 \end{equation}
 
-Tras la resolución del sistema se han obtenido los aceites, ecuación \ref{eq:ej-oil}.
+Tras la resolución del sistema $coef \cdot oil = term$ se han obtenido los aceites, ecuación \ref{eq:ej-oil}.
 
 \begin{equation}\label{eq:ej-oil}
 	{oil} = 
@@ -865,11 +931,28 @@ Tras la resolución del sistema se han obtenido los aceites, ecuación \ref{eq:e
 		\end{array}\right]
 \end{equation}
 
-Firma, ecuación \ref{eq:ej-firma}.
+Ahora se forma el vector $aux$ uniendo los vinagres con los aceites, ecuación \ref{eq:ej-aux}.
+
+\begin{equation}\label{eq:ej-aux}
+	\begin{split}
+	{aux} &= 
+		\left[\begin{array}{c}
+			\left[\begin{array}{c}0, 0, 0, 0, 1, 1, 0\end{array}\right]		
+			\left[\begin{array}{c}0, 0, 1, 1, 0, 1, 1\end{array}\right]
+			\left[\begin{array}{c}0, 1, 0, 0, 1, 1, 0\end{array}\right]\end{array}\right.\\
+		&
+			\left.\begin{array}{c}\left[\begin{array}{c}0, 1, 1, 0, 1, 0, 0\end{array}\right]
+			\left[\begin{array}{c}1, 1, 1, 1, 1, 0, 0\end{array}\right]
+			\left[\begin{array}{c}1, 1, 1, 1, 0, 0, 1\end{array}\right]
+		\end{array}\right]
+	\end{split}
+\end{equation}
+
+La firma del mensaje se obtiene multiplicando el vector $aux$ por la inversa de $T$, que de la forma que está construida dicha matriz $T$ coincide con su inversa, ecuación \ref{eq:ej-firma}.
 
 \begin{equation}\label{eq:ej-firma}
 	\begin{aligned}
-	{oil} = &
+	{firma} = &
 		\left[\begin{array}{c}
 			\left[\begin{array}{c}0, 1, 1, 0, 1, 0, 0\end{array}\right]			
 			\left[\begin{array}{c}1, 0, 1, 1, 0, 1, 0\end{array}\right]
@@ -881,4 +964,103 @@ Firma, ecuación \ref{eq:ej-firma}.
 	\end{aligned}
 \end{equation}
 
-Confirmación 
+Para realizar la confirmación del mensaje es necesario calcular dos variables auxiliares, $\alpha_{aux}$ y $\beta_{aux}$.
+
+Para calcular ${\alpha_{aux}}_1$ hay que multiplicar los vectores $firma$, ${\alpha_{pub}}_1$y $firma$ transpuesta, ecuación \ref{eq:ej-aux-alpha-1}.
+
+\begin{equation}\label{eq:ej-aux-alpha-1}
+	\begin{aligned}
+	{{\alpha_{aux}}_1} & = 
+		\left[\begin{array}{c}firma\end{array}\right]
+		\cdot \left[\begin{array}{c}
+			1\ \ 0\ \ 1\ \ 0\ \ 1\ \ 1\\
+			0\ \ 0\ \ 0\ \ 0\ \ 1\ \ 1\\
+			0\ \ 0\ \ 0\ \ 1\ \ 1\ \ 1\\
+			0\ \ 0\ \ 0\ \ 1\ \ 1\ \ 1\\
+			0\ \ 0\ \ 0\ \ 0\ \ 0\ \ 0\\
+			0\ \ 0\ \ 0\ \ 1\ \ 0\ \ 0
+		\end{array}\right]
+		\cdot \left[\begin{array}{c}trans\left(firma\right)\end{array}\right]\\
+		& = \left[\begin{array}{c}0, 1, 1, 1, 1, 1, 0\end{array}\right]
+	\end{aligned}
+\end{equation}
+
+La segunda variable ${\beta_{aux}}_k$ es el producto de la $k-ésima$ componente del vector $\beta_{pub}$, donde sus componenetes se encuentran en $\GF(2)$ y habrá que transformarlos en componentes de $\GF(128)$, por el vector $firma$ transpuesta, ecuación \ref{eq:ej-aux-beta-1}.
+
+\begin{equation}\label{eq:ej-aux-beta-1}
+	\begin{aligned}
+	{{\beta_{aux}}_1} & = 
+		\left[\begin{array}{c}1\ 0\ 0\ 1\ 0\ 0\end{array}\right]
+		\cdot \left[\begin{array}{c}trans\left(firma\right)\end{array}\right]\\
+		& = \left[\begin{array}{c}0, 1, 1, 1, 1, 1, 0\end{array}\right]
+	\end{aligned}
+\end{equation}
+
+Calculando todas la componentes de $\alpha_{aux}$ y $\beta_{aux}$ se obtienen los vectores las ecuaciones \ref{eq:ej-aux-alpha} y \ref{eq:ej-aux-beta}, respectivamente.
+
+\begin{equation}\label{eq:ej-aux-alpha}
+	{\alpha_{aux}} = \left[\begin{array}{c}
+		\left[\begin{array}{c}0, 1, 1, 1, 1, 1, 0\end{array}\right]
+		\left[\begin{array}{c}1, 1, 0, 0, 0, 0, 0\end{array}\right]
+		\left[\begin{array}{c}1, 1, 0, 0, 1, 1, 1\end{array}\right]
+		\end{array}\right]
+\end{equation}
+
+\begin{equation}\label{eq:ej-aux-beta}
+	{\beta_{aux}} =
+		\left[\begin{array}{c}
+			\left[\begin{array}{c}0, 1, 1, 0, 0, 1, 0\end{array}\right]		
+			\left[\begin{array}{c}1, 1, 0, 0, 0, 1, 0\end{array}\right]
+			\left[\begin{array}{c}1, 1, 0, 1, 0, 0, 0\end{array}\right]
+		\end{array}\right]
+\end{equation}
+
+Sumando los vectores componente a componente, ecuación \ref{eq:ej-suma}, anteriormente calculados, se obtiene vector a comparar con el $hash$ del mensaje. 
+
+\begin{equation}\label{eq:ej-suma}
+	\left[\begin{array}{c}
+		\left[\begin{array}{c}0, 0, 0, 1, 1, 0, 0\end{array}\right]
+		\left[\begin{array}{c}0, 0, 0, 0, 0, 1, 0\end{array}\right]
+		\left[\begin{array}{c}0, 0, 0, 1, 1, 1, 1\end{array}\right]
+	\end{array}\right]
+\end{equation}
+
+Si el mensaje no ha sido corrompido habrá de ser igual que el $hash$ del mensaje, ecuación \ref{eq:ej-verif}.
+
+\begin{equation}\label{eq:ej-verif}
+	\begin{aligned}
+	&\left[\begin{array}{c}
+		\left[\begin{array}{c}0, 0, 0, 1, 1, 0, 0\end{array}\right]
+		\left[\begin{array}{c}0, 0, 0, 0, 0, 1, 0\end{array}\right]
+		\left[\begin{array}{c}0, 0, 0, 1, 1, 1, 1\end{array}\right]
+	\end{array}\right] ==\\
+	&\left[\begin{array}{c}
+		\left[\begin{array}{c}0, 0, 0, 1, 1, 0, 0\end{array}\right]
+		\left[\begin{array}{c}0, 0, 0, 0, 0, 1, 0\end{array}\right]
+		\left[\begin{array}{c}0, 0, 0, 1, 1, 1, 1\end{array}\right]
+	\end{array}\right]
+	\end{aligned}
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
