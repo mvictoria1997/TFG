@@ -537,8 +537,6 @@ La función \texttt{clavePrivada} genera la clave privada de un usuario, para el
 \end{table}
 
 
-
-
 \begin{lstlisting}[language=Python,caption=Generación clave privada, label=cod:priv-UOV]
 def clavePrivada (m, v):
 
@@ -566,6 +564,60 @@ def clavePrivada (m, v):
 
       beta += [row]
    return alpha, beta
+\end{lstlisting}
+
+La función \texttt{generacionT} genera la matriz de distorsión $T$ a partir de los valores $m$ y $v$, número de variables de aceite y vinagre, código \ref{cod:T}. La forma de la matriz de distorsión viene dada por la ecuación \ref{mat:T}.
+
+\begin{table}[h]
+	\begin{center}
+	\centering
+	\resizebox{\linewidth}{!}{
+	\begin{tabular}{p{0.14\linewidth} p {0.1\linewidth}p{0.1\linewidth}p{0.65\linewidth}}
+		\textbf{Tipo} & \textbf{Nombre} & \textbf{Variable} & \textbf{Descripción} \\
+		\toprule
+		int vector & m & Input & Número aceites\\[0.5ex]
+		int vector & v & Input & Número vinagres\\[0.5ex]
+		int matrix & T & Output & Matriz en $\mathds{F}_2$ de dimensión $n\mathrm{x}n$\\[0.5ex]
+		\bottomrule
+	\end{tabular}}
+	\end{center}
+	\caption{Parámetros de la función \texttt{generacionT}}
+\end{table}
+
+\vspace{0.25cm}
+
+\begin{lstlisting}[language=Python,caption=Generación matriz $T$, label=cod:T]
+def generacionT (v, m):
+   T = []
+   n = v + m
+   for i in range(n):
+      row = []
+      if i < v:
+         for k in range(n):
+            if k < v: #Matriz indentidad dimension v
+               if i == k:
+                  row += [1]
+               else:
+                  row += [0]
+
+            else: #Matriz aleatoria vxm
+               if randint(0,2) == 1:
+                  row += [1]
+               else:
+                  row += [0]
+
+      else:
+         for k in range(n):
+            if k < v: #Matriz nula dimension v
+               row += [0]
+
+            else: #Matriz identidad dimension m
+               if i == k:
+                  row += [1]
+               else:
+                  row += [0]
+      T += [row]
+   return T
 \end{lstlisting}
 
 La función \texttt{clavePublica} genera la clave pública a partir de la clave privada, calculada con la función anterior, los valores $m$ y $v$ el número de variables de aceite y vinagre, además de una matriz de distorsión, código \ref{cod:pub-UOV}.
@@ -609,7 +661,7 @@ def clavePublica(m, v, alpha, beta, T):
    return alpha_pub, beta_pub
 \end{lstlisting}
 
-La función \texttt{signature} calcula la firma del hash de un mensaje, $hashed$, con las claves privadas del usuario, $alpha\_F2$ y $beta\_F2$, el número de aceites y vinagres, $m$ y $v$, el tamaño del cuerpo, $r$ y con la matriz de transición, $T$. Se toman los vinagres aleatorios, se resuelve el sistema para calcular los aceites, y con la ecuación \ref{eq:firma} obtenemos la firma del mensaje, código \ref{cod:firma-UOV}.
+La función \texttt{signature} calcula la firma del hash de un mensaje, $hashed$, con las claves privadas del usuario, $alpha\_F2$ y $beta\_F2$, el número de aceites y vinagres, $m$ y $v$, y con la matriz de transición, $T$. Se toman los vinagres aleatorios, se resuelve el sistema para calcular los aceites, y con la ecuación \ref{eq:firma} obtenemos la firma del mensaje, código \ref{cod:firma-UOV}.
 
 \begin{table}[h]
 	\begin{center}
@@ -622,7 +674,6 @@ La función \texttt{signature} calcula la firma del hash de un mensaje, $hashed$
 		int vector & alpha\_F2 & Input & Vector de matrices triangulares superiores en $\mathds{F}_2$, parte de la clave privada\\[0.5ex]
 		int vector & beta\_F2 & Input & Matriz en $\mathds{F}_2$, parte de la clave privada \\[0.5ex]
 		int  & m & Input & Número aceites\\[0.5ex]
-		int  & r & Input & Dimensión de \\[0.5ex] %TODO 
 		int  & v & Input & Número vinagres\\[0.5ex]
 		int vector & T & Input & Matriz de distorsión de la forma \ref{mat:T}\\[1.5ex]
 		int vector & alpha & Inner & Almecena los correspondientes valores de alpha\_F2 en el cuerpo de 128 elementos\\[0.5ex]
@@ -641,7 +692,7 @@ La función \texttt{signature} calcula la firma del hash de un mensaje, $hashed$
 \vspace{0.25cm}
 
 \begin{lstlisting}[language=Python,caption=Firma del mensaje, label=cod:firma-UOV]
-def signature(hashed, alpha_F2, beta_F2, m, r, v, T):
+def signature(hashed, alpha_F2, beta_F2, m, v, T):
 
    alpha = matrix3d_F2to128(alpha_F2)
    beta = matrix_F2to128(beta_F2)

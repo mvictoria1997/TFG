@@ -352,9 +352,53 @@ def clavePublica(m, v, alpha, beta, T):
 
    return alpha_pub, beta_pub
 
+#--------------------------Firma-----------------------------
+def generacionT (v, m):
+   """
+   Signature of a message with hash, hashed. Here we have to use the private key.
+
+   Parameters:
+   m (int): Number of oil
+   v (int): Number of vinager
+
+   Returns:
+   T (matrix): Matrix with dimension nxn
+
+   """
+   #Matriz de distorsión
+   T = []
+   n = v + m
+   for i in range(n):
+      row = []
+      if i < v:
+         for k in range(n):
+            if k < v: #Matriz indentidad dimension v
+               if i == k:
+                  row += [1]
+               else:
+                  row += [0]
+
+            else: #Matriz aleatoria vxm
+               if randint(0,2) == 1:
+                  row += [1]
+               else:
+                  row += [0]
+
+      else:
+         for k in range(n):
+            if k < v: #Matriz nula dimension v
+               row += [0]
+
+            else: #Matriz identidad dimension m
+               if i == k:
+                  row += [1]
+               else:
+                  row += [0]
+      T += [row]
+   return T
 
 #--------------------------Firma-----------------------------
-def signature(hashed, alpha_F2, beta_F2, m, r, v, T):
+def signature(hashed, alpha_F2, beta_F2, m, v, T):
    """
    Signature of a message with hash, hashed. Here we have to use the private key.
 
@@ -363,9 +407,8 @@ def signature(hashed, alpha_F2, beta_F2, m, r, v, T):
    alpha (tridimensional matrix): Part of private key
    beta (matrix): Part of a private key
    m (int): Number of oil
-   r (int): Extended field dimension
    v (int): Number of vinager
-   T (matrix):
+   T (matrix): Distorsion matrix
 
    Returns:
    signature (vector): Vector with dimension n
@@ -719,7 +762,6 @@ def matrix_rref(A, b):
    x(list): Solution of a system
    """
 
-   r = 0
    row = []
    n = len(A)
 
@@ -805,36 +847,8 @@ def main():
    print (alpha)
    print ("beta priv")
    print (beta)
-   #Matriz de distorsión
-   T = []
-   for i in range(n):
-      row = []
-      if i < v:
-         for k in range(n):
-            if k < v: #Matriz indentidad dimension v
-               if i == k:
-                  row += [1]
-               else:
-                  row += [0]
 
-            else: #Matriz aleatoria vxm
-               if randint(0,2) == 1:
-                  row += [1]
-               else:
-                  row += [0]
-
-      else:
-         for k in range(n):
-            if k < v: #Matriz nula dimension v
-               row += [0]
-
-            else: #Matriz identidad dimension m
-               if i == k:
-                  row += [1]
-               else:
-                  row += [0]
-      T += [row]
-
+   T = generacionT(m, v)
    T = [[1,0,0,0,0,0], [0,1,0,0,0,1], [0,0,1,1,0,1], [0,0,0,1,0,0], [0,0,0,0,1,0],[0,0,0,0,0,1]]
    print ("T")
    print (T)
@@ -865,7 +879,7 @@ def main():
          aux.insert(0, 0)
       hashed_message [i] = aux
 
-   firma = signature (hashed_message, alpha, beta, m, r, v, T)
+   firma = signature (hashed_message, alpha, beta, m, v, T)
    print ("Firma")
    print (firma)
 
