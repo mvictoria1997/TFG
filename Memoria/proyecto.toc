@@ -22,20 +22,22 @@
 \contentsline {section}{\numberline {2.2}Costes}{25}{section.2.2}
 \contentsline {chapter}{\numberline {3}An\IeC {\'a}lisis del problema}{29}{chapter.3}
 \contentsline {section}{\numberline {3.1}Especificaci\IeC {\'o}n de requisitos}{29}{section.3.1}
-\contentsline {section}{\numberline {3.2}An\IeC {\'a}lisis}{29}{section.3.2}
-\contentsline {chapter}{\numberline {4}Dise\IeC {\~n}o}{31}{chapter.4}
-\contentsline {section}{\numberline {4.1}Algoritmo criptogr\IeC {\'a}fico}{31}{section.4.1}
-\contentsline {section}{\numberline {4.2}Ecosistema ARK}{31}{section.4.2}
-\contentsline {chapter}{\numberline {5}Implementaci\IeC {\'o}n}{33}{chapter.5}
-\contentsline {section}{\numberline {5.1}Funciones del cuerpo de 128 elementos}{33}{section.5.1}
-\contentsline {section}{\numberline {5.2}Funciones con matrices}{37}{section.5.2}
-\contentsline {section}{\numberline {5.3}Funciones algoritmo UOV}{41}{section.5.3}
-\contentsline {chapter}{\numberline {6}Evaluaci\IeC {\'o}n y pruebas}{47}{chapter.6}
-\contentsline {chapter}{\numberline {7}Conclusiones}{49}{chapter.7}
-\contentsline {section}{\numberline {7.1}Valoraci\IeC {\'o}n personal}{49}{section.7.1}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{53}{chapter*.19}
-\contentsline {chapter}{Glosario de siglas}{55}{chapter*.21}
-\contentsline {chapter}{\numberline {A}Manual de usuario}{57}{appendix.Alph1}
-\contentsline {section}{\numberline {A.1}Instalaci\IeC {\'o}n de Docker}{57}{section.Alph1.1}
-\contentsline {section}{\numberline {A.2}Instalaci\IeC {\'o}n Blockchain ARK}{59}{section.Alph1.2}
-\contentsline {section}{\numberline {A.3}Instalaci\IeC {\'o}n de la aplicaci\IeC {\'o}n ARK Desktop Wallet}{63}{section.Alph1.3}
+\contentsline {subsection}{\numberline {3.1.1}Requisitos funcionales}{29}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Requisitos no funcionales}{31}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}An\IeC {\'a}lisis}{31}{section.3.2}
+\contentsline {chapter}{\numberline {4}Dise\IeC {\~n}o}{33}{chapter.4}
+\contentsline {section}{\numberline {4.1}Algoritmo criptogr\IeC {\'a}fico}{33}{section.4.1}
+\contentsline {section}{\numberline {4.2}Ecosistema ARK}{33}{section.4.2}
+\contentsline {chapter}{\numberline {5}Implementaci\IeC {\'o}n}{35}{chapter.5}
+\contentsline {section}{\numberline {5.1}Funciones del cuerpo de 128 elementos}{35}{section.5.1}
+\contentsline {section}{\numberline {5.2}Funciones con matrices}{39}{section.5.2}
+\contentsline {section}{\numberline {5.3}Funciones algoritmo UOV}{43}{section.5.3}
+\contentsline {chapter}{\numberline {6}Evaluaci\IeC {\'o}n y pruebas}{49}{chapter.6}
+\contentsline {chapter}{\numberline {7}Conclusiones}{51}{chapter.7}
+\contentsline {section}{\numberline {7.1}Valoraci\IeC {\'o}n personal}{51}{section.7.1}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{55}{chapter*.19}
+\contentsline {chapter}{Glosario de siglas}{57}{chapter*.21}
+\contentsline {chapter}{\numberline {A}Manual de usuario}{59}{appendix.Alph1}
+\contentsline {section}{\numberline {A.1}Instalaci\IeC {\'o}n de Docker}{59}{section.Alph1.1}
+\contentsline {section}{\numberline {A.2}Instalaci\IeC {\'o}n Blockchain ARK}{61}{section.Alph1.2}
+\contentsline {section}{\numberline {A.3}Instalaci\IeC {\'o}n de la aplicaci\IeC {\'o}n ARK Desktop Wallet}{65}{section.Alph1.3}

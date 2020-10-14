@@ -8,6 +8,88 @@ Debe incluir una clara descripción de las funcionalidades que se esperan alcanz
 Los requisitos pueden ser funcionales (e.g. La herramienta debe mostrar las medidas de la red en tiempo real), o no funcionales (e.g. se debe garantizar el acceso seguro a la herramienta; el rendimiento debe ser alto; el consumo de memoria debe ser bajo; etc.)
 
 
+
+\subsection{Requisitos funcionales}
+
+\begin{table}[H]
+	\begin{center}
+	\centering
+	\resizebox{\linewidth}{!}{
+	\begin{tabular}{p{0.14\linewidth} p{0.75\linewidth}}
+		\textbf{Requisito} & \textbf{Descripción} \\
+		\toprule
+		RF 1.1 & El programa deberá de generar la clave pública y privada de cada usuario\\[0.5ex]
+		RF 1.2 & El programa deberá de firmar correctamente cada \textit{hash}, ya sea de un mensaje o una transacción\\[0.5ex]
+		RF 1.3 & El programa deberá de realizar correctamente la verificación del \textit{hash}\\[0.5ex]
+		\bottomrule
+	\end{tabular}}
+	\end{center}
+	\caption{Requisitos del programa}
+\end{table}
+
+
+\begin{table}[H]
+	\begin{center}
+	\centering
+	\resizebox{\linewidth}{!}{
+	\begin{tabular}{p{0.14\linewidth} p{0.75\linewidth}}
+		\textbf{Requisito} & \textbf{Descripción} \\
+		\toprule
+		RF 2.1 & La base de datos local del docker deberá almacenar la claves del usuario\\[0.5ex]
+		RF 2.2 & La base de datos local del docker deberá almacenar la información del usuario\\[0.5ex]
+		RF 2.2 & La base de datos local del docker deberá almacenar los monederos así como el saldo de cada usuario\\[0.5ex]
+		RF 2.3 & El docker deberá de almacenar la \textit{blockchain}\\[0.5ex]
+		RF 2.4 & El docker deberá mantener activa la ejecución de la \textit{blockchain}\\[0.5ex]
+		RF 2.5 & El docker deberá mantener activa la ejecución del \textit{explorer}\\[0.5ex]
+		RF 2.6 & El docker deberá mantener activos los puertos del explorer y API\\[0.5ex]
+		\bottomrule
+	\end{tabular}}
+	\end{center}
+	\caption{Requisitos del docker}
+\end{table}
+
+\begin{table}[H]
+	\begin{center}
+	\centering
+	\resizebox{\linewidth}{!}{
+	\begin{tabular}{p{0.14\linewidth} p{0.75\linewidth}}
+		\textbf{Requisito} & \textbf{Descripción} \\
+		\toprule
+		RF 3.1 & La aplicación deberá dar la opción al usuario de crear un perfil\\[0.5ex]
+		RF 3.2 & La aplicación deberá dar la opción al usuario de conectarse a la red \textit{testnet}\\[0.5ex]
+		RF 3.3 & La aplicación deberá dar la opción al usuario de crear monederos\\[0.5ex]
+		RF 3.4 & La aplicación deberá dar la opción al usuario realizar transacciones entre diferentes monederos\\[0.5ex]
+		RF 3.5 & La aplicación deberá dar la opción al usuario de firmar mensajes\\[0.5ex]
+		RF 3.6 & La aplicación deberá dar la opción al usuario de validar mensajes\\[0.5ex]
+		\bottomrule
+	\end{tabular}}
+	\end{center}
+	\caption{Requisitos de la aplicación Wallet}
+\end{table}
+
+
+\subsection{Requisitos no funcionales}
+
+\begin{table}[H]
+	\begin{center}
+	\centering
+	\resizebox{\linewidth}{!}{
+	\begin{tabular}{p{0.14\linewidth} p{0.7\linewidth}}
+		\textbf{Requisito} & \textbf{Descripción} \\
+		\toprule
+		RNF 1.1 & El programa no deberá de tardar más de medio minuto par de segundos en generar las claves públicas y privadas \\[0.5ex]
+		RNF 1.2 & El programa deberá de tardar unos segundos en firmar un mensaje\\[0.5ex]
+		RNF 1.3 & El programa deberá de tardar unos segundos en verificar la firma de un $hash$\\[0.5ex]
+		RNF 1.4 & El programa deberá de ser correctamente integrado en el sistema \textit{blockchain}\\[0.5ex]
+		
+		RNF 1.5 & El programa deberá de ser compatible con cualquier sistema que tenga instalado \texttt{python}\\[0.5ex]
+		RNF 1.6 & El proyecto deberá de contar con un manual de usuario claro y conciso\\[0.5ex]
+		\bottomrule
+	\end{tabular}}
+	\end{center}
+	\caption{Requisitos no funcionales}
+\end{table}
+
 \section{Análisis}
 
 El objetivo de este apartado es mostrar en diferentes subapartados los diferentes subproblemas que han aparecido al realizar el proyecto, describiendo las alternativas que se han considerado, y justificando las decisiones que se han adoptado. A veces, especialmente cuando los conceptos utilizados en este apartado son extensos, es necesario clarificarlos previamente en el Capítulo de \textit{Introducción} (sección \textit{Contenidos teóricos para la comprensión del proyecto}).   
