@@ -6,13 +6,13 @@
 \contentsline {lstlisting}{\numberline {5.6}Inverso de un elemento del cuerpo}{37}{lstlisting.5.6}
 \contentsline {lstlisting}{\numberline {5.7}Compara dos elementos del cuerpo}{38}{lstlisting.5.7}
 \contentsline {lstlisting}{\numberline {5.8}Matriz de $\mathds {F}_2$ a un elemento del cuerpo 128 elementos}{38}{lstlisting.5.8}
-\contentsline {lstlisting}{\numberline {5.9}Vector de matrices de $\mathds {F}_2$ a una matriz del cuerpo de 128 elementos}{39}{lstlisting.5.9}
-\contentsline {lstlisting}{\numberline {5.10}Suma de dos matrices con elementos en el cuerpo}{40}{lstlisting.5.10}
+\contentsline {lstlisting}{\numberline {5.9}Vector de matrices de $\mathds {F}_2$ a una matriz de $\GF (128)$}{39}{lstlisting.5.9}
+\contentsline {lstlisting}{\numberline {5.10}Suma de dos matrices con elementos en el cuerpo}{39}{lstlisting.5.10}
 \contentsline {lstlisting}{\numberline {5.11}Producto de matrices con elementos del cuerpo}{40}{lstlisting.5.11}
 \contentsline {lstlisting}{\numberline {5.12}Producto de matrices con elementos en $\mathds {F}_2$}{41}{lstlisting.5.12}
 \contentsline {lstlisting}{\numberline {5.13}Matriz transpuesta}{41}{lstlisting.5.13}
 \contentsline {lstlisting}{\numberline {5.14}Matriz identidad del cuerpo}{42}{lstlisting.5.14}
-\contentsline {lstlisting}{\numberline {5.15}M\IeC {\'e}todo de Gauss-Jordan}{42}{lstlisting.5.15}
+\contentsline {lstlisting}{\numberline {5.15}M\IeC {\'e}todo de Gauss-Jordan}{43}{lstlisting.5.15}
 \contentsline {lstlisting}{\numberline {5.16}Generaci\IeC {\'o}n clave privada}{43}{lstlisting.5.16}
 \contentsline {lstlisting}{\numberline {5.17}Generaci\IeC {\'o}n matriz $T$}{44}{lstlisting.5.17}
 \contentsline {lstlisting}{\numberline {5.18}Generaci\IeC {\'o}n clave p\IeC {\'u}blica}{45}{lstlisting.5.18}

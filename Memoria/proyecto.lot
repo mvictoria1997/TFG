@@ -25,7 +25,7 @@
 \contentsline {table}{\numberline {5.10}{\ignorespaces Par\IeC {\'a}metros de la funci\IeC {\'o}n \texttt {matrix\_product\_F2}}}{41}{table.5.10}
 \contentsline {table}{\numberline {5.11}{\ignorespaces Par\IeC {\'a}metros de la funci\IeC {\'o}n \texttt {matrix\_transpose}}}{41}{table.5.11}
 \contentsline {table}{\numberline {5.12}{\ignorespaces Par\IeC {\'a}metros de la funci\IeC {\'o}n \texttt {matrix\_identity}}}{42}{table.5.12}
-\contentsline {table}{\numberline {5.13}{\ignorespaces Par\IeC {\'a}metros de la funci\IeC {\'o}n \texttt {matrix\_rref}}}{43}{table.5.13}
+\contentsline {table}{\numberline {5.13}{\ignorespaces Par\IeC {\'a}metros de la funci\IeC {\'o}n \texttt {matrix\_rref}}}{42}{table.5.13}
 \contentsline {table}{\numberline {5.14}{\ignorespaces Par\IeC {\'a}metros de la funci\IeC {\'o}n \texttt {clavePrivada}}}{44}{table.5.14}
 \contentsline {table}{\numberline {5.15}{\ignorespaces Par\IeC {\'a}metros de la funci\IeC {\'o}n \texttt {generacionT}}}{44}{table.5.15}
 \contentsline {table}{\numberline {5.16}{\ignorespaces Par\IeC {\'a}metros de la funci\IeC {\'o}n \texttt {clavePublica}}}{45}{table.5.16}
