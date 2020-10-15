@@ -27,9 +27,10 @@
 \contentsline {table}{\numberline {5.12}{\ignorespaces Par\IeC {\'a}metros de la funci\IeC {\'o}n \texttt {matrix\_identity}}}{42}{table.5.12}
 \contentsline {table}{\numberline {5.13}{\ignorespaces Par\IeC {\'a}metros de la funci\IeC {\'o}n \texttt {matrix\_rref}}}{43}{table.5.13}
 \contentsline {table}{\numberline {5.14}{\ignorespaces Par\IeC {\'a}metros de la funci\IeC {\'o}n \texttt {clavePrivada}}}{44}{table.5.14}
-\contentsline {table}{\numberline {5.15}{\ignorespaces Par\IeC {\'a}metros de la funci\IeC {\'o}n \texttt {clavePublica}}}{44}{table.5.15}
-\contentsline {table}{\numberline {5.16}{\ignorespaces Par\IeC {\'a}metros de la funci\IeC {\'o}n \texttt {signature}}}{45}{table.5.16}
-\contentsline {table}{\numberline {5.17}{\ignorespaces Par\IeC {\'a}metros de la funci\IeC {\'o}n \texttt {verify}}}{46}{table.5.17}
+\contentsline {table}{\numberline {5.15}{\ignorespaces Par\IeC {\'a}metros de la funci\IeC {\'o}n \texttt {generacionT}}}{44}{table.5.15}
+\contentsline {table}{\numberline {5.16}{\ignorespaces Par\IeC {\'a}metros de la funci\IeC {\'o}n \texttt {clavePublica}}}{45}{table.5.16}
+\contentsline {table}{\numberline {5.17}{\ignorespaces Par\IeC {\'a}metros de la funci\IeC {\'o}n \texttt {signature}}}{46}{table.5.17}
+\contentsline {table}{\numberline {5.18}{\ignorespaces Par\IeC {\'a}metros de la funci\IeC {\'o}n \texttt {verify}}}{47}{table.5.18}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
