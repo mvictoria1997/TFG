@@ -7,7 +7,7 @@ import hashlib
 
 from time import time
 
-#Tablas para el calcular la multiplicación en el cuerpo
+#Tablas para el calcular la multiplicacion en el cuerpo
 exp = {
    0 : [0, 0, 0, 0, 0, 0, 1],
    1 : [0, 0, 0, 0, 0, 1, 0],
@@ -352,7 +352,7 @@ def clavePublica(m, v, alpha, beta, T):
 
    return alpha_pub, beta_pub
 
-#--------------------------Firma-----------------------------
+#--------------------------GeneracionT-----------------------------
 def generacionT (v, m):
    """
    Signature of a message with hash, hashed. Here we have to use the private key.
@@ -423,7 +423,7 @@ def signature(hashed, alpha_F2, beta_F2, m, v, T):
    for k in range(v):
       aux = randint(0, 127)
       vinagre += [F128(aux)]
-   vinagre = [[0, 1, 1, 0, 1, 0, 0], [1, 1, 1, 1, 1, 0, 0],[1, 1, 1, 1, 0, 0, 1]]
+   #vinagre = [[0, 1, 1, 0, 1, 0, 0], [1, 1, 1, 1, 1, 0, 0],[1, 1, 1, 1, 0, 0, 1]]
    print ("vinagre")
    print(vinagre)
    coef = []
@@ -835,21 +835,21 @@ def main():
    #r, m, v = 7, 35, 121
    #r, m, v = 7, 19, 65
    #r, m, v = 7, 10, 30 #con este tamaño funciona
-   r, m, v = 7, 3, 3
+   r, m, v = 7, 2, 2
    n = m + v
 
    #Private key
-   #alpha, beta = clavePrivada(m, v)
-   alpha = [[[1,0,1,1,1,0], [0, 0, 0, 0, 1, 1], [0,0,0,1,1,1]], [[1,1,0,1,1,0], [0, 0, 1, 1, 1, 0,], [0,0,1,1,1,1]], [[0,0,0,1,0,0], [0, 0, 1, 1, 0, 1], [0,0,0,0,1,1]]]
+   alpha, beta = clavePrivada(m, v)
+   #alpha = [[[1,0,1,1,1,0], [0, 0, 0, 0, 1, 1], [0,0,0,1,1,1]], [[1,1,0,1,1,0], [0, 0, 1, 1, 1, 0,], [0,0,1,1,1,1]], [[0,0,0,1,0,0], [0, 0, 1, 1, 0, 1], [0,0,0,0,1,1]]]
 
-   beta = [[1,0,0,1,0,0],[0,0,1,0,1,0],[1,1,0,1,0,1]]
+   #beta = [[1,0,0,1,0,0],[0,0,1,0,1,0],[1,1,0,1,0,1]]
    print ("alpha priv")
    print (alpha)
    print ("beta priv")
    print (beta)
 
    T = generacionT(m, v)
-   T = [[1,0,0,0,0,0], [0,1,0,0,0,1], [0,0,1,1,0,1], [0,0,0,1,0,0], [0,0,0,0,1,0],[0,0,0,0,0,1]]
+   #T = [[1,0,0,0,0,0], [0,1,0,0,0,1], [0,0,1,1,0,1], [0,0,0,1,0,0], [0,0,0,0,1,0],[0,0,0,0,0,1]]
    print ("T")
    print (T)
 
