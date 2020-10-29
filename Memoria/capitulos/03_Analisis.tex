@@ -1,15 +1,16 @@
 \chapter{Análisis del problema}
 
+Este tercer capítulo incluye una descripción de las funcionalidades que se pretenden alcanzar, así como de los problemas que han podido surgir para no llegar al diseño propuesto inicialmente. También se puede encontrar una especificación tanto los requisitos funcionales como los no funcionales.
 
 \section{Especificación de requisitos}
 
-Debe incluir una clara descripción de las funcionalidades que se esperan alcanzar, así como las restricciones o condicionantes que puedan determinar el diseño o solución adoptada. Tras eso deben especificarse claramente los requisitos.
+Con la realización de este proyecto se persiguen principalmente dos funcionalidades, la implementación del algoritmo UOV y la integración del mismo en la \textit{blockchain}.
 
-Los requisitos pueden ser funcionales (e.g. La herramienta debe mostrar las medidas de la red en tiempo real), o no funcionales (e.g. se debe garantizar el acceso seguro a la herramienta; el rendimiento debe ser alto; el consumo de memoria debe ser bajo; etc.)
-
-
+Para la implementación del algoritmo ha sido necesario implementar la aritmética de $\GF(128)$ puesto que no se ha encontrado ninguna librería de \texttt{python} que trabaje conjuntamente las matrices con cuerpos finitos. Se ha optado por el lenguaje de programación \texttt{python} para el algoritmo porque inicialmente se pensaba trabajar con la \textit{blockchain} implementada en \texttt{python} y no tener problemas a la hora de llamar a las funciones del algoritmo. Sin embargo tras un proceso de investigación se vió mejor opción utilizar la \textit{blockchain} en \texttt{typescript} para hacer uso de la parte gráfica como es la aplicación wallet y el \textit{explorer}. De esta forma se ha visto afectado el diseño inicial puesto que han sido necesarios dos ficheros más de transición entre los ficheros de \texttt{typescript} y \texttt{python}, se entrará en detalle en el capítulo \ref{sec:diseno}.
 
 \subsection{Requisitos funcionales}
+
+La especificación de los requisitos funcionales se ha dividido en varios apartados según cada parte del proyecto. Se distinguen, el programa en \texttt{python} con la implementación del algoritmo UOV, tabla \ref{tab:RF-pro}, el docker que contiene la interacción con la base de datos y la \textit{blockchain}, tabla \ref{tab:RF-docker}, la aplicación wallet desde donde se realizarán las transacciones, tabla \ref{tab:RF-wallet} y por último, el \textit{explorer} para visualizar las transacciones realizadas y los bloques generados, tabla \ref{tab:RF-exp}.
 
 \begin{table}[H]
 	\begin{center}
@@ -18,13 +19,15 @@ Los requisitos pueden ser funcionales (e.g. La herramienta debe mostrar las medi
 	\begin{tabular}{p{0.14\linewidth} p{0.75\linewidth}}
 		\textbf{Requisito} & \textbf{Descripción} \\
 		\toprule
-		RF 1.1 & El programa deberá de generar la clave pública y privada de cada usuario\\[0.5ex]
-		RF 1.2 & El programa deberá de firmar correctamente cada \textit{hash}, ya sea de un mensaje o una transacción\\[0.5ex]
-		RF 1.3 & El programa deberá de realizar correctamente la verificación del \textit{hash}\\[0.5ex]
+		RF 1.1 & El programa deberá tener la implementación de la aritmética de $\GF(128)$\\[0.5ex]
+		RF 1.2 & El programa deberá de generar la clave pública y privada de cada usuario\\[0.5ex]
+		RF 1.3 & El programa deberá de firmar correctamente cada \textit{hash}, ya sea de un bloque o una transacción\\[0.5ex]
+		RF 1.4 & El programa deberá de realizar correctamente la verificación de un \textit{hash} con una firma\\[0.5ex]
 		\bottomrule
 	\end{tabular}}
 	\end{center}
-	\caption{Requisitos del programa}
+	\caption{Requisitos funcionales del programa}
+	\label{tab:RF-pro}
 \end{table}
 
 
@@ -37,15 +40,18 @@ Los requisitos pueden ser funcionales (e.g. La herramienta debe mostrar las medi
 		\toprule
 		RF 2.1 & La base de datos local del docker deberá almacenar la claves del usuario\\[0.5ex]
 		RF 2.2 & La base de datos local del docker deberá almacenar la información del usuario\\[0.5ex]
-		RF 2.2 & La base de datos local del docker deberá almacenar los monederos así como el saldo de cada usuario\\[0.5ex]
-		RF 2.3 & El docker deberá de almacenar la \textit{blockchain}\\[0.5ex]
-		RF 2.4 & El docker deberá mantener activa la ejecución de la \textit{blockchain}\\[0.5ex]
-		RF 2.5 & El docker deberá mantener activa la ejecución del \textit{explorer}\\[0.5ex]
-		RF 2.6 & El docker deberá mantener activos los puertos del explorer y API\\[0.5ex]
+		RF 2.3 & La base de datos local del docker deberá almacenar los monederos así como el saldo de cada usuario\\[0.5ex]
+		RF 2.4 & El docker deberá de almacenar la \textit{blockchain}\\[0.5ex]
+		RF 2.5 & El docker deberá mantener activa la ejecución de la \textit{blockchain}\\[0.5ex]
+		RF 2.6 & El docker deberá mantener activa la ejecución del \textit{explorer}\\[0.5ex]
+		RF 2.7 & El docker deberá mantener abiertos los puertos del \textit{explorer} y API\\[0.5ex]
+		RF 2.8 & El docker tendrá integrado la \textit{blockchain} con el nuevo código de firma\\[0.5ex]
+		RF 2.9 & El docker tendrá integrado la \textit{blockchain} con el nuevo código de verificación\\[0.5ex]
 		\bottomrule
 	\end{tabular}}
 	\end{center}
-	\caption{Requisitos del docker}
+	\caption{Requisitos funcionales del docker}
+	\label{tab:RF-docker}
 \end{table}
 
 \begin{table}[H]
@@ -57,38 +63,88 @@ Los requisitos pueden ser funcionales (e.g. La herramienta debe mostrar las medi
 		\toprule
 		RF 3.1 & La aplicación deberá dar la opción al usuario de crear un perfil\\[0.5ex]
 		RF 3.2 & La aplicación deberá dar la opción al usuario de conectarse a la red \textit{testnet}\\[0.5ex]
-		RF 3.3 & La aplicación deberá dar la opción al usuario de crear monederos\\[0.5ex]
-		RF 3.4 & La aplicación deberá dar la opción al usuario realizar transacciones entre diferentes monederos\\[0.5ex]
-		RF 3.5 & La aplicación deberá dar la opción al usuario de firmar mensajes\\[0.5ex]
-		RF 3.6 & La aplicación deberá dar la opción al usuario de validar mensajes\\[0.5ex]
+		RF 3.3 & La aplicación deberá dar la opción al usuario de importar el monedero genesis\\[0.5ex]
+		RF 3.4 & La aplicación deberá dar la opción al usuario de crear monederos\\[0.5ex]
+		RF 3.5 & La aplicación deberá dar la opción al usuario realizar transacciones entre diferentes monederos\\[0.5ex]
+		RF 3.6 & La aplicación deberá dar la opción al usuario de firmar mensajes\\[0.5ex]
+		RF 3.7 & La aplicación deberá dar la opción al usuario de validar mensajes\\[0.5ex]
+		
 		\bottomrule
 	\end{tabular}}
 	\end{center}
-	\caption{Requisitos de la aplicación Wallet}
+	\caption{Requisitos funcionales de la aplicación Wallet}
+	\label{tab:RF-wallet}
 \end{table}
-
-
-\subsection{Requisitos no funcionales}
 
 \begin{table}[H]
 	\begin{center}
 	\centering
 	\resizebox{\linewidth}{!}{
-	\begin{tabular}{p{0.14\linewidth} p{0.7\linewidth}}
+	\begin{tabular}{p{0.14\linewidth} p{0.75\linewidth}}
 		\textbf{Requisito} & \textbf{Descripción} \\
 		\toprule
-		RNF 1.1 & El programa no deberá de tardar más de medio minuto par de segundos en generar las claves públicas y privadas \\[0.5ex]
-		RNF 1.2 & El programa deberá de tardar unos segundos en firmar un mensaje\\[0.5ex]
-		RNF 1.3 & El programa deberá de tardar unos segundos en verificar la firma de un $hash$\\[0.5ex]
-		RNF 1.4 & El programa deberá de ser correctamente integrado en el sistema \textit{blockchain}\\[0.5ex]
+		RF 4.1 & En el \textit{explorer} se podrá realizar búsqueda por bloques\\[0.5ex]
+		RF 4.2 & En el \textit{explorer} se podrá realizar búsqueda por transacciones\\[0.5ex]
+		RF 4.3 & El \textit{explorer} deberá mostrar la firma de cada bloque \\[0.5ex]
+		RF 4.4 & El \textit{explorer} deberá mostrar el ID de cada bloque\\[0.5ex]
+		RF 4.5 & El \textit{explorer} deberá mostrar la firma de cada transacción \\[0.5ex]
+		RF 4.6 & El \textit{explorer} deberá mostrar el usuario que ha realizado la transacción además del receptor\\[0.5ex]
+		RF 4.7 & Los datos que muestre el \textit{explorer} deberán de ser a tiempo real\\[0.5ex]
 		
-		RNF 1.5 & El programa deberá de ser compatible con cualquier sistema compatible con \texttt{python}\\[0.5ex]
-		RNF 1.6 & La aplicación deberá de realizar transacciones de forma segura\\[0.5ex]
-		RNF 1.7 & El proyecto deberá de contar con un manual de usuario claro y conciso\\[0.5ex]
 		\bottomrule
 	\end{tabular}}
 	\end{center}
-	\caption{Requisitos no funcionales}
+	\caption{Requisitos funcionales del \textit{Explorer}}
+	\label{tab:RF-exp}
+\end{table}
+
+
+\subsection{Requisitos no funcionales}
+
+En los requisitos no funcionales podemos encontrar dos bloques, los referentes al sistema como los tiempos de ejecución o a la seguridad, tabla \ref{tab:RNF-sis}, y los personales, que logros esperaba conseguir tras la finalización del proyecto, tabla \ref{tab:RNF-per}
+
+\begin{table}[H]
+	\begin{center}
+	\centering
+	\resizebox{\linewidth}{!}{
+	\begin{tabular}{p{0.14\linewidth} p{0.75\linewidth}}
+		\textbf{Requisito} & \textbf{Descripción} \\
+		\toprule
+		RNF 1.1 & El programa no deberá de tardar más de medio minuto en generar las claves públicas y privadas \\[0.5ex]
+		RNF 1.2 & El programa deberá de tardar unos segundos en firmar un mensaje\\[0.5ex]
+		RNF 1.3 & El programa deberá de tardar unos segundos en verificar la firma de un $hash$\\[0.5ex]
+		RNF 1.4 & En cualquier momento se podrá realizar la verificación de una firma\\[0.5ex]
+		RNF 1.5 & El programa deberá de ser correctamente integrado en el sistema \textit{blockchain}\\[0.5ex]
+		RNF 1.6 & El programa deberá de ser compatible con cualquier sistema compatible con \texttt{python}\\[0.5ex]
+		RNF 1.7 & La aplicación deberá de realizar transacciones de forma segura\\[0.5ex]
+		RNF 1.8 & El proyecto deberá de contar con un manual de usuario claro y conciso\\[0.5ex]
+		\bottomrule
+	\end{tabular}}
+	\end{center}
+	\caption{Requisitos no funcionales del sistema}
+	\label{tab:RNF-sis}
+\end{table}
+
+\begin{table}[H]
+	\begin{center}
+	\centering
+	\resizebox{\linewidth}{!}{
+	\begin{tabular}{p{0.14\linewidth} p{0.75\linewidth}}
+		\textbf{Requisito} & \textbf{Descripción} \\
+		\toprule
+		RNF 2.1 & Aprender a gestionar los tiempos de un proyecto\\[0.5ex]
+		RNF 2.2 & Aprender a solucionar de la manera más eficiente los problemas que surjan\\[0.5ex]
+		RNF 2.3 & Aprender otros lenguajes de programación como \texttt{python}\\[0.5ex]
+		RNF 2.4 & Entender como funcionan la tecnología \textit{blockchain}\\[0.5ex]
+		RNF 2.5 & Entender el algoritmo El programa deberá de ser correctamente integrado en el sistema \textit{blockchain}\\[0.5ex]
+		RNF 2.6 & El programa deberá de ser compatible con cualquier sistema compatible con \texttt{python}\\[0.5ex]
+		RNF 2.7 & La aplicación deberá de realizar transacciones de forma segura\\[0.5ex]
+		RNF 2.8 & El proyecto deberá de contar con un manual de usuario claro y conciso\\[0.5ex]
+		\bottomrule
+	\end{tabular}}
+	\end{center}
+	\caption{Requisitos no funcionales personales}
+	\label{tab:RNF-per}
 \end{table}
 
 \section{Análisis}
