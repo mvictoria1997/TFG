@@ -622,9 +622,7 @@ Ahora se calcula $\beta_{pub}$ para ello se va a realizar el cálculo de la prim
 
 \begin{equation}\label{eq:ej-beta-pub-1}
 	{{\beta_{pub}}_1} = 
-	\left(\begin{matrix}
-		1 & 0 & 0 & 1 & 0 & 0
-	\end{matrix}\right) \cdot
+	\left(\begin{matrix}1 & 0 & 0 & 1 & 0 & 0\end{matrix}\right) \cdot
 	\left(\begin{array}{c|c}
 		1\ \ 0\ \ 0\ & 0\ \ 0\ \ 0\\
 		0\ \ 1\ \ 0\ & 0\ \ 0\ \ 1\\
@@ -634,9 +632,7 @@ Ahora se calcula $\beta_{pub}$ para ello se va a realizar el cálculo de la prim
 		0\ \ 0\ \ 0\ & 0\ \ 1\ \ 0\\
 		0\ \ 0\ \ 0\ & 0\ \ 0\ \ 1
 	\end{array}\right) =
-	\left(\begin{matrix}
-	1 & 0 & 0 & 1 & 0 & 0
-	\end{matrix}\right)
+	\left(\begin{matrix}1 & 0 & 0 & 1 & 0 & 0\end{matrix}\right)
 \end{equation}
 
 De manera análoga se calculan el resto de componentes, ${\beta_{pub}}_2$ y ${\beta_{pub}}_3$, para obtener el vector completo $\beta_{pub}$, ecuación \ref{eq:ej-beta-pub}.
@@ -911,55 +907,50 @@ De la misma forma se calculan el resto de los términos llegando al vector $term
 
 \begin{equation}\label{eq:ej-ter}
 	{term} = 
-		\left(\begin{array}{c}
-			\left(\begin{array}{c}1, 0, 1, 0, 1, 0, 0\end{array}\right)			
-			\left(\begin{array}{c}1, 1, 0, 1, 0, 0, 0\end{array}\right)
-			\left(\begin{array}{c}1, 1, 0, 0, 0, 0, 0\end{array}\right)
-		\end{array}\right)
+		\left(\begin{matrix}
+			\left(\begin{smallmatrix}1 & 0 & 1 & 0 & 1 & 0 & 0\end{smallmatrix}\right)			
+			\left(\begin{smallmatrix}1 & 1 & 0 & 1 & 0 & 0 & 0\end{smallmatrix}\right)
+			\left(\begin{smallmatrix}1 & 1 & 0 & 0 & 0 & 0 & 0\end{smallmatrix}\right)
+		\end{matrix}\right)
 \end{equation}
 
 Tras la resolución del sistema $coef \cdot oil = term$ se han obtenido los aceites, ecuación \ref{eq:ej-oil}.
 
 \begin{equation}\label{eq:ej-oil}
 	{oil} = 
-		\left(\begin{array}{c}
-			\left(\begin{array}{c}0, 0, 0, 0, 1, 1, 0\end{array}\right)			
-			\left(\begin{array}{c}0, 0, 1, 1, 0, 1, 1\end{array}\right)
-			\left(\begin{array}{c}0, 1, 0, 0, 1, 1, 0\end{array}\right)
-		\end{array}\right)
+		\left(\begin{matrix}
+			\left(\begin{smallmatrix}0 & 0 & 0 & 0 & 1 & 1 & 0\end{smallmatrix}\right)			
+			\left(\begin{smallmatrix}0 & 0 & 1 & 1 & 0 & 1 & 1\end{smallmatrix}\right)
+			\left(\begin{smallmatrix}0 & 1 & 0 & 0 & 1 & 1 & 0\end{smallmatrix}\right)
+		\end{matrix}\right)
 \end{equation}
 
 Ahora se forma el vector $aux$ uniendo los vinagres con los aceites, ecuación \ref{eq:ej-aux}.
 
 \begin{equation}\label{eq:ej-aux}
-	\begin{split}
-	{aux} &= 
-		\left(\begin{array}{c}
-			\left(\begin{array}{c}0, 0, 0, 0, 1, 1, 0\end{array}\right)		
-			\left(\begin{array}{c}0, 0, 1, 1, 0, 1, 1\end{array}\right)
-			\left(\begin{array}{c}0, 1, 0, 0, 1, 1, 0\end{array}\right)\end{array}\right.\\
-		&
-			\left.\begin{array}{c}\left(\begin{array}{c}0, 1, 1, 0, 1, 0, 0\end{array}\right)
-			\left(\begin{array}{c}1, 1, 1, 1, 1, 0, 0\end{array}\right)
-			\left(\begin{array}{c}1, 1, 1, 1, 0, 0, 1\end{array}\right)
-		\end{array}\right)
-	\end{split}
+	{aux} = 
+		\left(\begin{matrix}
+			\left(\begin{smallmatrix}0 & 0 & 0 & 0 & 1 & 1 & 0\end{smallmatrix}\right)		
+			\left(\begin{smallmatrix}0 & 0 & 1 & 1 & 0 & 1 & 1\end{smallmatrix}\right)
+			\left(\begin{smallmatrix}0 & 1 & 0 & 0 & 1 & 1 & 0\end{smallmatrix}\right)
+			\left(\begin{smallmatrix}0 & 1 & 1 & 0 & 1 & 0 & 0\end{smallmatrix}\right)
+			\left(\begin{smallmatrix}1 & 1 & 1 & 1 & 1 & 0 & 0\end{smallmatrix}\right)
+			\left(\begin{smallmatrix}1 & 1 & 1 & 1 & 0 & 0 & 1\end{smallmatrix}\right)
+		\end{matrix}\right)
 \end{equation}
 
 La firma del mensaje se obtiene multiplicando el vector $aux$ por la inversa de $T$, que de la forma que está construida dicha matriz $T$ coincide con su inversa, ecuación \ref{eq:ej-firma}.
 
 \begin{equation}\label{eq:ej-firma}
-	\begin{aligned}
-	{firma} = &
-		\left(\begin{array}{c}
-			\left(\begin{array}{c}0, 1, 1, 0, 1, 0, 0\end{array}\right)			
-			\left(\begin{array}{c}1, 0, 1, 1, 0, 1, 0\end{array}\right)
-			\left(\begin{array}{c}1, 0, 1, 1, 0, 0, 1\end{array}\right)\end{array}\right.\\
-			& \left.\begin{array}{c}\left(\begin{array}{c}0, 0, 0, 0, 1, 1, 0\end{array}\right)			
-			\left(\begin{array}{c}0 0 1 1 0 1 1\end{array}\right)
-			\left(\begin{array}{c}0 1 0 0 1 1 0\end{array}\right)
-		\end{array}\right)
-	\end{aligned}
+	{firma} = 
+		\left(\begin{matrix}
+			\left(\begin{smallmatrix}0 & 1 & 1 & 0 & 1 & 0 & 0\end{smallmatrix}\right)			
+			\left(\begin{smallmatrix}1 & 0 & 1 & 1 & 0 & 1 & 0\end{smallmatrix}\right)
+			\left(\begin{smallmatrix}1 & 0 & 1 & 1 & 0 & 0 & 1\end{smallmatrix}\right)
+			\left(\begin{smallmatrix}0 & 0 & 0 & 0 & 1 & 1 & 0\end{smallmatrix}\right)			
+			\left(\begin{smallmatrix}0 & 0 & 1 & 1 & 0 & 1 & 1\end{smallmatrix}\right)
+			\left(\begin{smallmatrix}0 & 1 & 0 & 0 & 1 & 1 & 0\end{smallmatrix}\right)
+		\end{matrix}\right)
 \end{equation}
 
 Para realizar la confirmación del mensaje es necesario calcular dos variables auxiliares, $\alpha_{aux}$ y $\beta_{aux}$.
@@ -969,17 +960,17 @@ Para calcular ${\alpha_{aux}}_1$ hay que multiplicar los vectores $firma$, ${\al
 \begin{equation}\label{eq:ej-aux-alpha-1}
 	\begin{aligned}
 	{{\alpha_{aux}}_1} & = 
-		\left(\begin{array}{c}firma\end{array}\right)
-		\cdot \left(\begin{array}{c}
-			1\ \ 0\ \ 1\ \ 0\ \ 1\ \ 1\\
-			0\ \ 0\ \ 0\ \ 0\ \ 1\ \ 1\\
-			0\ \ 0\ \ 0\ \ 1\ \ 1\ \ 1\\
-			0\ \ 0\ \ 0\ \ 1\ \ 1\ \ 1\\
-			0\ \ 0\ \ 0\ \ 0\ \ 0\ \ 0\\
-			0\ \ 0\ \ 0\ \ 1\ \ 0\ \ 0
-		\end{array}\right)
-		\cdot \left(\begin{array}{c}trans\left(firma\right)\end{array}\right)\\
-		& = \left(\begin{array}{c}0 1 1 1 1 1 0\end{array}\right)
+		\begin{pmatrix}firma\end{pmatrix}
+		\cdot \left(\begin{smallmatrix}
+			1 & 0 & 1 & 0 & 1 & 1\\
+			0 & 0 & 0 & 0 & 1 & 1\\
+			0 & 0 & 0 & 1 & 1 & 1\\
+			0 & 0 & 0 & 1 & 1 & 1\\
+			0 & 0 & 0 & 0 & 0 & 0\\
+			0 & 0 & 0 & 1 & 0 & 0
+		\end{smallmatrix}\right)
+		\cdot \big(\begin{matrix}firma\end{matrix}\big)^{\scriptscriptstyle T}\\
+		& = \left(\begin{smallmatrix}0 & 1 & 1 & 1 & 1 & 1 & 0\end{smallmatrix}\right)
 	\end{aligned}
 \end{equation}
 
@@ -988,55 +979,54 @@ La segunda variable ${\beta_{aux}}_k$ es el producto de la $k-ésima$ componente
 \begin{equation}\label{eq:ej-aux-beta-1}
 	\begin{aligned}
 	{{\beta_{aux}}_1} & = 
-		\left(\begin{array}{c}1\ 0\ 0\ 1\ 0\ 0\end{array}\right)
-		\cdot \left(\begin{array}{c}trans\left(firma\right)\end{array}\right)\\
-		& = \left(\begin{array}{c}0 1 1 1 1 1 0\end{array}\right)
+		\left(\begin{smallmatrix}1 & 0 & 0 & 1 & 0 & 0\end{smallmatrix}\right)
+		\cdot \big(\begin{matrix}firma\end{matrix}\big)^{\scriptscriptstyle T}\\
+		& = \left(\begin{smallmatrix}0 & 1 & 1 & 1 & 1 & 1 & 0\end{smallmatrix}\right)
 	\end{aligned}
 \end{equation}
 
 Calculando todas la componentes de $\alpha_{aux}$ y $\beta_{aux}$ se obtienen los vectores las ecuaciones \ref{eq:ej-aux-alpha} y \ref{eq:ej-aux-beta}, respectivamente.
 
 \begin{equation}\label{eq:ej-aux-alpha}
-	{\alpha_{aux}} = \left(\begin{array}{c}
-		\left(\begin{array}{c}0 1 1 1 1 1 0\end{array}\right)
-		\left(\begin{array}{c}1 1 0 0 0 0 0\end{array}\right)
-		\left(\begin{array}{c}1 1 0 0 1 1 1\end{array}\right)
-		\end{array}\right)
+	{\alpha_{aux}} = \left(\begin{matrix}
+		\left(\begin{smallmatrix}0 & 1 & 1 & 1 & 1 & 1 & 0\end{smallmatrix}\right)
+		\left(\begin{smallmatrix}1 & 1 & 0 & 0 & 0 & 0 & 0\end{smallmatrix}\right)
+		\left(\begin{smallmatrix}1 & 1 & 0 & 0 & 1 & 1 & 1\end{smallmatrix}\right)
+		\end{matrix}\right)
 \end{equation}
 
 \begin{equation}\label{eq:ej-aux-beta}
 	{\beta_{aux}} =
-		\left(\begin{array}{c}
-			\left(\begin{array}{c}0 1 1 0 0 1 0\end{array}\right)		
-			\left(\begin{array}{c}1 1 0 0 0 1 0\end{array}\right)
-			\left(\begin{array}{c}1 1 0 1 0 0 0\end{array}\right)
-		\end{array}\right)
+		\left(\begin{matrix}
+			\left(\begin{smallmatrix}0 & 1 & 1 & 0 & 0 & 1 & 0\end{smallmatrix}\right)		
+			\left(\begin{smallmatrix}1 & 1 & 0 & 0 & 0 & 1 & 0\end{smallmatrix}\right)
+			\left(\begin{smallmatrix}1 & 1 & 0 & 1 & 0 & 0 & 0\end{smallmatrix}\right)
+		\end{matrix}\right)
 \end{equation}
 
 Sumando los vectores componente a componente, ecuación \ref{eq:ej-suma}, anteriormente calculados, se obtiene vector a comparar con el $hash$ del mensaje. 
 
 \begin{equation}\label{eq:ej-suma}
-	\left(\begin{array}{c}
-		\left(\begin{array}{c}0 0 0 1 1 0 0\end{array}\right)
-		\left(\begin{array}{c}0 0 0 0 0 1 0\end{array}\right)
-		\left(\begin{array}{c}0 0 0 1 1 1 1\end{array}\right)
-	\end{array}\right)
+	\left(\begin{matrix}
+		\left(\begin{smallmatrix}0 & 0 & 0 & 1 & 1 & 0 & 0\end{smallmatrix}\right)
+		\left(\begin{smallmatrix}0 & 0 & 0 & 0 & 0 & 1 & 0\end{smallmatrix}\right)
+		\left(\begin{smallmatrix}0 & 0 & 0 & 1 & 1 & 1 & 1\end{smallmatrix}\right)
+	\end{matrix}\right)
 \end{equation}
 
 Si el mensaje no ha sido corrompido habrá de ser igual que el $hash$ del mensaje, ecuación \ref{eq:ej-verif}.
 
 \begin{equation}\label{eq:ej-verif}
 	\begin{aligned}
-	&\left(\begin{array}{c}
-		\left(\begin{array}{c}0 0 0 1 1 0 0\end{array}\right)
-		\left(\begin{array}{c}0 0 0 0 0 1 0\end{array}\right)
-		\left(\begin{array}{c}0 0 0 1 1 1 1\end{array}\right)
-	\end{array}\right) ==\\
-	&\left(\begin{array}{c}
-		\left(\begin{array}{c}0 0 0 1 1 0 0\end{array}\right)
-		\left(\begin{array}{c}0 0 0 0 0 1 0\end{array}\right)
-		\left(\begin{array}{c}0 0 0 1 1 1 1\end{array}\right)
-	\end{array}\right)
+	\left(\begin{matrix}
+		\left(\begin{smallmatrix}0 & 0 & 0 & 1 & 1 & 0 & 0\end{smallmatrix}\right)
+		\left(\begin{smallmatrix}0 & 0 & 0 & 0 & 0 & 1 & 0\end{smallmatrix}\right)
+		\left(\begin{smallmatrix}0 & 0 & 0 & 1 & 1 & 1 & 1\end{smallmatrix}\right)
+	\end{matrix}\right)==\left(\begin{matrix}
+		\left(\begin{smallmatrix}0 & 0 & 0 & 1 & 1 & 0 & 0\end{smallmatrix}\right)
+		\left(\begin{smallmatrix}0 & 0 & 0 & 0 & 0 & 1 & 0\end{smallmatrix}\right)
+		\left(\begin{smallmatrix}0 & 0 & 0 & 1 & 1 & 1 & 1\end{smallmatrix}\right)
+	\end{matrix}\right)
 	\end{aligned}
 \end{equation}
 
