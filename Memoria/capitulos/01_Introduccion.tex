@@ -330,112 +330,111 @@ $\mathcal{P}: \mathds{F}_{2^r}^n \rightarrow \mathds{F}_{2^r}^m$, esta función 
 \begin{equation}\label{eq:fun}
 f_k(x) = \sum_{i=1}^v \sum_{j=i}^n \alpha_{i,j,k} x_i x_j + \sum_{i=1}^n \beta_{i,k} x_i
 \end{equation}
-
 donde $\alpha_{i,j,k}$ y $\beta_{i,k}$ se toman aleatoriamente en $\mathds{F}_2$ siendo $\alpha$ un vector de matrices triangulares superiores. De esta manera será más eficiente y no afectará a la seguridad del algoritmo.
 
 
 
 \subsubsection{Generación de la clave privada}
-La clave privada está formada por $\alpha_{i,j,k}$ y $\beta_{i,k}$ que son valores de $\GF(2)$, elegidos de forma aleatoria.
+La clave privada viene dada para cada una de las $m$ ecuaciones, es decir, para cada $k$ se tiene una matriz de dimensiones $v \mathrm{x} n$, $\left(\alpha_{i,j,k}\right)_{\begin{subarray}{l}{1\leqslant i \leqslant v }\\ {i \leqslant j \leqslant n}\end{subarray}}$, y un vector de $v$ componentes, $\left(\beta_{i,k}\right)_{1\leqslant i \leqslant v }$, cuyos valores son elegidos de forma aleatoria en $\mathds{F}_2$.
 
 
 \subsubsection{Generación de la clave pública}
-Generaremos una clave pública partiendo de la clave privada $\alpha_{i,j,k}$ y $\beta_{i,k}$.
+La clave pública se va generar partiendo de la clave privada $\left(\alpha_{i,j,k}\right)_{\begin{subarray}{l}{1\leqslant i \leqslant v }\\ {i \leqslant j \leqslant n}\end{subarray}}$ y $\left(\beta_{i,k}\right)_{1\leqslant i \leqslant v }$.
 
-Para entenderlo mejor ponemos las $m$ ecuaciones (\ref{eq:fun}) en forma matricial, ecuación \ref{eq:matriz}. La notación a seguir para las matrices transpuestas es $(X)'$, con $X$ una matrix.
+Para entenderlo mejor se pasan las $m$ ecuaciones \ref{eq:fun} a forma matricial, ecuación \ref{eq:matriz}. La notación a seguir para las matrices transpuestas es $X^{\scriptscriptstyle T}$, con $X$ una matriz.
 
 \begin{equation}\label{eq:matriz} 
-f_k(x) = x^v\ [\alpha_{i,j,k}]\ (x^v, x^m)' + [\beta_{i,k}]\ (x^v, x^m)'
+	f_k(x) = x^v\ \left(\alpha_{i,j,k}\right)_{\begin{subarray}{l}{1\leqslant i \leqslant v }\\ {i \leqslant j \leqslant n}\end{subarray}}\ \left(x^v, x^m \right)^{\scriptscriptstyle T} + \left(\beta_{i,k}\right)_{1\leqslant i \leqslant v }\ \left(x^v, x^m\right)^{\scriptscriptstyle T}
 \end{equation}
-siendo $[\alpha_{i,j,k}]$ y $[\beta_{i,k}]$ las representaciones matriciales de $\alpha_{i,j,k}$ y $\beta_{i,k}$, $x^v$ los vinagres y $x^m$ los aceites, así $x$ se puede expresar como $(x^v, x^m)'$.\\
-
-Conociendo los valores de la clave privada $\alpha$ y $\beta$, tomando de forma aleatoria los del vinagre $x^v$, los cuales pasaremos a denominarlos como $a^v$, y cogiendo los $m$ primeros bits del hash del mensaje $h_k$ podemos generar la clave pública.
-
-Hacemos el cambio de notación $A_k = a^v\ [\alpha_{i,j,k}] = (A^v_k, A^m_k)$,  lo sustituimos en la ecuación (\ref{eq:matriz}) y despejamos los aceites.
-
-\begin{align}
-h_k &= A_k^v\ (a^v)' +  A_k^m\ (x^m)' + \beta_k^v\ (a^v)' + \beta_k^m\ (x^m)'\\
-\label{eq:ter-coef}
-(A_k^m + \beta_k^m) (x^m)' &= h_k - (A_k^v + \beta_k^v) (a^v)'\\
-\label{eq:despeje}
-(x^m)' &= (A_k^m + \beta_k^m)^{-1} (h_k - (A_k^v + \beta_k^v) (a^v)')
-\end{align}
-
-Si $(A_k^m + \beta_k^m)$ fuese una matriz singular, entonces se tomarían otros valores de vinagres.
+siendo $x^v$ los vinagres y $x^m$ los aceites, por tanto $x$ se puede expresar como $\big(x^v, x^m\big)^{\scriptscriptstyle T}$.\\
 
 
-Para generar la clave pública necesitamos incluir una nueva matriz $T$, donde $T \cdot s' = x'$. Incluimos esta matriz $T$ para aumentar la seguridad del algoritmo y así sea más complejo calcular la función inversa $\mathcal{P}$
+Para generar la clave pública es necesario incluir una nueva matriz $T$ con la forma que muestra la ecuación \ref{mat:T}, a esta matriz se le denomina matriz de distorsión. La matriz de distorsión se incluye para aumentar la seguridad del algoritmo y así sea más complejo calcular la función inversa $\mathcal{P}$.
 
 \begin{equation}
 	T =
-	\left[
+	\Bigg(
 	\begin{array}{c|c}
 	I_v & T_{vxm} \\
 	\hline
 	0 & I_m
 	\end{array}
-	\right]
+	\Bigg)
 	\label{mat:T}
 \end{equation}
 
-Despejando x, obtenemos:
-
-\begin{equation}\label{eq:def-x}
-	x =  s \cdot T' = s  \left[
-	\begin{array}{c|c}
-	I_v & 0 \\
-	\hline
-	T'_{v x m} & I_m
-	\end{array}
-	\right]
-	= [s^v, s^m] \left[
-	\begin{array}{c|c}
-	I_v & 0 \\
-	\hline
-	T'_{v x m} & I_m
-	\end{array}
-	\right]
-	= (s^v + s^m T'_{vxm}, s^m )
-\end{equation}
-
-Sustituimos en (\ref{eq:matriz}):
+Además la matriz de distorsión cumple la igualdad $T\cdot s^{\scriptscriptstyle T} = x ^{\scriptscriptstyle T}$, donde $s$ es la firma del mensaje, y despejando $x$ se obtiene la ecuación \ref{eq:def-x}.
 
 \begin{equation}
-	f_k(x) = s  \left[
-	\begin{array}{c}
-	I_v \\
+	x =  s \cdot T^{\scriptscriptstyle T} = s  \left(
+	\begin{array}{c|c}
+	I_v & 0 \\
 	\hline
-	T'_{v x m}
+	T^{\scriptscriptstyle T}_{v \mathrm{x} m} & I_m
 	\end{array}
-	\right] [\alpha_{i,j,k}]_{\begin{subarray}{l}{1\leqslant i \leqslant v }\\ {i \leqslant j \leqslant n}\end{subarray}}\ T \ s' + [\beta_{j,k}]_{1\leqslant j\leqslant n}\ T\ s'
+	\right)
+	= \left(s^v, s^m\right) \left(
+	\begin{array}{c|c}
+	I_v & 0 \\
+	\hline
+	T^{\scriptscriptstyle T}_{v \mathrm{x} m} & I_m
+	\end{array}
+	\right)
+	= \left(s^v + s^m T^{\scriptscriptstyle T}_{v\mathrm{x}m}, s^m \right)
+	\label{eq:def-x}
+\end{equation}
+
+Sustituyendo la anterior definición de $x$ en la ecuación (\ref{eq:matriz}), se llega a la ecuación \ref{eq:sus-def-x}.
+
+\begin{equation}
+	f_k(x) = s  
+	\left(\begin{array}{c}
+		I_v \\
+		\hline
+		T^{\scriptscriptstyle T}_{v \mathrm{x} m}
+	\end{array}\right)
+	\left(\alpha_{i,j,k}\right)_{\begin{subarray}{l}{1\leqslant i \leqslant v }\\ {i \leqslant j \leqslant n}\end{subarray}}\ T \ s^{\scriptscriptstyle T} + 
+	\left(\beta_{j,k}\right)_{1\leqslant j\leqslant n}\ T\ s^{\scriptscriptstyle T}
+	\label{eq:sus-def-x}
 \end{equation}
 donde $k \in \{1,...,m\}$
 
-Así obtenemos las claves públicas definidas para cada $k$
+De esta forma obtenemos las dos parte de la clave pública definidas para cada $k$.
 
 \begin{itemize}
-	\item ${\alpha_{pub}}_k = \left[
+	\item ${\alpha_{pub}}_k = \left(
 	\begin{array}{c}
 	I_v \\
 	\hline
 	T'_{v x m}
 	\end{array}
-	\right] [\alpha_{i,j,k}]_{\begin{subarray}{l}{1 \leqslant i\leqslant v }\\ {i\leqslant j \leqslant n}\end{subarray}} \ T$
+	\right) \left(\alpha_{i,j,k}\right)_{\begin{subarray}{l}{1 \leqslant i\leqslant v }\\ {i\leqslant j \leqslant n}\end{subarray}} \ T$
 	
-	\item ${\beta_{pub}}_k = [\beta_{j,k}]_{1\leqslant j\leqslant n}\ T$
-
+	\item ${\beta_{pub}}_k = \left(\beta_{j,k}\right)_{1\leqslant j\leqslant n}\ T$
 \end{itemize}
 
 
 \subsubsection{Algoritmo de firma}
 
-Gracias a la definición dada de $x$, en la ecuación \ref{eq:def-x}, podemos hacer un simple despeje y calcular $s$. Esto se debe a que el sistema de ecuaciones se vuelve lineal cuando las variables de vinagre son fijas y además ninguna variable de aceite se multiplica por otra de aceite en la ecuación. Por tanto se puede calcular usando, por ejemplo, el algoritmo de reducción gaussiano.
+Para calcular la firma es necesario conocer los valores de la clave privada $\alpha$ y $\beta$, tomar de forma aleatoria los del vinagre $x^v$, puesto que estos son fijos y no variables pasarán a denominarse como $a^v$, y coger los $m$ primeros bits del \textit{hash} del mensaje $h_k$.
+
+Para facilitar los cálculos se multiplican los vinagres por $\alpha$ y se obtiene \mbox{$A_k = a^v\ \left(\alpha_{i,j,k}\right)_{\begin{subarray}{l}{1 \leqslant i\leqslant v }\\ {i\leqslant j \leqslant n}\end{subarray}} = \left(A^v_k, A^m_k\right)$}. Si se sustituye este resultado en la ecuación \ref{eq:matriz} y se despejan los aceites, se llega a la ecuación \ref{eq:despeje}. Este despeje se puede realizar sin problema, debido a que el sistema de ecuaciones se vuelve lineal cuando las variables de vinagre son fijas y ninguna variable de aceite se multiplica por otra de aceite. Por tanto se puede resolver usando, por ejemplo, el algoritmo de reducción gaussiano.
+
+\begin{align}
+h_k &= A_k^v\ (a^v)^{\scriptscriptstyle T} +  A_k^m\ (x^m)^{\scriptscriptstyle T} + \beta_k^v\ (a^v)^{\scriptscriptstyle T} + \beta_k^m\ (x^m)^{\scriptscriptstyle T}\\
+\label{eq:ter-coef}
+(A_k^m + \beta_k^m) (x^m)^{\scriptscriptstyle T} &= h_k - (A_k^v + \beta_k^v) (a^v)^{\scriptscriptstyle T}\\
+\label{eq:despeje}
+(x^m)^{\scriptscriptstyle T} &= (A_k^m + \beta_k^m)^{-1} (h_k - (A_k^v + \beta_k^v) (a^v)^{\scriptscriptstyle T})
+\end{align}
+Si $(A_k^m + \beta_k^m)$ fuese una matriz singular, entonces se tomarían otros valores de vinagres.
+
+De esta forma se han calculado los aceites, esto es, las últimas $m$ componentes del vector $x$. Para calcular la firma, $s$, se hace uso de la definición de $x$  dada en la ecuación \ref{eq:def-x}, puesto que solo es necesario realizar un simple despeje. Por otro lado, se tiene que  que $T$ es igual a su inversa, gracias a la definición de $T$ y teniendo en cuenta que la matriz toma valores en $\mathds{F}_2$.
 
 \begin{equation}\label{eq:firma}
-	s = x \cdot T'^{-1}
+	s = x \cdot {T^{\scriptscriptstyle T}}^{-1} = x \cdot T ^{\scriptscriptstyle T}
 \end{equation}
-
-donde $x = (x^v, x^m)$ con $x^v$ son los vinagres aleatorios y $x^m$ los aceites que hemos calculado en la ecuación (\ref{eq:despeje}).
+donde $x = \big(x^v, x^m\big)$ con $x^v$ son los vinagres aleatorios y $x^m$ los aceites.
 
 
 
@@ -446,7 +445,7 @@ Para comprobar que el mensaje es correcto y que no ha sufrido ninguna transforma
 
 
 \begin{equation}\label{eq:veri}
-	h_k = \ {\alpha_{pub}}_k \ s' + {\beta_{pub}}_{k} \ s'
+	h_k = \ {\alpha_{pub}}_k \ s^{\scriptscriptstyle T} + {\beta_{pub}}_{k} \ s^{\scriptscriptstyle T}
 \end{equation}
 
 \subsubsection{Ejemplo}
@@ -456,47 +455,45 @@ A continuación se muestra un ejemplo para mejor comprensión del algoritmo \acr
 Generamos la clave privada con valores aleatorios. Notamos que las matrices del vector $\alpha_{priv}$, ecuación \ref{eq:ej-alpha-priv}, son matrices triangulares superiores de dimensión $3\ \mathrm{x}\ 6$, esto es dimensión $m\ \mathrm{x}\ n$. Además el número de matrices es $3$ el valor de $v$.
 
 \begin{equation}\label{eq:ej-alpha-priv}
-{\alpha_{priv}} = \left[
-	\begin{array}{c}
-	\left[\begin{array}{c}
-		1\ 0\ 1\ 1\ 1\ 0\\
-		0\ 0\ 0\ 0\ 1\ 1\\
-		0\ 0\ 0\ 1\ 1\ 1
-	\end{array}\right]
+{\alpha_{priv}} = 
+	\Bigg(\begin{matrix}
+	\Big(\begin{smallmatrix}
+		1 & 0 & 1 & 1 & 1 & 0\\
+		0 & 0 & 0 & 0 & 1 & 1\\
+		0 & 0 & 0 & 1 & 1 & 1
+	\end{smallmatrix}\Big)
 		
-	\left[\begin{array}{c}
-		1\ 1\ 0\ 1\ 1\ 0\\
-		0\ 0\ 1\ 1\ 1\ 0\\
-		0\ 0\ 1\ 1\ 1\ 1
-	\end{array}\right]
+	\Big(\begin{smallmatrix}
+		1 & 1 & 0 & 1 & 1 & 0\\
+		0 & 0 & 1 & 1 & 1 & 0\\
+		0 & 0 & 1 & 1 & 1 & 1
+	\end{smallmatrix}\Big)
 	
-	\left[\begin{array}{c}
-		0\ 0\ 0\ 1\ 0\ 0\\
-		0\ 0\ 1\ 1\ 0\ 1\\
-		0\ 0\ 0\ 0\ 1\ 1\\
-	\end{array}\right]
-	\end{array}
-	\right]
+	\Big(\begin{smallmatrix}
+		0 & 0 & 0 & 1 & 0 & 0\\
+		0 & 0 & 1 & 1 & 0 & 1\\
+		0 & 0 & 0 & 0 & 1 & 1
+	\end{smallmatrix}\Big)
+	\end{matrix}\Bigg)
 \end{equation}
 
 La segunda parte de la clave privada es $\beta_{priv}$, consta de un vector de $3$ vectores, donde cada uno tiene $n$ componentes, esto es $6$ componentes, ecuación \ref{eq:ej-beta-priv}.
 
 \begin{equation}\label{eq:ej-beta-priv}
-{\beta_{priv}} = \left[
-	\begin{array}{c}
-	\left[\begin{array}{c}
-		1\ 0\ 0\ 1\ 0\ 0
-	\end{array}\right]
+{\beta_{priv}} = 
+	\left(\begin{matrix}
+		\left(\begin{smallmatrix}
+			1 & 0 & 0 & 1 & 0 & 0
+		\end{smallmatrix}\right)
 	
-	\left[\begin{array}{c}
-		0\ 0\ 1\ 0\ 1\ 0
-	\end{array}\right]
+		\left(\begin{smallmatrix}
+			0 & 0 & 1 & 0 & 1 & 0
+		\end{smallmatrix}\right)
 	
-	\left[\begin{array}{c}
-		1\ 1\ 0\ 1\ 0\ 1
-	\end{array}\right]
-	\end{array}
-	\right]
+		\left(\begin{smallmatrix}
+			1 & 1 & 0 & 1 & 0 & 1
+		\end{smallmatrix}\right)
+	\end{matrix}\right)
 \end{equation}
 
 
@@ -504,7 +501,7 @@ La forma de la matriz T viene dada por la ecuación \ref{mat:T}, la del ejemplo 
 
 \begin{equation}\label{eq:ej-T}
 {T} =
-	\left[\begin{array}{c|c}
+	\left(\begin{array}{c|c}
 	\\
 	\ \ \ \ \ I_3\ \ \ \ & \ \ \ \ T_{3\mathrm{x}3} \ \ \  \\
 	\\
@@ -512,8 +509,8 @@ La forma de la matriz T viene dada por la ecuación \ref{mat:T}, la del ejemplo 
 	\\
 	0 & I_3\\
 	\\
-	\end{array}\right] =
-	\left[\begin{array}{c|c}
+	\end{array}\right) =
+	\left(\begin{array}{c|c}
 		1\ \ 0\ \ 0\ & 0\ \ 0\ \ 0\\
 		0\ \ 1\ \ 0\ & 0\ \ 0\ \ 1\\
 		0\ \ 0\ \ 1\ & 1\ \ 0\ \ 1\\
@@ -521,7 +518,7 @@ La forma de la matriz T viene dada por la ecuación \ref{mat:T}, la del ejemplo 
 		0\ \ 0\ \ 0\ & 1\ \ 0\ \ 0\\
 		0\ \ 0\ \ 0\ & 0\ \ 1\ \ 0\\
 		0\ \ 0\ \ 0\ & 0\ \ 0\ \ 1
-	\end{array}\right]	
+	\end{array}\right)
 \end{equation}
 
 
@@ -530,23 +527,23 @@ Clave pública consta de dos partes $\alpha_{pub}$ y $\beta_{pub}$. Cada  compon
 \begin{equation}\label{eq:ej-alpha-pub-1}
 	\begin{aligned}
 	{{\alpha_{pub}}_1}  & =  
-	\left[\begin{array}{c}
-		1\ 0\ 0\\
-		0\ 1\ 0\\
-		0\ 0\ 1\\
+	\begin{pmatrix}
+		1 & 0 & 0\\
+		0 & 1 & 0\\
+		0 & 0 & 1\\
 		\hline
-		0\ 0\ 1\\
-		0\ 0\ 0\\
-		0\ 1\ 1
-	\end{array}\right]
+		0 & 0 & 1\\
+		0 & 0 & 0\\
+		0 & 1 & 1
+	\end{pmatrix}
 	\cdot
-	\left[\begin{array}{c}
-		1\ 0\ 1\ 1\ 1\ 0\\
-		0\ 0\ 0\ 0\ 1\ 1\\
-		0\ 0\ 0\ 1\ 1\ 1
-	\end{array}\right]
+	\begin{pmatrix}
+		1 & 0 & 1 & 1 & 1 & 0\\
+		0 & 0 & 0 & 0 & 1 & 1\\
+		0 & 0 & 0 & 1 & 1 & 1
+	\end{pmatrix}
 	\cdot
-	\left[\begin{array}{c|c}
+	\left(\begin{array}{c|c}
 		1\ \ 0\ \ 0\ & 0\ \ 0\ \ 0\\
 		0\ \ 1\ \ 0\ & 0\ \ 0\ \ 1\\
 		0\ \ 0\ \ 1\ & 1\ \ 0\ \ 1\\
@@ -554,8 +551,8 @@ Clave pública consta de dos partes $\alpha_{pub}$ y $\beta_{pub}$. Cada  compon
 		0\ \ 0\ \ 0\ & 1\ \ 0\ \ 0\\
 		0\ \ 0\ \ 0\ & 0\ \ 1\ \ 0\\
 		0\ \ 0\ \ 0\ & 0\ \ 0\ \ 1
-	\end{array}\right] \\
-	& = \left[\begin{array}{c|c}
+	\end{array}\right) \\
+	& = \left(\begin{array}{c|c}
 		1\ \ 0\ \ 1\ & 1\ \ 1\ \ 0\\
 		0\ \ 0\ \ 0\ & 0\ \ 1\ \ 1\\
 		0\ \ 0\ \ 0\ & 1\ \ 1\ \ 1\\
@@ -563,9 +560,9 @@ Clave pública consta de dos partes $\alpha_{pub}$ y $\beta_{pub}$. Cada  compon
 		0\ \ 0\ \ 0\ & 1\ \ 1\ \ 1\\
 		0\ \ 0\ \ 0\ & 0\ \ 0\ \ 0\\
 		0\ \ 0\ \ 0\ & 1\ \ 0\ \ 0\\
-	\end{array}\right]
+	\end{array}\right)
 	\cdot
-	\left[\begin{array}{c|c}
+	\left(\begin{array}{c|c}
 		1\ \ 0\ \ 0\ & 0\ \ 0\ \ 0\\
 		0\ \ 1\ \ 0\ & 0\ \ 0\ \ 1\\
 		0\ \ 0\ \ 1\ & 1\ \ 0\ \ 1\\
@@ -573,15 +570,15 @@ Clave pública consta de dos partes $\alpha_{pub}$ y $\beta_{pub}$. Cada  compon
 		0\ \ 0\ \ 0\ & 1\ \ 0\ \ 0\\
 		0\ \ 0\ \ 0\ & 0\ \ 1\ \ 0\\
 		0\ \ 0\ \ 0\ & 0\ \ 0\ \ 1
-	\end{array}\right]\\
-	& = \left[\begin{array}{c}
-		1\ \ 0\ \ 1\ \ 0\ \ 1\ \ 1\\
-		0\ \ 0\ \ 0\ \ 0\ \ 1\ \ 1\\
-		0\ \ 0\ \ 0\ \ 1\ \ 1\ \ 1\\
-		0\ \ 0\ \ 0\ \ 1\ \ 1\ \ 1\\
-		0\ \ 0\ \ 0\ \ 0\ \ 0\ \ 0\\
-		0\ \ 0\ \ 0\ \ 1\ \ 0\ \ 0
-	\end{array}\right]
+	\end{array}\right)\\
+	& = \begin{pmatrix}
+		1 & 0 & 1 & 0 & 1 & 1\\
+		0 & 0 & 0 & 0 & 1 & 1\\
+		0 & 0 & 0 & 1 & 1 & 1\\
+		0 & 0 & 0 & 1 & 1 & 1\\
+		0 & 0 & 0 & 0 & 0 & 0\\
+		0 & 0 & 0 & 1 & 0 & 0
+	\end{pmatrix}
 	\end{aligned}
 \end{equation}
 
@@ -589,47 +586,46 @@ De la misma forma se obtiene ${\alpha_{pub}}_2$ y ${\alpha_{pub}}_3$, así la ec
 
 
 \begin{equation}\label{eq:ej-alpha-pub}
-{\alpha_{pub}} = \left[
-	\begin{array}{c}
-	\left[\begin{array}{c}
-		1\ \ 0\ \ 1\ \ 0\ \ 1\ \ 1\\
-		0\ \ 0\ \ 0\ \ 0\ \ 1\ \ 1\\
-		0\ \ 0\ \ 0\ \ 1\ \ 1\ \ 1\\
-		0\ \ 0\ \ 0\ \ 1\ \ 1\ \ 1\\
-		0\ \ 0\ \ 0\ \ 0\ \ 0\ \ 0\\
-		0\ \ 0\ \ 0\ \ 1\ \ 0\ \ 0
-	\end{array}\right]
+{\alpha_{pub}} = 
+	\begin{pmatrix}
+	\left(\begin{smallmatrix}
+		1 & 0 & 1 & 0 & 1 & 1\\
+		0 & 0 & 0 & 0 & 1 & 1\\
+		0 & 0 & 0 & 1 & 1 & 1\\
+		0 & 0 & 0 & 1 & 1 & 1\\
+		0 & 0 & 0 & 0 & 0 & 0\\
+		0 & 0 & 0 & 1 & 0 & 0
+	\end{smallmatrix}\right)
 		
-	\left[\begin{array}{c}
-		1\ \ 1\ \ 0\ \ 1\ \ 1\ \ 1\\
-		0\ \ 0\ \ 1\ \ 0\ \ 1\ \ 1\\
-		0\ \ 0\ \ 1\ \ 0\ \ 1\ \ 0\\
-		0\ \ 0\ \ 1\ \ 0\ \ 1\ \ 0\\
-		0\ \ 0\ \ 0\ \ 0\ \ 0\ \ 0\\
-		0\ \ 0\ \ 0\ \ 0\ \ 0\ \ 1
-	\end{array}\right]
+	\left(\begin{smallmatrix}
+		1 & 1 & 0 & 1 & 1 & 1\\
+		0 & 0 & 1 & 0 & 1 & 1\\
+		0 & 0 & 1 & 0 & 1 & 0\\
+		0 & 0 & 1 & 0 & 1 & 0\\
+		0 & 0 & 0 & 0 & 0 & 0\\
+		0 & 0 & 0 & 0 & 0 & 1
+	\end{smallmatrix}\right)
 	
-	\left[\begin{array}{c}
-		0\ \ 0\ \ 0\ \ 1\ \ 0\ \ 0\\
-		0\ \ 0\ \ 1\ \ 0\ \ 0\ \ 0\\
-		0\ \ 0\ \ 0\ \ 0\ \ 1\ \ 1\\
-		0\ \ 0\ \ 0\ \ 0\ \ 1\ \ 1\\
-		0\ \ 0\ \ 0\ \ 0\ \ 0\ \ 0\\
-		0\ \ 0\ \ 1\ \ 0\ \ 1\ \ 1
-	\end{array}\right]
-	\end{array}
-	\right]
+	\left(\begin{smallmatrix}
+		0 & 0 & 0 & 1 & 0 & 0\\
+		0 & 0 & 1 & 0 & 0 & 0\\
+		0 & 0 & 0 & 0 & 1 & 1\\
+		0 & 0 & 0 & 0 & 1 & 1\\
+		0 & 0 & 0 & 0 & 0 & 0\\
+		0 & 0 & 1 & 0 & 1 & 1
+	\end{smallmatrix}\right)
+	\end{pmatrix}
 \end{equation}
 
-\newpage
+
 Ahora se calcula $\beta_{pub}$ para ello se va a realizar el cálculo de la primera componente del vector ${\beta_{pub}}_1$ a modo de ejemplo, multiplicando la primera componente de $\beta_{priv}$ por $T$, ecuación \ref{eq:ej-beta-pub-1}.
 
 \begin{equation}\label{eq:ej-beta-pub-1}
 	{{\beta_{pub}}_1} = 
-	\left[\begin{array}{c}
-		1\ 0\ 0\ 1\ 0\ 0
-	\end{array}\right] \cdot
-	\left[\begin{array}{c|c}
+	\left(\begin{matrix}
+		1 & 0 & 0 & 1 & 0 & 0
+	\end{matrix}\right) \cdot
+	\left(\begin{array}{c|c}
 		1\ \ 0\ \ 0\ & 0\ \ 0\ \ 0\\
 		0\ \ 1\ \ 0\ & 0\ \ 0\ \ 1\\
 		0\ \ 0\ \ 1\ & 1\ \ 0\ \ 1\\
@@ -637,116 +633,116 @@ Ahora se calcula $\beta_{pub}$ para ello se va a realizar el cálculo de la prim
 		0\ \ 0\ \ 0\ & 1\ \ 0\ \ 0\\
 		0\ \ 0\ \ 0\ & 0\ \ 1\ \ 0\\
 		0\ \ 0\ \ 0\ & 0\ \ 0\ \ 1
-	\end{array}\right] =
-	\left[\begin{array}{c}
-	1\ \ 0\ \ 0\ \ 1\ \ 0\ \ 0
-	\end{array}\right]
+	\end{array}\right) =
+	\left(\begin{matrix}
+	1 & 0 & 0 & 1 & 0 & 0
+	\end{matrix}\right)
 \end{equation}
 
 De manera análoga se calculan el resto de componentes, ${\beta_{pub}}_2$ y ${\beta_{pub}}_3$, para obtener el vector completo $\beta_{pub}$, ecuación \ref{eq:ej-beta-pub}.
 
 \begin{equation}\label{eq:ej-beta-pub}
-{\beta_{pub}} = \left[
-	\begin{array}{c}
-	\left[\begin{array}{c}
-		1\ 0\ 0\ 1\ 0\ 0
-	\end{array}\right]
+{\beta_{pub}} = 
+	\left(\begin{matrix}
+		\left(\begin{smallmatrix}
+			1 & 0 & 0 & 1 & 0 & 0
+		\end{smallmatrix}\right)
 	
-	\left[\begin{array}{c}
-		0\ 0\ 1\ 1\ 1\ 1
-	\end{array}\right]
+		\left(\begin{smallmatrix}
+			0 & 0 & 1 & 1 & 1 & 1
+		\end{smallmatrix}\right)
 	
-	\left[\begin{array}{c}
-		1\ 1\ 0\ 1\ 0\ 0
-	\end{array}\right]
-	\end{array}
-	\right]
+		\left(\begin{smallmatrix}
+			1 & 1 & 0 & 1 & 0 & 0
+		\end{smallmatrix}\right)
+	\end{matrix}\right)
 \end{equation}
 
 Llegados a este punto comienza el proceso de firma del mensaje, en este caso el mensaje al que se le va a realizar la firma es \texttt{"{}Este mensaje es un mensaje de prueba. Quiero se sea un poco largo para que se aprecie el efecto de la función hash"{}}, el hash de dicho mensaje calculado con la función \texttt{sha256} es \texttt{"{}c2f"{}}, la ecuación \ref{eq:ej-hash} contiene el \textit{hash} en $\GF(128)$.
 
 \begin{equation}\label{eq:ej-hash}
 	{hash} = 
-	\left[\begin{array}{c}
-		\left[\begin{array}{c}
-			0,\ 0,\ 0,\ 1,\ 1,\ 0,\ 0
-		\end{array}\right]
-		\left[\begin{array}{c}
-			0,\ 0,\ 0,\ 0,\ 0,\ 1,\ 0
-		\end{array}\right]
-		\left[\begin{array}{c}
-			0,\ 0,\ 0,\ 1,\ 1,\ 1,\ 1
-		\end{array}\right]
-	\end{array}\right]
+	\left(\begin{matrix}
+		\left(\begin{smallmatrix}
+			0 & 0 & 0 & 1 & 1 & 0 & 0
+		\end{smallmatrix}\right)
+		
+		\left(\begin{smallmatrix}
+			0 & 0 & 0 & 0 & 0 & 1 & 0
+		\end{smallmatrix}\right)
+		
+		\left(\begin{smallmatrix}
+			0 & 0 & 0 & 1 & 1 & 1 & 1
+		\end{smallmatrix}\right)
+	\end{matrix}\right)
 \end{equation}
 
 Los vinagres se han tomado de forma aleatoria, ecuación \ref{eq:ej-vinegar}. 
 
 \begin{equation}\label{eq:ej-vinegar}
-{a^v} = \left[
-	\begin{array}{c}
-	\left[\begin{array}{c}
-		0,\ 1,\ 1,\ 0,\ 1,\ 0,\ 0
-	\end{array}\right]
+{a^v} = 
+	\left(\begin{matrix}
+		\left(\begin{smallmatrix}
+			0 & 1 & 1 & 0 & 1 & 0 & 0
+		\end{smallmatrix}\right)
 	
-	\left[\begin{array}{c}
-		1,\ 1,\ 1,\ 1,\ 1,\ 0,\ 0
-	\end{array}\right]
+		\left(\begin{smallmatrix}
+			1 & 1 & 1 & 1 & 1 & 0 & 0
+		\end{smallmatrix}\right)
 	
-	\left[\begin{array}{c}
-		1,\ 1,\ 1,\ 1,\ 0,\ 0,\ 1
-	\end{array}\right]
-	\end{array}
-	\right]
+		\left(\begin{smallmatrix}
+			1 & 1 & 1 & 1 & 0 & 0 & 1
+		\end{smallmatrix}\right)
+	\end{matrix}\right)
 \end{equation}
 
 La $k-ésima$ matriz del vector $A$ es el resultado de multiplicar el vinagre por la matriz ${\alpha_{priv}}_k$ donde $k$ se mueve entre $1$ y $3$, para lo cual, es necesario extender los componentes de las matrices de $\alpha_{priv}$, que se encuentran en $\GF(2)$, al cuerpo $\GF(128)$. En el ejemplo no se ha puesto la matriz extendida para entender mejor la multiplicación y no perderse con los vectores, finalmente la multiplicación será el vector nulo si se multiplica por $0$ o el mismo vector cuando se multiplique por $1$.
 
 \begin{equation}\label{eq:ej-A-1}
 	\begin{aligned}
-	{A_1} & = \left[\begin{array}{c}
-		\left[\begin{array}{c}
-			0, 1, 1, 0, 1, 0, 0
-		\end{array}\right]
+	{A_1} & = 
+		\left(\begin{matrix}
+			\left(\begin{smallmatrix}
+				0 & 1 & 1 & 0 & 1 & 0 & 0
+			\end{smallmatrix}\right)
 	
-		\left[\begin{array}{c}
-			1, 1, 1, 1, 1, 0, 0
-		\end{array}\right]
-		\left[\begin{array}{c}
-			1, 1, 1, 1, 0, 0, 1
-		\end{array}\right]
-		\end{array}\right]
+			\left(\begin{smallmatrix}
+				1 & 1 & 1 & 1 & 1 & 0 & 0
+			\end{smallmatrix}\right)
+		
+			\left(\begin{smallmatrix}
+				1 & 1 & 1 & 1 & 0 & 0 & 1
+			\end{smallmatrix}\right)
+		\end{matrix}\right)
 		\cdot
-		\left[\begin{array}{c}
-			1\ 0\ 1\ 1\ 1\ 0\\
-			0\ 0\ 0\ 0\ 1\ 1\\
-			0\ 0\ 0\ 1\ 1\ 1
-		\end{array}\right]\\
-		& = \left[\begin{array}{c}
-				\left[\begin{array}{c}
-					0, 1, 1, 0, 1, 0, 0
-				\end{array}\right]
+		\left(\begin{smallmatrix}
+			1 & 0 & 1 & 1 & 1 & 0\\
+			0 & 0 & 0 & 0 & 1 & 1\\
+			0 & 0 & 0 & 1 & 1 & 1
+		\end{smallmatrix}\right)\\
+		& = \left(\begin{matrix}
+				\left(\begin{smallmatrix}
+					0 & 1 & 1 & 0 & 1 & 0 & 0
+				\end{smallmatrix}\right)
 		
-				\left[\begin{array}{c}
-					0, 0, 0, 0, 0, 0, 0
-				\end{array}\right]
+				\left(\begin{smallmatrix}
+					0 & 0 & 0 & 0 & 0 & 0 & 0
+				\end{smallmatrix}\right)
 		
-				\left[\begin{array}{c}
-					0, 1, 1, 0, 1, 0, 0
-				\end{array}\right]
-			\end{array}\right. \\
-			&
-			\left. \begin{array}{c}
-				\left[\begin{array}{c}
-					1, 0, 0, 1, 1, 0, 1
-				\end{array}\right]
-				\left[\begin{array}{c}
-					0, 1, 1, 0, 0, 0, 1
-				\end{array}\right]
-				\left[\begin{array}{c}
-					0, 0, 0, 0, 1, 0, 1
-				\end{array}\right]
-			\end{array}\right]
+				\left(\begin{smallmatrix}
+					0 & 1 & 1 & 0 & 1 & 0 & 0
+				\end{smallmatrix}\right)
+			
+				\left(\begin{smallmatrix}
+					1 & 0 & 0 & 1 & 1 & 0 & 1
+				\end{smallmatrix}\right)
+				\left(\begin{smallmatrix}
+					0 & 1 & 1 & 0 & 0 & 0 & 1
+				\end{smallmatrix}\right)
+				\left(\begin{smallmatrix}
+					0 & 0 & 0 & 0 & 1 & 0 & 1
+				\end{smallmatrix}\right)
+			\end{matrix}\right)
 	\end{aligned}
 \end{equation}
 
@@ -754,139 +750,139 @@ Calculando el resto de las componentes se obtiene la matriz $A$, ecuación \ref{
 
 \begin{equation}\label{eq:ej-A}
 	\begin{aligned}
-	{A} = & \left[\begin{array}{c}\left[\begin{array}{c}
-				\left[\begin{array}{c}
-					0, 1, 1, 0, 1, 0, 0
-				\end{array}\right]
+	{A} = & \bigg(\begin{matrix}\left(\begin{matrix}
+				\left(\begin{smallmatrix}
+					0 & 1 & 1 & 0 & 1 & 0 & 0
+				\end{smallmatrix}\right)
 		
-				\left[\begin{array}{c}
-					0, 0, 0, 0, 0, 0, 0
-				\end{array}\right]
+				\left(\begin{smallmatrix}
+					0 & 0 & 0 & 0 & 0 & 0 & 0
+				\end{smallmatrix}\right)
 		
-				\left[\begin{array}{c}
-					0, 1, 1, 0, 1, 0, 0
-				\end{array}\right]
-			\end{array}\right.\end{array}\right. \\
+				\left(\begin{smallmatrix}
+					0 & 1 & 1 & 0 & 1 & 0 & 0
+				\end{smallmatrix}\right)
+			
+				\left(\begin{smallmatrix}
+					1 & 0 & 0 & 1 & 1 & 0 & 1
+				\end{smallmatrix}\right)
+				
+				\left(\begin{smallmatrix}
+					0 & 1 & 1 & 0 & 0 & 0 & 1
+				\end{smallmatrix}\right)
+				
+				\left(\begin{smallmatrix}
+					0 & 0 & 0 & 0 & 1 & 0 & 1
+				\end{smallmatrix}\right)
+			\end{matrix}\right)\end{matrix}\bigg.\\
 			&
-			\left. \begin{array}{c}\left. \begin{array}{c}
-				\left[\begin{array}{c}
-					1, 0, 0, 1, 1, 0, 1
-				\end{array}\right]
-				\left[\begin{array}{c}
-					0, 1, 1, 0, 0, 0, 1
-				\end{array}\right]
-				\left[\begin{array}{c}
-					0, 0, 0, 0, 1, 0, 1
-				\end{array}\right]
-			\end{array}\right]\end{array}\right.\\
-			&
-			\left.\begin{array}{c}\left[\begin{array}{c}
-				\left[\begin{array}{c}
-					0, 1, 1, 0, 1, 0, 0
-				\end{array}\right]
+			\bigg.\begin{matrix}\left(\begin{matrix}
+				\left(\begin{smallmatrix}
+					0 & 1 & 1 & 0 & 1 & 0 & 0
+				\end{smallmatrix}\right)
 		
-				\left[\begin{array}{c}
-					0, 1, 1, 0, 1, 0, 0
-				\end{array}\right]
+				\left(\begin{smallmatrix}
+					0 & 1 & 1 & 0 & 1 & 0 & 0
+				\end{smallmatrix}\right)
 		
-				\left[\begin{array}{c}
-					0, 0, 0, 0, 1, 0, 1
-				\end{array}\right]
-			\end{array}\right.\end{array}\right. \\
-			&
-			\left.\begin{array}{c}\left. \begin{array}{c}
-				\left[\begin{array}{c}
-					0, 1, 1, 0, 0, 0, 1
-				\end{array}\right]
-				\left[\begin{array}{c}
-					0, 1, 1, 0, 0, 0, 1
-				\end{array}\right]
-				\left[\begin{array}{c}
-					1, 1, 1, 1, 0, 0, 1
-				\end{array}\right]
-			\end{array}\right]\end{array}\right.\\
-			& \left.\begin{array}{c}\left[\begin{array}{c}
-				\left[\begin{array}{c}
-					0, 0, 0, 0, 0, 0, 0
-				\end{array}\right]
+				\left(\begin{smallmatrix}
+					0 & 0 & 0 & 0 & 1 & 0 & 1
+				\end{smallmatrix}\right)
+				
+				\left(\begin{smallmatrix}
+					0 & 1 & 1 & 0 & 0 & 0 & 1
+				\end{smallmatrix}\right)
+				
+				\left(\begin{smallmatrix}
+					0 & 1 & 1 & 0 & 0 & 0 & 1
+				\end{smallmatrix}\right)
+				
+				\left(\begin{smallmatrix}
+					1 & 1 & 1 & 1 & 0 & 0 & 1
+				\end{smallmatrix}\right)
+			\end{matrix}\right)\end{matrix}\bigg.\\
+			& \bigg.\begin{matrix}\left(\begin{matrix}
+				\left(\begin{smallmatrix}
+					0 & 0 & 0 & 0 & 0 & 0 & 0
+				\end{smallmatrix}\right)
 		
-				\left[\begin{array}{c}
-					0, 0, 0, 0, 0, 0, 0
-				\end{array}\right]
+				\left(\begin{smallmatrix}
+					0 & 0 & 0 & 0 & 0 & 0 & 0
+				\end{smallmatrix}\right)
 		
-				\left[\begin{array}{c}
-					1, 1, 1, 1, 1, 0, 0
-				\end{array}\right]
-			\end{array}\right. \end{array}\right.\\
-			&
-			\left.\begin{array}{c}\left. \begin{array}{c}
-				\left[\begin{array}{c}
-					1, 0, 0, 1, 0, 0, 0
-				\end{array}\right]
-				\left[\begin{array}{c}
-					1, 1, 1, 1, 0, 0, 1
-				\end{array}\right]
-				\left[\begin{array}{c}
-					0, 0, 0, 0, 1, 0, 1
-				\end{array}\right]
-			\end{array}\right]\end{array}\right]\\
+				\left(\begin{smallmatrix}
+					1 & 1 & 1 & 1 & 1 & 0 & 0
+				\end{smallmatrix}\right)
+				
+				\left(\begin{smallmatrix}
+					1 & 0 & 0 & 1 & 0 & 0 & 0
+				\end{smallmatrix}\right)
+				
+				\left(\begin{smallmatrix}
+					1 & 1 & 1 & 1 & 0 & 0 & 1
+				\end{smallmatrix}\right)
+				
+				\left(\begin{smallmatrix}
+					0 & 0 & 0 & 0 & 1 & 0 & 1
+				\end{smallmatrix}\right)
+			\end{matrix}\right)\end{matrix}\bigg)\\
 	\end{aligned}	
 \end{equation}
 
-Los coeficientes se obtienen de la suma de las últimas $m$ componenetes, en este caso las $3$ últimas, de cada $A_k$ con ${\beta_{priv}}_k$. Pero tenemos el mismo problema de antes, puesto que los coeficientes de $A_k$ pertenecen a $\GF(128)$ y los coeficientes de ${\beta_{priv}}_k$ se encuentra en $\GF(2)$, por tanto lo que vamos a sumar es $0$ o $1$, o lo que es lo mismo realizar la operación lógica $XOR$ con los elementos $[0,0,0,0,0,0,0]$ o $[0,0,0,0,0,0,1]$, ecuación \ref{eq:ej-coef}.
+Los coeficientes se obtienen de la suma de las últimas $m$ componenetes, en este caso las $3$ últimas, de cada $A_k$ con ${\beta_{priv}}_k$. Pero tenemos el mismo problema de antes, puesto que los coeficientes de $A_k$ pertenecen a $\GF(128)$ y los coeficientes de ${\beta_{priv}}_k$ se encuentra en $\GF(2)$, por tanto lo que vamos a sumar es $0$ o $1$, o lo que es lo mismo realizar la operación lógica $XOR$ con los elementos $\left(\begin{smallmatrix}0 & 0 & 0 & 0 & 0 & 0 & 0\end{smallmatrix}\right)$ o $\left(\begin{smallmatrix}0 & 0 & 0 & 0 & 0 & 0 & 1\end{smallmatrix}\right)$, ecuación \ref{eq:ej-coef}.
 
 \begin{equation}\label{eq:ej-coef}
 	{coef} =
-	\left[\begin{array}{c}
-		\left[\begin{array}{c}
-			\left[\begin{array}{c}1,\ 0,\ 0,\ 1,\ 1,\ 0,\ 0\end{array}\right]\\
-			\left[\begin{array}{c}0,\ 1,\ 1,\ 0,\ 0,\ 0,\ 1\end{array}\right]\\
-			\left[\begin{array}{c}0,\ 0,\ 0,\ 0,\ 1,\ 0,\ 1\end{array}\right]
-		\end{array}\right]
-		\left[\begin{array}{c}
-			\left[\begin{array}{c}0,\ 1,\ 1,\ 0,\ 0,\ 0,\ 1\end{array}\right]\\
-			\left[\begin{array}{c}0,\ 1,\ 1,\ 0,\ 0,\ 0,\ 0\end{array}\right]\\
-			\left[\begin{array}{c}1,\ 1,\ 1,\ 1,\ 0,\ 0,\ 1\end{array}\right]
-		\end{array}\right]
-		\left[\begin{array}{c}
-			\left[\begin{array}{c}1,\ 0,\ 0,\ 1,\ 0,\ 0,\ 1\end{array}\right]\\
-			\left[\begin{array}{c}1,\ 1,\ 1,\ 1,\ 0,\ 0,\ 1\end{array}\right]\\
-			\left[\begin{array}{c}0,\ 0,\ 0,\ 0,\ 1,\ 0,\ 0\end{array}\right]
-		\end{array}\right]
-	\end{array}\right]
+	\left(\begin{matrix}
+		\left(\begin{matrix}
+			\left(\begin{smallmatrix}1 & 0 & 0 & 1 & 1 & 0 & 0\end{smallmatrix}\right)\\
+			\left(\begin{smallmatrix}0 & 1 & 1 & 0 & 0 & 0 & 1\end{smallmatrix}\right)\\
+			\left(\begin{smallmatrix}0 & 0 & 0 & 0 & 1 & 0 & 1\end{smallmatrix}\right)
+		\end{matrix}\right)
+		\left(\begin{matrix}
+			\left(\begin{smallmatrix}0 & 1 & 1 & 0 & 0 & 0 & 1\end{smallmatrix}\right)\\
+			\left(\begin{smallmatrix}0 & 1 & 1 & 0 & 0 & 0 & 0\end{smallmatrix}\right)\\
+			\left(\begin{smallmatrix}1 & 1 & 1 & 1 & 0 & 0 & 1\end{smallmatrix}\right)
+		\end{matrix}\right)
+		\left(\begin{matrix}
+			\left(\begin{smallmatrix}1 & 0 & 0 & 1 & 0 & 0 & 1\end{smallmatrix}\right)\\
+			\left(\begin{smallmatrix}1 & 1 & 1 & 1 & 0 & 0 & 1\end{smallmatrix}\right)\\
+			\left(\begin{smallmatrix}0 & 0 & 0 & 0 & 1 & 0 & 0\end{smallmatrix}\right)
+		\end{matrix}\right)
+	\end{matrix}\right)
 \end{equation}
 
-Los términos corresponden a la parte de la derecha de la ecuación \ref{eq:ter-coef}, a continuación se va a realizar el cálculo para $k$ igual $1$. La ecuación \ref{eq:ej-beta-1-v} corresponde al primer vector de $\beta$, $\left[\begin{array}{c}1\ 0\ 0\ 1\ 0\ 0\end{array}\right]$, donde se han transformado los elementos de $\GF(2)$ a $\GF(128)$ y se han tomado las $3$ primeras componentes.
+Los términos corresponden a la parte de la derecha de la ecuación \ref{eq:ter-coef}, a continuación se va a realizar el cálculo para $k$ igual $1$. La ecuación \ref{eq:ej-beta-1-v} corresponde al primer vector de $\beta$, $\left(\begin{array}{c}1\ 0\ 0\ 1\ 0\ 0\end{array}\right)$, donde se han transformado los elementos de $\GF(2)$ a $\GF(128)$ y se han tomado las $3$ primeras componentes.
 
 \begin{equation}\label{eq:ej-beta-1-v}
 	{\beta^v_1} = 
-		\left[\begin{array}{c}
-			\left[\begin{array}{c}0, 0, 0, 0, 0, 0, 1\end{array}\right]			
-			\left[\begin{array}{c}0, 0, 0, 0, 0, 0, 0\end{array}\right]
-			\left[\begin{array}{c}0, 0, 0, 0, 0, 0, 0\end{array}\right]
-		\end{array}\right]
+		\left(\begin{matrix}
+			\left(\begin{smallmatrix}0 & 0 & 0 & 0 & 0 & 0 & 1\end{smallmatrix}\right)			
+			\left(\begin{smallmatrix}0 & 0 & 0 & 0 & 0 & 0 & 0\end{smallmatrix}\right)
+			\left(\begin{smallmatrix}0 & 0 & 0 & 0 & 0 & 0 & 0\end{smallmatrix}\right)
+		\end{matrix}\right)
 \end{equation}
 
 De la misma forma se han tomado las $3$ primeras componenetes del primer vector de $A$, ecuación \ref{eq:ej-A-1-v}.
 
 \begin{equation}\label{eq:ej-A-1-v}
 	{A^v_1} = 
-		\left[\begin{array}{c}
-			\left[\begin{array}{c}0, 1, 1, 0, 1, 0, 0\end{array}\right]			
-			\left[\begin{array}{c}0, 0, 0, 0, 0, 0, 0\end{array}\right]
-			\left[\begin{array}{c}0, 1, 1, 0, 1, 0, 0\end{array}\right]
-		\end{array}\right]
+		\left(\begin{matrix}
+			\left(\begin{smallmatrix}0 & 1 & 1 & 0 & 1 & 0 & 0\end{smallmatrix}\right)			
+			\left(\begin{smallmatrix}0 & 0 & 0 & 0 & 0 & 0 & 0\end{smallmatrix}\right)
+			\left(\begin{smallmatrix}0 & 1 & 1 & 0 & 1 & 0 & 0\end{smallmatrix}\right)
+		\end{matrix}\right)
 \end{equation}
 
 El vector $sum$ contiene la suma de $A^v_1$ y $\beta^v_1$, ecuación \ref{eq:ej-sum}.
 
 \begin{equation}\label{eq:ej-sum}
 	{sum} = 
-		\left[\begin{array}{c}
-			\left[\begin{array}{c}0, 1, 1, 0, 1, 0, 1\end{array}\right]			
-			\left[\begin{array}{c}0, 0, 0, 0, 0, 0, 0\end{array}\right]
-			\left[\begin{array}{c}0, 1, 1, 0, 1, 0, 0\end{array}\right]
-		\end{array}\right]
+		\left(\begin{matrix}
+			\left(\begin{smallmatrix}0 & 1 & 1 & 0 & 1 & 0 & 1\end{smallmatrix}\right)			
+			\left(\begin{smallmatrix}0 & 0 & 0 & 0 & 0 & 0 & 0\end{smallmatrix}\right)
+			\left(\begin{smallmatrix}0 & 1 & 1 & 0 & 1 & 0 & 0\end{smallmatrix}\right)
+		\end{matrix}\right)
 \end{equation}
 
 Finalmente, para calcular $term$ hay que multiplicar $sum$ por $a^v$ y restarselo a la primera componente de $hash$. Al realizar las operaciones módulo $2$, la resta y la suma son lo mismo, por tanto se realizará la operación lógica \textit{XOR} con el $hash$, ecuación\ref{eq:ej-ter-1}.
@@ -894,18 +890,20 @@ Finalmente, para calcular $term$ hay que multiplicar $sum$ por $a^v$ y restarsel
 \begin{equation}\label{eq:ej-ter-1}
 	\begin{split}
 	{term_1} &= 
-		\left[\left[0, 1, 1, 0, 1, 0, 1\right]			
-		\left[0, 0, 0, 0, 0, 0, 0\right]
-		\left[0, 1, 1, 0, 1, 0, 0\right]\right] \cdot 
-		\left[\begin{array}{c}
-			\left[0, 1, 1, 0, 1, 0, 0\right]\\
-			\left[1, 1, 1, 1, 1, 0, 0\right]\\
-			\left[1, 1, 1, 1, 0, 0, 1\right]\\
-		\end{array}\right]
-		+ \left[\begin{array}{c}1, 0, 1, 1, 0, 0, 0\end{array}\right]\\
-		&= \left[\begin{array}{c}0, 0, 0, 1, 1, 0, 0\end{array}\right] + 
-		\left[\begin{array}{c}1, 0, 1, 1, 0, 0, 0\end{array}\right]\\
-		& = \left[\begin{array}{c}1, 0, 1, 0, 1, 0, 0\end{array}\right]
+		\left(\begin{matrix}
+			\left(\begin{smallmatrix}0 & 1 & 1 & 0 & 1 & 0 & 1\end{smallmatrix}\right)			
+			\left(\begin{smallmatrix}0 & 0 & 0 & 0 & 0 & 0 & 0\end{smallmatrix}\right)
+			\left(\begin{smallmatrix}0 & 1 & 1 & 0 & 1 & 0 & 0\end{smallmatrix}\right)
+		\end{matrix}\right) \cdot 
+		\left(\begin{matrix}
+			\left(\begin{smallmatrix}0 & 1 & 1 & 0 & 1 & 0 & 0\end{smallmatrix}\right)\\
+			\left(\begin{smallmatrix}1 & 1 & 1 & 1 & 1 & 0 & 0\end{smallmatrix}\right)\\
+			\left(\begin{smallmatrix}1 & 1 & 1 & 1 & 0 & 0 & 1\end{smallmatrix}\right)\\
+		\end{matrix}\right)
+		+ \left(\begin{smallmatrix}1 & 0 & 1 & 1 & 0 & 0 & 0\end{smallmatrix}\right)\\
+		&= \left(\begin{smallmatrix}0 & 0 & 0 & 1 & 1 & 0 & 0\end{smallmatrix}\right) + 
+		\left(\begin{smallmatrix}1 & 0 & 1 & 1 & 0 & 0 & 0\end{smallmatrix}\right)\\
+		& = \left(\begin{smallmatrix}1 & 0 & 1 & 0 & 1 & 0 & 0\end{smallmatrix}\right)
 	\end{split}
 \end{equation}
 
@@ -913,22 +911,22 @@ De la misma forma se calculan el resto de los términos llegando al vector $term
 
 \begin{equation}\label{eq:ej-ter}
 	{term} = 
-		\left[\begin{array}{c}
-			\left[\begin{array}{c}1, 0, 1, 0, 1, 0, 0\end{array}\right]			
-			\left[\begin{array}{c}1, 1, 0, 1, 0, 0, 0\end{array}\right]
-			\left[\begin{array}{c}1, 1, 0, 0, 0, 0, 0\end{array}\right]
-		\end{array}\right]
+		\left(\begin{array}{c}
+			\left(\begin{array}{c}1, 0, 1, 0, 1, 0, 0\end{array}\right)			
+			\left(\begin{array}{c}1, 1, 0, 1, 0, 0, 0\end{array}\right)
+			\left(\begin{array}{c}1, 1, 0, 0, 0, 0, 0\end{array}\right)
+		\end{array}\right)
 \end{equation}
 
 Tras la resolución del sistema $coef \cdot oil = term$ se han obtenido los aceites, ecuación \ref{eq:ej-oil}.
 
 \begin{equation}\label{eq:ej-oil}
 	{oil} = 
-		\left[\begin{array}{c}
-			\left[\begin{array}{c}0, 0, 0, 0, 1, 1, 0\end{array}\right]			
-			\left[\begin{array}{c}0, 0, 1, 1, 0, 1, 1\end{array}\right]
-			\left[\begin{array}{c}0, 1, 0, 0, 1, 1, 0\end{array}\right]
-		\end{array}\right]
+		\left(\begin{array}{c}
+			\left(\begin{array}{c}0, 0, 0, 0, 1, 1, 0\end{array}\right)			
+			\left(\begin{array}{c}0, 0, 1, 1, 0, 1, 1\end{array}\right)
+			\left(\begin{array}{c}0, 1, 0, 0, 1, 1, 0\end{array}\right)
+		\end{array}\right)
 \end{equation}
 
 Ahora se forma el vector $aux$ uniendo los vinagres con los aceites, ecuación \ref{eq:ej-aux}.
@@ -936,15 +934,15 @@ Ahora se forma el vector $aux$ uniendo los vinagres con los aceites, ecuación \
 \begin{equation}\label{eq:ej-aux}
 	\begin{split}
 	{aux} &= 
-		\left[\begin{array}{c}
-			\left[\begin{array}{c}0, 0, 0, 0, 1, 1, 0\end{array}\right]		
-			\left[\begin{array}{c}0, 0, 1, 1, 0, 1, 1\end{array}\right]
-			\left[\begin{array}{c}0, 1, 0, 0, 1, 1, 0\end{array}\right]\end{array}\right.\\
+		\left(\begin{array}{c}
+			\left(\begin{array}{c}0, 0, 0, 0, 1, 1, 0\end{array}\right)		
+			\left(\begin{array}{c}0, 0, 1, 1, 0, 1, 1\end{array}\right)
+			\left(\begin{array}{c}0, 1, 0, 0, 1, 1, 0\end{array}\right)\end{array}\right.\\
 		&
-			\left.\begin{array}{c}\left[\begin{array}{c}0, 1, 1, 0, 1, 0, 0\end{array}\right]
-			\left[\begin{array}{c}1, 1, 1, 1, 1, 0, 0\end{array}\right]
-			\left[\begin{array}{c}1, 1, 1, 1, 0, 0, 1\end{array}\right]
-		\end{array}\right]
+			\left.\begin{array}{c}\left(\begin{array}{c}0, 1, 1, 0, 1, 0, 0\end{array}\right)
+			\left(\begin{array}{c}1, 1, 1, 1, 1, 0, 0\end{array}\right)
+			\left(\begin{array}{c}1, 1, 1, 1, 0, 0, 1\end{array}\right)
+		\end{array}\right)
 	\end{split}
 \end{equation}
 
@@ -953,14 +951,14 @@ La firma del mensaje se obtiene multiplicando el vector $aux$ por la inversa de 
 \begin{equation}\label{eq:ej-firma}
 	\begin{aligned}
 	{firma} = &
-		\left[\begin{array}{c}
-			\left[\begin{array}{c}0, 1, 1, 0, 1, 0, 0\end{array}\right]			
-			\left[\begin{array}{c}1, 0, 1, 1, 0, 1, 0\end{array}\right]
-			\left[\begin{array}{c}1, 0, 1, 1, 0, 0, 1\end{array}\right]\end{array}\right.\\
-			& \left.\begin{array}{c}\left[\begin{array}{c}0, 0, 0, 0, 1, 1, 0\end{array}\right]			
-			\left[\begin{array}{c}0, 0, 1, 1, 0, 1, 1\end{array}\right]
-			\left[\begin{array}{c}0, 1, 0, 0, 1, 1, 0\end{array}\right]
-		\end{array}\right]
+		\left(\begin{array}{c}
+			\left(\begin{array}{c}0, 1, 1, 0, 1, 0, 0\end{array}\right)			
+			\left(\begin{array}{c}1, 0, 1, 1, 0, 1, 0\end{array}\right)
+			\left(\begin{array}{c}1, 0, 1, 1, 0, 0, 1\end{array}\right)\end{array}\right.\\
+			& \left.\begin{array}{c}\left(\begin{array}{c}0, 0, 0, 0, 1, 1, 0\end{array}\right)			
+			\left(\begin{array}{c}0 0 1 1 0 1 1\end{array}\right)
+			\left(\begin{array}{c}0 1 0 0 1 1 0\end{array}\right)
+		\end{array}\right)
 	\end{aligned}
 \end{equation}
 
@@ -971,17 +969,17 @@ Para calcular ${\alpha_{aux}}_1$ hay que multiplicar los vectores $firma$, ${\al
 \begin{equation}\label{eq:ej-aux-alpha-1}
 	\begin{aligned}
 	{{\alpha_{aux}}_1} & = 
-		\left[\begin{array}{c}firma\end{array}\right]
-		\cdot \left[\begin{array}{c}
+		\left(\begin{array}{c}firma\end{array}\right)
+		\cdot \left(\begin{array}{c}
 			1\ \ 0\ \ 1\ \ 0\ \ 1\ \ 1\\
 			0\ \ 0\ \ 0\ \ 0\ \ 1\ \ 1\\
 			0\ \ 0\ \ 0\ \ 1\ \ 1\ \ 1\\
 			0\ \ 0\ \ 0\ \ 1\ \ 1\ \ 1\\
 			0\ \ 0\ \ 0\ \ 0\ \ 0\ \ 0\\
 			0\ \ 0\ \ 0\ \ 1\ \ 0\ \ 0
-		\end{array}\right]
-		\cdot \left[\begin{array}{c}trans\left(firma\right)\end{array}\right]\\
-		& = \left[\begin{array}{c}0, 1, 1, 1, 1, 1, 0\end{array}\right]
+		\end{array}\right)
+		\cdot \left(\begin{array}{c}trans\left(firma\right)\end{array}\right)\\
+		& = \left(\begin{array}{c}0 1 1 1 1 1 0\end{array}\right)
 	\end{aligned}
 \end{equation}
 
@@ -990,55 +988,55 @@ La segunda variable ${\beta_{aux}}_k$ es el producto de la $k-ésima$ componente
 \begin{equation}\label{eq:ej-aux-beta-1}
 	\begin{aligned}
 	{{\beta_{aux}}_1} & = 
-		\left[\begin{array}{c}1\ 0\ 0\ 1\ 0\ 0\end{array}\right]
-		\cdot \left[\begin{array}{c}trans\left(firma\right)\end{array}\right]\\
-		& = \left[\begin{array}{c}0, 1, 1, 1, 1, 1, 0\end{array}\right]
+		\left(\begin{array}{c}1\ 0\ 0\ 1\ 0\ 0\end{array}\right)
+		\cdot \left(\begin{array}{c}trans\left(firma\right)\end{array}\right)\\
+		& = \left(\begin{array}{c}0 1 1 1 1 1 0\end{array}\right)
 	\end{aligned}
 \end{equation}
 
 Calculando todas la componentes de $\alpha_{aux}$ y $\beta_{aux}$ se obtienen los vectores las ecuaciones \ref{eq:ej-aux-alpha} y \ref{eq:ej-aux-beta}, respectivamente.
 
 \begin{equation}\label{eq:ej-aux-alpha}
-	{\alpha_{aux}} = \left[\begin{array}{c}
-		\left[\begin{array}{c}0, 1, 1, 1, 1, 1, 0\end{array}\right]
-		\left[\begin{array}{c}1, 1, 0, 0, 0, 0, 0\end{array}\right]
-		\left[\begin{array}{c}1, 1, 0, 0, 1, 1, 1\end{array}\right]
-		\end{array}\right]
+	{\alpha_{aux}} = \left(\begin{array}{c}
+		\left(\begin{array}{c}0 1 1 1 1 1 0\end{array}\right)
+		\left(\begin{array}{c}1 1 0 0 0 0 0\end{array}\right)
+		\left(\begin{array}{c}1 1 0 0 1 1 1\end{array}\right)
+		\end{array}\right)
 \end{equation}
 
 \begin{equation}\label{eq:ej-aux-beta}
 	{\beta_{aux}} =
-		\left[\begin{array}{c}
-			\left[\begin{array}{c}0, 1, 1, 0, 0, 1, 0\end{array}\right]		
-			\left[\begin{array}{c}1, 1, 0, 0, 0, 1, 0\end{array}\right]
-			\left[\begin{array}{c}1, 1, 0, 1, 0, 0, 0\end{array}\right]
-		\end{array}\right]
+		\left(\begin{array}{c}
+			\left(\begin{array}{c}0 1 1 0 0 1 0\end{array}\right)		
+			\left(\begin{array}{c}1 1 0 0 0 1 0\end{array}\right)
+			\left(\begin{array}{c}1 1 0 1 0 0 0\end{array}\right)
+		\end{array}\right)
 \end{equation}
 
 Sumando los vectores componente a componente, ecuación \ref{eq:ej-suma}, anteriormente calculados, se obtiene vector a comparar con el $hash$ del mensaje. 
 
 \begin{equation}\label{eq:ej-suma}
-	\left[\begin{array}{c}
-		\left[\begin{array}{c}0, 0, 0, 1, 1, 0, 0\end{array}\right]
-		\left[\begin{array}{c}0, 0, 0, 0, 0, 1, 0\end{array}\right]
-		\left[\begin{array}{c}0, 0, 0, 1, 1, 1, 1\end{array}\right]
-	\end{array}\right]
+	\left(\begin{array}{c}
+		\left(\begin{array}{c}0 0 0 1 1 0 0\end{array}\right)
+		\left(\begin{array}{c}0 0 0 0 0 1 0\end{array}\right)
+		\left(\begin{array}{c}0 0 0 1 1 1 1\end{array}\right)
+	\end{array}\right)
 \end{equation}
 
 Si el mensaje no ha sido corrompido habrá de ser igual que el $hash$ del mensaje, ecuación \ref{eq:ej-verif}.
 
 \begin{equation}\label{eq:ej-verif}
 	\begin{aligned}
-	&\left[\begin{array}{c}
-		\left[\begin{array}{c}0, 0, 0, 1, 1, 0, 0\end{array}\right]
-		\left[\begin{array}{c}0, 0, 0, 0, 0, 1, 0\end{array}\right]
-		\left[\begin{array}{c}0, 0, 0, 1, 1, 1, 1\end{array}\right]
-	\end{array}\right] ==\\
-	&\left[\begin{array}{c}
-		\left[\begin{array}{c}0, 0, 0, 1, 1, 0, 0\end{array}\right]
-		\left[\begin{array}{c}0, 0, 0, 0, 0, 1, 0\end{array}\right]
-		\left[\begin{array}{c}0, 0, 0, 1, 1, 1, 1\end{array}\right]
-	\end{array}\right]
+	&\left(\begin{array}{c}
+		\left(\begin{array}{c}0 0 0 1 1 0 0\end{array}\right)
+		\left(\begin{array}{c}0 0 0 0 0 1 0\end{array}\right)
+		\left(\begin{array}{c}0 0 0 1 1 1 1\end{array}\right)
+	\end{array}\right) ==\\
+	&\left(\begin{array}{c}
+		\left(\begin{array}{c}0 0 0 1 1 0 0\end{array}\right)
+		\left(\begin{array}{c}0 0 0 0 0 1 0\end{array}\right)
+		\left(\begin{array}{c}0 0 0 1 1 1 1\end{array}\right)
+	\end{array}\right)
 	\end{aligned}
 \end{equation}
 

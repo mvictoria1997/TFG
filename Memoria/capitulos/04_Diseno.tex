@@ -16,3 +16,57 @@ El fichero \texttt{luov.py} incorpora main con un ejemplo de uso del algoritmo i
 El ecosistema ark se ha instalado en un docker \texttt{ubuntu:xenial}. Nos encontramos con las carpetas deployer, core-bridgechain y core-explorer.
 
 La carpeta deployer contiene la instalación de la \textit{blockchain} y del \textit{explorer}. Para instalar la blockchain y el explorer se hara mediante la ejecucion del archivo bridgechain.sh con los convenientes parámetros.
+
+
+\begin{forest}
+  for tree={
+    font=\scriptsize\sffamily,
+    grow'=0,
+    child anchor=west,
+    parent anchor=south,
+    anchor=west,
+    calign=first,
+    inner xsep=7pt,
+    edge path={
+      \noexpand\path [draw, \forestoption{edge}]
+      (!u.south west) +(7.5pt,0) |- (.child anchor) pic {folder} \forestoption{edge label};
+    },
+    file/.style={edge path={\noexpand\path [draw, \forestoption{edge}]
+          (!u.south west) +(7.5pt,0) |- (.child anchor) \forestoption{edge label};},
+          inner xsep=2pt,font=\tiny\sffamily
+    },
+    before typesetting nodes={
+      if n=1
+        {insert before={[,phantom]}}
+        {}
+    },
+    fit=band,
+    before computing xy={l=15pt},
+  } 
+[core-bridgechain/packages/crypto/src
+  [blocks
+    [block.ts, file]
+    [factory.ts, file]
+  ]
+  [crypto
+	[hash.ts, file]
+	[message.ts, file]
+	[uov.py, file]
+	[signature.py, file]
+	[verify.py, file]
+	[data.json, file]
+	[signature.json, file]	
+  ]
+  [identities]
+  [interfaces
+  	[block.ts, file]
+  	[identities.ts, file]
+  	[message.ts, file]
+  	[transaction.ts, file]
+  ]
+  [transactions
+  	[signer.ts, file]
+  	[verify.ts, file]
+  ]
+]
+\end{forest}
