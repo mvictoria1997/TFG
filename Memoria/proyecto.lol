@@ -1,15 +1,15 @@
 \contentsline {lstlisting}{\numberline {4.1}L\IeC {\'\i }nea 108 app-core.sh}{36}{lstlisting.4.1}
 \contentsline {lstlisting}{\numberline {4.2}Estructura archivo data.json}{37}{lstlisting.4.2}
 \contentsline {lstlisting}{\numberline {4.3}Estructura archivo signature.json}{37}{lstlisting.4.3}
-\contentsline {lstlisting}{\numberline {5.1}Tabla para calcular la potencia en el cuerpo}{39}{lstlisting.5.1}
-\contentsline {lstlisting}{\numberline {5.2}Tabla para calcular el logaritmo en el cuerpo}{39}{lstlisting.5.2}
+\contentsline {lstlisting}{\numberline {5.1}Tabla para calcular la potencia en $\mathds {F}_{128}$}{39}{lstlisting.5.1}
+\contentsline {lstlisting}{\numberline {5.2}Tabla para calcular el logaritmo en $\mathds {F}_{128}$}{39}{lstlisting.5.2}
 \contentsline {lstlisting}{\numberline {5.3}Suma de dos elementos del cuerpo}{40}{lstlisting.5.3}
 \contentsline {lstlisting}{\numberline {5.4}Producto de dos elementos del cuerpo}{40}{lstlisting.5.4}
 \contentsline {lstlisting}{\numberline {5.5}Convierte un entero en un elemento del cuerpo}{41}{lstlisting.5.5}
 \contentsline {lstlisting}{\numberline {5.6}Inverso de un elemento del cuerpo}{41}{lstlisting.5.6}
 \contentsline {lstlisting}{\numberline {5.7}Compara dos elementos del cuerpo}{42}{lstlisting.5.7}
 \contentsline {lstlisting}{\numberline {5.8}Matriz de $\mathds {F}_2$ a un elemento del cuerpo 128 elementos}{42}{lstlisting.5.8}
-\contentsline {lstlisting}{\numberline {5.9}Vector de matrices de $\mathds {F}_2$ a una matriz de $\GF (128)$}{43}{lstlisting.5.9}
+\contentsline {lstlisting}{\numberline {5.9}Vector de matrices de $\mathds {F}_2$ a una matriz de $\mathds {F}_{128}$}{43}{lstlisting.5.9}
 \contentsline {lstlisting}{\numberline {5.10}Suma de dos matrices con elementos en el cuerpo}{43}{lstlisting.5.10}
 \contentsline {lstlisting}{\numberline {5.11}Producto de matrices con elementos del cuerpo}{44}{lstlisting.5.11}
 \contentsline {lstlisting}{\numberline {5.12}Producto de matrices con elementos en $\mathds {F}_2$}{45}{lstlisting.5.12}

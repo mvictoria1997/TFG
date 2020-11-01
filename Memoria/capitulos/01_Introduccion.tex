@@ -275,10 +275,10 @@ La principal ventaja del algoritmo \acrshort{uov} es que es un algoritmo post-cu
 Aunque el algoritmo usa sistemas pequeños y la longitud de las firmas son pequeñas, se necesitan claves públicas bastante más grandes en comparación con otros algoritmos de firma como \mbox{\acrshort{ecdsa}}, pudiendo ocupar dicha clave pública varios kilobytes de almacenamieno. Por otro lado ya se conocen algunos métodos de ataque, probablemente aparecerán más si se empiza a comercializar.\\
 
 \subsubsection{Cuerpos finitos}
-Se trabajará con el cuerpo finito de 128 elementos, $\GF(2^7)$, extensión de grado $7$ del cuerpo $\GF(2)$ de los enteros módulo $2$
+Se trabajará con el cuerpo finito de 128 elementos, $\mathds{F}_{2^7}$, extensión de grado $7$ del cuerpo $\mathds{F}_2$ de los enteros módulo $2$
  
 \begin{equation}
-\GF(128) = \frac{\GF(2)[x]}{\langle x^7 + x + 1 \rangle}
+\mathds{F}_{128} = \frac{\mathds{F}_2[x]}{\langle x^7 + x + 1 \rangle}
 \end{equation}
 
 Además el orden del cuerpo de las unidades es $127$, que es primo entonces todo elemento del cuerpo distinto de $1$ es un elemento primitivo, es decir, un generador.\\
@@ -302,11 +302,11 @@ La tabla \ref{tab:rel} muestra una representación de los elementos no nulos del
 			\bottomrule
 		\end{tabular}
 	\end{center}
-	\caption{Representación de los elementos no nulos de $\GF(128)$}
+	\caption{Representación de los elementos no nulos de $\mathds{F}_{128}$}
 	\label{tab:rel}
 \end{table}
 
-La implementación del cuerpo finito de $2^7$ elementos no se ha realizado de forma genérica sino para que sea específica para el algoritmo \acrshort{uov}, de esta forma es mucho más sencillo implementar la aritmética del cuerpo. Para la suma en $\GF(2)$ sólo tenemos que fijarnos que es lo mismo que el operador lógico \textit{XOR}, mientras que para el producto, al encontrarmos en un cuerpo como un orden pequeño, se usarán unas tablas que contienen las correspondencias entre los elementos no nulos del cuerpo y sus logaritmos en base $a$, por lo que el producto se convierte en una suma módulo $127$.\\
+La implementación del cuerpo finito de $2^7$ elementos no se ha realizado de forma genérica sino para que sea específica para el algoritmo \acrshort{uov}, de esta forma es mucho más sencillo implementar la aritmética del cuerpo. Para la suma en $\mathds{F}_2$ sólo tenemos que fijarnos que es lo mismo que el operador lógico \textit{XOR}, mientras que para el producto, al encontrarmos en un cuerpo como un orden pequeño, se usarán unas tablas que contienen las correspondencias entre los elementos no nulos del cuerpo y sus logaritmos en base $a$, por lo que el producto se convierte en una suma módulo $127$.\\
 
 
 
@@ -654,7 +654,7 @@ De manera análoga se calculan el resto de componentes, ${\beta_{pub}}_2$ y ${\b
 	\end{matrix}\right)
 \end{equation}
 
-Llegados a este punto comienza el proceso de firma del mensaje, en este caso el mensaje al que se le va a realizar la firma es \texttt{"{}Este mensaje es un mensaje de prueba. Quiero se sea un poco largo para que se aprecie el efecto de la función hash"{}}, el hash de dicho mensaje calculado con la función \texttt{sha256} es \texttt{"{}c2f"{}}, la ecuación \ref{eq:ej-hash} contiene el \textit{hash} en $\GF(128)$.
+Llegados a este punto comienza el proceso de firma del mensaje, en este caso el mensaje al que se le va a realizar la firma es \texttt{"{}Este mensaje es un mensaje de prueba. Quiero se sea un poco largo para que se aprecie el efecto de la función hash"{}}, el hash de dicho mensaje calculado con la función \texttt{sha256} es \texttt{"{}c2f"{}}, la ecuación \ref{eq:ej-hash} contiene el \textit{hash} en $\mathds{F}_{128}$.
 
 \begin{equation}\label{eq:ej-hash}
 	{hash} = 
@@ -692,7 +692,7 @@ Los vinagres se han tomado de forma aleatoria, ecuación \ref{eq:ej-vinegar}.
 	\end{matrix}\right)
 \end{equation}
 
-La $k-ésima$ matriz del vector $A$ es el resultado de multiplicar el vinagre por la matriz ${\alpha_{priv}}_k$ donde $k$ se mueve entre $1$ y $3$, para lo cual, es necesario extender los componentes de las matrices de $\alpha_{priv}$, que se encuentran en $\GF(2)$, al cuerpo $\GF(128)$. En el ejemplo no se ha puesto la matriz extendida para entender mejor la multiplicación y no perderse con los vectores, finalmente la multiplicación será el vector nulo si se multiplica por $0$ o el mismo vector cuando se multiplique por $1$.
+La $k-ésima$ matriz del vector $A$ es el resultado de multiplicar el vinagre por la matriz ${\alpha_{priv}}_k$ donde $k$ se mueve entre $1$ y $3$, para lo cual, es necesario extender los componentes de las matrices de $\alpha_{priv}$, que se encuentran en $\mathds{F}_{2}$, al cuerpo $\mathds{F}_{128}$. En el ejemplo no se ha puesto la matriz extendida para entender mejor la multiplicación y no perderse con los vectores, finalmente la multiplicación será el vector nulo si se multiplica por $0$ o el mismo vector cuando se multiplique por $1$.
 
 \begin{equation}\label{eq:ej-A-1}
 	\begin{aligned}
@@ -825,7 +825,7 @@ Calculando el resto de las componentes se obtiene la matriz $A$, ecuación \ref{
 	\end{aligned}	
 \end{equation}
 
-Los coeficientes se obtienen de la suma de las últimas $m$ componenetes, en este caso las $3$ últimas, de cada $A_k$ con ${\beta_{priv}}_k$. Pero tenemos el mismo problema de antes, puesto que los coeficientes de $A_k$ pertenecen a $\GF(128)$ y los coeficientes de ${\beta_{priv}}_k$ se encuentra en $\GF(2)$, por tanto lo que vamos a sumar es $0$ o $1$, o lo que es lo mismo realizar la operación lógica $XOR$ con los elementos $\left(\begin{smallmatrix}0 & 0 & 0 & 0 & 0 & 0 & 0\end{smallmatrix}\right)$ o $\left(\begin{smallmatrix}0 & 0 & 0 & 0 & 0 & 0 & 1\end{smallmatrix}\right)$, ecuación \ref{eq:ej-coef}.
+Los coeficientes se obtienen de la suma de las últimas $m$ componenetes, en este caso las $3$ últimas, de cada $A_k$ con ${\beta_{priv}}_k$. Pero tenemos el mismo problema de antes, puesto que los coeficientes de $A_k$ pertenecen a $\mathds{F}_{128}$ y los coeficientes de ${\beta_{priv}}_k$ se encuentra en $\mathds{F}_2$, por tanto lo que vamos a sumar es $0$ o $1$, o lo que es lo mismo realizar la operación lógica $XOR$ con los elementos $\left(\begin{smallmatrix}0 & 0 & 0 & 0 & 0 & 0 & 0\end{smallmatrix}\right)$ o $\left(\begin{smallmatrix}0 & 0 & 0 & 0 & 0 & 0 & 1\end{smallmatrix}\right)$, ecuación \ref{eq:ej-coef}.
 
 \begin{equation}\label{eq:ej-coef}
 	{coef} =
@@ -848,7 +848,7 @@ Los coeficientes se obtienen de la suma de las últimas $m$ componenetes, en est
 	\end{matrix}\right)
 \end{equation}
 
-Los términos corresponden a la parte de la derecha de la ecuación \ref{eq:ter-coef}, a continuación se va a realizar el cálculo para $k$ igual $1$. La ecuación \ref{eq:ej-beta-1-v} corresponde al primer vector de $\beta$, $\left(\begin{array}{c}1\ 0\ 0\ 1\ 0\ 0\end{array}\right)$, donde se han transformado los elementos de $\GF(2)$ a $\GF(128)$ y se han tomado las $3$ primeras componentes.
+Los términos corresponden a la parte de la derecha de la ecuación \ref{eq:ter-coef}, a continuación se va a realizar el cálculo para $k$ igual $1$. La ecuación \ref{eq:ej-beta-1-v} corresponde al primer vector de $\beta$, $\left(\begin{array}{c}1\ 0\ 0\ 1\ 0\ 0\end{array}\right)$, donde se han transformado los elementos de $\mathds{F}_2$ a $\mathds{F}_{128}$ y se han tomado las $3$ primeras componentes.
 
 \begin{equation}\label{eq:ej-beta-1-v}
 	{\beta^v_1} = 
@@ -974,7 +974,7 @@ Para calcular ${\alpha_{aux}}_1$ hay que multiplicar los vectores $firma$, ${\al
 	\end{aligned}
 \end{equation}
 
-La segunda variable ${\beta_{aux}}_k$ es el producto de la $k-ésima$ componente del vector $\beta_{pub}$, donde sus componenetes se encuentran en $\GF(2)$ y habrá que transformarlos en componentes de $\GF(128)$, por el vector $firma$ transpuesta, ecuación \ref{eq:ej-aux-beta-1}.
+La segunda variable ${\beta_{aux}}_k$ es el producto de la $k-ésima$ componente del vector $\beta_{pub}$, donde sus componenetes se encuentran en $\mathds{F}_2$ y habrá que transformarlos en componentes de $\mathds{F}_{128}$, por el vector $firma$ transpuesta, ecuación \ref{eq:ej-aux-beta-1}.
 
 \begin{equation}\label{eq:ej-aux-beta-1}
 	\begin{aligned}

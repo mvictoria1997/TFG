@@ -11,7 +11,7 @@ Los elementos del cuerpo se representarán con vectores de siete componentes par
 
 \vspace{0.25cm}
 
-\begin{lstlisting}[language=Python,caption=Tabla para calcular la potencia en el cuerpo, label=cod:exp]
+\begin{lstlisting}[language=Python,caption=Tabla para calcular la potencia en $\mathds{F}_{128}$, label=cod:exp]
 exp = {
    0 : [0, 0, 0, 0, 0, 0, 1],
    1 : [0, 0, 0, 0, 0, 1, 0],
@@ -21,7 +21,7 @@ exp = {
 
 \end{lstlisting}
 
-\begin{lstlisting}[language=Python,caption=Tabla para calcular el logaritmo en el cuerpo, label=cod:log]
+\begin{lstlisting}[language=Python,caption=Tabla para calcular el logaritmo en $\mathds{F}_{128}$, label=cod:log]
 log = {
    tuple( [0, 0, 0, 0, 0, 0, 1] ) : ' 0 ',
    tuple( [0, 0, 0, 0, 0, 1, 0] ) : ' 1 ',
@@ -39,8 +39,8 @@ La suma de dos elementos del cuerpo se ha implementando la puerta $xor$, esto es
 	\begin{tabular}{p{0.14\linewidth} p {0.1\linewidth}p{0.1\linewidth}p{0.65\linewidth}}
 		\textbf{Tipo} & \textbf{Nombre} & \textbf{Variable} & \textbf{Descripción} \\
 		\toprule
-		int vector & n1 & Input & Elemento para sumar de $\GF(128)$\\[0.5ex]
-		int vector & n2 & Input & Elemento para sumar de $\GF(128)$\\[0.5ex]
+		int vector & n1 & Input & Elemento para sumar de $\mathds{F}_{128}$\\[0.5ex]
+		int vector & n2 & Input & Elemento para sumar de $\mathds{F}_{128}$\\[0.5ex]
 		int vector & suma & Output & Elemento  del cuerpo que almacena la suma de n1 y n2\\[0.5ex]
 		\bottomrule
 	\end{tabular}}
@@ -70,8 +70,8 @@ Para el producto de dos elementos del cuerpo se ha diferenciado el caso en el qu
 	\begin{tabular}{p{0.14\linewidth} p {0.1\linewidth}p{0.1\linewidth}p{0.65\linewidth}}
 		\textbf{Tipo} & \textbf{Nombre} & \textbf{Variable} & \textbf{Descripción} \\
 		\toprule
-		int vector & n1 & Input & Elemento para multiplicar de $\GF(128)$\\[0.5ex]
-		int vector & n2 & Input & Elemento para multiplicar de $\GF(128)$\\[0.5ex]
+		int vector & n1 & Input & Elemento para multiplicar de $\mathds{F}_{128}$\\[0.5ex]
+		int vector & n2 & Input & Elemento para multiplicar de $\mathds{F}_{128}$\\[0.5ex]
 		int & suma & Inner & Almacena la suma de los logaritmos de n1 y n2 módulo 127\\[1.5ex]
 		int vector & product & Output & Elemento del cuerpo que almacena el producto de n1 y n2\\[0.5ex]
 		\bottomrule
@@ -108,7 +108,7 @@ Calcula el vector correspondiente vector en el cuerpo de un entero, código \ref
 		\textbf{Tipo} & \textbf{Nombre} & \textbf{Variable} & \textbf{Descripción} \\
 		\toprule
 		int & n1 & Input & Entero del que se desea calcular su vector en el cuerpo\\[1.5ex]
-		int vector &  & Output & Elemento de $\GF(128)$\\[0.5ex]
+		int vector &  & Output & Elemento de $\mathds{F}_{128}$\\[0.5ex]
 		\bottomrule
 	\end{tabular}}
 	\end{center}
@@ -135,7 +135,7 @@ Al estar en un cuerpo todo elementos tiene inverso y tiene sentido hacer la func
 	\begin{tabular}{p{0.14\linewidth} p {0.1\linewidth}p{0.1\linewidth}p{0.65\linewidth}}
 		\textbf{Tipo} & \textbf{Nombre} & \textbf{Variable} & \textbf{Descripción} \\
 		\toprule
-		int vector & n & Input & Elemento para calcular su inverso en $\GF(128)$\\[1.5ex]
+		int vector & n & Input & Elemento para calcular su inverso en $\mathds{F}_{128}$\\[1.5ex]
 		int vector &  & Output & Inverso de n\\[0.5ex]
 		\bottomrule
 	\end{tabular}}
@@ -162,8 +162,8 @@ La función \texttt{mayor} compara si el elemento $n1$ es mayor que el elemento 
 	\begin{tabular}{p{0.14\linewidth} p {0.1\linewidth}p{0.1\linewidth}p{0.65\linewidth}}
 		\textbf{Tipo} & \textbf{Nombre} & \textbf{Variable} & \textbf{Descripción} \\
 		\toprule
-		int vector & n1 & Input & Elemento a comparar con n2 en $\GF(128)$\\[0.5ex]
-		int vector & n2 & Input & Elemento a comparar con n1 en $\GF(128)$\\[1.5ex]
+		int vector & n1 & Input & Elemento a comparar con n2 en $\mathds{F}_{128}$\\[0.5ex]
+		int vector & n2 & Input & Elemento a comparar con n1 en $\mathds{F}_{128}$\\[1.5ex]
 		int & log1 & Inner & Almacena el logaritmo de n1\\[0.5ex]
 		int & log2 & Inner & Almacena el logaritmo de n2\\[1.5ex]
 		boolean &  & Output & \texttt{True} si n1 es mayor\\
@@ -188,7 +188,7 @@ def mayor (n1=[],n2=[]):
  
 
 
-Convierte una matriz $n1$ del cuerpo $\mathds{F}_2$ en un vector $n$ de $\GF(128)$. Como los elementos de la matriz son solo 0 y 1 la conversión se reduce a, si en la matriz hay un 0 añade al vector $n$ el vector $[0,0,0,0,0,0,0]$ y en otro caso $[0,0,0,0,0,0,1]$, código \ref{cod:matrizF2-cuerpo}.
+Convierte una matriz $n1$ del cuerpo $\mathds{F}_2$ en un vector $n$ de $\mathds{F}_{128}$. Como los elementos de la matriz son solo 0 y 1 la conversión se reduce a, si en la matriz hay un 0 añade al vector $n$ el vector $[0,0,0,0,0,0,0]$ y en otro caso $[0,0,0,0,0,0,1]$, código \ref{cod:matrizF2-cuerpo}.
 
 \begin{table}[h]
 	\begin{center}
@@ -199,7 +199,7 @@ Convierte una matriz $n1$ del cuerpo $\mathds{F}_2$ en un vector $n$ de $\GF(128
 		\toprule
 		int vector & n1 & Input & Matriz con elementos en $\mathds{F}_2$\\[1.5ex]
 		int & row & Inner & Almacena las filas generadas de la matriz n\\[1.5ex]
-		int vector & n & Output & Matriz en $\GF(128)$\\[0.5ex]
+		int vector & n & Output & Matriz en $\mathds{F}_{128}$\\[0.5ex]
 		\bottomrule
 	\end{tabular}}
 	\end{center}
@@ -235,7 +235,7 @@ Convierte un vector de matrices $n1$ del cuerpo $\mathds{F}_2$ en una matriz $ma
 		int vector & n1 & Input & Vector de matriz con elementos en $\mathds{F}_2$\\[1.5ex]
 		int & n & Inner & Almacena las matrices del vector matrix\\[0.5ex]
 		int & row & Inner & Almacena las filas generadas de la matriz n\\[1.5ex]
-		int vector & matrix & Output & Vector de matrices con elementos en $\GF(128)$\\[0.5ex]
+		int vector & matrix & Output & Vector de matrices con elementos en $\mathds{F}_{128}$\\[0.5ex]
 		\bottomrule
 	\end{tabular}}
 	\end{center}
@@ -244,7 +244,7 @@ Convierte un vector de matrices $n1$ del cuerpo $\mathds{F}_2$ en una matriz $ma
 
 \vspace{0.25cm}
 
-\begin{lstlisting}[language=Python,caption=Vector de matrices de $\mathds{F}_2$ a una matriz de $\GF(128)$, label=cod:matriz3dF2-cuerpo]
+\begin{lstlisting}[language=Python,caption=Vector de matrices de $\mathds{F}_2$ a una matriz de $\mathds{F}_{128}$, label=cod:matriz3dF2-cuerpo]
 def matrix3d_F2to128(n1=[]):
 
    matrix =[]
@@ -265,7 +265,7 @@ def matrix3d_F2to128(n1=[]):
 
 \section{Funciones con matrices}
 
-En esta sección de explicarán funciones como la suma de matrices, cálculo de la matriz transpuesta, matriz identidad y el producto de matrices tanto en $\mathds{F}_2$ como en $\GF(128)$. Además incluye la función que resuelve el sistema de ecuaciones con el método de Gauss-Jordan.\\
+En esta sección de explicarán funciones como la suma de matrices, cálculo de la matriz transpuesta, matriz identidad y el producto de matrices tanto en $\mathds{F}_2$ como en $\mathds{F}_{128}$. Además incluye la función que resuelve el sistema de ecuaciones con el método de Gauss-Jordan.\\
 
 
 Suma de dos matrices $m1$ y $m2$ del cuerpo de 128 elementos, código \ref{cod:suma-matrix}.
@@ -277,10 +277,10 @@ Suma de dos matrices $m1$ y $m2$ del cuerpo de 128 elementos, código \ref{cod:s
 	\begin{tabular}{p{0.14\linewidth} p {0.1\linewidth}p{0.1\linewidth}p{0.65\linewidth}}
 		\textbf{Tipo} & \textbf{Nombre} & \textbf{Variable} & \textbf{Descripción} \\
 		\toprule
-		int vector & m1 & Input & Matriz a sumar en $\GF(128)$\\[0.5ex]
-		int vector & m2 & Input & Matriz a sumar en $\GF(128)$\\[1.5ex]
+		int vector & m1 & Input & Matriz a sumar en $\mathds{F}_{128}$\\[0.5ex]
+		int vector & m2 & Input & Matriz a sumar en $\mathds{F}_{128}$\\[1.5ex]
 		int & row & Inner & Almacena las filas de n\\[1.5ex]
-		int vector & m\_suma & Output & Suma de las matrices m1 y m2 en $\GF(128)$\\[0.5ex]
+		int vector & m\_suma & Output & Suma de las matrices m1 y m2 en $\mathds{F}_{128}$\\[0.5ex]
 		\bottomrule
 	\end{tabular}}
 	\end{center}
@@ -313,11 +313,11 @@ Producto de dos matrices con elementos en el cuerpo de 128 elementos, código \r
 	\begin{tabular}{p{0.14\linewidth} p {0.1\linewidth}p{0.1\linewidth}p{0.65\linewidth}}
 		\textbf{Tipo} & \textbf{Nombre} & \textbf{Variable} & \textbf{Descripción} \\
 		\toprule
-		int vector & n1 & Input & Matriz a multiplicar en $\GF(128)$\\[0.5ex]
-		int vector & n2 & Input & Matriz a multiplicar en $\GF(128)$\\[1.5ex]
+		int vector & n1 & Input & Matriz a multiplicar en $\mathds{F}_{128}$\\[0.5ex]
+		int vector & n2 & Input & Matriz a multiplicar en $\mathds{F}_{128}$\\[1.5ex]
 		int & p\_suma & Inner & Almacena la suma de los productos de cada elemento de la fila de n1 y de la columna de n2\\[0.5ex]
 		int & row & Inner & Almacena las filas de prod\\[0.5ex]
-		int vector & prod & Output & Producto de las matrices m1 y m2 en $\GF(128)$\\[0.5ex]
+		int vector & prod & Output & Producto de las matrices m1 y m2 en $\mathds{F}_{128}$\\[0.5ex]
 		\bottomrule
 	\end{tabular}}
 	\end{center}
@@ -422,7 +422,7 @@ Calcula la matriz identidad con una determinada dimensión, $dim$, que se pasa c
 	\begin{tabular}{p{0.14\linewidth} p {0.1\linewidth}p{0.1\linewidth}p{0.65\linewidth}}
 		\textbf{Tipo} & \textbf{Nombre} & \textbf{Variable} & \textbf{Descripción} \\
 		\toprule
-		int & dim & Input & Dimensión de la que calcular la matriz identidad en $\GF(128)$\\[1.5ex]
+		int & dim & Input & Dimensión de la que calcular la matriz identidad en $\mathds{F}_{128}$\\[1.5ex]
 		int & row & Inner & Almacena las filas de matrix\\[1.5ex]
 		int vector & matrix & Output & Matriz identidad\\[0.5ex]
 		\bottomrule
@@ -676,8 +676,8 @@ La función \texttt{signature} calcula la firma del hash de un mensaje, $hashed$
 		int  & m & Input & Número aceites\\[0.5ex]
 		int  & v & Input & Número vinagres\\[0.5ex]
 		int vector & T & Input & Matriz de distorsión de la forma \ref{mat:T}\\[1.5ex]
-		int vector & alpha & Inner & Almecena los correspondientes valores de alpha\_F2 en $\GF(128)$\\[0.5ex]
-		int vector & beta & Inner &  Almecena los correspondientes valores de beta\_F2 en $\GF(128)$\\[0.5ex]
+		int vector & alpha & Inner & Almecena los correspondientes valores de alpha\_F2 en $\mathds{F}_{128}$\\[0.5ex]
+		int vector & beta & Inner &  Almecena los correspondientes valores de beta\_F2 en $\mathds{F}_{128}$\\[0.5ex]
 		int vector & vinagre & Inner & Vector aleatorio de tamaño v, contiene los vinagres\\[0.5ex]
 		int vector & coef & Inner & Almacena los coeficientes del sistema\\[0.5ex]
 		int vector & term & Inner & Almacena los términos del sistema\\[0.5ex]
@@ -734,8 +734,8 @@ Por último la función \texttt{verify} comprueba si la firma, $firma$, de un me
 		int vector & alpha\_F2 & Input & Vector de matrices triangulares superiores en $\mathds{F}_2$, parte de la clave privada\\[0.5ex]
 		int vector & beta\_F2 & Input & Matriz en $\mathds{F}_2$, parte de la clave privada \\[0.5ex]
 		int & m & Input & Número aceites\\[1.5ex]
-		int vector & alpha & Inner & Almecena los correspondientes valores de alpha\_F2 en $\GF(128)$\\[0.5ex]
-		int vector & beta & Inner &  Almecena los correspondientes valores de beta\_F2 en $\GF(128)$\\[1.5ex]
+		int vector & alpha & Inner & Almecena los correspondientes valores de alpha\_F2 en $\mathds{F}_{128}$\\[0.5ex]
+		int vector & beta & Inner &  Almecena los correspondientes valores de beta\_F2 en $\mathds{F}_{128}$\\[1.5ex]
 		boolean & verif & Output & \texttt{True} si la firma es válida\\
 		& & & \texttt{False} en otro caso\\[0.5ex]
 		\bottomrule
