@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.3.26)  1 NOV 2020 13:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.3.26)  1 NOV 2020 21:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2831,32 +2831,22 @@ Package babel Info: Redefining spanish shorthand "?
 
 ]
 (./proyecto.lol
-LaTeX Font Info:    Try loading font information for U+dsrom on input line 9.
+LaTeX Font Info:    Try loading font information for U+dsrom on input line 11.
  (/usr/share/texlive/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 )
-Overfull \hbox (0.26279pt too wide) detected at line 31
+Overfull \hbox (0.26279pt too wide) detected at line 33
 \T1/futs/m/n/10.95 A.10. 
  []
 
 
-Overfull \hbox (0.26279pt too wide) detected at line 32
+Overfull \hbox (0.26279pt too wide) detected at line 34
 \T1/futs/m/n/10.95 A.11. 
  []
 
 
-Overfull \hbox (0.26279pt too wide) detected at line 33
-\T1/futs/m/n/10.95 A.12. 
- []
-
-
-Overfull \hbox (0.26279pt too wide) detected at line 34
-\T1/futs/m/n/10.95 A.13. 
- []
-
-
 Overfull \hbox (0.26279pt too wide) detected at line 35
-\T1/futs/m/n/10.95 A.14. 
+\T1/futs/m/n/10.95 A.12. 
  []
 
 Package babel Info: Redefining spanish shorthand <<
@@ -2885,46 +2875,56 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 36.
 [7]
 Overfull \hbox (0.26279pt too wide) detected at line 36
-\T1/futs/m/n/10.95 A.15. 
+\T1/futs/m/n/10.95 A.13. 
  []
 
 
 Overfull \hbox (0.26279pt too wide) detected at line 37
-\T1/futs/m/n/10.95 A.16. 
+\T1/futs/m/n/10.95 A.14. 
  []
 
 
 Overfull \hbox (0.26279pt too wide) detected at line 38
-\T1/futs/m/n/10.95 A.17. 
+\T1/futs/m/n/10.95 A.15. 
  []
 
 
 Overfull \hbox (0.26279pt too wide) detected at line 39
-\T1/futs/m/n/10.95 A.18. 
+\T1/futs/m/n/10.95 A.16. 
  []
 
 
 Overfull \hbox (0.26279pt too wide) detected at line 40
-\T1/futs/m/n/10.95 A.19. 
+\T1/futs/m/n/10.95 A.17. 
  []
 
 
 Overfull \hbox (0.26279pt too wide) detected at line 41
-\T1/futs/m/n/10.95 A.20. 
+\T1/futs/m/n/10.95 A.18. 
  []
 
 
 Overfull \hbox (0.26279pt too wide) detected at line 42
-\T1/futs/m/n/10.95 A.21. 
+\T1/futs/m/n/10.95 A.19. 
  []
 
 
 Overfull \hbox (0.26279pt too wide) detected at line 43
-\T1/futs/m/n/10.95 A.22. 
+\T1/futs/m/n/10.95 A.20. 
  []
 
 
 Overfull \hbox (0.26279pt too wide) detected at line 44
+\T1/futs/m/n/10.95 A.21. 
+ []
+
+
+Overfull \hbox (0.26279pt too wide) detected at line 45
+\T1/futs/m/n/10.95 A.22. 
+ []
+
+
+Overfull \hbox (0.26279pt too wide) detected at line 46
 \T1/futs/m/n/10.95 A.23. 
  []
 
@@ -3091,7 +3091,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 46--47
 
  []
 
-<figuras/comp_clasica_cuantica.png, id=494, 631.35875pt x 330.23375pt>
+<figuras/comp_clasica_cuantica.png, id=498, 631.35875pt x 330.23375pt>
 File: figuras/comp_clasica_cuantica.png Graphic file (type png)
 <use figuras/comp_clasica_cuantica.png>
 Package pdftex.def Info: figuras/comp_clasica_cuantica.png  used on input line 
@@ -3377,7 +3377,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 159--160
 
  []
 
-<figuras/bit_cubit.png, id=563, 526.96875pt x 325.215pt>
+<figuras/bit_cubit.png, id=567, 526.96875pt x 325.215pt>
 File: figuras/bit_cubit.png Graphic file (type png)
 <use figuras/bit_cubit.png>
 Package pdftex.def Info: figuras/bit_cubit.png  used on input line 171.
@@ -3420,7 +3420,7 @@ re.1.2}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.177 
        <./figuras/bit_cubit.png>]
-<figuras/esfera_bloch.png, id=573, 803.0pt x 854.19125pt>
+<figuras/esfera_bloch.png, id=577, 803.0pt x 854.19125pt>
 File: figuras/esfera_bloch.png Graphic file (type png)
 <use figuras/esfera_bloch.png>
 Package pdftex.def Info: figuras/esfera_bloch.png  used on input line 183.
@@ -3495,7 +3495,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 223--224
 
  []
 
-<figuras/arbol_merkle.png, id=589, 652.4375pt x 322.20375pt>
+<figuras/arbol_merkle.png, id=593, 652.4375pt x 322.20375pt>
 File: figuras/arbol_merkle.png Graphic file (type png)
 <use figuras/arbol_merkle.png>
 Package pdftex.def Info: figuras/arbol_merkle.png  used on input line 227.
@@ -4003,7 +4003,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 7.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 7.
-<figuras/Gantt_ini.png, id=752, 1494.58376pt x 298.11375pt>
+<figuras/Gantt_ini.png, id=756, 1494.58376pt x 298.11375pt>
 File: figuras/Gantt_ini.png Graphic file (type png)
 <use figuras/Gantt_ini.png>
 Package pdftex.def Info: figuras/Gantt_ini.png  used on input line 14.
@@ -4046,7 +4046,7 @@ has been already used, duplicate ignored
                                                   \fi \fi 
 l.20 
       <./figuras/Gantt_ini.png>]
-<figuras/Gantt_1.png, id=762, 872.25874pt x 317.185pt>
+<figuras/Gantt_1.png, id=766, 872.25874pt x 317.185pt>
 File: figuras/Gantt_1.png Graphic file (type png)
 <use figuras/Gantt_1.png>
 Package pdftex.def Info: figuras/Gantt_1.png  used on input line 26.
@@ -4056,7 +4056,7 @@ Overfull \hbox (9.88652pt too wide) in paragraph at lines 26--27
  [][] 
  []
 
-<figuras/Gantt_2.png, id=763, 928.46875pt x 317.185pt>
+<figuras/Gantt_2.png, id=767, 928.46875pt x 317.185pt>
 File: figuras/Gantt_2.png Graphic file (type png)
 <use figuras/Gantt_2.png>
 Package pdftex.def Info: figuras/Gantt_2.png  used on input line 33.
@@ -4066,7 +4066,7 @@ Overfull \hbox (9.89336pt too wide) in paragraph at lines 33--34
  [][] 
  []
 
-<figuras/Gantt_3.png, id=764, 826.08624pt x 317.185pt>
+<figuras/Gantt_3.png, id=768, 826.08624pt x 317.185pt>
 File: figuras/Gantt_3.png Graphic file (type png)
 <use figuras/Gantt_3.png>
 Package pdftex.def Info: figuras/Gantt_3.png  used on input line 40.
@@ -4473,48 +4473,58 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 150.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 150.
-) (./capitulos/04_Diseno.tex
+
+Underfull \hbox (badness 10000) in paragraph at lines 155--156
+
+ []
+
+
 Underfull \vbox (badness 2368) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
+LaTeX Info: Redefining \. on input line 156.
+LaTeX Info: Redefining \% on input line 156.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 1.
+(babel)             in language  on input line 156.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 1.
+(babel)             in language  on input line 156.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 1.
+(babel)             in language  on input line 156.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 1.
+(babel)             in language  on input line 156.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 1.
+(babel)             in language  on input line 156.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 1.
+(babel)             in language  on input line 156.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 1.
+(babel)             in language  on input line 156.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 1.
+(babel)             in language  on input line 156.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 1.
+(babel)             in language  on input line 156.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 1.
+(babel)             in language  on input line 156.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 1.
+(babel)             in language  on input line 156.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 1.
+(babel)             in language  on input line 156.
  [32pdfTeX warning (ext4): destination with the same identifier (name{table.3.5
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1 \chapter
-            {Diseño}pdfTeX warning (ext4): destination with the same identifie
-r (name{table.3.6}) has been already used, duplicate ignored
+l.156 
+      pdfTeX warning (ext4): destination with the same identifier (name{table.3
+.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1 \chapter
-            {Diseño}]
+l.156 
+      ]
+Underfull \hbox (badness 10000) in paragraph at lines 157--158
+
+ []
+
+) (./capitulos/04_Diseno.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 Package babel Info: Redefining spanish shorthand <<
@@ -4676,33 +4686,72 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 75.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 75.
-LaTeX Info: Redefining \. on input line 89.
-LaTeX Info: Redefining \% on input line 89.
+LaTeX Info: Redefining \. on input line 86.
+LaTeX Info: Redefining \% on input line 86.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 89.
+(babel)             in language  on input line 86.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 89.
+(babel)             in language  on input line 86.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 89.
+(babel)             in language  on input line 86.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 89.
+(babel)             in language  on input line 86.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 89.
+(babel)             in language  on input line 86.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 89.
+(babel)             in language  on input line 86.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 89.
+(babel)             in language  on input line 86.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 89.
+(babel)             in language  on input line 86.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 89.
+(babel)             in language  on input line 86.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 89.
+(babel)             in language  on input line 86.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 89.
+(babel)             in language  on input line 86.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 89.
-[36]) (./capitulos/05_Implementacion.tex
+(babel)             in language  on input line 86.
+[36]
+Underfull \hbox (badness 10000) in paragraph at lines 87--88
+[]\T1/futs/m/n/10.95 Por �l-ti-mo han de des-ta-car-se los fi-che-ros de al-ma-
+ce-na-mien-to
+ []
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
+)
+LaTeX Info: Redefining \. on input line 113.
+LaTeX Info: Redefining \% on input line 113.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 113.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 113.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 113.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 113.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 113.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 113.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 113.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 113.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 113.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 113.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 113.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 113.
+ [37])
+(./capitulos/05_Implementacion.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 Package babel Info: Redefining spanish shorthand <<
@@ -4729,40 +4778,13 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 1.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 1.
- [37pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
+ [38pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
 2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.1 \chapter
             {Implementación}]
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 1.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 1.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 1.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 1.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 1.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 1.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 1.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 1.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 1.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 1.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 1.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 1.
- [38
-
-]
 Cap\'{\i }tulo 5.
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 1.
@@ -4831,7 +4853,9 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 34.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 34.
-[39]
+[39
+
+]
 Overfull \hbox (2.1366pt too wide) in paragraph at lines 46--46
 []|\T1/futs/b/n/10.95 Nombre| 
  []
@@ -5907,7 +5931,13 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 138.
 [58]
-Underfull \hbox (badness 5133) in paragraph at lines 140--142
+Underfull \hbox (badness 1009) in paragraph at lines 140--142
+[]\T1/futs/m/n/10.95 Wikipedia, ``Al-go-rit-mo Sch-norr,'' [][]$https : / / en 
+. wikipedia . org / wiki / Schnorr _
+ []
+
+
+Underfull \hbox (badness 5133) in paragraph at lines 144--146
 []\T1/futs/m/n/10.95 ``Install doc-ker en-gi-ne on ubun-tu,'' [][]$https : / / 
 docs . docker . com / engine /
  []
@@ -6353,7 +6383,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 188.
  [66]
-<figuras/Instalacion_bridgechain.png, id=1425, 996.72375pt x 544.0325pt>
+<figuras/Instalacion_bridgechain.png, id=1454, 996.72375pt x 544.0325pt>
 File: figuras/Instalacion_bridgechain.png Graphic file (type png)
 <use figuras/Instalacion_bridgechain.png>
 Package pdftex.def Info: figuras/Instalacion_bridgechain.png  used on input lin
@@ -6407,7 +6437,7 @@ ph1.1}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.218 
        <./figuras/Instalacion_bridgechain.png>]
-<figuras/Instalacion_explorer.png, id=1447, 1261.71375pt x 134.5025pt>
+<figuras/Instalacion_explorer.png, id=1476, 1261.71375pt x 134.5025pt>
 File: figuras/Instalacion_explorer.png Graphic file (type png)
 <use figuras/Instalacion_explorer.png>
 Package pdftex.def Info: figuras/Instalacion_explorer.png  used on input line 2
@@ -6418,7 +6448,7 @@ Overfull \hbox (52.5549pt too wide) in paragraph at lines 221--222
  [][] 
  []
 
-<figuras/Navegacion_explorer.png, id=1449, 1234.6125pt x 852.18375pt>
+<figuras/Navegacion_explorer.png, id=1478, 1234.6125pt x 852.18375pt>
 File: figuras/Navegacion_explorer.png Graphic file (type png)
 <use figuras/Navegacion_explorer.png>
 Package pdftex.def Info: figuras/Navegacion_explorer.png  used on input line 23
@@ -6486,7 +6516,7 @@ File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 )
-<figuras/wallet_1.png, id=1459, 1309.89375pt x 663.47874pt>
+<figuras/wallet_1.png, id=1488, 1309.89375pt x 663.47874pt>
 File: figuras/wallet_1.png Graphic file (type png)
 <use figuras/wallet_1.png>
 Package pdftex.def Info: figuras/wallet_1.png  used on input line 267.
@@ -6529,7 +6559,7 @@ h1.4}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.272 \newpage
                <./figuras/wallet_1.png>]
-<figuras/wallet_2.png, id=1479, 447.6725pt x 490.83376pt>
+<figuras/wallet_2.png, id=1509, 447.6725pt x 490.83376pt>
 File: figuras/wallet_2.png Graphic file (type png)
 <use figuras/wallet_2.png>
 Package pdftex.def Info: figuras/wallet_2.png  used on input line 277.
@@ -6559,7 +6589,7 @@ Underfull \hbox (badness 3439) in paragraph at lines 282--283
 puer-to de la API,
  []
 
-<figuras/wallet_3.png, id=1481, 446.66875pt x 332.24126pt>
+<figuras/wallet_3.png, id=1511, 446.66875pt x 332.24126pt>
 File: figuras/wallet_3.png Graphic file (type png)
 <use figuras/wallet_3.png>
 Package pdftex.def Info: figuras/wallet_3.png  used on input line 286.
@@ -6603,7 +6633,7 @@ l.291 \newpage
                                                   \fi \fi 
 l.291 \newpage
                <./figuras/wallet_2.png> <./figuras/wallet_3.png>]
-<figuras/wallet_4.png, id=1489, 457.71pt x 524.96124pt>
+<figuras/wallet_4.png, id=1519, 457.71pt x 524.96124pt>
 File: figuras/wallet_4.png Graphic file (type png)
 <use figuras/wallet_4.png>
 Package pdftex.def Info: figuras/wallet_4.png  used on input line 297.
@@ -6613,7 +6643,7 @@ Overfull \hbox (40.94072pt too wide) in paragraph at lines 297--298
 [][] 
  []
 
-<figuras/wallet_5.png, id=1490, 437.635pt x 430.60875pt>
+<figuras/wallet_5.png, id=1520, 437.635pt x 430.60875pt>
 File: figuras/wallet_5.png Graphic file (type png)
 <use figuras/wallet_5.png>
 Package pdftex.def Info: figuras/wallet_5.png  used on input line 300.
@@ -6656,12 +6686,12 @@ h1.7}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.306 \newpage
                <./figuras/wallet_4.png> <./figuras/wallet_5.png>]
-<figuras/wallet_6.png, id=1499, 403.5075pt x 458.71375pt>
+<figuras/wallet_6.png, id=1528, 403.5075pt x 458.71375pt>
 File: figuras/wallet_6.png Graphic file (type png)
 <use figuras/wallet_6.png>
 Package pdftex.def Info: figuras/wallet_6.png  used on input line 311.
 (pdftex.def)             Requested size: 170.71571pt x 199.1679pt.
-<figuras/wallet_7.png, id=1501, 422.57875pt x 358.33875pt>
+<figuras/wallet_7.png, id=1530, 422.57875pt x 358.33875pt>
 File: figuras/wallet_7.png Graphic file (type png)
 <use figuras/wallet_7.png>
 Package pdftex.def Info: figuras/wallet_7.png  used on input line 320.
@@ -6705,12 +6735,12 @@ l.325 \newpage
                                                   \fi \fi 
 l.325 \newpage
                <./figuras/wallet_6.png> <./figuras/wallet_7.png>]
-<figuras/wallet_8.png, id=1509, 426.59375pt x 364.36125pt>
+<figuras/wallet_8.png, id=1538, 426.59375pt x 364.36125pt>
 File: figuras/wallet_8.png Graphic file (type png)
 <use figuras/wallet_8.png>
 Package pdftex.def Info: figuras/wallet_8.png  used on input line 330.
 (pdftex.def)             Requested size: 170.71909pt x 170.71606pt.
-<figuras/wallet_9.png, id=1511, 415.5525pt x 234.8775pt>
+<figuras/wallet_9.png, id=1540, 415.5525pt x 234.8775pt>
 File: figuras/wallet_9.png Graphic file (type png)
 <use figuras/wallet_9.png>
 Package pdftex.def Info: figuras/wallet_9.png  used on input line 339.
@@ -6754,7 +6784,7 @@ l.344 \newpage
                                                   \fi \fi 
 l.344 \newpage
                <./figuras/wallet_8.png> <./figuras/wallet_9.png>]
-<figuras/wallet_10.png, id=1520, 430.60875pt x 281.05pt>
+<figuras/wallet_10.png, id=1549, 430.60875pt x 281.05pt>
 File: figuras/wallet_10.png Graphic file (type png)
 <use figuras/wallet_10.png>
 Package pdftex.def Info: figuras/wallet_10.png  used on input line 349.
@@ -6777,7 +6807,7 @@ Underfull \hbox (badness 3148) in paragraph at lines 354--355
 13[][]. Re-lle-na-mos los cam-pos con
  []
 
-<figuras/wallet_11.png, id=1522, 371.3875pt x 262.9825pt>
+<figuras/wallet_11.png, id=1551, 371.3875pt x 262.9825pt>
 File: figuras/wallet_11.png Graphic file (type png)
 <use figuras/wallet_11.png>
 Package pdftex.def Info: figuras/wallet_11.png  used on input line 359.
@@ -6787,7 +6817,7 @@ Overfull \hbox (55.17706pt too wide) in paragraph at lines 359--360
 [][] 
  []
 
-<figuras/wallet_12.png, id=1523, 304.13625pt x 254.9525pt>
+<figuras/wallet_12.png, id=1552, 304.13625pt x 254.9525pt>
 File: figuras/wallet_12.png Graphic file (type png)
 <use figuras/wallet_12.png>
 Package pdftex.def Info: figuras/wallet_12.png  used on input line 362.
@@ -6837,12 +6867,12 @@ l.368 \newpage
 l.368 \newpage
                <./figuras/wallet_10.png> <./figuras/wallet_11.png> <./figuras/w
 allet_12.png>]
-<figuras/wallet_13.png, id=1532, 435.6275pt x 347.2975pt>
+<figuras/wallet_13.png, id=1561, 435.6275pt x 347.2975pt>
 File: figuras/wallet_13.png Graphic file (type png)
 <use figuras/wallet_13.png>
 Package pdftex.def Info: figuras/wallet_13.png  used on input line 373.
 (pdftex.def)             Requested size: 199.168pt x 184.94647pt.
-<figuras/wallet_14.png, id=1534, 417.56pt x 292.09125pt>
+<figuras/wallet_14.png, id=1563, 417.56pt x 292.09125pt>
 File: figuras/wallet_14.png Graphic file (type png)
 <use figuras/wallet_14.png>
 Package pdftex.def Info: figuras/wallet_14.png  used on input line 382.
@@ -6886,12 +6916,12 @@ l.387 \newpage
                                                   \fi \fi 
 l.387 \newpage
                <./figuras/wallet_13.png> <./figuras/wallet_14.png>]
-<figuras/wallet_15.png, id=1542, 417.56pt x 256.96pt>
+<figuras/wallet_15.png, id=1571, 417.56pt x 256.96pt>
 File: figuras/wallet_15.png Graphic file (type png)
 <use figuras/wallet_15.png>
 Package pdftex.def Info: figuras/wallet_15.png  used on input line 392.
 (pdftex.def)             Requested size: 199.17134pt x 142.26552pt.
-<figuras/wallet_16.png, id=1544, 420.57124pt x 224.84pt>
+<figuras/wallet_16.png, id=1573, 420.57124pt x 224.84pt>
 File: figuras/wallet_16.png Graphic file (type png)
 <use figuras/wallet_16.png>
 Package pdftex.def Info: figuras/wallet_16.png  used on input line 401.
@@ -6935,7 +6965,7 @@ l.406 \newpage
                                                   \fi \fi 
 l.406 \newpage
                <./figuras/wallet_15.png> <./figuras/wallet_16.png>]
-<figuras/wallet_17.png, id=1552, 430.60875pt x 268.00125pt>
+<figuras/wallet_17.png, id=1581, 430.60875pt x 268.00125pt>
 File: figuras/wallet_17.png Graphic file (type png)
 <use figuras/wallet_17.png>
 Package pdftex.def Info: figuras/wallet_17.png  used on input line 412.
@@ -6987,10 +7017,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 274.
  ) 
 Here is how much of TeX's memory you used:
- 51214 strings out of 494284
- 1060064 string characters out of 6162693
- 1323571 words of memory out of 5000000
- 52935 multiletter control sequences out of 15000+600000
+ 51240 strings out of 494284
+ 1060604 string characters out of 6162693
+ 1323819 words of memory out of 5000000
+ 52939 multiletter control sequences out of 15000+600000
  650127 words of font info for 125 fonts, out of 8000000 for 9000
  376 hyphenation exceptions out of 8191
  135i,27n,169p,10360b,3310s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -7009,10 +7039,10 @@ pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/urw/courier/ucrr8a.pfb>
-Output written on proyecto.pdf (101 pages, 1232204 bytes).
+Output written on proyecto.pdf (101 pages, 1236986 bytes).
 PDF statistics:
- 1911 PDF objects out of 2073 (max. 8388607)
- 1668 compressed objects within 17 object streams
- 708 named destinations out of 1000 (max. 500000)
+ 1945 PDF objects out of 2073 (max. 8388607)
+ 1701 compressed objects within 18 object streams
+ 726 named destinations out of 1000 (max. 500000)
  462 words of extra memory for PDF output out of 10000 (max. 10000000)
 

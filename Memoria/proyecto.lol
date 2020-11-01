@@ -1,4 +1,6 @@
 \contentsline {lstlisting}{\numberline {4.1}L\IeC {\'\i }nea 108 app-core.sh}{36}{lstlisting.4.1}
+\contentsline {lstlisting}{\numberline {4.2}Estructura archivo data.json}{37}{lstlisting.4.2}
+\contentsline {lstlisting}{\numberline {4.3}Estructura archivo signature.json}{37}{lstlisting.4.3}
 \contentsline {lstlisting}{\numberline {5.1}Tabla para calcular la potencia en el cuerpo}{39}{lstlisting.5.1}
 \contentsline {lstlisting}{\numberline {5.2}Tabla para calcular el logaritmo en el cuerpo}{39}{lstlisting.5.2}
 \contentsline {lstlisting}{\numberline {5.3}Suma de dos elementos del cuerpo}{40}{lstlisting.5.3}

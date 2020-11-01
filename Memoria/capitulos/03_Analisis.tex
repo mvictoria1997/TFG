@@ -6,7 +6,7 @@ Este tercer capítulo incluye una descripción de las funcionalidades que se pre
 
 Con la realización de este proyecto se persiguen principalmente dos funcionalidades, la implementación del algoritmo UOV y la integración del mismo en la \textit{blockchain}.
 
-Para la implementación del algoritmo ha sido necesario implementar la aritmética de $\GF(128)$ puesto que no se ha encontrado ninguna librería de \texttt{python} que trabaje conjuntamente las matrices con cuerpos finitos. Se ha optado por el lenguaje de programación \texttt{python} para el algoritmo porque inicialmente se pensaba trabajar con la \textit{blockchain} implementada en \texttt{python} y no tener problemas a la hora de llamar a las funciones del algoritmo. Sin embargo tras un proceso de investigación se vió mejor opción utilizar la \textit{blockchain} en \texttt{typescript} para hacer uso de la parte gráfica como es la aplicación wallet y el \textit{explorer}. De esta forma se ha visto afectado el diseño inicial puesto que han sido necesarios dos ficheros más de transición entre los ficheros de \texttt{typescript} y \texttt{python}, se entrará en detalle en el capítulo \ref{sec:diseno}.
+Para la implementación del algoritmo ha sido necesario implementar la aritmética de $\mathds{F}_{128}$ puesto que no se ha encontrado ninguna librería de \texttt{python} que trabaje conjuntamente las matrices con cuerpos finitos. Se ha optado por el lenguaje de programación \texttt{python} para el algoritmo porque inicialmente se pensaba trabajar con la \textit{blockchain} implementada en \texttt{python} y no tener problemas a la hora de llamar a las funciones del algoritmo. Sin embargo tras un proceso de investigación se vió mejor opción utilizar la \textit{blockchain} en \texttt{typescript} para hacer uso de la parte gráfica como es la aplicación wallet y el \textit{explorer}. De esta forma se ha visto afectado el diseño inicial puesto que han sido necesarios dos ficheros más de transición entre los ficheros de \texttt{typescript} y \texttt{python}, se entrará en detalle en el capítulo \ref{sec:diseno}.
 
 \subsection{Requisitos funcionales}
 
@@ -19,7 +19,7 @@ La especificación de los requisitos funcionales se ha dividido en varios aparta
 	\begin{tabular}{p{0.14\linewidth} p{0.75\linewidth}}
 		\textbf{Requisito} & \textbf{Descripción} \\
 		\toprule
-		RF 1.1 & El programa deberá tener la implementación de la aritmética de $\GF(128)$\\[0.5ex]
+		RF 1.1 & El programa deberá tener la implementación de la aritmética de $\mathds{F}_{128}$\\[0.5ex]
 		RF 1.2 & El programa deberá de generar la clave pública y privada de cada usuario\\[0.5ex]
 		RF 1.3 & El programa deberá de firmar correctamente cada \textit{hash}, ya sea de un bloque o una transacción\\[0.5ex]
 		RF 1.4 & El programa deberá de realizar correctamente la verificación de un \textit{hash} con una firma\\[0.5ex]
@@ -150,4 +150,11 @@ En los requisitos no funcionales podemos encontrar dos bloques, los referentes a
 \section{Análisis}
 \label{sec:analisis-analisis}
 
-El objetivo de este apartado es mostrar en diferentes subapartados los diferentes subproblemas que han aparecido al realizar el proyecto, describiendo las alternativas que se han considerado, y justificando las decisiones que se han adoptado. A veces, especialmente cuando los conceptos utilizados en este apartado son extensos, es necesario clarificarlos previamente en el Capítulo de \textit{Introducción} (sección \textit{Contenidos teóricos para la comprensión del proyecto}).   
+%El objetivo de este apartado es mostrar en diferentes subapartados los diferentes subproblemas que han aparecido al realizar el proyecto, describiendo las alternativas que se han considerado, y justificando las decisiones que se han adoptado. A veces, especialmente cuando los conceptos utilizados en este apartado son extensos, es necesario clarificarlos previamente en el Capítulo de \textit{Introducción} (sección \textit{Contenidos teóricos para la comprensión del proyecto}). 
+
+Un primer problema que se ha obtenido es la generación y almacenamiento de las claves públicas y privadas. Para no tener problemas de compatibilidad con el formato entre las claves que se necesitan para el algoritmo UOV y las que genera la \textit{blockchain}, se ha optado por añadir un fichero con extensión \texttt{json} que almacena conjuntos de claves tanto las propias de la \textit{blockchain} como las de UOV. De esta forma el algoritmo de firma crea una nueva entrada en el fichero \texttt{data.json} añadiendo las claves pasadas como parámetro y las claves del algoritmo UOV (los $\alpha$ y $\beta$ públicos y privados).\\
+
+Las claves generadas por el algoritmo UOV se hacen a partir de la clave privada de la creada por la \textit{blockchain}, esto es, los valores aleatorios de la clave privada de UOV ($\alpha$ y $\beta$) se calculan tomando como semilla la clave privada de la \textit{blockchain}. Dando lugar a la unicidad entre claves, ya que el mismo par de claves de la cadena de bloques generará el mismo par de claves con el algoritmo UOV.\\
+
+Un segundo problema se ha obtenido a la hora de realizar la verificación de la firma, se ha notado que la firma del \textit{hash} pasada como parámetro se corta, sin ser esta truncanda en la función firma. Al no encontrar el lugar donde se trunca ha sido necesario cambiar el diseño e incluir un nuevo fichero \texttt{signature.json}, donde se almacena la firma en hexadecimal y en vector. Dicha firma en hexadecimal es la que devuelve la función firma, aunque la función de verificación no reciba el valor completo en hexadecimal no hay problema puesto que se busca en el fichero la firma que comience por el valor recibido. %No unicidad
+
