@@ -59,7 +59,7 @@ La carpeta \texttt{deployer} contiene varios directorios y ficheros siendo los m
 \end{figure}
 
 \begin{itemize}
-	\item El directorio \texttt{app} contiene a su vez dos ficheros, \texttt{app-core.sh} que clona e instala el repositorio de github \texttt{mvictoria1997/core} puesto que se ha cambiado la línea 108, en su defecto instalaría la \textit{blockchain} de ArkEcosystem, código \ref{cod:app-core}. Este cambio se hace para obtener en la \textit{blockchain} las modificaciones en el algoritmo de firma.
+	\item El directorio \texttt{app} contiene a su vez dos ficheros, \texttt{app-core.sh} que clona e instala el repositorio de github \texttt{mvictoria1997/core} puesto que se ha cambiado la línea 108 para tal fin, código \ref{cod:app-core}, en su defecto instalaría la \textit{blockchain} de \mbox{ArkEcosystem}. Este cambio se hace para obtener en la \textit{blockchain} las modificaciones en el algoritmo de firma.
 
 	\begin{lstlisting}[language=Python,caption=Línea 108 app-core.sh, label=cod:app-core]
 		git clone https://github.com/mvictoria1997/core.git --single-branch "$BRIDGECHAIN_PATH"
@@ -80,9 +80,30 @@ El directorio \texttt{core-bridgechain} contiene cinco directorios importantes, 
 	\item Directorio \texttt{blocks} gestiona los bloques de la \textit{blockchain}, en este directorio se encuentran los ficheros, \texttt{block.ts} que engloba las funciones de verificación de la firma de los bloques y \texttt{factory.ts} que administra la creación y firma de los bloques.
 	\item En el directorio \texttt{crypto} es donde se han realizado los cambios, puesto que se encuentran los ficheros con los algoritmos de firma y verificación (objetivo de nuestro proyecto). Podemos distinguir tres tipos de ficheros, los escritos en \texttt{typescript}, los escritos en \texttt{python} y por último los de almacenamiento con extensión \texttt{json}.
 	
-	De los escritos en \texttt{typescript} destaca el fichero \texttt{hash.ts}
+	De los escritos en \texttt{typescript} destaca el fichero \texttt{hash.ts}, en él se encuentran las funciones de firma y verificación de tres algoritmos, \acrshort{ecdsa}, Schnorr\cite{schnorr} y \acrshort{uov} (la añadida para este trabajo). Para no tener que modificar las funciones desde donde se realizan las llamadas a los distintos algoritmos, lo que se ha hecho es llamar desde la función de firma y verificación del algoritmo ECDSA a las funciones de firma y verificación del algoritmo UOV, respectivamente.
 	
+	En los archivos de \texttt{python} se encuentran \texttt{uov.py}, \texttt{signature.py} y \texttt{verify.py}. El archivo \texttt{uov.py} contiene las funciones del algoritmo UOV, estas se explicarán en el capítulo \ref{sec:implementacion}. Los otros dos archivos son de transición, esto es, se llaman desde la función de firma a \texttt{signature.py} y desde la función de verificación a \texttt{verify.py}, para pasar los parámetros del lenguaje \texttt{typescript} al lenguaje \texttt{python}, a continuación se realizan llamadas a las funciones de firma o verificación, volviendo a pasar los resultados a las funciones de \texttt{typescript}.
 	
+	Por último han de destacarse los ficheros de almacenamiento \texttt{data.json} y \texttt{signature.json}. En \texttt{data.json} podemos encontrar cada una de las claves públicas y privadas generadas para el algoritmo de Schnorr y las correspondientes para el algoritmo UOV (los $\alpha$ y $\beta$ privados y públicos), cada conjunto de claves se ha almacenado en un diccionario con la estructura que muestra el código \ref{cod:data-json}. Debido a los problemas explicado en el apartado de análisis \ref{sec:analisis-analisis}, el archivo \texttt{signature.json} contiene las firmas en hexadecimal y sus correspondientes en forma de vector, tal y como muestra el código \ref{cod:sign-json}.
+	
+	\begin{lstlisting}[language=Python,caption=Estructura archivo data.json, label=cod:data-json]
+		{
+			"id":
+			"pub_schnorr":
+			"priv_schnorr":
+			"priv_alpha_UOV": 
+			"priv_beta_OUV": 
+			"pub_alpha_UOV": 
+			"pub_beta_OUV": 
+		}
+	\end{lstlisting}
+	
+	\begin{lstlisting}[language=Python,caption=Estructura archivo signature.json, label=cod:sign-json]
+		{
+			"hex":
+			"vector":
+		}
+	\end{lstlisting}
 	
 	\item Directorio \texttt{identities} abarca la creación y almacenamiento de las claves pública y privada.
 	\item Directorio \texttt{interfaces} incluye las interfaces, esto es, los campos que se requieren para la creación de cada objeto o los que pueden añadirse posteriormente. Los objetos más destacados y con los que se han trabajado son bloques, identidades, mensajes y transacciones.
