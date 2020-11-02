@@ -66,7 +66,9 @@
 \definecolor{gray75}{gray}{.75}
 \definecolor{gray45}{gray}{.45}
 \definecolor{gray30}{gray}{.94}
-\definecolor{codegreen}{rgb}{0,0.6,0} 
+\definecolor{codegreen}{rgb}{0.0,0.26,0.15}
+\definecolor{codeapple}{rgb}{0.0,0.5,0.0}
+\definecolor{codedartgreen}{rgb}{0.05, 0.5, 0.06}
 \definecolor{codeperla}{rgb}{0.52, 0.52, 0.51} 
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
@@ -80,10 +82,10 @@
 \lstdefinestyle{Python}{
 	backgroundcolor=\color{backcolour},   
 	commentstyle=\color{codeperla}, %codegreen
-	keywordstyle=\color{codegreen}, %magenta
+	keywordstyle=\color{codegreen}\bfseries, %magenta
 	numberstyle=\tiny\color{codegray},
-	stringstyle=\color{codegreen}, %codepurple
-	basicstyle=\ttfamily\scriptsize,
+	stringstyle=\color{codegreen}\bfseries, %codepurple
+	basicstyle=\ttfamily\scriptsize\bfseries,
 	breakatwhitespace=false,         
 	breaklines=true,                 
 	captionpos=b,                    
@@ -123,9 +125,34 @@
 \lstdefinestyle{Consola}
    {basicstyle=\scriptsize\bf\ttfamily,
     backgroundcolor=\color{backcolour},
+    keywordstyle=\color{black}\bfseries,
     %frame=single,
     numbers=none
 }
+
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+ 
+\usepackage{accsupp}% http://ctan.org/pkg/accsupp
+\newcommand{\emptyaccsupp}[1]{\BeginAccSupp{ActualText={}}#1\EndAccSupp{}}
+
+%define Javascript language
+\lstdefinestyle{TypeScript}{
+	keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break, public, static, for, let, const},
+	keywordstyle=\color{codegreen}\bfseries,
+	ndkeywords={class, export, boolean, throw, implements, import, this, string, Buffer},
+	ndkeywordstyle=\color{codeapple}\bfseries,
+	identifierstyle=\color{black}\bfseries,
+	basicstyle=\ttfamily\scriptsize,
+	sensitive=false,
+	comment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	commentstyle=\color{codeperla}\ttfamily,
+	stringstyle=\color{codedartgreen}\ttfamily,
+	morestring=[b]',
+	morestring=[b]",
+	numberstyle=\emptyaccsupp
+}
+
 
 
 \lstset{
@@ -191,7 +218,7 @@
 	colorlinks=true,
 	linkcolor=blue,
 	%filecolor=red,
-	urlcolor=cyan,
+	urlcolor=blue,
 	citecolor=blue,
 	pdfborder={0 0 0}
 }
@@ -272,3 +299,4 @@
 	\thispagestyle{empty}
 
 \end{document}
+

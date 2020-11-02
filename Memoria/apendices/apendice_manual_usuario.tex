@@ -5,218 +5,481 @@ El manual de usuario se va a realizar para una máquina ubuntu.\\
 
 \section{Instalación de Docker}
 
-En primer lugar instalamos la última versión de docker, \cite{instalacion-docker}. 
-
-Desintalar cualquier versión anterior de Docker.\\
+Para guardar mejor las modificaciones que se vayan realizando es mejor instalar una máquina docker en lugar de hacerlo en local. Así el primer paso es instalar la última versión de docker, en esta parte se seguirá el tutorial oficial de Docker \cite{instalacion-docker}. Antes de nada se va a desinstalar cualquier versión anterior de Docker, código \ref{cod:remove-docker}\\
 
 \begin{lstlisting}[language=Bash,caption=Instalación Docker. Parte I, label=cod:remove-docker, style=Consola]
-sudo apt-get remove docker docker-engine docker.io containerd runc
+	$ sudo apt-get remove docker docker-engine docker.io containerd runc
 \end{lstlisting}
 
 
-Actualizar los paquetes \texttt{apt} para tener acceso a las últimas actualizaciones e instalar los paquetes que permiten al sistema operativo acceder a los repositorios de Docker a través de HTTPS.\\
+Es necesario actualizar los paquetes \texttt{apt} para tener acceso a las últimas actualizaciones e instalar los paquetes que permiten al sistema operativo acceder a los repositorios de Docker a través de HTTPS, código \ref{cod:docker-up}.\\
 
 \begin{lstlisting}[language=Bash,caption=Instalación Docker. Parte II, label=cod:docker-up, style=Consola]
-$ sudo apt-get update
-$ sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+	$ sudo apt-get update
+	$ sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
 \end{lstlisting}
 
-Añadir la clave GPG oficial de Docker, la clave GPG es una característica de seguridad para asegurar que el software que se va instalar es auténtico.\\
+Se añade la clave GPG oficial de Docker, código \ref{cod:add-huella}. La clave GPG es una característica de seguridad para asegurar que el software que se va instalar es auténtico.\\
  
 \begin{lstlisting}[language=Bash,caption=Instalación Docker. Parte III, label=cod:add-huella, style=Consola]
-$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+	$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
-OK
+	OK
 \end{lstlisting}
 
-Verificar que obtenemos la clave con la siguiente huella, para ello buscamos la huella con los últimos 8 dígitos, de la misma.\\
+Verificar que obtenemos la clave con la siguiente huella, para ello hay que buscar la huella con los últimos 8 dígitos, de la misma, código \ref{cod:huella}.\\
 
 \texttt{9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88}\\
 
 \begin{lstlisting}[language=Bash,caption=Instalación Docker. Parte IV, label=cod:huella, style=Consola]
-$ sudo apt-key fingerprint 0EBFCD88
+	$ sudo apt-key fingerprint 0EBFCD88
 
-pub   rsa4096 2017-02-22 [SCEA]
-      9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88
-uid           [ unknown] Docker Release (CE deb) <docker@docker.com>
-sub   rsa4096 2017-02-22 [S]
+	pub   rsa4096 2017-02-22 [SCEA]
+		  9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88
+	uid           [ unknown] Docker Release (CE deb) <docker@docker.com>
+	sub   rsa4096 2017-02-22 [S]
 \end{lstlisting}
 
-Instalar el repositorio de Docker.\\ 
+La instalación del repositorio de Docker se hace mediante el código \ref{cod:install-docker}.\\ 
 
 \begin{lstlisting}[language=Bash,caption=Instalación Docker. Parte V, label=cod:install-docker, style=Consola]
-$ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+	$ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 \end{lstlisting}
 
-Actualizar los repositorios que se acaban de agregar e instalar la última versión de Docker Engine y Docker Containerd.\\
-
+Actualizar los repositorios que se acaban de agregar, e instalar la última versión de Docker Engine y Docker Containerd, código \ref{cod:docker-update}.\\
 
 \begin{lstlisting}[language=Bash,caption=Instalación Docker. Parte VI, label=cod:docker-update, style=Consola]
-$ sudo apt-get update
-$ sudo apt-get install docker-ce docker-ce-cli containerd.io
+	$ sudo apt-get update
+	$ sudo apt-get install docker-ce docker-ce-cli containerd.io
 \end{lstlisting}
 
-Verificar que se ha instalado correctamente comprobando la versión de Docker.\\
+Verificar que se ha instalado correctamente comprobando la versión de Docker, codigo \ref{cod:docker-version}.\\
 
 \begin{lstlisting}[language=Bash,caption=Instalación Docker. Parte VII, label=cod:docker-version, style=Consola]
-$ docker --version
+	$ docker --version
 
-Docker version 19.03.13, build 4484c46d9d
+	Docker version 19.03.13, build 4484c46d9d
 \end{lstlisting}
 
 Algunos comandos útiles para el trabajo con Docker se muestran en el código \ref{cod:cm-docker}.
 
 \begin{lstlisting}[language=Bash,caption=Comandos útiles de Docker, label=cod:cm-docker]
-#Muestra los contenedores
-$ sudo docker ps
+	#Muestra los contenedores
+	$ sudo docker ps
 
-#Lista los contenedores con los IDs
-$ sudo docker container ls --all
+	#Lista los contenedores con los IDs
+	$ sudo docker container ls --all
 
-#Lista las imagenes con los IDs
-$ sudo docker images ls --all 
+	#Lista las imagenes con los IDs
+	$ sudo docker images ls --all 
 
-#Guarda los cambios del docker
-$ sudo docker commit <ID-CONTAINER> <NOMBRE-NUEVO:ETIQUETA>
+	#Guarda los cambios del docker
+	$ sudo docker commit <ID-CONTAINER> <NOMBRE-NUEVO:ETIQUETA>
 
-#Corre un contenedor, abriendo los puertos indicados
-$ sudo docker run -it -p <PUERTO:PUERTO> <NOMBRE:ETIQUETA>
+	#Corre un contenedor, abriendo los puertos indicados
+	$ sudo docker run -it -p <PUERTO:PUERTO> <NOMBRE:ETIQUETA>
 
-#Elimina un contenedor
-$ sudo docker rm <ID-CONTAINER>
+	#Elimina un contenedor
+	$ sudo docker rm <ID-CONTAINER>
 \end{lstlisting}
 
 \section{Instalación Blockchain ARK}
 
-En Docker, iniciamos una imagen de ubuntu xenial. Además abrimos los puertos que van a ser necesarios posteriormente 4103, para la API pública, 4102, conexión P2P API paray 4200, para el \textit{explorer}.\\
+En Docker, hay que iniciar una imagen de ubuntu xenial, codigo \ref{cod:run-docker}. Además es necesario abrir algunos puertos como 4103, para la API pública, 4102, conexión P2P API y 4200, para el \textit{explorer}.\\
 
 \begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte I, label=cod:run-docker, style=Consola]
-$ sudo docker run -ti -p 4103:4103 -p 4200:4200 ubuntu:xenial
+	$ sudo docker run -ti -p 4103:4103 -p 4200:4200 ubuntu:xenial
 \end{lstlisting}
 
-Una vez estamos dentro de la máquina Docker instalamos sudo, para poder trabajar en modo administrador desde el usuario que vamos a crear.\\
+Una vez dentro de la máquina Docker hay que instalar \texttt{sudo}, para poder trabajar en modo administrador desde el usuario que se va a crear, código \ref{cod:add-user}.\\
 
 \begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte II, label=cod:add-user, style=Consola]
-$ apt-get install sudo
-$ adduser deployer
+	$ apt-get install sudo
+	$ adduser deployer
 
-Añadiendo el usuario `deployer' ...
-Añadiendo el nuevo grupo `deployer' (1001) ...
-Añadiendo el nuevo usuario `deployer' (1001) con grupo `deployer' ...
-Creando el directorio personal `/home/deployer' ...
-Copiando los ficheros desde `/etc/skel' ...
-Introduzca la nueva contraseña de UNIX: ********
-Vuelva a escribir la nueva contraseña de UNIX: ********
-passwd: contraseña actualizada correctamente
-Cambiando la información de usuario para deployer
-Introduzca el nuevo valor, o presione INTRO para el predeterminado
-	Nombre completo []: 
-	Número de habitación []: 
-	Teléfono del trabajo []: 
-	Teléfono de casa []: 
-	Otro []: 
-¿Es correcta la información? [S/n] S
+	Añadiendo el usuario `deployer' ...
+	Añadiendo el nuevo grupo `deployer' (1001) ...
+	Añadiendo el nuevo usuario `deployer' (1001) con grupo `deployer' ...
+	Creando el directorio personal `/home/deployer' ...
+	Copiando los ficheros desde `/etc/skel' ...
+	Introduzca la nueva contraseña de UNIX: ********
+	Vuelva a escribir la nueva contraseña de UNIX: ********
+	passwd: contraseña actualizada correctamente
+	Cambiando la información de usuario para deployer
+	Introduzca el nuevo valor, o presione INTRO para el predeterminado
+		Nombre completo []: 
+		Número de habitación []: 
+		Teléfono del trabajo []: 
+		Teléfono de casa []: 
+		Otro []: 
+	¿Es correcta la información? [S/n] S
 \end{lstlisting}
 
-Cambiar el modo del usuario deployer incluyéndolo en el grupo sudo para que sea un superusuario y finalmente, entrar al usuario deployer.\\
+Cambiar el modo del usuario \texttt{``{}}deployer\texttt{''}, incluyéndolo en el grupo sudo, para que sea un superusuario y finalmente, entrar al usuario deployer, código \ref{cod:enter-user}.\\
 
 \begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte III, label=cod:enter-user, style=Consola]
-$ usermod -aG sudo deployer
-$ su - deployer
+	$ usermod -aG sudo deployer
+	$ su - deployer
 \end{lstlisting}
 
-Actualizamos los paquete e instalamos algunos nuevos como \texttt{git}, \texttt{curl} y \texttt{yarn}.\\
+Actualizar los paquete e instalar algunos nuevos como \texttt{git}, \texttt{curl} y \texttt{yarn}, código \ref{cod:update}.\\
 
 \begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte IV, label=cod:update, style=Consola]
-$ sudo apt-get update
-$ sudo apt-get install git curl yarn jq apt-transport-https
+	$ sudo apt-get update
+	$ sudo apt-get install git curl yarn jq apt-transport-https
 \end{lstlisting}
 
-Instalar las dependencias nvm.\\
+Instalar las dependencias \texttt{nvm}, código \ref{cod:nvm}, es necesario para instalar posteriormente el paquete \texttt{pm2}.\\
 
 \begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte V, label=cod:nvm, style=Consola]
-$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
+	$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
 \end{lstlisting}
 
-Para comprobar que se ha instalado correctamente nos salimos del usuario deployer y volvemos a entrar.\\
+Para comprobar que se ha instalado correctamente hay que salir y volver a entrar en el usuario \texttt{``{}}deployer\texttt{''}, código \ref{cod:verif-nvm}.\\
 
-\begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte VI, label=cod:nvm, style=Consola]
-$ command -v nvm
+\begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte VI, label=cod:verif-nvm, style=Consola]
+	$ exit
+	$ su - deployer
+	$ command -v nvm
 
-nvm
+	nvm
 \end{lstlisting}
 
-Para eliminar nvm
-\begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte VII, label=cod:nvm, style=Consola]
-$ nvm use system
-$ npm uninstall -g a_module
-$ sudo npm  install -g npm
+Si en algún momento se desea desinstalar la dependencia \texttt{nvm} habrá que seguir los comandos \ref{cod:remove-nvm}.
+
+\begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte VII, label=cod:remove-nvm, style=Consola]
+	$ nvm use system
+	$ npm uninstall -g a_module
+	$ sudo npm  install -g npm
 \end{lstlisting}
 
-Instalar pm2.\\
+Para instalar pm2 ver el código \ref{cod:npm}.\\
 
 \begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte VIII, label=cod:npm, style=Consola]
-$ sudo apt-get install npm
-$ sudo npm i -g pm2
-$ ln -s /usr/bin/nodejs /usr/bin/node
+	$ sudo apt-get install npm
+	$ sudo npm i -g pm2
+	$ ln -s /usr/bin/nodejs /usr/bin/node
 \end{lstlisting}
 
-Comando interesantes para trabajar con pm2. Nos servirar para observar si la \textit{blockchain} y el \textit{explorer} están levantados.
+Algunos comandos interesantes para trabajar con pm2 se muestran en el código \ref{cod:pm2}. Servirán para observar si la \textit{blockchain} y el \textit{explorer} están levantados.
 
 \begin{lstlisting}[language=Bash,caption=Comandos útiles de pm2, label=cod:pm2, style=Consola]
-#Lista los demonios de pm2
-$ pm2 list
+	#Lista los demonios de pm2
+	$ pm2 list
 
-#Se obtienen los estados de los demonios de pm2
-$ pm2 status
+	#Se obtienen los estados de los demonios de pm2
+	$ pm2 status
 \end{lstlisting}
 
-Hay que clonar el directorio deployer de \texttt{@ArkEcosystem}.\\
+Hasta aquí se han instalado los paquetes y dependencias para poder empezar a instalar la \textit{blockchain}. Ahora hay que clonar el directorio deployer de \texttt{@ArkEcosystem}, código \ref{cod:clone-ark}.\\
 
 \begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte IX, label=cod:clone-ark, style=Consola]
-$ git clone https://github.com/ArkEcosystem/deployer.git
-$ chmod 764 deployer/setup.sh
-$ ./setup.sh
+	$ git clone https://github.com/ArkEcosystem/deployer.git
+	$ chmod 764 deployer/setup.sh
+	$ ./setup.sh
 \end{lstlisting}
 
-Iniciar la base de datos e instalar tanto la \textit{blockchain} como el \textit{explorer}. Una vez que instalemos el \texttt{core} obtendremos en la salida la dirección y la \textit{passphrase} del wallet Genesis la tenemos que guardar en un archivo para más tarde poder hacer las transacciones, aún así podemos encontrar la \textit{passphrase} junto con la dirección en el archivo \path{/home/<USUARIO>/.bridgechain/testenet/<NOMBRE-BRIDGECHAIN>/genesisWallet.json}. Esto puede tardar unos minutos.
-\begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte X, label=cod:install-bridgechain, style=Consola]
-$ sudo service postgresql start
-$ sudo apt-get update -y 
-$ sudo apt-get install -y libjemalloc-dev
-$ ./deployer/bridgechain.sh install-core --config deployer/config.sample.conf --autoinstall-deps --non-interactive
+
+Una vez instalado el deployer hay que proceder a realizar una modificación en el archivo \path{/home/<USUARIO>/deployer/app/app-core.sh}, código \ref{cod:app-core-A}. Para que en lugar de instalar el repositorio de github sin modificaciones, se instale la \textit{blockchain} con el nuevo algoritmo UOV.
+
+\begin{lstlisting}[language=Python,caption=Línea 108 app-core.sh, label=cod:app-core-A]
+	git clone https://github.com/mvictoria1997/core.git --single-branch "$BRIDGECHAIN_PATH"
 \end{lstlisting}
 
-\begin{figure}[h]
+La \textit{blockchain} va a utilizar la base de datos local del Docker, así pues hay que iniciarla con el código \ref{cod:start-sql}. Además va a ser necesario instalar la librería \texttt{libjemalloc} para no tener problemas de memoria.
+
+\begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte X, label=cod:start-sql, style=Consola]
+	$ sudo service postgresql start
+	$ sudo apt-get update -y 
+	$ sudo apt-get install -y libjemalloc-dev
+\end{lstlisting}
+
+Durante la instalación de la \textit{blockchain} se descargará el código con los algoritmos de firma, por tanto en este punto debemos de modificar los archivos. Para ello hay que hacer un \texttt{fork} del repositorio \texttt{ArkEcosystem/core} \cite{ark-core} en nuestro usuario de Github. A continuación se descarga el código con el comando \ref{cod:clone-core}.
+
+\begin{lstlisting}[language=Bash,caption=Clonar nuevo core, label=cod:clone-core, style=Consola]
+	$ git clone https://github.com/<USUARIO>/core.git
+\end{lstlisting}
+
+Los archivos que se van a modificar se encuentran en el directorio \path{core/packages/src/crypto/hash.ts}. En el archivo \texttt{hash.ts} se modifican las funciones de firma y verificación con el algoritmo ECDSA quedando de la forma que muestra el código \ref{cod:hash-ECDSA}.
+
+\begin{lstlisting}[caption=Modificación archivo \texttt{hash.ts}. Parte I, label=cod:hash-ECDSA, style=TypeScript]
+	public static signECDSA(hash: Buffer, keys: IKeyPair): string {
+		return Hash.signUOV(hash, keys)
+	}
+
+	public static verifyECDSA(hash: Buffer, signature: Buffer | string, publicKey: Buffer | string): boolean {
+		return Hash.verifyUOV(hash, signature, publicKey);
+	}
+\end{lstlisting}
+
+\newpage
+Se añaden, en el archivo \texttt{hash.ts}, las funciones de firma y validación de la misma con el algoritmo UOV. Ver código \ref{cod:hash-UOV-sign} para la firma y código \ref{cod:hash-UOV-verif} para la verificación.
+
+\begin{lstlisting}[caption=Modificación archivo \texttt{hash.ts}. Parte II, label=cod:hash-UOV-sign, style=TypeScript]
+	public static signUOV(hash:Buffer, keys:IKeyPair): string {
+
+		//Transforma el Buffer en un array legible en python
+		var hash_string = new Array();
+		for (let i=0; i < hash.length; i++){
+			hash_string.push(hash[i].toString());
+		}
+
+		//Llamada al proceso que ejecuta el fichero signature.py
+		const { execSync } = require('child_process');
+		var cmd = 'python ' + __dirname + '/../../src/crypto/signature.py ' + hash_string + ' ' + keys.publicKey + ' ' + keys.privateKey;
+		var signature  = execSync(cmd);
+
+		//Almacena la firma en forma de vector y en hexadecimal para la verificación
+		const data = readFileSync(__dirname + '/../../src/crypto/signature.json');
+		var data_json = JSON.parse(data.toString());
+		let new_sign = {
+			hex: signature.toString("hex").slice(0, -2),
+			vector: signature.toString().trim()
+		};
+		data_json.push(new_sign);
+		var fs = require('fs');
+		fs.writeFileSync(__dirname + '/../../src/crypto/signature.json', JSON.stringify(data_json));
+
+		return signature.toString("hex");
+	}
+\end{lstlisting}
+
+\begin{lstlisting}[caption=Modificación archivo \texttt{hash.ts}. Parte III, label=cod:hash-UOV-verif, style=TypeScript]
+	public static verifyUOV(hash: Buffer, signature: Buffer | string, publicKey: Buffer | string): boolean {
+
+		var hash_string = new Array();
+		for (let i=0; i < hash.length; i++){
+			hash_string.push(hash[i].toString());
+		}
+
+		//Lectura de la firma en signature.json y encuentra la que empiece igual
+		var hex_signature = signature.toString("hex");
+		let data = readFileSync(__dirname + '/../../src/crypto/signature.json');
+		let data_json = JSON.parse(data.toString());
+		let encontrado : boolean = false;
+		var i=0, signature_string;
+		var regular_expression = new RegExp(hex_signature + '[^]*', 'i');
+		while (i < data_json.length && !encontrado){
+			if (regular_expression.test(data_json[i]['hex'])){
+				signature_string = data_json[i]['vector'];
+				encontrado = true;
+			}
+			++i;
+		}
+		
+		//Quita los espacios sino toma hasta cada espacio como un parámetro
+		while (signature_string.search('\ ') != -1){
+			signature_string = signature_string.replace('\ ', '');
+		}
+		signature_string.replace('\n', '');
+		
+		//Llamada al proceso que ejecuta el fichero verify.py
+		const { execSync } = require('child_process');
+		var cmd =  'python ' + __dirname + '/../../src/crypto/verify.py ' + hash_string + ' ' + signature_string + ' ' + publicKey.toString();
+		var verify  = execSync(cmd);
+
+		if (verify.toString().trim() == 'True')
+			return true;
+		else
+			return false;
+	}
+\end{lstlisting}
+
+Hay que añadir los archivos en \texttt{python} a donde se realizarán las llamadas desde \texttt{typescript}. Estos son los ficheros \texttt{signature.py} para la firma, código \ref{cod:sign-py} y \texttt{verify.py} para la validación, código \ref{cod:veri-py}.
+
+
+\begin{lstlisting}[language=Python,caption=Archivo \texttt{signature.py}, label=cod:sign-py]
+	import sys
+	from luov import *
+	import json
+
+	def main():
+		m, v = 3, 3
+		hash_schnorr, pub_schnorr, priv_schnorr = sys.argv[1], sys.argv[2], sys.argv[3]
+		alpha, beta = [], []
+		hash, hashed_message = [], []
+		number = ''
+
+		for i in range(len(hash_schnorr)):
+			if hash_schnorr[i] != ',':
+				number += hash_schnorr[i]
+			else:
+				aux = int (number, 16)%128
+				hash +=[aux]
+				number = ''
+		aux = int (number, 16)%128
+		hash += [aux]
+
+		T = generacionT (m, v)
+
+		encontrado = False
+		with open("/home/deployer/core-bridgechain/packages/crypto/src/crypto/data.json", "r") as jsonread:
+			data = json.load(jsonread)
+			for i in range(len(data)):
+				if data[i]['pub_schnorr'] == pub_schnorr:
+					alpha = data[i]['priv_alpha_UOV']
+					beta = data[i]['priv_beta_UOV']
+					encontrado = True
+					break
+
+		if not encontrado:
+			alpha, beta = clavePrivada(m, v, priv_schnorr)
+			alpha_pub, beta_pub = clavePublica(m, v, alpha, beta, T)
+			with open("/home/deployer/core-bridgechain/packages/crypto/src/crypto/data.json", "w") as jsonwrite:
+				nuevo = {"id":len(data),
+					"pub_schnorr": pub_schnorr,
+					"priv_schnorr": priv_schnorr,
+					"priv_alpha_UOV": alpha,
+					"priv_beta_UOV": beta,
+					"pub_alpha_UOV": alpha_pub,
+					"pub_beta_UOV": beta_pub}
+				data.append(nuevo)
+				jsonwrite.seek(0)
+				json.dump(data, jsonwrite)
+
+		hash = hash[0:m]
+		for i in range(len(hash)):
+			hashed_message += [bin(hash[i])[2:]] #Pasa a binario el hash
+
+		for i in range (len(hashed_message)):
+			aux = [int(d) for d in (hashed_message[i])]
+			for k in range(7-len(aux)):
+				aux.insert(0, 0)
+			hashed_message [i] = aux
+
+		firma = signature (hashed_message, alpha, beta, m, v, T)
+		print (firma)
+		sys.stdout.flush()
+
+		#print (alpha)
+		#verif = verificacion (hashed_message, firma, alpha_pub, beta_pub, m)
+
+	if __name__=="__main__":
+		main()
+\end{lstlisting}
+
+
+\begin{lstlisting}[language=Python,caption=Archivo \texttt{verify.py}, label=cod:veri-py]
+	import sys
+	from luov import *
+	import os
+	import json
+	from ast import literal_eval
+
+	def main():
+		m, v = 3, 3
+		hash_schnorr, signature, pub_schnorr = sys.argv[1], literal_eval(sys.argv[2]), sys.argv[3]
+		alpha, beta = [], []
+		hash, hashed_message = [], []
+		number = ''
+
+		for i in range(len(hash_schnorr)):
+			if hash_schnorr[i] != ',':
+				number +=hash_schnorr[i]
+			else:
+				aux = int (number, 16)%128
+				hash += [aux]
+				number = ''
+		aux = int (number, 16)%128
+		hash += [aux]
+
+		with open("/home/deployer/core-bridgechain/packages/crypto/src/crypto/data.json", "r") as jsonread:
+			data = json.load(jsonread)
+			for i in range(len(data)):
+				if data[i]['pub_schnorr'] == pub_schnorr:
+					alpha = data[i]['pub_alpha_UOV']
+					beta = data[i]['pub_beta_UOV']
+					break
+
+		hash = hash[0:m]
+		for j in range(len(hash)):
+			hashed_message += [bin(hash[j])[2:]] #Pasa a binario el hash
+
+		for i in range (len(hashed_message)):
+			aux = [int(d) for d in (hashed_message[i])]
+			for k in range(7-len(aux)):
+				aux.insert(0, 0)
+			hashed_message [i] = aux
+
+		print (verificacion (hashed_message, signature, alpha, beta, m))
+		sys.stdout.flush()
+
+	if __name__=="__main__":
+		main()
+\end{lstlisting}
+
+Finalmente se crean los dos ficheros \texttt{.json}, en ellos se puede incluir un ejemplo para ver que estructura van a seguir dichos archivos. 
+
+El código \ref{cod:data-json} muestra un ejemplo de la estructura del fichero \texttt{data.json} que almacena las claves privadas y públicas tanto para el algoritmo de Schnorr como para el de UOV.
+
+\begin{lstlisting}[language=Python,caption=Ejemplo fichero \texttt{data.json}, label=cod:data-json]
+	[
+		{"id":1,
+			"pub_schnorr": "D2",
+			"priv_schnorr":"C6",
+			"priv_alpha_UOV": [[1, 0 ], [ 1, 1]],
+			"priv_beta_OUV": [1, 0,  1],
+			"pub_alpha_UOV": [[1,  1], [ 0, 1]],
+			"pub_beta_OUV": [[1, 0,  1, 1, 1]]
+		}
+	]
+\end{lstlisting}
+
+El código \ref{cod:signature-json} muestra un ejemplo de la estructura del fichero \texttt{signatue.json} que almacena las firmas en dos formatos, hexadecimal y en vector.
+
+\begin{lstlisting}[language=Python,caption=Ejemplo fichero \texttt{signature.json}, label=cod:signature-json]
+	[
+		{"hex":"54ga24",
+		"vector":[[1,0,0,0,1],[1,0,1,0,1,0]]}
+	]
+\end{lstlisting}
+
+
+Llegados a este punto hay que instalar el \texttt{core} de la \textit{blockchain} con el algoritmo UOV, código \ref{cod:install-bridgechain}, la instalación tardará unos diez minutos. Una vez que instalado se obtiene en la salida la dirección y la \textit{passphrase} del wallet Genesis, ambas serán necesarias para poder realizar transacciones por tanto puede resultar útil almacenarlas en un archivo, ver imagen \ref{fig:install-bridge}. De todas formas se puede encontrar la \textit{passphrase} junto con la dirección en el archivo \path{/home/<USUARIO>/.bridgechain/testenet/<NOMBRE-BRIDGECHAIN>/genesisWallet.json}. 
+
+El archivo de configuración \path{/home/<USUARIO>/deployer/config.sample.conf} se puede modificar para cambiar por ejemplo el nombre de la \textit{blockchain}, en este caso se le ha puesto  \texttt{``{}}victoria-bridgechain\texttt{''}, variable \texttt{chainName}. Otros parámetros a destacar para modificar son \texttt{databaseName}, \texttt{totalPremine}, \texttt{bridgechainPath} y \texttt{explorerPath}.
+
+\begin{itemize}
+	\item \texttt{databaseName}: Nombre de la base de datos.
+	\item \texttt{totalPremine}: El valor total de tokens o monedas que tendrá la red local.
+	\item \texttt{bridgechainPath}: \textit{path} del directorio de instalación de la \textit{blockchain}.
+	\item \texttt{explorerPath}: \textit{path} del directorio de instalación del \textit{explorer}.
+\end{itemize}
+
+\begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte XI, label=cod:install-bridgechain, style=Consola]
+	$ ./deployer/bridgechain.sh install-core --config deployer/config.sample.conf --autoinstall-deps --non-interactive
+\end{lstlisting}
+
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=15cm,height=9cm]{figuras/Instalacion_bridgechain.png}
 	\caption{Salida tras la instalación del core}
 	\label{fig:install-bridge}
 \end{figure}
 
-\begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte X, label=cod:install-explorer, style=Consola]
-$ ./deployer/bridgechain.sh install-explorer --config deployer/config.sample.conf --skip-deps --non-interactive
+A continuación se instalará el explorer para poder ver las transacciones y bloques generados, código \ref{cod:install-explorer}.
+
+\begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte XII, label=cod:install-explorer, style=Consola]
+	$ ./deployer/bridgechain.sh install-explorer --config deployer/config.sample.conf --skip-deps --non-interactive
 \end{lstlisting}
 
 
+El último paso es iniciar la \textit{blockchain} y el \textit{explorer}, código \ref{cod:start-brid}. La salida tras iniciar el \textit{explorer} la muestra la imagen \ref{fig:install-explorer}, que son los estados de la \textit{blockchain} y del \textit{explorer}. Esto mismo se visualizar con el comando \texttt{pm2 status}.\\
 
-Iniciamos la \textit{blockchain} y el \textit{explorer}.\\
+\begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte XIII, label=cod:start-brid, style=Consola]
+	$ ./deployer/bridgechain.sh start-core --network testnet
 
-\begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte XII, label=cod:inicio-bridgechain, style=Consola]
-$ ./deployer/bridgechain.sh start-core --network testnet
-
-==> Starting...
-Starting victoriabridgechain-relay... done
-Starting victoriabridgechain-forger... done
-==> Start OK!
+	==> Starting...
+	Starting victoriabridgechain-relay... done
+	Starting victoriabridgechain-forger... done
+	==> Start OK!
 
 
-$ ./deployer/bridgechain.sh start-explorer --network testnet
+	$ ./deployer/bridgechain.sh start-explorer --network testnet
 \end{lstlisting}
 
-La imagen \ref{fig:install-explorer} muestra la salida después de haber iniciado el \textit{explorer}. Ese mismo cuadro es el que se visualiza tras ejecutar \texttt{pm2 status} pues muestra tanto si la \textit{blockchain} como el \textit{explorer} están iniciados.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=14.5cm,height=2cm]{figuras/Instalacion_explorer.png}
 	\caption{Salida tras iniciar del \textit{explorer}}
@@ -421,10 +684,11 @@ Antes de confirmar la creación del monedero, hay que introducir el nombre del m
 
 %\end{lstlisting}
 
+\newpage
 
+\section{Visualización de los datos con el Explorer}
 
-
-
+\newpage
 
 
 
