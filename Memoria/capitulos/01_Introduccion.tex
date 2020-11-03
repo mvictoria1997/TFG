@@ -331,18 +331,30 @@ $\mathcal{P}: \mathds{F}_{2^r}^n \rightarrow \mathds{F}_{2^r}^m$, esta función 
 \begin{equation}\label{eq:fun}
 f_k(x) = \sum_{i=1}^v \sum_{j=i}^n \alpha_{i,j,k} x_i x_j + \sum_{i=1}^n \beta_{i,k} x_i
 \end{equation}
-donde $\alpha_{i,j,k}$ y $\beta_{i,k}$ se toman aleatoriamente en $\mathds{F}_2$ siendo $\alpha$ un vector de matrices triangulares superiores. De esta manera será más eficiente y no afectará a la seguridad del algoritmo.
+donde $\alpha_{i,j,k}$ y $\beta_{i,k}$ se toman aleatoriamente en $\mathds{F}_2$ siendo $\left(\alpha_{i,j,k}\right)_{\begin{subarray}{l}{1\leqslant i \leqslant v }\\ {1 \leqslant j \leqslant n}\end{subarray}}$ un vector de matrices triangulares superiores. De esta manera será más eficiente y no afectará a la seguridad del algoritmo.
 
 
 
 \subsubsection{Generación de la clave privada}
-La clave privada viene dada para cada una de las $m$ ecuaciones, es decir, para cada $k$ se tiene una matriz de dimensiones $v \mathrm{x} n$, $\left(\alpha_{i,j,k}\right)_{\begin{subarray}{l}{1\leqslant i \leqslant v }\\ {i \leqslant j \leqslant n}\end{subarray}}$, y un vector de $v$ componentes, $\left(\beta_{i,k}\right)_{1\leqslant i \leqslant v }$, cuyos valores son elegidos de forma aleatoria en $\mathds{F}_2$.
+La clave privada viene dada para cada una de las $m$ ecuaciones, es decir, para cada $k$ se tiene una matriz de dimensiones $v \mathrm{x} n$, $\left(\alpha_{i,j,k}\right)_{\begin{subarray}{l}{1\leqslant i \leqslant v }\\ {1 \leqslant j \leqslant n}\end{subarray}}$, y un vector de $v$ componentes, $\left(\beta_{i,k}\right)_{1\leqslant i \leqslant v }$, cuyos valores son elegidos de forma aleatoria en $\mathds{F}_2$.
 
 
 \subsubsection{Generación de la clave pública}
-La clave pública se va generar partiendo de la clave privada $\left(\alpha_{i,j,k}\right)_{\begin{subarray}{l}{1\leqslant i \leqslant v }\\ {i \leqslant j \leqslant n}\end{subarray}}$ y $\left(\beta_{i,k}\right)_{1\leqslant i \leqslant v }$.
+La clave pública se va a definir para cada $k\in \{1, \dots, m\}$ de la siguiente manera, 
 
-Para entenderlo mejor se pasan las $m$ ecuaciones \ref{eq:fun} a forma matricial, ecuación \ref{eq:matriz}. La notación a seguir para las matrices transpuestas es $X^{\scriptscriptstyle T}$, con $X$ una matriz.
+\begin{itemize}
+	\item ${\alpha_{pub}}_k = \left(
+	\begin{array}{c}
+	I_v \\
+	\hline
+	T'_{v x m}
+	\end{array}
+	\right) \left(\alpha_{i,j,k}\right)_{\begin{subarray}{l}{1 \leqslant i\leqslant v }\\ {i\leqslant j \leqslant n}\end{subarray}} \ T$
+	
+	\item ${\beta_{pub}}_k = \left(\beta_{j,k}\right)_{1\leqslant j\leqslant n}\ T$
+\end{itemize}
+
+A continuación se va a justificar porqué se toman estos valores de la clave pública. Primero se pasan las $m$ ecuaciones \ref{eq:fun} a forma matricial, ecuación \ref{eq:matriz}. La notación a seguir para las matrices transpuestas es $X^{\scriptscriptstyle T}$, con $X$ una matriz.
 
 \begin{equation}\label{eq:matriz} 
 	f_k(x) = x^v\ \left(\alpha_{i,j,k}\right)_{\begin{subarray}{l}{1\leqslant i \leqslant v }\\ {i \leqslant j \leqslant n}\end{subarray}}\ \left(x^v, x^m \right)^{\scriptscriptstyle T} + \left(\beta_{i,k}\right)_{1\leqslant i \leqslant v }\ \left(x^v, x^m\right)^{\scriptscriptstyle T}
@@ -398,28 +410,14 @@ Sustituyendo la anterior definición de $x$ en la ecuación (\ref{eq:matriz}), s
 	\left(\beta_{j,k}\right)_{1\leqslant j\leqslant n}\ T\ s^{\scriptscriptstyle T}
 	\label{eq:sus-def-x}
 \end{equation}
-donde $k \in \{1,...,m\}$
-
-De esta forma obtenemos las dos parte de la clave pública definidas para cada $k$.
-
-\begin{itemize}
-	\item ${\alpha_{pub}}_k = \left(
-	\begin{array}{c}
-	I_v \\
-	\hline
-	T'_{v x m}
-	\end{array}
-	\right) \left(\alpha_{i,j,k}\right)_{\begin{subarray}{l}{1 \leqslant i\leqslant v }\\ {i\leqslant j \leqslant n}\end{subarray}} \ T$
-	
-	\item ${\beta_{pub}}_k = \left(\beta_{j,k}\right)_{1\leqslant j\leqslant n}\ T$
-\end{itemize}
+donde $k \in \{1,\dots,m\}$
 
 
 \subsubsection{Algoritmo de firma}
 
 Para calcular la firma es necesario conocer los valores de la clave privada $\alpha$ y $\beta$, tomar de forma aleatoria los del vinagre $x^v$, puesto que estos son fijos y no variables pasarán a denominarse como $a^v$, y coger los $m$ primeros bits del \textit{hash} del mensaje $h_k$.
 
-Para facilitar los cálculos se multiplican los vinagres por $\alpha$ y se obtiene \mbox{$A_k = a^v\ \left(\alpha_{i,j,k}\right)_{\begin{subarray}{l}{1 \leqslant i\leqslant v }\\ {i\leqslant j \leqslant n}\end{subarray}} = \left(A^v_k, A^m_k\right)$}. Si se sustituye este resultado en la ecuación \ref{eq:matriz} y se despejan los aceites, se llega a la ecuación \ref{eq:despeje}. Este despeje se puede realizar sin problema, debido a que el sistema de ecuaciones se vuelve lineal cuando las variables de vinagre son fijas y ninguna variable de aceite se multiplica por otra de aceite. Por tanto se puede resolver usando, por ejemplo, el algoritmo de reducción gaussiano.
+Para facilitar los cálculos se multiplican los vinagres por $\alpha$ y se obtiene \mbox{$A_k = a^v\ \left(\alpha_{i,j,k}\right)_{\begin{subarray}{l}{1 \leqslant i\leqslant v }\\ {1\leqslant j \leqslant n}\end{subarray}} = \left(A^v_k, A^m_k\right)$}. Si se sustituye este resultado en la ecuación \ref{eq:matriz} y se despejan los aceites, se llega a la ecuación \ref{eq:despeje}. Este despeje se puede realizar sin problema, debido a que el sistema de ecuaciones se vuelve lineal cuando las variables de vinagre son fijas y ninguna variable de aceite se multiplica por otra de aceite. Por tanto se puede resolver usando, por ejemplo, el algoritmo de reducción gaussiano.
 
 \begin{align}
 h_k &= A_k^v\ (a^v)^{\scriptscriptstyle T} +  A_k^m\ (x^m)^{\scriptscriptstyle T} + \beta_k^v\ (a^v)^{\scriptscriptstyle T} + \beta_k^m\ (x^m)^{\scriptscriptstyle T}\\
@@ -929,29 +927,34 @@ Tras la resolución del sistema $coef \cdot oil = term$ se han obtenido los acei
 Ahora se forma el vector $aux$ uniendo los vinagres con los aceites, ecuación \ref{eq:ej-aux}.
 
 \begin{equation}\label{eq:ej-aux}
-	{aux} = 
+	\begin{aligned}
+	{aux} = & 
 		\left(\begin{matrix}
 			\left(\begin{smallmatrix}0 & 0 & 0 & 0 & 1 & 1 & 0\end{smallmatrix}\right)		
 			\left(\begin{smallmatrix}0 & 0 & 1 & 1 & 0 & 1 & 1\end{smallmatrix}\right)
-			\left(\begin{smallmatrix}0 & 1 & 0 & 0 & 1 & 1 & 0\end{smallmatrix}\right)
-			\left(\begin{smallmatrix}0 & 1 & 1 & 0 & 1 & 0 & 0\end{smallmatrix}\right)
+			\left(\begin{smallmatrix}0 & 1 & 0 & 0 & 1 & 1 & 0\end{smallmatrix}\right)\end{matrix}\right.\\
+			&\left.\begin{matrix}\left(\begin{smallmatrix}0 & 1 & 1 & 0 & 1 & 0 & 0\end{smallmatrix}\right)
 			\left(\begin{smallmatrix}1 & 1 & 1 & 1 & 1 & 0 & 0\end{smallmatrix}\right)
 			\left(\begin{smallmatrix}1 & 1 & 1 & 1 & 0 & 0 & 1\end{smallmatrix}\right)
 		\end{matrix}\right)
+	\end{aligned}
 \end{equation}
 
 La firma del mensaje se obtiene multiplicando el vector $aux$ por la inversa de $T$, que de la forma que está construida dicha matriz $T$ coincide con su inversa, ecuación \ref{eq:ej-firma}.
 
 \begin{equation}\label{eq:ej-firma}
-	{firma} = 
+	\begin{aligned}
+	{firma} =&
 		\left(\begin{matrix}
 			\left(\begin{smallmatrix}0 & 1 & 1 & 0 & 1 & 0 & 0\end{smallmatrix}\right)			
 			\left(\begin{smallmatrix}1 & 0 & 1 & 1 & 0 & 1 & 0\end{smallmatrix}\right)
-			\left(\begin{smallmatrix}1 & 0 & 1 & 1 & 0 & 0 & 1\end{smallmatrix}\right)
-			\left(\begin{smallmatrix}0 & 0 & 0 & 0 & 1 & 1 & 0\end{smallmatrix}\right)			
+			\left(\begin{smallmatrix}1 & 0 & 1 & 1 & 0 & 0 & 1\end{smallmatrix}\right)\end{matrix}\right.
+			\\
+			& \left.\begin{matrix}\left(\begin{smallmatrix}0 & 0 & 0 & 0 & 1 & 1 & 0\end{smallmatrix}\right)			
 			\left(\begin{smallmatrix}0 & 0 & 1 & 1 & 0 & 1 & 1\end{smallmatrix}\right)
 			\left(\begin{smallmatrix}0 & 1 & 0 & 0 & 1 & 1 & 0\end{smallmatrix}\right)
 		\end{matrix}\right)
+	\end{aligned}
 \end{equation}
 
 Para realizar la confirmación del mensaje es necesario calcular dos variables auxiliares, $\alpha_{aux}$ y $\beta_{aux}$.
