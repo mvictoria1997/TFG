@@ -52,5 +52,5 @@
 \contentsline {lstlisting}{\numberline {A.29}Instalaci\IeC {\'o}n \textit {blockchain}. Parte XI}{72}{lstlisting.Alph1.29}
 \contentsline {lstlisting}{\numberline {A.30}Instalaci\IeC {\'o}n \textit {blockchain}. Parte XII}{73}{lstlisting.Alph1.30}
 \contentsline {lstlisting}{\numberline {A.31}Instalaci\IeC {\'o}n \textit {blockchain}. Parte XIII}{73}{lstlisting.Alph1.31}
-\contentsline {lstlisting}{\numberline {A.32}Instalaciones previas a la aplicaci\IeC {\'o}n ARK Wallet}{73}{lstlisting.Alph1.32}
-\contentsline {lstlisting}{\numberline {A.33}Instalaci\IeC {\'o}n de la aplicaci\IeC {\'o}n ARK Wallet}{74}{lstlisting.Alph1.33}
+\contentsline {lstlisting}{\numberline {A.32}Instalaciones previas a la aplicaci\IeC {\'o}n ARK Wallet}{75}{lstlisting.Alph1.32}
+\contentsline {lstlisting}{\numberline {A.33}Instalaci\IeC {\'o}n de la aplicaci\IeC {\'o}n ARK Wallet}{75}{lstlisting.Alph1.33}

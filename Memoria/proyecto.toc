@@ -42,5 +42,5 @@
 \contentsline {chapter}{\numberline {A}Manual de usuario}{63}{appendix.Alph1}
 \contentsline {section}{\numberline {A.1}Instalaci\IeC {\'o}n de Docker}{63}{section.Alph1.1}
 \contentsline {section}{\numberline {A.2}Instalaci\IeC {\'o}n Blockchain ARK}{65}{section.Alph1.2}
-\contentsline {section}{\numberline {A.3}Instalaci\IeC {\'o}n de la aplicaci\IeC {\'o}n ARK Desktop Wallet}{73}{section.Alph1.3}
+\contentsline {section}{\numberline {A.3}Instalaci\IeC {\'o}n de la aplicaci\IeC {\'o}n ARK Desktop Wallet}{75}{section.Alph1.3}
 \contentsline {section}{\numberline {A.4}Visualizaci\IeC {\'o}n de los datos con el Explorer}{84}{section.Alph1.4}
