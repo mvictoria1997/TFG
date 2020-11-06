@@ -1,6 +1,6 @@
 \chapter{Introducción}
 
-El objetivo de este proyecto es evitar que un sistema \textit{blockchain} sea vulnerable a futuros ataques cuánticos. Para ello se ha implementado un algoritmo criptográfico resistente a ordenadores cuánticos, denominado \acrshort{uov}, para la firma de documentos, y posteriormente integrarlo en la \textit{blockchain} ARK.
+El objetivo de este proyecto es evitar que un sistema \textit{blockchain} sea vulnerable a futuros ataques cuánticos. Para ello se ha implementado un algoritmo criptográfico resistente a ordenadores cuánticos, denominado \acrshort{uov}, para la firma de documentos, y posteriormente se ha integrado en la \textit{blockchain} ARK.
 
 \section{Motivación y contexto del proyecto}
 \label{sec:intro:motivacion} %Esto se pone si queremos hacer referencia a esta sección
@@ -29,7 +29,7 @@ La \textbf{confidencialidad} es la propiedad que impide que la información pued
 
 La \textbf{integridad} busca mantener la exactitud de los datos, es decir, que no hayan sido modificados durante su envío. La integridad se obtiene adjuntando al mensaje otro conjunto de datos de comprobación de la integridad, un ejemplo es la firma digital.
 
-La \textbf{disponibilidad} es la cualidad de la información de encontrarse a disposición de quienes deben acceder a ella, ya sean personas, procesos o aplicaciones, en el momentos que así lo quieran. Los mecanismos para asegurar la disponibilidad se implementan con la infraestructura tecnológica.\\
+La \textbf{disponibilidad} es la cualidad de la información de encontrarse a disposición de quienes deben acceder a ella, ya sean personas, procesos o aplicaciones, en los momentos que así lo quieran. Los mecanismos para asegurar la disponibilidad se implementan con la infraestructura tecnológica.\\
 
 Además de estos tres pilares hay otro principio, la \textbf{autentificación}, que es la propiedad que permite identificar al generador de la información. Trata de comprobar si un mensaje enviado por un usuario, ha sido verdaderamente firmado por él mismo. Esto se consigue con el uso de cuentas de usuario y contraseñas de acceso.\\
 
@@ -43,9 +43,9 @@ En la criptografía asimétrica podemos diferenciar dos ramas, el cifrado de cla
 
 Este tipo de criptografía basa su seguridad en la hipótesis de que no se pueden encontrar las claves por fuerza bruta con la tecnología existente en la actualidad. Los ataque de fuerza bruta tratan de recuperar las claves probando todas las posibles combinaciones hasta encontrar la que permite el acceso, a partir del algoritmo de cifrado y del texto cifrado con su original \cite{fuerza-bruta}. Para que la búsqueda tenga éxito se deberán de realizar $10^n-1$ operaciones donde $n$ es la longitud de la clave. 
 
-Otro factor importante, en la seguridad, es si en la clave aparencen números, caracteres o la combinación de ambos, aumentando así el coste de encontrar las claves, llegando a alcanzar tiempos de cálculo logarítmicos, es decir, que podrían tardar siglos en encontrar una contraseña compleja pero también depende de la capacidad de operación del ordenador.\\
+Otro factor importante, en la seguridad, es si en la clave aparecen números, caracteres o la combinación de ambos, aumentando así el coste de encontrar las claves, llegando a alcanzar tiempos de cálculo logarítmicos, es decir, que podrían tardar siglos en encontrar una contraseña compleja pero también depende de la capacidad de operación del ordenador.\\
 
-En este contexto, la aparición de la futura computación cuántica permitirá el cálculo de operaciones a una velocidad mucho mayor. En la gráfica \ref{fig:comp-clasica-cuantica} podemos observar la capacidad de cómputo del peor ordenador cuántico, con la línea continua, que sigue la gráfica de una función exponencial, frente a la capacidad del mejor ordenador clásico, la línea discontinua, que sigue una función lineal.
+En este contexto, la aparición de la futura computación cuántica permitirá el cálculo de operaciones a una velocidad mucho mayor. En la figura \ref{fig:comp-clasica-cuantica} podemos observar la capacidad de cómputo del peor ordenador cuántico, con la línea continua, que sigue la gráfica de una función exponencial, frente a la capacidad del mejor ordenador clásico, la línea discontinua, que sigue una función lineal.
 
 \begin{figure}[h]
 	\centering
@@ -54,11 +54,11 @@ En este contexto, la aparición de la futura computación cuántica permitirá e
 	\label{fig:comp-clasica-cuantica}
 \end{figure}
 
-La comparativa también nos muestra que para operaciones pequeñas como, por ejemplo, editar un documento de texto un ordenador cuántico sería probablemente ineficienciente. Por tanto lo mejor sería un ordenador híbrido, que mezclase computación clásica, para cálculos pequeños, y computación cuántica, para operaciones de mayor tamaño.\\
+La comparativa también nos muestra que para operaciones pequeñas como, por ejemplo, editar un documento de texto un ordenador cuántico sería probablemente ineficiente. Por tanto lo mejor sería un ordenador híbrido, que mezclase computación clásica, para cálculos pequeños, y computación cuántica, para operaciones de mayor tamaño.\\
 
-Cuando esté desarrollado el ordenador cuántico no serán válidos los actuales algoritmos criptográficos de clave pública, como \acrshort{rsa}, Diffie-Hellman y \mbox{\acrshort{ecdsa}}, ya que se basan en los problemas del logaritmo discreto y factorización de enteros, resolubles fácilmente por un ordenador cuántico. Las primeras ideas de la criptografía cuántica se tiene en los años 70, destacando los algoritmos de Shor y Grover.
+Cuando esté desarrollado el ordenador cuántico no serán válidos los actuales algoritmos criptográficos de clave pública, como \acrshort{rsa}, Diffie-Hellman y \mbox{\acrshort{ecdsa}}, ya que se basan en los problemas del logaritmo discreto y factorización de enteros, resolubles fácilmente por un ordenador cuántico. Las primeras ideas de la criptografía cuántica aparecieron en los años 70, destacando los algoritmos de Shor y Grover.
 
-Veamos la tabla comparativa \ref{table:security-level}, esta nos indica el tipo de algoritmo criptográfico, el algoritmo con la longitud de la clave y a continuación el nivel de seguridad tanto en un ordenador clásico como en uno cuántico. El nivel de seguridad de un algoritmo nos indica el número de operaciones necesarias para romper dicho algoritmo, por ejemplo, si tiene un nivel de seguridad $n$ entonces se requieren $2^n$ operaciones para romper el algoritmo \cite{security-level}. Observamos que hay una diferencia considerable en los niveles de seguridad de los algoritmo asimétricos, puesto que con un ordenador clásico al menos se necesitan $2^{112}$ operaciones mientras que con computación cuántica solo una. \\
+Veamos la tabla comparativa \ref{table:security-level}. Esta nos indica el tipo de algoritmo criptográfico, el algoritmo con la longitud de la clave y a continuación el nivel de seguridad tanto en un ordenador clásico como en uno cuántico. El nivel de seguridad de un algoritmo nos indica el número de operaciones necesarias para romper dicho algoritmo, por ejemplo, si tiene un nivel de seguridad $n$ entonces se requieren $2^n$ operaciones para romper el algoritmo \cite{security-level}. Observamos que hay una diferencia considerable en los niveles de seguridad de los algoritmo asimétricos, puesto que con un ordenador clásico al menos se necesitan $2^{112}$ operaciones mientras que con computación cuántica solo una. \\
 
 \begin{table}[h]
 	
@@ -85,7 +85,7 @@ Veamos la tabla comparativa \ref{table:security-level}, esta nos indica el tipo 
 
 En la actualidad, se están desarrollando muchos algoritmos para que sean resistentes a ataques de tipo cuántico, denominados algoritmos de criptografía postcuántica \cite{criptografia-postcuantica}. Estos ataques afectan principalmente a los algoritmos de clave pública o asimétrica, puesto que para la criptografía simétrica duplicar el tamaño de clave empleada es suficiente para hacerlos seguros y hacer inservible el algoritmo de Grover.\\
 
-Por otro lado, también en la actualidad está siendo muy relevante la adopción de las \textit{blockchain} como tecnología para ofrecer diversos servicios. Las \textit{blockchain} o cadenas de bloques son listas de transacciones, denominadas bloques, firmadas y unidas con algoritmos criptográficos. Además cada bloque contiene el hash del bloque anterior, se explicará con más detalle en la sección \ref{sec:intro:blockchain}. 
+Por otro lado, también en la actualidad está siendo muy relevante la adopción de las \textit{blockchain} como tecnología para ofrecer diversos servicios. Las \textit{blockchain} o cadenas de bloques son listas de transacciones, denominadas bloques, firmadas y unidas con algoritmos criptográficos. Además cada bloque contiene el hash del bloque anterior, lo que se explicará con más detalle en la sección \ref{sec:intro:blockchain}. 
 
 Esta tecnología se ha integrado en diferentes áreas, donde resalta el uso en los servicios financieros o criptomonedas, que aumenta la eficiencia y disminuye los costes. Otro uso de las \textit{blockchain} es en las cadenas de suministro, algunos restaurantes, como Fogo de Ch\~{a}o \cite{Fogo-Chao}, están empezando a utilizar las \textit{blockchain} para poder rastrear el origen de sus alimentos hasta llegar al propio restaurante, una gran ventaja para encontrar fácilmente si hay algún producto contaminado o en mal estado. \\
 
@@ -121,11 +121,11 @@ A continuación se muestran los capítulos que presenta la memoria junto con una
 
 \section{Contenidos teóricos para la comprensión del proyecto}
 
-En los siguientes apartados se explica los contenidos claves de este proyecto, que son la computación cuántica\ \ref{sec:intro:cc}, la tecnología \textit{blockchain}\ \ref{sec:intro:blockchain} y el algoritmo \acrshort{uov}\ \ref{sec:intro:UOV}.
+En los siguientes apartados se explican los contenidos claves de este proyecto, que son la computación cuántica\ \ref{sec:intro:cc}, la tecnología \textit{blockchain}\ \ref{sec:intro:blockchain} y el algoritmo \acrshort{uov}\ \ref{sec:intro:UOV}.
 
 \subsection{Computación cuántica}\label{sec:intro:cc}
 
-La evolución de la tecnología se ha basado principalmente en la reducción de los transistores para aumentar la velocidad, llegando a escalas de tan solo algunas decenas de nanómetros. Esto tiene un límite y es la eficiencia, puesto que al seguir disminuyendo el tamaño podrían dejar de funcionar correctamente. De ahí surge la necesidad de descubrir nuevas tecnologías, la computación cuántica \cite{computacion-cuantica-wiki}. Así la computación cuántica constituye un nuevo paradigma de la informática basado en los principios de la teoría cuántica.\\
+La evolución de la tecnología se ha basado principalmente en la reducción de los transistores para aumentar la velocidad, llegando a escalas de tan solo algunas decenas de nanómetros. Esto tiene un límite y es la eficiencia, puesto que al seguir disminuyendo el tamaño podrían dejar de funcionar correctamente. De ahí surge la necesidad de descubrir nuevas tecnologías, la computación cuántica \cite{computacion-cuantica-wiki}. Así, la computación cuántica constituye un nuevo paradigma de la informática basado en los principios de la teoría cuántica.\\
 
 Las tecnologías cuánticas nacieron del estudio de algunos fenómenos físicos que aún no se entendían bien, entre los años 1900 y 1930, dando lugar a una nueva teoría en la física, la Mecánica Cuántica. La Mecánica Cuántica es la rama de la física que estudia del mundo microscópico, los sistemas atómicos y subatómicos y su interacción con la radiación electromagnética \cite{mecanica-cuantica}.\\
 
@@ -134,7 +134,7 @@ Las tecnologías cuánticas nacieron del estudio de algunos fenómenos físicos 
 La computación cuántica tuvo sus inicios en los años 50 cuando algunos físicos, como Richard Feynman, fueron pioneros en mencionar posibilidad de utilizar efectos cuánticos para realizar cálculos computacionales \cite{computacion-cuantica-wiki}. En la charla de Richard Feynman titulada ``Simulación de la física con computadoras'', a principio de la década de los 80, expuso algunos cálculos complejos que se podrían realizar más rápido con un ordenador cuántico. 
 
 
-A finales de los años 60, Stephen Wiesner escribe un artículo titulado ``Conjuate Coding'', donde expone un primer acercamiento a la criptografía cuántica, el artículo fue publicado en los años 80 \cite{computacion-cuantica-crono}.
+A finales de los años 60, Stephen Wiesner escribe un artículo titulado ``Conjugate Coding'', donde expone un primer acercamiento a la criptografía cuántica. El artículo fue publicado en los años 80 \cite{computacion-cuantica-crono}.
 
 En 1981 Paul Benioff expone las ideas esenciales de la computación cuántica acompañada de su teoría, en la que propuso que un ordenador clásico trabajara con algunos pricipios de la mecánica cuántica, y aprovechar así las leyes cuánticas.\\
 
@@ -143,27 +143,27 @@ En la década de 1990 ya empezaron a poner en práctica algunas teorías, aparec
 
 En 1993 hubo varios acontecimientos, por un lado, Dan Simon comparó el modelo de probabilidad clásica con el cuántico, esto se utilizó para el desarrollo de futuros algoritmos cuánticos. Por otro, Charles Benett acuñó el término del teletransporte cuántico, abriendo una vía de investigación para las comunicaciones cuánticas. Además Ekert organizó la primera conferencia internacional de criptografía cuántica en Inglaterra, primer evento de gran alcance dedicado a este área.
 
-Peter W. Shor definió un algoritmo cuántico, el algoritmo de Shor, que permite calcular los factores primos de números muy grandes en tiempo polinimial, resolviendo el problema de la factorización de enteros como el problema del logaritmo discreto. Como consecuencia, el algoritmo de Shor permite romper muchos sitemas criptográficos actuales. Un año más tarde, propuso un sistema de corrección de errores en el cálculo cuántico.
+Peter W. Shor definió un algoritmo cuántico, el algoritmo de Shor, que permite calcular los factores primos de números muy grandes en tiempo polinomial, resolviendo el problema de la factorización de enteros como el problema del logaritmo discreto. Como consecuencia, el algoritmo de Shor permite romper muchos sistemas criptográficos actuales. Un año más tarde, propuso un sistema de corrección de errores en el cálculo cuántico.
 
 Lov Grover, en 1996, expone un algoritmo de búsqueda en una secuencia de datos no ordenada con N elementos, denominado algoritmo de Grover, que tiene una complejidad en tiempo de $O(\sqrt{n})$.
 
-En 1997, tiene lugar el primer experiemento de comunicación con criptografía cuántica a una distancia de 23km. Además del primer teletransporte cuántico de un fotón.
+En 1997, tiene lugar el primer experimento de comunicación con criptografía cuántica a una distancia de 23km. Además del primer teletransporte cuántico de un fotón.
 
-A finales de los 90, los laboratorios IBM-Almaden crearon la primera máquina con 3 cúbits y ejecutó el algoritmo de Grover. Y en 2001, IBM junto con la Universidad de Stanford ejecutaron el algoritmo de Shor en un computador cuántico con 7 cúbits, se calcularon los factores primos de 15.\\
+A finales de los 90, los laboratorios IBM-Almaden crearon la primera máquina con 3 cúbits y ejecutó el algoritmo de Grover. Y en 2001, IBM junto con la Universidad de Stanford ejecutaron el algoritmo de Shor en un computador cuántico con 7 cúbits, se calcularon los factores primos del número quince.\\
 
 En 2004, sale a la luz el primer criptosistema cuántico comercial(QKD), creado por la ID Quantique.
 
-En 2007, D-Wave fabricó una máquina que utilizaba mecánica cuántica con 16 cúbits sin llegar a ser un computador cuántico, especializado en la optimización de problemas a través de algoritmo de temple cuántico. En septiembre de ese mismo año, consiguieron unir componentes cuánticos a través de superconductores, apareciendo el primer bus cuántico capaz de reter información cuántica durante un corte espacio de tiempo antes de volver a ser transferida. Un año después se consiguió almacenar un cúbit en el interior del núcleo de un átomo de fósforo y hacer que la información permaneciera intacta durante 1.75 segundos.
+En 2007, D-Wave fabricó una máquina que utilizaba mecánica cuántica con 16 cúbits sin llegar a ser un computador cuántico, especializado en la optimización de problemas a través de algoritmo de temple cuántico. En septiembre de ese mismo año, consiguieron unir componentes cuánticos a través de superconductores, apareciendo el primer bus cuántico capaz de retener información cuántica durante un corte espacio de tiempo antes de volver a ser transferida. Un año después se consiguió almacenar un cúbit en el interior del núcleo de un átomo de fósforo y hacer que la información permaneciera intacta durante 1.75 segundos.
 
 Pasaron varios años hasta que se vendió la primera computadora cuántica comercial, en 2011, por la empresa D-Wave Systems por 10 millones de dólares.
 
-En 2018, la Universidad de Innsbruck consiguen un entrelazamiento estable de 20 cúbits, marcando el récord actual. El 18 de septiembre de 2019, IBM anunción que pronto lanzará un ordenador cuántico de 53 cúbits, el más grande y potente hasta la fecha.\\
+En 2018, la Universidad de Innsbruck consiguen un entrelazamiento estable de 20 cúbits, marcando el récord actual. El 18 de septiembre de 2019, IBM anunció que pronto lanzará un ordenador cuántico de 53 cúbits, el más grande y potente hasta la fecha.\\
 
-En la actualidad, Google ha logrado aplicar una supercomputadores al mundo real, simulando con éxito una reacción química simple. Marcando el camino hacia la química cuántica. Esto podría ayudar a los científicos a comprender mejor las reacciones moleculares, dando lugar a descubrimientos útiles como mejores baterías, nuevas formas de producir fertilizante y métodos para eliminar el dióxido de carbono del aire \cite{quimica-cuantica}.
+En la actualidad, Google ha logrado aplicar supercomputadores al mundo real, simulando con éxito una reacción química simple. Marcando el camino hacia la química cuántica. Esto podría ayudar a los científicos a comprender mejor las reacciones moleculares, dando lugar a descubrimientos útiles como mejores baterías, nuevas formas de producir fertilizante y métodos para eliminar el dióxido de carbono del aire \cite{quimica-cuantica}.
 
 \subsubsection{Estructura de los cúbits}
 
-La computación clásica funciona con bits cuyos valores pueden ser 0 o 1, mientras que la computación cuántica funciona con bit cuánticos o cúbits, una combinación de 0 y 1, pudiendo tomar ambos valores a la vez, esto se denomina la superposición cuántica de los estados \cite{computacion-cuantica-criptografia}, se entrará en detalle más adelante.
+La computación clásica funciona con bits cuyos valores pueden ser 0 o 1, mientras que la computación cuántica funciona con bit cuánticos o cúbits, una combinación de 0 y 1, pudiendo tomar ambos valores a la vez. Esto se denomina la superposición cuántica de los estados \cite{computacion-cuantica-criptografia}. Se entrará en detalle más adelante.
 
 La figura \ref{fig:bit-cubit} muestra los estados de un bit y los posibles estados que puede tomar un cúbit. 
 
@@ -186,13 +186,13 @@ Una esfera de Bloch es una representación geométrica del espacio de estados pu
 	\label{fig:esfera-bloch}
 \end{figure}
 
-Un cúbit se puede representar como una combinación lineal de los estados $|0\rangle$ y $|1\rangle$, ecuación \ref{eq:cubit}.
+Un cúbit se puede representar como una combinación lineal de los estados $|0\rangle$ y $|1\rangle$, ecuación (\ref{eq:cubit}).
 
 \begin{equation}\label{eq:cubit}
 |\psi \rangle = \alpha|0\rangle + \beta |1\rangle
 \end{equation}
 
-Como $\alpha$ y $\beta$ son números complejos, la ecuación \ref{eq:cubit} se puede escribir en forma exponencial, ecuación \ref{eq:cubit-expo}.
+Como $\alpha$ y $\beta$ son números complejos, la ecuación (\ref{eq:cubit}) se puede escribir en forma exponencial, ecuación (\ref{eq:cubit-expo}).
 
 \begin{equation}\label{eq:cubit-expo}
 |\psi\rangle = r_{\alpha} e^{i\phi_{\alpha}}|0\rangle + r_{\beta} e^{i\phi_{\beta}}|1\rangle\\
@@ -219,7 +219,7 @@ Por último, el \textbf{teletransporte cuántico} utiliza el entrelazamiento par
 Los datos que almacena cada bloque son transacciones válidas, información referente a ese bloque y la relación con el bloque anterior mediante el \textit{hash}, por tanto el bloque tiene un lugar específico dentro de la cadena. De esta forma si hay una alteración en un determinado bloque se verá reflejado en su \textit{hash} y en el de los bloques posteriores, haciendo que la información de la cadena no se pueda perder, modificar o eliminar.\\
 
 
-Los árboles merkle \cite{arbol-merkle} son una estructura de datos en árbol en el que cada nodo que no es hoja está etiquetado con el \textit{hash} que surge de la combinación de los valores o etiquetas de sus nodos hijo. Esta estructura permite que aunque los datos estén separados puedan ser ligados a un único valor de \textit{hash}, el \textit{hash} del nodo raíz del árbol. El \textit{hash} de este nodo va firmado para asegurar la integridad y hacer que la verificación sea fiable. 
+Los árboles de Merkle \cite{arbol-merkle} son una estructura de datos en árbol en el que cada nodo que no es hoja está etiquetado con el \textit{hash} que surge de la combinación de los valores o etiquetas de sus nodos hijo. Esta estructura permite que aunque los datos estén separados puedan ser ligados a un único valor de \textit{hash}, el \textit{hash} del nodo raíz del árbol. El \textit{hash} de este nodo va firmado para asegurar la integridad y hacer que la verificación sea fiable. 
 
 De esta forma se asegura que los datos son recibidos sin daños y sin ser alterados, además permite que los datos puedan ser entregados por partes, ya que un nodo puede obtener solo la cabecera de un bloque desde una fuente y otra pequeña parte del árbol desde otra fuente, y poder asegurar que los datos son correctos. Esto funciona porque si un usuario intenta hacer un cambio en una transacción falsa en la parte inferior del árbol en seguida se verá reflejado en la parte superior del árbol, es decir, en el nodo raíz. Esta propiedad se ve clara en la estructura del árbol Merkle \ref{fig:arbol-Merkle}, donde los \textit{hash} de los nodos superiores se calculan a partir de los \textit{hash} de los nodos hijos.\\
 
@@ -230,7 +230,7 @@ De esta forma se asegura que los datos son recibidos sin daños y sin ser altera
 	\label{fig:arbol-Merkle}
 \end{figure}
 
-La idea de la tecnología \textit{blockchain} surge a comienzos de 1991 cuando los científicos Stuart Haber y W. Scott Stornetta introducen una solución computacional para la firma de documentos digitales y que no puedieran ser modificados con el tiempo. Usaron cadenas de bloque para almecenar los documentos con sello de tiempo y en 1992 se incorporaron los árboles Merkle, que podían recopilar varios documentos en un bloque haciendo el diseño más eficiente. Sin embargo, esta tecnología no se utilizó y la patente caducó en 2004 \cite{historia1-block}.
+La idea de la tecnología \textit{blockchain} surge a comienzos de 1991 cuando los científicos Stuart Haber y W. Scott Stornetta introducen una solución computacional para la firma de documentos digitales y que no puedieran ser modificados con el tiempo. Usaron cadenas de bloque para almacenar los documentos con sello de tiempo y en 1992 se incorporaron los árboles Merkle, que podían recopilar varios documentos en un bloque haciendo el diseño más eficiente. Sin embargo, esta tecnología no se utilizó y la patente caducó en 2004 \cite{historia1-block}.
 
 En 1998, Nick Szabo trabaja en una moneda digital descentralizada, ``bit gold''. Dos años después Stefan Konst publica su teoría sobre la seguridad criptográfica en las cadenas de bloques junto con algunas ideas de implementación \cite{historia2-block}.
 
@@ -241,7 +241,7 @@ A finales de 2008, un grupo de desarrolladores bajo el nombre de Satoshi Nakamot
 A partir de 2014, se comienzan a explorar el potencial de las cadenas de bloque y a buscar otras aplicaciones fuera de su uso en las transacciones financieras.
 Ethereum introduce programas informáticos que se ejecutan en la \textit{blockchain}, se pueden utilizar para realizar una transacción cumpliendo ciertas condiciones como los contratos inteligentes.
 
-Un contrato inteligenete se tratan de contratos que tienen la capacidad de cumplirse de forma automática. Un contrato inteligente está constituido por un protocolo de códigos que permiten a un dispositivo ejecutar de forma automatizada las sentencias previamente programadas, prescindiendo de la intervención humana \cite{contrato-inteligente}.
+Los contratos inteligentes se tratan de contratos que tienen la capacidad de cumplirse de forma automática. Un contrato inteligente está constituido por un protocolo de códigos que permiten a un dispositivo ejecutar de forma automatizada las sentencias previamente programadas, prescindiendo de la intervención humana \cite{contrato-inteligente}.
 
 Además de los contratos inteligentes, Ethereum tiene su propia criptomoneda llamada Ether, se puede transferir entre cuentas y se utiliza para pagar las tarifas por la ejecución de los contratos inteligentes.
 
@@ -273,7 +273,7 @@ El algoritmo aceite y vinagre desequilibrado es una versión simplificada del al
 
 La principal ventaja del algoritmo \acrshort{uov} es que es un algoritmo post-cuántico, a diferencia de otros esquemas de firmas como \acrshort{rsa}, \acrshort{dsa}, basado en el logaritmo discreto, y su variante para curvas elípticas \mbox{\acrshort{ecdsa}} que no permanecerían seguros ante un ordenador cuántico. Esto se debe a que en la actualidad no existe un algoritmo eficiente para la resolución de sistemas multivariados de ecuaciones  en ordenador cuántico. Otra ventaja es la simplicidad de las operaciones utilizadas, ya que las firmas se crean y validan con operaciones de suma y multiplicaciones de valores pequeños, lo que requiere bajos recursos \textit{hardware}. 
 
-Aunque el algoritmo usa sistemas pequeños y la longitud de las firmas son pequeñas, se necesitan claves públicas bastante más grandes en comparación con otros algoritmos de firma como \mbox{\acrshort{ecdsa}}, pudiendo ocupar dicha clave pública varios kilobytes de almacenamieno. Por otro lado ya se conocen algunos métodos de ataque, probablemente aparecerán más si se empiza a comercializar.\\
+Aunque el algoritmo usa sistemas pequeños y la longitud de las firmas son pequeñas, se necesitan claves públicas bastante más grandes en comparación con otros algoritmos de firma como \mbox{\acrshort{ecdsa}}, pudiendo ocupar dicha clave pública varios kilobytes de almacenamiento. Por otro lado ya se conocen algunos métodos de ataque, probablemente aparecerán más si se empieza a comercializar.\\
 
 \subsubsection{Cuerpos finitos}
 Se trabajará con el cuerpo finito de 128 elementos, $\mathds{F}_{2^7}$, extensión de grado $7$ del cuerpo $\mathds{F}_2$ de los enteros módulo $2$
@@ -282,7 +282,7 @@ Se trabajará con el cuerpo finito de 128 elementos, $\mathds{F}_{2^7}$, extensi
 \mathds{F}_{128} = \frac{\mathds{F}_2[x]}{\langle x^7 + x + 1 \rangle}
 \end{equation}
 
-Además el orden del cuerpo de las unidades es $127$, que es primo entonces todo elemento del cuerpo distinto de $1$ es un elemento primitivo, es decir, un generador.\\
+Además el orden del cuerpo de las unidades es $127$, que es primo. Entonces todo elemento del cuerpo distinto de $1$ es un elemento primitivo, es decir, un generador.\\
 
 La tabla \ref{tab:rel} muestra una representación de los elementos no nulos del cuerpo. En la implementación se ha utilizado la representación como cadena de bits, puesto que a la hora de trabajar es más fácil con una cadeba de bits que con los polinomios.
 
@@ -313,7 +313,7 @@ La implementación del cuerpo finito de $2^7$ elementos no se ha realizado de fo
 
 
 \subsubsection{Parámetros y fórmula}
-Para empezar indicamos los parámetros que serán de utilidad para entender el algoritmo.
+Para empezar se indican los parámetros que serán de utilidad para entender el algoritmo.
 \begin{itemize}
 	\item r: Grado del cuerpo extendido, $\mathds{F}_2 \subset \mathds{F}_{2^r}$. En la implementación se va tomar $r$ igual a $7$, pero se puede realizar con cualquier valor de $r$ sin un esfuerzo adicional.
 	\item $m$: Tamaño de la clave pública, además del número de variables de aceite.
@@ -331,12 +331,12 @@ $\mathcal{P}: \mathds{F}_{2^r}^n \rightarrow \mathds{F}_{2^r}^m$, esta función 
 \begin{equation}\label{eq:fun}
 f_k(x) = \sum_{i=1}^v \sum_{j=i}^n \alpha_{i,j,k} x_i x_j + \sum_{i=1}^n \beta_{i,k} x_i
 \end{equation}
-donde $\alpha_{i,j,k}$ y $\beta_{i,k}$ se toman aleatoriamente en $\mathds{F}_2$ siendo $\left(\alpha_{i,j,k}\right)_{\begin{subarray}{l}{1\leqslant i \leqslant v }\\ {1 \leqslant j \leqslant n}\end{subarray}}$ un vector de matrices triangulares superiores. De esta manera será más eficiente y no afectará a la seguridad del algoritmo.
+donde $\alpha_{i,j,k}$ y $\beta_{i,k}$ se toman aleatoriamente en $\mathds{F}_2$ siendo $\left(\alpha_{i,j,k}\right)_{\begin{subarray}{l}{1\leqslant i \leqslant v }\\ {1 \leqslant j \leqslant n}\end{subarray}}$ un vector de matrices triangulares superiores. De esta manera será más eficiente y no afectará a la seguridad del algoritmo. Se entiende por matriz triangular superior, una matriz no necesariamente cuadrada que tiene debajo de la primera diagonal valores nulos
 
 
 
 \subsubsection{Generación de la clave privada}
-La clave privada viene dada para cada una de las $m$ ecuaciones, es decir, para cada $k$ se tiene una matriz de dimensiones $v \mathrm{x} n$, $\left(\alpha_{i,j,k}\right)_{\begin{subarray}{l}{1\leqslant i \leqslant v }\\ {1 \leqslant j \leqslant n}\end{subarray}}$, y un vector de $v$ componentes, $\left(\beta_{i,k}\right)_{1\leqslant i \leqslant v }$, cuyos valores son elegidos de forma aleatoria en $\mathds{F}_2$.
+La clave privada viene dada para cada una de las $m$ ecuaciones, es decir, para cada $k$ se tiene una matriz de dimensiones $v \times n$, $\left(\alpha_{i,j,k}\right)_{\begin{subarray}{l}{1\leqslant i \leqslant v }\\ {1 \leqslant j \leqslant n}\end{subarray}}$, y un vector de $v$ componentes, $\left(\beta_{i,k}\right)_{1\leqslant i \leqslant v }$, cuyos valores son elegidos de forma aleatoria en $\mathds{F}_2$.
 
 
 \subsubsection{Generación de la clave pública}
@@ -347,14 +347,14 @@ La clave pública se va a definir para cada $k\in \{1, \dots, m\}$ de la siguien
 	\begin{array}{c}
 	I_v \\
 	\hline
-	T'_{v x m}
+	T'_{v \times m}
 	\end{array}
 	\right) \left(\alpha_{i,j,k}\right)_{\begin{subarray}{l}{1 \leqslant i\leqslant v }\\ {i\leqslant j \leqslant n}\end{subarray}} \ T$
 	
 	\item ${\beta_{pub}}_k = \left(\beta_{j,k}\right)_{1\leqslant j\leqslant n}\ T$
 \end{itemize}
 
-A continuación se va a justificar porqué se toman estos valores de la clave pública. Primero se pasan las $m$ ecuaciones \ref{eq:fun} a forma matricial, ecuación \ref{eq:matriz}. La notación a seguir para las matrices transpuestas es $X^{\scriptscriptstyle T}$, con $X$ una matriz.
+A continuación se va a justificar porqué se toman estos valores de la clave pública. Primero se pasan las $m$ ecuaciones (\ref{eq:fun}) a forma matricial, ecuación (\ref{eq:matriz}). La notación a seguir para las matrices transpuestas es $X^{\scriptscriptstyle T}$, con $X$ una matriz.
 
 \begin{equation}\label{eq:matriz} 
 	f_k(x) = x^v\ \left(\alpha_{i,j,k}\right)_{\begin{subarray}{l}{1\leqslant i \leqslant v }\\ {i \leqslant j \leqslant n}\end{subarray}}\ \left(x^v, x^m \right)^{\scriptscriptstyle T} + \left(\beta_{i,k}\right)_{1\leqslant i \leqslant v }\ \left(x^v, x^m\right)^{\scriptscriptstyle T}
@@ -362,13 +362,13 @@ A continuación se va a justificar porqué se toman estos valores de la clave p�
 siendo $x^v$ los vinagres y $x^m$ los aceites, por tanto $x$ se puede expresar como $\big(x^v, x^m\big)^{\scriptscriptstyle T}$.\\
 
 
-Para generar la clave pública es necesario incluir una nueva matriz $T$ con la forma que muestra la ecuación \ref{mat:T}, a esta matriz se le denomina matriz de distorsión. La matriz de distorsión se incluye para aumentar la seguridad del algoritmo y así sea más complejo calcular la función inversa $\mathcal{P}$.
+Para generar la clave pública es necesario incluir una nueva matriz $T$ con la forma que muestra la ecuación (\ref{mat:T}), a esta matriz se le denomina matriz de distorsión. La matriz de distorsión se incluye para aumentar la seguridad del algoritmo y así sea más complejo calcular la función inversa $\mathcal{P}$.
 
 \begin{equation}
 	T =
 	\Bigg(
 	\begin{array}{c|c}
-	I_v & T_{vxm} \\
+	I_v & T_{v\times m} \\
 	\hline
 	0 & I_m
 	\end{array}
@@ -376,35 +376,35 @@ Para generar la clave pública es necesario incluir una nueva matriz $T$ con la 
 	\label{mat:T}
 \end{equation}
 
-Además la matriz de distorsión cumple la igualdad $T\cdot s^{\scriptscriptstyle T} = x ^{\scriptscriptstyle T}$, donde $s$ es la firma del mensaje, y despejando $x$ se obtiene la ecuación \ref{eq:def-x}.
+Además la matriz de distorsión cumple la igualdad $T\cdot s^{\scriptscriptstyle T} = x ^{\scriptscriptstyle T}$, donde $s$ es la firma del mensaje, y despejando $x$ se obtiene la ecuación (\ref{eq:def-x}).
 
 \begin{equation}
 	x =  s \cdot T^{\scriptscriptstyle T} = s  \left(
 	\begin{array}{c|c}
 	I_v & 0 \\
 	\hline
-	T^{\scriptscriptstyle T}_{v \mathrm{x} m} & I_m
+	T^{\scriptscriptstyle T}_{v \times m} & I_m
 	\end{array}
 	\right)
 	= \left(s^v, s^m\right) \left(
 	\begin{array}{c|c}
 	I_v & 0 \\
 	\hline
-	T^{\scriptscriptstyle T}_{v \mathrm{x} m} & I_m
+	T^{\scriptscriptstyle T}_{v \times m} & I_m
 	\end{array}
 	\right)
-	= \left(s^v + s^m T^{\scriptscriptstyle T}_{v\mathrm{x}m}, s^m \right)
+	= \left(s^v + s^m T^{\scriptscriptstyle T}_{v\times m}, s^m \right)
 	\label{eq:def-x}
 \end{equation}
 
-Sustituyendo la anterior definición de $x$ en la ecuación (\ref{eq:matriz}), se llega a la ecuación \ref{eq:sus-def-x}.
+Sustituyendo la anterior definición de $x$ en la ecuación (\ref{eq:matriz}), se llega a la ecuación (\ref{eq:sus-def-x}).
 
 \begin{equation}
 	f_k(x) = s  
 	\left(\begin{array}{c}
 		I_v \\
 		\hline
-		T^{\scriptscriptstyle T}_{v \mathrm{x} m}
+		T^{\scriptscriptstyle T}_{v \times m}
 	\end{array}\right)
 	\left(\alpha_{i,j,k}\right)_{\begin{subarray}{l}{1\leqslant i \leqslant v }\\ {i \leqslant j \leqslant n}\end{subarray}}\ T \ s^{\scriptscriptstyle T} + 
 	\left(\beta_{j,k}\right)_{1\leqslant j\leqslant n}\ T\ s^{\scriptscriptstyle T}
@@ -417,7 +417,7 @@ donde $k \in \{1,\dots,m\}$
 
 Para calcular la firma es necesario conocer los valores de la clave privada $\alpha$ y $\beta$, tomar de forma aleatoria los del vinagre $x^v$, puesto que estos son fijos y no variables pasarán a denominarse como $a^v$, y coger los $m$ primeros bits del \textit{hash} del mensaje $h_k$.
 
-Para facilitar los cálculos se multiplican los vinagres por $\alpha$ y se obtiene \mbox{$A_k = a^v\ \left(\alpha_{i,j,k}\right)_{\begin{subarray}{l}{1 \leqslant i\leqslant v }\\ {1\leqslant j \leqslant n}\end{subarray}} = \left(A^v_k, A^m_k\right)$}. Si se sustituye este resultado en la ecuación \ref{eq:matriz} y se despejan los aceites, se llega a la ecuación \ref{eq:despeje}. Este despeje se puede realizar sin problema, debido a que el sistema de ecuaciones se vuelve lineal cuando las variables de vinagre son fijas y ninguna variable de aceite se multiplica por otra de aceite. Por tanto se puede resolver usando, por ejemplo, el algoritmo de reducción gaussiano.
+Para facilitar los cálculos se multiplican los vinagres por $\alpha$ y se obtiene \mbox{$A_k = a^v\ \left(\alpha_{i,j,k}\right)_{\begin{subarray}{l}{1 \leqslant i\leqslant v }\\ {1\leqslant j \leqslant n}\end{subarray}} = \left(A^v_k, A^m_k\right)$}. Si se sustituye este resultado en la ecuación (\ref{eq:matriz}) y se despejan los aceites, se llega a la ecuación (\ref{eq:despeje}). Este despeje se puede realizar sin problema, debido a que el sistema de ecuaciones se vuelve lineal cuando las variables de vinagre son fijas y ninguna variable de aceite se multiplica por otra de aceite. Por tanto se puede resolver usando, por ejemplo, el algoritmo de reducción gaussiano.
 
 \begin{align}
 h_k &= A_k^v\ (a^v)^{\scriptscriptstyle T} +  A_k^m\ (x^m)^{\scriptscriptstyle T} + \beta_k^v\ (a^v)^{\scriptscriptstyle T} + \beta_k^m\ (x^m)^{\scriptscriptstyle T}\\
@@ -428,7 +428,7 @@ h_k &= A_k^v\ (a^v)^{\scriptscriptstyle T} +  A_k^m\ (x^m)^{\scriptscriptstyle T
 \end{align}
 Si $(A_k^m + \beta_k^m)$ fuese una matriz singular, entonces se tomarían otros valores de vinagres.
 
-De esta forma se han calculado los aceites, esto es, las últimas $m$ componentes del vector $x$. Para calcular la firma, $s$, se hace uso de la definición de $x$  dada en la ecuación \ref{eq:def-x}, puesto que solo es necesario realizar un simple despeje. Por otro lado, se tiene que  que $T$ es igual a su inversa, gracias a la definición de $T$ y teniendo en cuenta que la matriz toma valores en $\mathds{F}_2$.
+De esta forma se han calculado los aceites, esto es, las últimas $m$ componentes del vector $x$. Para calcular la firma, $s$, se hace uso de la definición de $x$  dada en la ecuación (\ref{eq:def-x}), puesto que solo es necesario realizar un simple despeje. Por otro lado, se tiene que  que $T$ es igual a su inversa, gracias a la definición de $T$ y teniendo en cuenta que la matriz toma valores en $\mathds{F}_2$.
 
 \begin{equation}\label{eq:firma}
 	s = x \cdot {T^{\scriptscriptstyle T}}^{-1} = x \cdot T ^{\scriptscriptstyle T}
@@ -451,7 +451,7 @@ Para comprobar que el mensaje es correcto y que no ha sufrido ninguna transforma
 
 A continuación se muestra un ejemplo para mejor comprensión del algoritmo \acrshort{uov} utilizando valores de $m$ y $v$ pequeños, ambos con valor $3$, y dejando fijo el valor de $r$ igual a $7$.
 
-Generamos la clave privada con valores aleatorios. Notamos que las matrices del vector $\alpha_{priv}$, ecuación \ref{eq:ej-alpha-priv}, son matrices triangulares superiores de dimensión $3\ \mathrm{x}\ 6$, esto es dimensión $m\ \mathrm{x}\ n$. Además el número de matrices es $3$ el valor de $v$.
+Generamos la clave privada con valores aleatorios. Notamos que las matrices del vector $\alpha_{priv}$, ecuación (\ref{eq:ej-alpha-priv}), son matrices triangulares superiores de dimensión $3\ \times\ 6$, esto es dimensión $m\ \times\ n$. Además el número de matrices es $3$ el valor de $v$.
 
 \begin{equation}\label{eq:ej-alpha-priv}
 {\alpha_{priv}} = 
@@ -476,7 +476,7 @@ Generamos la clave privada con valores aleatorios. Notamos que las matrices del 
 	\end{matrix}\Bigg)
 \end{equation}
 
-La segunda parte de la clave privada es $\beta_{priv}$, consta de un vector de $3$ vectores, donde cada uno tiene $n$ componentes, esto es $6$ componentes, ecuación \ref{eq:ej-beta-priv}.
+La segunda parte de la clave privada es $\beta_{priv}$, consta de un vector de $3$ vectores, donde cada uno tiene $n$ componentes, esto es $6$ componentes, ecuación (\ref{eq:ej-beta-priv}).
 
 \begin{equation}\label{eq:ej-beta-priv}
 {\beta_{priv}} = 
@@ -496,13 +496,13 @@ La segunda parte de la clave privada es $\beta_{priv}$, consta de un vector de $
 \end{equation}
 
 
-La forma de la matriz T viene dada por la ecuación \ref{mat:T}, la del ejemplo se muestra en la ecuación \ref{eq:ej-T}
+La forma de la matriz T viene dada por la ecuación \ref{mat:T}, la del ejemplo se muestra en la ecuación (\ref{eq:ej-T})
 
 \begin{equation}\label{eq:ej-T}
 {T} =
 	\left(\begin{array}{c|c}
 	\\
-	\ \ \ \ \ I_3\ \ \ \ & \ \ \ \ T_{3\mathrm{x}3} \ \ \  \\
+	\ \ \ \ \ I_3\ \ \ \ & \ \ \ \ T_{3\times 3} \ \ \  \\
 	\\
 	\hline
 	\\
@@ -521,12 +521,12 @@ La forma de la matriz T viene dada por la ecuación \ref{mat:T}, la del ejemplo 
 \end{equation}
 
 
-Clave pública consta de dos partes $\alpha_{pub}$ y $\beta_{pub}$. Cada  componente de $\alpha_{pub}$ se calculan multiplicando tres matrices, una matriz, que tiene dos partes la $I_3$ y $T'_{3\mathrm{x}3}$, por la $k-ésima$ componente de $\alpha_{priv}$ y por $T$.
+Clave pública consta de dos partes $\alpha_{pub}$ y $\beta_{pub}$. Cada  componente de $\alpha_{pub}$ se calculan multiplicando tres matrices, una matriz, que tiene dos partes la $I_3$ y $T'_{3\times 3}$, por la $k-ésima$ componente de $\alpha_{priv}$ y por $T$.
 
 \begin{equation}\label{eq:ej-alpha-pub-1}
 	\begin{aligned}
 	{{\alpha_{pub}}_1}  & =  
-	\begin{pmatrix}
+	\left(\begin{matrix}
 		1 & 0 & 0\\
 		0 & 1 & 0\\
 		0 & 0 & 1\\
@@ -534,7 +534,7 @@ Clave pública consta de dos partes $\alpha_{pub}$ y $\beta_{pub}$. Cada  compon
 		0 & 0 & 1\\
 		0 & 0 & 0\\
 		0 & 1 & 1
-	\end{pmatrix}
+	\end{matrix}\right)
 	\cdot
 	\begin{pmatrix}
 		1 & 0 & 1 & 1 & 1 & 0\\
@@ -581,12 +581,12 @@ Clave pública consta de dos partes $\alpha_{pub}$ y $\beta_{pub}$. Cada  compon
 	\end{aligned}
 \end{equation}
 
-De la misma forma se obtiene ${\alpha_{pub}}_2$ y ${\alpha_{pub}}_3$, así la ecuación \ref{eq:ej-alpha-pub} muestra el resultado de $\alpha_{pub}$.
+De la misma forma se obtiene ${\alpha_{pub}}_2$ y ${\alpha_{pub}}_3$, así la ecuación (\ref{eq:ej-alpha-pub}) muestra el resultado de $\alpha_{pub}$.
 
 
 \begin{equation}\label{eq:ej-alpha-pub}
 {\alpha_{pub}} = 
-	\begin{pmatrix}
+	\left(\begin{matrix}
 	\left(\begin{smallmatrix}
 		1 & 0 & 1 & 0 & 1 & 1\\
 		0 & 0 & 0 & 0 & 1 & 1\\
@@ -613,11 +613,11 @@ De la misma forma se obtiene ${\alpha_{pub}}_2$ y ${\alpha_{pub}}_3$, así la ec
 		0 & 0 & 0 & 0 & 0 & 0\\
 		0 & 0 & 1 & 0 & 1 & 1
 	\end{smallmatrix}\right)
-	\end{pmatrix}
+	\end{matrix}\right)
 \end{equation}
 
 
-Ahora se calcula $\beta_{pub}$ para ello se va a realizar el cálculo de la primera componente del vector ${\beta_{pub}}_1$ a modo de ejemplo, multiplicando la primera componente de $\beta_{priv}$ por $T$, ecuación \ref{eq:ej-beta-pub-1}.
+Ahora se calcula $\beta_{pub}$ para ello se va a realizar el cálculo de la primera componente del vector ${\beta_{pub}}_1$ a modo de ejemplo, multiplicando la primera componente de $\beta_{priv}$ por $T$, ecuación (\ref{eq:ej-beta-pub-1}).
 
 \begin{equation}\label{eq:ej-beta-pub-1}
 	{{\beta_{pub}}_1} = 
@@ -634,7 +634,7 @@ Ahora se calcula $\beta_{pub}$ para ello se va a realizar el cálculo de la prim
 	\left(\begin{matrix}1 & 0 & 0 & 1 & 0 & 0\end{matrix}\right)
 \end{equation}
 
-De manera análoga se calculan el resto de componentes, ${\beta_{pub}}_2$ y ${\beta_{pub}}_3$, para obtener el vector completo $\beta_{pub}$, ecuación \ref{eq:ej-beta-pub}.
+De manera análoga se calculan el resto de componentes, ${\beta_{pub}}_2$ y ${\beta_{pub}}_3$, para obtener el vector completo $\beta_{pub}$, ecuación (\ref{eq:ej-beta-pub}).
 
 \begin{equation}\label{eq:ej-beta-pub}
 {\beta_{pub}} = 
@@ -653,7 +653,7 @@ De manera análoga se calculan el resto de componentes, ${\beta_{pub}}_2$ y ${\b
 	\end{matrix}\right)
 \end{equation}
 
-Llegados a este punto comienza el proceso de firma del mensaje, en este caso el mensaje al que se le va a realizar la firma es \texttt{"{}Este mensaje es un mensaje de prueba. Quiero se sea un poco largo para que se aprecie el efecto de la función hash"{}}, el hash de dicho mensaje calculado con la función \texttt{sha256} es \texttt{"{}c2f"{}}, la ecuación \ref{eq:ej-hash} contiene el \textit{hash} en $\mathds{F}_{128}$.
+Llegados a este punto comienza el proceso de firma del mensaje, en este caso el mensaje al que se le va a realizar la firma es \texttt{"{}Este mensaje es un mensaje de prueba. Quiero se sea un poco largo para que se aprecie el efecto de la función hash"{}}, el hash de dicho mensaje calculado con la función \texttt{sha256} es \texttt{"{}c2f"{}}, la ecuación (\ref{eq:ej-hash}) contiene el \textit{hash} en $\mathds{F}_{128}$.
 
 \begin{equation}\label{eq:ej-hash}
 	{hash} = 
@@ -672,7 +672,7 @@ Llegados a este punto comienza el proceso de firma del mensaje, en este caso el 
 	\end{matrix}\right)
 \end{equation}
 
-Los vinagres se han tomado de forma aleatoria, ecuación \ref{eq:ej-vinegar}. 
+Los vinagres se han tomado de forma aleatoria, ecuación (\ref{eq:ej-vinegar}). 
 
 \begin{equation}\label{eq:ej-vinegar}
 {a^v} = 
@@ -741,7 +741,7 @@ La $k-ésima$ matriz del vector $A$ es el resultado de multiplicar el vinagre po
 	\end{aligned}
 \end{equation}
 
-Calculando el resto de las componentes se obtiene la matriz $A$, ecuación \ref{eq:ej-A}.
+Calculando el resto de las componentes se obtiene la matriz $A$, ecuación (\ref{eq:ej-A}).
 
 \begin{equation}\label{eq:ej-A}
 	\begin{aligned}
@@ -824,7 +824,7 @@ Calculando el resto de las componentes se obtiene la matriz $A$, ecuación \ref{
 	\end{aligned}	
 \end{equation}
 
-Los coeficientes se obtienen de la suma de las últimas $m$ componenetes, en este caso las $3$ últimas, de cada $A_k$ con ${\beta_{priv}}_k$. Pero tenemos el mismo problema de antes, puesto que los coeficientes de $A_k$ pertenecen a $\mathds{F}_{128}$ y los coeficientes de ${\beta_{priv}}_k$ se encuentra en $\mathds{F}_2$, por tanto lo que vamos a sumar es $0$ o $1$, o lo que es lo mismo realizar la operación lógica $XOR$ con los elementos $\left(\begin{smallmatrix}0 & 0 & 0 & 0 & 0 & 0 & 0\end{smallmatrix}\right)$ o $\left(\begin{smallmatrix}0 & 0 & 0 & 0 & 0 & 0 & 1\end{smallmatrix}\right)$, ecuación \ref{eq:ej-coef}.
+Los coeficientes se obtienen de la suma de las últimas $m$ componenetes, en este caso las $3$ últimas, de cada $A_k$ con ${\beta_{priv}}_k$. Pero tenemos el mismo problema de antes, puesto que los coeficientes de $A_k$ pertenecen a $\mathds{F}_{128}$ y los coeficientes de ${\beta_{priv}}_k$ se encuentra en $\mathds{F}_2$, por tanto lo que vamos a sumar es $0$ o $1$, o lo que es lo mismo realizar la operación lógica $XOR$ con los elementos $\left(\begin{smallmatrix}0 & 0 & 0 & 0 & 0 & 0 & 0\end{smallmatrix}\right)$ o $\left(\begin{smallmatrix}0 & 0 & 0 & 0 & 0 & 0 & 1\end{smallmatrix}\right)$, ecuación (\ref{eq:ej-coef}).
 
 \begin{equation}\label{eq:ej-coef}
 	{coef} =
@@ -847,7 +847,7 @@ Los coeficientes se obtienen de la suma de las últimas $m$ componenetes, en est
 	\end{matrix}\right)
 \end{equation}
 
-Los términos corresponden a la parte de la derecha de la ecuación \ref{eq:ter-coef}, a continuación se va a realizar el cálculo para $k$ igual $1$. La ecuación \ref{eq:ej-beta-1-v} corresponde al primer vector de $\beta$, $\left(\begin{array}{c}1\ 0\ 0\ 1\ 0\ 0\end{array}\right)$, donde se han transformado los elementos de $\mathds{F}_2$ a $\mathds{F}_{128}$ y se han tomado las $3$ primeras componentes.
+Los términos corresponden a la parte de la derecha de la ecuación (\ref{eq:ter-coef}), a continuación se va a realizar el cálculo para $k$ igual $1$. La ecuación (\ref{eq:ej-beta-1-v}) corresponde al primer vector de $\beta$, $\left(\begin{array}{c}1\ 0\ 0\ 1\ 0\ 0\end{array}\right)$, donde se han transformado los elementos de $\mathds{F}_2$ a $\mathds{F}_{128}$ y se han tomado las $3$ primeras componentes.
 
 \begin{equation}\label{eq:ej-beta-1-v}
 	{\beta^v_1} = 
@@ -858,7 +858,7 @@ Los términos corresponden a la parte de la derecha de la ecuación \ref{eq:ter-
 		\end{matrix}\right)
 \end{equation}
 
-De la misma forma se han tomado las $3$ primeras componenetes del primer vector de $A$, ecuación \ref{eq:ej-A-1-v}.
+De la misma forma se han tomado las $3$ primeras componenetes del primer vector de $A$, ecuación (\ref{eq:ej-A-1-v}).
 
 \begin{equation}\label{eq:ej-A-1-v}
 	{A^v_1} = 
@@ -869,7 +869,7 @@ De la misma forma se han tomado las $3$ primeras componenetes del primer vector 
 		\end{matrix}\right)
 \end{equation}
 
-El vector $sum$ contiene la suma de $A^v_1$ y $\beta^v_1$, ecuación \ref{eq:ej-sum}.
+El vector $sum$ contiene la suma de $A^v_1$ y $\beta^v_1$, ecuación (\ref{eq:ej-sum}).
 
 \begin{equation}\label{eq:ej-sum}
 	{sum} = 
@@ -880,7 +880,7 @@ El vector $sum$ contiene la suma de $A^v_1$ y $\beta^v_1$, ecuación \ref{eq:ej-
 		\end{matrix}\right)
 \end{equation}
 
-Finalmente, para calcular $term$ hay que multiplicar $sum$ por $a^v$ y restarselo a la primera componente de $hash$. Al realizar las operaciones módulo $2$, la resta y la suma son lo mismo, por tanto se realizará la operación lógica \textit{XOR} con el $hash$, ecuación\ref{eq:ej-ter-1}.
+Finalmente, para calcular $term$ hay que multiplicar $sum$ por $a^v$ y restarselo a la primera componente de $hash$. Al realizar las operaciones módulo $2$, la resta y la suma son lo mismo, por tanto se realizará la operación lógica \textit{XOR} con el $hash$, ecuación (\ref{eq:ej-ter-1}).
 
 \begin{equation}\label{eq:ej-ter-1}
 	\begin{split}
@@ -902,7 +902,7 @@ Finalmente, para calcular $term$ hay que multiplicar $sum$ por $a^v$ y restarsel
 	\end{split}
 \end{equation}
 
-De la misma forma se calculan el resto de los términos llegando al vector $term$, ecuación \ref{eq:ej-ter}.
+De la misma forma se calculan el resto de los términos llegando al vector $term$, ecuación (\ref{eq:ej-ter}).
 
 \begin{equation}\label{eq:ej-ter}
 	{term} = 
@@ -913,7 +913,7 @@ De la misma forma se calculan el resto de los términos llegando al vector $term
 		\end{matrix}\right)
 \end{equation}
 
-Tras la resolución del sistema $coef \cdot oil = term$ se han obtenido los aceites, ecuación \ref{eq:ej-oil}.
+Tras la resolución del sistema $coef \cdot oil = term$ se han obtenido los aceites, ecuación (\ref{eq:ej-oil}).
 
 \begin{equation}\label{eq:ej-oil}
 	{oil} = 
@@ -924,7 +924,7 @@ Tras la resolución del sistema $coef \cdot oil = term$ se han obtenido los acei
 		\end{matrix}\right)
 \end{equation}
 
-Ahora se forma el vector $aux$ uniendo los vinagres con los aceites, ecuación \ref{eq:ej-aux}.
+Ahora se forma el vector $aux$ uniendo los vinagres con los aceites, ecuación (\ref{eq:ej-aux}).
 
 \begin{equation}\label{eq:ej-aux}
 	\begin{aligned}
@@ -940,7 +940,7 @@ Ahora se forma el vector $aux$ uniendo los vinagres con los aceites, ecuación \
 	\end{aligned}
 \end{equation}
 
-La firma del mensaje se obtiene multiplicando el vector $aux$ por la inversa de $T$, que de la forma que está construida dicha matriz $T$ coincide con su inversa, ecuación \ref{eq:ej-firma}.
+La firma del mensaje se obtiene multiplicando el vector $aux$ por la inversa de $T$, que de la forma que está construida dicha matriz $T$ coincide con su inversa, ecuación (\ref{eq:ej-firma}).
 
 \begin{equation}\label{eq:ej-firma}
 	\begin{aligned}
@@ -959,7 +959,7 @@ La firma del mensaje se obtiene multiplicando el vector $aux$ por la inversa de 
 
 Para realizar la confirmación del mensaje es necesario calcular dos variables auxiliares, $\alpha_{aux}$ y $\beta_{aux}$.
 
-Para calcular ${\alpha_{aux}}_1$ hay que multiplicar los vectores $firma$, ${\alpha_{pub}}_1$y $firma$ transpuesta, ecuación \ref{eq:ej-aux-alpha-1}.
+Para calcular ${\alpha_{aux}}_1$ hay que multiplicar los vectores $firma$, ${\alpha_{pub}}_1$y $firma$ transpuesta, ecuación (\ref{eq:ej-aux-alpha-1}).
 
 \begin{equation}\label{eq:ej-aux-alpha-1}
 	\begin{aligned}
@@ -978,7 +978,7 @@ Para calcular ${\alpha_{aux}}_1$ hay que multiplicar los vectores $firma$, ${\al
 	\end{aligned}
 \end{equation}
 
-La segunda variable ${\beta_{aux}}_k$ es el producto de la $k-ésima$ componente del vector $\beta_{pub}$, donde sus componenetes se encuentran en $\mathds{F}_2$ y habrá que transformarlos en componentes de $\mathds{F}_{128}$, por el vector $firma$ transpuesta, ecuación \ref{eq:ej-aux-beta-1}.
+La segunda variable ${\beta_{aux}}_k$ es el producto de la $k-ésima$ componente del vector $\beta_{pub}$, donde sus componenetes se encuentran en $\mathds{F}_2$ y habrá que transformarlos en componentes de $\mathds{F}_{128}$, por el vector $firma$ transpuesta, ecuación (\ref{eq:ej-aux-beta-1}).
 
 \begin{equation}\label{eq:ej-aux-beta-1}
 	\begin{aligned}
@@ -989,7 +989,7 @@ La segunda variable ${\beta_{aux}}_k$ es el producto de la $k-ésima$ componente
 	\end{aligned}
 \end{equation}
 
-Calculando todas la componentes de $\alpha_{aux}$ y $\beta_{aux}$ se obtienen los vectores las ecuaciones \ref{eq:ej-aux-alpha} y \ref{eq:ej-aux-beta}, respectivamente.
+Calculando todas la componentes de $\alpha_{aux}$ y $\beta_{aux}$ se obtienen los vectores las ecuaciones (\ref{eq:ej-aux-alpha}) y (\ref{eq:ej-aux-beta}), respectivamente.
 
 \begin{equation}\label{eq:ej-aux-alpha}
 	{\alpha_{aux}} = \left(\begin{matrix}
@@ -1008,7 +1008,7 @@ Calculando todas la componentes de $\alpha_{aux}$ y $\beta_{aux}$ se obtienen lo
 		\end{matrix}\right)
 \end{equation}
 
-Sumando los vectores componente a componente, ecuación \ref{eq:ej-suma}, anteriormente calculados, se obtiene vector a comparar con el $hash$ del mensaje. 
+Sumando los vectores componente a componente, ecuación (\ref{eq:ej-suma}), anteriormente calculados, se obtiene vector a comparar con el $hash$ del mensaje. 
 
 \begin{equation}\label{eq:ej-suma}
 	\left(\begin{matrix}
@@ -1018,7 +1018,7 @@ Sumando los vectores componente a componente, ecuación \ref{eq:ej-suma}, anteri
 	\end{matrix}\right)
 \end{equation}
 
-Si el mensaje no ha sido corrompido habrá de ser igual que el $hash$ del mensaje, ecuación \ref{eq:ej-verif}.
+Si el mensaje no ha sido corrompido habrá de ser igual que el $hash$ del mensaje, ecuación (\ref{eq:ej-verif}).
 
 \begin{equation}\label{eq:ej-verif}
 	\begin{aligned}

@@ -88,12 +88,13 @@ Algunos comandos útiles para el trabajo con Docker se muestran en el código \r
 En Docker, hay que iniciar una imagen de ubuntu xenial, codigo \ref{cod:run-docker}. Además es necesario abrir algunos puertos como 4103, para la API pública, 4102, conexión P2P API y 4200, para el \textit{explorer}.\\
 
 \begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte I, label=cod:run-docker, style=Consola]
-	$ sudo docker run -ti -p 4103:4103 -p 4200:4200 ubuntu:xenial
+	$ sudo docker run -ti -p 4102:4102 -p 4103:4103 -p 4200:4200 ubuntu:xenial
 \end{lstlisting}
 
 Una vez dentro de la máquina Docker hay que instalar \texttt{sudo}, para poder trabajar en modo administrador desde el usuario que se va a crear, código \ref{cod:add-user}.\\
 
 \begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte II, label=cod:add-user, style=Consola]
+	$ apt-get update
 	$ apt-get install sudo
 	$ adduser deployer
 
@@ -126,7 +127,7 @@ Actualizar los paquete e instalar algunos nuevos como \texttt{git}, \texttt{curl
 
 \begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte IV, label=cod:update, style=Consola]
 	$ sudo apt-get update
-	$ sudo apt-get install git curl yarn jq apt-transport-https
+	$ sudo apt-get install git curl yarn jq apt-transport-https nano
 \end{lstlisting}
 
 Instalar las dependencias \texttt{nvm}, código \ref{cod:nvm}, es necesario para instalar posteriormente el paquete \texttt{pm2}.\\
@@ -158,7 +159,7 @@ Para instalar pm2 ver el código \ref{cod:npm}.\\
 \begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte VIII, label=cod:npm, style=Consola]
 	$ sudo apt-get install npm
 	$ sudo npm i -g pm2
-	$ ln -s /usr/bin/nodejs /usr/bin/node
+	$ sudo ln -s /usr/bin/nodejs /usr/bin/node
 \end{lstlisting}
 
 Algunos comandos interesantes para trabajar con pm2 se muestran en el código \ref{cod:pm2}. Servirán para observar si la \textit{blockchain} y el \textit{explorer} están levantados.
@@ -176,7 +177,7 @@ Hasta aquí se han instalado los paquetes y dependencias para poder empezar a in
 \begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte IX, label=cod:clone-ark, style=Consola]
 	$ git clone https://github.com/ArkEcosystem/deployer.git
 	$ chmod 764 deployer/setup.sh
-	$ ./setup.sh
+	$ ./deployer/setup.sh
 \end{lstlisting}
 
 
