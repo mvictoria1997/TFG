@@ -44,32 +44,37 @@ J.~V. of~Jeremiah~Owyang, ``{Roadmap: Five Phases of Digital Eras},'' 2019,
   \url{https://web-strategist.com/blog/2019/01/04/roadmap-five-phases-of-digital-eras/}.
 
 \bibitem{servicios-seguridad}
-Wikipedia, ``Seguridad de la información,''
-  \url{https://es.wikipedia.org/wiki/Seguridad_de_la_informaci%C3%B3n}.
+F.~G. Pacheco and H.~Jara, \emph{Hackers al descubierto}.\hskip 1em plus 0.5em
+  minus 0.4em\relax USERSHOP, 2010.
 
 \bibitem{criptografia}
-Wikipedia, ``Criptografía,''
-  \url{https://es.wikipedia.org/wiki/Criptograf%C3%ADa}.
+J.~C.~G. D{\'\i}az and J.~C.~G. D{\'\i}az, \emph{Criptograf{\'\i}a: historia de
+  la escritura cifrada}.\hskip 1em plus 0.5em minus 0.4em\relax {Editorial
+  Complutense}, 1995.
 
 \bibitem{criptografia-asimetrica}
-Wikipedia, ``{Criptografía Asimétrica},''
-  \url{https://es.wikipedia.org/wiki/Criptograf%C3%ADa_asim%C3%A9trica}.
+F.~J. Lobillo, ``{Parte II Criptografía. Criptosistema de RSA y criptosistemas
+  basados en el logaritmo discreto}.''
 
 \bibitem{fuerza-bruta}
-Wikipedia, ``Atáque de fuerza bruta,''
-  \url{https://es.wikipedia.org/wiki/Ataque_de_fuerza_bruta}.
+I.~Gallego~Sagastume, ``Estructuras algebraicas aplicables en
+  criptograf{\'\i}a,'' in \emph{XVIII Workshop de Investigadores en Ciencias de
+  la Computaci{\'o}n (WICC 2016, Entre R{\'\i}os, Argentina)}, 2016.
 
 \bibitem{security-level}
-Wikipedia, ``{Security Level},''
-  \url{https://en.wikipedia.org/wiki/Security_level}.
+D.~Mahto, D.~A. Khan, and D.~K. Yadav, ``Security analysis of elliptic curve
+  cryptography and rsa,'' in \emph{Proceedings of the world congress on
+  engineering}, vol.~1, 2016, pp. 419--422.
 
 \bibitem{criptografia-postcuantica}
-Wikipedia, ``Criptografía postcuántica,''
-  \url{https://es.wikipedia.org/wiki/Criptograf%C3%ADa_postcu%C3%A1ntica}.
+L.~Chen, L.~Chen, S.~Jordan, Y.-K. Liu, D.~Moody, R.~Peralta, R.~Perlner, and
+  D.~Smith-Tone, \emph{Report on post-quantum cryptography}.\hskip 1em plus
+  0.5em minus 0.4em\relax US Department of Commerce, National Institute of
+  Standards and Technology, 2016, vol.~12.
 
 \bibitem{Fogo-Chao}
-Wikipedia, ``{Restaurante Fogo de Ch\~{a}o},''
-  \url{https://en.wikipedia.org/wiki/Fogo_de_Ch%C3%A3o}.
+R.~Tonon, ``{The story of Fogo de Ch\~{a}o's rise to fame},'' 2016,
+  \url{https://www.eater.com/2016/10/6/13168942/fogo-de-chao-brazilian-steakhouse}.
 
 \bibitem{algoritmo-UOV}
 A.~Szepieniec, B.~Preneel, F.~Vercaunteren, and W.~Beullens, ``{LUOV: Signature
@@ -80,12 +85,12 @@ A.~Szepieniec, B.~Preneel, F.~Vercaunteren, and W.~Beullens, ``{LUOV: Signature
 ``Ark,'' \url{https://ark.io/}.
 
 \bibitem{computacion-cuantica-wiki}
-Wikipedia, ``Computación cuántica,''
-  \url{https://es.wikipedia.org/wiki/Computaci\%C3\%B3n\_cu\%C3\%A1ntica}.
+F.~Luis, ``Computaci{\'o}n cu{\'a}ntica con imanes moleculares,'' 2014.
 
 \bibitem{mecanica-cuantica}
-Wikipedia, ``Mecánica cuántica,''
-  \url{https://es.wikipedia.org/wiki/Mec%C3%A1nica_cu%C3%A1ntica}.
+L.~De~La~Pe{\~n}a, \emph{Introducci{\'o}n a la mec{\'a}nica
+  cu{\'a}ntica}.\hskip 1em plus 0.5em minus 0.4em\relax Fondo de Cultura
+  econ{\'o}mica, 2014.
 
 \bibitem{computacion-cuantica-crono}
 Álvaro Rodrigo~Reyes, ``{Estado de la criptografía post-cuántica y
@@ -107,8 +112,9 @@ A.~Banafa, ``Computación cuántica y blockchain, mitos y realidades,'' 2019,
   \url{https://www.bbvaopenmind.com/tecnologia/mundo-digital/computacion-cuantica-y-blockchain-mitos-y-realidades/}.
 
 \bibitem{arbol-merkle}
-Wikipedia, ``{Árboles Merkle},''
-  \url{https://es.wikipedia.org/wiki/%C3%81rbol_de_Merkle}.
+V.~J. Cuadros~Choez, ``An{\'a}lisis comparativo de un sistema de auditor{\'i}a
+  tradicional y un sistema de auditor{\'i}a blockchain e ipes.'' {B.S.} thesis,
+  2020.
 
 \bibitem{historia1-block}
 ``{History of Blockchain},''
@@ -119,8 +125,9 @@ Wikipedia, ``{Árboles Merkle},''
   \url{https://www.icaew.com/technical/technology/blockchain/blockchain-articles/what-is-blockchain/history}.
 
 \bibitem{RPoW}
-Wikipedia, ``{Reusable Proof of Work},''
-  \url{https://es.wikipedia.org/wiki/Reusable_Proof_Of_Work}.
+F.~Tschorsch and B.~Scheuermann, \emph{Bitcoin and Beyond: A technical survey
+  on decentralized digital currencies}.\hskip 1em plus 0.5em minus 0.4em\relax
+  Humboldt University of Berlin.
 
 \bibitem{contrato-inteligente}
 ``{Contrato inteligente},''
@@ -141,8 +148,10 @@ Wikipedia, ``{Unbalanced oil and vinegar scheme},''
   \url{https://en.wikipedia.org/wiki/Unbalanced_oil_and_vinegar_scheme}.
 
 \bibitem{schnorr}
-Wikipedia, ``{Algoritmo Schnorr},''
-  \url{https://en.wikipedia.org/wiki/Schnorr_signature}.
+M.~Beunardeau, A.~Connolly, H.~Ferradi, R.~G{\'e}raud, D.~Naccache, and
+  D.~Vergnaud, ``Reusing nonces in schnorr signatures,'' in \emph{European
+  Symposium on Research in Computer Security}.\hskip 1em plus 0.5em minus
+  0.4em\relax Springer, 2017, pp. 224--241.
 
 \bibitem{instalacion-docker}
 ``Install docker engine on ubuntu,''

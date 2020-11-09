@@ -8,54 +8,57 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: bibliografia/bibliografia.bib
-You're missing a field name---line 161 of file bibliografia/bibliografia.bib
+You're missing a field name---line 174 of file bibliografia/bibliografia.bib
  : @misc{imagen-triada, 
  :                      %Ver imagen triada cia, puede servir para las diapos
 I'm skipping whatever remains of this entry
 -- IEEEtran.bst version 1.12 (2007/01/11) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty journal in computacion-cuantica-wiki
+Warning--missing school in arbol-merkle
+Warning--empty year in RPoW
 
 Done.
 You've used 32 entries,
             4024 wiz_defined-function locations,
-            927 strings with 11721 characters,
-and the built_in function-call counts, 10996 in all, are:
-= -- 787
-> -- 128
-< -- 0
-+ -- 66
-- -- 30
-* -- 327
-:= -- 1845
-add.period$ -- 64
+            946 strings with 12519 characters,
+and the built_in function-call counts, 12692 in all, are:
+= -- 910
+> -- 218
+< -- 20
++ -- 112
+- -- 47
+* -- 446
+:= -- 2063
+add.period$ -- 65
 call.type$ -- 32
-change.case$ -- 64
-chr.to.int$ -- 0
-cite$ -- 32
-duplicate$ -- 1032
-empty$ -- 1159
-format.name$ -- 32
-if$ -- 2383
+change.case$ -- 48
+chr.to.int$ -- 48
+cite$ -- 35
+duplicate$ -- 1098
+empty$ -- 1328
+format.name$ -- 55
+if$ -- 2819
 int.to.chr$ -- 0
 int.to.str$ -- 32
-missing$ -- 254
+missing$ -- 251
 newline$ -- 119
 num.names$ -- 26
-pop$ -- 763
+pop$ -- 735
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 851
+skip$ -- 1013
 stack$ -- 0
-substring$ -- 96
-swap$ -- 525
-text.length$ -- 0
+substring$ -- 181
+swap$ -- 619
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 5
 type$ -- 32
-warning$ -- 0
-while$ -- 26
+warning$ -- 3
+while$ -- 34
 width$ -- 34
-write$ -- 249
+write$ -- 257
 (There was 1 error message)
