@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.3.26)  6 NOV 2020 14:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.3.26)  8 NOV 2020 17:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2699,47 +2699,47 @@ Package babel Info: Redefining spanish shorthand "?
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 
-Overfull \hbox (0.26279pt too wide) detected at line 29
+Overfull \hbox (0.26279pt too wide) detected at line 30
 \T1/futs/m/n/10.95 A.10. 
  []
 
 
-Overfull \hbox (0.26279pt too wide) detected at line 30
+Overfull \hbox (0.26279pt too wide) detected at line 31
 \T1/futs/m/n/10.95 A.11. 
  []
 
 
-Overfull \hbox (0.26279pt too wide) detected at line 31
+Overfull \hbox (0.26279pt too wide) detected at line 32
 \T1/futs/m/n/10.95 A.12. 
  []
 
 
-Overfull \hbox (0.26279pt too wide) detected at line 32
+Overfull \hbox (0.26279pt too wide) detected at line 33
 \T1/futs/m/n/10.95 A.13. 
  []
 
 
-Overfull \hbox (0.26279pt too wide) detected at line 33
+Overfull \hbox (0.26279pt too wide) detected at line 34
 \T1/futs/m/n/10.95 A.14. 
  []
 
 
-Overfull \hbox (0.26279pt too wide) detected at line 34
+Overfull \hbox (0.26279pt too wide) detected at line 35
 \T1/futs/m/n/10.95 A.15. 
  []
 
 
-Overfull \hbox (0.26279pt too wide) detected at line 35
+Overfull \hbox (0.26279pt too wide) detected at line 36
 \T1/futs/m/n/10.95 A.16. 
  []
 
 
-Overfull \hbox (0.26279pt too wide) detected at line 36
+Overfull \hbox (0.26279pt too wide) detected at line 37
 \T1/futs/m/n/10.95 A.17. 
  []
 
 
-Overfull \hbox (0.26279pt too wide) detected at line 37
+Overfull \hbox (0.26279pt too wide) detected at line 38
 \T1/futs/m/n/10.95 A.18. 
  []
 
@@ -3175,7 +3175,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 46--47
 
  []
 
-<figuras/comp_clasica_cuantica.png, id=527, 631.35875pt x 330.23375pt>
+<figuras/comp_clasica_cuantica.png, id=529, 631.35875pt x 330.23375pt>
 File: figuras/comp_clasica_cuantica.png Graphic file (type png)
 <use figuras/comp_clasica_cuantica.png>
 Package pdftex.def Info: figuras/comp_clasica_cuantica.png  used on input line 
@@ -3460,7 +3460,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 160--161
 
  []
 
-<figuras/bit_cubit.png, id=596, 526.96875pt x 325.215pt>
+<figuras/bit_cubit.png, id=598, 526.96875pt x 325.215pt>
 File: figuras/bit_cubit.png Graphic file (type png)
 <use figuras/bit_cubit.png>
 Package pdftex.def Info: figuras/bit_cubit.png  used on input line 172.
@@ -3503,7 +3503,7 @@ re.1.2}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.178 
        <./figuras/bit_cubit.png>]
-<figuras/esfera_bloch.png, id=606, 803.0pt x 854.19125pt>
+<figuras/esfera_bloch.png, id=608, 803.0pt x 854.19125pt>
 File: figuras/esfera_bloch.png Graphic file (type png)
 <use figuras/esfera_bloch.png>
 Package pdftex.def Info: figuras/esfera_bloch.png  used on input line 184.
@@ -3578,7 +3578,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 224--225
 
  []
 
-<figuras/arbol_merkle.png, id=622, 652.4375pt x 322.20375pt>
+<figuras/arbol_merkle.png, id=624, 652.4375pt x 322.20375pt>
 File: figuras/arbol_merkle.png Graphic file (type png)
 <use figuras/arbol_merkle.png>
 Package pdftex.def Info: figuras/arbol_merkle.png  used on input line 228.
@@ -4120,7 +4120,7 @@ Package babel Info: Redefining spanish shorthand "?
 [23
 
 ]
-<figuras/Gantt_ini.png, id=795, 1494.58376pt x 298.11375pt>
+<figuras/Gantt_ini.png, id=797, 1494.58376pt x 298.11375pt>
 File: figuras/Gantt_ini.png Graphic file (type png)
 <use figuras/Gantt_ini.png>
 Package pdftex.def Info: figuras/Gantt_ini.png  used on input line 21.
@@ -4158,7 +4158,7 @@ has been already used, duplicate ignored
                                                   \fi \fi 
 l.25 \end{landscape}
                      <./figuras/Gantt_ini.png>]
-<figuras/Gantt_1.png, id=801, 872.25874pt x 317.185pt>
+<figuras/Gantt_1.png, id=803, 872.25874pt x 317.185pt>
 File: figuras/Gantt_1.png Graphic file (type png)
 <use figuras/Gantt_1.png>
 Package pdftex.def Info: figuras/Gantt_1.png  used on input line 32.
@@ -4168,7 +4168,7 @@ Overfull \hbox (9.88652pt too wide) in paragraph at lines 32--33
  [][] 
  []
 
-<figuras/Gantt_2.png, id=802, 928.46875pt x 317.185pt>
+<figuras/Gantt_2.png, id=804, 928.46875pt x 317.185pt>
 File: figuras/Gantt_2.png Graphic file (type png)
 <use figuras/Gantt_2.png>
 Package pdftex.def Info: figuras/Gantt_2.png  used on input line 39.
@@ -4178,7 +4178,7 @@ Overfull \hbox (9.89336pt too wide) in paragraph at lines 39--40
  [][] 
  []
 
-<figuras/Gantt_3.png, id=803, 826.08624pt x 317.185pt>
+<figuras/Gantt_3.png, id=805, 826.08624pt x 317.185pt>
 File: figuras/Gantt_3.png Graphic file (type png)
 <use figuras/Gantt_3.png>
 Package pdftex.def Info: figuras/Gantt_3.png  used on input line 46.
@@ -4705,106 +4705,120 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 1.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 1.
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+
+ []
+
+
+Underfull \hbox (badness 1371) in paragraph at lines 11--12
+[]\T1/futs/m/n/10.95 Por otra par-te, fue-ra del doc-ker, se en-cuen-tra el \T1
+/futs/m/it/10.95 ex-plo-rer \T1/futs/m/n/10.95 y la apli-ca-
+ []
+
+
+Underfull \hbox (badness 1194) in paragraph at lines 11--12
+\T1/futs/m/n/10.95 to API $4102$, al \T1/futs/m/it/10.95 ex-plo-rer \T1/futs/m/
+n/10.95 se po-drá ac-ce-der me-dian-te un na-ve-ga-dor con la
+ []
+
+<figuras/diagrama_bloquesARK.png, id=875, 493.845pt x 272.01625pt>
+File: figuras/diagrama_bloquesARK.png Graphic file (type png)
+<use figuras/diagrama_bloquesARK.png>
+Package pdftex.def Info: figuras/diagrama_bloquesARK.png  used on input line 17
+.
+(pdftex.def)             Requested size: 288.0011pt x 158.63286pt.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 8.
+(babel)             in language  on input line 23.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 8.
+(babel)             in language  on input line 23.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 8.
+(babel)             in language  on input line 23.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 8.
+(babel)             in language  on input line 23.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 8.
+(babel)             in language  on input line 23.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 8.
+(babel)             in language  on input line 23.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 14.
+(babel)             in language  on input line 27.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 14.
+(babel)             in language  on input line 27.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 14.
+(babel)             in language  on input line 27.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 14.
+(babel)             in language  on input line 27.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 14.
+(babel)             in language  on input line 27.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 14.
+(babel)             in language  on input line 27.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 18.
+(babel)             in language  on input line 27.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 18.
+(babel)             in language  on input line 27.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 18.
+(babel)             in language  on input line 27.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 18.
+(babel)             in language  on input line 27.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 18.
+(babel)             in language  on input line 27.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 18.
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 56.
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
-File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 63.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 63.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 63.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 63.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 63.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 63.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 63.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 63.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 63.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 63.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 63.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 63.
+(babel)             in language  on input line 27.
  [35pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
 1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.63 
-     ] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+l.27 E
+      l fichero \texttt{uov.py} incorpora main con un ejemplo de uso del alg...
+ <./figuras/diagrama_bloquesARK.png>]
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 29.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 29.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 29.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 29.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 29.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 29.
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--32
+
+ []
+
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 35.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 35.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 35.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 35.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 35.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 35.
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 73.
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
+File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <8> not available
-(Font)              Font shape `T1/pcr/b/n' tried instead on input line 64.
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 81.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 )
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/pcr/b/n' tried instead on input line 66.
-
-Underfull \hbox (badness 2245) in paragraph at lines 70--71
-[]\T1/futs/m/n/10.95 El ar-chi-vo \T1/pcr/m/n/10.95 bridgchain.sh \T1/futs/m/n/
-10.95 eje-cu-ta los ar-chi-vos \T1/pcr/m/n/10.95 app-core.sh \T1/futs/m/n/10.95
- y
- []
-
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 75.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 75.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 75.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 75.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 75.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 75.
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 83.
 LaTeX Info: Redefining \. on input line 86.
 LaTeX Info: Redefining \% on input line 86.
 Package babel Info: Redefining spanish shorthand <<
@@ -4831,45 +4845,98 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 86.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 86.
-[36]
-Underfull \hbox (badness 10000) in paragraph at lines 87--88
+ [36pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
+2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.86 
+     ]
+Underfull \hbox (badness 2245) in paragraph at lines 87--88
+[]\T1/futs/m/n/10.95 El ar-chi-vo \T1/pcr/m/n/10.95 bridgchain.sh \T1/futs/m/n/
+10.95 eje-cu-ta los ar-chi-vos \T1/pcr/m/n/10.95 app-core.sh \T1/futs/m/n/10.95
+ y
+ []
+
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 92.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 92.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 92.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 92.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 92.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 92.
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--105
 []\T1/futs/m/n/10.95 Por úl-ti-mo han de des-ta-car-se los fi-che-ros de al-ma-
 ce-na-mien-to
  []
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
+LaTeX Info: Redefining \. on input line 105.
+LaTeX Info: Redefining \% on input line 105.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 105.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 105.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 105.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 105.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 105.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 105.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 105.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 105.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 105.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 105.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 105.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 105.
+[37] (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 )
-LaTeX Info: Redefining \. on input line 113.
-LaTeX Info: Redefining \% on input line 113.
+Underfull \vbox (badness 6173) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 187.
+LaTeX Info: Redefining \% on input line 187.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 113.
+(babel)             in language  on input line 187.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 113.
+(babel)             in language  on input line 187.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 113.
+(babel)             in language  on input line 187.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 113.
+(babel)             in language  on input line 187.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 113.
+(babel)             in language  on input line 187.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 113.
+(babel)             in language  on input line 187.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 113.
+(babel)             in language  on input line 187.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 113.
+(babel)             in language  on input line 187.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 113.
+(babel)             in language  on input line 187.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 113.
+(babel)             in language  on input line 187.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 113.
+(babel)             in language  on input line 187.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 113.
- [37])
+(babel)             in language  on input line 187.
+ [38])
 (./capitulos/05_Implementacion.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
@@ -4897,13 +4964,40 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 1.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 1.
- [38pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
-2}) has been already used, duplicate ignored
+ [39pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
+3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.1 \chapter
             {ImplementaciÃ³n}]
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 1.
+ [40
+
+]
 Cap\'{\i }tulo 5.
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 1.
@@ -4972,9 +5066,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 34.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 34.
-[39
-
-]
+[41]
 Overfull \hbox (2.1366pt too wide) in paragraph at lines 46--46
 []|\T1/futs/b/n/10.95 Nombre| 
  []
@@ -5033,7 +5125,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 94.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 94.
- [40pdfTeX warning (ext4): destination with the same identifier (name{table.5.1
+ [42pdfTeX warning (ext4): destination with the same identifier (name{table.5.1
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -5108,7 +5200,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 179.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 179.
-[41pdfTeX warning (ext4): destination with the same identifier (name{table.5.3}
+[43pdfTeX warning (ext4): destination with the same identifier (name{table.5.3}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -5163,7 +5255,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 223.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 223.
- [42pdfTeX warning (ext4): destination with the same identifier (name{table.5.5
+ [44pdfTeX warning (ext4): destination with the same identifier (name{table.5.5
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -5252,7 +5344,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 299.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 299.
- [43pdfTeX warning (ext4): destination with the same identifier (name{table.5.7
+ [45pdfTeX warning (ext4): destination with the same identifier (name{table.5.7
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -5306,7 +5398,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 363.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 363.
-[44pdfTeX warning (ext4): destination with the same identifier (name{table.5.8}
+[46pdfTeX warning (ext4): destination with the same identifier (name{table.5.8}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -5359,7 +5451,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 413.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 413.
- [45pdfTeX warning (ext4): destination with the same identifier (name{table.5.1
+ [47pdfTeX warning (ext4): destination with the same identifier (name{table.5.1
 0}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -5422,7 +5514,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 481.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 481.
- [46pdfTeX warning (ext4): destination with the same identifier (name{table.5.1
+ [48pdfTeX warning (ext4): destination with the same identifier (name{table.5.1
 2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -5489,7 +5581,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 556.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 556.
- [47]
+ [49]
 Overfull \hbox (2.1366pt too wide) in paragraph at lines 582--582
 []|\T1/futs/b/n/10.95 Nombre| 
  []
@@ -5528,7 +5620,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 605.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 605.
- [48pdfTeX warning (ext4): destination with the same identifier (name{table.5.1
+ [50pdfTeX warning (ext4): destination with the same identifier (name{table.5.1
 4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -5589,7 +5681,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 665.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 665.
- [49pdfTeX warning (ext4): destination with the same identifier (name{table.5.1
+ [51pdfTeX warning (ext4): destination with the same identifier (name{table.5.1
 6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -5639,7 +5731,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 715.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 715.
- [50pdfTeX warning (ext4): destination with the same identifier (name{table.5.1
+ [52pdfTeX warning (ext4): destination with the same identifier (name{table.5.1
 7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -5690,7 +5782,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 1.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 1.
- [51pdfTeX warning (ext4): destination with the same identifier (name{table.5.1
+ [53pdfTeX warning (ext4): destination with the same identifier (name{table.5.1
 8}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -5721,7 +5813,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 1.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 1.
- [52
+ [54
 
 ]
 Cap\'{\i }tulo 6.
@@ -5762,7 +5854,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 2.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 2.
- [53]
+ [55]
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 2.
 Package babel Info: Redefining spanish shorthand >>
@@ -5787,7 +5879,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 2.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 2.
- [54
+ [56
 
 ]
 Cap\'{\i }tulo 7.
@@ -5840,7 +5932,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 2.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 2.
- [55]
+ [57]
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 2.
 Package babel Info: Redefining spanish shorthand >>
@@ -5865,7 +5957,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 2.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 2.
- [56
+ [58
 
 ]
 Underfull \hbox (badness 3884) in paragraph at lines 25--28
@@ -5951,7 +6043,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 78.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 78.
-[57]
+[59]
 Underfull \hbox (badness 10000) in paragraph at lines 83--85
 []\T1/futs/m/n/10.95 Wikipedia, ``Compu-tación cuán-ti-ca,'' [][]$https : / / e
 s . wikipedia . org / wiki /
@@ -6049,7 +6141,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 138.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 138.
-[58]
+[60]
 Underfull \hbox (badness 1009) in paragraph at lines 144--146
 []\T1/futs/m/n/10.95 Wikipedia, ``Al-go-rit-mo Sch-norr,'' [][]$https : / / en 
 . wikipedia . org / wiki / Schnorr _
@@ -6111,7 +6203,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 1.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 1.
- [59]
+ [61]
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 1.
 Package babel Info: Redefining spanish shorthand >>
@@ -6137,7 +6229,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 1.
 
-[60
+[62
 
 ])
 Package babel Info: Redefining spanish shorthand <<
@@ -6189,7 +6281,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 1.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 1.
- [61
+ [63
 
 ]
 Package babel Info: Redefining spanish shorthand <<
@@ -6216,7 +6308,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 1.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 1.
- [62
+ [64
 
 ]
 Ap\'{e}ndice A.
@@ -6314,7 +6406,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 31.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 31.
-[63]
+[65]
 Underfull \hbox (badness 10000) in paragraph at lines 32--33
 
  []
@@ -6372,7 +6464,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 84.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 84.
- [64]
+ [66]
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 86.
 Package babel Info: Redefining spanish shorthand >>
@@ -6440,7 +6532,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 131.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 131.
- [65]
+ [67]
 Underfull \hbox (badness 1168) in paragraph at lines 133--134
 []\T1/futs/m/n/10.95 Instalar las de-pen-den-cias \T1/pcr/m/n/10.95 nvm\T1/futs
 /m/n/10.95 , có-di-go [][]A.13[][], es ne-ce-sa-rio pa-ra ins-ta-lar
@@ -6507,7 +6599,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 181.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 181.
- [66]
+ [68]
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 )
@@ -6546,7 +6638,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 216.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 216.
- [67]
+ [69]
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 )
@@ -6579,7 +6671,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 272.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 272.
- [68]
+ [70]
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 )
@@ -6609,7 +6701,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 330.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 330.
- [69]
+ [71]
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 )
@@ -6639,7 +6731,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 390.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 390.
- [70]
+ [72]
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 )
@@ -6701,10 +6793,10 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 440.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 440.
-[71] (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
+[73] (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 )
-<figuras/Instalacion_bridgechain.png, id=1759, 990.70125pt x 546.04pt>
+<figuras/Instalacion_bridgechain.png, id=1774, 990.70125pt x 546.04pt>
 File: figuras/Instalacion_bridgechain.png Graphic file (type png)
 <use figuras/Instalacion_bridgechain.png>
 Package pdftex.def Info: figuras/Instalacion_bridgechain.png  used on input lin
@@ -6741,7 +6833,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 463.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 463.
-[72pdfTeX warning (ext4): destination with the same identifier (name{figure.Alp
+[74pdfTeX warning (ext4): destination with the same identifier (name{figure.Alp
 h1.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -6758,7 +6850,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 468--469
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 )
-<figuras/Instalacion_explorer.png, id=1769, 1261.71375pt x 134.5025pt>
+<figuras/Instalacion_explorer.png, id=1784, 1261.71375pt x 134.5025pt>
 File: figuras/Instalacion_explorer.png Graphic file (type png)
 <use figuras/Instalacion_explorer.png>
 Package pdftex.def Info: figuras/Instalacion_explorer.png  used on input line 4
@@ -6769,7 +6861,7 @@ Overfull \hbox (52.5549pt too wide) in paragraph at lines 485--486
  [][] 
  []
 
-<figuras/Navegacion_explorer.png, id=1771, 1234.6125pt x 852.18375pt>
+<figuras/Navegacion_explorer.png, id=1786, 1234.6125pt x 852.18375pt>
 File: figuras/Navegacion_explorer.png Graphic file (type png)
 <use figuras/Navegacion_explorer.png>
 Package pdftex.def Info: figuras/Navegacion_explorer.png  used on input line 49
@@ -6809,7 +6901,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 498.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 498.
- [73pdfTeX warning (ext4): destination with the same identifier (name{figure.Al
+ [75pdfTeX warning (ext4): destination with the same identifier (name{figure.Al
 ph1.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -6842,7 +6934,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 500.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 500.
- [74pdfTeX warning (ext4): destination with the same identifier (name{figure.Al
+ [76pdfTeX warning (ext4): destination with the same identifier (name{figure.Al
 ph1.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -6868,532 +6960,532 @@ File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 )
-<figuras/wallet_1.png, id=1796, 1309.89375pt x 663.47874pt>
+<figuras/wallet_1.png, id=1811, 1309.89375pt x 663.47874pt>
 File: figuras/wallet_1.png Graphic file (type png)
 <use figuras/wallet_1.png>
-Package pdftex.def Info: figuras/wallet_1.png  used on input line 531.
+Package pdftex.def Info: figuras/wallet_1.png  used on input line 532.
 (pdftex.def)             Requested size: 384.09679pt x 213.39066pt.
 
-Overfull \hbox (24.09679pt too wide) in paragraph at lines 531--532
+Overfull \hbox (24.09679pt too wide) in paragraph at lines 532--533
  [][] 
  []
 
-LaTeX Info: Redefining \. on input line 536.
-LaTeX Info: Redefining \% on input line 536.
+LaTeX Info: Redefining \. on input line 537.
+LaTeX Info: Redefining \% on input line 537.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 536.
+(babel)             in language  on input line 537.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 536.
+(babel)             in language  on input line 537.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 536.
+(babel)             in language  on input line 537.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 536.
+(babel)             in language  on input line 537.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 536.
+(babel)             in language  on input line 537.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 536.
+(babel)             in language  on input line 537.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 536.
+(babel)             in language  on input line 537.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 536.
+(babel)             in language  on input line 537.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 536.
+(babel)             in language  on input line 537.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 536.
+(babel)             in language  on input line 537.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 536.
+(babel)             in language  on input line 537.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 536.
-[75pdfTeX warning (ext4): destination with the same identifier (name{figure.Alp
+(babel)             in language  on input line 537.
+[77pdfTeX warning (ext4): destination with the same identifier (name{figure.Alp
 h1.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.536 \newpage
+l.537 \newpage
                <./figuras/wallet_1.png>]
-<figuras/wallet_2.png, id=1817, 447.6725pt x 490.83376pt>
+<figuras/wallet_2.png, id=1831, 447.6725pt x 490.83376pt>
 File: figuras/wallet_2.png Graphic file (type png)
 <use figuras/wallet_2.png>
-Package pdftex.def Info: figuras/wallet_2.png  used on input line 541.
+Package pdftex.def Info: figuras/wallet_2.png  used on input line 542.
 (pdftex.def)             Requested size: 170.71843pt x 199.16855pt.
 
-Underfull \hbox (badness 1540) in paragraph at lines 546--547
+Underfull \hbox (badness 1540) in paragraph at lines 547--548
 []\T1/futs/m/n/10.95 En el si-guien-te pa-so apa-re-ce un me-nú con las po-si-b
 les re-des, \T1/futs/m/it/10.95 main-
  []
 
 
-Underfull \hbox (badness 2443) in paragraph at lines 546--547
+Underfull \hbox (badness 2443) in paragraph at lines 547--548
 \T1/futs/m/it/10.95 net \T1/futs/m/n/10.95 y \T1/futs/m/it/10.95 dev-net\T1/fut
 s/m/n/10.95 . Sin em-bar-go, si se desea usar la red \T1/futs/m/it/10.95 test-n
 et \T1/futs/m/n/10.95 es ne-ce-sa-rio
  []
 
 
-Underfull \hbox (badness 2334) in paragraph at lines 546--547
+Underfull \hbox (badness 2334) in paragraph at lines 547--548
 \T1/futs/m/n/10.95 crear-la pul-san-do nue-va red. Los cam-pos a re-lle-nar son
  el nom-bre, una
  []
 
 
-Underfull \hbox (badness 3439) in paragraph at lines 546--547
+Underfull \hbox (badness 3439) in paragraph at lines 547--548
 \T1/futs/m/n/10.95 bre-ve des-crip-ción y la di-rec-ción del ser-vi-dor con el 
 puer-to de la API,
  []
 
-<figuras/wallet_3.png, id=1819, 446.66875pt x 332.24126pt>
+<figuras/wallet_3.png, id=1833, 446.66875pt x 332.24126pt>
 File: figuras/wallet_3.png Graphic file (type png)
 <use figuras/wallet_3.png>
-Package pdftex.def Info: figuras/wallet_3.png  used on input line 550.
+Package pdftex.def Info: figuras/wallet_3.png  used on input line 551.
 (pdftex.def)             Requested size: 170.71733pt x 142.26274pt.
-LaTeX Info: Redefining \. on input line 555.
-LaTeX Info: Redefining \% on input line 555.
+LaTeX Info: Redefining \. on input line 556.
+LaTeX Info: Redefining \% on input line 556.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 555.
+(babel)             in language  on input line 556.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 555.
+(babel)             in language  on input line 556.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 555.
+(babel)             in language  on input line 556.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 555.
+(babel)             in language  on input line 556.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 555.
+(babel)             in language  on input line 556.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 555.
+(babel)             in language  on input line 556.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 555.
+(babel)             in language  on input line 556.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 555.
+(babel)             in language  on input line 556.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 555.
+(babel)             in language  on input line 556.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 555.
+(babel)             in language  on input line 556.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 555.
+(babel)             in language  on input line 556.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 555.
-[76pdfTeX warning (ext4): destination with the same identifier (name{figure.Alp
+(babel)             in language  on input line 556.
+[78pdfTeX warning (ext4): destination with the same identifier (name{figure.Alp
 h1.5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.555 \newpage
+l.556 \newpage
               pdfTeX warning (ext4): destination with the same identifier (name
 {figure.Alph1.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.555 \newpage
+l.556 \newpage
                <./figuras/wallet_2.png> <./figuras/wallet_3.png>]
-<figuras/wallet_4.png, id=1827, 457.71pt x 524.96124pt>
+<figuras/wallet_4.png, id=1841, 457.71pt x 524.96124pt>
 File: figuras/wallet_4.png Graphic file (type png)
 <use figuras/wallet_4.png>
-Package pdftex.def Info: figuras/wallet_4.png  used on input line 561.
+Package pdftex.def Info: figuras/wallet_4.png  used on input line 562.
 (pdftex.def)             Requested size: 184.93852pt x 241.84557pt.
 
-Overfull \hbox (40.94072pt too wide) in paragraph at lines 561--562
+Overfull \hbox (40.94072pt too wide) in paragraph at lines 562--563
 [][] 
  []
 
-<figuras/wallet_5.png, id=1828, 437.635pt x 430.60875pt>
+<figuras/wallet_5.png, id=1842, 437.635pt x 430.60875pt>
 File: figuras/wallet_5.png Graphic file (type png)
 <use figuras/wallet_5.png>
-Package pdftex.def Info: figuras/wallet_5.png  used on input line 564.
+Package pdftex.def Info: figuras/wallet_5.png  used on input line 565.
 (pdftex.def)             Requested size: 179.2512pt x 241.85544pt.
 
-Overfull \hbox (42.44945pt too wide) in paragraph at lines 564--565
+Overfull \hbox (42.44945pt too wide) in paragraph at lines 565--566
 [][] 
  []
 
-LaTeX Info: Redefining \. on input line 570.
-LaTeX Info: Redefining \% on input line 570.
+LaTeX Info: Redefining \. on input line 571.
+LaTeX Info: Redefining \% on input line 571.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 570.
+(babel)             in language  on input line 571.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 570.
+(babel)             in language  on input line 571.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 570.
+(babel)             in language  on input line 571.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 570.
+(babel)             in language  on input line 571.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 570.
+(babel)             in language  on input line 571.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 570.
+(babel)             in language  on input line 571.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 570.
+(babel)             in language  on input line 571.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 570.
+(babel)             in language  on input line 571.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 570.
+(babel)             in language  on input line 571.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 570.
+(babel)             in language  on input line 571.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 570.
+(babel)             in language  on input line 571.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 570.
-[77pdfTeX warning (ext4): destination with the same identifier (name{figure.Alp
+(babel)             in language  on input line 571.
+[79pdfTeX warning (ext4): destination with the same identifier (name{figure.Alp
 h1.7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.570 \newpage
+l.571 \newpage
                <./figuras/wallet_4.png> <./figuras/wallet_5.png>]
-<figuras/wallet_6.png, id=1836, 403.5075pt x 458.71375pt>
+<figuras/wallet_6.png, id=1851, 403.5075pt x 458.71375pt>
 File: figuras/wallet_6.png Graphic file (type png)
 <use figuras/wallet_6.png>
-Package pdftex.def Info: figuras/wallet_6.png  used on input line 575.
+Package pdftex.def Info: figuras/wallet_6.png  used on input line 576.
 (pdftex.def)             Requested size: 170.71571pt x 199.1679pt.
-<figuras/wallet_7.png, id=1838, 422.57875pt x 358.33875pt>
+<figuras/wallet_7.png, id=1853, 422.57875pt x 358.33875pt>
 File: figuras/wallet_7.png Graphic file (type png)
 <use figuras/wallet_7.png>
-Package pdftex.def Info: figuras/wallet_7.png  used on input line 584.
+Package pdftex.def Info: figuras/wallet_7.png  used on input line 585.
 (pdftex.def)             Requested size: 170.71788pt x 170.71571pt.
-LaTeX Info: Redefining \. on input line 589.
-LaTeX Info: Redefining \% on input line 589.
+LaTeX Info: Redefining \. on input line 590.
+LaTeX Info: Redefining \% on input line 590.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 589.
+(babel)             in language  on input line 590.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 589.
+(babel)             in language  on input line 590.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 589.
+(babel)             in language  on input line 590.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 589.
+(babel)             in language  on input line 590.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 589.
+(babel)             in language  on input line 590.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 589.
+(babel)             in language  on input line 590.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 589.
+(babel)             in language  on input line 590.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 589.
+(babel)             in language  on input line 590.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 589.
+(babel)             in language  on input line 590.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 589.
+(babel)             in language  on input line 590.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 589.
+(babel)             in language  on input line 590.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 589.
- [78pdfTeX warning (ext4): destination with the same identifier (name{figure.Al
+(babel)             in language  on input line 590.
+ [80pdfTeX warning (ext4): destination with the same identifier (name{figure.Al
 ph1.8}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.589 \newpage
+l.590 \newpage
               pdfTeX warning (ext4): destination with the same identifier (name
 {figure.Alph1.9}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.589 \newpage
+l.590 \newpage
                <./figuras/wallet_6.png> <./figuras/wallet_7.png>]
-<figuras/wallet_8.png, id=1846, 426.59375pt x 364.36125pt>
+<figuras/wallet_8.png, id=1861, 426.59375pt x 364.36125pt>
 File: figuras/wallet_8.png Graphic file (type png)
 <use figuras/wallet_8.png>
-Package pdftex.def Info: figuras/wallet_8.png  used on input line 594.
+Package pdftex.def Info: figuras/wallet_8.png  used on input line 595.
 (pdftex.def)             Requested size: 170.71909pt x 170.71606pt.
-<figuras/wallet_9.png, id=1848, 415.5525pt x 234.8775pt>
+<figuras/wallet_9.png, id=1863, 415.5525pt x 234.8775pt>
 File: figuras/wallet_9.png Graphic file (type png)
 <use figuras/wallet_9.png>
-Package pdftex.def Info: figuras/wallet_9.png  used on input line 603.
+Package pdftex.def Info: figuras/wallet_9.png  used on input line 604.
 (pdftex.def)             Requested size: 170.71368pt x 113.81151pt.
-LaTeX Info: Redefining \. on input line 608.
-LaTeX Info: Redefining \% on input line 608.
+LaTeX Info: Redefining \. on input line 609.
+LaTeX Info: Redefining \% on input line 609.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 608.
+(babel)             in language  on input line 609.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 608.
+(babel)             in language  on input line 609.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 608.
+(babel)             in language  on input line 609.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 608.
+(babel)             in language  on input line 609.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 608.
+(babel)             in language  on input line 609.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 608.
+(babel)             in language  on input line 609.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 608.
+(babel)             in language  on input line 609.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 608.
+(babel)             in language  on input line 609.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 608.
+(babel)             in language  on input line 609.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 608.
+(babel)             in language  on input line 609.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 608.
+(babel)             in language  on input line 609.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 608.
- [79pdfTeX warning (ext4): destination with the same identifier (name{figure.Al
+(babel)             in language  on input line 609.
+ [81pdfTeX warning (ext4): destination with the same identifier (name{figure.Al
 ph1.10}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.608 \newpage
+l.609 \newpage
               pdfTeX warning (ext4): destination with the same identifier (name
 {figure.Alph1.11}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.608 \newpage
+l.609 \newpage
                <./figuras/wallet_8.png> <./figuras/wallet_9.png>]
-<figuras/wallet_10.png, id=1857, 430.60875pt x 281.05pt>
+<figuras/wallet_10.png, id=1871, 430.60875pt x 281.05pt>
 File: figuras/wallet_10.png Graphic file (type png)
 <use figuras/wallet_10.png>
-Package pdftex.def Info: figuras/wallet_10.png  used on input line 613.
+Package pdftex.def Info: figuras/wallet_10.png  used on input line 614.
 (pdftex.def)             Requested size: 170.71606pt x 142.26147pt.
 
-Underfull \hbox (badness 1735) in paragraph at lines 618--619
+Underfull \hbox (badness 1735) in paragraph at lines 619--620
 []\T1/futs/m/n/10.95 Para que sal-ga la can-ti-dad de di-ne-ro ini-cial es ne-c
 e-sa-rio co-nec-tar la
  []
 
 
-Underfull \hbox (badness 2809) in paragraph at lines 618--619
+Underfull \hbox (badness 2809) in paragraph at lines 619--620
 \T1/futs/m/n/10.95 apli-ca-ción con la \T1/futs/m/it/10.95 block-chain\T1/futs/
 m/n/10.95 . Pul-san-do en el pa-nel la-te-ral iz-quier-do en
  []
 
 
-Underfull \hbox (badness 3148) in paragraph at lines 618--619
+Underfull \hbox (badness 3148) in paragraph at lines 619--620
 \T1/pcr/m/n/10.95 custom peer \T1/futs/m/n/10.95 ob-te-ne-mos la ima-gen [][]A.
 13[][]. Re-lle-na-mos los cam-pos con
  []
 
-<figuras/wallet_11.png, id=1859, 371.3875pt x 262.9825pt>
+<figuras/wallet_11.png, id=1873, 371.3875pt x 262.9825pt>
 File: figuras/wallet_11.png Graphic file (type png)
 <use figuras/wallet_11.png>
-Package pdftex.def Info: figuras/wallet_11.png  used on input line 623.
+Package pdftex.def Info: figuras/wallet_11.png  used on input line 624.
 (pdftex.def)             Requested size: 199.17487pt x 184.94923pt.
 
-Overfull \hbox (55.17706pt too wide) in paragraph at lines 623--624
+Overfull \hbox (55.17706pt too wide) in paragraph at lines 624--625
 [][] 
  []
 
-<figuras/wallet_12.png, id=1860, 304.13625pt x 254.9525pt>
+<figuras/wallet_12.png, id=1874, 304.13625pt x 254.9525pt>
 File: figuras/wallet_12.png Graphic file (type png)
 <use figuras/wallet_12.png>
-Package pdftex.def Info: figuras/wallet_12.png  used on input line 626.
+Package pdftex.def Info: figuras/wallet_12.png  used on input line 627.
 (pdftex.def)             Requested size: 170.71887pt x 170.7239pt.
 
-Overfull \hbox (58.01901pt too wide) in paragraph at lines 626--626
+Overfull \hbox (58.01901pt too wide) in paragraph at lines 627--627
 [][] 
  []
 
-LaTeX Info: Redefining \. on input line 632.
-LaTeX Info: Redefining \% on input line 632.
+LaTeX Info: Redefining \. on input line 633.
+LaTeX Info: Redefining \% on input line 633.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 632.
+(babel)             in language  on input line 633.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 632.
+(babel)             in language  on input line 633.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 632.
+(babel)             in language  on input line 633.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 632.
+(babel)             in language  on input line 633.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 632.
+(babel)             in language  on input line 633.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 632.
+(babel)             in language  on input line 633.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 632.
+(babel)             in language  on input line 633.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 632.
+(babel)             in language  on input line 633.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 632.
+(babel)             in language  on input line 633.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 632.
+(babel)             in language  on input line 633.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 632.
+(babel)             in language  on input line 633.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 632.
-[80pdfTeX warning (ext4): destination with the same identifier (name{figure.Alp
+(babel)             in language  on input line 633.
+[82pdfTeX warning (ext4): destination with the same identifier (name{figure.Alp
 h1.12}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.632 \newpage
+l.633 \newpage
               pdfTeX warning (ext4): destination with the same identifier (name
 {figure.Alph1.13}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.632 \newpage
+l.633 \newpage
                <./figuras/wallet_10.png> <./figuras/wallet_11.png> <./figuras/w
 allet_12.png>]
-<figuras/wallet_13.png, id=1869, 435.6275pt x 347.2975pt>
+<figuras/wallet_13.png, id=1883, 435.6275pt x 347.2975pt>
 File: figuras/wallet_13.png Graphic file (type png)
 <use figuras/wallet_13.png>
-Package pdftex.def Info: figuras/wallet_13.png  used on input line 637.
+Package pdftex.def Info: figuras/wallet_13.png  used on input line 638.
 (pdftex.def)             Requested size: 199.168pt x 184.94647pt.
-<figuras/wallet_14.png, id=1871, 417.56pt x 292.09125pt>
+<figuras/wallet_14.png, id=1885, 417.56pt x 292.09125pt>
 File: figuras/wallet_14.png Graphic file (type png)
 <use figuras/wallet_14.png>
-Package pdftex.def Info: figuras/wallet_14.png  used on input line 646.
+Package pdftex.def Info: figuras/wallet_14.png  used on input line 647.
 (pdftex.def)             Requested size: 184.9439pt x 142.26576pt.
-LaTeX Info: Redefining \. on input line 651.
-LaTeX Info: Redefining \% on input line 651.
+LaTeX Info: Redefining \. on input line 652.
+LaTeX Info: Redefining \% on input line 652.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 651.
+(babel)             in language  on input line 652.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 651.
+(babel)             in language  on input line 652.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 651.
+(babel)             in language  on input line 652.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 651.
+(babel)             in language  on input line 652.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 651.
+(babel)             in language  on input line 652.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 651.
+(babel)             in language  on input line 652.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 651.
+(babel)             in language  on input line 652.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 651.
+(babel)             in language  on input line 652.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 651.
+(babel)             in language  on input line 652.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 651.
+(babel)             in language  on input line 652.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 651.
+(babel)             in language  on input line 652.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 651.
- [81pdfTeX warning (ext4): destination with the same identifier (name{figure.Al
+(babel)             in language  on input line 652.
+ [83pdfTeX warning (ext4): destination with the same identifier (name{figure.Al
 ph1.14}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.651 \newpage
+l.652 \newpage
               pdfTeX warning (ext4): destination with the same identifier (name
 {figure.Alph1.15}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.651 \newpage
+l.652 \newpage
                <./figuras/wallet_13.png> <./figuras/wallet_14.png>]
-<figuras/wallet_15.png, id=1879, 417.56pt x 256.96pt>
+<figuras/wallet_15.png, id=1893, 417.56pt x 256.96pt>
 File: figuras/wallet_15.png Graphic file (type png)
 <use figuras/wallet_15.png>
-Package pdftex.def Info: figuras/wallet_15.png  used on input line 656.
+Package pdftex.def Info: figuras/wallet_15.png  used on input line 657.
 (pdftex.def)             Requested size: 199.17134pt x 142.26552pt.
-<figuras/wallet_16.png, id=1881, 420.57124pt x 224.84pt>
+<figuras/wallet_16.png, id=1895, 420.57124pt x 224.84pt>
 File: figuras/wallet_16.png Graphic file (type png)
 <use figuras/wallet_16.png>
-Package pdftex.def Info: figuras/wallet_16.png  used on input line 665.
+Package pdftex.def Info: figuras/wallet_16.png  used on input line 666.
 (pdftex.def)             Requested size: 199.17018pt x 142.27092pt.
-LaTeX Info: Redefining \. on input line 670.
-LaTeX Info: Redefining \% on input line 670.
+LaTeX Info: Redefining \. on input line 671.
+LaTeX Info: Redefining \% on input line 671.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 670.
+(babel)             in language  on input line 671.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 670.
+(babel)             in language  on input line 671.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 670.
+(babel)             in language  on input line 671.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 670.
+(babel)             in language  on input line 671.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 670.
+(babel)             in language  on input line 671.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 670.
+(babel)             in language  on input line 671.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 670.
+(babel)             in language  on input line 671.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 670.
+(babel)             in language  on input line 671.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 670.
+(babel)             in language  on input line 671.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 670.
+(babel)             in language  on input line 671.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 670.
+(babel)             in language  on input line 671.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 670.
- [82pdfTeX warning (ext4): destination with the same identifier (name{figure.Al
+(babel)             in language  on input line 671.
+ [84pdfTeX warning (ext4): destination with the same identifier (name{figure.Al
 ph1.16}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.670 \newpage
+l.671 \newpage
               pdfTeX warning (ext4): destination with the same identifier (name
 {figure.Alph1.17}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.670 \newpage
+l.671 \newpage
                <./figuras/wallet_15.png> <./figuras/wallet_16.png>]
-<figuras/wallet_17.png, id=1889, 430.60875pt x 268.00125pt>
+<figuras/wallet_17.png, id=1903, 430.60875pt x 268.00125pt>
 File: figuras/wallet_17.png Graphic file (type png)
 <use figuras/wallet_17.png>
-Package pdftex.def Info: figuras/wallet_17.png  used on input line 676.
+Package pdftex.def Info: figuras/wallet_17.png  used on input line 677.
 (pdftex.def)             Requested size: 199.17313pt x 142.2608pt.
-LaTeX Info: Redefining \. on input line 688.
-LaTeX Info: Redefining \% on input line 688.
+LaTeX Info: Redefining \. on input line 689.
+LaTeX Info: Redefining \% on input line 689.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 688.
+(babel)             in language  on input line 689.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 688.
+(babel)             in language  on input line 689.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 688.
+(babel)             in language  on input line 689.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 688.
+(babel)             in language  on input line 689.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 688.
+(babel)             in language  on input line 689.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 688.
+(babel)             in language  on input line 689.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 688.
+(babel)             in language  on input line 689.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 688.
+(babel)             in language  on input line 689.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 688.
+(babel)             in language  on input line 689.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 688.
+(babel)             in language  on input line 689.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 688.
+(babel)             in language  on input line 689.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 688.
- [83pdfTeX warning (ext4): destination with the same identifier (name{figure.Al
+(babel)             in language  on input line 689.
+ [85pdfTeX warning (ext4): destination with the same identifier (name{figure.Al
 ph1.18}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.688 \newpage
+l.689 \newpage
                <./figuras/wallet_17.png>]
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 690.
+(babel)             in language  on input line 691.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 690.
+(babel)             in language  on input line 691.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 690.
+(babel)             in language  on input line 691.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 690.
+(babel)             in language  on input line 691.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 690.
+(babel)             in language  on input line 691.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 690.
-LaTeX Info: Redefining \. on input line 692.
-LaTeX Info: Redefining \% on input line 692.
+(babel)             in language  on input line 691.
+LaTeX Info: Redefining \. on input line 693.
+LaTeX Info: Redefining \% on input line 693.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 692.
+(babel)             in language  on input line 693.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 692.
+(babel)             in language  on input line 693.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 692.
+(babel)             in language  on input line 693.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 692.
+(babel)             in language  on input line 693.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 692.
+(babel)             in language  on input line 693.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 692.
+(babel)             in language  on input line 693.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 692.
+(babel)             in language  on input line 693.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 692.
+(babel)             in language  on input line 693.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 692.
+(babel)             in language  on input line 693.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 692.
+(babel)             in language  on input line 693.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 692.
+(babel)             in language  on input line 693.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 692.
- [84])
+(babel)             in language  on input line 693.
+ [86])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 301.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 301.
  (./proyecto.aux
@@ -7409,10 +7501,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 301.
  ) 
 Here is how much of TeX's memory you used:
- 52161 strings out of 494284
- 1077866 string characters out of 6162693
- 1338724 words of memory out of 5000000
- 53598 multiletter control sequences out of 15000+600000
+ 52171 strings out of 494284
+ 1078093 string characters out of 6162693
+ 1338918 words of memory out of 5000000
+ 53604 multiletter control sequences out of 15000+600000
  650554 words of font info for 127 fonts, out of 8000000 for 9000
  376 hyphenation exceptions out of 8191
  135i,27n,169p,10360b,3310s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -7431,10 +7523,10 @@ pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/urw/courier/ucrr8a.pfb>
-Output written on proyecto.pdf (108 pages, 1276871 bytes).
+Output written on proyecto.pdf (110 pages, 1294631 bytes).
 PDF statistics:
- 2305 PDF objects out of 2487 (max. 8388607)
- 2049 compressed objects within 21 object streams
- 952 named destinations out of 1000 (max. 500000)
- 475 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2322 PDF objects out of 2487 (max. 8388607)
+ 2062 compressed objects within 21 object streams
+ 955 named destinations out of 1000 (max. 500000)
+ 480 words of extra memory for PDF output out of 10000 (max. 10000000)
 

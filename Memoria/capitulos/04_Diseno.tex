@@ -5,15 +5,32 @@
 
 %Si se ha diseñado una interfaz gráfica debe también describirse su estructura, dónde se mostrará la información, etc.
 
+
+La figura \ref{fig:diag-bloques} muestra un diagrama con los bloques con el diseño general del proyecto. En el docker se incluye el \textit{deployer} que instala el \textit{core} de la cadena de bloques. Además, se encuentra la base de datos \texttt{postgresql}, que estará en interacción con el \textit{core} para almacenar la información en la misma.\\
+
+Por otra parte, fuera del docker, se encuentra el \textit{explorer} y la aplicación Desktop Wallet. El \textit{explorer} estará conectado al \textit{core} mediante el puerto API $4102$, al \textit{explorer} se podrá acceder mediante un navegador con la dirección\mbox{\texttt{http://NODE\_GENESIS:4200}}. Sin embargo, para acceder a la aplicación Desktop Wallet será necesario descargarla, veáse apéndice manual de usuario \ref{sec:manual-wallet}, dicha apliación se conectará con el \textit{core} mediante el puerto API $4103$.
+
+%Los nombres de la bases de datos se pueden ver con el comando psql -l, y podemos ver que hay una para cada red, a nosotros no interesa core_bridgechain_testnet. Para visualizar las tablas poner el comando psql -U deployer - d core_bridgechain_testnet.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figuras/diagrama_bloquesARK.png}
+	\caption{Diagrama de bloques}
+	\label{fig:diag-bloques}
+\end{figure}
+
+
 \section{Algoritmo criptográfico}
 
 La estructura del algoritmo viene dada por un fichero escrito en python donde se encuentran las funciones que se explicarán en detalle en el capítulo \ref{sec:implementacion}.
 
-El fichero \texttt{luov.py} incorpora main con un ejemplo de uso del algoritmo independientemente de la \textit{blockchain}.
+El fichero \texttt{uov.py} incorpora main con un ejemplo de uso del algoritmo independientemente de la \textit{blockchain}.
 
 \section{Ecosistema ARK}
 
-El ecosistema ark se ha instalado en un docker \texttt{ubuntu:xenial}. En el \textit{home} del mismo, nos encontramos con las tres carpetas necesarias para la ejecución e instalación tanto de la \textit{blockchain} y como del \textit{explorer}, estas son \texttt{deployer}, \texttt{core-bridgechain} y \texttt{core-explorer}. A continuación se van a explicar para que sirven las dos primeras, puesto que del \texttt{core-explorer} no ha habido ninguna modificación y se ha usado con todos los valores por defecto.
+El ecosistema ark se ha instalado en un docker \texttt{ubuntu:xenial}. En el \textit{home} del mismo, nos encontramos con las tres carpetas necesarias para la ejecución e instalación tanto de la \textit{blockchain} y como del \textit{explorer}, estas son \texttt{deployer}, \texttt{core-bridgechain} y \texttt{core-explorer}. A continuación se van a explicar para que sirven las dos primeras, puesto que del \texttt{core-explorer} no ha habido ninguna modificación y se ha usado con todos los valores por defecto.\\
+
+
 
 \subsection{Directorio deployer}
 La carpeta \texttt{deployer} contiene varios directorios y ficheros siendo los más importantes, \texttt{app}, \texttt{bridgechain.sh}, \texttt{setup.sh}, ver árbol de directorio \ref{tree:depl}.
