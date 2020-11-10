@@ -214,16 +214,16 @@ Por último, el \textbf{teletransporte cuántico} utiliza el entrelazamiento par
 \subsection{Blockchain}\label{sec:intro:blockchain}
 
 
-\textit{Blockchain} es un sistemas de almacenamiento de información que se divide en bloque de datos enlazados mediante los hash. A cada bloque se le asocia un hash a partir del bloque anterior, creando una lista enlazada, la búsqueda de información no es muy óptima si hay un número elevado de bloques. Para la búsqueda eficiente en \textit{blockchain} se usan los árboles merkle.\\
+\textit{Blockchain} es un sistemas de almacenamiento de información que se divide en bloques de datos enlazados mediante hash. A cada bloque se le asocia un hash a partir del bloque anterior, creando una lista enlazada, la búsqueda de información no es muy óptima si hay un número elevado de bloques. Para la búsqueda eficiente en \textit{blockchain} se usan los árboles merkle.\\
 
 Los datos que almacena cada bloque son transacciones válidas, información referente a ese bloque y la relación con el bloque anterior mediante el \textit{hash}, por tanto el bloque tiene un lugar específico dentro de la cadena. De esta forma si hay una alteración en un determinado bloque se verá reflejado en su \textit{hash} y en el de los bloques posteriores, haciendo que la información de la cadena no se pueda perder, modificar o eliminar.\\
 
 
 Los árboles de Merkle \cite{arbol-merkle} son una estructura de datos en árbol en el que cada nodo que no es hoja está etiquetado con el \textit{hash} que surge de la combinación de los valores o etiquetas de sus nodos hijo. Esta estructura permite que aunque los datos estén separados puedan ser ligados a un único valor de \textit{hash}, el \textit{hash} del nodo raíz del árbol. El \textit{hash} de este nodo va firmado para asegurar la integridad y hacer que la verificación sea fiable. 
 
-De esta forma se asegura que los datos son recibidos sin daños y sin ser alterados, además permite que los datos puedan ser entregados por partes, ya que un nodo puede obtener solo la cabecera de un bloque desde una fuente y otra pequeña parte del árbol desde otra fuente, y poder asegurar que los datos son correctos. Esto funciona porque si un usuario intenta hacer un cambio en una transacción falsa en la parte inferior del árbol en seguida se verá reflejado en la parte superior del árbol, es decir, en el nodo raíz. Esta propiedad se ve clara en la estructura del árbol Merkle \ref{fig:arbol-Merkle}, donde los \textit{hash} de los nodos superiores se calculan a partir de los \textit{hash} de los nodos hijos.\\
+De esta forma se asegura que los datos son recibidos sin daños y sin ser alterados, además permite que los datos puedan ser entregados por partes, ya que un nodo puede obtener solo la cabecera de un bloque desde una fuente y otra pequeña parte del árbol desde otra fuente, pudiendo asegurar que los datos son correctos. Esto funciona porque si un usuario intenta hacer un cambio en una transacción falsa en la parte inferior del árbol en seguida se verá reflejado en la parte superior del árbol, es decir, en el nodo raíz. Esta propiedad se ve clara en la estructura del árbol Merkle \ref{fig:arbol-Merkle}, donde los \textit{hash} de los nodos superiores se calculan a partir de los \textit{hash} de los nodos hijos.\\
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figuras/arbol_merkle.png}
 	\caption{Estructura de un árbol Merkle \cite{img-arbol-merkle}}
@@ -238,17 +238,24 @@ En 2004, el informático y criptógrafo Harold Thomas Finney introdujo el sistem
 
 A finales de 2008, un grupo de desarrolladores bajo el nombre de Satoshi Nakamoto publican un documento técnico en que se establece un modelo para \textit{blockchain}. Está basado en el algoritmo RPoW pero en lugar de usar dicho hardware, se utiliza un protocolo descentralizado peer-to-peer para verificar y restrear las transacciones. En otras palablas los ``mineros'' extraen bitcoins para obtener una recompensa mediantes pruebas de trabajo y posteriormente los nodos los verifican. Bitcoin nació el 3 de enero de 2009 cuando Satoshi Nakamoto extrajo el primer bloque de bitcoin con una recompensa de 50 bitcoins. Y el 12 de enero de 2009 tuvo lugar la primera transacción entre Satoshi Nakamoto y Hal Finney que obtuvo 10 bitcoins.
 
+\newpage
 A partir de 2014, se comienzan a explorar el potencial de las cadenas de bloque y a buscar otras aplicaciones fuera de su uso en las transacciones financieras.
 Ethereum introduce programas informáticos que se ejecutan en la \textit{blockchain}, se pueden utilizar para realizar una transacción cumpliendo ciertas condiciones como los contratos inteligentes.
 
 Los contratos inteligentes se tratan de contratos que tienen la capacidad de cumplirse de forma automática. Un contrato inteligente está constituido por un protocolo de códigos que permiten a un dispositivo ejecutar de forma automatizada las sentencias previamente programadas, prescindiendo de la intervención humana \cite{contrato-inteligente}.
 
-Además de los contratos inteligentes, Ethereum tiene su propia criptomoneda llamada Ether, se puede transferir entre cuentas y se utiliza para pagar las tarifas por la ejecución de los contratos inteligentes.
+Además de los contratos inteligentes, Ethereum tiene su propia criptomoneda llamada Ether, se puede transferir entre cuentas y se utiliza para pagar las tarifas por la ejecución de los contratos inteligentes.\\
 
-Actualmente las \textit{blockchain} tiene otros usos más allá de las criptomonedas.\\
+Otro proyecto de \textit{blockchain} a destacar es Hyperledger\cite{hyperledger-org}, iniciado en diciembre de $2015$ por la Fundación Linux. Hyperledger es una plataforma de código abierto centrada en el desarrollo de un conjunto de \textit{frameworks}, herramientas y bibliotecas para implementaciones de cadenas de bloques a nivel empresarial.
 
+Hyperledger contiene varios \textit{frameworks} de contabilidad distribuidos, en los que se incluye Hyperledger Fabric, Sawtooth, Indy, así como herramientas como Hyperledger Caliper. Y bibliotecas como Hyperledger Ursa.
+
+El proyecto Hyperledger pretende la mejora de aspectos como el rendimiento y fiabilidad de las empresas, además de agilizar los procesos comerciales de las industrias. Para ello ha de contar con el apoyo de las diferentes empresas (como Accenture, Fujitsu, IBM o Intel) formando así un proyecto colaborativo\cite{hyperledger-colab}.\\
+
+Dentro de Hyperledger, el proyecto más destacado es Hyperledger Fabric. Este es uno de los dos proyectos originales de Hyperledger en el que colaboraba Digital Asset Holding, Blockstream e IBM. Es una \textit{blockchain} privada, de las más conocidas, que aspira a facilitar la implementación de cualquier modelo de uso. Además permite el despligue de contratos inteligentes desarrollados en el lenguaje de programación de Google, ``Golang''. Dicha \textit{blockchain} posee un diseño muy flexible ya que permite crear contratos inteligentes en cualquier lenguaje o decidir qué algoritmo de consenso utilizar en la red (por defecto usa Practical Byzantine Fault Tolerance, PBFT)\cite{hyperledger-fabric}.\\
 
 Las cadenas de bloques o \textit{blockchain} permiten verificar, validar, rastrear todo tipo de información, ya sean contratos inteligentes, transacciones financieras, certificados digitales o firmas \cite{blockchain}, siendo estas últimas el centro de este trabajo. También permiten impulsar modificaciones orientadas a crear soluciones más robustas, por ejemplo en centros de salud o notarías que se explicarán más adelante.\\
+
 
 Las \textit{blockchain} son vulnerables a futuros ataques cuánticos ya que su única línea de defensa es el algoritmo de firma de los bloques. Aunque, actualmente las cadenas de bloques son seguras, puesto que un ordenador clásico no tiene la capacidad de cómputo necesaria para descifrar cada bloque, obtener la información y volver a firmar todos los bloques sin dejar huella. Por eso para hacer una \textit{blockchain} resistente es necesario tener un criptosistema que no se pueda romper con computación cuántica, como por ejemplo el algoritmo \acrshort{uov}, ver apartado \ref{sec:intro:UOV}. \\
 
@@ -266,10 +273,24 @@ De la misma forma si hay un cambio en una de las transacciones de un bloque se r
 
 Hoy en día, la tecnología \textit{blockchain} está ganando mucha atención, no limitandose solo al uso en las criptomonedas. Así las cadenas de bloques tienen diversas aplicaciones entre ellas se encuentra la salud o la firma de documentos en las notarías. En el primer caso, cada centro  de salud podría tener el historial médico de cualquier paciente, de una forma segura y evitando falsificaciones, estos historiales se encontrarían en nodos distribuidos de forma descentralizada así se obtendría un acceso rápido y seguro. El segundo caso será en el que nos centraremos a lo largo de este proyecto. Hoy día la firma de documentos o transacciones por parte de un usuario es un problema puesto que se pueden copiar con facilidad, pero con \textit{blockchain} no podrían ser falsificadas debido a la propiedad de validación y rastreo de los datos.\\
 
+\subsubsection{Blockchain ARK}
+
+ARK es un ecosistema de criptomonedas descentralizado diseñado para aumentar la adopción de la tecnología \textit{blockchain} por parte de los usuarios. Se busca que la implementación de la cadena de bloques sea eficiente y fácil, y de esta forma poder usar dicha plataforma como puente inteligente entre varias cadenas de bloques no necesariamente de ARK. Cualquier desarrollador puede programar ARK, puesto que admite varios lenguajes de programación como \texttt{Python}, \texttt{Elixer}, \texttt{Java} o \texttt{API TypeScript} entre otros. El core de la \textit{blockchain} que se ha utilizado se encuentra en \texttt{TypeScript}.\\
+
+Algunas ventajas de la \textit{blockchain} ARK son, tener una interfaz de usuario intuitiva para extender el uso a la vida cotidiana, crear puentes inteligentes para posibilitar la comunicación entre diferentes \textit{blockchain}, admitir varios lenguajes de programación, facilidad para duplicar la cadena de bloques para permitir que se utilice para necesidades personales y por último, los coste de red son bastante bajos\cite{ark-pros}.\\
+
+Hay dos motivos principales por los que se ha elegido esta \textit{blockchain} ARK y no otra. En primer lugar, la cadena de bloques es completamente de código abierto, permite a cualquier persona poder contribuir. Y en segundo lugar, su arquitectura modular permitiendo personalizar la aplicación para alcanzar nuestro objetivo (modificar el algoritmo de firma y verificación).\\
+
+\newpage
+Un logro significativo del ecosistema ARK es brindar soporte a los contratos inteligentes directamente desde la cadena de bloques ARK utilizando puentes inteligentes. La capacidad de crear, lanzar y administrar contratos inteligentes entre dos tecnologías \textit{blockchain} diferentes sin ningún problema, abre el campo de posibiidades para crear soluciones comerciales. 
+
+Hyperledger Fabric agrega soporte al núcleo ARK v2 para contratos inteligentes. Dicho núcleo de ARK con toda la integración se ejecuta en los nodos conectados a la cadena de bloques principal de ARK. También la cadena Hyperledger personalizada puede agregarse a los mismos nodos o a un conjunto de nodos independientes\cite{hyperledger-ark}.\\
+
+
 
 \subsection{Algoritmo UOV}\label{sec:intro:UOV}
 
-El algoritmo aceite y vinagre desequilibrado es una versión simplificada del algoritmo aceite y vinagre, ambos algoritmos de firma digital. Para crear las firmas y validarlas es necesario resolver un sistema con $m$ ecuaciones y $n$ variables, que es un problema NP-duro \cite{wiki-UOV}, lo que significa que si fuésemos capaces de resolverlo con un ordenador cuántico, todos los problemas considerados en la actualidad serían vulnerables. Si $m$ y $n$ son casi iguales o iguales será más difícil resolver el sistema, obteniendo de esta forma un algoritmo de firma resistente a ataques cuánticos.\\
+El algoritmo aceite y vinagre desequilibrado\cite{algoritmo-UOV} es una versión simplificada del algoritmo aceite y vinagre, ambos algoritmos de firma digital. Para crear las firmas y validarlas es necesario resolver un sistema con $m$ ecuaciones y $n$ variables, que es un problema NP-duro\cite{UOV-def}, lo que significa que si fuésemos capaces de resolverlo con un ordenador cuántico, todos los problemas considerados en la actualidad serían vulnerables. Si $m$ y $n$ son casi iguales o iguales será más difícil resolver el sistema, obteniendo de esta forma un algoritmo de firma resistente a ataques cuánticos.\\
 
 La principal ventaja del algoritmo \acrshort{uov} es que es un algoritmo post-cuántico, a diferencia de otros esquemas de firmas como \acrshort{rsa}, \acrshort{dsa}, basado en el logaritmo discreto, y su variante para curvas elípticas \mbox{\acrshort{ecdsa}} que no permanecerían seguros ante un ordenador cuántico. Esto se debe a que en la actualidad no existe un algoritmo eficiente para la resolución de sistemas multivariados de ecuaciones  en ordenador cuántico. Otra ventaja es la simplicidad de las operaciones utilizadas, ya que las firmas se crean y validan con operaciones de suma y multiplicaciones de valores pequeños, lo que requiere bajos recursos \textit{hardware}. 
 

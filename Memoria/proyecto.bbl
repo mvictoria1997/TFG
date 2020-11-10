@@ -78,8 +78,7 @@ R.~Tonon, ``{The story of Fogo de Ch\~{a}o's rise to fame},'' 2016,
 
 \bibitem{algoritmo-UOV}
 A.~Szepieniec, B.~Preneel, F.~Vercaunteren, and W.~Beullens, ``{LUOV: Signature
-  Scheme proposal for NIST PQC Project (Round 2 version)},'' 2018,
-  \url{https://github.com/WardBeullens/LUOV/blob/master/Supporting_Documentation/luov.pdf}.
+  Scheme proposal for NIST PQC Project (Round 2 version)},'' 2018.
 
 \bibitem{ark}
 ``Ark,'' \url{https://ark.io/}.
@@ -133,6 +132,19 @@ F.~Tschorsch and B.~Scheuermann, \emph{Bitcoin and Beyond: A technical survey
 ``{Contrato inteligente},''
   \url{https://elderecho.com/los-contratos-inteligentes-smart-contracts-contratos-inteligentes}.
 
+\bibitem{hyperledger-org}
+``{Web oficial de Hyperledger},'' \url{https://www.hyperledger.org/}.
+
+\bibitem{hyperledger-colab}
+{Hyperledger Proyect}, ``{Linux Foundation’s Hyperledger Project announces 30
+  founding members and code proposals to advance Blockchain technology},''
+  \url{https://web.archive.org/web/20160225023123/https://www.hyperledger.org/news/announcement/2016/02/hyperledger-project-announces-30-founding-members}.
+
+\bibitem{hyperledger-fabric}
+A.~Preukschar, ``{Hyperledger: la Blockchain privada que todos tenemos que
+  conocer},'' 2018,
+  \url{https://www.eleconomista.es/economia/noticias/8899454/01/18/Hyperledger-la-Blockchain-privada-que-todos-tenemos-que-conocer.html}.
+
 \bibitem{blockchain}
 C.~Pastorino, ``Blockchain: qué es, cómo funciona y cómo se está usando en
   el mercado,'' 2018,
@@ -143,9 +155,20 @@ A.~Rosic, ``{What is blockchain Technology? A Step-by-Step Guide For
   Beginners},''
   \url{https://blockgeeks.com/guides/what-is-blockchain-technology/#The_Three_Pillars_of_Blockchain_Technology}.
 
-\bibitem{wiki-UOV}
-Wikipedia, ``{Unbalanced oil and vinegar scheme},''
-  \url{https://en.wikipedia.org/wiki/Unbalanced_oil_and_vinegar_scheme}.
+\bibitem{ark-pros}
+B.~Zieli, ``{ARK Crypto Project},'' 2020,
+  \url{https://www.quora.com/q/cryptoplanet360/Ark-ARK-Crypto-Project-Pros-and-Cons-of-the
+  -Ark-ecosystem-my-opinion}.
+
+\bibitem{hyperledger-ark}
+R.~Cernec, ``{Making Cross-Chain Smart Contracts on ARK via Hyperledger
+  Fabric},'' 2018.
+
+\bibitem{UOV-def}
+A.~Kipnis, J.~Patarin, and L.~Goubin, ``Unbalanced oil and vinegar signature
+  schemes,'' in \emph{International Conference on the Theory and Applications
+  of Cryptographic Techniques}.\hskip 1em plus 0.5em minus 0.4em\relax
+  Springer, 1999, pp. 206--222.
 
 \bibitem{schnorr}
 M.~Beunardeau, A.~Connolly, H.~Ferradi, R.~G{\'e}raud, D.~Naccache, and

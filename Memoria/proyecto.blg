@@ -8,57 +8,59 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: bibliografia/bibliografia.bib
-You're missing a field name---line 174 of file bibliografia/bibliografia.bib
+You're missing a field name---line 173 of file bibliografia/bibliografia.bib
  : @misc{imagen-triada, 
  :                      %Ver imagen triada cia, puede servir para las diapos
 I'm skipping whatever remains of this entry
 -- IEEEtran.bst version 1.12 (2007/01/11) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty journal in algoritmo-UOV
 Warning--empty journal in computacion-cuantica-wiki
 Warning--missing school in arbol-merkle
 Warning--empty year in RPoW
+Warning--empty journal in hyperledger-ark
 
 Done.
-You've used 32 entries,
+You've used 37 entries,
             4024 wiz_defined-function locations,
-            946 strings with 12519 characters,
-and the built_in function-call counts, 12692 in all, are:
-= -- 910
-> -- 218
-< -- 20
-+ -- 112
-- -- 47
-* -- 446
-:= -- 2063
-add.period$ -- 65
-call.type$ -- 32
-change.case$ -- 48
-chr.to.int$ -- 48
-cite$ -- 35
-duplicate$ -- 1098
-empty$ -- 1328
-format.name$ -- 55
-if$ -- 2819
+            967 strings with 13389 characters,
+and the built_in function-call counts, 14870 in all, are:
+= -- 1073
+> -- 252
+< -- 29
++ -- 131
+- -- 53
+* -- 529
+:= -- 2412
+add.period$ -- 76
+call.type$ -- 37
+change.case$ -- 55
+chr.to.int$ -- 72
+cite$ -- 42
+duplicate$ -- 1284
+empty$ -- 1544
+format.name$ -- 62
+if$ -- 3308
 int.to.chr$ -- 0
-int.to.str$ -- 32
-missing$ -- 251
-newline$ -- 119
-num.names$ -- 26
-pop$ -- 735
+int.to.str$ -- 37
+missing$ -- 286
+newline$ -- 134
+num.names$ -- 30
+pop$ -- 837
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1013
+skip$ -- 1183
 stack$ -- 0
-substring$ -- 181
-swap$ -- 619
-text.length$ -- 4
+substring$ -- 246
+swap$ -- 728
+text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 32
-warning$ -- 3
-while$ -- 34
-width$ -- 34
-write$ -- 257
+type$ -- 37
+warning$ -- 5
+while$ -- 42
+width$ -- 39
+write$ -- 294
 (There was 1 error message)
