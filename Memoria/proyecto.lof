@@ -13,27 +13,27 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Diagrama de bloques}}{39}{figure.5.1}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces \IeC {\'A}rbol de directorios de deployer}}{40}{figure.5.2}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces \IeC {\'A}rbol de directorios de core-bridgechain}}{43}{figure.5.3}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces \IeC {\'A}rbol de directorios de deployer}}{42}{figure.6.1}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces \IeC {\'A}rbol de directorios de core-bridgechain}}{43}{figure.6.2}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Salida tras la instalaci\IeC {\'o}n del core}}{78}{figure.Alph1.1}
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Salida tras iniciar del \textit {explorer}}}{79}{figure.Alph1.2}
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Primeras transacciones en el \textit {explorer}}}{80}{figure.Alph1.3}
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Inicio de Wallet}}{81}{figure.Alph1.4}
-\contentsline {figure}{\numberline {A.5}{\ignorespaces Detalles del perfil}}{82}{figure.Alph1.5}
-\contentsline {figure}{\numberline {A.6}{\ignorespaces Configuraci\IeC {\'o}n de la nueva red}}{82}{figure.Alph1.6}
-\contentsline {figure}{\numberline {A.7}{\ignorespaces Detalles de la nueva red}}{83}{figure.Alph1.7}
-\contentsline {figure}{\numberline {A.8}{\ignorespaces Selecci\IeC {\'o}n de la red}}{84}{figure.Alph1.8}
-\contentsline {figure}{\numberline {A.9}{\ignorespaces Personalizaci\IeC {\'o}n del dise\IeC {\~n}o de la interfaz}}{84}{figure.Alph1.9}
-\contentsline {figure}{\numberline {A.10}{\ignorespaces Importar monedero}}{85}{figure.Alph1.10}
-\contentsline {figure}{\numberline {A.11}{\ignorespaces Encriptaci\IeC {\'o}n el monedero}}{85}{figure.Alph1.11}
-\contentsline {figure}{\numberline {A.12}{\ignorespaces Confirmaci\IeC {\'o}n para crear el monedero}}{86}{figure.Alph1.12}
-\contentsline {figure}{\numberline {A.13}{\ignorespaces Configuraci\IeC {\'o}n de la conexi\IeC {\'o}n peer}}{86}{figure.Alph1.13}
-\contentsline {figure}{\numberline {A.14}{\ignorespaces Selecci\IeC {\'o}n de la direcci\IeC {\'o}n del nuevo monedero}}{87}{figure.Alph1.14}
-\contentsline {figure}{\numberline {A.15}{\ignorespaces \textit {Passphrase} o clave privada del monedero}}{87}{figure.Alph1.15}
-\contentsline {figure}{\numberline {A.16}{\ignorespaces Verificaci\IeC {\'o}n de la \textit {passphrase}}}{88}{figure.Alph1.16}
-\contentsline {figure}{\numberline {A.17}{\ignorespaces Encriptaci\IeC {\'o}n del monedero}}{88}{figure.Alph1.17}
-\contentsline {figure}{\numberline {A.18}{\ignorespaces Confirmaci\IeC {\'o}n para crear el segundo monedero}}{89}{figure.Alph1.18}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Salida tras la instalaci\IeC {\'o}n del core}}{79}{figure.Alph1.1}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Salida tras iniciar del \textit {explorer}}}{80}{figure.Alph1.2}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Primeras transacciones en el \textit {explorer}}}{81}{figure.Alph1.3}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Inicio de Wallet}}{82}{figure.Alph1.4}
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Detalles del perfil}}{83}{figure.Alph1.5}
+\contentsline {figure}{\numberline {A.6}{\ignorespaces Configuraci\IeC {\'o}n de la nueva red}}{83}{figure.Alph1.6}
+\contentsline {figure}{\numberline {A.7}{\ignorespaces Detalles de la nueva red}}{84}{figure.Alph1.7}
+\contentsline {figure}{\numberline {A.8}{\ignorespaces Selecci\IeC {\'o}n de la red}}{85}{figure.Alph1.8}
+\contentsline {figure}{\numberline {A.9}{\ignorespaces Personalizaci\IeC {\'o}n del dise\IeC {\~n}o de la interfaz}}{85}{figure.Alph1.9}
+\contentsline {figure}{\numberline {A.10}{\ignorespaces Importar monedero}}{86}{figure.Alph1.10}
+\contentsline {figure}{\numberline {A.11}{\ignorespaces Encriptaci\IeC {\'o}n el monedero}}{86}{figure.Alph1.11}
+\contentsline {figure}{\numberline {A.12}{\ignorespaces Confirmaci\IeC {\'o}n para crear el monedero}}{87}{figure.Alph1.12}
+\contentsline {figure}{\numberline {A.13}{\ignorespaces Configuraci\IeC {\'o}n de la conexi\IeC {\'o}n peer}}{87}{figure.Alph1.13}
+\contentsline {figure}{\numberline {A.14}{\ignorespaces Selecci\IeC {\'o}n de la direcci\IeC {\'o}n del nuevo monedero}}{88}{figure.Alph1.14}
+\contentsline {figure}{\numberline {A.15}{\ignorespaces \textit {Passphrase} o clave privada del monedero}}{88}{figure.Alph1.15}
+\contentsline {figure}{\numberline {A.16}{\ignorespaces Verificaci\IeC {\'o}n de la \textit {passphrase}}}{89}{figure.Alph1.16}
+\contentsline {figure}{\numberline {A.17}{\ignorespaces Encriptaci\IeC {\'o}n del monedero}}{89}{figure.Alph1.17}
+\contentsline {figure}{\numberline {A.18}{\ignorespaces Confirmaci\IeC {\'o}n para crear el segundo monedero}}{90}{figure.Alph1.18}

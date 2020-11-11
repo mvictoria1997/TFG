@@ -2,9 +2,377 @@
 \label{sec:implementacion}
 %Aquí se deben proporcionar los detalles de cómo se ha llevado a la práctica el diseño propuesto en el capítulo anterior. Deben identificarse claramente herramientas, tecnologías, equipamientos, etc. utilizados o necesarios para el buen funcionamiento de la solución. Se pueden describir los fragmentos de código más importantes, con el fin de clarificar la funcionalidad que proporcionan. En general este capítulo debe facilitar la reutilización de nuestra solución, por lo que debe estar bien documentada. Puede incluir un manual de uso.
 
+En este capítulo se va a detallar cómo se ha llevado a la práctica el diseño del capítulo anterior. Se distinguen dos grandes bloques el ecosistema ARK, sección \ref{sec:impl:eco}, y el algoritmo criptográfico, sección \ref{sec:impl:alg}.\\
+
+En el primer bloque se muestra la organización de los archivos de los diferentes directorios alojados en el docker. También se aporta el código de los nuevo archivos generados para llevar a cabo la integración del algoritmo UOV en la \textit{blockchain}.\\
+
+Mientras en el segundo bloque, hay una clara explicación de las funciones necesarias para la implementación del algoritmo UOV en el lenguaje de programación \texttt{python}. Además se incluye el código y los parámetros necearios para la ejecución de las mismas.\\
+
+
+\section{Ecosistema ARK}\label{sec:impl:eco}
+
+El ecosistema ark se ha instalado en un docker \texttt{ubuntu:xenial}. En el \textit{home} del mismo, nos encontramos con las tres carpetas necesarias para la ejecución e instalación tanto de la \textit{blockchain} y como del \textit{explorer}, estas son \texttt{deployer}, \texttt{core-bridgechain} y \texttt{core-explorer}. A continuación se van a explicar para que sirven las dos primeras, puesto que del \texttt{core-explorer} no ha habido ninguna modificación y se ha usado con todos los valores por defecto.\\
+
+
+
+\subsection{Directorio deployer}
+La carpeta \texttt{deployer} contiene varios directorios y ficheros siendo los más importantes, \texttt{app}, \texttt{bridgechain.sh}, \texttt{setup.sh}, ver árbol de directorio \ref{tree:depl}.\\
+
+
+\begin{figure}[H]
+	\begin{forest}
+	  for tree={
+		font=\scriptsize\sffamily,
+		grow'=0,
+		child anchor=west,
+		parent anchor=south,
+		anchor=west,
+		calign=first,
+		inner xsep=7pt,
+		edge path={
+		  \noexpand\path [draw, \forestoption{edge}]
+		  (!u.south west) +(5pt,0) |- (.child anchor) pic {folder} \forestoption{edge label};
+		},
+		file/.style={edge path={\noexpand\path [draw, \forestoption{edge}]
+		      (!u.south west) +(5pt,0) |- (.child anchor) \forestoption{edge label};},
+		      inner xsep=2pt,font=\tiny\sffamily
+		},
+		before typesetting nodes={
+		  if n=1
+		    {insert before={[,phantom]}}
+		    {}
+		},
+		fit=band,
+		before computing xy={l=15pt},
+	  } 
+		[deployer
+		  [app
+			[app-core.sh, file]
+			[app-explorer.sh, file]
+		  ]
+		  [bridgechain.sh, file]
+		  [setup.sh, file]
+		]
+	\end{forest}
+	\caption{Árbol de directorios de deployer}
+	\label{tree:depl}
+\end{figure}
+
+\begin{itemize}
+	\item El directorio \texttt{app} contiene a su vez dos ficheros, \texttt{app-core.sh} que clona e instala el repositorio de github \texttt{mvictoria1997/core} puesto que se ha cambiado la línea 108 para tal fin, código \ref{cod:app-core}, en su defecto instalaría la \textit{blockchain} de \mbox{ArkEcosystem}. Este cambio se hace para obtener en la \textit{blockchain} las modificaciones en el algoritmo de firma.\\
+
+	\begin{lstlisting}[language=Python,caption=Línea 108 app-core.sh, label=cod:app-core]
+		git clone https://github.com/mvictoria1997/core.git --single-branch "$BRIDGECHAIN_PATH"
+	\end{lstlisting}
+
+	El segundo archivo, \texttt{app-explorer.sh},  clona e instala el repositorio de github \texttt{ArkEcosystem/explorer} no se hace ningún cambio puesto que se va a utilizar todo por defecto.
+
+	\item El archivo \texttt{bridgchain.sh} ejecuta los archivos \texttt{app-core.sh} y \texttt{app-explorer.sh} para instalar la \textit{blockchain} y el \textit{explorer} respectivamente.
+	\item El archivo \texttt{setup.sh} realiza una instalación inicial del repositorio.
+\end{itemize}
+
+
+\subsection{Directorio core-bridgechain}
+
+El directorio \texttt{core-bridgechain} contiene cinco directorios importantes, \texttt{blocks}, \texttt{crypto}, \texttt{identities}, \texttt{interfaces} y \texttt{transactions}, ver árbol de directorios \ref{tree:core-b}.\\
+
+\begin{figure}[H]
+	\begin{forest}
+	  for tree={
+		font=\scriptsize\sffamily,
+		grow'=0,
+		child anchor=west,
+		parent anchor=south,
+		anchor=west,
+		calign=first,
+		inner xsep=7pt,
+		edge path={
+		  \noexpand\path [draw, \forestoption{edge}]
+		  (!u.south west) +(7.5pt,0) |- (.child anchor) pic {folder} \forestoption{edge label};
+		},
+		file/.style={edge path={\noexpand\path [draw, \forestoption{edge}]
+		      (!u.south west) +(7.5pt,0) |- (.child anchor) \forestoption{edge label};},
+		      inner xsep=2pt,font=\tiny\sffamily
+		},
+		before typesetting nodes={
+		  if n=1
+		    {insert before={[,phantom]}}
+		    {}
+		},
+		fit=band,
+		before computing xy={l=15pt},
+	  } 
+		[core-bridgechain/packages/crypto/src
+		  [blocks
+			[block.ts, file]
+			[factory.ts, file]
+		  ]
+		  [crypto
+			[hash.ts, file]
+			[uov.py, file]
+			[signature.py, file]
+			[verify.py, file]
+			[data.json, file]
+			[signature.json, file]	
+		  ]
+		  [identities]
+		  [interfaces
+		  	[block.ts, file]
+		  	[identities.ts, file]
+		  	[message.ts, file]
+		  	[transaction.ts, file]
+		  ]
+		  [transactions
+		  	[signer.ts, file]
+		  	[verify.ts, file]
+		  ]
+		]
+	\end{forest}
+	\caption{Árbol de directorios de core-bridgechain}
+	\label{tree:core-b}
+\end{figure}
+
+\begin{itemize}
+	\item Directorio \texttt{blocks} gestiona los bloques de la \textit{blockchain}, en este directorio se encuentran los ficheros, \texttt{block.ts} que engloba las funciones de verificación de la firma de los bloques y \texttt{factory.ts} que administra la creación y firma de los bloques.
+	\item En el directorio \texttt{crypto} es donde se han realizado los cambios, puesto que se encuentran los ficheros con los algoritmos de firma y verificación (objetivo de nuestro proyecto). Podemos distinguir tres tipos de ficheros, los escritos en \texttt{typescript}, los escritos en \texttt{python} y por último los de almacenamiento con extensión \texttt{json}.\\
+	
+	De los escritos en \texttt{typescript} destaca el fichero \texttt{hash.ts}, en él se encuentran las funciones de firma y verificación de tres algoritmos, \acrshort{ecdsa}, código \ref{cod:hash-ECDSA}, Schnorr\cite{schnorr} y \acrshort{uov} (la añadida para este trabajo), código \ref{cod:hash-UOV-sign} y código \ref{cod:hash-UOV-verif}. Para no tener que modificar las funciones desde donde se realizan las llamadas a los distintos algoritmos, lo que se ha hecho es llamar desde la función de firma y verificación del algoritmo ECDSA a las funciones de firma y verificación del algoritmo UOV, respectivamente.\\
+	
+	\begin{lstlisting}[caption=Modificación archivo \texttt{hash.ts} funciones ECDSA, label=cod:hash-ECDSA, style=TypeScript]
+		public static signECDSA(hash: Buffer, keys: IKeyPair): string {
+			return Hash.signUOV(hash, keys)
+		}
+
+		public static verifyECDSA(hash: Buffer, signature: Buffer | string, publicKey: Buffer | string): boolean {
+			return Hash.verifyUOV(hash, signature, publicKey);
+		}
+	\end{lstlisting}
+	
+	\begin{lstlisting}[caption=Modificación archivo \texttt{hash.ts} función \texttt{signUOV}, label=cod:hash-UOV-sign, style=TypeScript]
+		public static signUOV(hash:Buffer, keys:IKeyPair): string {
+
+			//Transforma el Buffer en un array legible en python
+			var hash_string = new Array();
+			for (let i=0; i < hash.length; i++){
+				hash_string.push(hash[i].toString());
+			}
+
+			//Llamada al proceso que ejecuta el fichero signature.py
+			const { execSync } = require('child_process');
+			var cmd = 'python ' + __dirname + '/../../src/crypto/signature.py ' + hash_string + ' ' + keys.publicKey + ' ' + keys.privateKey;
+			var signature  = execSync(cmd);
+
+			//Almacena la firma en forma de vector y en hexadecimal para la verificación
+			const data = readFileSync(__dirname + '/../../src/crypto/signature.json');
+			var data_json = JSON.parse(data.toString());
+			let new_sign = {
+				hex: signature.toString("hex").slice(0, -2),
+				vector: signature.toString().trim()
+			};
+			data_json.push(new_sign);
+			var fs = require('fs');
+			fs.writeFileSync(__dirname + '/../../src/crypto/signature.json', JSON.stringify(data_json));
+
+			return signature.toString("hex");
+		}
+	\end{lstlisting}
+	\newpage
+
+	\begin{lstlisting}[caption=Modificación archivo \texttt{hash.ts} función verifyUOV, label=cod:hash-UOV-verif, style=TypeScript]
+		public static verifyUOV(hash: Buffer, signature: Buffer | string, publicKey: Buffer | string): boolean {
+
+			var hash_string = new Array();
+			for (let i=0; i < hash.length; i++){
+				hash_string.push(hash[i].toString());
+			}
+
+			//Lectura de la firma en signature.json y encuentra la que empiece igual
+			var hex_signature = signature.toString("hex");
+			let data = readFileSync(__dirname + '/../../src/crypto/signature.json');
+			let data_json = JSON.parse(data.toString());
+			let encontrado : boolean = false;
+			var i=0, signature_string;
+			var regular_expression = new RegExp(hex_signature + '[^]*', 'i');
+			while (i < data_json.length && !encontrado){
+				if (regular_expression.test(data_json[i]['hex'])){
+					signature_string = data_json[i]['vector'];
+					encontrado = true;
+				}
+				++i;
+			}
+		
+			//Quita los espacios sino toma hasta cada espacio como un parámetro
+			while (signature_string.search('\ ') != -1){
+				signature_string = signature_string.replace('\ ', '');
+			}
+			signature_string.replace('\n', '');
+		
+			//Llamada al proceso que ejecuta el fichero verify.py
+			const { execSync } = require('child_process');
+			var cmd =  'python ' + __dirname + '/../../src/crypto/verify.py ' + hash_string + ' ' + signature_string + ' ' + publicKey.toString();
+			var verify  = execSync(cmd);
+
+			if (verify.toString().trim() == 'True')
+				return true;
+			else
+				return false;
+		}
+	\end{lstlisting}
+	
+	
+	En los archivos de \texttt{python} se encuentran \texttt{uov.py}, \texttt{signature.py}, código \ref{cod:sign-py}, y \texttt{verify.py}, código \ref{cod:veri-py}. El archivo \texttt{uov.py} contiene las funciones del algoritmo UOV, estas se explicarán en el capítulo \ref{sec:implementacion}. Los otros dos archivos son de transición, esto es, se llaman desde la función de firma a \texttt{signature.py} y desde la función de verificación a \texttt{verify.py}, para pasar los parámetros del lenguaje \texttt{typescript} al lenguaje \texttt{python}, a continuación se realizan llamadas a las funciones de firma o verificación, volviendo a pasar los resultados a las funciones de \texttt{typescript}.\\
+	
+	\begin{lstlisting}[language=Python,caption=Archivo \texttt{signature.py}, label=cod:sign-py]
+		import sys
+		from luov import *
+		import json
+		def main():
+			m, v = 3, 3
+			hash_schnorr, pub_schnorr, priv_schnorr = sys.argv[1], sys.argv[2], sys.argv[3]
+			alpha, beta, hash, hashed_message = [], [], [], []
+			number = ''
+
+			for i in range(len(hash_schnorr)):
+				if hash_schnorr[i] != ',':
+					number += hash_schnorr[i]
+				else:
+					aux = int (number, 16)%128
+					hash +=[aux]
+					number = ''
+			aux = int (number, 16)%128
+			hash += [aux]
+
+			T = generacionT (m, v)
+
+			encontrado = False
+			with open("/home/deployer/core-bridgechain/packages/crypto/src/crypto/data.json", "r") as jsonread:
+				data = json.load(jsonread)
+				for i in range(len(data)):
+					if data[i]['pub_schnorr'] == pub_schnorr:
+						alpha = data[i]['priv_alpha_UOV']
+						beta = data[i]['priv_beta_UOV']
+						encontrado = True
+						break
+
+			if not encontrado:
+				alpha, beta = clavePrivada(m, v, priv_schnorr)
+				alpha_pub, beta_pub = clavePublica(m, v, alpha, beta, T)
+				with open("/home/deployer/core-bridgechain/packages/crypto/src/crypto/data.json", "w") as jsonwrite:
+					nuevo = {"id":len(data),
+						"pub_schnorr": pub_schnorr,
+						"priv_schnorr": priv_schnorr,
+						"priv_alpha_UOV": alpha,
+						"priv_beta_UOV": beta,
+						"pub_alpha_UOV": alpha_pub,
+						"pub_beta_UOV": beta_pub}
+					data.append(nuevo)
+					jsonwrite.seek(0)
+					json.dump(data, jsonwrite)
+
+			hash = hash[0:m]
+			for i in range(len(hash)):
+				hashed_message += [bin(hash[i])[2:]] #Pasa a binario el hash
+
+			for i in range (len(hashed_message)):
+				aux = [int(d) for d in (hashed_message[i])]
+				for k in range(7-len(aux)):
+					aux.insert(0, 0)
+				hashed_message [i] = aux
+
+			firma = signature (hashed_message, alpha, beta, m, v, T)
+			print (firma)
+			sys.stdout.flush()
+
+			#print (alpha)
+			#verif = verificacion (hashed_message, firma, alpha_pub, beta_pub, m)
+
+		if __name__=="__main__":
+			main()
+	\end{lstlisting}
+
+	\vspace{-0.41cm}
+	\begin{lstlisting}[language=Python,caption=Archivo \texttt{verify.py}, label=cod:veri-py]
+		import sys
+		from luov import *
+		import os
+		import json
+		from ast import literal_eval
+		def main():
+			m, v = 3, 3
+			hash_schnorr, signature, pub_schnorr = sys.argv[1], literal_eval(sys.argv[2]), sys.argv[3]
+			alpha, beta, hash, hashed_message = [], [], [], []
+			number = ''
+
+			for i in range(len(hash_schnorr)):
+				if hash_schnorr[i] != ',':
+					number +=hash_schnorr[i]
+				else:
+					aux = int (number, 16)%128
+					hash += [aux]
+					number = ''
+			aux = int (number, 16)%128
+			hash += [aux]
+
+			with open("/home/deployer/core-bridgechain/packages/crypto/src/crypto/data.json", "r") as jsonread:
+				data = json.load(jsonread)
+				for i in range(len(data)):
+					if data[i]['pub_schnorr'] == pub_schnorr:
+						alpha = data[i]['pub_alpha_UOV']
+						beta = data[i]['pub_beta_UOV']
+						break
+
+			hash = hash[0:m]
+			for j in range(len(hash)):
+				hashed_message += [bin(hash[j])[2:]] #Pasa a binario el hash
+
+			for i in range (len(hashed_message)):
+				aux = [int(d) for d in (hashed_message[i])]
+				for k in range(7-len(aux)):
+					aux.insert(0, 0)
+				hashed_message [i] = aux
+
+			print (verificacion (hashed_message, signature, alpha, beta, m))
+			sys.stdout.flush()
+
+		if __name__=="__main__":
+			main()
+	\end{lstlisting}
+	
+	Por último han de destacarse los ficheros de almacenamiento \texttt{data.json} y \texttt{signature.json}. En \texttt{data.json} podemos encontrar cada una de las claves públicas y privadas generadas para el algoritmo de Schnorr y las correspondientes para el algoritmo UOV (los $\alpha$ y $\beta$ privados y públicos), cada conjunto de claves se ha almacenado en un diccionario con la estructura que muestra el código \ref{cod:data-json}. Debido a los problemas explicados en el apartado de análisis \ref{sec:analisis-analisis}, el archivo \texttt{signature.json} contiene las firmas en hexadecimal y sus correspondientes en forma de vector, tal y como muestra el código \ref{cod:sign-json}.
+	
+	\begin{lstlisting}[language=Python,caption=Estructura archivo data.json, label=cod:data-json]
+		{
+			"id":
+			"pub_schnorr":
+			"priv_schnorr":
+			"priv_alpha_UOV": 
+			"priv_beta_OUV": 
+			"pub_alpha_UOV": 
+			"pub_beta_OUV": 
+		}
+	\end{lstlisting}
+	
+	\begin{lstlisting}[language=Python,caption=Estructura archivo signature.json, label=cod:sign-json]
+		{
+			"hex":
+			"vector":
+		}
+	\end{lstlisting}
+	
+	\item Directorio \texttt{identities} abarca la creación y almacenamiento de las claves pública y privada.
+	\item Directorio \texttt{interfaces} incluye las interfaces, esto es, los campos que se requieren para la creación de cada objeto o los que pueden añadirse posteriormente. Los objetos más destacados y con los que se han trabajado son bloques, identidades, mensajes y transacciones.
+	
+	Los bloques se muestran en el archivo \texttt{blocks.ts}, las identidades (con las claves pública y privada) en el archivo \texttt{identities.ts}, los mensajes en el archvio \texttt{message.ts}, y las transacciones en el archivo \texttt{transactions.ts}.
+	\item Entre los ficheros del directorio \texttt{transactions} podemos encontrar \texttt{signer.ts} y \texttt{verifier.ts}. El primero contiene la gestión de la firma de transacciones y el segundo la verificación de la firma.
+\end{itemize}
+
+
+\newpage
+
+\section{Algoritmo criptográfico UOV}\label{sec:impl:alg}
 Aquí se proporcionan los detalles de las funciones implementadas para la ejecución algoritmo UOV, además de la implementación de la aritmética en el cuerpo de 128 elementos.\\
 
-\section{Funciones del cuerpo de 128 elementos}
+\subsection{Funciones del cuerpo de 128 elementos}
 Las funciones referentes a esta sección son la suma, el producto y conversiones de elementos del cuerpo de $2$ elementos a elementos del cuerpo de $128$ elementos.\\
 
 Los elementos del cuerpo se representarán con vectores de siete componentes para poder facilitar la implementación de la suma y del producto. Esto se refleja en las dos tablas denominadas \texttt{exp} y \texttt{log}, que tienen la estructura que se muestra en los códigos \ref{cod:exp} y \ref{cod:log}, respectivamente. Para la implementación se han usado las variables diccionario de \texttt{python}, puesto que tienen fácil acceso a todas las componentes.
@@ -32,7 +400,7 @@ log = {
 
 La suma de dos elementos del cuerpo se ha implementando la puerta $xor$, esto es si las $iésimas$-componentes son iguales entonces la suma vale $0$, en caso contrario vale $1$, código \ref{cod:suma-cuerpo}.
 
-\begin{table}[h]
+\begin{table}[H]
 	\begin{center}
 	\centering
 	\resizebox{\linewidth}{!}{
@@ -63,7 +431,7 @@ def suma(n1=[], n2=[]):
 
 Para el producto de dos elementos del cuerpo se ha diferenciado el caso en el que uno de los vectores sea $0$ en dicho caso el producto vale $0$. Si ninguno de los vectores es $0$ entonces se hace uso de las tablas \ref{cod:exp} y \ref{cod:log}, para trabajar con enteros módulo $127$, código \ref{cod:producto-cuerpo}.
 
-\begin{table}[h]
+\begin{table}[H]
 	\begin{center}
 	\centering
 	\resizebox{\linewidth}{!}{
@@ -100,7 +468,7 @@ Las siguientes funciones son necesarias para la resolución del sistema de ecuac
 Calcula el vector correspondiente vector en el cuerpo de un entero, código \ref{cod:entero-cuerpo}.
 
 
-\begin{table}[h]
+\begin{table}[H]
 	\begin{center}
 	\centering
 	\resizebox{\linewidth}{!}{
@@ -128,7 +496,7 @@ def F128(n1):
 
 Al estar en un cuerpo todo elementos tiene inverso y tiene sentido hacer la función \texttt{inverso} de un elemento del cuerpo, la implementación que se ha hecho ha sido hacer la multiplicación por los restantes elementos y comprobando que de como resultado el elemento unidad, en este caso $[0,0,0,0,0,0,1]$, código \ref{cod:inverso-cuerpo}.
 
-\begin{table}[h]
+\begin{table}[H]
 	\begin{center}
 	\centering
 	\resizebox{\linewidth}{!}{
@@ -155,7 +523,7 @@ def inverse(n=[]):
 
 La función \texttt{mayor} compara si el elemento $n1$ es mayor que el elemento $n2$, para ello se convierten los vectores a enteros con la tabla \texttt{log} y se compara que entero es mayor, código \ref{cod:mayor-que-cuerpo}.
 
-\begin{table}[h]
+\begin{table}[H]
 	\begin{center}
 	\centering
 	\resizebox{\linewidth}{!}{
@@ -190,7 +558,7 @@ def mayor (n1=[],n2=[]):
 
 Convierte una matriz $n1$ del cuerpo $\mathds{F}_2$ en un vector $n$ de $\mathds{F}_{128}$. Como los elementos de la matriz son solo 0 y 1 la conversión se reduce a, si en la matriz hay un 0 añade al vector $n$ el vector $[0,0,0,0,0,0,0]$ y en otro caso $[0,0,0,0,0,0,1]$, código \ref{cod:matrizF2-cuerpo}.
 
-\begin{table}[h]
+\begin{table}[H]
 	\begin{center}
 	\centering
 	\resizebox{\linewidth}{!}{
@@ -225,7 +593,7 @@ def matrix_F2to128(n1=[]):
 
 Convierte un vector de matrices $n1$ del cuerpo $\mathds{F}_2$ en una matriz $matrix$ del cuerpo de 128 elementos. Como en la función anterior los elementos de la matriz son solo 0 y 1, se aplica el mismo cambio, código \ref{cod:matriz3dF2-cuerpo}.
 
-\begin{table}[h]
+\begin{table}[H]
 	\begin{center}
 	\centering
 	\resizebox{\linewidth}{!}{
@@ -263,14 +631,14 @@ def matrix3d_F2to128(n1=[]):
    return matrix
 \end{lstlisting}
 
-\section{Funciones con matrices}
+\subsection{Funciones con matrices}
 
 En esta sección de explicarán funciones como la suma de matrices, cálculo de la matriz transpuesta, matriz identidad y el producto de matrices tanto en $\mathds{F}_2$ como en $\mathds{F}_{128}$. Además incluye la función que resuelve el sistema de ecuaciones con el método de Gauss-Jordan.\\
 
 
 Suma de dos matrices $m1$ y $m2$ del cuerpo de 128 elementos, código \ref{cod:suma-matrix}.
 
-\begin{table}[h]
+\begin{table}[H]
 	\begin{center}
 	\centering
 	\resizebox{\linewidth}{!}{
@@ -306,7 +674,7 @@ def matrix_sum (m1, m2):
 
 Producto de dos matrices con elementos en el cuerpo de 128 elementos, código \ref{cod:prod-matrix}.
 
-\begin{table}[h]
+\begin{table}[H]
 	\begin{center}
 	\centering
 	\resizebox{\linewidth}{!}{
@@ -344,7 +712,7 @@ def matrix_product (n1=[], n2=[]):
 
 Producto de dos matrices con elementos en el cuerpo $\mathds{F}_2$, como los elementos de la matriz son $0$ y $1$ la suma acomulada se hace con la operación lógica \texttt{xor},  código \ref{cod:prodF2-matrix}.
 
-\begin{table}[h]
+\begin{table}[H]
 	\begin{center}
 	\centering
 	\resizebox{\linewidth}{!}{
@@ -382,7 +750,7 @@ def matrix_product_F2 (n1=[], n2=[]):
 
 Calcula la matriz transpuesta de la matriz dada como parámetro, código \ref{cod:trans-matrix}.
 
-\begin{table}[h]
+\begin{table}[H]
 	\begin{center}
 	\centering
 	\resizebox{\linewidth}{!}{
@@ -415,7 +783,7 @@ def matrix_transpose(m):
 
 Calcula la matriz identidad con una determinada dimensión, $dim$, que se pasa como parámetro, código \ref{cod:identi-matrix}.
 
-\begin{table}[h]
+\begin{table}[H]
 	\begin{center}
 	\centering
 	\resizebox{\linewidth}{!}{
@@ -456,7 +824,7 @@ La función \texttt{matrix\_rref} resuelve de un sistema de ecuaciones con el m�
 A\cdot x=b
 \end{equation}
 
-\begin{table}[h]
+\begin{table}[H]
 	\begin{center}
 	\centering
 	\resizebox{\linewidth}{!}{
@@ -514,12 +882,12 @@ def matrix_rref(A, b):
    return x
 \end{lstlisting}
 
-\section{Funciones algoritmo UOV}
+\subsection{Funciones algoritmo UOV}
 
 La función \texttt{clavePrivada} genera la clave privada de un usuario, para ello genera una matriz triangular superior, $\alpha$, en $\mathds{F}_2$ con valores aleatorios, y un vector, $\beta$, en $\mathds{F}_2$. Los parámetros $m$ y $v$ son el número de variables de aceite y vinagre, respectivamente, código \ref{cod:priv-UOV}.
 
 \vspace{-0.23cm}
-\begin{table}[h]
+\begin{table}[H]
 	\begin{center}
 	\centering
 	\resizebox{\linewidth}{!}{
@@ -568,7 +936,7 @@ def clavePrivada (m, v):
 
 La función \texttt{generacionT} genera la matriz de distorsión $T$ a partir de los valores $m$ y $v$, número de variables de aceite y vinagre, código \ref{cod:T}. La forma de la matriz de distorsión viene dada por la ecuación \ref{mat:T}.
 
-\begin{table}[h]
+\begin{table}[H]
 	\begin{center}
 	\centering
 	\resizebox{\linewidth}{!}{
@@ -622,7 +990,7 @@ def generacionT (v, m):
 
 La función \texttt{clavePublica} genera la clave pública a partir de la clave privada, calculada con la función anterior, los valores $m$ y $v$ el número de variables de aceite y vinagre, además de una matriz de distorsión, código \ref{cod:pub-UOV}.
 
-\begin{table}[h]
+\begin{table}[H]
 	\begin{center}
 	\centering
 	\resizebox{\linewidth}{!}{
@@ -663,7 +1031,7 @@ def clavePublica(m, v, alpha, beta, T):
 
 La función \texttt{signature} calcula la firma del hash de un mensaje, $hashed$, con las claves privadas del usuario, $alpha\_F2$ y $beta\_F2$, el número de aceites y vinagres, $m$ y $v$, y con la matriz de transición, $T$. Se toman los vinagres aleatorios, se resuelve el sistema para calcular los aceites, y con la ecuación \ref{eq:firma} obtenemos la firma del mensaje, código \ref{cod:firma-UOV}.
 
-\begin{table}[h]
+\begin{table}[H]
 	\begin{center}
 	\centering
 	\resizebox{\linewidth}{!}{
@@ -722,7 +1090,7 @@ def signature(hashed, alpha_F2, beta_F2, m, v, T):
 
 Por último la función \texttt{verify} comprueba si la firma, $firma$, de un mensaje, $m$, es correcta, para ello utiliza las claves públicas del usuario y el número de variables de aceite, se va comprobando una a una si se cumple la igualdad \ref{eq:veri}, código \ref{cod:verif-UOV}.
 
-\begin{table}[h]
+\begin{table}[H]
 	\begin{center}
 	\centering
 	\resizebox{\linewidth}{!}{
