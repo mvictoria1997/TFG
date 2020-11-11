@@ -3,45 +3,45 @@
 \contentsline {section}{\numberline {1.1}Motivaci\IeC {\'o}n y contexto del proyecto}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Objetivos del proyecto y logros conseguidos}{5}{section.1.2}
 \contentsline {section}{\numberline {1.3}Estructura de la memoria}{5}{section.1.3}
-\contentsline {section}{\numberline {1.4}Contenidos te\IeC {\'o}ricos para la comprensi\IeC {\'o}n del proyecto}{6}{section.1.4}
-\contentsline {subsection}{\numberline {1.4.1}Computaci\IeC {\'o}n cu\IeC {\'a}ntica}{6}{subsection.1.4.1}
-\contentsline {subsubsection}{Historia}{6}{section*.9}
-\contentsline {subsubsection}{Estructura de los c\IeC {\'u}bits}{8}{section*.10}
-\contentsline {subsubsection}{Propiedades}{9}{section*.11}
-\contentsline {subsection}{\numberline {1.4.2}Blockchain}{10}{subsection.1.4.2}
-\contentsline {subsubsection}{Blockchain ARK}{14}{section*.12}
-\contentsline {subsection}{\numberline {1.4.3}Algoritmo UOV}{15}{subsection.1.4.3}
-\contentsline {subsubsection}{Cuerpos finitos}{16}{section*.13}
-\contentsline {subsubsection}{Par\IeC {\'a}metros y f\IeC {\'o}rmula}{16}{section*.14}
-\contentsline {subsubsection}{Generaci\IeC {\'o}n de la clave privada}{17}{section*.15}
-\contentsline {subsubsection}{Generaci\IeC {\'o}n de la clave p\IeC {\'u}blica}{17}{section*.16}
-\contentsline {subsubsection}{Algoritmo de firma}{18}{section*.17}
-\contentsline {subsubsection}{Algoritmo de verificaci\IeC {\'o}n}{19}{section*.18}
-\contentsline {subsubsection}{Ejemplo}{19}{section*.19}
-\contentsline {chapter}{\numberline {2}Planificaci\IeC {\'o}n y costes}{25}{chapter.2}
-\contentsline {section}{\numberline {2.1}Planificaci\IeC {\'o}n}{25}{section.2.1}
-\contentsline {section}{\numberline {2.2}Costes}{28}{section.2.2}
-\contentsline {chapter}{\numberline {3}An\IeC {\'a}lisis del problema}{31}{chapter.3}
-\contentsline {section}{\numberline {3.1}Especificaci\IeC {\'o}n de requisitos}{31}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Requisitos funcionales}{31}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Requisitos no funcionales}{33}{subsection.3.1.2}
-\contentsline {section}{\numberline {3.2}An\IeC {\'a}lisis}{35}{section.3.2}
-\contentsline {chapter}{\numberline {4}Dise\IeC {\~n}o}{37}{chapter.4}
-\contentsline {section}{\numberline {4.1}Algoritmo criptogr\IeC {\'a}fico}{38}{section.4.1}
-\contentsline {section}{\numberline {4.2}Ecosistema ARK}{38}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Directorio deployer}{38}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Directorio core-bridgechain}{39}{subsection.4.2.2}
-\contentsline {chapter}{\numberline {5}Implementaci\IeC {\'o}n}{43}{chapter.5}
-\contentsline {section}{\numberline {5.1}Funciones del cuerpo de 128 elementos}{43}{section.5.1}
-\contentsline {section}{\numberline {5.2}Funciones con matrices}{47}{section.5.2}
-\contentsline {section}{\numberline {5.3}Funciones algoritmo UOV}{51}{section.5.3}
-\contentsline {chapter}{\numberline {6}Evaluaci\IeC {\'o}n y pruebas}{57}{chapter.6}
-\contentsline {chapter}{\numberline {7}Conclusiones}{59}{chapter.7}
-\contentsline {section}{\numberline {7.1}Valoraci\IeC {\'o}n personal}{59}{section.7.1}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{63}{chapter*.20}
-\contentsline {chapter}{Glosario de siglas}{65}{chapter*.22}
-\contentsline {chapter}{\numberline {A}Manual de usuario}{67}{appendix.Alph1}
-\contentsline {section}{\numberline {A.1}Instalaci\IeC {\'o}n de Docker}{67}{section.Alph1.1}
-\contentsline {section}{\numberline {A.2}Instalaci\IeC {\'o}n Blockchain ARK}{69}{section.Alph1.2}
-\contentsline {section}{\numberline {A.3}Instalaci\IeC {\'o}n de la aplicaci\IeC {\'o}n ARK Desktop Wallet}{79}{section.Alph1.3}
-\contentsline {section}{\numberline {A.4}Visualizaci\IeC {\'o}n de los datos con el Explorer}{88}{section.Alph1.4}
+\contentsline {chapter}{\numberline {2}Contenidos te\IeC {\'o}ricos}{7}{chapter.2}
+\contentsline {section}{\numberline {2.1}Computaci\IeC {\'o}n cu\IeC {\'a}ntica}{7}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Historia}{7}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Estructura de los c\IeC {\'u}bits}{9}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Propiedades}{11}{subsection.2.1.3}
+\contentsline {section}{\numberline {2.2}Blockchain}{11}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Blockchain ARK}{16}{subsection.2.2.1}
+\contentsline {section}{\numberline {2.3}Algoritmo UOV}{17}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Cuerpos finitos}{17}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Par\IeC {\'a}metros y f\IeC {\'o}rmula}{18}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Generaci\IeC {\'o}n de la clave privada}{19}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}Generaci\IeC {\'o}n de la clave p\IeC {\'u}blica}{19}{subsection.2.3.4}
+\contentsline {subsection}{\numberline {2.3.5}Algoritmo de firma}{20}{subsection.2.3.5}
+\contentsline {subsection}{\numberline {2.3.6}Algoritmo de verificaci\IeC {\'o}n}{21}{subsection.2.3.6}
+\contentsline {subsection}{\numberline {2.3.7}Ejemplo}{21}{subsection.2.3.7}
+\contentsline {chapter}{\numberline {3}Planificaci\IeC {\'o}n y costes}{27}{chapter.3}
+\contentsline {section}{\numberline {3.1}Planificaci\IeC {\'o}n}{27}{section.3.1}
+\contentsline {section}{\numberline {3.2}Costes}{30}{section.3.2}
+\contentsline {chapter}{\numberline {4}An\IeC {\'a}lisis del problema}{33}{chapter.4}
+\contentsline {section}{\numberline {4.1}Especificaci\IeC {\'o}n de requisitos}{34}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Requisitos funcionales}{34}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Requisitos no funcionales}{36}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}An\IeC {\'a}lisis}{38}{section.4.2}
+\contentsline {chapter}{\numberline {5}Dise\IeC {\~n}o}{39}{chapter.5}
+\contentsline {section}{\numberline {5.1}Algoritmo criptogr\IeC {\'a}fico}{40}{section.5.1}
+\contentsline {section}{\numberline {5.2}Ecosistema ARK}{40}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Directorio deployer}{40}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Directorio core-bridgechain}{41}{subsection.5.2.2}
+\contentsline {chapter}{\numberline {6}Implementaci\IeC {\'o}n}{45}{chapter.6}
+\contentsline {section}{\numberline {6.1}Funciones del cuerpo de 128 elementos}{45}{section.6.1}
+\contentsline {section}{\numberline {6.2}Funciones con matrices}{49}{section.6.2}
+\contentsline {section}{\numberline {6.3}Funciones algoritmo UOV}{53}{section.6.3}
+\contentsline {chapter}{\numberline {7}Evaluaci\IeC {\'o}n y pruebas}{59}{chapter.7}
+\contentsline {chapter}{\numberline {8}Conclusiones}{61}{chapter.8}
+\contentsline {section}{\numberline {8.1}Valoraci\IeC {\'o}n personal}{61}{section.8.1}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{66}{chapter*.9}
+\contentsline {chapter}{Glosario de siglas}{67}{chapter*.11}
+\contentsline {chapter}{\numberline {A}Manual de usuario}{69}{appendix.Alph1}
+\contentsline {section}{\numberline {A.1}Instalaci\IeC {\'o}n de Docker}{69}{section.Alph1.1}
+\contentsline {section}{\numberline {A.2}Instalaci\IeC {\'o}n Blockchain ARK}{71}{section.Alph1.2}
+\contentsline {section}{\numberline {A.3}Instalaci\IeC {\'o}n de la aplicaci\IeC {\'o}n ARK Desktop Wallet}{81}{section.Alph1.3}
+\contentsline {section}{\numberline {A.4}Visualizaci\IeC {\'o}n de los datos con el Explorer}{90}{section.Alph1.4}

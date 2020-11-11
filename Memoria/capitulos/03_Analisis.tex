@@ -1,16 +1,27 @@
 \chapter{Análisis del problema}
 
-Este tercer capítulo incluye una descripción de las funcionalidades que se pretenden alcanzar, así como de los problemas que han podido surgir para no llegar al diseño propuesto inicialmente. También se puede encontrar una especificación tanto los requisitos funcionales como los no funcionales.
+En este cuarto capítulo se aportan las opciones que se han elegido para el desarrollo del proyecto. Además se incluye una descripción de las funcionalidades que se pretenden alcanzar, así como de los problemas que han podido surgir para no llegar al diseño propuesto inicialmente. Así como una especificación de tanto los requisitos funcionales como los no funcionales.\\
 
+Se ha optado por el uso de una máquina Docker, en lugar de hacerlo en local, para el desarrollo del proyecto debido al auge de DevOps en la ciberseguridad.\\
+
+DevOps es la combinación de desarrollo (\textit{devlopment}) y operaciones (\textit{operations})\cite{devops-redhat}. DevOps incluye entre otras características sistemas de seguridad, maneras de trabajar en grupo y análisis de datos. Además describe los enfoques para agilizar los procesos con los que una idea, como corrección de errores, pasa del desarrollo a la implementación, generando valor para el usuario. Para llevar acabo estas ideas, son necesarios equipos de desarrollo y operaciones comunicados con frecuencia, así como escalabilidad y aprovisionamiento flexible.\\
+
+Los principios de DevOps se encuentran reflejados en el proceso de compilación de Docker, garantizando una imagen Docker totalmente rastreable y documentada. Las imágenes de Docker son portátiles e independientes del sistema operativo subyacente, esto permite desarrollar código en computadoras locales sin preocuparse por la arquitectura de implmentación. Además Docker porporciona un marco modular y extensible, obteniendo un procesamiento de datos actualizado con los últimos desarrollos algorítmicos\cite{docker-devops}.\\
+
+Por último trabajar con Docker ha permitido tener un control de las versiones generadas. De esta forma si alguna de las nuevas imágenes guardadas tenía un error, no había problema en volver a versiones anteriores y empezar a trabajar desde una máquina sin errores.\\
+
+En segundo lugar se ha elegido cuál sería la \textit{blockchain} en donde integrar el algoritmo de firma y verificación, en este caso ARK. Gracias a las funciones intuitivas e inovadoras de ARK, han hecho posible que trabajar con dicha cadena de bloques sea fácil.\\
+
+Su diseño modular y el código fuente abierto, aporta a la \textit{blockchain} grandes capacidades de personalización para satisfacer las necesidades de cada usuario. Así desde el principio, fue sencillo encontrar que archivos había que modificar, para cumplir los objetivos del proyecto, y entender que hacía la parte del código que nos interesaba.\\
+
+Otras propiedades interesantes que han hecho decantarse por esta cadena de bloques, han sido la escalabilidad y la compatibilidad con otras \textit{blockchain} de cara al futuro. Puesto que esta \textit{blockchain} modificada podría integrarse en otra cambiando así los algoritmos de firma y verificación de los bloques.\\
+ 
 \section{Especificación de requisitos}
-
-Con la realización de este proyecto se persiguen principalmente dos funcionalidades, la implementación del algoritmo UOV y la integración del mismo en la \textit{blockchain}.
-
-Para la implementación del algoritmo ha sido necesario implementar la aritmética de $\mathds{F}_{128}$ puesto que no se ha encontrado ninguna librería de \texttt{python} que trabaje conjuntamente las matrices con cuerpos finitos. Se ha optado por el lenguaje de programación \texttt{python} para el algoritmo porque inicialmente se pensaba trabajar con la \textit{blockchain} implementada en \texttt{python} y no tener problemas a la hora de llamar a las funciones del algoritmo. Sin embargo tras un proceso de investigación se vió mejor opción utilizar la \textit{blockchain} en \texttt{typescript} para hacer uso de la parte gráfica como es la aplicación wallet y el \textit{explorer}. De esta forma se ha visto afectado el diseño inicial puesto que han sido necesarios dos ficheros más de transición entre los ficheros de \texttt{typescript} y \texttt{python}, se entrará en detalle en el capítulo \ref{sec:diseno}.
 
 \subsection{Requisitos funcionales}
 
-La especificación de los requisitos funcionales se ha dividido en varios apartados según cada parte del proyecto. Se distinguen, el programa en \texttt{python} con la implementación del algoritmo UOV, tabla \ref{tab:RF-pro}, el docker que contiene la interacción con la base de datos y la \textit{blockchain}, tabla \ref{tab:RF-docker}, la aplicación wallet desde donde se realizarán las transacciones, tabla \ref{tab:RF-wallet} y por último, el \textit{explorer} para visualizar las transacciones realizadas y los bloques generados, tabla \ref{tab:RF-exp}.
+La especificación de los requisitos funcionales se ha dividido en varios apartados según cada parte del proyecto. Se distinguen, el programa en \texttt{python} con la implementación del algoritmo UOV, tabla \ref{tab:RF-pro}, el docker que contiene la interacción con la base de datos y la \textit{blockchain}, tabla \ref{tab:RF-docker}, el \textit{explorer} para visualizar las transacciones realizadas y los bloques generados, tabla \ref{tab:RF-exp}, y por último, la aplicación wallet desde donde se realizarán las transacciones, tabla \ref{tab:RF-wallet}.
+
 
 \begin{table}[H]
 	\begin{center}
@@ -21,7 +32,7 @@ La especificación de los requisitos funcionales se ha dividido en varios aparta
 		\toprule
 		RF 1.1 & El programa deberá tener la implementación de la aritmética de $\mathds{F}_{128}$\\[0.5ex]
 		RF 1.2 & El programa deberá de generar la clave pública y privada de cada usuario\\[0.5ex]
-		RF 1.3 & El programa deberá de firmar correctamente cada \textit{hash}, ya sea de un bloque o una transacción\\[0.5ex]
+		RF 1.3 & El programa deberá de firmar correctamente cada \textit{hash} de un bloque\\[0.5ex]
 		RF 1.4 & El programa deberá de realizar correctamente la verificación de un \textit{hash} con una firma\\[0.5ex]
 		\bottomrule
 	\end{tabular}}
@@ -61,28 +72,6 @@ La especificación de los requisitos funcionales se ha dividido en varios aparta
 	\begin{tabular}{p{0.14\linewidth} p{0.75\linewidth}}
 		\textbf{Requisito} & \textbf{Descripción} \\
 		\toprule
-		RF 3.1 & La aplicación deberá dar la opción al usuario de crear un perfil\\[0.5ex]
-		RF 3.2 & La aplicación deberá dar la opción al usuario de conectarse a la red \textit{testnet}\\[0.5ex]
-		RF 3.3 & La aplicación deberá dar la opción al usuario de importar el monedero genesis\\[0.5ex]
-		RF 3.4 & La aplicación deberá dar la opción al usuario de crear monederos\\[0.5ex]
-		RF 3.5 & La aplicación deberá dar la opción al usuario realizar transacciones entre diferentes monederos\\[0.5ex]
-		RF 3.6 & La aplicación deberá dar la opción al usuario de firmar mensajes\\[0.5ex]
-		RF 3.7 & La aplicación deberá dar la opción al usuario de validar mensajes\\[0.5ex]
-		
-		\bottomrule
-	\end{tabular}}
-	\end{center}
-	\caption{Requisitos funcionales de la aplicación Wallet}
-	\label{tab:RF-wallet}
-\end{table}
-
-\begin{table}[H]
-	\begin{center}
-	\centering
-	\resizebox{\linewidth}{!}{
-	\begin{tabular}{p{0.14\linewidth} p{0.75\linewidth}}
-		\textbf{Requisito} & \textbf{Descripción} \\
-		\toprule
 		RF 4.1 & En el \textit{explorer} se podrá realizar búsqueda por bloques\\[0.5ex]
 		RF 4.2 & En el \textit{explorer} se podrá realizar búsqueda por transacciones\\[0.5ex]
 		RF 4.3 & El \textit{explorer} deberá mostrar la firma de cada bloque \\[0.5ex]
@@ -97,6 +86,32 @@ La especificación de los requisitos funcionales se ha dividido en varios aparta
 	\caption{Requisitos funcionales del \textit{Explorer}}
 	\label{tab:RF-exp}
 \end{table}
+
+
+\begin{table}[H]
+	\begin{center}
+	\centering
+	\resizebox{\linewidth}{!}{
+	\begin{tabular}{p{0.14\linewidth} p{0.75\linewidth}}
+		\textbf{Requisito} & \textbf{Descripción} \\
+		\toprule
+		RF 3.1 & La aplicación deberá dar la opción al usuario de crear un perfil\\[0.5ex]
+		RF 3.2 & La aplicación deberá dar la opción de crear una nueva red \textit{testnet}\\[0.5ex]
+		RF 3.2 & La aplicación deberá dar la opción al usuario de conectarse a la red \textit{testnet}\\[0.5ex]
+		RF 3.3 & La aplicación deberá dar la opción al usuario de importar el monedero genesis\\[0.5ex]
+		RF 3.4 & La aplicación deberá dar la opción al usuario de crear monederos\\[0.5ex]
+		RF 3.5 & La aplicación deberá dar la opción al usuario realizar transacciones entre diferentes monederos\\[0.5ex]
+		RF 3.6 & La aplicación deberá dar la opción al usuario de firmar mensajes\\[0.5ex]
+		RF 3.7 & La aplicación deberá dar la opción al usuario de validar mensajes\\[0.5ex]
+		
+		\bottomrule
+	\end{tabular}}
+	\end{center}
+	\caption{Requisitos funcionales de la aplicación Wallet}
+	\label{tab:RF-wallet}
+\end{table}
+
+
 
 
 \subsection{Requisitos no funcionales}
@@ -152,9 +167,13 @@ En los requisitos no funcionales podemos encontrar dos bloques, los referentes a
 
 %El objetivo de este apartado es mostrar en diferentes subapartados los diferentes subproblemas que han aparecido al realizar el proyecto, describiendo las alternativas que se han considerado, y justificando las decisiones que se han adoptado. A veces, especialmente cuando los conceptos utilizados en este apartado son extensos, es necesario clarificarlos previamente en el Capítulo de \textit{Introducción} (sección \textit{Contenidos teóricos para la comprensión del proyecto}). 
 
-Un primer problema que se ha obtenido es la generación y almacenamiento de las claves públicas y privadas. Para no tener problemas de compatibilidad con el formato entre las claves que se necesitan para el algoritmo UOV y las que genera la \textit{blockchain}, se ha optado por añadir un fichero con extensión \texttt{json} que almacena conjuntos de claves tanto las propias de la \textit{blockchain} como las de UOV. De esta forma el algoritmo de firma crea una nueva entrada en el fichero \texttt{data.json} añadiendo las claves pasadas como parámetro y las claves del algoritmo UOV (los $\alpha$ y $\beta$ públicos y privados).\\
+Con la realización de este proyecto se persiguen principalmente dos funcionalidades, la implementación del algoritmo UOV y la integración del mismo en la \textit{blockchain}.\\
+
+Para la implementación del algoritmo ha sido necesario implementar la aritmética de $\mathds{F}_{128}$ puesto que no se ha encontrado ninguna librería de \texttt{python} que trabaje conjuntamente las matrices con cuerpos finitos. Se ha optado por el lenguaje de programación \texttt{python} para el algoritmo porque inicialmente se pensaba trabajar con la \textit{blockchain} implementada en \texttt{python} y no tener problemas a la hora de llamar a las funciones del algoritmo. Sin embargo tras un proceso de investigación se vió mejor opción utilizar la \textit{blockchain} en \texttt{typescript} para hacer uso de la parte gráfica como es la aplicación wallet y el \textit{explorer}. De esta forma se ha visto afectado el diseño inicial puesto que han sido necesarios dos ficheros más de transición entre los ficheros de \texttt{typescript} y \texttt{python}, se entrará en detalle en el capítulo \ref{sec:implementacion}.\\
+
+A la hora de la integración, el primer problema que se ha obtenido es la generación y almacenamiento de las claves públicas y privadas. Para no tener problemas de compatibilidad con el formato entre las claves que se necesitan para el algoritmo UOV y las que genera la \textit{blockchain}, se ha optado por añadir un fichero con extensión \texttt{json} que almacena conjuntos de claves tanto las propias de la \textit{blockchain} como las de UOV. De esta forma el algoritmo de firma crea una nueva entrada en el fichero \texttt{data.json} añadiendo las claves pasadas como parámetro y las claves del algoritmo UOV (los $\alpha$ y $\beta$ públicos y privados).\\
 
 Las claves generadas por el algoritmo UOV se hacen a partir de la clave privada de la creada por la \textit{blockchain}, esto es, los valores aleatorios de la clave privada de UOV ($\alpha$ y $\beta$) se calculan tomando como semilla la clave privada de la \textit{blockchain}. Dando lugar a la unicidad entre claves, ya que el mismo par de claves de la cadena de bloques generará el mismo par de claves con el algoritmo UOV.\\
 
-Un segundo problema se ha obtenido a la hora de realizar la verificación de la firma, se ha notado que la firma del \textit{hash} pasada como parámetro se corta, sin ser esta truncanda en la función firma. Al no encontrar el lugar donde se trunca ha sido necesario cambiar el diseño e incluir un nuevo fichero \texttt{signature.json}, donde se almacena la firma en hexadecimal y en vector. Dicha firma en hexadecimal es la que devuelve la función firma, aunque la función de verificación no reciba el valor completo en hexadecimal no hay problema puesto que se busca en el fichero la firma que comience por el valor recibido. %No unicidad
+Un segundo problema se ha obtenido, en la integración, ha sido que a la hora de realizar la verificación de la firma, se ha notado que la firma del \textit{hash} pasada como parámetro se corta, sin ser esta truncanda en la función firma. Al no encontrar el lugar donde se trunca ha sido necesario cambiar el diseño e incluir un nuevo fichero \texttt{signature.json}, donde se almacena la firma en hexadecimal y en vector. Dicha firma en hexadecimal es la que devuelve la función firma, aunque la función de verificación no reciba el valor completo en hexadecimal no hay problema puesto que se busca en el fichero la firma que comience por el valor recibido. %No unicidad
 

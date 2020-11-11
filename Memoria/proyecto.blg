@@ -22,45 +22,45 @@ Warning--empty year in RPoW
 Warning--empty journal in hyperledger-ark
 
 Done.
-You've used 37 entries,
+You've used 39 entries,
             4024 wiz_defined-function locations,
-            967 strings with 13389 characters,
-and the built_in function-call counts, 14870 in all, are:
-= -- 1073
-> -- 252
-< -- 29
-+ -- 131
-- -- 53
-* -- 529
-:= -- 2412
-add.period$ -- 76
-call.type$ -- 37
-change.case$ -- 55
-chr.to.int$ -- 72
-cite$ -- 42
-duplicate$ -- 1284
-empty$ -- 1544
-format.name$ -- 62
-if$ -- 3308
+            977 strings with 13893 characters,
+and the built_in function-call counts, 16454 in all, are:
+= -- 1188
+> -- 310
+< -- 41
++ -- 163
+- -- 65
+* -- 600
+:= -- 2630
+add.period$ -- 80
+call.type$ -- 39
+change.case$ -- 58
+chr.to.int$ -- 102
+cite$ -- 44
+duplicate$ -- 1398
+empty$ -- 1664
+format.name$ -- 75
+if$ -- 3672
 int.to.chr$ -- 0
-int.to.str$ -- 37
-missing$ -- 286
-newline$ -- 134
-num.names$ -- 30
-pop$ -- 837
+int.to.str$ -- 39
+missing$ -- 311
+newline$ -- 140
+num.names$ -- 32
+pop$ -- 903
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1183
+skip$ -- 1300
 stack$ -- 0
-substring$ -- 246
-swap$ -- 728
-text.length$ -- 5
+substring$ -- 320
+swap$ -- 821
+text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 37
+type$ -- 39
 warning$ -- 5
-while$ -- 42
-width$ -- 39
-write$ -- 294
+while$ -- 48
+width$ -- 41
+write$ -- 311
 (There was 1 error message)

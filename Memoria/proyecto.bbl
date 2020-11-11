@@ -170,6 +170,17 @@ A.~Kipnis, J.~Patarin, and L.~Goubin, ``Unbalanced oil and vinegar signature
   of Cryptographic Techniques}.\hskip 1em plus 0.5em minus 0.4em\relax
   Springer, 1999, pp. 206--222.
 
+\bibitem{devops-redhat}
+RedHat, ``{Concepto de DevOps},''
+  \url{https://www.redhat.com/es/topics/devops}.
+
+\bibitem{docker-devops}
+S.~Metzger, D.~Durden, C.~Sturtevant, H.~Luo, N.~Pingintha-Durden, T.~Sachs,
+  A.~Serafimovich, J.~Hartmann, J.~Li, K.~Xu \emph{et~al.}, ``eddy4r 0.2. 0: a
+  devops model for community-extensible processing and analysis of
+  eddy-covariance data based on r, git, docker, and hdf5,'' \emph{Geoscientific
+  Model Development}, vol.~10, pp. 3193--3194, 2017.
+
 \bibitem{schnorr}
 M.~Beunardeau, A.~Connolly, H.~Ferradi, R.~G{\'e}raud, D.~Naccache, and
   D.~Vergnaud, ``Reusing nonces in schnorr signatures,'' in \emph{European
