@@ -1,6 +1,6 @@
 \chapter{Introducción}
 
-El objetivo de este proyecto es evitar que un sistema \textit{blockchain} sea vulnerable a futuros ataques cuánticos. Para ello se ha implementado un algoritmo criptográfico resistente a ordenadores cuánticos, denominado \acrshort{uov}, para la firma de documentos, y posteriormente se ha integrado en la \textit{blockchain} ARK.
+El objetivo de este proyecto es evitar que un sistema \textit{blockchain} sea vulnerable a futuros ataques cuánticos. Para ello se ha implementado un algoritmo criptográfico resistente a ordenadores cuánticos, denominado \acrshort{uov}, para la firma de bloques, y posteriormente se ha integrado en la \textit{blockchain} ARK.
 
 \section{Motivación y contexto del proyecto}
 \label{sec:intro:motivacion} %Esto se pone si queremos hacer referencia a esta sección
@@ -96,7 +96,7 @@ Un ejemplo del uso de las \textit{blockchain} queda reflejado en este proyecto e
 
 \section{Objetivos del proyecto y logros conseguidos}
 \label{sec:intro:objetivos}
-El objetivo de este proyecto es modificar el algoritmo de firma y verificación tanto de las transacciones como de los bloques de la \textit{blockchain} ARK, para hacerla resistente a ataques cuánticos.\\
+El objetivo de este proyecto es modificar el algoritmo de firma y verificación de los bloques de la \textit{blockchain} ARK, para hacerla resistente a ataques cuánticos.\\
 
 \begin{itemize}
 	\item Implementación del algoritmo \acrshort{uov}: Se ha implementado las funciones de generación de claves tanto públicas como privadas, la función de firma a partir de la clave privada y la función de verificación de la misma con la clave pública. Además ha sido necesario implementar la aritmética de cuerpo finito de $2^7$ elementos.

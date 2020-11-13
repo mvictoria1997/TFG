@@ -1,3 +1,48 @@
 \chapter{Evaluación y pruebas}
 
-En este capítulo se debe proporcionar una medida objetiva de las bondades y beneficios de la solución propuesta, tanto en términos absolutos, como –en la medida de lo posible- comparándola con otras soluciones. Dependiendo del tipo de proyecto, debe incluir los resultados experimentales obtenidos al probar la solución; también puede incluir una tabla o diagrama de los costes reales del desarrollo, para así establecer conclusiones respecto a la planificación y costes estimados a priori. Finalmente, cuando se trata del desarrollo de una aplicación software, se pueden definir baterías de pruebas a realizar, de modo que en este capítulo se especificarán qué pruebas se han realizado, los resultados esperados y los resultados obtenidos. 
+%En este capítulo se debe proporcionar una medida objetiva de las bondades y beneficios de la solución propuesta, tanto en términos absolutos, como –en la medida de lo posible- comparándola con otras soluciones. Dependiendo del tipo de proyecto, debe incluir los resultados experimentales obtenidos al probar la solución; también puede incluir una tabla o diagrama de los costes reales del desarrollo, para así establecer conclusiones respecto a la planificación y costes estimados a priori. Finalmente, cuando se trata del desarrollo de una aplicación software, se pueden definir baterías de pruebas a realizar, de modo que en este capítulo se especificarán qué pruebas se han realizado, los resultados esperados y los resultados obtenidos. 
+
+Se han llevado a cabo pruebas sobre los tiempos de ejecución del algoritmo criptográfico UOV. Se han comparado dichos tiempos en dos lenguajes de programación \texttt{python} y \texttt{sage}. Por otra parte las pruebas de la integración han sido realizar una transacción y ver que esa transacción se encuentra en un bloque.\\
+
+
+\section{Pruebas algoritmo criptográfico}
+
+El tiempo de ejecución del algoritmo se lo lleva en gran parte la generación de la clave pública. En esta función para cada ${alpha_{pub}}_k$, con $k \in \{1,\cdots, v\}$, es necesario multiplicar tres matrices de órdenes $n \times n$, $m \times n$, y $n \times n$, respectivamente. De esta forma la complejidad de la multiplicación de matrices es de $\mathds{O}(n^3)$ por $v$, se obtiene que la complejidad de la generación de $alpha_{pub}$ es de $\mathds{O}(n^4)$.\\
+
+En el caso de $beta_{pub}$, hay que multiplicar $v$ un vector por de tamaño $n$ por un matriz de dimensiones $n \times n$. Así la complejidad del cálculo de $beta_{pub}$ es de $\mathds{O}(n^3)$.\\
+
+Entonces la complejidad de dicha función es de órden $\mathds{O}(n^4)$.\\
+
+La tabla \ref{tab:tiempos} muestra algunos tiempos de ejecución al calcular la clave pública. Se han comparado los tiempos de ejecución en \texttt{python} y en un lenguaje de programación matemático, \texttt{sagemath}. Vemos que los tiempos en \texttt{python} son considerablemente mayores, más aún con valores de $m$ y $v$ grandes, una razón es por que las funciones de \texttt{python} han sido implementadas y no son de una biblioteca como las de \texttt{sage} que siempre son más óptimas.\\ 
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{p{0.07\linewidth}p{0.07\linewidth}p{0.3\linewidth}p{0.3\linewidth}}
+			\textbf{m} & \textbf{v} & \textbf{Tiempo (mm' ss'')} \texttt{python} & \textbf{Tiempo (mm' ss'')} \texttt{sagemath}\\
+			\toprule
+				$57$ & $197$ & $3'34.65''$ & $0.012''$\\
+				$44$ & $151$ & $1'15.61''$ & $0.007''$\\
+				$35$ & $191$ & $29.61''$ & $0.009''$\\ 
+				$19$ & $65$ & $2.77''$ & $0.006''$\\
+				$10$ & $30$ & $0.17''$ & $0.004''$\\
+				$3$ & $3$ & $0.0004''$ & $0.003''$\\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+	\caption{Tiempos de generación de la clave pública}
+	\label{tab:tiempos}
+\end{table}
+
+Para la implementación en la \textit{blockchain} se ha optado por los valores de $m$ y $v$, $3$ y $3$, respectivamente. De esta forma los bloques se firmarán rápidamente y las firmas serán más pequeñas. Así para será más didáctico ya que dichas firmas podrán visualizarse mejor y entender que significa.\\
+
+La ventaja al integrar el algoritmo en \textit{blockchain} será que hará la cadena de bloques más segura, sobre todo cuanto mayores sean los valores de $m$ y $v$. Por contra disminuirá el rendimiento, ya que para esos valores de $m$ y $v$ los tiempos serán más elevados.\\
+
+\section{Pruebas de integración}
+
+Para ver que la integración funciona correctamente se han seguido unos pasos.\\ 
+
+En primer lugar se ha instalado e iniciado el \textit{core}, y se han mostrado los logs del mismo para comprobar que no haya ningún error.\\
+
+A continuación, se ha abierto la aplicación Wallet para realizar una transacción, en los mismos logs del core se ha mostrado que la transacción es válida y que se ha almacenado en un bloque.
+
+Por último, en el \textit{explorer} se buscan la transacción y el bloque en el que se ha almacenado. Otra forma de comprobar la firma del bloque es mirando en la API.

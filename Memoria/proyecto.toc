@@ -36,6 +36,8 @@
 \contentsline {subsection}{\numberline {6.2.2}Funciones con matrices}{53}{subsection.6.2.2}
 \contentsline {subsection}{\numberline {6.2.3}Funciones algoritmo UOV}{57}{subsection.6.2.3}
 \contentsline {chapter}{\numberline {7}Evaluaci\IeC {\'o}n y pruebas}{63}{chapter.7}
+\contentsline {section}{\numberline {7.1}Pruebas algoritmo criptogr\IeC {\'a}fico}{63}{section.7.1}
+\contentsline {section}{\numberline {7.2}Pruebas de integraci\IeC {\'o}n}{64}{section.7.2}
 \contentsline {chapter}{\numberline {8}Conclusiones}{65}{chapter.8}
 \contentsline {section}{\numberline {8.1}Valoraci\IeC {\'o}n personal}{65}{section.8.1}
 \contentsline {chapter}{Bibliograf\IeC {\'\i }a}{70}{chapter*.9}
