@@ -25,7 +25,7 @@
 \contentsline {section}{\numberline {4.1}Especificaci\IeC {\'o}n de requisitos}{34}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Requisitos funcionales}{34}{subsection.4.1.1}
 \contentsline {subsection}{\numberline {4.1.2}Requisitos no funcionales}{36}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}An\IeC {\'a}lisis}{38}{section.4.2}
+\contentsline {section}{\numberline {4.2}An\IeC {\'a}lisis}{37}{section.4.2}
 \contentsline {chapter}{\numberline {5}Dise\IeC {\~n}o}{39}{chapter.5}
 \contentsline {chapter}{\numberline {6}Implementaci\IeC {\'o}n}{41}{chapter.6}
 \contentsline {section}{\numberline {6.1}Ecosistema ARK}{41}{section.6.1}
@@ -39,7 +39,6 @@
 \contentsline {section}{\numberline {7.1}Pruebas algoritmo criptogr\IeC {\'a}fico}{63}{section.7.1}
 \contentsline {section}{\numberline {7.2}Pruebas de integraci\IeC {\'o}n}{64}{section.7.2}
 \contentsline {chapter}{\numberline {8}Conclusiones}{65}{chapter.8}
-\contentsline {section}{\numberline {8.1}Valoraci\IeC {\'o}n personal}{65}{section.8.1}
 \contentsline {chapter}{Bibliograf\IeC {\'\i }a}{70}{chapter*.9}
 \contentsline {chapter}{Glosario de siglas}{71}{chapter*.11}
 \contentsline {chapter}{\numberline {A}Manual de usuario}{73}{appendix.Alph1}
