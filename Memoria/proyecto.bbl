@@ -181,9 +181,21 @@ S.~Metzger, D.~Durden, C.~Sturtevant, H.~Luo, N.~Pingintha-Durden, T.~Sachs,
   eddy-covariance data based on r, git, docker, and hdf5,'' \emph{Geoscientific
   Model Development}, vol.~10, pp. 3193--3194, 2017.
 
+\bibitem{deployer}
+J.~Renken, ``Ark deployer launch: Creating your own blockchain in three simple
+  steps,'' 2019.
+
 \bibitem{BD-ARK}
 DocumentationARK, ``{Glosario de ARK -- Base de datos},''
   \url{https://ark.dev/docs/glossary/glossary#database}.
+
+\bibitem{wallet}
+DocumentationARK, ``{Desktop Wallet ARK},''
+  \url{https://ark.io/desktop-wallet}.
+
+\bibitem{explorer}
+DocumentationARK, ``{What is a block explorer?}''
+  \url{https://arkdoc-23.docs.uns.network/tutorials/usage-guides/how-to-use-ark-explorer.html}.
 
 \bibitem{schnorr}
 M.~Beunardeau, A.~Connolly, H.~Ferradi, R.~G{\'e}raud, D.~Naccache, and

@@ -20,47 +20,48 @@ Warning--empty journal in computacion-cuantica-wiki
 Warning--missing school in arbol-merkle
 Warning--empty year in RPoW
 Warning--empty journal in hyperledger-ark
+Warning--empty journal in deployer
 
 Done.
-You've used 40 entries,
+You've used 43 entries,
             4024 wiz_defined-function locations,
-            982 strings with 14008 characters,
-and the built_in function-call counts, 16791 in all, are:
-= -- 1212
-> -- 314
+            992 strings with 14296 characters,
+and the built_in function-call counts, 17774 in all, are:
+= -- 1283
+> -- 326
 < -- 41
-+ -- 165
-- -- 66
-* -- 609
-:= -- 2687
-add.period$ -- 82
-call.type$ -- 40
-change.case$ -- 60
++ -- 171
+- -- 69
+* -- 637
+:= -- 2861
+add.period$ -- 88
+call.type$ -- 43
+change.case$ -- 65
 chr.to.int$ -- 102
-cite$ -- 45
-duplicate$ -- 1430
-empty$ -- 1700
-format.name$ -- 76
-if$ -- 3745
+cite$ -- 49
+duplicate$ -- 1524
+empty$ -- 1803
+format.name$ -- 79
+if$ -- 3957
 int.to.chr$ -- 0
-int.to.str$ -- 40
-missing$ -- 319
-newline$ -- 143
-num.names$ -- 33
-pop$ -- 927
+int.to.str$ -- 43
+missing$ -- 340
+newline$ -- 152
+num.names$ -- 36
+pop$ -- 990
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1326
+skip$ -- 1403
 stack$ -- 0
-substring$ -- 323
-swap$ -- 837
+substring$ -- 330
+swap$ -- 882
 text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 40
-warning$ -- 5
-while$ -- 49
-width$ -- 42
-write$ -- 318
+type$ -- 43
+warning$ -- 6
+while$ -- 52
+width$ -- 45
+write$ -- 339
 (There was 1 error message)

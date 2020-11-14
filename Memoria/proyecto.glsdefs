@@ -1,33 +1,3 @@
-\ifglsentryexists{rsa}{}%
-{%
-\gls@defglossaryentry{rsa}%
-{%
-name={\acronymfont {\glsentryshort {rsa}}},%
-sort={RSA},%
-type={acronym},%
-first={RSA},%
-firstplural={RSAs},%
-text={RSA},%
-plural={RSAs},%
-description={Rivest, Shamir y Adleman},%
-descriptionplural={Rivest, Shamir y Adleman},%
-symbol={\relax },%
-symbolplural={\relax },%
-user1={},%
-user2={},%
-user3={},%
-user4={},%
-user5={},%
-user6={},%
-long={Rivest, Shamir y Adleman},%
-longplural={Rivest, Shamir y Adlemans},%
-short={RSA},%
-shortplural={RSAs},%
-counter={page},%
-parent={},%
-%
-}%
-}%
 \ifglsentryexists{dsa}{}%
 {%
 \gls@defglossaryentry{dsa}%
@@ -83,6 +53,126 @@ long={Elliptic Curve Digital Signature Algorithm},%
 longplural={Elliptic Curve Digital Signature Algorithms},%
 short={ECDSA},%
 shortplural={ECDSAs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ios}{}%
+{%
+\gls@defglossaryentry{ios}%
+{%
+name={\acronymfont {\glsentryshort {ios}}},%
+sort={iOS},%
+type={acronym},%
+first={iOS},%
+firstplural={iOSs},%
+text={iOS},%
+plural={iOSs},%
+description={iPhone Operative System},%
+descriptionplural={iPhone Operative System},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={iPhone Operative System},%
+longplural={iPhone Operative Systems},%
+short={iOS},%
+shortplural={iOSs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{pbft}{}%
+{%
+\gls@defglossaryentry{pbft}%
+{%
+name={\acronymfont {\glsentryshort {pbft}}},%
+sort={PBFT},%
+type={acronym},%
+first={PBFT},%
+firstplural={PBFTs},%
+text={PBFT},%
+plural={PBFTs},%
+description={Practical Byzantine Fault Tolerance},%
+descriptionplural={Practical Byzantine Fault Tolerance},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Practical Byzantine Fault Tolerance},%
+longplural={Practical Byzantine Fault Tolerances},%
+short={PBFT},%
+shortplural={PBFTs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{rpow}{}%
+{%
+\gls@defglossaryentry{rpow}%
+{%
+name={\acronymfont {\glsentryshort {rpow}}},%
+sort={RPoW},%
+type={acronym},%
+first={RPoW},%
+firstplural={RPoWs},%
+text={RPoW},%
+plural={RPoWs},%
+description={Reusable Proof-Of-Work},%
+descriptionplural={Reusable Proof-Of-Work},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Reusable Proof-Of-Work},%
+longplural={Reusable Proof-Of-Works},%
+short={RPoW},%
+shortplural={RPoWs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{rsa}{}%
+{%
+\gls@defglossaryentry{rsa}%
+{%
+name={\acronymfont {\glsentryshort {rsa}}},%
+sort={RSA},%
+type={acronym},%
+first={RSA},%
+firstplural={RSAs},%
+text={RSA},%
+plural={RSAs},%
+description={Rivest, Shamir y Adleman},%
+descriptionplural={Rivest, Shamir y Adleman},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Rivest, Shamir y Adleman},%
+longplural={Rivest, Shamir y Adlemans},%
+short={RSA},%
+shortplural={RSAs},%
 counter={page},%
 parent={},%
 %
