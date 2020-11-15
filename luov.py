@@ -304,7 +304,6 @@ def clavePrivada (m, v):
                else:
                   row += [1]
          aux += [row]
-         print ([row])
       alpha += [aux]
 
 
@@ -416,16 +415,16 @@ def signature(hashed, alpha_F2, beta_F2, m, v, T):
    """
    alpha = matrix3d_F2to128(alpha_F2)
    beta = matrix_F2to128(beta_F2)
-   print("beta riv 128")
-   print (beta)
+   #print("beta riv 128")
+   #print (beta)
 
    vinagre = []
    for k in range(v):
       aux = randint(0, 127)
       vinagre += [F128(aux)]
    #vinagre = [[0, 1, 1, 0, 1, 0, 0], [1, 1, 1, 1, 1, 0, 0],[1, 1, 1, 1, 0, 0, 1]]
-   print ("vinagre")
-   print(vinagre)
+   #print ("vinagre")
+   #print(vinagre)
    coef = []
    term = []
 
@@ -435,24 +434,24 @@ def signature(hashed, alpha_F2, beta_F2, m, v, T):
       coef += matrix_sum([A[0][v:n]], [beta[k][v:n]])
       v_suma = suma (matrix_product([A[0][0:v]], matrix_transpose([vinagre]))[0][0], matrix_product([beta[k][0:v]], matrix_transpose([vinagre]))[0][0])
       term += [suma(hashed[k], v_suma)]
-      print ("A")
-      print (A)
-      print ("v_suma")
-      print (v_suma)
-      print("b")
-      print ([beta[k][v:n]])
-      print("A")
-      print ([A[0][v:n]])
+      #print ("A")
+      #print (A)
+      #print ("v_suma")
+      #print (v_suma)
+      #print("b")
+      #print ([beta[k][v:n]])
+      #print("A")
+      #print ([A[0][v:n]])
 
-   print ("coef")
-   print (coef)
-   print("term")
-   print(term)
+   #print ("coef")
+   #print (coef)
+   #print("term")
+   #print(term)
 
 
    oil = matrix_rref(coef, matrix_transpose([term]))
-   print ("oil")
-   print(oil)
+   #print ("oil")
+   #print(oil)
    aux = []
    aux += vinagre + matrix_transpose(oil)[0]
    firma = matrix_product([aux], matrix_transpose(matrix_F2to128(T))) #T = T.inverse()
@@ -484,10 +483,10 @@ def verificacion(hashed, firma, alpha_pub_F2, beta_pub_F2, m):
       aux_alpha = matrix_product(matrix_product ([firma], alpha_pub[k]), matrix_transpose([firma]))
       aux_beta = matrix_product (beta_pub[k], matrix_transpose([firma]))
       verif = verif and (hashed[k] == matrix_sum(aux_alpha,  aux_beta)[0][0])
-      print ("aux_alpha")
-      print (aux_alpha)
-      print ("aux_beta")
-      print (aux_beta)
+      #print ("aux_alpha")
+      #print (aux_alpha)
+      #print ("aux_beta")
+      #print (aux_beta)
    return verif
 
 #------------------------------------------------------------------
@@ -830,12 +829,12 @@ def main():
 
    #Number of vinegar and oil
    #r, m, v = 7, 83, 283
-   #r, m, v =7, 57, 197
-   #r, m, v= 7, 44, 151 este es el bueno
-   #r, m, v = 7, 35, 121
-   #r, m, v = 7, 19, 65
-   #r, m, v = 7, 10, 30 #con este tamaño funciona
-   r, m, v = 7, 2, 2
+   #m, v = 57, 197
+   m, v= 44, 151 #este es el bueno
+   #m, v = 35, 121
+   #m, v =  19, 65
+   #m, v = 10, 30 #con este tamaño funciona
+   #m, v = 3, 3
    n = m + v
 
    #Private key
@@ -843,30 +842,30 @@ def main():
    #alpha = [[[1,0,1,1,1,0], [0, 0, 0, 0, 1, 1], [0,0,0,1,1,1]], [[1,1,0,1,1,0], [0, 0, 1, 1, 1, 0,], [0,0,1,1,1,1]], [[0,0,0,1,0,0], [0, 0, 1, 1, 0, 1], [0,0,0,0,1,1]]]
 
    #beta = [[1,0,0,1,0,0],[0,0,1,0,1,0],[1,1,0,1,0,1]]
-   print ("alpha priv")
-   print (alpha)
-   print ("beta priv")
-   print (beta)
+   #print ("alpha priv")
+   #print (alpha)
+   #print ("beta priv")
+   #print (beta)
 
    T = generacionT(m, v)
    #T = [[1,0,0,0,0,0], [0,1,0,0,0,1], [0,0,1,1,0,1], [0,0,0,1,0,0], [0,0,0,0,1,0],[0,0,0,0,0,1]]
-   print ("T")
-   print (T)
+   #print ("T")
+   #print (T)
 
    #Publics keys
    alpha_pub, beta_pub = clavePublica(m, v, alpha, beta, T)
-   print ("alpha pub")
-   print (alpha_pub)
-   print ("beta pub")
-   print (beta_pub)
+   #print ("alpha pub")
+   #print (alpha_pub)
+   #print ("beta pub")
+   #print (beta_pub)
 
    #Signature
    mensaje = "Este mensaje es un mensaje de prueba. Quiero se sea un poco largo para que se aprecie el efecto de la función hash"
    hashed = hashlib.sha256(mensaje.encode('utf-8')).hexdigest()[0:m]
 
    hashed_message = []
-   print ("hashh")
-   print (hashed)
+   #print ("hashh")
+   #print (hashed)
 
    for i in range(len(hashed)):
       hashed_message += [bin(int(hashed[i], 16))[2:]] #Pasa a binario el hash
