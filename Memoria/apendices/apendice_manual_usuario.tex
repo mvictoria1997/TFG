@@ -127,7 +127,7 @@ Actualizar los paquete e instalar algunos nuevos como \texttt{git}, \texttt{curl
 
 \begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte IV, label=cod:update, style=Consola]
 	$ sudo apt-get update
-	$ sudo apt-get install git curl yarn jq apt-transport-https nano
+	$ sudo apt-get install git curl jq apt-transport-https nano
 \end{lstlisting}
 
 Instalar las dependencias \texttt{nvm}, código \ref{cod:nvm}, es necesario para instalar posteriormente el paquete \texttt{pm2}.\\
@@ -254,7 +254,7 @@ El archivo de configuración \path{/home/<USUARIO>/deployer/config.sample.conf} 
 \end{itemize}
 
 \begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte XI, label=cod:install-bridgechain, style=Consola]
-	$ ./deployer/bridgechain.sh install-core --config deployer/config.sample.conf --autoinstall-deps --non-interactive
+	$ ./deployer/bridgechain.sh install-core --config deployer/config.sample.json --autoinstall-deps --non-interactive
 \end{lstlisting}
 
 \begin{figure}[H]
@@ -267,7 +267,7 @@ El archivo de configuración \path{/home/<USUARIO>/deployer/config.sample.conf} 
 A continuación se instalará el explorer para poder ver las transacciones y bloques generados, código \ref{cod:install-explorer}.
 
 \begin{lstlisting}[language=Bash,caption=Instalación \textit{blockchain}. Parte XII, label=cod:install-explorer, style=Consola]
-	$ ./deployer/bridgechain.sh install-explorer --config deployer/config.sample.conf --skip-deps --non-interactive
+	$ ./deployer/bridgechain.sh install-explorer --config deployer/config.sample.json --skip-deps --non-interactive
 \end{lstlisting}
 
 
