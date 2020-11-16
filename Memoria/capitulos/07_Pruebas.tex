@@ -2,7 +2,7 @@
 
 %En este capítulo se debe proporcionar una medida objetiva de las bondades y beneficios de la solución propuesta, tanto en términos absolutos, como –en la medida de lo posible- comparándola con otras soluciones. Dependiendo del tipo de proyecto, debe incluir los resultados experimentales obtenidos al probar la solución; también puede incluir una tabla o diagrama de los costes reales del desarrollo, para así establecer conclusiones respecto a la planificación y costes estimados a priori. Finalmente, cuando se trata del desarrollo de una aplicación software, se pueden definir baterías de pruebas a realizar, de modo que en este capítulo se especificarán qué pruebas se han realizado, los resultados esperados y los resultados obtenidos. 
 
-Se han llevado a cabo pruebas sobre los tiempos de ejecución del algoritmo criptográfico UOV. Se han comparado dichos tiempos en dos lenguajes de programación \texttt{python} y \texttt{sage}. Por otra parte las pruebas de la integración han sido realizar una transacción y ver que esa transacción se encuentra en un bloque.\\
+Se han llevado a cabo pruebas sobre los tiempos de ejecución del algoritmo criptográfico UOV. Se han comparado dichos tiempos en dos lenguajes de programación \texttt{python} y \texttt{SageMath}. Por otra parte las pruebas de la integración han sido realizar una transacción y ver que esa transacción se encuentra en un bloque.\\
 
 
 \section{Pruebas algoritmo criptográfico}
@@ -13,12 +13,12 @@ En el caso de $beta_{pub}$, hay que multiplicar $v$ un vector por de tamaño $n$
 
 Entonces la complejidad de dicha función es de órden $\mathds{O}(n^4)$.\\
 
-La tabla \ref{tab:tiempos} muestra algunos tiempos de ejecución al calcular la clave pública. Se han comparado los tiempos de ejecución en \texttt{python} y en un lenguaje de programación matemático, \texttt{sagemath}. Vemos que los tiempos en \texttt{python} son considerablemente mayores, más aún con valores de $m$ y $v$ grandes, una razón es por que las funciones de \texttt{python} han sido implementadas y no son de una biblioteca como las de \texttt{sage} que siempre son más óptimas.\\ 
+La tabla \ref{tab:tiempos} muestra algunos tiempos de ejecución al calcular la clave pública. Se han comparado los tiempos de ejecución en \texttt{python} y en un lenguaje de programación matemático, \texttt{SageMath}. Vemos que los tiempos en \texttt{python} son considerablemente mayores, más aún con valores de $m$ y $v$ grandes, una razón es por que las funciones de \texttt{python} han sido implementadas y no son de una biblioteca como las de \texttt{SageMath} que siempre son más óptimas.\\ 
 
 \begin{table}[H]
 	\begin{center}
 		\begin{tabular}{p{0.07\linewidth}p{0.07\linewidth}p{0.3\linewidth}p{0.3\linewidth}}
-			\textbf{m} & \textbf{v} & \textbf{Tiempo (mm' ss'')} \texttt{python} & \textbf{Tiempo (mm' ss'')} \texttt{sagemath}\\
+			\textbf{m} & \textbf{v} & \textbf{Tiempo (mm' ss'')} \texttt{python} & \textbf{Tiempo (mm' ss'')} \texttt{SageMath}\\
 			\toprule
 				$57$ & $197$ & $3'34.65''$ & $0.012''$\\
 				$44$ & $151$ & $1'15.61''$ & $0.007''$\\
@@ -41,8 +41,8 @@ La ventaja al integrar el algoritmo en \textit{blockchain} será que hará la ca
 
 Para ver que la integración funciona correctamente se han seguido unos pasos.\\ 
 
-En primer lugar se ha instalado e iniciado el \textit{core}, y se han mostrado los logs del mismo para comprobar que no haya ningún error.\\
+En primer lugar se ha instalado e iniciado el \textit{core}, y se han mostrado los logs del mismo para comprobar que no haya ningún error durante la firma de los bloques que se vayan generando.\\
 
-A continuación, se ha abierto la aplicación Wallet para realizar una transacción, en los mismos logs del core se ha mostrado que la transacción es válida y que se ha almacenado en un bloque.
+Posteriormente, se ha abierto la aplicación Wallet para realizar una transacción, en los mismos logs del core se ha mostrado que la transacción es válida y que se ha almacenado en un bloque. Esta parte no se ha podido cumplimentar, ya que los bloques con una transacción no se firman correctamente.\\
 
-Por último, en el \textit{explorer} se buscan la transacción y el bloque en el que se ha almacenado. Otra forma de comprobar la firma del bloque es mirando en la API.
+Por último, en el \textit{explorer} de ARK se buscan la transacción y el bloque en el que se ha almacenado, se puede ver la información referente al bloque como quién lo ha firmado, cuándo se ha creado el bloque o el número de transacciones. Si se desea visualizar la firma de un bloque  hay que acceder a la API y buscar el bloque en cuestión, por la ID.

@@ -230,12 +230,12 @@ Para empezar se indican los parámetros que serán de utilidad para entender el 
 	%\item $\mathcal{G}$: Función salida extensible se usa para la generación de la clave pública a partir de una semilla privada.
 \end{itemize}
 
-$\mathcal{P}: \mathds{F}_{2^r}^n \rightarrow \mathds{F}_{2^r}^m$, esta función se puede descomponer como $\mathcal{P} = \mathcal{F} \circ \mathcal{T}$, donde $\mathcal{T}: \mathds{F}_{2^r}^n \rightarrow \mathds{F}_{2^r}^n$ es invertible, y $\mathcal{F}: \mathds{F}_{2^r}^n \rightarrow \mathds{F}_{2^r}^m$ siendo sus $m$ componentes de la forma:
+El esquema de la firma UOV utiliza la función unidireccional $\mathcal{P}: \mathds{F}_{2^r}^n \rightarrow \mathds{F}_{2^r}^m$, que es una función cuadrática multivariante en $n = m + v$ variables. Esta función se puede descomponer como $\mathcal{P} = \mathcal{F} \circ \mathcal{T}$, donde $\mathcal{T}: \mathds{F}_{2^r}^n \rightarrow \mathds{F}_{2^r}^n$ es linear invertible, y $\mathcal{F}: \mathds{F}_{2^r}^n \rightarrow \mathds{F}_{2^r}^m$  función cuadrática cuyas $m$ componentes son de la forma:
 
 \begin{equation}\label{eq:fun}
 f_k(x) = \sum_{i=1}^v \sum_{j=i}^n \alpha_{i,j,k} x_i x_j + \sum_{i=1}^n \beta_{i,k} x_i
 \end{equation}
-donde $\alpha_{i,j,k}$ y $\beta_{i,k}$ se toman aleatoriamente en $\mathds{F}_2$ siendo $\left(\alpha_{i,j,k}\right)_{\begin{subarray}{l}{1\leqslant i \leqslant v }\\ {1 \leqslant j \leqslant n}\end{subarray}}$ un vector de matrices triangulares superiores. De esta manera será más eficiente y no afectará a la seguridad del algoritmo. Se entiende por matriz triangular superior, una matriz no necesariamente cuadrada que tiene debajo de la primera diagonal valores nulos
+donde $\alpha_{i,j,k}$ y $\beta_{i,k}$ se toman aleatoriamente en $\mathds{F}_2$ siendo $\left(\alpha_{i,j,k}\right)_{\begin{subarray}{l}{1\leqslant i \leqslant v }\\ {1 \leqslant j \leqslant n}\end{subarray}}$ un vector de matrices triangulares superiores. De esta manera será más eficiente y no afectará a la seguridad del algoritmo. Se entiende por matriz triangular superior, una matriz no necesariamente cuadrada que tiene debajo de la primera diagonal valores nulos. Las primeras $v$ variables, $x_1,\cdots,x_v$ son las variables vinagres y las $m$ variables restantes son las variables aceite.
 
 
 
@@ -258,7 +258,7 @@ La clave pública se va a definir para cada $k\in \{1, \dots, m\}$ de la siguien
 	\item ${\beta_{pub}}_k = \left(\beta_{j,k}\right)_{1\leqslant j\leqslant n}\ T$
 \end{itemize}
 
-A continuación se va a justificar porqué se toman estos valores de la clave pública. Primero se pasan las $m$ ecuaciones (\ref{eq:fun}) a forma matricial, ecuación (\ref{eq:matriz}). La notación a seguir para las matrices transpuestas es $X^{\scriptscriptstyle T}$, con $X$ una matriz.
+Ahora se va a justificar porqué se toman estos valores de la clave pública. Primero se pasan las $m$ ecuaciones (\ref{eq:fun}) a forma matricial, ecuación (\ref{eq:matriz}). La notación a seguir para las matrices transpuestas es $X^{\scriptscriptstyle T}$, con $X$ una matriz.
 
 \begin{equation}\label{eq:matriz} 
 	f_k(x) = x^v\ \left(\alpha_{i,j,k}\right)_{\begin{subarray}{l}{1\leqslant i \leqslant v }\\ {i \leqslant j \leqslant n}\end{subarray}}\ \left(x^v, x^m \right)^{\scriptscriptstyle T} + \left(\beta_{i,k}\right)_{1\leqslant i \leqslant v }\ \left(x^v, x^m\right)^{\scriptscriptstyle T}
@@ -353,7 +353,7 @@ Para comprobar que el mensaje es correcto y que no ha sufrido ninguna transforma
 
 \subsection{Ejemplo}
 
-A continuación se muestra un ejemplo para mejor comprensión del algoritmo \acrshort{uov} utilizando valores de $m$ y $v$ pequeños, ambos con valor $3$, y dejando fijo el valor de $r$ igual a $7$.
+Se muestra un ejemplo para mejor comprensión del algoritmo \acrshort{uov} utilizando valores de $m$ y $v$ pequeños, ambos con valor $3$, y dejando fijo el valor de $r$ igual a $7$.
 
 Generamos la clave privada con valores aleatorios. Notamos que las matrices del vector $\alpha_{priv}$, ecuación (\ref{eq:ej-alpha-priv}), son matrices triangulares superiores de dimensión $3\ \times\ 6$, esto es dimensión $m\ \times\ n$. Además el número de matrices es $3$ el valor de $v$.
 
