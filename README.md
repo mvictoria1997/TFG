@@ -1,6 +1,6 @@
 # TFG
 <p align="center">
-  <img width="460" height="200" src="Memoria/portada/imagenes/logo.png">
+  <img width="360" height="200" src="Memoria/portada/imagenes/logo.png">
 </p>
 Repositorio del trabajo fin de grado realizado por María Victoria Granados Pozo del Doble Grado de Ingeniería Informática y Matemáticas de la Universidad de Granada.
 
