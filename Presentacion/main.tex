@@ -1,0 +1,222 @@
+% !TEX encoding = UTF-8 Unicode
+\documentclass[10pt,aspectratio=169,]{beamer}
+\setbeamercovered{transparent=10}
+\usetheme[
+%  showheader,
+%  red,
+  purple,
+%  gray,
+%  graytitle,
+  colorblocks,
+%  noframetitlerule,
+]{Verona}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lipsum}
+\usepackage{tikz}
+\usetikzlibrary{fadings}
+\usepackage{multimedia}
+\usepackage{media9}
+
+%
+%\setbeamertemplate{sections/subsections in toc}[ball]
+\usepackage{listings}
+\usepackage{caption}
+\usepackage{subcaption}
+\usefonttheme{professionalfonts}
+\def\mathfamilydefault{\rmdefault}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{bm}
+\setbeamertemplate{section in toc}{\hspace*{1em}\inserttocsectionnumber.~\inserttocsection\par}
+\setbeamertemplate{subsection in toc}{\hspace*{2em}\inserttocsectionnumber.\inserttocsubsectionnumber.~\inserttocsubsection\par}
+\setbeamerfont{subsection in toc}{size=\small}
+\AtBeginSection[]{%
+	\begin{frame}%
+		\frametitle{Outline}%
+		\textbf{\tableofcontents[currentsection]} %
+	\end{frame}%
+}
+
+
+
+\newcommand{\sectionpagemod}{
+	\begingroup
+    \beamertemplateshadingbackground{structure.fg!90}{structure.fg}
+    \setbeamercolor{section page}{fg=white}
+    \setbeamertemplate{section page}{
+    \begin{tikzpicture}                                             %edit this tikzpicture to customize the appearance of the section heading
+        \node[overlay] {\insertsectionhead};
+    \end{tikzpicture}
+    }
+    \frame{\vfill
+	\begin{center}{\textbf{\Huge \sectionpage}}\end{center}
+	\vfill}
+    \endgroup
+}
+
+\newcommand{\subsectionpagemod}{
+	\begingroup
+    \beamertemplateshadingbackground{structure.fg!90}{structure.fg}
+    \setbeamercolor{subsection page}{fg=white}
+    \setbeamertemplate{subsection page}{
+    \begin{tikzpicture}                                             %edit this tikzpicture to customize the appearance of the section heading
+        \node[overlay] {\insertsubsectionhead};
+    \end{tikzpicture}
+    }
+    \frame{\vfill
+	\begin{center}{\Huge \color{white}\subsectionpage}\end{center}
+	\vfill}
+    \endgroup
+}
+
+\title{Implementación de una blockchain \mbox{resistente} a ataques criptográficos cuánticos}
+\subtitle{Trabajo Fin de Grado}
+\author[]{\textbf {Autor\\ María Victoria Granados Pozo\\ \footnotesize Directores\\ Gabriel Maciá Fernández\\ Francisco Javier Lobillo Borrero}}
+\institute[]{Doble grado de Ingeniería Informática y Matemáticas\\
+Universidad de Granada}
+\date{\today}
+\titlegraphic[width=4cm]{logoUGR.pdf}{}
+%\titlegraphic[width=5cm]{logo.png}{}
+
+
+
+
+\begin{document}
+
+\maketitle
+
+%%% define code
+\defverbatim[colored]\lstI{
+	\begin{lstlisting}[language=C++,basicstyle=\ttfamily,keywordstyle=\color{red}]
+	int main() {
+	// Define variables at the beginning
+	// of the block, as in C:
+	CStash intStash, stringStash;
+	int i;
+	char* cp;
+	ifstream in;
+	string line;
+	[...]
+	\end{lstlisting}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ----------- FRAME ------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introducción}
+\sectionpagemod
+
+
+\section{Contenidos teóricos}
+\sectionpagemod
+\subsection{Computación cuántica}
+\subsectionpagemod
+\begin{frame}[c]{Blocks}
+	
+The blocks are shown below
+\begin{block}{Regular Block}
+	Content of a regular block
+\end{block}
+
+\begin{exampleblock}{Example Block}
+	Content of an example block
+\end{exampleblock}
+
+\begin{alertblock}{Alert block}
+	Content of an alert block
+\end{alertblock}
+
+\end{frame}	
+
+\subsection{Blockchain}
+\subsectionpagemod
+\begin{frame}[c]{Enumerate \& Overlays}
+	
+{\large An Example of \texttt{enumerate}}
+	\begin{enumerate}[<+->]
+		\item First item
+		\item Second item
+		\item Third item
+	\end{enumerate}
+\vfill
+{\large An Example of \texttt{itemize}}	
+	\begin{itemize}[<+->]
+	\item First item
+	\item Second item
+	\item Third item
+	\end{itemize}
+\end{frame}	
+
+\subsection{Algoritmos criptográficos}
+\subsectionpagemod
+\begin{frame}[c]{Two columns}
+	
+\begin{columns}[onlytextwidth]
+	\column{0.4\textwidth}
+	Content for column one
+	\begin{equation}
+	E = mc^2
+	\end{equation}
+	\column{0.4\textwidth}	
+	Content for column two
+	\begin{equation}
+	F=ma
+	\end{equation}
+\end{columns}
+	
+\end{frame}	
+
+
+\section{Planificación}
+\sectionpagemod
+
+
+\section{Presupuesto}
+\sectionpagemod
+
+\section{Diseño}
+\sectionpagemod
+
+\subsection{Figures}
+\subsectionpagemod
+\begin{frame}[c]{Figures}
+	\begin{figure}
+		\centering
+		\begin{tikzpicture}
+		\draw [help lines,very thick] (0,0) grid (5,4);
+		\end{tikzpicture}
+		\caption{Credits to Ti\textit{k}Z}
+	\end{figure}
+\end{frame}	
+
+\begin{frame}{A Listings Demo}{C++}
+	\lstI
+\end{frame}
+
+
+
+\section{Demostración práctica}
+\sectionpagemod
+
+\section{Conclusiones y trabajos futuros}
+\sectionpagemod
+
+
+
+% Thank you page
+\beamertemplateshadingbackground{structure.fg!90}{structure.fg}
+\begin{frame}[plain]
+	\vfill
+	\centering
+	{
+		\centering \Huge \color{white} !`Gracias por su atención!\\[10pt]
+	}
+	\vfill
+\end{frame}
+
+\end{document}
+
+
