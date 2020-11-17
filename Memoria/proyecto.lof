@@ -44,9 +44,9 @@
 \contentsline {figure}{\numberline {A.21}{\ignorespaces Realizar transferencia}}{94}{figure.Alph1.21}
 \contentsline {figure}{\numberline {A.22}{\ignorespaces Confirmaci\IeC {\'o}n de la transaferencia}}{95}{figure.Alph1.22}
 \contentsline {figure}{\numberline {A.23}{\ignorespaces Comprobaci\IeC {\'o}n de que se ha enviado la transaferencia}}{95}{figure.Alph1.23}
-\contentsline {figure}{\numberline {A.24}{\ignorespaces Comprobaci\IeC {\'o}n de que se ha enviado la transaferencia}}{96}{figure.Alph1.24}
-\contentsline {figure}{\numberline {A.25}{\ignorespaces Comprobaci\IeC {\'o}n de que se ha enviado la transaferencia}}{96}{figure.Alph1.25}
-\contentsline {figure}{\numberline {A.26}{\ignorespaces Comprobaci\IeC {\'o}n de que se ha enviado la transaferencia}}{96}{figure.Alph1.26}
-\contentsline {figure}{\numberline {A.27}{\ignorespaces Comprobaci\IeC {\'o}n de que se ha enviado la transaferencia}}{97}{figure.Alph1.27}
-\contentsline {figure}{\numberline {A.28}{\ignorespaces Comprobaci\IeC {\'o}n de que se ha enviado la transaferencia}}{97}{figure.Alph1.28}
-\contentsline {figure}{\numberline {A.29}{\ignorespaces Comprobaci\IeC {\'o}n de que se ha enviado la transaferencia}}{97}{figure.Alph1.29}
+\contentsline {figure}{\numberline {A.24}{\ignorespaces Logs de la cadena de bloques}}{96}{figure.Alph1.24}
+\contentsline {figure}{\numberline {A.25}{\ignorespaces Vista del \textit {explorer} con los \IeC {\'u}ltimos bloques creados}}{96}{figure.Alph1.25}
+\contentsline {figure}{\numberline {A.26}{\ignorespaces Bloques anterior y posterior del bloque con ID $63372384328353607$}}{97}{figure.Alph1.26}
+\contentsline {figure}{\numberline {A.27}{\ignorespaces Informaci\IeC {\'o}n del bloque con ID $63372384328353607$, visto en el \textit {explorer}}}{97}{figure.Alph1.27}
+\contentsline {figure}{\numberline {A.28}{\ignorespaces Informaci\IeC {\'o}n del bloque con ID $63372384328353607$, visto en la API}}{98}{figure.Alph1.28}
+\contentsline {figure}{\numberline {A.29}{\ignorespaces Informaci\IeC {\'o}n del bloque anterior al bloque $63372384328353607$, visto desde la API}}{98}{figure.Alph1.29}
