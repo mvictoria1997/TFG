@@ -288,7 +288,7 @@ El último paso es iniciar la \textit{blockchain} y el \textit{explorer}, códig
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=12.5cm,height=1.5cm]{figuras/Instalacion_explorer.png}
+	\includegraphics[width=14.5cm,height=2cm]{figuras/Instalacion_explorer.png}
 	\caption{Salida tras iniciar del \textit{explorer}}
 	\label{fig:install-explorer}
 \end{figure}
@@ -297,7 +297,7 @@ Para visualizar las transacciones en el \textit{explorer}, debemos de abrir un n
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=13cm,height=9cm]{figuras/Navegacion_explorer.png}
+	\includegraphics[width=14.5cm,height=10.5cm]{figuras/Navegacion_explorer.png}
 	\caption{Primeras transacciones en el \textit{explorer}}
 	\label{fig:nav-explorer}
 \end{figure}
@@ -394,20 +394,6 @@ Para acabar con la creación del usuario, se tiene la opción de personalizar lo
 \end{figure}
 
 \newpage
-Es necesario conectar la aplicación con la \textit{blockchain}, para que salga la cantidad de dinero inicial. Pulsando en el panel lateral izquierdo en \texttt{Network}, se accede a la configuración de la red y pulsando en \texttt{Connect custom peer} obtenemos la imagen \ref{fig:wallet-11-12}. Rellenamos los campos con \texttt{http://GENESIS\_NODE\_IP} y con el \texttt{API\_PORT}. Cuando se conecte hay que refrescar la página para que se actualice el monedero con el dinero.
-
-\begin{figure}[H]
-	\centering
-	\begin{minipage}{0.3\textwidth}
-		\includegraphics[width=6cm,height=5.5cm]{figuras/wallet_11.png}
-	\end{minipage}\hfill
-	\begin{minipage}{0.5\textwidth}
-		\tcbox[colback=white, colframe=codegray]{\includegraphics[width=5cm,height=5cm]{figuras/wallet_12.png}}
-	\end{minipage}
-	\caption{Configuración de la conexión peer}
-	\label{fig:wallet-11-12}
-\end{figure}
-
 La primera vez que se entra al usuario es necesario importar el monedero que se ha creado durante la instalación de la \textit{blockchain}, pulsando en la esquina superior derecha en \texttt{Import Wallet}. No es necesario rellenar los dos campos, se puede importar el monedero introduciendo solamente la \textit{passphrase}, imagen \ref{fig:wallet-8}.
 
 \begin{figure}[H]
@@ -421,11 +407,12 @@ Si se desea se puede poner contraseña al monedero, haciéndolo más seguro, en 
 
 \begin{figure}[H]
 	\centering
-	\tcbox[colback=white, colframe=codegray]{\includegraphics[width=6cm,height=3.8cm]{figuras/wallet_9.png}}
+	\tcbox[colback=white, colframe=codegray]{\includegraphics[width=6cm,height=4cm]{figuras/wallet_9.png}}
 	\caption{Encriptación el monedero}
 	\label{fig:wallet-9}
 \end{figure}
 
+\newpage
 Finalmente, hay que ponerle nombre al monedero, para diferenciarlo de otros monederos y saber cual es el que contiene la cantidad inicial, el nombre que se le va a poner es \texttt{MainWallet}, imagen \ref{fig:wallet-10}.
 
 \begin{figure}[H]
@@ -435,7 +422,19 @@ Finalmente, hay que ponerle nombre al monedero, para diferenciarlo de otros mone
 	\label{fig:wallet-10}
 \end{figure}
 
+Para que salga la cantidad de dinero inicial es necesario conectar la aplicación con la \textit{blockchain}. Pulsando en el panel lateral izquierdo en \texttt{Network}, se accede a la configuración de la red y pulsando en \texttt{Connect custom peer} obtenemos la imagen \ref{fig:wallet-11-12}. Rellenamos los campos con \texttt{http://GENESIS\_NODE\_IP} y con el \texttt{API\_PORT}. Cuando se conecte hay que refrescar la página para que se actualice el monedero con el dinero.
 
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.4\textwidth}
+		\includegraphics[width=7cm,height=6.5cm]{figuras/wallet_11.png}
+	\end{minipage}\hfill
+	\begin{minipage}{0.4\textwidth}
+		\tcbox[colback=white, colframe=codegray]{\includegraphics[width=6cm,height=6cm]{figuras/wallet_12.png}}
+	\end{minipage}
+	\caption{Configuración de la conexión peer}
+	\label{fig:wallet-11-12}
+\end{figure}
 
 \newpage
 Para realizar transacciones y poder probar el algoritmo, es necesario crear otro monedero y realizar transacciones entre ambos. De esta forma, hay que acceder a la sección \texttt{My wallets} y pulsar \texttt{Create Wallet}. El primer paso es introducir el nombre del monedero, imagen \ref{fig:wallet-13}.
@@ -486,50 +485,6 @@ Antes de confirmar la creación del monedero, hay que introducir el nombre del m
 	\label{fig:wallet-17}
 \end{figure}
 
-A la página principal, donde aparecen los monederos del usuario, se accede pulsando en el panel de la izquierda el símbolo del monedero, sección \texttt{My Wallets}, imagen \ref{fig:wallet-princi}. Se puede observar que el usuario en el que nos encontramos se llama ``Victoria'', este contiene dos monederos \texttt{Main Wallet}, con $21.000.000,00$MV y \texttt{Second Wallet}, con $0,00$MV.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=13cm,height=5cm]{figuras/wallet_panel.png}
-	\caption{Página principal con los monederos}
-	\label{fig:wallet-princi}
-\end{figure}
-
-Pulsando en cada uno de los monederos se accede a dicho monedero. Para realizar la primera transacción hay que pulsar en \texttt{Main Wallet} y posteriormente pulsar en la esquina superior derecha \texttt{sent}, imagen \ref{fig:transfer}.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=13cm,height=2cm]{figuras/transfer.png}
-	\caption{Botón enviar}
-	\label{fig:transfer}
-\end{figure}
-
-Entonces aparecerá un pantalla emergente para introducir los campos necesarios para realizar la transacción, imagen \ref{fig:wallet-18}. Algunos de esos campos son el receptor de la transacción, en el ejemplo se ha enviado al otro monedero anteriormente creado, la cantidad de MVTokens a enviar, un mensaje para el receptor y la clave privada del monedero.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=6.5cm,height=10cm]{figuras/wallet_18.png}
-	\caption{Realizar transferencia}
-	\label{fig:wallet-18}
-\end{figure}
-
-Después hay que confirmar la transacción, además se pueden comprobar los datos de la transacción y si fuese necesario es pueden modificar, imagen \ref{fir:wallet-19}.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=8cm,height=10cm]{figuras/wallet_19.png}
-	\caption{Confirmación de la transaferencia}
-	\label{fig:wallet-19}
-\end{figure}
-
-En el modenero desde donde se ha realizado la transacción, se puede ver que se ha creado una nueva entrada en la lista de transacciones, imagen \ref{fig:wallet-20}.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=12cm,height=6cm]{figuras/wallet_20.png}
-	\caption{Comprobación de que se ha enviado la transaferencia}
-	\label{fig:wallet-20}
-\end{figure}
 
 
 
@@ -540,50 +495,6 @@ En el modenero desde donde se ha realizado la transacción, se puede ver que se 
 \newpage
 
 \section{Visualización de los datos con el Explorer}
-
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=12cm,height=3cm]{figuras/explorer_1.png}
-	\caption{Comprobación de que se ha enviado la transaferencia}
-	\label{fig:explorer-1}
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=12.5cm,height=8cm]{figuras/explorer_2.png}
-	\caption{Comprobación de que se ha enviado la transaferencia}
-	\label{fig:explorer-2}
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=12.5cm,height=1.8cm]{figuras/explorer_3.png}
-	\caption{Comprobación de que se ha enviado la transaferencia}
-	\label{fig:explorer-3}
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=12cm,height=6.5cm]{figuras/explorer_4.png}
-	\caption{Comprobación de que se ha enviado la transaferencia}
-	\label{fig:explorer-4}
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=14.7cm,height=1.4cm]{figuras/explorer_5.png}
-	\caption{Comprobación de que se ha enviado la transaferencia}
-	\label{fig:explorer-5}
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=13cm,height=0.4cm]{figuras/explorer_6.png}
-	\caption{Comprobación de que se ha enviado la transaferencia}
-	\label{fig:explorer-6}
-\end{figure}
-
 
 \newpage
 

@@ -197,6 +197,14 @@ DocumentationARK, ``{Desktop Wallet ARK},''
 DocumentationARK, ``{What is a block explorer?}''
   \url{https://arkdoc-23.docs.uns.network/tutorials/usage-guides/how-to-use-ark-explorer.html}.
 
+\bibitem{core-mv}
+M.~V. Granados and ARK, ``{Core Blockchain ARK},'' 2020,
+  \url{https://github.com/mvictoria1997/core.git}.
+
+\bibitem{git-mv}
+M.~V. Granados, ``{Repositorio Trabajo de Fin de Grado},'' 2020,
+  \url{https://github.com/mvictoria1997/TFG.git}.
+
 \bibitem{schnorr}
 M.~Beunardeau, A.~Connolly, H.~Ferradi, R.~G{\'e}raud, D.~Naccache, and
   D.~Vergnaud, ``Reusing nonces in schnorr signatures,'' in \emph{European

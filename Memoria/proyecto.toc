@@ -29,7 +29,7 @@
 \contentsline {chapter}{\numberline {5}Dise\IeC {\~n}o}{41}{chapter.5}
 \contentsline {chapter}{\numberline {6}Implementaci\IeC {\'o}n}{45}{chapter.6}
 \contentsline {section}{\numberline {6.1}Ecosistema ARK}{45}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Directorio deployer}{45}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.1}Directorio deployer}{46}{subsection.6.1.1}
 \contentsline {subsection}{\numberline {6.1.2}Directorio core-bridgechain}{46}{subsection.6.1.2}
 \contentsline {section}{\numberline {6.2}Algoritmo criptogr\IeC {\'a}fico UOV}{53}{section.6.2}
 \contentsline {subsection}{\numberline {6.2.1}Funciones del cuerpo de 128 elementos}{53}{subsection.6.2.1}
@@ -44,5 +44,5 @@
 \contentsline {chapter}{\numberline {A}Manual de usuario}{77}{appendix.Alph1}
 \contentsline {section}{\numberline {A.1}Instalaci\IeC {\'o}n de Docker}{77}{section.Alph1.1}
 \contentsline {section}{\numberline {A.2}Instalaci\IeC {\'o}n Blockchain ARK}{79}{section.Alph1.2}
-\contentsline {section}{\numberline {A.3}Instalaci\IeC {\'o}n de la aplicaci\IeC {\'o}n ARK Desktop Wallet}{86}{section.Alph1.3}
-\contentsline {section}{\numberline {A.4}Visualizaci\IeC {\'o}n de los datos con el Explorer}{95}{section.Alph1.4}
+\contentsline {section}{\numberline {A.3}Instalaci\IeC {\'o}n de la aplicaci\IeC {\'o}n ARK Desktop Wallet}{85}{section.Alph1.3}
+\contentsline {section}{\numberline {A.4}Visualizaci\IeC {\'o}n de los datos con el Explorer}{96}{section.Alph1.4}
