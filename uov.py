@@ -340,14 +340,14 @@ def clavePublica(m, v, alpha, beta, T):
    beta_pub = []
    T_trans = matrix_transpose(T[0:v])
 
-   tiempo_ini = time()
+   #tiempo_ini = time()
    for k in range(len(alpha)):
       aux = matrix_product_F2(T_trans , alpha [k])
       alpha_pub += [matrix_product_F2(aux, T)]
 
 
       beta_pub += [matrix_product_F2([beta[k]], T)]
-      print (time() - tiempo_ini)
+      #print (time() - tiempo_ini)
 
    return alpha_pub, beta_pub
 
@@ -828,27 +828,23 @@ def matrix_identity(dim):
 def main():
 
    #Number of vinegar and oil
-   #r, m, v = 7, 83, 283
+   #m, v = 83, 283
    #m, v = 57, 197
-   m, v= 44, 151 #este es el bueno
+   #m, v= 44, 151 #este es el bueno
    #m, v = 35, 121
    #m, v =  19, 65
    #m, v = 10, 30 #con este tamaño funciona
-   #m, v = 3, 3
+   m, v = 3, 3
    n = m + v
 
    #Private key
    alpha, beta = clavePrivada(m, v)
-   #alpha = [[[1,0,1,1,1,0], [0, 0, 0, 0, 1, 1], [0,0,0,1,1,1]], [[1,1,0,1,1,0], [0, 0, 1, 1, 1, 0,], [0,0,1,1,1,1]], [[0,0,0,1,0,0], [0, 0, 1, 1, 0, 1], [0,0,0,0,1,1]]]
-
-   #beta = [[1,0,0,1,0,0],[0,0,1,0,1,0],[1,1,0,1,0,1]]
    #print ("alpha priv")
    #print (alpha)
    #print ("beta priv")
    #print (beta)
 
    T = generacionT(m, v)
-   #T = [[1,0,0,0,0,0], [0,1,0,0,0,1], [0,0,1,1,0,1], [0,0,0,1,0,0], [0,0,0,0,1,0],[0,0,0,0,0,1]]
    #print ("T")
    #print (T)
 
@@ -864,7 +860,7 @@ def main():
    hashed = hashlib.sha256(mensaje.encode('utf-8')).hexdigest()[0:m]
 
    hashed_message = []
-   #print ("hashh")
+   #print ("hash")
    #print (hashed)
 
    for i in range(len(hashed)):
