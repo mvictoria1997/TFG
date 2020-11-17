@@ -1,5 +1,8 @@
 # TFG
-![Logo proyecto](Memoria/portada/imagenes/logo.png)
+<p align="center">
+  <img width="460" height="300" src="Memoria/portada/imagenes/logo.png">
+</p>  
+
 Repositorio del trabajo fin de grado realizado por María Victoria Granados Pozo del Doble Grado de Ingeniería Informática y Matemáticas de la Universidad de Granada.
 
 En este trabajo se ha implementado un algoritmo criptográfico resistente a ordenadores cuánticos, denominado UOV, para la firma de bloques. Posteriormente se ha realizar un prototipo de cadena de bloques para probar el algoritmo y se integrado en la blockchain ARK.
