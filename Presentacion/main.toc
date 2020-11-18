@@ -1,11 +1,6 @@
-\beamer@sectionintoc {1}{Introducción}{2}{0}{1}
-\beamer@sectionintoc {2}{Contenidos teóricos}{4}{0}{2}
-\beamer@subsectionintoc {2}{1}{Computación cuántica}{6}{0}{2}
-\beamer@subsectionintoc {2}{2}{Blockchain}{8}{0}{2}
-\beamer@subsectionintoc {2}{3}{Algoritmos criptográficos}{15}{0}{2}
-\beamer@sectionintoc {3}{Planificación}{17}{0}{3}
-\beamer@sectionintoc {4}{Presupuesto}{19}{0}{4}
-\beamer@sectionintoc {5}{Diseño}{21}{0}{5}
-\beamer@subsectionintoc {5}{1}{Figures}{23}{0}{5}
-\beamer@sectionintoc {6}{Demostración práctica}{26}{0}{6}
-\beamer@sectionintoc {7}{Conclusiones y trabajos futuros}{28}{0}{7}
+\beamer@sectionintoc {1}{Introducción}{3}{0}{1}
+\beamer@sectionintoc {2}{Contenidos teóricos}{7}{0}{2}
+\beamer@sectionintoc {3}{Planificación y presupuesto}{15}{0}{3}
+\beamer@sectionintoc {4}{Diseño}{20}{0}{4}
+\beamer@sectionintoc {5}{Demostración práctica}{22}{0}{5}
+\beamer@sectionintoc {6}{Conclusiones e investigaciones futuras}{23}{0}{6}
