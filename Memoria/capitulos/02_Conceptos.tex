@@ -15,10 +15,10 @@ La computación cuántica tuvo sus inicios en los años 50 cuando algunos físic
 
 A finales de los años 60, Stephen Wiesner escribe un artículo titulado ``Conjugate Coding'', donde expone un primer acercamiento a la criptografía cuántica. El artículo fue publicado en los años 80 \cite{computacion-cuantica-crono}.\\
 
-En 1981 Paul Benioff expone las ideas esenciales de la computación cuántica acompañada de su teoría, en la que propuso que un ordenador clásico trabajara con algunos pricipios de la mecánica cuántica, y aprovechar así las leyes cuánticas.\\
+En 1981 Paul Benioff expone las ideas esenciales de la computación cuántica acompañada de su teoría, en la que propuso que un ordenador clásico trabajara con algunos principios de la mecánica cuántica, y aprovechar así las leyes cuánticas.\\
 
 
-En la década de 1990 ya empezaron a poner en práctica algunas teorías, apareciendo los primeros algoritmo cuántidos, primeras aplicacines cuánticas y las primeras máquinas diseñadas para realizar cálculos cuánticos. Así en 1991, Artur Ekert desarrolla una aproximación diferente a la distribución de claves cuántica (QKD) basado en el entrelazamiento cuántico.\\
+En la década de 1990 ya empezaron a poner en práctica algunas teorías, apareciendo los primeros algoritmos cuánticos, primeras aplicaciones cuánticas y las primeras máquinas diseñadas para realizar cálculos cuánticos. Así en 1991, Artur Ekert desarrolla una aproximación diferente a la distribución de claves cuántica (QKD) basado en el entrelazamiento cuántico.\\
 
 En 1993 hubo varios acontecimientos, por un lado, Dan Simon comparó el modelo de probabilidad clásica con el cuántico, esto se utilizó para el desarrollo de futuros algoritmos cuánticos. Por otro, Charles Benett acuñó el término del teletransporte cuántico, abriendo una vía de investigación para las comunicaciones cuánticas. Además Ekert organizó la primera conferencia internacional de criptografía cuántica en Inglaterra, primer evento de gran alcance dedicado a este área.\\
 
@@ -85,7 +85,7 @@ Entre las propiedades cuánticas destacan la superposición cuántica, el entrel
 
 La \textbf{superposición cuántica} describe cómo una partícula puede estar en diferentes estados al mismo tiempo. Esto aporta gran capacidad de procesamiento, lo que hace posible resolver de manera eficiente problemas de mayor complejidad como la factorización de enteros, el algoritmo discreto y la simulación cuántica, que a día de hoy con los ordenadores clásicos son difíciles de romper.\\
 
-Otro aspecto importante de la física cuántica relacionado con la superposición es el \textbf{entrelazamiento cuántico} de las partículas\cite{cumputacion-cuantica-clasica}. Esto es, si dos partículas en algún instante han interactuado retienen un tipo de conexión y pueden entrelazarse formando pares, de forma que al interacturar con una de las particulas, por muy separadas que estén, la otra se entera. Esto permite que aunque los cúbits estén separados interactúen entre sí. Con estos dos aspectos la capacidad de procesamiento aumenta considerablemente, cuántos más cúbits la capacidad de procesamiento aumenta considerablemente.\\
+Otro aspecto importante de la física cuántica relacionado con la superposición es el \textbf{entrelazamiento cuántico} de las partículas\cite{cumputacion-cuantica-clasica}. Esto es, si dos partículas en algún instante han interactuado retienen un tipo de conexión y pueden entrelazarse formando pares, de forma que al interactuar con una de las partículas, por muy separadas que estén, la otra se entera. Esto permite que aunque los cúbits estén separados interactúen entre sí. Con estos dos aspectos la capacidad de procesamiento aumenta considerablemente, cuántos más cúbits la capacidad de procesamiento aumenta considerablemente.\\
 
 Por último, el \textbf{teletransporte cuántico} utiliza el entrelazamiento para enviar información de un lugar del espacio a otro sin necesidad de viajar a través de él.\\
 
@@ -95,7 +95,7 @@ Por último, el \textbf{teletransporte cuántico} utiliza el entrelazamiento par
 \section{Blockchain}\label{sec:intro:blockchain}
 
 
-\textit{Blockchain} es un sistemas de almacenamiento de información que se divide en bloques de datos enlazados mediante hash. A cada bloque se le asocia un hash a partir del bloque anterior, creando una lista enlazada, la búsqueda de información no es muy óptima si hay un número elevado de bloques. Para la búsqueda eficiente en \textit{blockchain} se usan los árboles merkle.\\
+\textit{Blockchain} es un sistemas de almacenamiento de información que se divide en bloques de datos enlazados mediante hash. A cada bloque se le asocia un hash a partir del bloque anterior, creando una lista enlazada, la búsqueda de información no es muy óptima si hay un número elevado de bloques. Para la búsqueda eficiente en \textit{blockchain} se usan los árboles Merkle.\\
 
 Los datos que almacena cada bloque son transacciones válidas, información referente a ese bloque y la relación con el bloque anterior mediante el \textit{hash}, por tanto el bloque tiene un lugar específico dentro de la cadena. De esta forma si hay una alteración en un determinado bloque se verá reflejado en su \textit{hash} y en el de los bloques posteriores, haciendo que la información de la cadena no se pueda perder, modificar o eliminar.\\
 
@@ -111,13 +111,13 @@ De esta forma se asegura que los datos son recibidos sin daños y sin ser altera
 	\label{fig:arbol-Merkle}
 \end{figure}
 
-La idea de la tecnología \textit{blockchain} surge a comienzos de 1991 cuando los científicos Stuart Haber y W. Scott Stornetta introducen una solución computacional para la firma de documentos digitales y que no puedieran ser modificados con el tiempo. Usaron cadenas de bloque para almacenar los documentos con sello de tiempo y en 1992 se incorporaron los árboles Merkle, que podían recopilar varios documentos en un bloque haciendo el diseño más eficiente. Sin embargo, esta tecnología no se utilizó y la patente caducó en 2004 \cite{historia1-block}.\\
+La idea de la tecnología \textit{blockchain} surge a comienzos de 1991 cuando los científicos Stuart Haber y W. Scott Stornetta introducen una solución computacional para la firma de documentos digitales y que no pudieran ser modificados con el tiempo. Usaron cadenas de bloque para almacenar los documentos con sello de tiempo y en 1992 se incorporaron los árboles Merkle, que podían recopilar varios documentos en un bloque haciendo el diseño más eficiente. Sin embargo, esta tecnología no se utilizó y la patente caducó en 2004 \cite{historia1-block}.\\
 
 En 1998, Nick Szabo trabaja en una moneda digital descentralizada, ``bit gold''. Dos años después Stefan Konst publica su teoría sobre la seguridad criptográfica en las cadenas de bloques junto con algunas ideas de implementación \cite{historia2-block}.\\
 
 En 2004, el informático y criptógrafo Harold Thomas Finney introdujo el sistema \acrshort{rpow} (prueba de trabajo reutilizable). El sistema se basa en \textit{HashCash} pero los token de prueba no están ligados a una aplicación sino que pueden ser gastados libremente como una moneda. Los clientes pueden crear tokens e intercambiarlos sin necesidad de regenerarlos \cite{RPoW}. \acrshort{rpow} resolvió el problema del doble gasto registrando los tokens en un servidor fiable diseñado para permitir a los usuarios verificar su exactitud e integridad en tiempo real. Este sistema puede considerarse como un prototipo de las criptomonedas.\\
 
-A finales de 2008, un grupo de desarrolladores bajo el nombre de Satoshi Nakamoto publican un documento técnico en que se establece un modelo para \textit{blockchain}. Está basado en el algoritmo \acrshort{rpow} pero en lugar de usar dicho hardware, se utiliza un protocolo descentralizado peer-to-peer para verificar y restrear las transacciones. En otras palablas los ``mineros'' extraen bitcoins para obtener una recompensa mediantes pruebas de trabajo y posteriormente los nodos los verifican. Bitcoin nació el 3 de enero de 2009 cuando Satoshi Nakamoto extrajo el primer bloque de bitcoin con una recompensa de 50 bitcoins. Y el 12 de enero de 2009 tuvo lugar la primera transacción entre Satoshi Nakamoto y Hal Finney que obtuvo 10 bitcoins.\\
+A finales de 2008, un grupo de desarrolladores bajo el nombre de Satoshi Nakamoto publican un documento técnico en que se establece un modelo para \textit{blockchain}. Está basado en el algoritmo \acrshort{rpow} pero en lugar de usar dicho hardware, se utiliza un protocolo descentralizado peer-to-peer para verificar y rastrear las transacciones. En otras palabras los ``mineros'' extraen bitcoins para obtener una recompensa mediantes pruebas de trabajo y posteriormente los nodos los verifican. Bitcoin nació el 3 de enero de 2009 cuando Satoshi Nakamoto extrajo el primer bloque de bitcoin con una recompensa de 50 bitcoins. Y el 12 de enero de 2009 tuvo lugar la primera transacción entre Satoshi Nakamoto y Hal Finney que obtuvo 10 bitcoins.\\
 
 
 A partir de 2014, se comienzan a explorar el potencial de las cadenas de bloque y a buscar otras aplicaciones fuera de su uso en las transacciones financieras.\\
@@ -135,7 +135,7 @@ Hyperledger contiene varios \textit{frameworks} de contabilidad distribuidos, en
 
 El proyecto Hyperledger pretende la mejora de aspectos como el rendimiento y fiabilidad de las empresas, además de agilizar los procesos comerciales de las industrias. Para ello ha de contar con el apoyo de las diferentes empresas (como Accenture, Fujitsu, IBM o Intel) formando así un proyecto colaborativo\cite{hyperledger-colab}.\\
 
-Dentro de Hyperledger, el proyecto más destacado es Hyperledger Fabric. Este es uno de los dos proyectos originales de Hyperledger en el que colaboraba Digital Asset Holding, Blockstream e IBM. Es una \textit{blockchain} privada, de las más conocidas, que aspira a facilitar la implementación de cualquier modelo de uso. Además permite el despligue de contratos inteligentes desarrollados en el lenguaje de programación de Google, ``Golang''. Dicha \textit{blockchain} posee un diseño muy flexible ya que permite crear contratos inteligentes en cualquier lenguaje o decidir qué algoritmo de consenso utilizar en la red (por defecto usa Practical Byzantine Fault Tolerance, \acrshort{pbft})\cite{hyperledger-fabric}.\\
+Dentro de Hyperledger, el proyecto más destacado es Hyperledger Fabric. Este es uno de los dos proyectos originales de Hyperledger en el que colaboraba Digital Asset Holding, Blockstream e IBM. Es una \textit{blockchain} privada, de las más conocidas, que aspira a facilitar la implementación de cualquier modelo de uso. Además permite el despliegue de contratos inteligentes desarrollados en el lenguaje de programación de Google, ``Golang''. Dicha \textit{blockchain} posee un diseño muy flexible ya que permite crear contratos inteligentes en cualquier lenguaje o decidir qué algoritmo de consenso utilizar en la red (por defecto usa Practical Byzantine Fault Tolerance, \acrshort{pbft})\cite{hyperledger-fabric}.\\
 
 Las cadenas de bloques o \textit{blockchain} permiten verificar, validar, rastrear todo tipo de información, ya sean contratos inteligentes, transacciones financieras, certificados digitales o firmas \cite{blockchain}, siendo estas últimas el centro de este trabajo. También permiten impulsar modificaciones orientadas a crear soluciones más robustas, por ejemplo en centros de salud o notarías que se explicarán más adelante.\\
 
@@ -154,18 +154,18 @@ La función \textit{hash} es el resultado de aplicar una función que transforma
 
 De la misma forma si hay un cambio en una de las transacciones de un bloque se reflejará en el \textit{hash} del bloque, afectado a todos los bloques anteriores. Así si el atacante quiere preservar la integridad deberá de modificar todos los bloques siendo una tarea imposible. De esta forma se obtiene la inmutabilidad de los datos.\\
 
-Hoy en día, la tecnología \textit{blockchain} está ganando mucha atención, no limitandose solo al uso en las criptomonedas. Así las cadenas de bloques tienen diversas aplicaciones entre ellas se encuentra la salud o la firma de documentos en las notarías. En el primer caso, cada centro  de salud podría tener el historial médico de cualquier paciente, de una forma segura y evitando falsificaciones, estos historiales se encontrarían en nodos distribuidos de forma descentralizada así se obtendría un acceso rápido y seguro. El segundo caso será en el que nos centraremos a lo largo de este proyecto. Hoy día la firma de documentos o transacciones por parte de un usuario es un problema puesto que se pueden copiar con facilidad, pero con \textit{blockchain} no podrían ser falsificadas debido a la propiedad de validación y rastreo de los datos.\\
+Hoy en día, la tecnología \textit{blockchain} está ganando mucha atención, no limitándose solo al uso en las criptomonedas. Así las cadenas de bloques tienen diversas aplicaciones entre ellas se encuentra la salud o la firma de documentos en las notarías. En el primer caso, cada centro  de salud podría tener el historial médico de cualquier paciente, de una forma segura y evitando falsificaciones, estos historiales se encontrarían en nodos distribuidos de forma descentralizada así se obtendría un acceso rápido y seguro. El segundo caso será en el que nos centraremos a lo largo de este proyecto. Hoy día la firma de documentos o transacciones por parte de un usuario es un problema puesto que se pueden copiar con facilidad, pero con \textit{blockchain} no podrían ser falsificadas debido a la propiedad de validación y rastreo de los datos.\\
 
 \subsection{Blockchain ARK}
 
-ARK es un ecosistema de criptomonedas descentralizado diseñado para aumentar la adopción de la tecnología \textit{blockchain} por parte de los usuarios. Se busca que la implementación de la cadena de bloques sea eficiente y fácil, y de esta forma poder usar dicha plataforma como puente inteligente entre varias cadenas de bloques no necesariamente de ARK. Cualquier desarrollador puede programar ARK, puesto que admite varios lenguajes de programación como \texttt{Python}, \texttt{Elixer}, \texttt{Java} o \texttt{API TypeScript} entre otros. El core de la \textit{blockchain} que se ha utilizado se encuentra en \texttt{TypeScript}.\\
+ARK es un ecosistema de criptomonedas descentralizado diseñado para aumentar la adopción de la tecnología \textit{blockchain} por parte de los usuarios. Se busca que la implementación de la cadena de bloques sea eficiente y fácil, y de esta forma poder usar dicha plataforma como puente inteligente entre varias cadenas de bloques no necesariamente de ARK. Cualquier desarrollador puede programar ARK, puesto que admite varios lenguajes de programación como \texttt{Python}, \texttt{Elixer}, \texttt{Java} o \texttt{API TypeScript} entre otros. El \textit{core} de la \textit{blockchain} que se ha utilizado se encuentra en \texttt{TypeScript}.\\
 
 Algunas ventajas de la \textit{blockchain} ARK son, tener una interfaz de usuario intuitiva para extender el uso a la vida cotidiana, crear puentes inteligentes para posibilitar la comunicación entre diferentes \textit{blockchain}, admitir varios lenguajes de programación, facilidad para duplicar la cadena de bloques para permitir que se utilice para necesidades personales y por último, los coste de red son bastante bajos\cite{ark-pros}.\\
 
 Hay dos motivos principales por los que se ha elegido esta \textit{blockchain} ARK y no otra. En primer lugar, la cadena de bloques es completamente de código abierto, permite a cualquier persona poder contribuir. Y en segundo lugar, su arquitectura modular permitiendo personalizar la aplicación para alcanzar nuestro objetivo (modificar el algoritmo de firma y verificación).\\
 
 
-Un logro significativo del ecosistema ARK es brindar soporte a los contratos inteligentes directamente desde la cadena de bloques ARK utilizando puentes inteligentes. La capacidad de crear, lanzar y administrar contratos inteligentes entre dos tecnologías \textit{blockchain} diferentes sin ningún problema, abre el campo de posibiidades para crear soluciones comerciales.\\
+Un logro significativo del ecosistema ARK es brindar soporte a los contratos inteligentes directamente desde la cadena de bloques ARK utilizando puentes inteligentes. La capacidad de crear, lanzar y administrar contratos inteligentes entre dos tecnologías \textit{blockchain} diferentes sin ningún problema, abre el campo de posibilidades para crear soluciones comerciales.\\
 
 Hyperledger Fabric agrega soporte al núcleo ARK v2 para contratos inteligentes. Dicho núcleo de ARK con toda la integración se ejecuta en los nodos conectados a la cadena de bloques principal de ARK. También la cadena Hyperledger personalizada puede agregarse a los mismos nodos o a un conjunto de nodos independientes\cite{hyperledger-ark}.\\
 
@@ -188,7 +188,7 @@ Se trabajará con el cuerpo finito de 128 elementos, $\mathds{F}_{2^7}$, extensi
 
 Además el orden del cuerpo de las unidades es $127$, que es primo. Entonces todo elemento del cuerpo distinto de $1$ es un elemento primitivo, es decir, un generador.\\
 
-La tabla \ref{tab:rel} muestra una representación de los elementos no nulos del cuerpo. En la implementación se ha utilizado la representación como cadena de bits, puesto que a la hora de trabajar es más fácil con una cadeba de bits que con los polinomios.
+La tabla \ref{tab:rel} muestra una representación de los elementos no nulos del cuerpo. En la implementación se ha utilizado la representación como cadena de bits, puesto que a la hora de trabajar es más fácil con una cadena de bits que con los polinomios.
 
 \begin{table}[h]
 	\begin{center}
@@ -211,7 +211,7 @@ La tabla \ref{tab:rel} muestra una representación de los elementos no nulos del
 	\label{tab:rel}
 \end{table}
 
-La implementación del cuerpo finito de $2^7$ elementos no se ha realizado de forma genérica sino para que sea específica para el algoritmo \acrshort{uov}, de esta forma es mucho más sencillo implementar la aritmética del cuerpo. Para la suma en $\mathds{F}_2$ sólo tenemos que fijarnos que es lo mismo que el operador lógico \textit{XOR}, mientras que para el producto, al encontrarmos en un cuerpo como un orden pequeño, se usarán unas tablas que contienen las correspondencias entre los elementos no nulos del cuerpo y sus logaritmos en base $a$, por lo que el producto se convierte en una suma módulo $127$.\\
+La implementación del cuerpo finito de $2^7$ elementos no se ha realizado de forma genérica sino para que sea específica para el algoritmo \acrshort{uov}, de esta forma es mucho más sencillo implementar la aritmética del cuerpo. Para la suma en $\mathds{F}_2$ sólo tenemos que fijarnos que es lo mismo que el operador lógico \textit{XOR}, mientras que para el producto, al encontrarnos en un cuerpo como un orden pequeño, se usarán unas tablas que contienen las correspondencias entre los elementos no nulos del cuerpo y sus logaritmos en base $a$, por lo que el producto se convierte en una suma módulo $127$.\\
 
 
 
@@ -728,7 +728,7 @@ Calculando el resto de las componentes se obtiene la matriz $A$, ecuación (\ref
 	\end{aligned}	
 \end{equation}
 
-Los coeficientes se obtienen de la suma de las últimas $m$ componenetes, en este caso las $3$ últimas, de cada $A_k$ con ${\beta_{priv}}_k$. Pero tenemos el mismo problema de antes, puesto que los coeficientes de $A_k$ pertenecen a $\mathds{F}_{128}$ y los coeficientes de ${\beta_{priv}}_k$ se encuentra en $\mathds{F}_2$, por tanto lo que vamos a sumar es $0$ o $1$, o lo que es lo mismo realizar la operación lógica $XOR$ con los elementos $\left(\begin{smallmatrix}0 & 0 & 0 & 0 & 0 & 0 & 0\end{smallmatrix}\right)$ o $\left(\begin{smallmatrix}0 & 0 & 0 & 0 & 0 & 0 & 1\end{smallmatrix}\right)$, ecuación (\ref{eq:ej-coef}).
+Los coeficientes se obtienen de la suma de las últimas $m$ componentes, en este caso las $3$ últimas, de cada $A_k$ con ${\beta_{priv}}_k$. Pero tenemos el mismo problema de antes, puesto que los coeficientes de $A_k$ pertenecen a $\mathds{F}_{128}$ y los coeficientes de ${\beta_{priv}}_k$ se encuentra en $\mathds{F}_2$, por tanto lo que vamos a sumar es $0$ o $1$, o lo que es lo mismo realizar la operación lógica $XOR$ con los elementos $\left(\begin{smallmatrix}0 & 0 & 0 & 0 & 0 & 0 & 0\end{smallmatrix}\right)$ o $\left(\begin{smallmatrix}0 & 0 & 0 & 0 & 0 & 0 & 1\end{smallmatrix}\right)$, ecuación (\ref{eq:ej-coef}).
 
 \begin{equation}\label{eq:ej-coef}
 	{coef} =
@@ -762,7 +762,7 @@ Los términos corresponden a la parte de la derecha de la ecuación (\ref{eq:ter
 		\end{matrix}\right)
 \end{equation}
 
-De la misma forma se han tomado las $3$ primeras componenetes del primer vector de $A$, ecuación (\ref{eq:ej-A-1-v}).
+De la misma forma se han tomado las $3$ primeras componentes del primer vector de $A$, ecuación (\ref{eq:ej-A-1-v}).
 
 \begin{equation}\label{eq:ej-A-1-v}
 	{A^v_1} = 
@@ -784,7 +784,7 @@ El vector $sum$ contiene la suma de $A^v_1$ y $\beta^v_1$, ecuación (\ref{eq:ej
 		\end{matrix}\right)
 \end{equation}
 
-Finalmente, para calcular $term$ hay que multiplicar $sum$ por $a^v$ y restarselo a la primera componente de $hash$. Al realizar las operaciones módulo $2$, la resta y la suma son lo mismo, por tanto se realizará la operación lógica \textit{XOR} con el $hash$, ecuación (\ref{eq:ej-ter-1}).
+Finalmente, para calcular $term$ hay que multiplicar $sum$ por $a^v$ y restárselo a la primera componente de $hash$. Al realizar las operaciones módulo $2$, la resta y la suma son lo mismo, por tanto se realizará la operación lógica \textit{XOR} con el $hash$, ecuación (\ref{eq:ej-ter-1}).
 
 \begin{equation}\label{eq:ej-ter-1}
 	\begin{split}
@@ -882,7 +882,7 @@ Para calcular ${\alpha_{aux}}_1$ hay que multiplicar los vectores $firma$, ${\al
 	\end{aligned}
 \end{equation}
 
-La segunda variable ${\beta_{aux}}_k$ es el producto de la $k-ésima$ componente del vector $\beta_{pub}$, donde sus componenetes se encuentran en $\mathds{F}_2$ y habrá que transformarlos en componentes de $\mathds{F}_{128}$, por el vector $firma$ transpuesta, ecuación (\ref{eq:ej-aux-beta-1}).
+La segunda variable ${\beta_{aux}}_k$ es el producto de la $k-ésima$ componente del vector $\beta_{pub}$, donde sus componentes se encuentran en $\mathds{F}_2$ y habrá que transformarlos en componentes de $\mathds{F}_{128}$, por el vector $firma$ transpuesta, ecuación (\ref{eq:ej-aux-beta-1}).
 
 \begin{equation}\label{eq:ej-aux-beta-1}
 	\begin{aligned}

@@ -46,7 +46,7 @@
 \contentsline {lstlisting}{\numberline {A.18}Instalaci\IeC {\'o}n \textit {blockchain}. Parte IX}{81}{lstlisting.Alph1.18}
 \contentsline {lstlisting}{\numberline {A.19}L\IeC {\'\i }nea 108 app-core.sh}{81}{lstlisting.Alph1.19}
 \contentsline {lstlisting}{\numberline {A.20}Instalaci\IeC {\'o}n \textit {blockchain}. Parte X}{81}{lstlisting.Alph1.20}
-\contentsline {lstlisting}{\numberline {A.21}Clonar nuevo core}{81}{lstlisting.Alph1.21}
+\contentsline {lstlisting}{\numberline {A.21}Clonar nuevo \textit {core}}{81}{lstlisting.Alph1.21}
 \contentsline {lstlisting}{\numberline {A.22}Ejemplo fichero \texttt {data.json}}{82}{lstlisting.Alph1.22}
 \contentsline {lstlisting}{\numberline {A.23}Ejemplo fichero \texttt {signature.json}}{82}{lstlisting.Alph1.23}
 \contentsline {lstlisting}{\numberline {A.24}Instalaci\IeC {\'o}n \textit {blockchain}. Parte XI}{83}{lstlisting.Alph1.24}

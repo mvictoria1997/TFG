@@ -181,7 +181,7 @@ Hasta aquí se han instalado los paquetes y dependencias para poder empezar a in
 \end{lstlisting}
 
 
-Una vez instalado el deployer hay que proceder a realizar una modificación en el archivo \path{/home/<USUARIO>/deployer/app/app-core.sh}, código \ref{cod:app-core-A}. Para que en lugar de instalar el repositorio de github sin modificaciones, se instale la \textit{blockchain} con el nuevo algoritmo UOV.\\
+Una vez instalado el deployer hay que proceder a realizar una modificación en el archivo \path{/home/<USUARIO>/deployer/app/app-core.sh}, código \ref{cod:app-core-A}. Para que en lugar de instalar el repositorio de GitHub sin modificaciones, se instale la \textit{blockchain} con el nuevo algoritmo UOV.\\
 
 \begin{lstlisting}[language=Python,caption=Línea 108 app-core.sh, label=cod:app-core-A]
 	git clone https://github.com/mvictoria1997/core.git --single-branch "$BRIDGECHAIN_PATH"
@@ -197,7 +197,7 @@ La \textit{blockchain} va a utilizar la base de datos local del Docker, así pue
 
 Durante la instalación de la \textit{blockchain} se descargará el código con los algoritmos de firma, por tanto en este punto debemos de modificar los archivos. Para ello hay que hacer un \texttt{fork} del repositorio \texttt{ArkEcosystem/core} \cite{ark-core} en nuestro usuario de Github. A continuación se descarga el código con el comando \ref{cod:clone-core}.\\
 
-\begin{lstlisting}[language=Bash,caption=Clonar nuevo core, label=cod:clone-core, style=Consola]
+\begin{lstlisting}[language=Bash,caption=Clonar nuevo \textit{core}, label=cod:clone-core, style=Consola]
 	$ git clone https://github.com/<USUARIO>/core.git
 \end{lstlisting}
 
@@ -223,9 +223,9 @@ El código \ref{cod:data-json} muestra un ejemplo de la estructura del fichero \
 			"pub_schnorr": "D2",
 			"priv_schnorr":"C6",
 			"priv_alpha_UOV": [[1, 0 ], [ 1, 1]],
-			"priv_beta_OUV": [1, 0,  1],
+			"priv_beta_UOV": [1, 0,  1],
 			"pub_alpha_UOV": [[1,  1], [ 0, 1]],
-			"pub_beta_OUV": [[1, 0,  1, 1, 1]]
+			"pub_beta_UOV": [[1, 0,  1, 1, 1]]
 		}
 	]
 \end{lstlisting}
@@ -240,7 +240,7 @@ El código \ref{cod:signature-json} muestra un ejemplo de la estructura del fich
 \end{lstlisting}
 
 
-Llegados a este punto hay que instalar el \texttt{core} de la \textit{blockchain} con el algoritmo UOV, código \ref{cod:install-bridgechain}, la instalación tardará unos diez minutos. Una vez que instalado se obtiene en la salida la dirección y la \textit{passphrase} del wallet Genesis, ambas serán necesarias para poder realizar transacciones por tanto puede resultar útil almacenarlas en un archivo, ver figura \ref{fig:install-bridge}. De todas formas se puede encontrar la \textit{passphrase} junto con la dirección en el archivo \path{/home/<USUARIO>/.bridgechain/testenet/<NOMBRE-BRIDGECHAIN>/genesisWallet.json}. \\
+Llegados a este punto hay que instalar el \texttt{core} de la \textit{blockchain} con el algoritmo UOV, código \ref{cod:install-bridgechain}, la instalación tardará unos diez minutos. Una vez que instalado se obtiene en la salida la dirección y la \textit{passphrase} del wallet Génesis, ambas serán necesarias para poder realizar transacciones por tanto puede resultar útil almacenarlas en un archivo, ver figura \ref{fig:install-bridge}. De todas formas se puede encontrar la \textit{passphrase} junto con la dirección en el archivo \path{/home/<USUARIO>/.bridgechain/testenet/<NOMBRE-BRIDGECHAIN>/genesisWallet.json}. \\
 
 El archivo de configuración \path{/home/<USUARIO>/deployer/config.sample.conf} se puede modificar para cambiar por ejemplo el nombre de la \textit{blockchain}, en este caso se le ha puesto  \texttt{``{}}victoria-bridgechain\texttt{''}, variable \texttt{chainName}. Otros parámetros a destacar para modificar son \texttt{databaseName}, \texttt{totalPremine}, \texttt{bridgechainPath} y \texttt{explorerPath}.\\
 
@@ -258,7 +258,7 @@ El archivo de configuración \path{/home/<USUARIO>/deployer/config.sample.conf} 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=15cm,height=9cm]{figuras/Instalacion_bridgechain.png}
-	\caption{Salida tras la instalación del core}
+	\caption{Salida tras la instalación del \textit{core}}
 	\label{fig:install-bridge}
 \end{figure}
 
@@ -319,7 +319,7 @@ $ n --version
 $ npm install -g yarn
 \end{lstlisting}
 
-La descarga de la aplicación se realiza desde el repositorio de github de \texttt{@ArkEcosystem/desktop-wallet} \cite{descargas-wallet}, para el proyecto se ha descargado la última versión del archivo \texttt{.deb}.\\
+La descarga de la aplicación se realiza desde el repositorio de GitHub de \texttt{@ArkEcosystem/desktop-wallet} \cite{descargas-wallet}, para el proyecto se ha descargado la última versión del archivo \texttt{.deb}.\\
 
 \begin{lstlisting}[language=Bash,caption=Instalación de la aplicación ARK Wallet, label=cod:install-wallet, style=Consola]
 $ sudo dpkg -i ark-desktop-wallet-linux-amd64-<VERSION>.deb
@@ -373,7 +373,7 @@ Cuando se ha creado la red aparece una pantalla con los detalles de la misma don
 \end{figure}
 
 \newpage
-Se selecciona la red recien creada, \texttt{victoriaBridgechain} y se avanza al siguiente paso, figura \ref{fig:wallet-6}.\\
+Se selecciona la red recién creada, \texttt{victoriaBridgechain} y se avanza al siguiente paso, figura \ref{fig:wallet-6}.\\
 
 \begin{figure}[H]
 	\centering
@@ -445,7 +445,7 @@ Para realizar transacciones y poder probar el algoritmo, es necesario crear otro
 	\label{fig:wallet-13}
 \end{figure}
 
-La figura \ref{fig:wallet-14} muestra la \textit{passphrase} del monedero. Esta \textit{passphrase} hay que guardarla, tal y como se hizó con la \textit{passphrase} de monedero importado, pues será necesaria para realizar transacciones posteriormente.\\
+La figura \ref{fig:wallet-14} muestra la \textit{passphrase} del monedero. Esta \textit{passphrase} hay que guardarla, tal y como se hizo con la \textit{passphrase} de monedero importado, pues será necesaria para realizar transacciones posteriormente.\\
 
 \begin{figure}[H]
 	\centering
@@ -455,7 +455,7 @@ La figura \ref{fig:wallet-14} muestra la \textit{passphrase} del monedero. Esta 
 \end{figure}
 
 \newpage
-La verificación de la \textit{passphrase} se hace introduciendo tres palabras, la número tres, seis y nueve, si se desea se puede realizar la verifiación introduciendo todas las palabras, figura \ref{fig:wallet-15}.\\
+La verificación de la \textit{passphrase} se hace introduciendo tres palabras, la número tres, seis y nueve, si se desea se puede realizar la verificación introduciendo todas las palabras, figura \ref{fig:wallet-15}.\\
 
 \begin{figure}[H]
 	\centering
@@ -516,16 +516,16 @@ Después hay que confirmar la transacción, además se pueden comprobar los dato
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=8.5cm,height=10cm]{figuras/wallet_19.png}
-	\caption{Confirmación de la transaferencia}
+	\caption{Confirmación de la transferencia}
 	\label{fig:wallet-19}
 \end{figure}
 
-En el modenero desde donde se ha realizado la transacción, se puede ver que se ha creado una nueva entrada en la lista de transacciones, figura \ref{fig:wallet-20}.
+En el monedero desde donde se ha realizado la transacción, se puede ver que se ha creado una nueva entrada en la lista de transacciones, figura \ref{fig:wallet-20}.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=12cm,height=6cm]{figuras/wallet_20.png}
-	\caption{Comprobación de que se ha enviado la transaferencia}
+	\caption{Comprobación de que se ha enviado la transferencia}
 	\label{fig:wallet-20}
 \end{figure}
 

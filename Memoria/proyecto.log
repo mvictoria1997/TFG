@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.3.26)  17 NOV 2020 19:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.3.26)  18 NOV 2020 11:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -8973,7 +8973,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 303.
 Here is how much of TeX's memory you used:
  52433 strings out of 494284
  1081635 string characters out of 6162693
- 1349521 words of memory out of 5000000
+ 1349525 words of memory out of 5000000
  53804 multiletter control sequences out of 15000+600000
  650554 words of font info for 127 fonts, out of 8000000 for 9000
  376 hyphenation exceptions out of 8191
@@ -8993,7 +8993,7 @@ pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/urw/courier/ucrr8a.pfb>
-Output written on proyecto.pdf (122 pages, 2188478 bytes).
+Output written on proyecto.pdf (122 pages, 2188589 bytes).
 PDF statistics:
  2547 PDF objects out of 2984 (max. 8388607)
  2247 compressed objects within 23 object streams

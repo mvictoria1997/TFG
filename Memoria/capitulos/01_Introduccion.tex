@@ -13,7 +13,7 @@ El objetivo de este proyecto es evitar que un sistema \textit{blockchain} sea vu
 
 La tecnología ha transformado nuestra sociedad en una sociedad digitalizada, donde actualmente, los dispositivos digitales comportan la mayor parte de nuestras actividades diarias en distintos ámbitos, como económicas, organizativas o sociales. En el proceso de digitalización de la sociedad podemos distinguir las siguientes cinco fases \cite{fases-digitalizacion}.\\
 
-La primera fase o era del Internet, corresponde a mediados de los 90. En esta fase se comenzaron a crear páginas web para que los medios de comunicación y las empresas puedieran publicar y compartir información.\\
+La primera fase o era del Internet, corresponde a mediados de los 90. En esta fase se comenzaron a crear páginas web para que los medios de comunicación y las empresas pudieran publicar y compartir información.\\
 
 La segunda fase o era de las redes sociales, tuvo mayor auge a partir de 2005. Plataformas de bajo o ningún coste, se utilizaban en las empresas para poder llegar mejor a los clientes.\\
 
@@ -31,14 +31,14 @@ La \textbf{integridad} busca mantener la exactitud de los datos, es decir, que n
 
 La \textbf{disponibilidad} es la cualidad de la información de encontrarse a disposición de quienes deben acceder a ella, ya sean personas, procesos o aplicaciones, en los momentos que así lo quieran. Los mecanismos para asegurar la disponibilidad se implementan con la infraestructura tecnológica.\\
 
-Además de estos tres pilares hay otro principio, la \textbf{autentificación}, que es la propiedad que permite identificar al generador de la información. Trata de comprobar si un mensaje enviado por un usuario, ha sido verdaderamente firmado por él mismo. Esto se consigue con el uso de cuentas de usuario y contraseñas de acceso.\\
+Además de estos tres pilares hay otro principio, la \textbf{autenticación}, que es la propiedad que permite identificar al generador de la información. Trata de comprobar si un mensaje enviado por un usuario, ha sido verdaderamente firmado por él mismo. Esto se consigue con el uso de cuentas de usuario y contraseñas de acceso.\\
 
 Para garantizar estos servicios de seguridad se hace uso de protocolos de seguridad de la información entre los que se encuentra la criptografía, la lógica y la autenticación.\\
 
 La criptografía se ocupa de cifrar ciertos mensaje con el fin de hacerlos ilegibles a receptores no autorizados, una vez que llega a su destino y sea descifrado, el receptor obtendrá el mensaje original \cite{criptografia}. Además dota de seguridad a las comunicaciones, a la información y a las entidades que se comunican.\\
 
 %\newpage
-Podemos diferenciar dos tipos de criptografía, la criptografía simétrica y la asimétrica. La criptografía simétrica utiliza la misma clave para cifrar y descrifrar un mensaje, esta clave la ha de conocer tanto el emisor como el receptor. Mientras que la asimétrica utiliza dos claves la pública y la privada.\\
+Podemos diferenciar dos tipos de criptografía, la criptografía simétrica y la asimétrica. La criptografía simétrica utiliza la misma clave para cifrar y descifrar un mensaje, esta clave la ha de conocer tanto el emisor como el receptor. Mientras que la asimétrica utiliza dos claves la pública y la privada.\\
 
 En la criptografía asimétrica podemos diferenciar dos ramas, el cifrado de clave pública y las firmas digitales \cite{criptografia-asimetrica}. En el cifrado de clave pública, el emisor cifra el mensaje con la clave pública del destinatario y el receptor lo descifra con su propia clave privada. En las firmas digitales, el emisor firma el mensaje con su clave privada y el receptor puede verificar el mensaje con su propia clave pública, además cualquier manipulación del mensaje se refleja en su resumen o \textit{hash}.\\
 
@@ -84,7 +84,7 @@ Veamos la tabla comparativa \ref{table:security-level}. Esta nos indica el tipo 
 \end{table}
 
 
-En la actualidad, se están desarrollando muchos algoritmos para que sean resistentes a ataques de tipo cuántico, denominados algoritmos de criptografía postcuántica \cite{criptografia-postcuantica}. Estos ataques afectan principalmente a los algoritmos de clave pública o asimétrica, puesto que para la criptografía simétrica duplicar el tamaño de clave empleada es suficiente para hacerlos seguros y hacer inservible el algoritmo de Grover.\\
+En la actualidad, se están desarrollando muchos algoritmos para que sean resistentes a ataques de tipo cuántico, denominados algoritmos de criptografía post-cuántica \cite{criptografia-postcuantica}. Estos ataques afectan principalmente a los algoritmos de clave pública o asimétrica, puesto que para la criptografía simétrica duplicar el tamaño de clave empleada es suficiente para hacerlos seguros y hacer inservible el algoritmo de Grover.\\
 
 \newpage
 Por otro lado, también en la actualidad está siendo muy relevante la adopción de las \textit{blockchain} como tecnología para ofrecer diversos servicios. Las \textit{blockchain} o cadenas de bloques son listas de transacciones, denominadas bloques, firmadas y unidas con algoritmos criptográficos. Además cada bloque contiene el hash del bloque anterior, lo que se explicará con más detalle en la sección \ref{sec:intro:blockchain}.\\
@@ -117,9 +117,9 @@ A continuación se muestran los capítulos que presenta la memoria junto con una
 	\item Planificación y costes: Contiene dos diagramas de Gantt que reflejan el seguimiento del proyecto, el primero muestra la planificación inicial y el segundo la planificación realista. Incluye también el presupuesto del proyecto.
 	\item Análisis del problema: Descripción de las funcionalidades y requisitos, y análisis de los objetivos que se muestran en la sección \ref{sec:intro:objetivos}.
 	\item Diseño: Se encuentra el diseño de la implementación del algoritmo \acrshort{uov} y el diseño del ecosistema ARK, donde se integrará el algoritmo de firma.
-	\item Implementación: Contiene la explicación de la implementación del algoritmo \acrshort{uov} y la aritemética del cuerpo finito de $2^7$ elementos.
+	\item Implementación: Contiene la explicación de la implementación del algoritmo \acrshort{uov} y la aritmética del cuerpo finito de $2^7$ elementos.
 	\item Evaluación y pruebas: Abarca pruebas sobre los tiempos de ejecución del algoritmo y pruebas de integración comprobando que se ejecuta sin errores.
-	\item Conclusiones: Se explica que se ha conseguido con la realización del proyeto y algunas líneas de investigación para continuar con desarrollo del mismo.
+	\item Conclusiones: Se explica que se ha conseguido con la realización del proyecto y algunas líneas de investigación para continuar con desarrollo del mismo.
 	\item Apéndice: Muestra el manual de usuario con los pasos que se han seguido para realizar este proyecto.
 \end{enumerate}
 

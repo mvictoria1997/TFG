@@ -6,7 +6,7 @@ En este capítulo se va a detallar cómo se ha llevado a la práctica el diseño
 
 En el primer bloque se muestra la organización de los archivos de los diferentes directorios alojados en el docker. También se aporta el código de los nuevo archivos generados para llevar a cabo la integración del algoritmo UOV en la \textit{blockchain}.\\
 
-Mientras en el segundo bloque, hay una clara explicación de las funciones necesarias para la implementación del algoritmo UOV en el lenguaje de programación \texttt{python}. Además se incluye el código y los parámetros necearios para la ejecución de las mismas.\\
+Mientras en el segundo bloque, hay una clara explicación de las funciones necesarias para la implementación del algoritmo UOV en el lenguaje de programación \texttt{python}. Además se incluye el código y los parámetros necesarios para la ejecución de las mismas.\\
 
 
 Durante el desarrollo del proyecto se ha utilizado Git, para tener un control de las versiones generadas y reflejar los cambios realizados, por si en algún momento fuese necesario deshacerlos. Se han utilizado dos repositorios uno para las modificaciones en el \textit{core} de la \textit{blockchain}\cite{core-mv} y otro para la memoria y el código en \texttt{python}\cite{git-mv}.
@@ -61,13 +61,13 @@ La carpeta \texttt{deployer} contiene varios directorios y ficheros siendo los m
 \end{figure}
 
 \begin{itemize}
-	\item El directorio \texttt{app} contiene a su vez dos ficheros, \texttt{app-core.sh} que clona e instala el repositorio de github \texttt{mvictoria1997/core} puesto que se ha cambiado la línea 108 para tal fin, código \ref{cod:app-core}, en su defecto instalaría la \textit{blockchain} de \mbox{ArkEcosystem}. Este cambio se hace para obtener en la \textit{blockchain} las modificaciones en el algoritmo de firma.\\
+	\item El directorio \texttt{app} contiene a su vez dos ficheros, \texttt{app-core.sh} que clona e instala el repositorio de GitHub \texttt{mvictoria1997/core} puesto que se ha cambiado la línea 108 para tal fin, código \ref{cod:app-core}, en su defecto instalaría la \textit{blockchain} de \mbox{ArkEcosystem}. Este cambio se hace para obtener en la \textit{blockchain} las modificaciones en el algoritmo de firma.\\
 
 	\begin{lstlisting}[language=Python,caption=Línea 108 app-core.sh, label=cod:app-core]
 		git clone https://github.com/mvictoria1997/core.git --single-branch "$BRIDGECHAIN_PATH"
 	\end{lstlisting}
 
-	El segundo archivo, \texttt{app-explorer.sh},  clona e instala el repositorio de github \texttt{ArkEcosystem/explorer} no se hace ningún cambio puesto que se va a utilizar todo por defecto.
+	El segundo archivo, \texttt{app-explorer.sh},  clona e instala el repositorio de GitHub \texttt{ArkEcosystem/explorer} no se hace ningún cambio puesto que se va a utilizar todo por defecto.
 
 	\item El archivo \texttt{bridgchain.sh} ejecuta los archivos \texttt{app-core.sh} y \texttt{app-explorer.sh} para instalar la \textit{blockchain} y el \textit{explorer} respectivamente.
 	\item El archivo \texttt{setup.sh} realiza una instalación inicial del repositorio.
@@ -348,9 +348,9 @@ El directorio \texttt{core-bridgechain} contiene cinco directorios importantes, 
 			"pub_schnorr":
 			"priv_schnorr":
 			"priv_alpha_UOV": 
-			"priv_beta_OUV": 
+			"priv_beta_UOV": 
 			"pub_alpha_UOV": 
-			"pub_beta_OUV": 
+			"pub_beta_UOV": 
 		}
 	\end{lstlisting}
 	
@@ -364,7 +364,7 @@ El directorio \texttt{core-bridgechain} contiene cinco directorios importantes, 
 	\item Directorio \texttt{identities} abarca la creación y almacenamiento de las claves pública y privada.
 	\item Directorio \texttt{interfaces} incluye las interfaces, esto es, los campos que se requieren para la creación de cada objeto o los que pueden añadirse posteriormente. Los objetos más destacados y con los que se han trabajado son bloques, identidades, mensajes y transacciones.
 	
-	Los bloques se muestran en el archivo \texttt{blocks.ts}, las identidades (con las claves pública y privada) en el archivo \texttt{identities.ts}, los mensajes en el archvio \texttt{message.ts}, y las transacciones en el archivo \texttt{transactions.ts}.
+	Los bloques se muestran en el archivo \texttt{blocks.ts}, las identidades (con las claves pública y privada) en el archivo \texttt{identities.ts}, los mensajes en el archivo \texttt{message.ts}, y las transacciones en el archivo \texttt{transactions.ts}.
 	\item Entre los ficheros del directorio \texttt{transactions} podemos encontrar \texttt{signer.ts} y \texttt{verifier.ts}. El primero contiene la gestión de la firma de transacciones y el segundo la verificación de la firma.
 \end{itemize}
 
@@ -712,7 +712,7 @@ def matrix_product (n1=[], n2=[]):
    return prod
 \end{lstlisting}
 
-Producto de dos matrices con elementos en el cuerpo $\mathds{F}_2$, como los elementos de la matriz son $0$ y $1$ la suma acomulada se hace con la operación lógica \texttt{xor},  código \ref{cod:prodF2-matrix}.
+Producto de dos matrices con elementos en el cuerpo $\mathds{F}_2$, como los elementos de la matriz son $0$ y $1$ la suma acumulada se hace con la operación lógica \texttt{xor},  código \ref{cod:prodF2-matrix}.
 
 \begin{table}[H]
 	\begin{center}
@@ -1104,8 +1104,8 @@ Por último la función \texttt{verify} comprueba si la firma, $firma$, de un me
 		int vector & alpha\_F2 & Input & Vector de matrices triangulares superiores en $\mathds{F}_2$, parte de la clave privada\\[0.5ex]
 		int vector & beta\_F2 & Input & Matriz en $\mathds{F}_2$, parte de la clave privada \\[0.5ex]
 		int & m & Input & Número aceites\\[1.5ex]
-		int vector & alpha & Inner & Almecena los correspondientes valores de alpha\_F2 en $\mathds{F}_{128}$\\[0.5ex]
-		int vector & beta & Inner &  Almecena los correspondientes valores de beta\_F2 en $\mathds{F}_{128}$\\[1.5ex]
+		int vector & alpha & Inner & Almacena los correspondientes valores de alpha\_F2 en $\mathds{F}_{128}$\\[0.5ex]
+		int vector & beta & Inner &  Almacena los correspondientes valores de beta\_F2 en $\mathds{F}_{128}$\\[1.5ex]
 		boolean & verif & Output & \texttt{True} si la firma es válida\\
 		& & & \texttt{False} en otro caso\\[0.5ex]
 		\bottomrule

@@ -11,7 +11,7 @@ El tiempo de ejecución del algoritmo se lo lleva en gran parte la generación d
 
 En el caso de $beta_{pub}$, hay que multiplicar $v$ un vector por de tamaño $n$ por un matriz de dimensiones $n \times n$. Así la complejidad del cálculo de $beta_{pub}$ es de $\mathds{O}(n^3)$.\\
 
-Entonces la complejidad de dicha función es de órden $\mathds{O}(n^4)$.\\
+Entonces la complejidad de dicha función es de orden $\mathds{O}(n^4)$.\\
 
 La tabla \ref{tab:tiempos} muestra algunos tiempos de ejecución al calcular la clave pública. Se han comparado los tiempos de ejecución en \texttt{python} y en un lenguaje de programación matemático, \texttt{SageMath}. Vemos que los tiempos en \texttt{python} son considerablemente mayores, más aún con valores de $m$ y $v$ grandes, una razón es por que las funciones de \texttt{python} han sido implementadas y no son de una biblioteca como las de \texttt{SageMath} que siempre son más óptimas.\\ 
 
@@ -43,6 +43,6 @@ Para ver que la integración funciona correctamente se han seguido unos pasos.\\
 
 En primer lugar se ha instalado e iniciado el \textit{core}, y se han mostrado los logs del mismo para comprobar que no haya ningún error durante la firma de los bloques que se vayan generando.\\
 
-Posteriormente, se ha abierto la aplicación Wallet para realizar una transacción, en los mismos logs del core se ha mostrado que la transacción es válida y que se ha almacenado en un bloque. Esta parte no se ha podido cumplimentar, ya que los bloques con una transacción no se firman correctamente.\\
+Posteriormente, se ha abierto la aplicación Wallet para realizar una transacción, en los mismos logs del \textit{core} se ha mostrado que la transacción es válida y que se ha almacenado en un bloque. Esta parte no se ha podido cumplimentar, ya que los bloques con una transacción no se firman correctamente.\\
 
 Por último, en el \textit{explorer} de ARK se buscan la transacción y el bloque en el que se ha almacenado, se puede ver la información referente al bloque como quién lo ha firmado, cuándo se ha creado el bloque o el número de transacciones. Si se desea visualizar la firma de un bloque  hay que acceder a la API y buscar el bloque en cuestión, por la ID.

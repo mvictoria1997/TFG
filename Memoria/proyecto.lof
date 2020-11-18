@@ -21,7 +21,7 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Salida tras la instalaci\IeC {\'o}n del core}}{83}{figure.Alph1.1}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Salida tras la instalaci\IeC {\'o}n del \textit {core}}}{83}{figure.Alph1.1}
 \contentsline {figure}{\numberline {A.2}{\ignorespaces Salida tras iniciar del \textit {explorer}}}{84}{figure.Alph1.2}
 \contentsline {figure}{\numberline {A.3}{\ignorespaces Primeras transacciones en el \textit {explorer}}}{84}{figure.Alph1.3}
 \contentsline {figure}{\numberline {A.4}{\ignorespaces Inicio de Wallet}}{85}{figure.Alph1.4}
@@ -42,8 +42,8 @@
 \contentsline {figure}{\numberline {A.19}{\ignorespaces P\IeC {\'a}gina principal con los monederos}}{93}{figure.Alph1.19}
 \contentsline {figure}{\numberline {A.20}{\ignorespaces Bot\IeC {\'o}n enviar}}{94}{figure.Alph1.20}
 \contentsline {figure}{\numberline {A.21}{\ignorespaces Realizar transferencia}}{94}{figure.Alph1.21}
-\contentsline {figure}{\numberline {A.22}{\ignorespaces Confirmaci\IeC {\'o}n de la transaferencia}}{95}{figure.Alph1.22}
-\contentsline {figure}{\numberline {A.23}{\ignorespaces Comprobaci\IeC {\'o}n de que se ha enviado la transaferencia}}{95}{figure.Alph1.23}
+\contentsline {figure}{\numberline {A.22}{\ignorespaces Confirmaci\IeC {\'o}n de la transferencia}}{95}{figure.Alph1.22}
+\contentsline {figure}{\numberline {A.23}{\ignorespaces Comprobaci\IeC {\'o}n de que se ha enviado la transferencia}}{95}{figure.Alph1.23}
 \contentsline {figure}{\numberline {A.24}{\ignorespaces Logs de la cadena de bloques}}{96}{figure.Alph1.24}
 \contentsline {figure}{\numberline {A.25}{\ignorespaces Vista del \textit {explorer} con los \IeC {\'u}ltimos bloques creados}}{96}{figure.Alph1.25}
 \contentsline {figure}{\numberline {A.26}{\ignorespaces Bloques anterior y posterior del bloque con ID $63372384328353607$}}{97}{figure.Alph1.26}
