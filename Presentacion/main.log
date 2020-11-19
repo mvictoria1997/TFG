@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2020.3.26)  18 NOV 2020 22:46
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2020.3.26)  19 NOV 2020 13:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1273,25 +1273,46 @@ Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
 Package: eurosym 1998/08/06 v1.1 European currency symbol ``Euro''
 \@eurobox=\box86
 )
+(/usr/share/texlive/texmf-dist/tex/latex/textpos/textpos.sty
+Package: textpos 2016/06/07 v1.8
+
+Package: textpos 2016/06/07 1.8, absolute positioning of text on the page
+\TP@textbox=\box87
+\TP@holdbox=\box88
+\TPHorizModule=\dimen304
+\TPVertModule=\dimen305
+\TP@margin=\dimen306
+\TP@absmargin=\dimen307
+Grid set 16 x 16 = 28.45274pt x 16.00467pt
+\TPboxrulesize=\dimen308
+\TP@ox=\dimen309
+\TP@oy=\dimen310
+\TP@tbargs=\toks49
+\TP@prevdepth=\dimen311
+TextBlockOrigin set to 0pt x 0pt
+) (/usr/share/texlive/texmf-dist/tex/latex/ifsym/ifsym.sty
+Package: ifsym 2000/04/18 I.Kloeckl
+\c@ifsymcnt=\count344
+)
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count344
-\lst@gtempboxa=\box87
-\lst@token=\toks49
-\lst@length=\count345
-\lst@currlwidth=\dimen304
-\lst@column=\count346
-\lst@pos=\count347
-\lst@lostspace=\dimen305
-\lst@width=\dimen306
-\lst@newlines=\count348
-\lst@lineno=\count349
-\lst@maxwidth=\dimen307
+\lst@mode=\count345
+\lst@gtempboxa=\box89
+\lst@token=\toks50
+\lst@length=\count346
+\lst@currlwidth=\dimen312
+\lst@column=\count347
+\lst@pos=\count348
+\lst@lostspace=\dimen313
+\lst@width=\dimen314
+\lst@newlines=\count349
+\lst@lineno=\count350
+\lst@maxwidth=\dimen315
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count350
-\lst@skipnumbers=\count351
-\lst@framebox=\box88
+\c@lstnumber=\count351
+\lst@skipnumbers=\count352
+\lst@framebox=\box90
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2015/06/04 1.6 listings configuration
@@ -1304,15 +1325,15 @@ Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
-\captionmargin=\dimen308
-\captionmargin@=\dimen309
-\captionwidth=\dimen310
-\caption@tempdima=\dimen311
-\caption@indent=\dimen312
-\caption@parindent=\dimen313
-\caption@hangindent=\dimen314
+\captionmargin=\dimen316
+\captionmargin@=\dimen317
+\captionwidth=\dimen318
+\caption@tempdima=\dimen319
+\caption@indent=\dimen320
+\caption@parindent=\dimen321
+\caption@hangindent=\dimen322
 )
-\c@ContinuedFloat=\count352
+\c@ContinuedFloat=\count353
 Package caption Info: beamer document class.
 Package caption Info: hyperref package is loaded.
 Package caption Info: Hyperref support is turned off
@@ -1321,35 +1342,35 @@ Package caption Info: listings package is loaded.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2016/05/22 v1.1-161 Sub-captions (AR)
-\c@subfigure=\count353
-\c@subtable=\count354
+\c@subfigure=\count354
+\c@subtable=\count355
 )
 (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
 \multirow@colwidth=\skip68
-\multirow@cntb=\count355
+\multirow@cntb=\count356
 \multirow@dima=\skip69
-\bigstrutjot=\dimen315
+\bigstrutjot=\dimen323
 )
 (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2016/04/27 v1.618033 publication quality tables
-\heavyrulewidth=\dimen316
-\lightrulewidth=\dimen317
-\cmidrulewidth=\dimen318
-\belowrulesep=\dimen319
-\belowbottomsep=\dimen320
-\aboverulesep=\dimen321
-\abovetopsep=\dimen322
-\cmidrulesep=\dimen323
-\cmidrulekern=\dimen324
-\defaultaddspace=\dimen325
-\@cmidla=\count356
-\@cmidlb=\count357
-\@aboverulesep=\dimen326
-\@belowrulesep=\dimen327
-\@thisruleclass=\count358
-\@lastruleclass=\count359
-\@thisrulewidth=\dimen328
+\heavyrulewidth=\dimen324
+\lightrulewidth=\dimen325
+\cmidrulewidth=\dimen326
+\belowrulesep=\dimen327
+\belowbottomsep=\dimen328
+\aboverulesep=\dimen329
+\abovetopsep=\dimen330
+\cmidrulesep=\dimen331
+\cmidrulekern=\dimen332
+\defaultaddspace=\dimen333
+\@cmidla=\count357
+\@cmidlb=\count358
+\@aboverulesep=\dimen334
+\@belowrulesep=\dimen335
+\@thisruleclass=\count359
+\@lastruleclass=\count360
+\@thisrulewidth=\dimen336
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/bm.sty
 Package: bm 2017/01/16 v1.2c Bold Symbol Support (DPC/FMi)
@@ -1359,43 +1380,222 @@ Package: bm 2017/01/16 v1.2c Bold Symbol Support (DPC/FMi)
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
 LaTeX Info: Redefining \bm on input line 207.
 )
+(/usr/share/texlive/texmf-dist/tex/latex/forest/forest.sty
+Package: forest 2017/07/14 v2.1.5 Drawing (linguistic) trees
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.code.tex
+File: tikzlibraryshapes.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2008/06/26 v3.0.1a (rcs-revision 1.1)
+
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.misc.code.tex
+File: pgflibraryshapes.misc.code.tex 2013/07/18 v3.0.1a (rcs-revision 1.5)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.symbols.code.tex
+File: pgflibraryshapes.symbols.code.tex 2013/09/11 v3.0.1a (rcs-revision 1.6)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.arrows.code.tex
+File: pgflibraryshapes.arrows.code.tex 2008/06/26 v3.0.1a (rcs-revision 1.1)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.callouts.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.callouts.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.multipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2010/01/07 v3.0.1a (rcs-revision 1.2)
+
+\pgfnodepartlowerbox=\box91
+\pgfnodeparttwobox=\box92
+\pgfnodepartthreebox=\box93
+\pgfnodepartfourbox=\box94
+\pgfnodeparttwentybox=\box95
+\pgfnodepartnineteenbox=\box96
+\pgfnodeparteighteenbox=\box97
+\pgfnodepartseventeenbox=\box98
+\pgfnodepartsixteenbox=\box99
+\pgfnodepartfifteenbox=\box100
+\pgfnodepartfourteenbox=\box101
+\pgfnodepartthirteenbox=\box102
+\pgfnodeparttwelvebox=\box103
+\pgfnodepartelevenbox=\box104
+\pgfnodeparttenbox=\box105
+\pgfnodepartninebox=\box106
+\pgfnodeparteightbox=\box107
+\pgfnodepartsevenbox=\box108
+\pgfnodepartsixbox=\box109
+\pgfnodepartfivebox=\box110
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryfit.code.tex
+File: tikzlibraryfit.code.tex 2013/07/12 v3.0.1a (rcs-revision 1.5)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2013/07/15 v3.0.1a (rcs-revision 1.9)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryintersection
+s.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex
+)
+\pgf@intersect@solutions=\count361
+) (/usr/share/texlive/texmf-dist/tex/latex/pgfopts/pgfopts.sty
+Package: pgfopts 2014/07/10 v2.1a LaTeX package options with pgfkeys
+\pgfopts@list@add@a@toks=\toks51
+\pgfopts@list@add@b@toks=\toks52
+)
+(/usr/share/texlive/texmf-dist/tex/latex/elocalloc/elocalloc.sty
+Package: elocalloc 2016/12/15 v0.03 local allocation for LaTeX 2015+ (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/inlinedef/inlinedef.sty
+Package: inlinedef 2008/07/10 v1.0 Inlined expansions within definitions
+\ID@toks=\toks53
+\ID@count=\count362
+)
+\ID@usercommands=\toks54
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \useforestlibrary with sig. 's O{} m' on line 166.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \ProvidesForestLibrary with sig. 'm O{}' on line 176.
+.................................................
+\safeloop@depth=\count363
+\safeRKloop@depth=\count364
+\forest@temp@dimen=\dimen337
+\forest@temp@count=\count365
+\forest@n=\count366
+\forest@temp@global@count=\count367
+\forest@temp@toks=\toks55
+\forest@temparray@M=\count368
+\forest@temparray@N=\count369
+\forest@global@temparray@M=\count370
+\forest@global@temparray@N=\count371
+\forest@isnum@count=\count372
+\forest@isdim@nonintpart=\count373
+\forest@isdim@dimen=\dimen338
+\forest@sort@m=\count374
+\forest@sort@k=\count375
+\forest@sort@p=\count376
+\bracket@content=\toks56
+\bracket@afterthought=\toks57
+\forest@node@maxid=\count377
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \forestdebugtypeouttrees with sig. 'o' on line 2303.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \forestdebugtypeouttree with sig. 'd() O{\forest@cn }' on
+. line 2348.
+.................................................
+\forest@process@left@M=\count378
+\forest@process@left@N=\count379
+\forest@process@right@M=\count380
+\forest@process@right@N=\count381
+\forest@process@saved@M=\count382
+\forest@process@saved@N=\count383
+\forest@process@result@M=\count384
+\forest@process@result@N=\count385
+\forest@process@n=\count386
+\forest@nodewalk@branch@toks=\toks58
+\forest@nodewalk@shortsteps@resolution=\toks59
+\forest@do@dynamics=\toks60
+\forest@box=\box111
+\forest@xg=\dimen339
+\forest@yg=\dimen340
+\forest@xs=\dimen341
+\forest@ys=\dimen342
+\forest@pi@toks=\toks61
+\forest@segment@toks=\toks62
+\forest@PIi@toks=\toks63
+\forest@PIii@toks=\toks64
+\forest@copy@in=\read4
+\forest@copy@out=\write7
+.................................................
+. LaTeX info: "xparse/define-environment"
+. 
+. Defining environment 'forest' with sig. 'D(){}' on line 8510.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \Forest with sig. 's D(){} m' on line 8515.
+.................................................
+\forest@externalize@max@outer@n=\count387
+\forest@externalize@inner@n=\count388
+)
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 80.
+(hyperref)                removing `\\' on input line 98.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 80.
+(hyperref)                removing `\\' on input line 98.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 80.
+(hyperref)                removing `\\' on input line 98.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 80.
+(hyperref)                removing `\\' on input line 98.
 
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1432,8 +1632,8 @@ LaTeX Font Info:    ... okay on input line 90.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box89
-Package hyperref Info: Link coloring OFF on input line 90.
+\AtBeginShipoutBox=\box112
+Package hyperref Info: Link coloring OFF on input line 108.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1441,15 +1641,15 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count360
+\c@section@level=\count389
 )
-LaTeX Info: Redefining \ref on input line 90.
-LaTeX Info: Redefining \pageref on input line 90.
-LaTeX Info: Redefining \nameref on input line 90.
+LaTeX Info: Redefining \ref on input line 108.
+LaTeX Info: Redefining \pageref on input line 108.
+LaTeX Info: Redefining \nameref on input line 108.
 
 (./main.out) (./main.out)
-\@outlinefile=\write7
-\openout7 = `main.out'.
+\@outlinefile=\write8
+\openout8 = `main.out'.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-basic-dictionary
@@ -1483,91 +1683,93 @@ Dictionary: translator-theorem-dictionary, Language: English
 .................................................
 \symlegacymaths=\mathgroup9
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 90.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 90.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 90.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 90.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 90.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 90.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 90.
-LaTeX Font Info:    Redeclaring math accent \check on input line 90.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 90.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 90.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 90.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 90.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 90.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 90.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 90.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 90.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 90.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 90.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 90.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 90.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 90.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 90.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 90.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 90.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 108.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 108.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 108.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 108.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 108.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 108.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 108.
+LaTeX Font Info:    Redeclaring math accent \check on input line 108.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 108.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 108.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 108.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 108.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 108.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 108.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 108.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 108.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 108.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 108.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 108.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 108.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 108.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 108.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 108.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 108.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 90.
+(Font)              `operators' in the math version `normal' on input line 108.
+
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 90.
+(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 108.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 90.
+(Font)              `operators' in the math version `bold' on input line 108.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 90.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 108.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 90.
+(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 108.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 90.
+(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 108.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/bx/n on input line 90.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/bx/n on input line 108.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 90.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 108.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 90.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 108.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  TU/lmr/m/n --> TU/lmr/bx/n on input line 90.
+(Font)                  TU/lmr/m/n --> TU/lmr/bx/n on input line 108.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/lmr/bx/it on input line 90.
+(Font)                  OT1/cmr/bx/it --> TU/lmr/bx/it on input line 108.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/bx/n on input line 90.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/bx/n on input line 108.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/bx/n on input line 90.
-\c@lstlisting=\count361
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/bx/n on input line 108.
+\c@lstlisting=\count390
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
  (./main.nav)
-Overfull \hbox (59.56087pt too wide) in paragraph at lines 90--90
+Overfull \hbox (59.56087pt too wide) in paragraph at lines 108--108
  [][][][]  
  []
 
 File: figuras/logoUGR.pdf Graphic file (type pdf)
 <use figuras/logoUGR.pdf>
 
-Underfull \hbox (badness 1442) in paragraph at lines 92--92
+Underfull \hbox (badness 1442) in paragraph at lines 110--110
 []\T1/lmss/bx/n/14.4 Implementación de una blockchain [] a
  []
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 92.
+LaTeX Font Info:    Try loading font information for U+msa on input line 110.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 92.
+LaTeX Font Info:    Try loading font information for U+msb on input line 110.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 92.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 110.
+
 
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <7> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 92.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 110.
  [1
 
 ]
-\@verb\lstI=\box90
+\@verb\lstI=\box113
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
@@ -1577,7 +1779,7 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-) (./main.toc)
+)
 Overfull \hbox (59.56087pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1585,21 +1787,16 @@ Overfull \hbox (59.56087pt too wide) has occurred while \output is active
 [2
 
 ]
+File: figuras/logo.png Graphic file (type bmp)
+<figuras/logo.png>
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 146.
+
 Overfull \hbox (59.56087pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [3
-
-]
-File: figuras/logo.png Graphic file (type bmp)
-<figuras/logo.png>
-
-Overfull \hbox (59.56087pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[4
 
 ]
 File: figuras/CIA.png Graphic file (type bmp)
@@ -1609,9 +1806,32 @@ Overfull \hbox (59.56087pt too wide) has occurred while \output is active
  [][][][]  
  []
 
+[4
+
+]
+Overfull \hbox (59.56087pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
 [5
 
 ]
+File: figuras/openproj.png Graphic file (type bmp)
+<figuras/openproj.png>
+File: figuras/latex.png Graphic file (type bmp)
+<figuras/latex.png>
+
+Overfull \hbox (46.92972pt too wide) in paragraph at lines 204--204
+ [] 
+ []
+
+File: figuras/GitHub.png Graphic file (type bmp)
+<figuras/GitHub.png>
+File: figuras/docker.png Graphic file (type bmp)
+<figuras/docker.png>
+File: figuras/ark.jpg Graphic file (type bmp)
+<figuras/ark.jpg>
+
 Overfull \hbox (59.56087pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1633,6 +1853,9 @@ Overfull \hbox (59.56087pt too wide) has occurred while \output is active
 [8
 
 ]
+LaTeX Font Info:    Try loading font information for U+ifgeo on input line 219.
+
+ (/usr/share/texlive/texmf-dist/tex/latex/ifsym/uifgeo.fd)
 Overfull \hbox (59.56087pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1657,8 +1880,10 @@ Overfull \hbox (59.56087pt too wide) has occurred while \output is active
 [11
 
 ]
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <12> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 179.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 239.
+File: figuras/arbol_merkle.png Graphic file (type bmp)
+<figuras/arbol_merkle.png>
 
 Overfull \hbox (59.56087pt too wide) has occurred while \output is active
  [][][][]  
@@ -1667,9 +1892,6 @@ Overfull \hbox (59.56087pt too wide) has occurred while \output is active
 [12
 
 ]
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 188.
-
 Overfull \hbox (59.56087pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1677,11 +1899,9 @@ Overfull \hbox (59.56087pt too wide) has occurred while \output is active
 [13
 
 ]
-LaTeX Font Info:    Try loading font information for U+dsrom on input line 201.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <12> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 253.
 
- (/usr/share/texlive/texmf-dist/tex/latex/doublestroke/Udsrom.fd
-File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
-)
 Overfull \hbox (59.56087pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1696,6 +1916,25 @@ Overfull \hbox (59.56087pt too wide) has occurred while \output is active
 [15
 
 ]
+LaTeX Font Info:    Try loading font information for U+dsrom on input line 275.
+
+ (/usr/share/texlive/texmf-dist/tex/latex/doublestroke/Udsrom.fd
+File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
+)
+Overfull \hbox (59.56087pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[16
+
+]
+Overfull \hbox (59.56087pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[17
+
+]
 File: figuras/Gantt_1.png Graphic file (type bmp)
 <figuras/Gantt_1.png>
 
@@ -1703,7 +1942,7 @@ Overfull \hbox (59.56087pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[16
+[18
 
 ]
 File: figuras/Gantt_2.png Graphic file (type bmp)
@@ -1713,7 +1952,7 @@ Overfull \hbox (59.56087pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[17
+[19
 
 ]
 File: figuras/Gantt_3.png Graphic file (type bmp)
@@ -1723,26 +1962,9 @@ Overfull \hbox (59.56087pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[18
-
-]
-Overfull \hbox (59.56087pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[19
-
-]
-Overfull \hbox (59.56087pt too wide) has occurred while \output is active
- [][][][]  
- []
-
 [20
 
 ]
-File: figuras/diagrama_bloquesARK.png Graphic file (type bmp)
-<figuras/diagrama_bloquesARK.png>
-
 Overfull \hbox (59.56087pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1764,6 +1986,11 @@ Overfull \hbox (59.56087pt too wide) has occurred while \output is active
 [23
 
 ]
+File: figuras/diagrama_bloquesARK.png Graphic file (type bmp)
+<figuras/diagrama_bloquesARK.png>
+File: figuras/diagrama_bloquesARK3.png Graphic file (type bmp)
+<figuras/diagrama_bloquesARK3.png>
+
 Overfull \hbox (59.56087pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1777,31 +2004,64 @@ Overfull \hbox (59.56087pt too wide) has occurred while \output is active
 
 [25
 
-] [26
+]
+Overfull \hbox (59.56087pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[26
 
 ]
-\tf@nav=\write8
-\openout8 = `main.nav'.
+Overfull \hbox (59.56087pt too wide) has occurred while \output is active
+ [][][][]  
+ []
 
-\tf@toc=\write9
-\openout9 = `main.toc'.
+[27
 
-\tf@snm=\write10
-\openout10 = `main.snm'.
+]
+Overfull \hbox (59.56087pt too wide) has occurred while \output is active
+ [][][][]  
+ []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 292.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 292.
+[28
+
+]
+Overfull \hbox (59.56087pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[29
+
+]
+Overfull \hbox (59.56087pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[30
+
+]
+\tf@nav=\write9
+\openout9 = `main.nav'.
+
+\tf@toc=\write10
+\openout10 = `main.toc'.
+
+\tf@snm=\write11
+\openout11 = `main.snm'.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 449.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 449.
  (./main.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 292.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 292.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 449.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 449.
  ) 
 Here is how much of TeX's memory you used:
- 40163 strings out of 494390
- 824469 string characters out of 6163962
- 1045175 words of memory out of 5000000
- 43431 multiletter control sequences out of 15000+600000
- 583712 words of font info for 70 fonts, out of 8000000 for 9000
+ 51123 strings out of 494390
+ 1131474 string characters out of 6163962
+ 1370333 words of memory out of 5000000
+ 54306 multiletter control sequences out of 15000+600000
+ 589710 words of font info for 74 fonts, out of 8000000 for 9000
  376 hyphenation exceptions out of 8191
- 60i,16n,95p,10397b,1094s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 137i,16n,171p,10397b,2129s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (26 pages).
+Output written on main.pdf (30 pages).

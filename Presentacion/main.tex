@@ -22,6 +22,9 @@
 \usepackage{mathtools}
 \usepackage{dsfont}
 \usepackage{eurosym}
+\usepackage[absolute,overlay]{textpos}
+\usepackage[geometry]{ifsym}
+
 %
 %\setbeamertemplate{sections/subsections in toc}[ball]
 \usepackage{listings}
@@ -43,6 +46,21 @@
 %	\end{frame}%
 %}
 
+\usepackage{forest}
+
+\definecolor{folderbg}{RGB}{124,166,198}
+\definecolor{folderborder}{RGB}{110,144,169}
+\definecolor{foldercolor}{RGB}{124,166,198}
+
+\def\Size{4pt}
+\tikzset{
+  folder/.pic={
+    \filldraw[draw=folderborder,top color=folderbg!50,bottom color=folderbg]
+      (-1.05*\Size,0.2\Size+5pt) rectangle ++(.75*\Size,-0.2\Size-5pt);  
+    \filldraw[draw=folderborder,top color=folderbg!50,bottom color=folderbg]
+      (-1.15*\Size,-\Size) rectangle (1.15*\Size,\Size);
+  }
+}
 
 
 \newcommand{\sectionpagemod}{
@@ -80,7 +98,7 @@
 \author[]{\textbf {Autor\\ María Victoria Granados Pozo\\ \footnotesize Directores\\ Gabriel Maciá Fernández\\ Francisco Javier Lobillo Borrero}}
 \institute[]{Doble grado de Ingeniería Informática y Matemáticas\\
 Universidad de Granada}
-\date{\today}
+\date{24 de Noviembre de 2020}
 \titlegraphic[width=4cm]{logoUGR.pdf}{}
 %\titlegraphic[width=5cm]{logo.png}{}
 
@@ -108,20 +126,23 @@ Universidad de Granada}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ----------- FRAME ------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}%
-	\frametitle{Contenidos}%
-	\textbf{\tableofcontents} %
-\end{frame}
+
 
 \section{Introducción}
 \sectionpagemod
 
-%El contexto en el que surge este proyecto, es una sociedad digitalizada donde los dispositivos digitales comportan la mayor parte de las actividades. De esta forma cabe pensar como de seguras son esas actividades destacando las actividades económicas. Ya que el objetivo principal del proyecto es evitar que un sistema blockchain sea vulnerable a futuros atáques cuánticos.
+%El contexto en el que surge este proyecto, es una sociedad digitalizada donde los dispositivos digitales comportan la mayor parte de las actividades. De esta forma cabe pensar como de seguras son esas actividades destacando las actividades económicas. Ya que el objetivo principal del proyecto es evitar que un sistema blockchain sea vulnerable a futuros atáques cuánticos. El desarrollo del proyecto y la blockchain modificada se encuentran en los repositorios de GitHub respectivamente
 \begin{frame}[c]{Motivación}
+	\vspace{1.2cm}
 	\begin{figure}
 		\centering
 		\includegraphics[height=4cm]{logo.png}
 	\end{figure}
+	\vspace{0.5cm}
+	\begin{flushright}
+		{\usebeamerfont{author}\usebeamercolor[fg]{author}\large\texttt{@mvictoria1997/TFG}}\\
+		{\usebeamerfont{author}\usebeamercolor[fg]{author}\large\texttt{@mvictoria1997/core}}
+	\end{flushright}
 \end{frame}
 
 %Los avances tecnologícos deben venir acompañados de mecanismos que aporten seguridad. Los tres pilares de la seguridad informática  se denominan CIA que son, confidencialidad que garantiza que un tercero no pueda acceder a los datos, la integridad que mantiene la exactitud de los datos, esto es, que no haya modificaciones durante su envío, y la disponibilidad de los datos en todo momento.
@@ -145,6 +166,43 @@ Universidad de Granada}
 	\end{exampleblock}
 \end{frame}
 
+%Se ha utilizado OpenProj para realizar los digramas de Gantt, Latex para la memoria y la presentación, docker para la parte práctica de proyecto (control de versiones de la integración) y ARK para la blockchain (código abierto y arquitectura modular). Por último GitHub para almecenar en la nube el proyecto y tener control de versiones.
+\begin{frame}{Tecnologías utilizadas}
+	\vspace*{-0.6cm}
+	\begin{columns}[onlytextwidth]
+		\column{0.25\textwidth}
+		\begin{figure}
+			\centering
+			\includegraphics[height=1.5cm]{openproj.png}
+		\end{figure}
+		\column{0.1\textwidth}
+		\begin{figure}
+			\centering
+			\includegraphics[height=1.3cm]{latex.png}
+		\end{figure}
+		\column{0.4\textwidth}
+		\begin{figure}
+			\centering
+			\includegraphics[height=2cm]{GitHub.png}
+		\end{figure}
+	\end{columns}
+	\vspace*{1cm}
+	\begin{columns}[onlytextwidth]
+		\column{0.3\textwidth}
+		\begin{figure}
+			\raggedleft
+			\includegraphics[height=2cm]{docker.png}
+		\end{figure}
+		\column{0.6\textwidth}
+		\begin{figure}
+			\centering
+			\includegraphics[height=2.5cm]{ark.jpg}
+		\end{figure}
+		\column{0.1\textwidth}
+	\end{columns}
+	
+\end{frame}
+
 \section{Contenidos teóricos}
 \sectionpagemod
 %Es un nuevo paradigma de la informática que basa sus principios en la teoría cuántica.
@@ -154,25 +212,41 @@ Universidad de Granada}
 
 \begin{frame}[c]{Propiedades computación cuántica}
 	\begin{itemize}
-		\item Superposición cuántica.
-		\item Entrelazamiento cuántico.
-		\item Teletransporte cuántico.
+		\item[\FilledSmallSquare] Superposición cuántica.
+		\item[\FilledSmallSquare] Entrelazamiento cuántico.
+		\item[\FilledSmallSquare] Teletransporte cuántico.
 	\end{itemize}
 \end{frame}
 
-%Lo que aporta una mayor capacidad de cómputo, pero que a poca escala los computadores clásicos siguen siendo mejores.
+%Lo que aporta una mayor capacidad de cómputo, pero que a poca escala los computadores clásicos siguen siendo mejores. La computación cuántica se basa en el uso de cúbits en lugar de bits.
 \begin{frame}[c]{Comparativa computación cuántica y clásica}
 	\begin{figure}
 		\centering
 		\includegraphics[height=4cm]{comp_clasica_cuantica.png}
+		\caption{Comparativa de cómputo de de un ordenador cuántico y clásico}
+	\end{figure}
+\end{frame}
+ %Otra tecnología es las cadenas de bloques sistema de almacenamiento de información dividido en bloques de datos enlazados mediante el hash. Para la búsqueda eficiente de bloques se almacena en la estructura de árboles DE merkle donde cada hash de nodo padre es combinacion de los hash de los nodos hijos. Esto aporta descentralidad de los datos transparencia de la información ya que cualquiera puede visualizarla y la inmutabilidad ya que un cambio en un bloque se ve reflejado en todos los demás.
+\subsection*{Blockchain}
+\subsectionpagemod
+\begin{frame}[c]{Descripción}
+	Una cadena de bloques es un sistema de almacenamiento de información dividido en bloques de datos enlazados mediante el \textit{hash}.
+	\begin{figure}
+		\centering
+		\includegraphics[height=4cm]{arbol_merkle.png}
+		\caption{Estructura árbol de Merkle}
 	\end{figure}
 \end{frame}
 
-
-
-\subsection*{Blockchain}
-\subsectionpagemod
-
+%Algunas aplicaciones a destacar son en el área financiera para almacenar transacciones de criptomonedas, en cadenas de suministro de restaurante como Fogo de Chao, centros de salud, para almacenar historiales médicos o para la firma de documentos en notarías.
+\begin{frame}[c]{Aplicaciones}
+	\begin{itemize}
+		\item[$\diamond$] Área financera o criptomonedas.
+		\item[$\diamond$] Cadenas de suministro.
+		\item[$\diamond$] Centros de salud.
+		\item[$\diamond$] Firma de documentos.
+	\end{itemize}
+\end{frame}
 
 % El algoritmo UOV, o algoritmo de aceite y vinagre desequilibrado es un algoritmo de firma digital. Para la creación de la firma y validarla es necesario resolver un sistema con m ecuaciones y n variables, que es un problema NP-duro. Como no existe un algoritmo de resolución de sistemas de ecuaciones multivariados eficiente en ordenadores cuánticos, la firma permanecera segura. Debido a que las operaciones son sumas y productos se requieren bajos recursos hardware.
 \subsection*{Algoritmo UOV\large\textit{(Unbalance Oil and Vinegar)}}
@@ -180,10 +254,10 @@ Universidad de Granada}
 
 \begin{frame}[c]{Ventajas del algoritmo UOV}
 	\begin{itemize}
-		\item Problema NP-duro.
-		\item No se conoce un algoritmo eficiente para la resolución de sistemas multivariados en un ordenador cuántico.
-		\item Simplicidad de las operaciones.
-		\item Requiere bajos recursos \textit{hardware}.
+		\item[$\blacktriangle$] Problema NP-duro.
+		\item[$\blacktriangle$] No se conoce un algoritmo eficiente para la resolución de sistemas multivariados en un ordenador cuántico.
+		\item[$\blacktriangle$] Simplicidad de las operaciones.
+		\item[$\blacktriangle$] Requiere bajos recursos \textit{hardware}.
 	\end{itemize}
 \end{frame}
 
@@ -206,6 +280,7 @@ Universidad de Granada}
 
 \section{Planificación y presupuesto}
 \sectionpagemod
+%La planificación se ve reflejada en el diagrama de Gantt que se ha dividido para que se vea mejor. La redacción de la memoria se realiza durante todo el proyecto. Los dos primeros meses corresponden al estudio de las tecnologías y a fijar las tareas a realizar. 
 \begin{frame}[c]{Diagrama de Gantt}
 	\begin{figure}
 		\centering
@@ -213,6 +288,7 @@ Universidad de Granada}
 	\end{figure}
 \end{frame}
 
+%De noviembre a principios de marzo se implementa el algoritmo y se realizan pruebas.
 \begin{frame}[c]{Diagrama de Gantt}
 	\begin{figure}
 		\centering
@@ -220,6 +296,7 @@ Universidad de Granada}
 	\end{figure}
 \end{frame}
 
+%Desde marzo a principios de noviembre se hacen pruebas de integración del algoritmo en la blockchain.
 \begin{frame}[c]{Diagrama de Gantt}
 	\begin{figure}
 		\centering
@@ -227,6 +304,7 @@ Universidad de Granada}
 	\end{figure}
 \end{frame}
 
+%El presupuesto se ha desglosado en recursos humanos donde a los tutores les correspondería 30€/hora y la alumna 20€/hora, a los gastos indirectos se le da un 10% y a los gastos imprevisto un 5%. Obteniendo 18228.67€
 \begin{frame}[c]{Presupuesto desglosado}
 	\begin{table}[H]
 		\begin{center}
@@ -236,26 +314,105 @@ Universidad de Granada}
 			\toprule
 			Recursos humanos tutores & 4.830\euro\\[0.5ex]
 			Recursos humanos alumna & 10.720\euro\\[0.5ex]
-			Indirectos & 755,24\euro\\[0.5ex]
+			Indirectos & 1.578,24\euro\\[0.5ex]
 			Directos & 210,40\euro\\[0.5ex]
 			Viajes & 22\euro\\[0.5ex]
-			Gastos imprevistos & 826,88\euro\\[0.5ex]
+			Gastos imprevistos & 868,03\euro\\[0.5ex]
 			\bottomrule
-			TOTAL (\euro) & 17.364,52\euro\\
+			TOTAL (\euro) & 18.228,67\euro\\
 		\end{tabular}
 		\end{center}
+		\caption{Presupuesto total desglosado}
 		\label{tab:coste-total}
 	\end{table}
 \end{frame}
 
 \section{Diseño}
 \sectionpagemod
-\begin{frame}[c]{Diagrama de bloques del prototipo}
-	\begin{figure}
-		\centering
-		\includegraphics[height=4cm]{diagrama_bloquesARK.png}
-		\caption{Diagrama de bloques prototipo}
-	\end{figure}
+%En el diseño del proyecto hay cinco bloques ...leer
+\begin{frame}[c]{Bloques del diseño}
+	\begin{exampleblock}{Deployer}
+		Da la posibilidad de crear una cadena de bloques personalizada.
+	\end{exampleblock}
+
+	\begin{exampleblock}{Core}
+		Gestiona la creación de bloques y almacenamiento de transacciones (parte modificada).
+	\end{exampleblock}
+	
+	\begin{exampleblock}{Base de datos}
+		Almacenar y servir datos de las transacciones y bloques.
+	\end{exampleblock}
+
+	\begin{exampleblock}{ARK Desktop Wallet}
+		Interfaz para la realización de transacciones.
+	\end{exampleblock}
+	
+	\begin{exampleblock}{Explorer ARK}
+		Interfaz para la visualización de los bloques y transacciones.
+	\end{exampleblock}
+\end{frame}
+%Estos bloques se pueden configurar de diferentes maneras, estos son dos ejemplos donde todo estaría en una máquina o donde cada bloque podría estar en dos ordenares y en un smartphone. El primero es el que se ha implementado como prototipo.
+\begin{frame}[c]{Posibles configuraciones de los bloques}
+	\begin{columns}[onlytextwidth]
+		\column{0.4\textwidth}
+		\begin{figure}
+			\centering
+			\includegraphics[height=3.5cm]{diagrama_bloquesARK.png}
+			\caption{Diagrama de bloques prototipo}
+		\end{figure}
+		\column{0.5\textwidth}
+		\begin{figure}
+			\centering
+			\includegraphics[height=3.5cm]{diagrama_bloquesARK3.png}
+			\caption{Diagrama de bloques ejemplo}
+		\end{figure}
+	\end{columns}
+\end{frame}
+
+\section{Implementación}
+\sectionpagemod
+%Gracias a la modularidad de la blockchain de ARK ha sido fácil identificar que archivos había que modificar, hasht.ts contiene las funciones de firma y verificación del algoritmo ECDSA, Schnorr y UOV, uov.py contiene las funciones del algoritmo y la aritmetica del cuerpo finito (además de un main ejecutable de forma independiente de la blockchain), signature.py y verify.py son archivos de transición entre typescript y python, data.json contiene las claves publicas y privada tanto de la blockchain como las generados para uov y signature.json contiene la firma en vector y hexadecimal.
+\begin{frame}[c]{Estructura directorio core-bridgechain/packages/crypto/src/crypto}
+\begin{figure}[H]
+	\begin{forest}
+	  for tree={
+		font=\scriptsize\sffamily,
+		grow'=0,
+		child anchor=west,
+		parent anchor=south,
+		anchor=west,
+		calign=first,
+		inner xsep=7pt,
+		edge path={
+		  \noexpand\path [draw, \forestoption{edge}]
+		  (!u.south west) +(7.5pt,0) |- (.child anchor) pic {folder} \forestoption{edge label};
+		},
+		file/.style={edge path={\noexpand\path [draw, \forestoption{edge}]
+		      (!u.south west) +(7.5pt,0) |- (.child anchor) \forestoption{edge label};},
+		      inner xsep=2pt,font=\tiny\sffamily
+		},
+		before typesetting nodes={
+		  if n=1
+		    {insert before={[,phantom]}}
+		    {}
+		},
+		fit=band,
+		before computing xy={l=15pt},
+	  } 
+		[core-bridgechain/packages/crypto/src
+		  [crypto
+			[hash.ts, file]
+			[uov.py, file]
+			[signature.py, file]
+			[verify.py, file]
+			[data.json, file]
+			[signature.json, file]	
+		  ]
+		]
+	\end{forest}
+	\caption{Árbol de directorios de core-bridgechain}
+	\label{tree:core-b}
+\end{figure}
 \end{frame}
 
 
@@ -265,18 +422,31 @@ Universidad de Granada}
 %Por último veamos las conclusiones y futuras lineas de investigación
 \section{Conclusiones e investigaciones futuras}
 \sectionpagemod
+%Con este proyecto se ha logrado, leerlos... trás todos estos pasos se ha obtenido una blockchain más segura ante posibles ataques cuánticos
 \begin{frame}[c]{Conclusiones}
-
+	\begin{itemize}
+		\item[\checkmark] Implementación algoritmo UOV y aritmética del cuerpo finito de 128 elementos.
+		\item[\checkmark] Comparación de los tiempos de ejecución en \texttt{python} y \texttt{SageMath}.
+		\item[\checkmark] Integración del algoritmo en la \textit{blockchain} ARK.
+		\item[\checkmark] Ejecución de la \textit{blockchain} ARK modificada.
+		\item[\checkmark] Ver los bloques firmados en el \textit{explorer} de ARK.
+	\end{itemize}
 \end{frame}
 %De cara al futuro de podría trabajar con la base de datos en lugar de mantener la información en fichero \texttt{json} independientes. Además se podría integrar la blockchain modificada en otra no tiene porque de ARK, para hacerla más segura, esto se podría hacer por las propiedades de ARK blockchain.
 \begin{frame}[c]{Trabajos futuros}
 	\begin{itemize}
-		\item Trabajar con la base de datos.
-		\item Integrar la \textit{blockchain} ARK modificada en otra cadena de bloques.
+		\item[\FilledSmallSquare] Trabajar con la base de datos.
+		\item[\FilledSmallSquare] Integrar la \textit{blockchain} ARK modificada en otra cadena de bloques.
 	\end{itemize}
 \end{frame}
 
-
+%\begin{frame}[c]{Bibliografía}
+%	\begin{itemize}
+%		\item Trabajar con la base de datos.
+%		\item Integrar la \textit{blockchain} ARK modificada en otra cadena de bloques.
+%	\end{itemize}
+%\end{frame}
+\end{document}
 
 % Thank you page
 \beamertemplateshadingbackground{structure.fg!90}{structure.fg}
@@ -289,6 +459,6 @@ Universidad de Granada}
 	\vfill
 \end{frame}
 
-\end{document}
+
 
 
