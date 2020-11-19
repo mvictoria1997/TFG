@@ -95,23 +95,23 @@ Por último, el \textbf{teletransporte cuántico} utiliza el entrelazamiento par
 \section{Blockchain}\label{sec:intro:blockchain}
 
 
-\textit{Blockchain} es un sistemas de almacenamiento de información que se divide en bloques de datos enlazados mediante hash. A cada bloque se le asocia un hash a partir del bloque anterior, creando una lista enlazada, la búsqueda de información no es muy óptima si hay un número elevado de bloques. Para la búsqueda eficiente en \textit{blockchain} se usan los árboles Merkle.\\
+\textit{Blockchain} es un sistemas de almacenamiento de información que se divide en bloques de datos enlazados mediante hash. A cada bloque se le asocia un hash a partir del bloque anterior, creando una lista enlazada, la búsqueda de información no es muy óptima si hay un número elevado de bloques. Para la búsqueda eficiente en \textit{blockchain} se usan los árboles de Merkle.\\
 
 Los datos que almacena cada bloque son transacciones válidas, información referente a ese bloque y la relación con el bloque anterior mediante el \textit{hash}, por tanto el bloque tiene un lugar específico dentro de la cadena. De esta forma si hay una alteración en un determinado bloque se verá reflejado en su \textit{hash} y en el de los bloques posteriores, haciendo que la información de la cadena no se pueda perder, modificar o eliminar.\\
 
 
 Los árboles de Merkle \cite{arbol-merkle} son una estructura de datos en árbol en el que cada nodo que no es hoja está etiquetado con el \textit{hash} que surge de la combinación de los valores o etiquetas de sus nodos hijo. Esta estructura permite que aunque los datos estén separados puedan ser ligados a un único valor de \textit{hash}, el \textit{hash} del nodo raíz del árbol. El \textit{hash} de este nodo va firmado para asegurar la integridad y hacer que la verificación sea fiable.\\
 
-De esta forma se asegura que los datos son recibidos sin daños y sin ser alterados, además permite que los datos puedan ser entregados por partes, ya que un nodo puede obtener solo la cabecera de un bloque desde una fuente y otra pequeña parte del árbol desde otra fuente, pudiendo asegurar que los datos son correctos. Esto funciona porque si un usuario intenta hacer un cambio en una transacción falsa en la parte inferior del árbol en seguida se verá reflejado en la parte superior del árbol, es decir, en el nodo raíz. Esta propiedad se ve clara en la estructura del árbol Merkle \ref{fig:arbol-Merkle}, donde los \textit{hash} de los nodos superiores se calculan a partir de los \textit{hash} de los nodos hijos.\\
+De esta forma se asegura que los datos son recibidos sin daños y sin ser alterados, además permite que los datos puedan ser entregados por partes, ya que un nodo puede obtener solo la cabecera de un bloque desde una fuente y otra pequeña parte del árbol desde otra fuente, pudiendo asegurar que los datos son correctos. Esto funciona porque si un usuario intenta hacer un cambio en una transacción falsa en la parte inferior del árbol en seguida se verá reflejado en la parte superior del árbol, es decir, en el nodo raíz. Esta propiedad se ve clara en la estructura del árbol de Merkle \ref{fig:arbol-Merkle}, donde los \textit{hash} de los nodos superiores se calculan a partir de los \textit{hash} de los nodos hijos.\\
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figuras/arbol_merkle.png}
-	\caption{Estructura de un árbol Merkle \cite{img-arbol-merkle}}
+	\caption{Estructura de un árbol de Merkle \cite{img-arbol-merkle}}
 	\label{fig:arbol-Merkle}
 \end{figure}
 
-La idea de la tecnología \textit{blockchain} surge a comienzos de 1991 cuando los científicos Stuart Haber y W. Scott Stornetta introducen una solución computacional para la firma de documentos digitales y que no pudieran ser modificados con el tiempo. Usaron cadenas de bloque para almacenar los documentos con sello de tiempo y en 1992 se incorporaron los árboles Merkle, que podían recopilar varios documentos en un bloque haciendo el diseño más eficiente. Sin embargo, esta tecnología no se utilizó y la patente caducó en 2004 \cite{historia1-block}.\\
+La idea de la tecnología \textit{blockchain} surge a comienzos de 1991 cuando los científicos Stuart Haber y W. Scott Stornetta introducen una solución computacional para la firma de documentos digitales y que no pudieran ser modificados con el tiempo. Usaron cadenas de bloque para almacenar los documentos con sello de tiempo y en 1992 se incorporaron los árboles de Merkle, que podían recopilar varios documentos en un bloque haciendo el diseño más eficiente. Sin embargo, esta tecnología no se utilizó y la patente caducó en 2004 \cite{historia1-block}.\\
 
 En 1998, Nick Szabo trabaja en una moneda digital descentralizada, ``bit gold''. Dos años después Stefan Konst publica su teoría sobre la seguridad criptográfica en las cadenas de bloques junto con algunas ideas de implementación \cite{historia2-block}.\\
 
