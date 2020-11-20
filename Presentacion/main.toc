@@ -1,7 +1,7 @@
 \beamer@sectionintoc {1}{Introducción}{2}{0}{1}
 \beamer@sectionintoc {2}{Contenidos teóricos}{7}{0}{2}
-\beamer@sectionintoc {3}{Planificación y presupuesto}{17}{0}{3}
-\beamer@sectionintoc {4}{Diseño}{22}{0}{4}
-\beamer@sectionintoc {5}{Implementación}{25}{0}{5}
-\beamer@sectionintoc {6}{Demostración práctica}{27}{0}{6}
-\beamer@sectionintoc {7}{Conclusiones e investigaciones futuras}{28}{0}{7}
+\beamer@sectionintoc {3}{Planificación y presupuesto}{18}{0}{3}
+\beamer@sectionintoc {4}{Diseño}{23}{0}{4}
+\beamer@sectionintoc {5}{Implementación}{26}{0}{5}
+\beamer@sectionintoc {6}{Demostración práctica}{28}{0}{6}
+\beamer@sectionintoc {7}{Conclusiones e investigaciones futuras}{29}{0}{7}

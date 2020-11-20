@@ -98,7 +98,7 @@
 \author[]{\textbf {Autor\\ María Victoria Granados Pozo\\ \footnotesize Directores\\ Gabriel Maciá Fernández\\ Francisco Javier Lobillo Borrero}}
 \institute[]{Doble grado de Ingeniería Informática y Matemáticas\\
 Universidad de Granada}
-\date{24 de Noviembre de 2020}
+\date{26 de Noviembre de 2020}
 \titlegraphic[width=4cm]{logoUGR.pdf}{}
 %\titlegraphic[width=5cm]{logo.png}{}
 
@@ -151,17 +151,17 @@ Universidad de Granada}
 	\begin{figure}
 		\centering
 		\includegraphics[height=4cm]{CIA.png}
-		\caption{Pilares de la seguridad informática}
+		\caption{\large{Pilares de la seguridad informática}}
 	\end{figure}
 \end{frame}
 
 %Para llevar a cabo el objetivo del proyecto ha sido necesario realizar dos tareas. Por un lado, la implementación del algoritmo UOV en python, esto son las funciones para la generación de las claves pública y privadas, y las funciones para la firma y validación de la misma, ya que no existen bibliotecas de python que permitan trabajar con matrices y cuerpos finitos también se ha implementado la aritmética del cuerpo finito de 128 elementos específica para el algoritmo UOV. Por otro lado, para comprobar el funcionamiento del algoritmo y aumentar la seguridad de la cadena de bloques se ha integrado en la blockchain de ARK, modificando los algoritmo de firma y verificación.
 \begin{frame}[c]{Objetivos}
-	\begin{exampleblock}{Implementación del algoritmo UOV}
+	\begin{exampleblock}{\large Implementación del algoritmo UOV}
 		Funciones propias del algoritmo y aritmética del cuerpo finito de $2^7$ elementos.
 	\end{exampleblock}
 
-	\begin{exampleblock}{Integración del algoritmo UOV}
+	\begin{exampleblock}{\large Integración del algoritmo UOV}
 		Modificación del algoritmo de firma de la blockchain de ARK por el algoritmo UOV.
 	\end{exampleblock}
 \end{frame}
@@ -208,14 +208,31 @@ Universidad de Granada}
 %Es un nuevo paradigma de la informática que basa sus principios en la teoría cuántica.
 \subsection*{Computación cuántica}
 \subsectionpagemod
-%Dichos principios son la superposición cuántica describe como una particula puede estar en diferentes estados al mismo tiempo, el entrelazamiento cuántico que dos particulas se conectan si han interactuado una vez y el teletransporte cuantico que se envia la informacion por el espacio sin viajar a traves de el.
+
+%Los bits solo pueden tomar como valor 0 y 1, mientras que los cúbit pueden tomar ambos valores a la vez. Como se muestra en la figura. A esta propiedad se le denomina superposición cuántica de los estados.
+\begin{frame}[c]{Estados de un bit y un cúbit}
+	\centering 
+	\begin{figure}
+		\includegraphics[height=5cm]{bit_cubit.png}
+	\end{figure}
+\end{frame}
+
+%Otras propiedades cuánticas, además de la superposición cuántica, son el entrelazamiento cuántico que dos particulas se conectan si han interactuado una vez y el teletransporte cuantico que se envia la informacion por el espacio sin viajar a traves de el.
 
 \begin{frame}[c]{Propiedades computación cuántica}
+	\vfill
+	\Large
 	\begin{itemize}
 		\item[\FilledSmallSquare] Superposición cuántica.
 		\item[\FilledSmallSquare] Entrelazamiento cuántico.
 		\item[\FilledSmallSquare] Teletransporte cuántico.
 	\end{itemize}
+	\vspace{-3.3cm}
+	\begin{figure}
+		\begin{flushright}
+			\includegraphics[height=3.7cm]{compu-cuan.jpg}
+		\end{flushright}
+	\end{figure}
 \end{frame}
 
 %Lo que aporta una mayor capacidad de cómputo, pero que a poca escala los computadores clásicos siguen siendo mejores. La computación cuántica se basa en el uso de cúbits en lugar de bits.
@@ -223,29 +240,36 @@ Universidad de Granada}
 	\begin{figure}
 		\centering
 		\includegraphics[height=4cm]{comp_clasica_cuantica.png}
-		\caption{Comparativa de cómputo de de un ordenador cuántico y clásico}
+		\caption{\large{Comparativa de cómputo de de un ordenador cuántico y clásico}}
 	\end{figure}
 \end{frame}
  %Otra tecnología es las cadenas de bloques sistema de almacenamiento de información dividido en bloques de datos enlazados mediante el hash. Para la búsqueda eficiente de bloques se almacena en la estructura de árboles DE merkle donde cada hash de nodo padre es combinacion de los hash de los nodos hijos. Esto aporta descentralidad de los datos transparencia de la información ya que cualquiera puede visualizarla y la inmutabilidad ya que un cambio en un bloque se ve reflejado en todos los demás.
 \subsection*{Blockchain}
 \subsectionpagemod
 \begin{frame}[c]{Descripción}
-	Una cadena de bloques es un sistema de almacenamiento de información dividido en bloques de datos enlazados mediante el \textit{hash}.
+	\large Una cadena de bloques es un sistema de almacenamiento de información dividido en bloques de datos enlazados mediante el \textit{hash}.
 	\begin{figure}
 		\centering
-		\includegraphics[height=4cm]{arbol_merkle.png}
-		\caption{Estructura árbol de Merkle}
+		\includegraphics[height=5cm]{arbol_merkle.png}
+		\caption{\large{Estructura árbol de Merkle}}
 	\end{figure}
 \end{frame}
 
-%Algunas aplicaciones a destacar son en el área financiera para almacenar transacciones de criptomonedas, en cadenas de suministro de restaurante como Fogo de Chao, centros de salud, para almacenar historiales médicos o para la firma de documentos en notarías.
+%No solo se aplican las cadenas de bloques al mundo financiero para almacenar transacciones de criptomonedas, sino que tiene muchas más aplicaciones interesantes como en centros de salud, para almacenar un único historial médico y no tener uno en cada centro de salud o para la firma de documentos en notarías evitando falsificaciones, por ultimo otra aplicación sería en las cadenas de suministro de restaurante como Fogo de Chao una churrasqueria de Brasil. Que desde tracea todo el camino desde la semilla de la hierba que será el alimento de los animales. Finalmente cuando llegue la carne al restaurante los comensales a través de un código QR pueden ver por que sitios ha estado esa carne y de que se ha alimentado.
 \begin{frame}[c]{Aplicaciones}
+	\Large
 	\begin{itemize}
 		\item[$\diamond$] Área financera o criptomonedas.
-		\item[$\diamond$] Cadenas de suministro.
 		\item[$\diamond$] Centros de salud.
 		\item[$\diamond$] Firma de documentos.
+		\item[$\diamond$] Cadenas de suministro.
 	\end{itemize}
+	\vspace*{-2cm}
+	\begin{figure}
+		\begin{flushright}
+			\includegraphics[height=4.9cm]{FogodeChao_1.png}
+		\end{flushright}
+	\end{figure}
 \end{frame}
 
 % El algoritmo UOV, o algoritmo de aceite y vinagre desequilibrado es un algoritmo de firma digital. Para la creación de la firma y validarla es necesario resolver un sistema con m ecuaciones y n variables, que es un problema NP-duro. Como no existe un algoritmo de resolución de sistemas de ecuaciones multivariados eficiente en ordenadores cuánticos, la firma permanecera segura. Debido a que las operaciones son sumas y productos se requieren bajos recursos hardware.
@@ -253,6 +277,7 @@ Universidad de Granada}
 \subsectionpagemod
 
 \begin{frame}[c]{Ventajas del algoritmo UOV}
+	\large
 	\begin{itemize}
 		\item[$\blacktriangle$] Problema NP-duro.
 		\item[$\blacktriangle$] No se conoce un algoritmo eficiente para la resolución de sistemas multivariados en un ordenador cuántico.
@@ -284,7 +309,7 @@ Universidad de Granada}
 \begin{frame}[c]{Diagrama de Gantt}
 	\begin{figure}
 		\centering
-		\includegraphics[height=4cm]{Gantt_1.png}
+		\includegraphics[height=5cm]{Gantt_1.png}
 	\end{figure}
 \end{frame}
 
@@ -292,7 +317,7 @@ Universidad de Granada}
 \begin{frame}[c]{Diagrama de Gantt}
 	\begin{figure}
 		\centering
-		\includegraphics[height=4cm]{Gantt_2.png}
+		\includegraphics[height=4.7cm]{Gantt_2.png}
 	\end{figure}
 \end{frame}
 
@@ -300,7 +325,7 @@ Universidad de Granada}
 \begin{frame}[c]{Diagrama de Gantt}
 	\begin{figure}
 		\centering
-		\includegraphics[height=4cm]{Gantt_3.png}
+		\includegraphics[height=5cm]{Gantt_3.png}
 	\end{figure}
 \end{frame}
 
@@ -322,7 +347,7 @@ Universidad de Granada}
 			TOTAL (\euro) & 18.228,67\euro\\
 		\end{tabular}
 		\end{center}
-		\caption{Presupuesto total desglosado}
+		\caption{\large Presupuesto total desglosado}
 		\label{tab:coste-total}
 	\end{table}
 \end{frame}
@@ -331,23 +356,23 @@ Universidad de Granada}
 \sectionpagemod
 %En el diseño del proyecto hay cinco bloques ...leer
 \begin{frame}[c]{Bloques del diseño}
-	\begin{exampleblock}{Deployer}
+	\begin{exampleblock}{\large Deployer}
 		Da la posibilidad de crear una cadena de bloques personalizada.
 	\end{exampleblock}
 
-	\begin{exampleblock}{Core}
+	\begin{exampleblock}{\large Core}
 		Gestiona la creación de bloques y almacenamiento de transacciones (parte modificada).
 	\end{exampleblock}
 	
-	\begin{exampleblock}{Base de datos}
+	\begin{exampleblock}{\large Base de datos}
 		Almacenar y servir datos de las transacciones y bloques.
 	\end{exampleblock}
 
-	\begin{exampleblock}{ARK Desktop Wallet}
+	\begin{exampleblock}{\large ARK Desktop Wallet}
 		Interfaz para la realización de transacciones.
 	\end{exampleblock}
 	
-	\begin{exampleblock}{Explorer ARK}
+	\begin{exampleblock}{\large Explorer ARK}
 		Interfaz para la visualización de los bloques y transacciones.
 	\end{exampleblock}
 \end{frame}
@@ -357,14 +382,14 @@ Universidad de Granada}
 		\column{0.4\textwidth}
 		\begin{figure}
 			\centering
-			\includegraphics[height=3.5cm]{diagrama_bloquesARK.png}
-			\caption{Diagrama de bloques prototipo}
+			\includegraphics[height=3.8cm]{diagrama_bloquesARK.png}
+			\caption{\large Diagrama de bloques prototipo}
 		\end{figure}
 		\column{0.5\textwidth}
 		\begin{figure}
 			\centering
-			\includegraphics[height=3.5cm]{diagrama_bloquesARK3.png}
-			\caption{Diagrama de bloques ejemplo}
+			\includegraphics[height=3.8cm]{diagrama_bloquesARK3.png}
+			\caption{\large Diagrama de bloques ejemplo}
 		\end{figure}
 	\end{columns}
 \end{frame}
@@ -373,7 +398,7 @@ Universidad de Granada}
 \sectionpagemod
 %Gracias a la modularidad de la blockchain de ARK ha sido fácil identificar que archivos había que modificar, hasht.ts contiene las funciones de firma y verificación del algoritmo ECDSA, Schnorr y UOV, uov.py contiene las funciones del algoritmo y la aritmetica del cuerpo finito (además de un main ejecutable de forma independiente de la blockchain), signature.py y verify.py son archivos de transición entre typescript y python, data.json contiene las claves publicas y privada tanto de la blockchain como las generados para uov y signature.json contiene la firma en vector y hexadecimal.
 \begin{frame}[c]{Estructura directorio core-bridgechain/packages/crypto/src/crypto}
-\begin{figure}[H]
+\begin{figure}
 	\begin{forest}
 	  for tree={
 		font=\scriptsize\sffamily,
@@ -399,19 +424,17 @@ Universidad de Granada}
 		fit=band,
 		before computing xy={l=15pt},
 	  } 
-		[core-bridgechain/packages/crypto/src
-		  [crypto
-			[hash.ts, file]
-			[uov.py, file]
-			[signature.py, file]
-			[verify.py, file]
-			[data.json, file]
-			[signature.json, file]	
+		[\large{core-bridgechain/packages/crypto/src}
+		  [\large{crypto}
+			[\large{hash.ts}, file]
+			[\large{uov.py}, file]
+			[\large{signature.py}, file]
+			[\large{verify.py}, file]
+			[\large{data.json}, file]
+			[\large{signature.json}, file]	
 		  ]
 		]
 	\end{forest}
-	\caption{Árbol de directorios de core-bridgechain}
-	\label{tree:core-b}
 \end{figure}
 \end{frame}
 
@@ -424,6 +447,7 @@ Universidad de Granada}
 \sectionpagemod
 %Con este proyecto se ha logrado, leerlos... trás todos estos pasos se ha obtenido una blockchain más segura ante posibles ataques cuánticos
 \begin{frame}[c]{Conclusiones}
+	\large
 	\begin{itemize}
 		\item[\checkmark] Implementación algoritmo UOV y aritmética del cuerpo finito de 128 elementos.
 		\item[\checkmark] Comparación de los tiempos de ejecución en \texttt{python} y \texttt{SageMath}.
@@ -433,7 +457,8 @@ Universidad de Granada}
 	\end{itemize}
 \end{frame}
 %De cara al futuro de podría trabajar con la base de datos en lugar de mantener la información en fichero \texttt{json} independientes. Además se podría integrar la blockchain modificada en otra no tiene porque de ARK, para hacerla más segura, esto se podría hacer por las propiedades de ARK blockchain.
-\begin{frame}[c]{Trabajos futuros}
+\begin{frame}[c]{Investigaciones futuras}
+	\large
 	\begin{itemize}
 		\item[\FilledSmallSquare] Trabajar con la base de datos.
 		\item[\FilledSmallSquare] Integrar la \textit{blockchain} ARK modificada en otra cadena de bloques.
@@ -446,7 +471,7 @@ Universidad de Granada}
 %		\item Integrar la \textit{blockchain} ARK modificada en otra cadena de bloques.
 %	\end{itemize}
 %\end{frame}
-\end{document}
+
 
 % Thank you page
 \beamertemplateshadingbackground{structure.fg!90}{structure.fg}
@@ -459,6 +484,6 @@ Universidad de Granada}
 	\vfill
 \end{frame}
 
-
+\end{document}
 
 
