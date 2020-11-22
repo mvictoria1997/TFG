@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2020.3.26)  21 NOV 2020 13:15
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2020.3.26)  22 NOV 2020 19:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1948,8 +1948,8 @@ Overfull \hbox (59.56087pt too wide) has occurred while \output is active
 [18
 
 ]
-File: figuras/Gantt_1.png Graphic file (type bmp)
-<figuras/Gantt_1.png>
+File: figuras/Gantt.jpg Graphic file (type bmp)
+<figuras/Gantt.jpg>
 
 Overfull \hbox (59.56087pt too wide) has occurred while \output is active
  [][][][]  
@@ -1958,9 +1958,6 @@ Overfull \hbox (59.56087pt too wide) has occurred while \output is active
 [19
 
 ]
-File: figuras/Gantt_2.png Graphic file (type bmp)
-<figuras/Gantt_2.png>
-
 Overfull \hbox (59.56087pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1968,9 +1965,6 @@ Overfull \hbox (59.56087pt too wide) has occurred while \output is active
 [20
 
 ]
-File: figuras/Gantt_3.png Graphic file (type bmp)
-<figuras/Gantt_3.png>
-
 Overfull \hbox (59.56087pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1978,6 +1972,9 @@ Overfull \hbox (59.56087pt too wide) has occurred while \output is active
 [21
 
 ]
+File: figuras/diagrama_bloquesARK.png Graphic file (type bmp)
+<figuras/diagrama_bloquesARK.png>
+
 Overfull \hbox (59.56087pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1985,6 +1982,9 @@ Overfull \hbox (59.56087pt too wide) has occurred while \output is active
 [22
 
 ]
+File: figuras/diagrama_bloquesARK3.png Graphic file (type bmp)
+<figuras/diagrama_bloquesARK3.png>
+
 Overfull \hbox (59.56087pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1992,16 +1992,6 @@ Overfull \hbox (59.56087pt too wide) has occurred while \output is active
 [23
 
 ]
-File: figuras/diagrama_bloquesARK.png Graphic file (type bmp)
-<figuras/diagrama_bloquesARK.png>
-
-Overfull \hbox (13.75964pt too wide) in paragraph at lines 396--396
- [] 
- []
-
-File: figuras/diagrama_bloquesARK3.png Graphic file (type bmp)
-<figuras/diagrama_bloquesARK3.png>
-
 Overfull \hbox (59.56087pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -2050,6 +2040,14 @@ Overfull \hbox (59.56087pt too wide) has occurred while \output is active
 [29
 
 ]
+File: figuras/explorer_1.png Graphic file (type bmp)
+<figuras/explorer_1.png>
+
+Overfull \hbox (7.8605pt too wide) in paragraph at lines 458--458
+ [] 
+ []
+
+
 Overfull \hbox (59.56087pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -2057,6 +2055,9 @@ Overfull \hbox (59.56087pt too wide) has occurred while \output is active
 [30
 
 ]
+File: figuras/explorer_2.png Graphic file (type bmp)
+<figuras/explorer_2.png>
+
 Overfull \hbox (59.56087pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -2064,13 +2065,66 @@ Overfull \hbox (59.56087pt too wide) has occurred while \output is active
 [31
 
 ]
+File: figuras/explorer_3.png Graphic file (type bmp)
+<figuras/explorer_3.png>
+
+Overfull \hbox (507.64996pt too wide) in paragraph at lines 472--472
+ [] 
+ []
+
+
 Overfull \hbox (59.56087pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [32
 
-] [33
+]
+File: figuras/explorer_4.png Graphic file (type bmp)
+<figuras/explorer_4.png>
+
+Overfull \vbox (3.40648pt too high) detected at line 479
+ []
+
+
+Overfull \hbox (59.56087pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[33
+
+]
+File: figuras/explorer_5.png Graphic file (type bmp)
+<figuras/explorer_5.png>
+
+Overfull \hbox (59.56087pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[34
+
+]
+Overfull \hbox (59.56087pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[35
+
+]
+Overfull \hbox (59.56087pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[36
+
+]
+Overfull \hbox (59.56087pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[37
+
+] [38
 
 ]
 \tf@nav=\write9
@@ -2082,19 +2136,25 @@ Overfull \hbox (59.56087pt too wide) has occurred while \output is active
 \tf@snm=\write11
 \openout11 = `presentacion.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 501.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 501.
- (./presentacion.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 501.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 501.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 531.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 531.
+ (./presentacion.aux
+*************************************************
+* pdfbase warning: "rerun"
+* 
+* Rerun to get internal references right!
+*************************************************
+)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 531.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 531.
  ) 
 Here is how much of TeX's memory you used:
- 51215 strings out of 494390
- 1133016 string characters out of 6163962
- 1362466 words of memory out of 5000000
- 54369 multiletter control sequences out of 15000+600000
+ 51239 strings out of 494390
+ 1133415 string characters out of 6163962
+ 1362651 words of memory out of 5000000
+ 54390 multiletter control sequences out of 15000+600000
  597563 words of font info for 118 fonts, out of 8000000 for 9000
  376 hyphenation exceptions out of 8191
  137i,16n,171p,10405b,2129s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on presentacion.pdf (33 pages).
+Output written on presentacion.pdf (38 pages).

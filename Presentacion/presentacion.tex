@@ -306,29 +306,17 @@ Universidad de Granada}
 \section{Planificación y presupuesto}
 \sectionpagemod
 %La planificación se ve reflejada en el diagrama de Gantt que se ha dividido para que se vea mejor. La redacción de la memoria se realiza durante todo el proyecto. Los dos primeros meses corresponden al estudio de las tecnologías y a fijar las tareas a realizar.
-%Poner gantt en unoaunque salgan cuatrimestre
-\begin{frame}[c]{Diagrama de Gantt}
-	\begin{figure}
-		\centering
-		\includegraphics[height=5cm]{Gantt_1.png}
-	\end{figure}
-\end{frame}
-
 %De noviembre a principios de marzo se implementa el algoritmo y se realizan pruebas.
+%Desde marzo a principios de noviembre se hacen pruebas de integración del algoritmo en la blockchain.
+
 \begin{frame}[c]{Diagrama de Gantt}
 	\begin{figure}
 		\centering
-		\includegraphics[height=4.7cm]{Gantt_2.png}
+		\includegraphics[height=5.5cm]{Gantt.jpg}
 	\end{figure}
 \end{frame}
 
-%Desde marzo a principios de noviembre se hacen pruebas de integración del algoritmo en la blockchain.
-\begin{frame}[c]{Diagrama de Gantt}
-	\begin{figure}
-		\centering
-		\includegraphics[height=5cm]{Gantt_3.png}
-	\end{figure}
-\end{frame}
+
 
 %El presupuesto se ha desglosado en recursos humanos donde a los tutores les correspondería 30€/hora y la alumna 20€/hora, a los gastos indirectos se le da un 10% y a los gastos imprevisto un 5%. Obteniendo 18228.67€
 \begin{frame}[c]{Presupuesto desglosado}
@@ -378,21 +366,19 @@ Universidad de Granada}
 %	\end{exampleblock}
 %\end{frame}
 %Estos bloques se pueden configurar de diferentes maneras, estos son dos ejemplos donde todo estaría en una máquina o donde cada bloque podría estar en dos ordenares y en un smartphone. El primero es el que se ha implementado como prototipo.
-\begin{frame}[c]{Posibles configuraciones de los bloques}
-	\begin{columns}[onlytextwidth]
-		\column{0.4\textwidth}
-		\begin{figure}
-			\centering
-			\includegraphics[height=3.8cm]{diagrama_bloquesARK.png}
-			\caption{\large Diagrama de bloques prototipo}
-		\end{figure}
-		\column{0.5\textwidth}
-		\begin{figure}
-			\centering
-			\includegraphics[height=3.8cm]{diagrama_bloquesARK3.png}
-			\caption{\large Diagrama de bloques ejemplo}
-		\end{figure}
-	\end{columns}
+
+\begin{frame}[c]{Configuración de los bloques}
+	\begin{figure}
+		\centering
+		\includegraphics[height=6.8cm]{diagrama_bloquesARK.png}
+	\end{figure}
+\end{frame}
+
+\begin{frame}[c]{Otra posible configuración de los bloques}
+	\begin{figure}
+		\centering
+		\includegraphics[height=6.8cm]{diagrama_bloquesARK3.png}
+	\end{figure}
 \end{frame}
 
 \section{Implementación}
@@ -439,6 +425,14 @@ Universidad de Granada}
 \end{figure}
 \end{frame}
 
+\begin{frame}[c]{Problemas encontrados}
+	\large
+	\begin{itemize}
+		\item[$\blacktriangledown$] Necesidad de implementar la aritmética del cuerpo finito de 128.
+		\item[$\blacktriangledown$] Incompatibilidad de las claves de la \textit{blockchain} de ARK con las del algoritmo UOV.
+		\item[$\blacktriangledown$] La firma llega truncada la función de verificación.
+	\end{itemize}
+\end{frame}
 
 \section{Demostración práctica}
 \sectionpagemod
@@ -449,10 +443,45 @@ Universidad de Granada}
 	\end{figure}
 \end{frame}
 
-\begin{frame}[c]{Bloque }
+\begin{frame}[c]{Bloque con ID 63372384328353607}
 	\begin{figure}
 		\centering
 		\includegraphics[height=2.8cm]{bloque_hash.png}
+	\end{figure}
+\end{frame}
+
+\begin{frame}[c]{Logs terminal}
+	\begin{figure}
+		\centering
+		\includegraphics[height=3.5cm]{explorer_1.png}
+	\end{figure}
+\end{frame}
+
+\begin{frame}[c]{Visualización ARK Explorer}
+	\begin{figure}
+		\centering
+		\includegraphics[height=7cm]{explorer_2.png}
+	\end{figure}
+\end{frame}
+
+\begin{frame}[c]{Visualización ARK Explorer ampliada}
+	\begin{figure}
+		\centering
+		\includegraphics[height=4cm]{explorer_3.png}
+	\end{figure}
+\end{frame}
+
+\begin{frame}[c]{Visualización ARK Explorer del bloque con ID 63372384328353607}
+	\begin{figure}
+		\centering
+		\includegraphics[height=6.5cm]{explorer_4.png}
+	\end{figure}
+\end{frame}
+
+\begin{frame}[c]{Visualización ARK API del bloque con ID 63372384328353607}
+	\begin{figure}
+		\centering
+		\includegraphics[height=1cm]{explorer_5.png}
 	\end{figure}
 \end{frame}
 
@@ -465,9 +494,10 @@ Universidad de Granada}
 	\begin{itemize}
 		\item[\checkmark] Implementación algoritmo UOV y aritmética del cuerpo finito de 128 elementos.
 		\item[\checkmark] Comparación de los tiempos de ejecución en \texttt{python} y \texttt{SageMath}.
-		\item[\checkmark] Integración del algoritmo en la \textit{blockchain} ARK.
-		\item[\checkmark] Ejecución de la \textit{blockchain} ARK modificada.
-		\item[\checkmark] Ver los bloques firmados en el \textit{explorer} de ARK.
+		\item[\checkmark] Integración del algoritmo en la \textit{blockchain} de ARK.
+		\item[\checkmark] Ejecución de la \textit{blockchain} de ARK modificada.
+		\item[\checkmark] Ver los bloques firmados en el \textit{explorer} de ARK y en la API.
+		\item[\checkmark] Cadena de bloques más segura a costa de perder rendimiento.
 	\end{itemize}
 \end{frame}
 %De cara al futuro de podría trabajar con la base de datos en lugar de mantener la información en fichero \texttt{json} independientes. Además se podría integrar la blockchain modificada en otra no tiene porque de ARK, para hacerla más segura, esto se podría hacer por las propiedades de ARK blockchain.
