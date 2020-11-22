@@ -267,7 +267,7 @@ Universidad de Granada}
 	\vspace*{-2cm}
 	\begin{figure}
 		\begin{flushright}
-			\includegraphics[height=4.9cm]{FogodeChao_1.png}
+			\includegraphics[height=4.9cm]{FogodeChao.png}
 		\end{flushright}
 	\end{figure}
 \end{frame}
@@ -305,7 +305,8 @@ Universidad de Granada}
 
 \section{Planificación y presupuesto}
 \sectionpagemod
-%La planificación se ve reflejada en el diagrama de Gantt que se ha dividido para que se vea mejor. La redacción de la memoria se realiza durante todo el proyecto. Los dos primeros meses corresponden al estudio de las tecnologías y a fijar las tareas a realizar. 
+%La planificación se ve reflejada en el diagrama de Gantt que se ha dividido para que se vea mejor. La redacción de la memoria se realiza durante todo el proyecto. Los dos primeros meses corresponden al estudio de las tecnologías y a fijar las tareas a realizar.
+%Poner gantt en unoaunque salgan cuatrimestre
 \begin{frame}[c]{Diagrama de Gantt}
 	\begin{figure}
 		\centering
@@ -355,27 +356,27 @@ Universidad de Granada}
 \section{Diseño}
 \sectionpagemod
 %En el diseño del proyecto hay cinco bloques ...leer
-\begin{frame}[c]{Bloques del diseño}
-	\begin{exampleblock}{\large Deployer}
-		Da la posibilidad de crear una cadena de bloques personalizada.
-	\end{exampleblock}
-
-	\begin{exampleblock}{\large Core}
-		Gestiona la creación de bloques y almacenamiento de transacciones (parte modificada).
-	\end{exampleblock}
-	
-	\begin{exampleblock}{\large Base de datos}
-		Almacenar y servir datos de las transacciones y bloques.
-	\end{exampleblock}
-
-	\begin{exampleblock}{\large ARK Desktop Wallet}
-		Interfaz para la realización de transacciones.
-	\end{exampleblock}
-	
-	\begin{exampleblock}{\large Explorer ARK}
-		Interfaz para la visualización de los bloques y transacciones.
-	\end{exampleblock}
-\end{frame}
+%\begin{frame}[c]{Bloques del diseño}
+%	\begin{exampleblock}{\large Deployer}
+%		Da la posibilidad de crear una cadena de bloques personalizada.
+%	\end{exampleblock}
+%
+%	\begin{exampleblock}{\large Core}
+%		Gestiona la creación de bloques y almacenamiento de transacciones (parte modificada).
+%	\end{exampleblock}
+%	
+%	\begin{exampleblock}{\large Base de datos}
+%		Almacenar y servir datos de las transacciones y bloques.
+%	\end{exampleblock}
+%
+%	\begin{exampleblock}{\large ARK Desktop Wallet}
+%		Interfaz para la realización de transacciones.
+%	\end{exampleblock}
+%	
+%	\begin{exampleblock}{\large Explorer ARK}
+%		Interfaz para la visualización de los bloques y transacciones.
+%	\end{exampleblock}
+%\end{frame}
 %Estos bloques se pueden configurar de diferentes maneras, estos son dos ejemplos donde todo estaría en una máquina o donde cada bloque podría estar en dos ordenares y en un smartphone. El primero es el que se ha implementado como prototipo.
 \begin{frame}[c]{Posibles configuraciones de los bloques}
 	\begin{columns}[onlytextwidth]
@@ -441,6 +442,19 @@ Universidad de Granada}
 
 \section{Demostración práctica}
 \sectionpagemod
+\begin{frame}[c]{Cadena de bloques}
+	\begin{figure}
+		\centering
+		\includegraphics[height=2.4cm]{bloques.png}
+	\end{figure}
+\end{frame}
+
+\begin{frame}[c]{Bloque }
+	\begin{figure}
+		\centering
+		\includegraphics[height=2.8cm]{bloque_hash.png}
+	\end{figure}
+\end{frame}
 
 %Por último veamos las conclusiones y futuras lineas de investigación
 \section{Conclusiones e investigaciones futuras}
