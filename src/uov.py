@@ -483,10 +483,10 @@ def verificacion(hashed, firma, alpha_pub_F2, beta_pub_F2, m):
       aux_alpha = matrix_product(matrix_product ([firma], alpha_pub[k]), matrix_transpose([firma]))
       aux_beta = matrix_product (beta_pub[k], matrix_transpose([firma]))
       verif = verif and (hashed[k] == matrix_sum(aux_alpha,  aux_beta)[0][0])
-      #print ("aux_alpha")
-      #print (aux_alpha)
-      #print ("aux_beta")
-      #print (aux_beta)
+      print ("aux_alpha")
+      print (aux_alpha)
+      print ("aux_beta")
+      print (aux_beta)
    return verif
 
 #------------------------------------------------------------------
@@ -833,35 +833,35 @@ def main():
    #m, v= 44, 151 #este es el bueno
    #m, v = 35, 121
    #m, v =  19, 65
-   #m, v = 10, 30 #con este tamaño funciona
-   m, v = 3, 3
+   m, v = 10, 30 #con este tamaño funciona
+   #m, v = 3, 3
    n = m + v
 
    #Private key
    alpha, beta = clavePrivada(m, v)
-   #print ("alpha priv")
-   #print (alpha)
-   #print ("beta priv")
-   #print (beta)
+   print ("alpha priv")
+   print (alpha)
+   print ("beta priv")
+   print (beta)
 
    T = generacionT(m, v)
-   #print ("T")
-   #print (T)
+   print ("T")
+   print (T)
 
    #Publics keys
    alpha_pub, beta_pub = clavePublica(m, v, alpha, beta, T)
-   #print ("alpha pub")
-   #print (alpha_pub)
-   #print ("beta pub")
-   #print (beta_pub)
+   print ("alpha pub")
+   print (alpha_pub)
+   print ("beta pub")
+   print (beta_pub)
 
    #Signature
-   mensaje = "Este mensaje es un mensaje de prueba. Quiero se sea un poco largo para que se aprecie el efecto de la función hash"
+   mensaje = "Ejemplo del algoritmo UOV para la presentación. Este mensaje es un mensaje de prueba. Quiero se sea un poco largo para que se aprecie el efecto de la función hash"
    hashed = hashlib.sha256(mensaje.encode('utf-8')).hexdigest()[0:m]
 
    hashed_message = []
-   #print ("hash")
-   #print (hashed)
+   print ("hash")
+   print (hashed)
 
    for i in range(len(hashed)):
       hashed_message += [bin(int(hashed[i], 16))[2:]] #Pasa a binario el hash
@@ -881,6 +881,8 @@ def main():
    #Verification
    verif = verificacion (hashed_message, firma, alpha_pub, beta_pub, m)
    print(verif)
+
+   
 
 
 if __name__ == "__main__":
