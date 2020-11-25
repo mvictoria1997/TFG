@@ -1,4 +1,3 @@
-% !TEX encoding = UTF-8 Unicode
 \documentclass[10pt,aspectratio=169,]{beamer}
 \setbeamercovered{transparent=10}
 \usetheme[
@@ -24,7 +23,7 @@
 \usepackage{eurosym}
 \usepackage[absolute,overlay]{textpos}
 \usepackage[geometry]{ifsym}
-
+\usepackage{ragged2e}
 %
 %\setbeamertemplate{sections/subsections in toc}[ball]
 \usepackage{listings}
@@ -158,7 +157,7 @@ Universidad de Granada}
 %Para llevar a cabo el objetivo del proyecto ha sido necesario realizar dos tareas. Por un lado, la implementación del algoritmo UOV en python, esto son las funciones para la generación de las claves pública y privadas, y las funciones para la firma y validación de la misma, ya que no existen bibliotecas de python que permitan trabajar con matrices y cuerpos finitos también se ha implementado la aritmética del cuerpo finito de 128 elementos específica para el algoritmo UOV. Por otro lado, para comprobar el funcionamiento del algoritmo y aumentar la seguridad de la cadena de bloques se ha integrado en la blockchain de ARK, modificando los algoritmo de firma y verificación.
 \begin{frame}[c]{Objetivos}
 	\begin{exampleblock}{\large Implementación del algoritmo UOV}
-		Funciones propias del algoritmo y aritmética del cuerpo finito de $2^7$ elementos.
+		Aritmética del cuerpo finito de $2^7$ elementos y las funciones propias del algoritmo.
 	\end{exampleblock}
 
 	\begin{exampleblock}{\large Integración del algoritmo UOV}
@@ -205,44 +204,6 @@ Universidad de Granada}
 
 \section{Contenidos teóricos}
 \sectionpagemod
-%Es un nuevo paradigma de la informática que basa sus principios en la teoría cuántica.
-\subsection*{Computación cuántica}
-\subsectionpagemod
-
-%Los bits solo pueden tomar como valor 0 y 1, mientras que los cúbit pueden tomar ambos valores a la vez. Como se muestra en la figura. A esta propiedad se le denomina superposición cuántica de los estados.
-\begin{frame}[c]{Estados de un bit y un cúbit}
-	\centering 
-	\begin{figure}
-		\includegraphics[height=5cm]{bit_cubit.png}
-	\end{figure}
-\end{frame}
-
-%Otras propiedades cuánticas, además de la superposición cuántica, son el entrelazamiento cuántico que dos particulas se conectan si han interactuado una vez y el teletransporte cuantico que se envia la informacion por el espacio sin viajar a traves de el.
-
-\begin{frame}[c]{Propiedades computación cuántica}
-	\vfill
-	\Large
-	\begin{itemize}
-		\item[\FilledSmallSquare] Superposición cuántica.
-		\item[\FilledSmallSquare] Entrelazamiento cuántico.
-		\item[\FilledSmallSquare] Teletransporte cuántico.
-	\end{itemize}
-	\vspace{-3.3cm}
-	\begin{figure}
-		\begin{flushright}
-			\includegraphics[height=3.7cm]{compu-cuan.jpg}
-		\end{flushright}
-	\end{figure}
-\end{frame}
-
-%Lo que aporta una mayor capacidad de cómputo, pero que a poca escala los computadores clásicos siguen siendo mejores. La computación cuántica se basa en el uso de cúbits en lugar de bits.
-\begin{frame}[c]{Comparativa computación cuántica y clásica}
-	\begin{figure}
-		\centering
-		\includegraphics[height=4cm]{comp_clasica_cuantica.png}
-		\caption{\large{Comparativa de cómputo de de un ordenador cuántico y clásico}}
-	\end{figure}
-\end{frame}
  %Otra tecnología es las cadenas de bloques sistema de almacenamiento de información dividido en bloques de datos enlazados mediante el hash. Para la búsqueda eficiente de bloques se almacena en la estructura de árboles DE merkle donde cada hash de nodo padre es combinacion de los hash de los nodos hijos. Esto aporta descentralidad de los datos transparencia de la información ya que cualquiera puede visualizarla y la inmutabilidad ya que un cambio en un bloque se ve reflejado en todos los demás.
 \subsection*{Blockchain}
 \subsectionpagemod
@@ -276,6 +237,15 @@ Universidad de Granada}
 \subsection*{Algoritmo UOV\large\textit{(Unbalance Oil and Vinegar)}}
 \subsectionpagemod
 
+\begin{frame}[c]{Algoritmos post-cuánticos}
+    \large\justifying
+    Los algoritmos de clave pública basados en los problemas del logaritmo discreto y factorización de enteros, como Diffie-Hellman, RSA o ECDSA, se podrán romper fácilmente por un ordenador cuántico mediante el algoritmo de Shor.\\
+    \vspace{0.6cm}
+    Los algoritmos simétricos se podrían atacar con el algoritmo de Grover.\\
+    \vspace{0.6cm}
+    Los algoritmos criptográficos post-cuánticos son algoritmos resistentes a ataques cuánticos, un ejemplo es el algoritmo UOV.\\
+\end{frame}
+
 \begin{frame}[c]{Ventajas del algoritmo UOV}
 	\large
 	\begin{itemize}
@@ -288,17 +258,57 @@ Universidad de Granada}
 
 %El esquema de la firma UOV utiliza la función unidireccional P de F sub 2 elevado a r de tamaño n en F sub 2 elevado a r de tamaño m, función cuadrática multivariante en $n = m + v$ variables. Esta función se puede descomponer como F compuesto con T, donde T va de F sub 2 elevado a r de tamaño n en F sub 2 elevado a r de tamaño n es linear invertible, y F va de F sub 2 elevado a r de tamaño n en F sub 2 elevado a r de tamaño m  función cuadrática cuyas $m$ componentes son de la forma... donde alpha y beta se toman aleatoriamente en F sub 2 siendo alpha un vector de matrices triangulares superiores. Se toma así alpha para que sea más eficiente sin afectar a la seguridad. Las primeras $v$ variables de x son las variables vinagres y las $m$ variables restantes son las variables aceite.
 
-\begin{frame}[c]{Esquema UOV}
-	$$\mathcal{P}: \mathds{F}_{2^r}^n \rightarrow \mathds{F}_{2^r}^m$$\\
-	\vfill
-	$\mathcal{P} = \mathcal{F} \circ \mathcal{T}$, donde $\mathcal{T}: \mathds{F}_{2^r}^n \rightarrow \mathds{F}_{2^r}^n$  y $\mathcal{F}: \mathds{F}_{2^r}^n \rightarrow \mathds{F}_{2^r}^m$\\
-	\vfill
-	\begin{equation}\label{eq:fun}
-		f_k(x) = \sum_{i=1}^v \sum_{j=i}^n \alpha_{i,j,k} x_i x_j + \sum_{i=1}^n \beta_{i,k} x_i
-	\end{equation}
-	donde $\alpha_{i,j,k}$ y $\beta_{i,k}$ se toman aleatoriamente en $\mathds{F}_2$ siendo $\left(\alpha_{i,j,k}\right)_{\begin{subarray}{l}{1\leqslant i \leqslant v }\\ {1 \leqslant j \leqslant n}\end{subarray}}$ un vector de matrices triangulares superiores.
+%\begin{frame}[c]{Esquema UOV}
+%	$$\mathcal{P}: \mathds{F}_{2^r}^n \rightarrow \mathds{F}_{2^r}^m$$\\
+%	\vfill
+%	$\mathcal{P} = \mathcal{F} \circ \mathcal{T}$, donde $\mathcal{T}: \mathds{F}_{2^r}^n \rightarrow \mathds{F}_{2^r}^n$  y $\mathcal{F}: \mathds{F}_{2^r}^n \rightarrow \mathds{F}_{2^r}^m$\\
+%	\vfill
+%	\begin{equation}\label{eq:fun}
+%		f_k(x) = \sum_{i=1}^v \sum_{j=i}^n \alpha_{i,j,k} x_i x_j + \sum_{i=1}^n \beta_{i,k} x_i
+%	\end{equation}
+%	donde $\alpha_{i,j,k}$ y $\beta_{i,k}$ se toman aleatoriamente en $\mathds{F}_2$ siendo $\left(\alpha_{i,j,k}\right)_{\begin{subarray}{l}{1\leqslant i \leqslant v }\\ {1 \leqslant j \leqslant n}\end{subarray}}$ un vector de matrices triangulares superiores.
+%\end{frame}
+
+\begin{frame}[c]{Generación de claves}
+    \begin{columns}[T]
+	    \hspace{0.6cm}
+	    \column{0.4\textwidth}
+        \Large{Clave privada}
+        \vspace{0.35cm}
+        \begin{itemize}
+            \item $\left(\alpha_{i,j,k}\right)_{\begin{subarray}{l}{1\leqslant i \leqslant v }\\ {1 \leqslant j \leqslant n}\end{subarray}}$ 
+            \item $\left(\beta_{i,k}\right)_{1\leqslant i \leqslant v }$
+        \end{itemize}
+        \column{0.6\textwidth}
+        \Large{Clave pública}
+        \vspace{0.2cm}
+        \begin{itemize}
+            \item ${\alpha_{pub}}_k = \left(
+    	\begin{array}{c}
+    	I_v \\
+    	\hline
+    	T'_{v \times m}
+    	\end{array}
+    	\right) \left(\alpha_{i,j,k}\right)_{\begin{subarray}{l}{1 \leqslant i\leqslant v }\\ {i\leqslant j \leqslant n}\end{subarray}} \ T$
+    		\item ${\beta_{pub}}_k = \left(\beta_{j,k}\right)_{1\leqslant j\leqslant n}\ T$
+        \end{itemize}
+    \end{columns}
 \end{frame}
 
+
+\begin{frame}[c]{Firma}
+    \Large
+    $$firma = x \cdot \left({T^{\scriptscriptstyle T}}\right)^{-1} = x \cdot T ^{\scriptscriptstyle T}$$\\
+    \vspace{0.5cm}
+    donde $x = \left( x^v, x^m\right)$ con $x^v$ valores aleatorios y \vspace{0.5cm} $$(x^m)^{\scriptscriptstyle T} = (A_k^m + \beta_k^m)^{-1} (h_k - (A_k^v + \beta_k^v) (a^v)^{\scriptscriptstyle T})$$
+\end{frame}
+
+
+
+\begin{frame}[c]{Verificación}
+    \Large
+    $$h_k = \ {\alpha_{pub}}_k \ s^{\scriptscriptstyle T} + {\beta_{pub}}_{k} \ s^{\scriptscriptstyle T} \ \ \ \ \ \ \large k \in \{1,\cdots, n\}$$
+\end{frame}
 
 
 
@@ -320,20 +330,20 @@ Universidad de Granada}
 
 %El presupuesto se ha desglosado en recursos humanos donde a los tutores les correspondería 30€/hora y la alumna 20€/hora, a los gastos indirectos se le da un 10% y a los gastos imprevisto un 5%. Obteniendo 18228.67€
 \begin{frame}[c]{Presupuesto desglosado}
-	\begin{table}[H]
+	\begin{table}[Htb]
 		\begin{center}
 		\centering
-		\begin{tabular}{p{0.6\linewidth} p {0.2\linewidth}}
-			\textbf{Tipo de costes} & \textbf{Cantidad} \\
+		\begin{tabular}{llr@{,}l}
+			\textbf{Tipo de costes} && \textbf{Cantidad} \\
 			\toprule
-			Recursos humanos tutores & 4.830\euro\\[0.5ex]
-			Recursos humanos alumna & 10.720\euro\\[0.5ex]
-			Indirectos & 1.578,24\euro\\[0.5ex]
-			Directos & 210,40\euro\\[0.5ex]
-			Viajes & 22\euro\\[0.5ex]
-			Gastos imprevistos & 868,03\euro\\[0.5ex]
+			Recursos humanos tutores && 4.830 & 00\euro\\[0.5ex]
+			Recursos humanos alumna && 10.720 & 00\euro\\[0.5ex]
+			Indirectos && 1.578 & 24\euro\\[0.5ex]
+			Directos && 210 & 40\euro\\[0.5ex]
+			Viajes && 22 & 00\euro\\[0.5ex]
+			Gastos imprevistos && 868 & 03\euro\\[0.5ex]
 			\bottomrule
-			TOTAL (\euro) & 18.228,67\euro\\
+			TOTAL (\euro) && 18.228 & 67\euro\\
 		\end{tabular}
 		\end{center}
 		\caption{\large Presupuesto total desglosado}
@@ -429,12 +439,12 @@ Universidad de Granada}
 	\large
 	\begin{itemize}
 		\item[$\blacktriangledown$] Necesidad de implementar la aritmética del cuerpo finito de 128.
-		\item[$\blacktriangledown$] Incompatibilidad de las claves de la \textit{blockchain} de ARK con las del algoritmo UOV.
-		\item[$\blacktriangledown$] La firma llega truncada la función de verificación.
+		\item[$\blacktriangledown$] Adaptar las claves de la \textit{blockchain} a las del algoritmo UOV.
+		\item[$\blacktriangledown$] La función de firma devuelve el identificador de la firma.
 	\end{itemize}
 \end{frame}
 
-\section{Demostración práctica}
+\section{Ejemplo práctico}
 \sectionpagemod
 \begin{frame}[c]{Cadena de bloques}
 	\begin{figure}
@@ -443,17 +453,11 @@ Universidad de Granada}
 	\end{figure}
 \end{frame}
 
-\begin{frame}[c]{Bloque con ID 63372384328353607}
-	\begin{figure}
-		\centering
-		\includegraphics[height=2.8cm]{bloque_hash.png}
-	\end{figure}
-\end{frame}
 
 \begin{frame}[c]{Logs terminal}
 	\begin{figure}
 		\centering
-		\includegraphics[height=3.5cm]{explorer_1.png}
+		\includegraphics[height=4.7cm]{explorer_1.png}
 	\end{figure}
 \end{frame}
 
@@ -483,39 +487,63 @@ Universidad de Granada}
 		\centering
 		\includegraphics[height=1cm]{explorer_5.png}
 	\end{figure}
+	\begin{figure}
+		\centering
+		\includegraphics[height=4.8cm]{bloque_hash.png}
+	\end{figure}
 \end{frame}
 
 %Por último veamos las conclusiones y futuras lineas de investigación
-\section{Conclusiones e investigaciones futuras}
+\section{Conclusiones e desarrollos futuros}
 \sectionpagemod
 %Con este proyecto se ha logrado, leerlos... trás todos estos pasos se ha obtenido una blockchain más segura ante posibles ataques cuánticos
 \begin{frame}[c]{Conclusiones}
 	\large
 	\begin{itemize}
-		\item[\checkmark] Implementación algoritmo UOV y aritmética del cuerpo finito de 128 elementos.
+		\item[\checkmark] Implementación aritmética del cuerpo finito de 128 elemento y algoritmo UOV.
 		\item[\checkmark] Comparación de los tiempos de ejecución en \texttt{python} y \texttt{SageMath}.
 		\item[\checkmark] Integración del algoritmo en la \textit{blockchain} de ARK.
 		\item[\checkmark] Ejecución de la \textit{blockchain} de ARK modificada.
-		\item[\checkmark] Ver los bloques firmados en el \textit{explorer} de ARK y en la API.
-		\item[\checkmark] Cadena de bloques más segura a costa de perder rendimiento.
+		\item[\checkmark] Comprobación de los bloques firmados en el \textit{explorer} de ARK y en la API.
+		\item[\checkmark] Cadena de bloques resistente a ataques cuánticos.
 	\end{itemize}
 \end{frame}
 %De cara al futuro de podría trabajar con la base de datos en lugar de mantener la información en fichero \texttt{json} independientes. Además se podría integrar la blockchain modificada en otra no tiene porque de ARK, para hacerla más segura, esto se podría hacer por las propiedades de ARK blockchain.
-\begin{frame}[c]{Investigaciones futuras}
+\begin{frame}[c]{Desarrollos futuros}
 	\large
 	\begin{itemize}
-		\item[\FilledSmallSquare] Trabajar con la base de datos.
+		\item[\FilledSmallSquare] Trabajar con la base de datos en lugar de tener archivos \texttt{json} independientes.
 		\item[\FilledSmallSquare] Integrar la \textit{blockchain} ARK modificada en otra cadena de bloques.
 	\end{itemize}
 \end{frame}
 
-%\begin{frame}[c]{Bibliografía}
-%	\begin{itemize}
-%		\item Trabajar con la base de datos.
-%		\item Integrar la \textit{blockchain} ARK modificada en otra cadena de bloques.
-%	\end{itemize}
-%\end{frame}
+\section{Ejemplo UOV}
+\sectionpagemod
 
+\begin{frame}[c]{Generación de claves}
+	$$\alpha = [[[1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1]...$$
+	$$\beta = [[1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0]...$$
+	$$\alpha_{pub} = [[[1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0]....$$
+	$$\beta_{pub} = [[[1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1]]....$$
+\end{frame}
+
+\begin{frame}[c]{Firma}
+	\large
+	El mensaje a firmar es \texttt{"{}Ejemplo del algoritmo UOV para la presentación. Este mensaje es un mensaje de prueba. Quiero se sea un poco largo para que se aprecie el efecto de la función hash"{}}, cuyo \textit{hash} es \texttt{"{}bafd830504"{}}.
+	\normalsize
+	$$firma = [[0, 1, 1, 1, 0, 0, 1], [1, 0, 1, 1, 0, 0, 0], [1, 1, 1, 1, 0, 1, 1], [1, 1, 0, 0, 0, 0, 1], [0, 0, 1, 0, 1, 1, 1]....$$
+	
+\end{frame}
+
+\begin{frame}[c]{Verificación}
+	$$hash\_binario = [1011, 1010, 1111, 1101, 1000, 11, 0, 101, 0, 100]$$
+	\vspace{0.05cm}
+	$$[0, 0, 0, 1, 0, 1, 1] = [1, 0, 0, 0, 0, 0, 0] + [1, 0, 0, 1, 0, 1, 1]$$
+	$$[0, 0, 0, 1, 0, 1, 0] = [0, 0, 0, 0, 1, 1, 0] + [0, 0, 0, 1, 1, 0, 0]$$
+	$$[0, 0, 0, 1, 1, 1, 1] = [0, 1, 1, 1, 0, 0, 1] + [0, 1, 1, 0, 1, 1, 0]$$
+	$$[0, 0, 0, 1, 1, 0, 1] = [1, 0, 0, 1, 1, 1, 0] + [1, 0, 0, 0, 0, 1, 1]$$
+	$$[0, 0, 0, 1, 0, 0, 0] = [1, 0, 1, 0, 0, 1, 0] + [1, 0, 1, 1, 0, 1, 0]$$
+\end{frame}
 
 % Thank you page
 \beamertemplateshadingbackground{structure.fg!90}{structure.fg}
