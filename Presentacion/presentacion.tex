@@ -47,6 +47,12 @@
 
 \usepackage{forest}
 
+\definecolor{falured}{rgb}{0.5, 0.09, 0.09}
+\definecolor{ginger}{rgb}{0.69, 0.4, 0.0}
+\definecolor{darkblue}{rgb}{0.0, 0.2, 0.4}
+\definecolor{olive}{rgb}{0.5, 0.5, 0.0}
+\definecolor{persimmon}{rgb}{0.93, 0.35, 0.0}
+
 \definecolor{folderbg}{RGB}{124,166,198}
 \definecolor{folderborder}{RGB}{110,144,169}
 \definecolor{foldercolor}{RGB}{124,166,198}
@@ -276,21 +282,21 @@ Universidad de Granada}
         \Large{Clave privada}
         \vspace{0.35cm}
         \begin{itemize}
-            \item $\left(\alpha_{i,j,k}\right)_{\begin{subarray}{l}{1\leqslant i \leqslant v }\\ {1 \leqslant j \leqslant n}\end{subarray}}$ 
-            \item $\left(\beta_{i,k}\right)_{1\leqslant i \leqslant v }$
+            \item \textcolor{falured}{$\left(\alpha_{i,j,k}\right)_{\begin{subarray}{l}{1\leqslant i \leqslant v }\\ {1 \leqslant j \leqslant n}\end{subarray}}$ }
+            \item \textcolor{darkblue}{$\left(\beta_{i,k}\right)_{1\leqslant i \leqslant v }$}
         \end{itemize}
         \column{0.6\textwidth}
         \Large{Clave pública}
         \vspace{0.2cm}
         \begin{itemize}
-            \item ${\alpha_{pub}}_k = \left(
+            \item $\textcolor{olive}{{\alpha_{pub}}_k} = \left(
     	\begin{array}{c}
     	I_v \\
     	\hline
-    	T'_{v \times m}
+    	T^{\scriptscriptstyle T}_{v \times m}
     	\end{array}
-    	\right) \left(\alpha_{i,j,k}\right)_{\begin{subarray}{l}{1 \leqslant i\leqslant v }\\ {i\leqslant j \leqslant n}\end{subarray}} \ T$
-    		\item ${\beta_{pub}}_k = \left(\beta_{j,k}\right)_{1\leqslant j\leqslant n}\ T$
+    	\right) \textcolor{falured}{\left(\alpha_{i,j,k}\right)_{\begin{subarray}{l}{1 \leqslant i\leqslant v }\\ {i\leqslant j \leqslant n}\end{subarray}}} \ T$
+    		\item $\textcolor{persimmon}{{\beta_{pub}}_k} = \textcolor{darkblue}{\left(\beta_{j,k}\right)_{1\leqslant j\leqslant n}}\ T$
         \end{itemize}
     \end{columns}
 \end{frame}
@@ -300,14 +306,19 @@ Universidad de Granada}
     \Large
     $$firma = x \cdot \left({T^{\scriptscriptstyle T}}\right)^{-1} = x \cdot T ^{\scriptscriptstyle T}$$\\
     \vspace{0.5cm}
-    donde $x = \left( x^v, x^m\right)$ con $x^v$ valores aleatorios y \vspace{0.5cm} $$(x^m)^{\scriptscriptstyle T} = (A_k^m + \beta_k^m)^{-1} (h_k - (A_k^v + \beta_k^v) (a^v)^{\scriptscriptstyle T})$$
+    donde $x = \left( x^v, x^m\right)$ con $x^v$ variables de vinagre y $x^m$ variables de aceite
+    \vspace{0.5cm} 
+    $$(x^m)^{\scriptscriptstyle T} = (A_k^m + \textcolor{darkblue}{\beta_k^m})^{-1} (hash_k - (A_k^v + \textcolor{darkblue}{\beta_k^v}) (a^v)^{\scriptscriptstyle T})$$
+    \vspace{0.1cm}
+        
+    con $A_k = a^v\ \textcolor{falured}{\left(\alpha_{i,j,k}\right)_{\begin{subarray}{l}{1 \leqslant i\leqslant v }\\ {1\leqslant j \leqslant n}\end{subarray}}} = \left(A^v_k, A^m_k\right)$
 \end{frame}
 
 
 
 \begin{frame}[c]{Verificación}
     \Large
-    $$h_k = \ {\alpha_{pub}}_k \ s^{\scriptscriptstyle T} + {\beta_{pub}}_{k} \ s^{\scriptscriptstyle T} \ \ \ \ \ \ \large k \in \{1,\cdots, n\}$$
+    $$hash_k = \ \textcolor{olive}{{\alpha_{pub}}_k} \ s^{\scriptscriptstyle T} + \textcolor{persimmon}{{\beta_{pub}}_{k}} \ s^{\scriptscriptstyle T} \ \ \ \ \ \ \large k \in \{1,\cdots, n\}$$
 \end{frame}
 
 
@@ -494,7 +505,7 @@ Universidad de Granada}
 \end{frame}
 
 %Por último veamos las conclusiones y futuras lineas de investigación
-\section{Conclusiones e desarrollos futuros}
+\section{Conclusiones y desarrollos futuros}
 \sectionpagemod
 %Con este proyecto se ha logrado, leerlos... trás todos estos pasos se ha obtenido una blockchain más segura ante posibles ataques cuánticos
 \begin{frame}[c]{Conclusiones}

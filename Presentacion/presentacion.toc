@@ -4,5 +4,5 @@
 \beamer@sectionintoc {4}{Diseño}{20}{0}{4}
 \beamer@sectionintoc {5}{Implementación}{23}{0}{5}
 \beamer@sectionintoc {6}{Ejemplo práctico}{26}{0}{6}
-\beamer@sectionintoc {7}{Conclusiones e desarrollos futuros}{33}{0}{7}
+\beamer@sectionintoc {7}{Conclusiones y desarrollos futuros}{33}{0}{7}
 \beamer@sectionintoc {8}{Ejemplo UOV}{36}{0}{8}
